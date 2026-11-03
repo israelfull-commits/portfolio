@@ -1,0 +1,17 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:israelrozar:portfolio:assistant",
+      "displayName": "Israel Rozar Portfolio Agent",
+      "type": "application/agent-card+json",
+      "url": "https://draw-lapis-96488079.figma.site/llms.txt",
+      "description": "Assistente e documentação do portfólio de Israel Rozar.",
+      "representativeQueries": [
+        "Israel Rozar product designer",
+        "Senior UX designer portfolio",
+        "Design systems and accessibility"
+      ]
+    }
+  ]
+}

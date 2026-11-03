@@ -1,0 +1,18 @@
+# Israel Rozar — Senior Product Designer
+
+> Portfólio profissional e documentação de casos de design de produto, discovery, sistemas complexos, acessibilidade e IA.
+
+## Sobre
+- **Nome**: Israel Rozar
+- **Cargo**: Senior Product Designer
+- **Localização**: São Paulo, Brasil
+- **Especialidades**: Product Discovery, UX Strategy, Design Systems, Acessibilidade Digital (WCAG), IA Responsável
+- **Formação**: Ciência da Computação (UNIVALI)
+- **LinkedIn**: https://www.linkedin.com/in/israelrozar/
+- **Contato**: irozar@yahoo.com.br
+
+## Casos Principais
+- [Einstein — Consumo de Resultados](/cases/einstein-laudos): Uma linguagem visual modular para laudos médicos heterogêneos.
+- [Claro — Ativação Simplificada](/cases/claro-ativacao-simplificada): Redesenho da experiência de vendas para múltiplos canais comerciais.
+- [Itaú — Dossiês Operacionais](/cases/itau/vencimentos): Gestão de vencimentos, hub de liquidez, movimentações e gestão de campanhas (dossiês técnicos em preparação).
+

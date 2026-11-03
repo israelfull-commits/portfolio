@@ -1,0 +1,30 @@
+{
+  "version": "2026-11-02-template-cases",
+  "reference": {
+    "fileKey": "YIHybVXPe0Hfmja1hAyzQZ",
+    "templateNodeId": "31:10884"
+  },
+  "designPageId": "67:2",
+  "codeTemplate": "src/components/CasePresentation.tsx",
+  "styles": "src/components/case-presentation.css",
+  "content": "src/pages/CasePages.tsx",
+  "routes": {
+    "/cases/einstein-laudos": "59:2",
+    "/cases/claro-ativacao-simplificada": "61:2",
+    "/cases/itau/vencimentos": "60:2",
+    "/cases/itau/hub-liquidez": "62:2",
+    "/cases/itau/movimentacoes": "63:2",
+    "/cases/itau/campanhas": "64:2"
+  },
+  "components": {
+    "header": "67:3",
+    "chapterNavigation": "67:89",
+    "footer": "67:290"
+  },
+  "makeImportTarget": "w4NFEpTzCR3X7Dbai6pIJR",
+  "lastValidatedPackage": "output/portfolio-revisao-aprovada-2026-11-02.tar.gz",
+  "lastValidatedSha256": "521C1CE67C07B8D48C59FE3EE166E2FDA73AB16F07E26531834F2DE7B931B565",
+  "lighthouseScore": "100/100/100/100",
+  "publication": "Not established by this source archive. Check the synchronization report.",
+  "updatePolicy": "Update shared code, validate affected routes, update these existing Figma nodes, record evidence and preview/publication status separately. No automatic bidirectional synchronization is configured."
+}

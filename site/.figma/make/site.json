@@ -1,0 +1,10 @@
+{
+  "description": "Portfólio de Israel Rozar: product design, discovery, sistemas complexos, acessibilidade e IA.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

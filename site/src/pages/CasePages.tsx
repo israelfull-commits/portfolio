@@ -1,0 +1,1842 @@
+import { useParams } from "react-router"
+
+import {
+  CaseFigure,
+  CaseMetrics,
+  CasePresentation,
+  type CaseImage,
+  type CasePresentationData,
+  type CaseNavTarget,
+} from "../components/CasePresentation"
+
+import { cases } from "./ItauPreparationCase"
+
+import NotFound from "./NotFound"
+
+function List({ items }: { items: string[] }) {
+  return (
+    <ul className="cp-list">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  )
+}
+
+const sourceLinks: Record<string, Array<[string, string]>> = {
+  einstein: [
+    [
+      "Estudo de caso original — contexto, pesquisa e proposta",
+
+      "https://israelrozar.notion.site/8ac93175a91d48769a322972968e0d2a",
+    ],
+
+    [
+      "HIAE — Laudos · arquivo de trabalho",
+
+      "https://www.figma.com/design/mw8vC7rIuaKvF3FCG3Qi6c/HIAE---Laudos?node-id=1853-49239",
+    ],
+  ],
+
+  claro: [
+    [
+      "Relato original — Ativação Simplificada",
+
+      "https://uxfol.io/p/israelrozar/033c945f",
+    ],
+  ],
+
+  vencimentos: [
+    [
+      "Interface mais recente confirmada pelo autor · Gestão de liquidez",
+
+      "https://www.figma.com/design/jifEQkL5yQAvfaXsSQtmrH/Gest%C3%A3o-de-liquidez?node-id=582-12520",
+    ],
+
+    [
+      "Explorações e documentação de handoff · histórico",
+
+      "https://www.figma.com/design/YHCO7Yb3QdKP0nW2ie0tYO/ESTUDOS-VENCIMENTOS?node-id=1074-2687",
+    ],
+  ],
+
+  "hub-liquidez": [
+    [
+      "Interface da solução · Hub de liquidez",
+
+      "https://www.figma.com/design/jifEQkL5yQAvfaXsSQtmrH/Gest%C3%A3o-de-liquidez?node-id=3-14068",
+    ],
+  ],
+
+  movimentacoes: [
+    [
+      "Discovery Extrato EA · contexto e alternativas",
+
+      "https://www.figma.com/design/klNiUiITLbgRMix1qdQprn/Gest%C3%A3o-de-campanhas-IFA?node-id=1966-34105",
+    ],
+
+    [
+      "Documento de exploração · histórico da iniciativa",
+
+      "https://www.figma.com/design/klNiUiITLbgRMix1qdQprn/Gest%C3%A3o-de-campanhas-IFA?node-id=1926-38396",
+    ],
+  ],
+
+  campanhas: [
+    [
+      "Fluxos e estados · Gestão de Campanhas IFA",
+
+      "https://www.figma.com/design/YHCO7Yb3QdKP0nW2ie0tYO/ESTUDOS-VENCIMENTOS?node-id=3-2",
+    ],
+
+    [
+      "Recorte de configuração no acervo de referência",
+
+      "https://www.figma.com/design/YIHybVXPe0Hfmja1hAyzQZ/Template-portfolio?node-id=31-3638",
+    ],
+  ],
+
+  neoenergia: [
+    [
+      "Pasta Oficial de Entregáveis e Blueprints (Google Drive)",
+
+      "https://drive.google.com/drive/folders/13Jahrxh9R6ktCYFh4sJRzZ_ZcXqinlC4?usp=sharing",
+    ],
+
+    [
+      "P&D Conexão Digital — Relatório Integrado & Entregas (Google Slides)",
+
+      "https://docs.google.com/presentation/d/1rISX29_0Xr0nHKHVahoQTMxlyspejXWq-6SmtIsR_8U/edit",
+    ],
+
+    [
+      "P&D Conexão Digital — Kick-off & Governança (Google Slides)",
+
+      "https://docs.google.com/presentation/d/1BUOb36yK7EhwPi6qs4F4uiGkQDlV3HIAfdESRUGJjbY/edit",
+    ],
+
+    [
+      "P&D Conexão Digital — Blueprint Estratégico (Google Slides)",
+
+      "https://docs.google.com/presentation/d/1GsxcSgYdvalARU0PEzzRM0BjKWxf9GUbRmD-_eAkiJo/edit",
+    ],
+
+    [
+      "Jornada do Cliente Neoenergia — Mapa de Tendências (Figma)",
+
+      "https://www.figma.com/design/lbt8CIcNISYgdqrhjBfhhA/Jornada-do-Cliente-Neoenergia---Mapa-de-Tend%C3%AAncias?node-id=0-1",
+    ],
+
+    [
+      "Jornada do Cliente Neoenergia — Acervo Original (Figma)",
+
+      "https://www.figma.com/design/u9EZbfBXeNRNZFiC4ql9Ws/-Original--Jornada-do-Cliente-Neoenergia---Mapa-de-Tend%C3%AAncias?node-id=0-1",
+    ],
+  ],
+}
+
+function Sources({ project }: { project: string }) {
+  return (
+    <ul className="cp-list">
+      {(sourceLinks[project] || []).map(([label, href]) => (
+        <li key={href}>
+          <a href={href}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+const einsteinHero: CaseImage = {
+  src: "/images/hiae-capa-editorial-1600.webp",
+  width: 1600,
+  height: 900,
+  alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
+  caption:
+    "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",
+}
+
+const einsteinImages: CaseImage[] = [
+  {
+    src: "/images/hiae-template-fonte.webp",
+
+    width: 1142,
+
+    height: 1150,
+
+    alt: "Template de laudo Einstein no Word, com seções para metodologia, resultado e conclusão",
+
+    caption:
+      "Artefato original de proposta: template no Word para organizar informações do exame. Demonstra a estrutura de conteúdo; não comprova implantação.",
+  },
+
+  {
+    src: "/images/hiae-triangulacao-pesquisa-1200.webp",
+
+    width: 1200,
+
+    height: 701,
+
+    alt: "Diagrama relacionando questionário, entrevistas médicas e levantamento documental",
+
+    caption:
+      "Triangulação de pesquisa: perspectivas de pacientes e médicos combinadas à análise dos documentos e das restrições do serviço.",
+  },
+]
+
+export const einsteinPresentation: CasePresentationData = {
+  title: "Einstein · Laudos médicos",
+
+  context: "Saúde · HIAE × Foursys · 2022",
+
+  headline: "Clareza não é o mesmo que compreensão.",
+
+  subtitle: "Uma linguagem visual modular para laudos em diferentes canais.",
+
+  role: "UX Lead",
+
+  team: "Foursys × Hospital Israelita Albert Einstein",
+
+  scope: "Pesquisa, modelagem da informação e prototipagem",
+
+  kicker: "Saúde · UX Lead",
+
+  hero: einsteinHero,
+
+  nextCase: {
+    title: "Neoenergia · Service design",
+
+    href: "/cases/neoenergia-conexao-digital",
+
+    context: "Utilities · P&D ANEEL · 34M de pessoas",
+  },
+
+  prevCase: {
+    title: "Claro · Ativação simplificada",
+
+    href: "/cases/claro-ativacao-simplificada",
+
+    context: "Telecom · UX corporativo",
+  },
+
+  chapters: [
+    {
+      title: "Organizar resultados sem perder o contexto clínico.",
+
+      content: (
+        <>
+          <div className="cp-summary">
+            <p>
+              Pesquisa e proposta de uma linguagem visual modular para laudos,
+              com hierarquia estável entre nome do exame, resultado, referência
+              e contexto.
+            </p>
+            <p>
+              Laudos heterogêneos reuniam informações importantes em hierarquias
+              variáveis. Pacientes precisavam localizar informações e levá-las à
+              consulta; médicos precisavam cruzar resultados, referências,
+              observações e contexto clínico.
+            </p>
+          </div>
+          <CaseMetrics
+            items={[
+              ["4 médicos", "entrevistas semiestruturadas"],
+
+              ["Questionário", "pesquisa exploratória com pacientes"],
+
+              ["14", "categorias de exames no escopo"],
+            ]}
+          />
+          <p>
+            Amostras de métodos diferentes não se somam. O questionário tem 121
+            respondentes anônimos; em duas perguntas, 117 respondem.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      title: "Do documento ao dado.",
+
+      content: (
+        <>
+          <p>
+            A descoberta reuniu quatro entrevistas médicas, questionário
+            exploratório e análise documental. A análise cobriu mais de 80 exames
+            distintos e 14 categorias de laudos; recortes menores representam
+            subconjuntos do acervo.
+          </p>
+          <List
+            items={[
+              "Entrevistas com especialidades e contextos de atendimento distintos.",
+
+              "Análise de comportamentos e canais preferidos dos pacientes.",
+
+              "Inventário de conteúdos de áreas internas e fornecedores, além de benchmark de serviços de saúde.",
+            ]}
+          />
+          <CaseFigure
+            image={{
+              src: "/images/hiae-estado-atual-anotado.webp",
+              width: 2000,
+              height: 1125,
+              alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
+              caption:
+                "Estado atual: título, metadados, resultado, referência e observações aparecem em posições diferentes. Conteúdo fictício.",
+            }}
+          />
+          <CaseFigure image={einsteinImages[1]} />
+          <div className="cp-note">
+            <h3>Como evitar uma interpretação clínica isolada?</h3>
+            <p>
+              Paciente e médico precisam de relações claras entre os dados,
+              preservando referência, observações e contexto.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title: "Uma hierarquia que funcione na tela e no papel.",
+
+      content: (
+        <>
+          <div className="cp-columns">
+            <div>
+              <h3>O cenário</h3>
+              <p>
+                A experiência precisava funcionar no digital e no papel, em
+                sistemas de fornecedores distintos e com recursos limitados para
+                configurar templates. Em alguns cenários, o conteúdo era
+                estruturado no Microsoft Word.
+              </p>
+            </div>
+            <div>
+              <h3>O mandato</h3>
+              <List
+                items={[
+                  "Dar hierarquia estável ao nome do exame, material, resultado e referência.",
+
+                  "Manter comentários, método e contexto clínico próximos.",
+
+                  "Respeitar variações de dados e restrições dos sistemas laudadores.",
+                ]}
+              />
+            </div>
+          </div>
+          <CaseFigure
+            image={{
+              src: "/images/hiae-estado-proposto-anotado.webp",
+              width: 2000,
+              height: 1125,
+              alt: "Laudo proposto anotado, com título, resultado e referência agrupados e metadados separados",
+              caption:
+                "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Conteúdo fictício.",
+            }}
+          />
+          <div className="cp-note">
+            <h3>Minha contribuição</h3>
+            <p>
+              Atuação como UX Lead no projeto HIAE × Foursys, articulando
+              pesquisa, estrutura da informação e decisões de experiência com a
+              equipe multidisciplinar.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title: "Preservar relações entre resultado, referência e contexto.",
+
+      content: (
+        <>
+          <ol className="cp-decisions">
+            {[
+              [
+                "Âncora de leitura estável",
+
+                "Nome, material, resultado e referência formam o primeiro nível de leitura.",
+              ],
+
+              [
+                "Componentes para variação real",
+
+                "DataField e ExamTitle organizam variações numéricas, textuais e de extensão sem criar um template por exame.",
+              ],
+
+              [
+                "Sinais redundantes",
+
+                "Texto, posição e tratamento visual trabalham juntos; a cor não comunica o estado sozinha.",
+              ],
+
+              [
+                "Compatibilidade antes de sofisticação",
+
+                "Formatação simples, cabeçalho e rodapé comuns apoiam o uso nos sistemas laudadores existentes.",
+              ],
+            ].map(([title, copy]) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </li>
+            ))}
+          </ol>
+          <CaseFigure
+            image={{
+              src: "/images/hiae-ds-componentes-crop-1600.webp",
+              width: 1600,
+              height: 900,
+              alt: "Documentação dos componentes DataField e ExamTitle com tokens e anatomia modular",
+              caption:
+                "Documentação dos componentes estruturais: DataField e ExamTitle com tokens de espaçamento e regras de anatomia modular.",
+            }}
+          />
+        </>
+      ),
+    },
+
+    {
+      title: "Uma estrutura comum para conteúdos diferentes.",
+
+      content: (
+        <>
+          <p>
+            A proposta organiza o conteúdo para reduzir competição visual e
+            aproximar resultado, unidade e referência. Os artefatos documentam
+            pesquisa, modelagem e entrega.
+          </p>
+          <div className="cp-gallery">
+            <CaseFigure
+              image={{
+                src: "/images/hiae-laudo-original-recorte.webp",
+
+                width: 1120,
+
+                height: 640,
+
+                alt: "Documento original — recorte de análise",
+
+                caption:
+                  "Documento original — recorte de análise da composição textual densa.",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
+
+                width: 1600,
+
+                height: 1199,
+
+                alt: "Reconstrução demonstrativa da estrutura proposta",
+
+                caption:
+                  "Reconstrução demonstrativa da estrutura proposta. Conteúdo fictício.",
+              }}
+            />
+          </div>
+          <CaseFigure
+            image={{
+              ...einsteinImages[0],
+
+              previewCrop: { x: 216, y: 188, width: 718, height: 931 },
+
+              caption:
+                "Artefato original de proposta: template no Word para organizar informações do exame. Demonstra a estrutura de conteúdo; não comprova implantação.",
+            }}
+          />
+          <div className="cp-gallery">
+            <CaseFigure
+              image={{
+                src: "/images/hiae-visao-futura-mamografia.webp",
+                width: 2000,
+                height: 1125,
+                alt: "Laudo de mamografia estruturado para tablet e celular, com cabeçalho padronizado e seções de técnica, indicação e achados",
+                caption:
+                  "Visão futura: mamografia em tablet e celular, com a mesma estrutura de seções. Conteúdo fictício.",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/hiae-visao-futura-ressonancia.webp",
+                width: 2000,
+                height: 1125,
+                alt: "Laudo de ressonância cardiovascular com resultados em tabela, em tablet e celular",
+                caption:
+                  "Visão futura: ressonância cardiovascular, com resultados em tabela. Conteúdo fictício.",
+              }}
+            />
+          </div>
+          <CaseFigure
+            image={{
+              src: "/images/hiae-multicanal-web-celular.webp",
+              width: 1466,
+              height: 900,
+              alt: "Mesmo exame exibido na web e no celular, com a mesma hierarquia de título, resultado e referência",
+              caption:
+                "Mesmo exame na web e no celular: a hierarquia se mantém entre canais. Dados fictícios.",
+            }}
+          />
+        </>
+      ),
+    },
+
+    {
+      title: "Clareza percebida e interpretação exigem avaliações distintas.",
+
+      content: (
+        <>
+          <p>
+            Os registros reportam 44 participantes em testes, sem bases
+            completas por modalidade e pergunta. Clareza percebida e
+            interpretação foram medidas em tarefas distintas; os percentuais
+            não demonstram melhoria antes/depois nem impacto clínico.
+          </p>
+          <div className="cp-note">
+            <h3>Aprendizado</h3>
+            <p>
+              Medir separadamente localização, associação entre valor e
+              referência, interpretação e erros críticos — com revisão clínica
+              e tecnologias assistivas.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title: "Pesquisa, entregáveis e colaboração.",
+
+      content: (
+        <div className="cp-appendix">
+          <details open>
+            <summary>Fontes e recorte histórico</summary>
+            <div>
+              <p>
+                Projeto de 2022. O estudo do Notion foi atualizado em
+                29/12/2024; essa data editorial não representa uma nova versão
+                de interface. Protótipos e reconstruções estão identificados nas
+                legendas.
+              </p>
+              <Sources project="einstein" />
+            </div>
+          </details>
+          <details>
+            <summary>Autoria e colaboração</summary>
+            <div>
+              <p>
+                Israel Rozar — UX Lead. Trabalho realizado com Foursys, Hospital
+                Israelita Albert Einstein e equipe multidisciplinar, com atuação
+                em pesquisa, síntese e coordenação das decisões de experiência.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Limites das evidências</summary>
+            <div>
+              <p>
+                As 121 respostas referem-se à seção de questionário do estudo
+                original. Em duas perguntas, 117 pessoas responderam. O resumo
+                final menciona outros percentuais, sem reconciliação dos
+                recortes. Amostras e etapas
+                diferentes não são somadas nem tratadas como resultado de
+                negócio.
+              </p>
+            </div>
+          </details>
+        </div>
+      ),
+    },
+  ],
+}
+
+const claroHero: CaseImage = {
+  src: "/images/claro-capa-editorial-1600.webp",
+  width: 1600,
+  height: 900,
+  alt: "Visão editorial multicanal da Ativação Simplificada Claro: interfaces desktop e mobile com resumo financeiro integrado",
+  caption:
+    "Ecossistema multicanal: composição de interfaces desktop e mobile com carrinho de contratação em tempo real e detalhamento transparente de planos.",
+}
+
+const claroImages: CaseImage[] = [
+  {
+    src: "/images/claro-ativacao-desktop.webp",
+    width: 775,
+    height: 486,
+    alt: "Ativação desktop com resumo financeiro lateral",
+    caption:
+      "Ativação e resumo da oferta: composição financeira visível durante a escolha do produto.",
+  },
+  {
+    src: "/images/claro-workshop.webp",
+    width: 720,
+    height: 720,
+    alt: "Workshop do projeto com post-its na parede",
+    caption: "Registro de workshop colaborativo do acervo original.",
+  },
+  {
+    src: "/images/claro-jornadas.webp",
+    width: 720,
+    height: 720,
+    alt: "Mapa da jornada de troca de chip no Miro",
+    caption:
+      "Validações, etapas da troca de chip, resumo e oferta organizados na jornada.",
+  },
+  {
+    src: "/images/claro-multicanal.webp",
+    width: 1376,
+    height: 932,
+    alt: "Composição de interfaces desktop e mobile",
+    caption:
+      "Propostas históricas para desktop e mobile, com agrupamentos de oferta e serviços.",
+  },
+  {
+    src: "/images/claro-detalhe-linha.webp",
+    width: 775,
+    height: 486,
+    alt: "Detalhe da linha com dados do cliente e grupos expansíveis",
+    caption:
+      "Cliente, linha, plano e fatura agrupados, com acesso às jornadas relacionadas.",
+  },
+  {
+    src: "/images/claro-confirmacao-mobile.webp",
+    width: 280,
+    height: 606,
+    alt: "Confirmação mobile da troca de chip",
+    caption:
+      "Confirmação mobile reúne cliente, linha, chip e promoção. Exportação original de 280 px.",
+  },
+]
+
+export const claroPresentation: CasePresentationData = {
+  title: "Claro · Ativação simplificada",
+
+  context: "Telecom · Claro Brasil · acervo de 2017–2018",
+
+  headline: "Simplificando o atendimento em múltiplos canais.",
+
+  subtitle:
+    "Redesenho da experiência de vendas para profissionais da operação comercial.",
+
+  role: "UX/UI Designer",
+
+  team: "Design, stakeholders e profissionais da operação",
+
+  scope: "Discovery, fluxos e interfaces desktop e mobile",
+
+  kicker: "Telecom · UX corporativo",
+
+  hero: claroHero,
+
+  nextCase: {
+    title: "Einstein · Laudos médicos",
+
+    href: "/cases/einstein-laudos",
+
+    context: "Saúde · HIAE × Foursys · 2022",
+  },
+
+  prevCase: {
+    title: "Neoenergia · Service design",
+
+    href: "/cases/neoenergia-conexao-digital",
+
+    context: "Utilities · P&D ANEEL · 34M de pessoas",
+  },
+
+  chapters: [
+    {
+      title:
+        "Redesenho da operação comercial e redução de atrito na venda multicanal.",
+
+      content: (
+        <>
+          <div className="cp-summary">
+            <p>
+              Organizar uma operação comercial complexa para que o atendente
+              consiga consultar o cliente, configurar planos e aparelhos e
+              acompanhar a jornada de ponta a ponta sem rupturas de contexto.
+            </p>
+            <p>
+              O projeto integrou discovery de campo em lojas físicas e canais
+              remotos, decomposição de jornadas críticas de telecom e propostas
+              estruturadas de interface para desktop e mobile, organizando
+              regras de negócio e resumo da composição financeira.
+            </p>
+          </div>
+          <CaseMetrics
+            items={[
+              ["20", "entrevistas em profundidade"],
+
+              ["22", "jornadas de atendimento mapeadas"],
+
+              ["70", "oportunidades de melhoria levantadas"],
+            ]}
+          />
+          <p>
+            Esses números descrevem o escopo de discovery descrito no relato
+            original, não resultados causais de negócio. As evidências visuais
+            selecionadas estão apresentadas nas etapas correspondentes.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Uma operação de alta densidade dividida entre balcão físico e mobilidade.",
+
+      content: (
+        <>
+          <div className="cp-columns">
+            <div>
+              <h3>O cenário</h3>
+              <p>
+                A rotina comercial precisava conciliar necessidades de
+                atendentes de loja, consultores em trânsito e as regras de
+                negócio de telecom, com grande volume de dados por transação.
+              </p>
+            </div>
+            <div>
+              <h3>O desafio</h3>
+              <p>
+                Como apoiar a continuidade do atendimento e tornar os dados
+                cadastrais, técnicos e financeiros compreensíveis em telas de
+                desktop e dispositivos móveis?
+              </p>
+            </div>
+          </div>
+          <div className="cp-note">
+            <h3>Minha contribuição documentada</h3>
+            <p>
+              Atuação em UX/UI, da imersão inicial e síntese de pesquisa à
+              definição de fluxos de navegação, prototipação de alta fidelidade
+              e entrega visual para engenharia.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Compreender a rotina real dos atendentes antes de desenhar interfaces.",
+
+      content: (
+        <>
+          <p>
+            O discovery reuniu benchmarking competitivo, 20 entrevistas com
+            profissionais e lideranças executivas, três dias de workshops
+            imersivos e a formulação de dez personas operacionais. Os materiais
+            selecionados demonstram o processo colaborativo e o mapeamento
+            detalhado da jornada de troca de chip.
+          </p>
+          <div className="cp-gallery">
+            {claroImages.slice(1, 3).map((image) => (
+              <CaseFigure key={image.src} image={image} />
+            ))}
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Decomposição de 22 jornadas de atendimento e aprendizados operacionais.",
+
+      content: (
+        <>
+          <p>
+            O acervo documenta a decomposição de 22 jornadas e propostas para
+            consultar clientes, configurar ofertas e confirmar operações. Ele
+            permite discutir arquitetura de informação e continuidade omnicanal
+            em escala.
+          </p>
+          <p>
+            Avaliar o efeito operacional exigiria comparar conclusões de tarefas
+            e taxas de erro em testes pareados. O material histórico comprova a
+            especificação e entrega das telas, delimitando com rigor o que foi
+            executado.
+          </p>
+          <div className="cp-note">
+            <h3>Aprendizado de design</h3>
+            <p>
+              Uma interface de atendimento comercial precisa manter o contexto
+              do cliente e da oferta sempre visíveis. O design deve reduzir a
+              carga cognitiva do operador e, ao mesmo tempo, garantir
+              transparência absoluta para o consumidor final.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Navegação progressiva, resumo financeiro visível e preservação do contexto do cliente.",
+
+      content: (
+        <>
+          <CaseFigure
+            image={{
+              src: "/images/claro-busca-cliente.webp",
+              width: 775,
+              height: 486,
+              alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e botão de busca",
+              caption:
+                "Ponto de entrada da ativação: a busca por CPF inicia o atendimento. Dados de exemplo.",
+            }}
+          />
+          <ol className="cp-decisions">
+          {[
+            [
+              "Navegação progressiva por etapas",
+
+              "Grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.",
+            ],
+
+            [
+              "Preservação do contexto do cliente",
+
+              "Cabeçalho fixo com dados da linha, status cadastral e atalhos para jornadas frequentes apoiam a continuidade da conversa.",
+            ],
+
+            [
+              "Composição financeira em tempo real",
+
+              "O resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração do plano.",
+            ],
+          ].map(([title, text]) => (
+            <li key={title}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </li>
+          ))}
+          </ol>
+        </>
+      ),
+    },
+
+    {
+      title: "Da jornada do chip às interfaces desktop e mobile padronizadas.",
+
+      content: (
+        <>
+          <p>
+            As propostas apresentam ativação, detalhe da linha e confirmação,
+            com adaptações responsivas entre desktop e mobile. A sequência
+            evidencia consistência de padrões, legibilidade de dados e clareza
+            nos estados operacionais.
+          </p>
+          <div className="cp-gallery">
+            {[claroImages[3], claroImages[4], claroImages[5]].map((image) => (
+              <CaseFigure key={image.src} image={image} />
+            ))}
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Acervo histórico de discovery, colaboração e limites de evidência.",
+
+      content: (
+        <div className="cp-appendix">
+          <details open>
+            <summary>Arquivos e versões</summary>
+            <div>
+              <p>
+                Acervo Claro fornecido pelo autor: registros de workshops, mapa
+                de jornada de troca de chip, telas de ativação, detalhe da linha
+                e confirmação mobile.
+              </p>
+              <p>
+                O documento de migração desktop identifica V.2 de 10/05/2018; o
+                PDF mobile foi atualizado em 11/06/2018.
+              </p>
+              <Sources project="claro" />
+            </div>
+          </details>
+          <details>
+            <summary>Colaboração e alcance das evidências</summary>
+            <div>
+              <p>
+                Israel Rozar — UX/UI Designer, em colaboração com stakeholders e
+                operadores de loja. As quantidades de discovery provêm do
+                relatório primário da iniciativa; os materiais visuais comprovam
+                os artefatos projetados.
+              </p>
+            </div>
+          </details>
+        </div>
+      ),
+    },
+  ],
+}
+
+export function EinsteinPresentation() {
+  return <CasePresentation data={einsteinPresentation} />
+}
+
+export function ClaroPresentation() {
+  return <CasePresentation data={claroPresentation} />
+}
+
+export const neoenergiaPresentation: CasePresentationData = {
+  title: "Neoenergia · Service design",
+
+  context: "Neoenergia · EY × Livework · P&D ANEEL · 2020",
+
+  headline:
+    "Conectar a jornada digital ao serviço que acontece no mundo físico.",
+
+  subtitle:
+    "Discovery e service design para organizar problemas, jornadas e oportunidades no atendimento de distribuidoras de energia.",
+
+  role: "Senior Product Designer / Service Designer",
+
+  team: "EY Business Transformation × Livework e áreas da Neoenergia",
+
+  scope: "Pesquisa, jornadas atuais, blueprints e visão futura de serviço",
+
+  kicker: "Energia · Service design",
+
+  hero: {
+    src: "/images/neoenergia-capa-conexao-digital.webp",
+
+    width: 1600,
+
+    height: 900,
+
+    alt: "Capa oficial do projeto P&D Conexão Digital Neoenergia com consórcio EY e Livework",
+
+    caption:
+      "Projeto P&D Conexão Digital ANEEL: Experiência do Consumidor e Service Design para o Grupo Neoenergia (Iberdrola Brasil).",
+  },
+
+  prevCase: {
+    title: "Einstein · Laudos médicos",
+
+    href: "/cases/einstein-laudos",
+
+    context: "Saúde · UX Lead",
+  },
+
+  nextCase: {
+    title: "Claro · Ativação simplificada",
+
+    href: "/cases/claro-ativacao-simplificada",
+
+    context: "Telecom · UX/UI",
+  },
+
+  chapters: [
+    {
+      title:
+        "Unificação da infraestrutura de atendimento para 34 milhões de pessoas.",
+
+      content: (
+        <>
+          <div className="cp-summary">
+            <p>
+              Iniciativa de discovery e transformação de serviços para conectar
+              canais de atendimento, processos internos e experiência do
+              consumidor de energia para o Grupo Neoenergia (Iberdrola Brasil),
+              integrando 4 grandes distribuidoras — <strong>Elektro</strong>{" "}
+              (SP/MS), <strong>Coelba</strong> (BA), <strong>Celpe</strong> (PE)
+              e <strong>Cosern</strong> (RN).
+            </p>
+            <p>
+              Desenvolvido no âmbito do programa de P&D Estratégico ANEEL, o
+              consórcio EY Business Transformation e Livework realizou
+              diagnóstico de campo, auditou os silos internos de backstage e
+              modelou os blueprints de serviço To-Be para mitigar atritos de
+              faturamento e operação.
+            </p>
+          </div>
+          <CaseMetrics
+            items={[
+              ["4", "distribuidoras no contexto do projeto"],
+
+              ["5 estágios", "ciclo de vida em blueprints"],
+
+              ["118 ideias", "priorizadas na matriz de valor"],
+            ]}
+          />
+          <p>
+            A documentação histórica audita 34 milhões de habitantes e 13,9
+            milhões de clientes nas áreas de concessão em 18 estados. Esses
+            dados contextualizam a escala real do ecossistema sob regulação da
+            ANEEL.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Cadeia de serviços fragmentada em um ecossistema de infraestrutura crítica.",
+
+      content: (
+        <>
+          <div className="cp-columns">
+            <div>
+              <h3>Pessoas e contexto</h3>
+              <p>
+                Consumidores precisam contratar, pagar, pedir suporte, alterar e
+                encerrar serviços. Atendentes, áreas internas e equipes de campo
+                participam dessas jornadas e influenciam a continuidade do
+                atendimento.
+              </p>
+            </div>
+            <div>
+              <h3>Problema de design</h3>
+              <p>
+                Como compreender os atritos ao longo do serviço e estruturar uma
+                experiência futura que considere o atendimento digital, a
+                operação interna e as dependências do mundo físico?
+              </p>
+            </div>
+          </div>
+          <div className="cp-note">
+            <h3>Recorte de atuação</h3>
+            <p>
+              Product Design e Service Design no contexto de Business
+              Transformation da EY: compreensão de jornadas, pesquisa
+              qualitativa e organização de problemas e oportunidades, em
+              colaboração com Livework e áreas da Neoenergia.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Auditoria de backstage: quando a insatisfação com a fatura revela silos operacionais.",
+
+      content: (
+        <>
+          <p>
+            A documentação de governança estrutura contextualização do negócio,
+            entendimento das jornadas atuais, pesquisa, desenho da jornada
+            futura e roadmap. Registros de campo e blueprints aproximam a
+            perspectiva do consumidor das atividades internas que sustentam o
+            serviço.
+          </p>
+          <List
+            items={[
+              "Contextualização do setor e do negócio para interpretar necessidades e restrições regulatórias.",
+
+              "Mapeamento de jornadas e processos atuais, com atenção às transições entre canais físicos e digitais.",
+
+              "Organização de dores e oportunidades para discutir uma visão futura com as diretorias envolvidas.",
+            ]}
+          />
+          <p>
+            A leitura de serviço evita reduzir o diagnóstico a telas: uma
+            informação pouco clara no canal digital pode depender de uma regra,
+            de um processo interno ou de uma atividade em campo.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Os 5 estágios do ciclo de vida do cliente mapeados em Service Blueprints.",
+
+      content: (
+        <>
+          <p>
+            O mapa de jornada futura organiza o ciclo de vida em cinco
+            macroetapas estruturadas em pranchas detalhadas de Service ;
+            Blueprint:
+          </p>
+          <List
+            items={[
+              "1. Contrato e instalo: busca de informações, contratação, adequação e ligação nova.",
+
+              "2. Uso e pago: consumo, acompanhamento, autoleitura e faturamento.",
+
+              "3. Preciso de suporte: necessidade de ajuda, interrupção e resolução de problemas.",
+
+              "4. Mudo o contrato: alterações cadastrais, portabilidade ao Mercado Livre e geração solar.",
+
+              "5. Abandono: encerramento do vínculo, prevenção de inadimplência e desdobramentos.",
+            ]}
+          />
+          <div className="cp-gallery">
+            <CaseFigure
+              image={{
+                src: "/images/neoenergia-blueprint-crop-contrato-1600.webp",
+                width: 1600,
+                height: 900,
+                alt: "Recorte editorial em alta resolução do Blueprint 1: Contrato e Instalação com jornada do cliente e pontos de contato da operação",
+                caption:
+                  "Recorte editorial do Blueprint 1 (Contrato e Instalação): visão de alta densidade da jornada do cliente, evidências físicas e pontos de contato da linha de frente.",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/neoenergia-blueprint-2-uso-pago.webp",
+
+                width: 1414,
+
+                height: 4480,
+
+                alt: "Service Blueprint detalhado da etapa; 2: Uso e Pago — Consumo, faturamento e autoleitura",
+
+                caption:
+                  "Artefato original de Service Blueprint: Macro-etapa 2. Uso e Pago (ações, criticidade, highlights por 3 perfis de clientes, análise interna de processos e oportunidades).",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/neoenergia-blueprint-1-contrato-instalo.webp",
+
+                width: 2000,
+
+                height: 5200,
+
+                alt: "Service Blueprint da etapa; 1: Contrato e Instalo",
+
+                caption:
+                  "Artefato original de Service Blueprint: Macro-etapa 1. Contrato e Instalo (pesquisa de informações, adequação e ligação nova).",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/neoenergia-jornada-futuro-tobe.webp",
+
+                width: 2000,
+
+                height: 1200,
+
+                alt: "Service Blueprint da Jornada do Futuro To-Be",
+
+                caption:
+                  "Artefato original da Jornada do Futuro (To-Be): blueprint de serviço integrado omnicanal e visão consolidada de ganhos.",
+              }}
+            />
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Desburocratização de backoffice antes de redesenho de portal e Design System multi-tenant.",
+
+      content: (
+        <ol className="cp-decisions">
+          {[
+            [
+              "Mapear antes de propor",
+
+              "A jornada atual organiza atores, etapas e dependências para que uma oportunidade de interface seja discutida no contexto do serviço.",
+            ],
+
+            [
+              "Conectar frente de atendimento e operação",
+
+              "Os blueprints aproximam ações do consumidor, canais e atividades internas. Essa relação permite discutir causas e responsabilidades nas transições.",
+            ],
+
+            [
+              "Organizar oportunidades por jornada",
+
+              "A visão futura reúne propostas ao longo do ciclo de vida, apoiando a discussão de prioridades e a construção de um roadmap.",
+            ],
+          ].map(([title, description]) => (
+            <li key={title}>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ol>
+      ),
+    },
+
+    {
+      title:
+        "Matriz de 118 ideias priorizadas e baseline para o plano diretor de inovação.",
+
+      content: (
+        <>
+          <h3>Contribuições do trabalho de serviço</h3>
+          <List
+            items={[
+              "Organização de jornadas atuais e dependências do atendimento em 11 canais.",
+
+              "Blueprints e visão futura ao longo do ciclo de vida do consumidor.",
+
+              "Matriz de 118 ideias estruturadas para priorização executiva e discussão de roadmap.",
+            ]}
+          />
+          <CaseFigure
+            image={{
+              src: "/images/neoenergia-matriz-118-ideias.webp",
+
+              width: 2000,
+
+              height: 1195,
+
+              alt: "Matriz de Priorização com 118 Ideias de Inovação",
+
+              caption:
+                "Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
+            }}
+          />
+          <div className="cp-note">
+            <h3>Aprendizado central</h3>
+            <p>
+              Em serviços essenciais, a experiência digital depende do que
+              acontece depois do clique. Tornar visíveis as relações entre
+              consumidor, atendimento e operação é parte do trabalho de design.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
+      title:
+        "Fontes oficiais de P&D ANEEL, governança executiva e equipe EY × Livework.",
+
+      content: (
+        <div className="cp-appendix">
+          <details open>
+            <summary>Referências do projeto</summary>
+            <div>
+              <Sources project="neoenergia" />
+            </div>
+          </details>
+          <details>
+            <summary>Colaboração</summary>
+            <div>
+              <p>
+                Israel Rozar — Senior Product Designer / Service Designer, no
+                contexto de Business Transformation da EY, em colaboração com
+                Livework e áreas da Neoenergia. Jornadas, blueprints e propostas
+                são entregas de equipe multidisciplinar.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Alcance dos resultados apresentados</summary>
+            <div>
+              <p>
+                Os documentos e os blueprints sustentam o relato de discovery e
+                desenho de serviço. Não são apresentados como comprovados ROI,
+                conformidade WCAG, implantação de design system, aprovação de
+                orçamento ou efeito operacional de longo prazo. Os números de
+                escala pertencem ao contexto histórico da organização.
+              </p>
+            </div>
+          </details>
+        </div>
+      ),
+    },
+  ],
+}
+
+export function NeoenergiaPresentation() {
+  return <CasePresentation data={neoenergiaPresentation} />
+}
+
+const itauNarratives = {
+  vencimentos: {
+    summary:
+      "Conectar a identificação de vencimentos à atuação do especialista. A experiência organiza eventos financeiros, contexto do cliente e registro de ações para apoiar o acompanhamento da carteira.",
+
+    users:
+      "Especialistas de investimentos que acompanham clientes encarteirados e gestores que precisam compreender a atuação das equipes.",
+
+    contribution:
+      "Arquitetura de consulta, organização de filtros e tabelas, estados da interface e continuidade entre identificação do evento e atuação. O recorte de design é apresentado junto às funcionalidades descritas na base de conhecimento do produto.",
+
+    research:
+      "Os arquivos de exploração e handoff mostram a evolução da consulta e dos estados. A base de conhecimento explica o registro de ações, os pontos de entrada e a visão gerencial. A interface de Gestão de liquidez, nó 582:12520, é a versão mais recente confirmada pelo autor; os demais frames são tratados como histórico.",
+
+    constraints: [
+      "Distinguir vencimentos, eventos futuros e Open Finance sem fragmentar a lógica de consulta.",
+
+      "Preservar a relação entre data, produto, valor, cliente e situação da atuação em uma tabela densa.",
+
+      "Acomodar diferentes pontos de entrada: panorama, operações, contexto do cliente e acesso direto.",
+    ],
+
+    decisions: [
+      [
+        "Reutilizar a lógica de consulta",
+
+        "Abas distinguem contextos financeiros enquanto busca, filtros e tabela mantêm um padrão comum. Isso preserva as diferenças entre os eventos sem exigir reaprendizado de toda a navegação.",
+      ],
+
+      [
+        "Tornar o recorte da lista explícito",
+
+        "Período, produto, carteira, status e identificação do cliente ajudam a delimitar a consulta. A leitura dos filtros precisa acompanhar a interpretação de totais e estados.",
+      ],
+
+      [
+        "Conectar consulta e atuação",
+
+        "A base de conhecimento descreve registro de valor, comentários e informações de contato. O evento deve permanecer relacionado ao cliente durante a ação e no acompanhamento posterior.",
+      ],
+    ],
+
+    flow: [
+      "Localizar vencimentos da carteira a partir de um ponto de entrada do IFA.",
+
+      "Delimitar período e universo de clientes, produtos e status.",
+
+      "Interpretar data, valor e contexto do evento antes de atuar.",
+
+      "Registrar a ação e acompanhar a situação do vencimento; a visão gerencial agrega a atuação das equipes.",
+    ],
+
+    delivery: [
+      "Interface mais recente de consulta identificada e distinguida das explorações anteriores.",
+
+      "Estrutura compartilhada de busca, filtros, dados do cliente e estados da atuação.",
+
+      "Documentação de componentes, estados vazios e preparação para handoff.",
+    ],
+
+    learning:
+      "A utilidade de uma tabela financeira depende de ligar o sinal à ação. Mostrar um vencimento é apenas parte da tarefa: o especialista também precisa interpretar o contexto e reconhecer o que já foi tratado.",
+
+    boundary:
+      "Os artefatos descrevem interface e comportamento do produto. Não há, nesta apresentação, uma medição comparável de tempo, adoção ou resultado financeiro que permita atribuir impacto causal ao design.",
+
+    scope: "Consulta, filtros, estados e registro de atuação",
+  },
+
+  "hub-liquidez": {
+    summary:
+      "Reunir posição atual, variação prevista e liquidez projetada em uma visão que ajude o especialista a decidir sobre quais clientes atuar, mantendo a origem e o horizonte dos valores compreensíveis.",
+
+    users:
+      "Especialistas de investimentos que acompanham recursos disponíveis e oportunidades de atuação em suas carteiras.",
+
+    contribution:
+      "Hierarquia dos dados financeiros, distinção temporal dos valores e conexão entre visão de carteira, lista de clientes, filtros e estado da atuação.",
+
+    research:
+      "A leitura da interface confirmada, nó 3:14068 de Gestão de liquidez, mostra a relação entre posição atual, projeção e clientes para atuação. O texto da própria solução conecta o Hub aos valores de liquidez imediata identificados pelo Cofrinho IFA e ao acompanhamento de recursos que permanecem em conta.",
+
+    constraints: [
+      "Diferenciar dinheiro disponível agora de uma projeção para outra janela.",
+
+      "Manter a origem Itaú e Open Finance explícita durante a leitura.",
+
+      "Apresentar atualização do dado e status de atuação sem confundi-los com disponibilidade financeira.",
+    ],
+
+    decisions: [
+      [
+        "Separar posição, variação e projeção",
+
+        "O resumo apresenta total disponível agora, variação prevista e liquidez projetada. A relação visual entre os três valores explicita que representam conceitos e momentos diferentes.",
+      ],
+
+      [
+        "Dar contexto à janela de tempo",
+
+        "Fim do dia, 7 dias e 30 dias delimitam a projeção. A janela selecionada acompanha o título do valor projetado para reduzir interpretações fora do período.",
+      ],
+
+      [
+        "Ligar o resumo à fila de trabalho",
+
+        "A tabela aproxima cliente, carteira, agência/conta, disponível agora, total projetado e status. Busca, origem e faixas de valor permitem delimitar o universo antes da ação.",
+      ],
+    ],
+
+    flow: [
+      "Consultar a posição da carteira e a informação de atualização.",
+
+      "Selecionar a janela da projeção e comparar disponível, variação e total projetado.",
+
+      "Filtrar por origem e faixa de valor ou localizar um cliente.",
+
+      "Aprofundar o cliente preservando a leitura do valor e do estado de atuação.",
+    ],
+
+    delivery: [
+      "Interface que conecta resumo de liquidez e clientes para atuação.",
+
+      "Distinção visual de origem, janela temporal e situação do atendimento.",
+
+      "Busca e filtros posicionados junto à tabela operacional.",
+    ],
+
+    learning:
+      "Priorizar uma oportunidade exige explicar o dado. A hierarquia deve permitir distinguir valor observado, variação conhecida e projeção antes de sugerir uma ação ao especialista.",
+
+    boundary:
+      "Os valores e percentuais do protótipo são exemplos de interface. Não são resultados do projeto. A regra de ordenação dos clientes e os contratos de cálculo não são comprovados pela captura da solução.",
+
+    scope: "Hierarquia financeira, projeção e clientes para atuação",
+  },
+
+  movimentacoes: {
+    summary:
+      "Preservar a continuidade operacional na transição do Extrato EA para o IFA. A solução mantém o saldo provisionado visível no cabeçalho entre jornadas; Movimentações concentra a consulta detalhada e o contexto de CEP, CEP Plus e limite.",
+
+    users:
+      "Assessores e especialistas que precisam consultar lançamentos, compreender saldos e explicar movimentações de seus clientes.",
+
+    contribution:
+      "Arquitetura da informação, comparação de alternativas de visibilidade do saldo e definição da relação entre contexto financeiro persistente e consulta detalhada.",
+
+    research:
+      "A documentação de discovery registra alternativas para acomodar o Extrato EA no IFA. A base de conhecimento detalha conta corrente, investimentos e conta gráfica. A solução final de arquitetura adotada neste relato segue a confirmação explícita do autor: provisionado persistente, com CEP, CEP Plus e limite contextualizados em Movimentações.",
+
+    constraints: [
+      "O saldo provisionado é necessário em diferentes jornadas e não pode depender de troca de aba.",
+
+      "Conta corrente, investimentos e conta gráfica têm informações próprias e precisam permanecer distinguíveis.",
+
+      "Consulta por período, busca e ordenação devem manter contexto suficiente para interpretar os lançamentos.",
+    ],
+
+    decisions: [
+      [
+        "Manter o provisionado no cabeçalho",
+
+        "O acesso transversal evita exigir navegação até Movimentações para consultar um saldo necessário em outras tarefas. Esta é a solução confirmada pelo autor.",
+      ],
+
+      [
+        "Contextualizar os limites em Movimentações",
+
+        "CEP, CEP Plus e limite permanecem junto ao aprofundamento financeiro. A distinção preserva a função do cabeçalho sem transportar todo o extrato para a navegação global.",
+      ],
+
+      [
+        "Separar domínios com consulta consistente",
+
+        "A base de conhecimento distingue lançamentos de conta corrente, movimentos de investimentos e conta gráfica. Período, busca e ordenação apoiam a consulta, respeitando os dados específicos de cada domínio.",
+      ],
+    ],
+
+    flow: [
+      "Consultar o saldo provisionado no cabeçalho durante diferentes jornadas.",
+
+      "Acessar Movimentações para aprofundar conta corrente, investimentos ou conta gráfica.",
+
+      "Delimitar período e localizar lançamentos pela descrição e demais opções disponíveis no módulo.",
+
+      "Interpretar datas, valores e detalhes da operação com os limites no contexto de Movimentações.",
+    ],
+
+    delivery: [
+      "Definição da relação entre informação persistente e informação contextual.",
+
+      "Registro das alternativas de arquitetura e distinção da solução escolhida.",
+
+      "Organização da consulta financeira em domínios com diferentes níveis de detalhe.",
+    ],
+
+    learning:
+      "A informação usada entre jornadas deve acompanhar o trabalho. Concentrar tudo em uma página especializada pode preservar a organização interna e, ainda assim, dificultar uma tarefa transversal.",
+
+    boundary:
+      "O relato distingue a decisão de arquitetura confirmada pelo autor das alternativas históricas. Não atribui redução de conciliação, ganho de tempo ou implantação a uma comparação que não está documentada.",
+
+    scope: "Arquitetura do extrato e contexto financeiro transversal",
+  },
+
+  campanhas: {
+    summary:
+      "Conectar configuração, execução comercial e acompanhamento gerencial. O sistema de campanhas permite direcionar ações a especialistas e clientes específicos, tornando público, vigência e situação da atuação parte da experiência.",
+
+    users:
+      "Administradores de backoffice que configuram campanhas; especialistas que atuam com os clientes; gestores que acompanham a execução das equipes.",
+
+    contribution:
+      "Organização dos fluxos de configuração, consulta e manutenção, hierarquia dos dados e cobertura de estados. O relato também conecta esse recorte de interface aos três perfis descritos na base de conhecimento.",
+
+    research:
+      "Os screenflows e a exploração de configuração explicam informações gerais, público, campos personalizados e estados de processamento. A base de conhecimento amplia o contexto: administração, execução pelo especialista e acompanhamento por hierarquia gerencial são partes do mesmo serviço.",
+
+    constraints: [
+      "Combinar público, vigência e ativação para controlar a visibilidade da campanha.",
+
+      "Acomodar importação de base, processamento e estados de erro sem confundir configuração com execução.",
+
+      "Distinguir permissões e tarefas de administradores, especialistas e gestores.",
+    ],
+
+    decisions: [
+      [
+        "Configurar antes de disponibilizar",
+
+        "Nome, descrição, tipo, categoria, público e vigência definem o contexto da campanha. A ativação determina sua visibilidade para o público de especialistas.",
+      ],
+
+      [
+        "Explicitar estado e consequência",
+
+        "Carregamento, vazio, processamento e erro orientam a leitura da base e as ações de manutenção. A experiência precisa tornar reconhecível quando uma campanha pode ser disponibilizada ou retirada.",
+      ],
+
+      [
+        "Conectar atuação e acompanhamento",
+
+        "A documentação descreve evolução de Pendente para Em andamento e Atuado, com valor e comentários. Gestores acompanham atuações consolidadas conforme a hierarquia organizacional; atuação registrada não equivale automaticamente a conversão de vendas.",
+      ],
+    ],
+
+    flow: [
+      "O administrador define campanha, público, vigência e informações da base.",
+
+      "A base é importada e seu processamento é acompanhado; a campanha é ativada para o público definido.",
+
+      "O especialista consulta campanhas e clientes e registra a atuação.",
+
+      "O gestor acompanha a execução por campanha e período dentro de sua hierarquia.",
+    ],
+
+    delivery: [
+      "Fluxos de configuração, consulta e manutenção organizados em screenflows.",
+
+      "Exploração de informações gerais, público e campos personalizados.",
+
+      "Cobertura de estados que orientam leitura e ação na administração da campanha.",
+    ],
+
+    learning:
+      "Uma operação em lote depende da continuidade entre quem prepara a base, quem executa a ação e quem acompanha o trabalho. O estado da campanha precisa fazer sentido nos três contextos.",
+
+    boundary:
+      "O frame de configuração é uma exploração histórica com textos exemplificativos. A base de conhecimento descreve regras funcionais, mas não comprova ganhos de conversão, receita ou produtividade atribuíveis ao projeto.",
+
+    scope: "Configuração, consulta, estados e acompanhamento de atuação",
+  },
+
+  "registros-atendimento": {
+    summary:
+      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por IA. A proposta aproxima os cinco resumos recentes do momento de consulta e registro.",
+
+    users:
+      "Profissionais da assessoria que precisam retomar o histórico do cliente e registrar o conteúdo relevante de um atendimento.",
+
+    contribution:
+      "Recorte de interação entre consulta ao histórico e apoio ao registro. A direção descrita no relato anterior do portfólio conecta essas duas tarefas do atendimento.",
+
+    research:
+      "O relato disponível descreve resumos inteligentes e acesso aos cinco registros recentes. Esse é o recorte que pode ser apresentado com precisão. O foco deste recorte é a relação entre consulta ao histórico recente e elaboração do registro.",
+
+    constraints: [
+      "Distinguir apoio à elaboração de texto de confirmação de que o conteúdo está correto.",
+
+      "Considerar omissões e alterações de sentido ao avaliar o resumo.",
+
+      "Manter a retomada de contexto ligada ao trabalho real de atendimento.",
+    ],
+
+    decisions: [
+      [
+        "Aproximar histórico e tarefa",
+
+        "A consulta aos cinco resumos recentes é a direção descrita no relato anterior para apoiar a retomada de contexto durante o trabalho.",
+      ],
+
+      [
+        "Tratar o resumo como assistência",
+
+        "A apresentação distingue conteúdo gerado de registro validado. Revisão humana é o critério de qualidade discutido neste recorte, sem afirmar um mecanismo de confirmação não demonstrado por telas.",
+      ],
+
+      [
+        "Avaliar qualidade junto com esforço",
+
+        "O raciocínio de avaliação considera fidelidade, omissões e esforço de correção. Velocidade isolada não demonstra que um registro preserve o sentido do atendimento.",
+      ],
+    ],
+
+    flow: [
+      "Retomar o contexto do cliente consultando os resumos recentes.",
+
+      "Utilizar o apoio de sumarização no trabalho de registro, conforme o recorte descrito no relato.",
+
+      "Revisar o conteúdo e sua relação com o atendimento — critério de qualidade, sem especificar controles de interface ainda não apresentados.",
+    ],
+
+    delivery: [
+      "Problema de documentação e recuperação de contexto explicitado.",
+
+      "Direção de interação entre histórico recente e resumos assistidos por IA.",
+
+      "Critérios de qualidade separados de uma alegação de ganho de produtividade.",
+    ],
+
+    learning:
+      "Em uma tarefa de registro, economizar digitação só tem valor quando o conteúdo preserva o atendimento. A discussão de qualidade precisa acompanhar a discussão de tempo.",
+
+    boundary:
+      "Este é um relato de escopo reduzido, baseado na descrição anterior do portfólio. Telas, protocolo de avaliação e contribuição por etapa ainda não estão recuperados; por isso não são declarados resultado medido, piloto ou implantação.",
+
+    scope: "Consulta ao histórico e proposta de sumarização assistida",
+  },
+}
+
+export function ItauPresentation() {
+  const { caseSlug = "" } = useParams()
+
+  const isKnownCase = (slug: string) =>
+    Object.prototype.hasOwnProperty.call(cases, slug) &&
+    Object.prototype.hasOwnProperty.call(itauNarratives, slug)
+
+  if (!isKnownCase(caseSlug)) return <NotFound />
+
+  const project = cases[caseSlug]
+
+  const story = itauNarratives[(caseSlug as keyof typeof itauNarratives)]
+
+  const order = [
+    "vencimentos",
+
+    "hub-liquidez",
+
+    "movimentacoes",
+
+    "campanhas",
+
+    "registros-atendimento",
+  ]
+
+  const index = order.indexOf(caseSlug)
+
+  const target = (slug: string): CaseNavTarget => ({
+    title: cases[slug].title,
+
+    href: `/cases/itau/${slug}`,
+
+    context: "Itaú · Design de produto",
+  })
+
+  const visuals = project.visuals || []
+
+  const kbNodes: Record<string, string> = {
+    vencimentos: "593-126008",
+
+    movimentacoes: "593-126014",
+
+    campanhas: "593-125976",
+  }
+
+  const data: CasePresentationData = {
+    title: `Itaú · ${project.title}`,
+
+    context: "Itaú Unibanco · íon for Advisors",
+
+    headline: project.title,
+
+    subtitle: project.subtitle,
+
+    role: "Senior Product Designer",
+
+    team: "Design, Produto, Engenharia e áreas de negócio",
+
+    scope: story.scope,
+
+    kicker: "Fintech · Itaú Unibanco",
+
+    hero: visuals[0],
+
+    cover: !visuals.length
+      ? {
+          heading:
+            caseSlug === "movimentacoes"
+              ? "O contexto financeiro acompanha a jornada."
+              : "Contexto e registro no mesmo fluxo de trabalho.",
+
+          items:
+            caseSlug === "movimentacoes"
+              ? [
+                  "Provisionado visível",
+
+                  "Movimentações em contexto",
+
+                  "Continuidade da consulta",
+                ]
+              : [
+                  "Histórico recente",
+
+                  "Resumo assistido",
+
+                  "Revisão do conteúdo",
+                ],
+
+          note: "Síntese editorial do recorte apresentado. Não representa uma interface implementada nem substitui as evidências do projeto.",
+        }
+      : undefined,
+
+    prevCase: target(order[(index + order.length - 1) % order.length]),
+
+    nextCase: target(order[(index + 1) % order.length]),
+
+    chapters: [
+      {
+        title: "O projeto em perspectiva.",
+
+        content: (
+          <>
+            <div className="cp-summary">
+              <p>{story.summary}</p>
+            </div>
+            <div className="cp-columns">
+              <div>
+                <h3>Para quem</h3>
+                <p>{story.users}</p>
+              </div>
+              <div>
+                <h3>Recorte de atuação em design</h3>
+                <p>{story.contribution}</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        title: "Contexto, problema e objetivo.",
+
+        content: (
+          <>
+            <p>{project.framing}</p>
+            <div className="cp-note">
+              <h3>Pergunta de design</h3>
+              <p>{project.question}</p>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        title: "Descoberta e critérios de decisão.",
+
+        content: (
+          <>
+            <p>{story.research}</p>
+            <h3>O que precisava permanecer compreensível</h3>
+            <List items={story.constraints} />
+          </>
+        ),
+      },
+
+      {
+        title: "Decisões e suas razões.",
+
+        content: (
+          <ol className="cp-decisions">
+            {story.decisions.map(([title, description]) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </li>
+            ))}
+          </ol>
+        ),
+      },
+
+      {
+        title: "Como a solução organiza a jornada.",
+
+        content: (
+          <>
+            <ol className="cp-list">
+              {story.flow.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+            {visuals.length > 1 && (
+              <div className="cp-gallery">
+                {visuals.slice(1).map((image) => (
+                  <CaseFigure key={image.src} image={image} />
+                ))}
+              </div>
+            )}
+          </>
+        ),
+      },
+
+      {
+        title: "Entregas e aprendizado.",
+
+        content: (
+          <>
+            <h3>O que este recorte apresenta</h3>
+            <List items={story.delivery} />
+            <div className="cp-note">
+              <h3>Aprendizado de design</h3>
+              <p>{story.learning}</p>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        title: "Fontes, colaboração e alcance.",
+
+        content: (
+          <div className="cp-appendix">
+            <details open>
+              <summary>Referências do projeto</summary>
+              <div>
+                <Sources project={caseSlug} />
+                {kbNodes[caseSlug] && (
+                  <p>
+                    <a
+                      href={`https://www.figma.com/design/aASd7epPB9NlC0xIY53eOC/IFA---PROTOTIPO-COMPLETO?node-id=${kbNodes[caseSlug]}`}
+                    >
+                      Base de conhecimento funcional do produto
+                    </a>
+                  </p>
+                )}
+                {caseSlug === "registros-atendimento" && (
+                  <p>
+                    Referência: relato de Registros de Atendimento no portfólio
+                    anterior. As evidências visuais serão incorporadas
+                    posteriormente.
+                  </p>
+                )}
+              </div>
+            </details>
+            <details>
+              <summary>Colaboração e período</summary>
+              <div>
+                <p>
+                  Israel Rozar — Product Design no contexto de assessoria e
+                  operações do Itaú. Período profissional apresentado na
+                  trajetória: 2024–2026; não representa a duração individual
+                  deste projeto. O trabalho envolve colaboração com Design,
+                  Produto, Engenharia e áreas de negócio; as entregas do produto
+                  não são atribuídas como realização individual.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Alcance das evidências</summary>
+              <div>
+                <p>{story.boundary}</p>
+              </div>
+            </details>
+          </div>
+        ),
+      },
+    ],
+  }
+
+  return <CasePresentation data={data} />
+}
