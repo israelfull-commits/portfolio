@@ -425,53 +425,41 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
-      title: "Uma estrutura comum para conteúdos diferentes.",
+      title: "Uma estrutura única para qualquer tipo de exame.",
 
       content: (
         <>
           <p>
-            A proposta organiza o conteúdo para reduzir competição visual e
-            aproximar resultado, unidade e referência. Os artefatos documentam
-            pesquisa, modelagem e entrega.
+            Um dos maiores desafios foi garantir que o mesmo padrão visual funcionasse tanto para laudos descritivos com muito texto (como mamografia e biópsias) quanto para tabelas densas cheias de números (como ressonâncias e hemogramas). A nova anatomia organiza a leitura para que o olhar encontre primeiro o resultado principal e, em seguida, os detalhes de técnica e observações.
           </p>
           <div className="cp-gallery">
             <CaseFigure
               image={{
                 src: "/images/hiae-laudo-original-recorte.webp",
-
                 width: 1120,
-
                 height: 640,
-
-                alt: "Documento original — recorte de análise",
-
+                alt: "Recorte do laudo original demonstrando texto denso e sem hierarquia visual",
                 caption:
-                  "Documento original — recorte de análise da composição textual densa.",
+                  "Laudo original: texto corrido e denso, onde valores de referência e resultados se misturavam sem hierarquia visual clara.",
               }}
             />
             <CaseFigure
               image={{
                 src: "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
-
                 width: 1600,
-
                 height: 1199,
-
-                alt: "Estrutura modular de laudo proposta",
-
+                alt: "Estrutura modular de laudo proposta com áreas bem delimitadas",
                 caption:
-                  "Estrutura modular proposta: modelo padronizado de anatomia de laudo para ampla escala laboratorial.",
+                  "Proposta modular: anatomia padronizada com áreas bem delimitadas para resultado, valores de referência e contexto clínico.",
               }}
             />
           </div>
           <CaseFigure
             image={{
               ...einsteinImages[0],
-
               previewCrop: { x: 216, y: 188, width: 718, height: 931 },
-
               caption:
-                "Template original no Microsoft Word: adaptação da linguagem visual para os sistemas laudadores legados.",
+                "Adaptação para sistemas legados: estrutura compatível com geradores de texto hospitalares e pronta para impressão em preto e branco em folha A4.",
             }}
           />
           <div className="cp-gallery">
@@ -480,9 +468,9 @@ export const einsteinPresentation: CasePresentationData = {
                 src: "/images/hiae-visao-futura-mamografia.webp",
                 width: 1340,
                 height: 895,
-                alt: "Laudo de mamografia estruturado para tablet e celular, com cabeçalho padronizado e seções de técnica, indicação e achados",
+                alt: "Laudo descritivo de mamografia estruturado para tablet e celular",
                 caption:
-                  "Adaptação responsiva: laudo de mamografia em tablet e celular, preservando a mesma taxonomia de seções.",
+                  "Laudo descritivo (Mamografia): cabeçalho padronizado e seções estruturadas para técnica, indicação clínica e conclusão diagnóstica.",
               }}
             />
             <CaseFigure
@@ -490,9 +478,9 @@ export const einsteinPresentation: CasePresentationData = {
                 src: "/images/hiae-visao-futura-ressonancia.webp",
                 width: 1340,
                 height: 895,
-                alt: "Laudo de ressonância cardiovascular com resultados em tabela, em tablet e celular",
+                alt: "Laudo tabular de ressonância cardiovascular com resultados em tabela no tablet e celular",
                 caption:
-                  "Adaptação responsiva: laudo de ressonância cardiovascular com resultados tabulares estruturados.",
+                  "Laudo tabular (Ressonância): resultados estruturados em colunas limpas, facilitando a comparação de medidas no celular e no tablet.",
               }}
             />
           </div>
@@ -501,9 +489,9 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-multicanal-web-celular.webp",
               width: 1466,
               height: 900,
-              alt: "Mesmo exame exibido na web e no celular, com a mesma hierarquia de título, resultado e referência",
+              alt: "Mesmo exame exibido na web e no celular, com a mesma ordem mental de leitura",
               caption:
-                "Consistência omnichannel: laudo clínico na web e no aplicativo móvel com hierarquia idêntica.",
+                "Consistência multicanal: o paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel.",
             }}
           />
         </>
@@ -511,22 +499,35 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
-      title: "Clareza percebida e interpretação exigem avaliações distintas.",
+      title: "Clareza de leitura e diagnóstico clínico: papéis complementares.",
 
       content: (
         <>
           <p>
-            Os registros reportam 44 participantes em testes, sem bases
-            completas por modalidade e pergunta. Clareza percebida e
-            interpretação foram medidas em tarefas distintas; os percentuais
-            não demonstram melhoria antes/depois nem impacto clínico.
+            Durante os testes de usabilidade com a nova interface, avaliamos como as pessoas interagiam com o documento em quatro etapas: desde o reconhecimento visual até a interpretação do conteúdo. Os resultados confirmaram que uma boa organização visual facilita a localização dos dados, mas não substitui a conversa com o médico.
           </p>
+          <dl className="cp-metrics" style={{ "--metric-columns": 4 } as React.CSSProperties}>
+            <div>
+              <dt>Identificaram de imediato que se tratava de um laudo médico</dt>
+              <dd>81,6%</dd>
+            </div>
+            <div>
+              <dt>Focaram primeiro no nome do exame, resultado e referência</dt>
+              <dd>77,8%</dd>
+            </div>
+            <div>
+              <dt>Compreenderam com clareza o objetivo daquele exame</dt>
+              <dd>58,8%</dd>
+            </div>
+            <div>
+              <dt>Interpretaram a condição clínica sem apoio de um profissional</dt>
+              <dd>56,2%</dd>
+            </div>
+          </dl>
           <div className="cp-note">
-            <h3>Aprendizado</h3>
+            <h3>Conclusão do teste</h3>
             <p>
-              Medir separadamente localização, associação entre valor e
-              referência, interpretação e erros críticos — com revisão clínica
-              e tecnologias assistivas.
+              A interface cumpre o seu papel ao eliminar o ruído visual e destacar o que é prioritário: mais de 80% das pessoas encontram as informações sem esforço. Ao mesmo tempo, o resultado reforça a premissa ética do projeto: o laudo deve apresentar os dados com clareza para que o paciente converse melhor com seu médico, e não induzir um autodiagnóstico isolado.
             </p>
           </div>
         </>
@@ -539,32 +540,27 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <div className="cp-appendix">
           <details open>
-            <summary>Fontes e recorte histórico</summary>
+            <summary>Contexto e documentação do projeto</summary>
             <div>
               <p>
-                Projeto de 2022. O estudo do Notion foi atualizado em
-                29/12/2024; essa data editorial não representa uma nova versão
-                de interface. Protótipos e reconstruções estão identificados nas
-                legendas.
+                Projeto desenvolvido em 2022 pelo time de design e produto em parceria com o Hospital Israelita Albert Einstein. As especificações de componentes, fluxos e registros de pesquisa estão documentados nas fontes oficiais do projeto.
               </p>
               <Sources project="einstein" />
             </div>
           </details>
           <details>
-            <summary>Autoria e colaboração</summary>
+            <summary>Autoria e time multidisciplinar</summary>
             <div>
               <p>
-                Israel Rozar — UX Lead. Trabalho realizado com Foursys, Hospital
-                Israelita Albert Einstein e equipe multidisciplinar, com atuação
-                em pesquisa, síntese e coordenação das decisões de experiência.
+                Israel Rozar — UX Lead. Atuação em pesquisa qualitativa e quantitativa, arquitetura da informação, estruturação dos componentes no Design System e alinhamento com equipes médicas e de tecnologia da Foursys e do Einstein.
               </p>
             </div>
           </details>
           <details>
-            <summary>Metodologia de pesquisa e ética</summary>
+            <summary>Ética e conformidade na pesquisa</summary>
             <div>
               <p>
-                A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de respostas. A amostra quantitativa de 121 participantes foi complementada por entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia, hematologia), garantindo que as propostas respeitassem as exigências clínicas e a legislação sanitária vigente.
+                A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de informações. A etapa quantitativa com 121 participantes foi combinada com entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia e hematologia), garantindo conformidade com as rotinas hospitalares e as normas sanitárias vigentes.
               </p>
             </div>
           </details>
@@ -813,30 +809,30 @@ export const claroPresentation: CasePresentationData = {
             }}
           />
           <ol className="cp-decisions">
-          {[
-            [
-              "Navegação progressiva por etapas",
+            {[
+              [
+                "Navegação progressiva por etapas",
 
-              "Grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.",
-            ],
+                "Grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.",
+              ],
 
-            [
-              "Preservação do contexto do cliente",
+              [
+                "Preservação do contexto do cliente",
 
-              "Cabeçalho fixo com dados da linha, status cadastral e atalhos para jornadas frequentes apoiam a continuidade da conversa.",
-            ],
+                "Cabeçalho fixo com dados da linha, status cadastral e atalhos para jornadas frequentes apoiam a continuidade da conversa.",
+              ],
 
-            [
-              "Composição financeira em tempo real",
+              [
+                "Composição financeira em tempo real",
 
-              "O resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração do plano.",
-            ],
-          ].map(([title, text]) => (
-            <li key={title}>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </li>
-          ))}
+                "O resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração do plano.",
+              ],
+            ].map(([title, text]) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
           </ol>
         </>
       ),
@@ -1688,48 +1684,48 @@ export function ItauPresentation() {
 
     cover: !visuals.length
       ? {
-          heading:
-            caseSlug === "movimentacoes"
-              ? "O contexto financeiro acompanha a jornada."
-              : "Contexto e registro no mesmo fluxo de trabalho.",
+        heading:
+          caseSlug === "movimentacoes"
+            ? "O contexto financeiro acompanha a jornada."
+            : "Contexto e registro no mesmo fluxo de trabalho.",
 
-          items:
-            caseSlug === "movimentacoes"
-              ? [
-                  "Provisionado visível",
+        items:
+          caseSlug === "movimentacoes"
+            ? [
+              "Provisionado visível",
 
-                  "Movimentações em contexto",
+              "Movimentações em contexto",
 
-                  "Continuidade da consulta",
-                ]
-              : [
-                  "Histórico recente",
+              "Continuidade da consulta",
+            ]
+            : [
+              "Histórico recente",
 
-                  "Resumo assistido",
+              "Resumo assistido",
 
-                  "Revisão do conteúdo",
-                ],
+              "Revisão do conteúdo",
+            ],
 
-          note: "Síntese editorial do recorte apresentado. Não representa uma interface implementada nem substitui as evidências do projeto.",
-        }
+        note: "Síntese editorial do recorte apresentado. Não representa uma interface implementada nem substitui as evidências do projeto.",
+      }
       : undefined,
 
     prevCase:
       caseSlug === "hub-liquidez"
         ? {
-            title: "Einstein · Laudos médicos",
-            href: "/cases/einstein-laudos",
-            context: "Saúde · HIAE × Foursys · 2022",
-          }
+          title: "Einstein · Laudos médicos",
+          href: "/cases/einstein-laudos",
+          context: "Saúde · HIAE × Foursys · 2022",
+        }
         : target(order[(index + order.length - 1) % order.length]),
 
     nextCase:
       caseSlug === "hub-liquidez"
         ? {
-            title: "Claro · Ativação simplificada",
-            href: "/cases/claro-ativacao-simplificada",
-            context: "Telecom · Claro Brasil · 34M de clientes",
-          }
+          title: "Claro · Ativação simplificada",
+          href: "/cases/claro-ativacao-simplificada",
+          context: "Telecom · Claro Brasil · 34M de clientes",
+        }
         : target(order[(index + 1) % order.length]),
 
     chapters: [

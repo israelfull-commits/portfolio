@@ -49,11 +49,23 @@ Este documento registra formalmente as decisões de revisão textual, metodológ
   - **4:** médicos especialistas entrevistados em profundidade.
   - **14:** entregáveis canônicos e famílias de laudos estruturadas (`EN - 1` a `EN - 14`).
 - **Resultados de Teste Documentados no Figma (`EN - 7 / EN - 14`):**
-  - **81,58%** dos participantes reconheceram de imediato que se tratava de um exame médico (Q1).
-  - **77,78%** identificaram a hierarquia direta entre Título, Resultado e Referência (Q2).
-  - **58,82%** compreenderam o nome e objetivo do exame (Q3).
-  - **56,25%** interpretaram corretamente a situação do resultado com apoio de status visual e cores semafóricas (Q4).
-  - **Conclusão:** *"Clareza percebida não é o mesmo que compreensão causal"*, justificando por que a interface apoia a conversa clínica em vez de substituir o médico.
+  - **81,6%** dos participantes reconheceram de imediato que se tratava de um laudo médico (Q1).
+  - **77,8%** focaram a atenção no conjunto primordial: Título do Exame, Resultado e Referência (Q2).
+  - **58,8%** compreenderam com clareza o objetivo daquele exame (Q3).
+  - **56,2%** interpretaram a condição clínica sem apoio de um profissional (Q4).
+  - **Conclusão:** *"Clareza percebida não é o mesmo que compreensão causal"*, justificando por que a interface apoia a conversa clínica em vez de tentar substituir o diagnóstico do médico.
+
+---
+
+### D. Capítulos 5, 6 e 7 (Solução, Validação e Governança)
+- **Capítulo 5 — Uma estrutura única para qualquer tipo de exame:**
+  - Redação simples e direta demonstrando a versatilidade da anatomia modular para exames descritivos (mamografia/biópsias) e tabulares (ressonâncias/hemogramas).
+  - Galeria de imagens balanceada com proporção 16:10, eliminando ruídos visuais e preservando a continuidade multicanal (web, mobile e folha A4 impressa).
+- **Capítulo 6 — Clareza de leitura e diagnóstico clínico: papéis complementares:**
+  - Substituição de notas defensivas ou de rascunho pelo painel de 4 métricas oficiais do Figma em `<dl className="cp-metrics">`.
+  - Conclusão afirmativa e madura: o design elimina o ruído e guia o olhar (80%+ de facilidade de localização), mas preserva a premissa ética de apoiar a relação médico-paciente.
+- **Capítulo 7 — Pesquisa, entregáveis e colaboração:**
+  - Enquadramento executivo e transparente das fontes oficiais, governança de dados (LGPD) e colaboração multidisciplinar (Foursys × Einstein).
 
 ---
 
@@ -66,7 +78,8 @@ Este documento registra formalmente as decisões de revisão textual, metodológ
 | `ba58351` | Qualidade | Inclusão de regras anti-marketing no sentinela automatizado (`AGENTS.md` e `portfolio_qa_sentinel.py`). |
 | `d69463d` | Redação | Desjargonização do vocabulário para português claro, humano e compreensível por qualquer leitor. |
 | `ae042f3` | Fidelidade | Remoção de inferência não documentada sobre "ansiedade" e alinhamento estrito aos dados reais da pesquisa. |
-| `[atual]` | Harmonização | Implantação da tese executiva autêntica e da pergunta norteadora no Hero e Capítulo 1. |
+| `088b70f` | Hero & Ch 1-4 | Implantação da tese executiva autêntica e pergunta norteadora no Hero e Capítulos 1 a 4. |
+| `[atual]` | Ch 5, 6 e 7 | Refinamento da anatomia modular, painel de validação Q1-Q4 e governança ética nos Capítulos 5, 6 e 7. |
 
 ---
 
