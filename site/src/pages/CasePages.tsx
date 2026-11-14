@@ -192,7 +192,7 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Clareza não é o mesmo que compreensão.",
 
   subtitle:
-    "Pesquisa e arquitetura de informação para estruturar mais de 80 exames distintos em uma linguagem modular previsível, facilitando a tomada de decisão médica e reduzindo a ansiedade de pacientes.",
+    "Pesquisa e arquitetura de informação para estruturar mais de 80 exames distintos em uma linguagem modular previsível, facilitando a tomada de decisão médica e a localização de informações pelo paciente para a consulta clínica.",
 
   role: "UX Lead",
 
@@ -230,10 +230,10 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p className="cp-lead">
-              O objetivo central é clareza, compreensão e facilidade para interpretar resultados: apoiar a tomada de decisão médica com agilidade e permitir que o paciente entenda sua própria saúde sem ansiedade.
+              O objetivo central é clareza, compreensão e facilidade para interpretar resultados: apoiar a tomada de decisão médica com rapidez e permitir que o paciente localize o que importa para levar à consulta clínica.
             </p>
             <p>
-              Em hospitais e laboratórios, cada exame costumava ter um formato diferente. Informações críticas ficavam dispersas: o paciente sentia insegurança ao não entender os valores de referência, e o médico perdia tempo buscando métodos e observações em partes separadas da folha.
+              Em hospitais e laboratórios, cada exame costumava ter um formato diferente. Informações importantes ficavam dispersas: o paciente tinha dificuldade para encontrar seu resultado, e o médico perdia tempo buscando métodos e observações em partes separadas da folha.
             </p>
           </div>
           <CaseMetrics
@@ -309,7 +309,7 @@ export const einsteinPresentation: CasePresentationData = {
             items={[
               "Como o médico trabalha: em uma consulta rápida ou no pronto-socorro, ele precisa bater o olho e identificar em 3 segundos se algum número está fora do padrão.",
 
-              "Como o paciente lê: termos técnicos e tabelas densas causam ansiedade. O paciente quer entender com clareza o que aquele resultado significa antes mesmo da consulta.",
+              "Como o paciente lê: busca o próprio resultado e precisa localizar o que importa para levar à conversa médica, sem se perder em termos técnicos ou fazer interpretações clínicas isoladas.",
 
               "Limitações dos sistemas: mapeamos o tamanho dos textos e tabelas para garantir que nenhuma palavra ou número ficasse cortado em qualquer impressora.",
             ]}
