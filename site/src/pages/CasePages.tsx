@@ -259,23 +259,20 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-columns">
             <div>
-              <h3>O cenário</h3>
+              <h3>Restrições técnicas e interoperabilidade</h3>
               <p>
-                A experiência precisava funcionar no digital e no papel, em
-                sistemas de fornecedores distintos e com recursos limitados para
-                configurar templates. Em alguns cenários, o conteúdo era
-                estruturado no Microsoft Word.
+                O projeto demandava paridade estrutural entre a impressão física A4 e os canais digitais responsivos, operando sobre sistemas legados de emissão diagnóstica (LIS/PACS) com capacidade limitada de estilização. A solução de design precisava ser implementável na infraestrutura hospitalar vigente sem introduzir incompatibilidade de renderização.
               </p>
             </div>
             <div>
-              <h3>O mandato</h3>
+              <h3>Requisitos de arquitetura da informação</h3>
               <List
                 items={[
-                  "Dar hierarquia estável ao nome do exame, material, resultado e referência.",
+                  "Ancoragem determinística: nome do exame, material biológico, resultado analítico e intervalo de referência dispostos em bloco unificado por proximidade visual.",
 
-                  "Manter comentários, método e contexto clínico próximos.",
+                  "Desacoplamento de metadados: isolamento de identificadores de amostra, datas e dados administrativos em área secundária para redução de ruído cognitivo.",
 
-                  "Respeitar variações de dados e restrições dos sistemas laudadores.",
+                  "Tolerância dimensional: grid e tipografia dimensionados para acomodar textos clínicos extensos, múltiplos parâmetros tabulares e laudos descritivos.",
                 ]}
               />
             </div>
@@ -285,17 +282,15 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-estado-proposto-anotado.webp",
               width: 2000,
               height: 1076,
-              alt: "Laudo proposto anotado, com título, resultado e referência agrupados e metadados separados",
+              alt: "Laudo proposto anotado demonstrando ancoragem entre título, resultado e referência, e separação de metadados administrativos",
               caption:
-                "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Dados clínicos anonimizados (LGPD).",
+                "Estado proposto: taxonomia modular com resultado analítico, unidade de medida e referência agrupados; metadados administrativos e observações clínicas isolados em contêineres secundários. Dados sintetizados e anonimizados em conformidade com a LGPD e o sigilo médico.",
             }}
           />
           <div className="cp-note">
-            <h3>Minha contribuição</h3>
+            <h3>Atuação técnica como UX Lead</h3>
             <p>
-              Atuação como UX Lead no projeto HIAE × Foursys, articulando
-              pesquisa, estrutura da informação e decisões de experiência com a
-              equipe multidisciplinar.
+              Liderança técnica da modelagem da informação e design system no projeto HIAE × Foursys, articulando requisitos entre equipes multidisciplinares de tecnologia hospitalar, operações laboratoriais e governança clínica.
             </p>
           </div>
         </>
@@ -308,18 +303,15 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            A descoberta reuniu quatro entrevistas médicas, questionário
-            exploratório e análise documental. A análise cobriu mais de 80 exames
-            distintos e 14 categorias de laudos; recortes menores representam
-            subconjuntos do acervo.
+            A fase de Product Discovery integrou auditoria de inventário sobre <strong>mais de 80 exames clínicos e laboratoriais</strong> a entrevistas semiestruturadas com 4 médicos especialistas e pesquisa quantitativa com 121 pacientes. A modelagem resultante classificou a totalidade do acervo em <strong>14 categorias canônicas de laudos</strong>, padronizando a estrutura sintática de exames numéricos simples até relatórios de imagem complexos.
           </p>
           <List
             items={[
-              "Entrevistas com especialidades e contextos de atendimento distintos.",
+              "Mapeamento de protocolos de leitura: observação de fluxos de decisão ambulatorial e hospitalar para identificação de prioridade visual no diagnóstico.",
 
-              "Análise de comportamentos e canais preferidos dos pacientes.",
+              "Avaliação de compreensão e autonomia: identificação de pontos de dúvida do paciente ao correlacionar resultados com intervalos de normalidade.",
 
-              "Inventário de conteúdos de áreas internas e fornecedores, além de benchmark de serviços de saúde.",
+              "Auditoria e contratos de dados: catalogação sistemática de campos mandatórios, formatos de saída de fornecedores e restrições de formatação de caracteres.",
             ]}
           />
           <CaseFigure
@@ -327,17 +319,16 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-estado-atual-anotado.webp",
               width: 2000,
               height: 1076,
-              alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
+              alt: "Laudo anterior anotado evidenciando dispersão de metadados, valores de referência distantes dos resultados e inconsistência de diagramação",
               caption:
-                "Estado atual: título, metadados, resultado, referência e observações dispersos antes do redesenho.",
+                "Estado anterior: fragmentação da leitura diagnóstica antes do redesenho, com valores de referência dissociados dos resultados e metadados administrativos intercalados no corpo do exame.",
             }}
           />
           <CaseFigure image={einsteinImages[1]} />
           <div className="cp-note">
-            <h3>Como evitar uma interpretação clínica isolada?</h3>
+            <h3>Princípio de prevenção de erro diagnóstico</h3>
             <p>
-              Paciente e médico precisam de relações claras entre os dados,
-              preservando referência, observações e contexto.
+              A leitura clínica não tolera ambiguidades de alinhamento: resultado, unidade de medida e limites de referência devem constituir uma unidade semântica indivisível para prevenir erros de interpretação sob fadiga cognitiva médica.
             </p>
           </div>
         </>

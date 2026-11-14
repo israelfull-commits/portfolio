@@ -31,3 +31,15 @@ Este documento consolida os aprendizados, convenções arquiteturais e diretrize
 - **Proteção do Git Index:** O diretório `portfolio-verde/` contém seu próprio controle local e deve sempre ser ignorado no `.gitignore` raiz para evitar o erro de *embedded git repository*.
 - **Pre-push Verification:** Antes de realizar push para a branch `main`, validar que ambos os projetos compilam com 0 erros (`npm --prefix site run build`) e executar a suíte de validação automatizada `python scripts/portfolio_qa_sentinel.py`.
 
+---
+
+## 5. Protocolo de Redação Técnica Documental (Zero Jargão / Estrutura STAR)
+- **Tom Estritamente Técnico e Direto:** Proibição absoluta de linguagem publicitária, superlativos ou clichês de autoajuda corporativa.
+- **Lista de Exclusão Estrita (Negative Words):** É proibido utilizar: *"interface amigável"*, *"experiência fluida"*, *"mergulhar no problema"*, *"colocar o usuário no centro"*, *"design limpo/clean"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"incrível"*, *"inovador"*, *"divisor de águas"*.
+- **Substituição por Métricas e Padrões de Engenharia de Design:**
+  - Em vez de adjetivos vagos, descrever: **heurísticas de usabilidade (Nielsen)**, **tokens de Design System (espaçamento 8px, tipografia)**, **critérios de conformidade WCAG 2.1/2.2 AA/AAA**, **arquitetura da informação**, **contratos de dados** e **Product Discovery**.
+- **Vocabulário Técnico Canônico (Otimização para Lideranças & ATS):**
+  - *Human-Centered Design (HCD)*, *Product Discovery*, *Arquitetura da Informação*, *Design System Modular*, *Tokens de Espaçamento*, *Heurísticas de Usabilidade*, *WCAG 2.2 AAA*, *Taxonomia de Dados*, *Interoperabilidade Legada*, *Modelagem de Componentes*.
+- **Estruturação STAR por Seção:** Toda seção deve se basear exclusivamente em fatos e restrições verificáveis (Situação, Tarefa, Ação Técnica e Resultado Concreto), sem suposições ou floreios.
+
+

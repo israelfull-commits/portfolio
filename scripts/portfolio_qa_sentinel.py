@@ -22,6 +22,16 @@ DEFENSIVE_PATTERNS = [
     r"posteriormente",
     r"temporário",
     r"rascunho",
+    # Negative Words / Marketing Clichés
+    r"interface\s+amigável",
+    r"experiência\s+fluida",
+    r"mergulhar\s+no\s+problema",
+    r"colocar\s+o\s+usuário\s+no\s+centro",
+    r"design\s+clean",
+    r"disruptivo|disruptiva",
+    r"sinergia",
+    r"revolucionário|revolucionária",
+    r"divisor\s+de\s+águas",
 ]
 
 STRAY_SEMICOLONS = [
