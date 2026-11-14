@@ -351,64 +351,57 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-componente-protrombina-crop.webp",
               width: 1800,
               height: 640,
-              alt: "Recorte macro de detalhe do protótipo documentado (v3) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
+              alt: "Recorte detalhado do protótipo documentado (v3.0) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
               caption:
-                "Anatomia do componente v3.0: padronização semântica do Tempo de Protrombina (RNI) com parâmetros lado a lado, indicadores de acessibilidade redundantes e unidade de medida contextualizada.",
+                "Anatomia do componente no protótipo final (v3.0): exame de Tempo de Protrombina (RNI) com cada parâmetro em sua linha, resultado e valor de referência lado a lado, e ícones que não dependem apenas da cor para indicar normalidade.",
             }}
           />
           <ol className="cp-callout-list">
             <li className="cp-callout-item">
               <span className="cp-callout-badge">1</span>
               <div>
-                <strong>examTitle.</strong> Nome do exame com o material (tempo de protrombina, plasma).
+                <strong>examTitle:</strong> Nome do exame e material biológico no topo (ex.: Tempo de Protrombina em plasma).
               </div>
             </li>
             <li className="cp-callout-item">
               <span className="cp-callout-badge">2</span>
               <div>
-                <strong>Uma linha por parâmetro.</strong> Atividade e Relação (RNI) em linhas próprias.
+                <strong>Uma linha por parâmetro:</strong> Cada teste clínico ganha sua própria linha horizontal, evitando que números se misturem.
               </div>
             </li>
             <li className="cp-callout-item">
               <span className="cp-callout-badge">3</span>
               <div>
-                <strong>Sinal redundante, sem dependência de cor.</strong> Ícone de verificação e cor de feedback junto ao valor.
+                <strong>Acessibilidade visual:</strong> Ícones de verificação e alerta acompanham a cor, garantindo leitura segura para daltônicos e na impressão em preto e branco.
               </div>
             </li>
             <li className="cp-callout-item">
               <span className="cp-callout-badge">4</span>
               <div>
-                <strong>Resultado e referência abaixo do título, lado a lado.</strong> Mudança da v3.0; a unidade acompanha a referência.
+                <strong>Resultado e referência alinhados:</strong> O valor medido e o intervalo normal ficam lado a lado, com a unidade de medida sempre visível.
               </div>
             </li>
           </ol>
           <p style={{ fontSize: "0.875rem", color: "var(--cp-muted)", marginBottom: "2rem", lineHeight: 1.5 }}>
-            Demais mudanças da v3.0: grid, espaçamento e largura do texto ajustados, cor do comentário alterada e metadados organizados em colunas, sem negrito.
+            A evolução para a versão 3.0 refinou o espaçamento e a largura de leitura, removeu negritos excessivos que poluíam a página e organizou os dados de identificação em colunas discretas.
           </p>
           <ol className="cp-decisions">
             {[
               [
-                "Âncora de leitura estável",
-
-                "Nome, material, resultado e referência formam o primeiro nível de leitura.",
+                "Âncora de leitura imediata",
+                "Nome do exame, material, resultado e referência formam o primeiro ponto de contato visual.",
               ],
-
               [
-                "Componentes para variação real",
-
-                "DataField e ExamTitle organizam variações numéricas, textuais e de extensão sem criar um template por exame.",
+                "Componentes flexíveis (dataField e examTitle)",
+                "Em vez de desenhar uma tela para cada um dos 80+ exames, criamos blocos modulares que acomodam números simples, tabelas ou textos longos.",
               ],
-
               [
-                "Sinais redundantes",
-
-                "Texto, posição e tratamento visual trabalham juntos; a cor não comunica o estado sozinha.",
+                "Sinais claros e acessíveis",
+                "Texto, posição e símbolos trabalham juntos; a cor nunca comunica o status de um exame sozinha.",
               ],
-
               [
-                "Compatibilidade antes de sofisticação",
-
-                "Formatação simples, cabeçalho e rodapé comuns apoiam o uso nos sistemas laudadores existentes.",
+                "Compatibilidade com os sistemas do hospital",
+                "Estrutura integrada ao Design System Zera 1.0, com cabeçalhos e rodapés que funcionam tanto nas impressoras dos laboratórios quanto nas telas modernas.",
               ],
             ].map(([title, copy]) => (
               <li key={title}>
@@ -424,7 +417,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 900,
               alt: "Documentação dos componentes DataField e ExamTitle com tokens e anatomia modular",
               caption:
-                "Documentação dos componentes estruturais: DataField e ExamTitle com tokens de espaçamento e regras de anatomia modular.",
+                "Documentação no Design System Zera 1.0: especificações dos componentes dataField e examTitle com tokens de espaçamento e regras de anatomia modular para a engenharia.",
             }}
           />
         </>
