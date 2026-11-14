@@ -192,7 +192,7 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Clareza não é o mesmo que compreensão.",
 
   subtitle:
-    "Design system modular e arquitetura da informação para laudos clínicos e de imagem, unificando a leitura médica especializada e o autosserviço do paciente no digital e no papel.",
+    "Padronização visual e estrutural para exames laboratoriais e de imagem, facilitando a decisão dos médicos e trazendo clareza para o paciente no papel e no celular.",
 
   role: "UX Lead",
 
@@ -230,23 +230,23 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p className="cp-lead">
-              Como transformar resultados analíticos densos em uma interface modular estável, compreensível para o paciente e clinicamente rigorosa para o médico?
+              Como organizar exames médicos complexos para que qualquer paciente entenda com facilidade e qualquer médico encontre o que precisa em poucos segundos?
             </p>
             <p>
-              Laudos hospitalares operam sob restrições severas: sistemas emissores legados, disparidade de dados entre especialidades e a necessidade de preservar o contexto diagnóstico. O projeto estabeleceu uma taxonomia visual padronizada que separa dados administrativos, parâmetros analíticos e notas clínicas em componentes reutilizáveis.
+              Em hospitais e laboratórios, cada exame costuma ter um formato próprio. Informações importantes ficavam espalhadas: o paciente se sentia inseguro sem entender o que era normal, e o médico perdia tempo procurando referências e observações clínicas em folhas diferentes.
             </p>
           </div>
           <CaseMetrics
             items={[
-              ["121", "pacientes em pesquisa quantitativa"],
+              ["121", "pacientes responderam à pesquisa de hábitos de leitura"],
 
-              ["4", "médicos especialistas em entrevistas de profundidade"],
+              ["4", "médicos especialistas entrevistados em profundidade"],
 
-              ["14", "famílias de laudos laboratoriais e imagem estruturadas"],
+              ["14", "modelos padronizados cobrindo todo o acervo de exames"],
             ]}
           />
           <p>
-            A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
+            Ouvimos 121 pacientes para mapear as maiores dúvidas ao abrir um laudo e entrevistamos 4 médicos para garantir total segurança clínica. Todos os dados apresentados foram anonimizados conforme a LGPD e o sigilo médico.
           </p>
         </>
       ),
@@ -259,20 +259,20 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-columns">
             <div>
-              <h3>Restrições técnicas e interoperabilidade</h3>
+              <h3>O desafio prático</h3>
               <p>
-                O projeto demandava paridade estrutural entre a impressão física A4 e os canais digitais responsivos, operando sobre sistemas legados de emissão diagnóstica (LIS/PACS) com capacidade limitada de estilização. A solução de design precisava ser implementável na infraestrutura hospitalar vigente sem introduzir incompatibilidade de renderização.
+                O mesmo laudo precisava funcionar no aplicativo do celular, na tela do consultório e impresso em preto e branco nas impressoras dos hospitais parceiros. Não adiantava criar um visual bonito que travasse os sistemas mais antigos ou ficasse ilegível no papel comum.
               </p>
             </div>
             <div>
-              <h3>Requisitos de arquitetura da informação</h3>
+              <h3>As regras centrais do projeto</h3>
               <List
                 items={[
-                  "Ancoragem determinística: nome do exame, material biológico, resultado analítico e intervalo de referência dispostos em bloco unificado por proximidade visual.",
+                  "Resultado e referência lado a lado: o valor do exame e o intervalo considerado normal aparecem sempre juntos, na mesma linha visual.",
 
-                  "Desacoplamento de metadados: isolamento de identificadores de amostra, datas e dados administrativos em área secundária para redução de ruído cognitivo.",
+                  "Cabeçalho limpo: dados administrativos (como convênio, número da guia e carimbos) foram separados, deixando o foco total no resultado médico.",
 
-                  "Tolerância dimensional: grid e tipografia dimensionados para acomodar textos clínicos extensos, múltiplos parâmetros tabulares e laudos descritivos.",
+                  "Estrutura flexível: o modelo aceita desde exames de sangue curtos de uma linha até relatórios longos de ressonância com laudo descritivo.",
                 ]}
               />
             </div>
@@ -282,15 +282,15 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-estado-proposto-anotado.webp",
               width: 2000,
               height: 1076,
-              alt: "Laudo proposto anotado demonstrando ancoragem entre título, resultado e referência, e separação de metadados administrativos",
+              alt: "Laudo proposto anotado demonstrando resultado e valores normais agrupados, e dados administrativos no topo",
               caption:
-                "Estado proposto: taxonomia modular com resultado analítico, unidade de medida e referência agrupados; metadados administrativos e observações clínicas isolados em contêineres secundários. Dados sintetizados e anonimizados em conformidade com a LGPD e o sigilo médico.",
+                "Proposta aprovada: resultado do exame, unidade de medida e valores normais agrupados no mesmo bloco visual; informações administrativas separadas no topo. Dados anonimizados para proteção de privacidade.",
             }}
           />
           <div className="cp-note">
-            <h3>Atuação técnica como UX Lead</h3>
+            <h3>Meu papel como UX Lead</h3>
             <p>
-              Liderança técnica da modelagem da informação e design system no projeto HIAE × Foursys, articulando requisitos entre equipes multidisciplinares de tecnologia hospitalar, operações laboratoriais e governança clínica.
+              Liderei o alinhamento entre as equipes de design, tecnologia dos hospitais e o corpo clínico do Albert Einstein, garantindo que o novo padrão atendesse tanto aos médicos quanto à realidade prática dos sistemas parceiros.
             </p>
           </div>
         </>
@@ -303,15 +303,15 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            A fase de Product Discovery integrou auditoria de inventário sobre <strong>mais de 80 exames clínicos e laboratoriais</strong> a entrevistas semiestruturadas com 4 médicos especialistas e pesquisa quantitativa com 121 pacientes. A modelagem resultante classificou a totalidade do acervo em <strong>14 categorias canônicas de laudos</strong>, padronizando a estrutura sintática de exames numéricos simples até relatórios de imagem complexos.
+            Para construir esse padrão, analisamos mais de 80 exames reais de diversas especialidades — de análises laboratoriais a exames de imagem. Descobrimos que, apesar de parecerem muito diferentes, todos podiam ser agrupados em apenas 14 tipos de modelos previsíveis.
           </p>
           <List
             items={[
-              "Mapeamento de protocolos de leitura: observação de fluxos de decisão ambulatorial e hospitalar para identificação de prioridade visual no diagnóstico.",
+              "Como o médico trabalha: em uma consulta rápida ou no pronto-socorro, ele precisa bater o olho e identificar em 3 segundos se algum número está fora do padrão.",
 
-              "Avaliação de compreensão e autonomia: identificação de pontos de dúvida do paciente ao correlacionar resultados com intervalos de normalidade.",
+              "Como o paciente lê: termos técnicos e tabelas densas causam ansiedade. O paciente quer entender com clareza o que aquele resultado significa antes mesmo da consulta.",
 
-              "Auditoria e contratos de dados: catalogação sistemática de campos mandatórios, formatos de saída de fornecedores e restrições de formatação de caracteres.",
+              "Limitações dos sistemas: mapeamos o tamanho dos textos e tabelas para garantir que nenhuma palavra ou número ficasse cortado em qualquer impressora.",
             ]}
           />
           <CaseFigure
@@ -319,16 +319,16 @@ export const einsteinPresentation: CasePresentationData = {
               src: "/images/hiae-estado-atual-anotado.webp",
               width: 2000,
               height: 1076,
-              alt: "Laudo anterior anotado evidenciando dispersão de metadados, valores de referência distantes dos resultados e inconsistência de diagramação",
+              alt: "Laudo anterior anotado mostrando dados espalhados e valores normais longe do resultado",
               caption:
-                "Estado anterior: fragmentação da leitura diagnóstica antes do redesenho, com valores de referência dissociados dos resultados e metadados administrativos intercalados no corpo do exame.",
+                "Como era antes: informações espalhadas pela página, com o resultado distante dos valores normais e dados administrativos misturados ao texto médico.",
             }}
           />
           <CaseFigure image={einsteinImages[1]} />
           <div className="cp-note">
-            <h3>Princípio de prevenção de erro diagnóstico</h3>
+            <h3>Evitando erros de leitura</h3>
             <p>
-              A leitura clínica não tolera ambiguidades de alinhamento: resultado, unidade de medida e limites de referência devem constituir uma unidade semântica indivisível para prevenir erros de interpretação sob fadiga cognitiva médica.
+              Em saúde, um alinhamento confuso pode induzir a um diagnóstico errado. O resultado, a unidade e o intervalo de referência devem formar um bloco único e inconfundível, fácil de ler até no fim de um plantão cansativo.
             </p>
           </div>
         </>
