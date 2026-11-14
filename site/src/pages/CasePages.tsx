@@ -185,13 +185,14 @@ const einsteinImages: CaseImage[] = [
 ]
 
 export const einsteinPresentation: CasePresentationData = {
-  title: "Einstein · Laudos médicos",
+  title: "Albert Einstein · Laudos de Medicina Diagnóstica",
 
   context: "Saúde · HIAE × Foursys · 2022",
 
   headline: "Clareza não é o mesmo que compreensão.",
 
-  subtitle: "Uma linguagem visual modular para laudos em diferentes canais.",
+  subtitle:
+    "Design system modular e arquitetura da informação para laudos clínicos e de imagem, unificando a leitura médica especializada e o autosserviço do paciente no digital e no papel.",
 
   role: "UX Lead",
 
@@ -228,29 +229,24 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <div className="cp-summary">
-            <p>
-              Pesquisa e proposta de uma linguagem visual modular para laudos,
-              com hierarquia estável entre nome do exame, resultado, referência
-              e contexto.
+            <p className="cp-lead">
+              Como transformar resultados analíticos densos em uma interface modular estável, compreensível para o paciente e clinicamente rigorosa para o médico?
             </p>
             <p>
-              Laudos heterogêneos reuniam informações importantes em hierarquias
-              variáveis. Pacientes precisavam localizar informações e levá-las à
-              consulta; médicos precisavam cruzar resultados, referências,
-              observações e contexto clínico.
+              Laudos hospitalares operam sob restrições severas: sistemas emissores legados, disparidade de dados entre especialidades e a necessidade de preservar o contexto diagnóstico. O projeto estabeleceu uma taxonomia visual padronizada que separa dados administrativos, parâmetros analíticos e notas clínicas em componentes reutilizáveis.
             </p>
           </div>
           <CaseMetrics
             items={[
-              ["4 médicos", "entrevistas semiestruturadas"],
+              ["121", "pacientes em pesquisa quantitativa"],
 
-              ["Questionário", "pesquisa exploratória com pacientes"],
+              ["4", "médicos especialistas em entrevistas de profundidade"],
 
-              ["14", "categorias de exames no escopo"],
+              ["14", "famílias de laudos laboratoriais e imagem estruturadas"],
             ]}
           />
           <p>
-            A pesquisa quantitativa contou com 121 pacientes para mapear hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico e diagnóstico.
+            A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
           </p>
         </>
       ),

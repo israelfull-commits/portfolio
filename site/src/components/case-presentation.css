@@ -615,10 +615,13 @@
   max-width: 44rem;
 }
 
+.cp-lead,
 .cp-summary > p:first-child {
   font-size: 1.125rem;
-  line-height: 1.55;
+  line-height: 1.6;
+  font-weight: 500;
   color: var(--cp-text);
+  letter-spacing: -0.01em;
 }
 
 .cp-summary > p + p {
