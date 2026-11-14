@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from "react"
 
-import { ArrowIcon, Link, Pill } from "../design-system"
+import { ArrowIcon, Link, Pill, assetUrl } from "../design-system"
 
 import { PageMeta } from "./PageMeta"
 
@@ -130,14 +130,14 @@ export function CaseFigure({ image }: { image: CaseImage }) {
               }
             >
               <image
-                href={image.src}
+                href={assetUrl(image.src)}
                 width={image.width}
                 height={image.height}
               />
             </svg>
           ) : (
             <img
-              src={image.src}
+              src={assetUrl(image.src)}
               width={image.width}
               height={image.height}
               style={
@@ -206,14 +206,14 @@ export function CaseFigure({ image }: { image: CaseImage }) {
                 aria-label={image.alt}
               >
                 <image
-                  href={image.src}
+                  href={assetUrl(image.src)}
                   width={image.width}
                   height={image.height}
                 />
               </svg>
             ) : (
               <img
-                src={image.src}
+                src={assetUrl(image.src)}
                 width={image.width}
                 height={image.height}
                 alt={image.alt}
@@ -232,7 +232,7 @@ export function CaseFigure({ image }: { image: CaseImage }) {
             >
               {actualSize ? "Ajustar à tela" : "Ver em tamanho original"}
             </button>
-            <a href={image.src} target="_blank" rel="noopener noreferrer">
+            <a href={assetUrl(image.src)} target="_blank" rel="noopener noreferrer">
               Abrir imagem original em nova aba <ArrowIcon />
             </a>
           </div>

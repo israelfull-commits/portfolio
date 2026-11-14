@@ -21,6 +21,7 @@ qa/
 
 # Experimental / secondary clones
 portfolio-verde/
+live_*.png
 portfolio-*.png
 audit-*.png
 auditoria-*.png

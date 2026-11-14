@@ -41,6 +41,23 @@ type LinkProps = {
   tabIndex?: number
 }
 
+export function assetUrl(path: string): string {
+  if (!path) return ""
+  if (
+    path.startsWith("http://") ||
+    path.startsWith("https://") ||
+    path.startsWith("mailto:") ||
+    path.startsWith("data:") ||
+    path.startsWith("#")
+  ) {
+    return path
+  }
+  const base = import.meta.env.BASE_URL || "/"
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path
+  const cleanBase = base.endsWith("/") ? base : `${base}/`
+  return `${cleanBase}${cleanPath}`
+}
+
 export function Link({
   children,
 
@@ -56,10 +73,15 @@ export function Link({
 
   tabIndex,
 }: LinkProps) {
+  const resolvedHref =
+    href && href.startsWith("/") && !href.startsWith("//")
+      ? assetUrl(href)
+      : href
+
   return (
     <a
       className={className}
-      href={href}
+      href={resolvedHref}
       aria-label={ariaLabel}
       download={download}
       onClick={onClick}

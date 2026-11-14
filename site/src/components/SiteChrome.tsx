@@ -1,4 +1,4 @@
-import { ArrowIcon, ChatIcon, Link, MailIcon, Text } from "../design-system"
+import { ArrowIcon, ChatIcon, Link, MailIcon, Text, assetUrl } from "../design-system"
 
 import { useEffect, useRef, useState } from "react"
 
@@ -158,7 +158,7 @@ export function ContactSection() {
           </a>
           <div className="pf-contact-links">
             <a
-              href="/documents/israel-rozar-curriculo.pdf"
+              href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
               download="Israel-Rozar-Curriculo.pdf"
             >
               Baixar currículo (PDF)

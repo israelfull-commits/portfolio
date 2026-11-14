@@ -1,4 +1,4 @@
-import { ArrowIcon, ChatIcon, DownloadIcon, MailIcon } from "../design-system"
+import { ArrowIcon, ChatIcon, DownloadIcon, Link, MailIcon, assetUrl } from "../design-system"
 
 import { PageMeta } from "../components/PageMeta"
 
@@ -138,7 +138,7 @@ export default function Home() {
               </a>
               <a
                 className="pf-button pf-button-outline"
-                href="/documents/israel-rozar-curriculo.pdf"
+                href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
                 download="Israel-Rozar-Curriculo.pdf"
               >
                 Baixar currículo (PDF) <DownloadIcon />
@@ -148,8 +148,8 @@ export default function Home() {
           <figure className="pf-portrait">
             <div className="pf-portrait-image">
               <img
-                src="/images/israel-rozar-treated-800.webp"
-                srcSet="/images/israel-rozar-treated-480.webp 480w, /images/israel-rozar-treated-800.webp 800w"
+                src={assetUrl("/images/israel-rozar-treated-800.webp")}
+                srcSet={`${assetUrl("/images/israel-rozar-treated-480.webp")} 480w, ${assetUrl("/images/israel-rozar-treated-800.webp")} 800w`}
                 sizes="(max-width: 700px) 100vw, 360px"
                 width="800"
                 height="1000"
@@ -197,21 +197,21 @@ export default function Home() {
                     pacientes, e alinhamento com arquitetura e engenharia.
                   </p>
                 </div>
-                <a
+                <Link
                   className="pf-button pf-button-lime"
                   href="/cases/einstein-laudos"
                 >
                   Explorar estudo de caso completo <ArrowIcon />
-                </a>
+                </Link>
               </div>
               <div className="pf-featured-evidence">
                 <figure className="pf-case-preview">
-                  <a
+                  <Link
                     href="/cases/einstein-laudos"
-                    aria-label="Explorar estudo de caso completo do Hospital Albert Einstein"
+                    ariaLabel="Explorar estudo de caso completo do Hospital Albert Einstein"
                   >
                     <img
-                      src="/images/hiae-mockup-macbook-retina.webp"
+                      src={assetUrl("/images/hiae-mockup-macbook-retina.webp")}
                       width="1200"
                       height="700"
                       loading="eager"
@@ -219,7 +219,7 @@ export default function Home() {
                       decoding="async"
                       alt="Interface do sistema de laudos clínicos do Hospital Israelita Albert Einstein no MacBook Pro."
                     />
-                  </a>
+                  </Link>
                   <figcaption>
                     Sistema de laudos clínicos em alta resolução no MacBook Pro
                   </figcaption>
@@ -263,10 +263,10 @@ export default function Home() {
                       {p.decision}
                     </p>
                   )}
-                  <a href={p.href} className="pf-project-link">
+                  <Link href={p.href} className="pf-project-link">
                     Explorar o case <span aria-hidden="true">→</span>
                     <span className="pf-sr-only">: {p.title}</span>
-                  </a>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -275,9 +275,9 @@ export default function Home() {
                 Outros fluxos do ecossistema Itaú Corretora:
               </span>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <a href="/cases/itau/vencimentos" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Vencimentos →</a>
-                <a href="/cases/itau/movimentacoes" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Movimentações →</a>
-                <a href="/cases/itau/campanhas" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Gestão de Campanhas →</a>
+                <Link href="/cases/itau/vencimentos" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Vencimentos →</Link>
+                <Link href="/cases/itau/movimentacoes" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Movimentações →</Link>
+                <Link href="/cases/itau/campanhas" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Gestão de Campanhas →</Link>
               </div>
             </div>
           </div>
@@ -312,7 +312,7 @@ export default function Home() {
                 <article className="pf-expertise" key={title}>
                   <img
                     className="pf-expertise-icon"
-                    src={`/icons/${["discovery", "layout", "systems", "brain"][i]}.svg`}
+                    src={assetUrl(`/icons/${["discovery", "layout", "systems", "brain"][i]}.svg`)}
                     width="20"
                     height="20"
                     alt=""
