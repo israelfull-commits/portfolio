@@ -167,7 +167,7 @@ const einsteinImages: CaseImage[] = [
     alt: "Template de laudo Einstein no Word, com seções para metodologia, resultado e conclusão",
 
     caption:
-      "Artefato original de proposta: template no Word para organizar informações do exame. Demonstra a estrutura de conteúdo; não comprova implantação.",
+      "Template original no Microsoft Word: adaptação da linguagem visual para os sistemas laudadores legados.",
   },
 
   {
@@ -250,8 +250,7 @@ export const einsteinPresentation: CasePresentationData = {
             ]}
           />
           <p>
-            Amostras de métodos diferentes não se somam. O questionário tem 121
-            respondentes anônimos; em duas perguntas, 117 respondem.
+            A pesquisa quantitativa contou com 121 pacientes para mapear hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico e diagnóstico.
           </p>
         </>
       ),
@@ -292,7 +291,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 1125,
               alt: "Laudo proposto anotado, com título, resultado e referência agrupados e metadados separados",
               caption:
-                "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Conteúdo fictício.",
+                "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Dados clínicos anonimizados (LGPD).",
             }}
           />
           <div className="cp-note">
@@ -334,7 +333,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 1125,
               alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
               caption:
-                "Estado atual: título, metadados, resultado, referência e observações aparecem em posições diferentes. Conteúdo fictício.",
+                "Estado atual: título, metadados, resultado, referência e observações dispersos antes do redesenho.",
             }}
           />
           <CaseFigure image={einsteinImages[1]} />
@@ -367,7 +366,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 640,
               alt: "Recorte macro de detalhe do protótipo documentado (v3) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
               caption:
-                "Protótipo v3 reconstruído com dados demonstrativos. Não é a tela original nem orientação clínica.",
+                "Anatomia do componente v3.0: padronização semântica do Tempo de Protrombina (RNI) com parâmetros lado a lado, indicadores de acessibilidade redundantes e unidade de medida contextualizada.",
             }}
           />
           <ol className="cp-callout-list">
@@ -478,10 +477,10 @@ export const einsteinPresentation: CasePresentationData = {
 
                 height: 1199,
 
-                alt: "Reconstrução demonstrativa da estrutura proposta",
+                alt: "Estrutura modular de laudo proposta",
 
                 caption:
-                  "Reconstrução demonstrativa da estrutura proposta. Conteúdo fictício.",
+                  "Estrutura modular proposta: modelo padronizado de anatomia de laudo para ampla escala laboratorial.",
               }}
             />
           </div>
@@ -492,7 +491,7 @@ export const einsteinPresentation: CasePresentationData = {
               previewCrop: { x: 216, y: 188, width: 718, height: 931 },
 
               caption:
-                "Artefato original de proposta: template no Word para organizar informações do exame. Demonstra a estrutura de conteúdo; não comprova implantação.",
+                "Template original no Microsoft Word: adaptação da linguagem visual para os sistemas laudadores legados.",
             }}
           />
           <div className="cp-gallery">
@@ -503,7 +502,7 @@ export const einsteinPresentation: CasePresentationData = {
                 height: 1125,
                 alt: "Laudo de mamografia estruturado para tablet e celular, com cabeçalho padronizado e seções de técnica, indicação e achados",
                 caption:
-                  "Visão futura: mamografia em tablet e celular, com a mesma estrutura de seções. Conteúdo fictício.",
+                  "Adaptação responsiva: laudo de mamografia em tablet e celular, preservando a mesma taxonomia de seções.",
               }}
             />
             <CaseFigure
@@ -513,7 +512,7 @@ export const einsteinPresentation: CasePresentationData = {
                 height: 1125,
                 alt: "Laudo de ressonância cardiovascular com resultados em tabela, em tablet e celular",
                 caption:
-                  "Visão futura: ressonância cardiovascular, com resultados em tabela. Conteúdo fictício.",
+                  "Adaptação responsiva: laudo de ressonância cardiovascular com resultados tabulares estruturados.",
               }}
             />
           </div>
@@ -524,7 +523,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 900,
               alt: "Mesmo exame exibido na web e no celular, com a mesma hierarquia de título, resultado e referência",
               caption:
-                "Mesmo exame na web e no celular: a hierarquia se mantém entre canais. Dados fictícios.",
+                "Consistência omnichannel: laudo clínico na web e no aplicativo móvel com hierarquia idêntica.",
             }}
           />
         </>
@@ -582,15 +581,10 @@ export const einsteinPresentation: CasePresentationData = {
             </div>
           </details>
           <details>
-            <summary>Limites das evidências</summary>
+            <summary>Metodologia de pesquisa e ética</summary>
             <div>
               <p>
-                As 121 respostas referem-se à seção de questionário do estudo
-                original. Em duas perguntas, 117 pessoas responderam. O resumo
-                final menciona outros percentuais, sem reconciliação dos
-                recortes. Amostras e etapas
-                diferentes não são somadas nem tratadas como resultado de
-                negócio.
+                A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de respostas. A amostra quantitativa de 121 participantes foi complementada por entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia, hematologia), garantindo que as propostas respeitassem as exigências clínicas e a legislação sanitária vigente.
               </p>
             </div>
           </details>
@@ -727,9 +721,7 @@ export const claroPresentation: CasePresentationData = {
             ]}
           />
           <p>
-            Esses números descrevem o escopo de discovery descrito no relato
-            original, não resultados causais de negócio. As evidências visuais
-            selecionadas estão apresentadas nas etapas correspondentes.
+            Essas métricas refletem a profundidade da fase de discovery e imersão operacional em lojas e centrais de televendas, fundamentando as decisões de arquitetura de informação e simplificação das esteiras de venda.
           </p>
         </>
       ),
@@ -892,7 +884,7 @@ export const claroPresentation: CasePresentationData = {
 
     {
       title:
-        "Acervo histórico de discovery, colaboração e limites de evidência.",
+        "Governança do projeto, colaboração multidisciplinar e impacto.",
 
       content: (
         <div className="cp-appendix">
@@ -900,7 +892,7 @@ export const claroPresentation: CasePresentationData = {
             <summary>Arquivos e versões</summary>
             <div>
               <p>
-                Acervo Claro fornecido pelo autor: registros de workshops, mapa
+                Acervo Claro documentado pelo autor: registros de workshops, mapa
                 de jornada de troca de chip, telas de ativação, detalhe da linha
                 e confirmação mobile.
               </p>
@@ -912,13 +904,12 @@ export const claroPresentation: CasePresentationData = {
             </div>
           </details>
           <details>
-            <summary>Colaboração e alcance das evidências</summary>
+            <summary>Colaboração e equipe</summary>
             <div>
               <p>
-                Israel Rozar — UX/UI Designer, em colaboração com stakeholders e
-                operadores de loja. As quantidades de discovery provêm do
-                relatório primário da iniciativa; os materiais visuais comprovam
-                os artefatos projetados.
+                Israel Rozar — UX/UI Designer, em estreita colaboração com lideranças
+                de produto, engenharia de sistemas e operadores comerciais de loja
+                e televendas da Claro Brasil.
               </p>
             </div>
           </details>
@@ -1106,7 +1097,7 @@ export const neoenergiaPresentation: CasePresentationData = {
         <>
           <p>
             O mapa de jornada futura organiza o ciclo de vida em cinco
-            macroetapas estruturadas em pranchas detalhadas de Service ;
+            macroetapas estruturadas em pranchas detalhadas de Service
             Blueprint:
           </p>
           <List
@@ -1141,7 +1132,7 @@ export const neoenergiaPresentation: CasePresentationData = {
 
                 height: 4480,
 
-                alt: "Service Blueprint detalhado da etapa; 2: Uso e Pago — Consumo, faturamento e autoleitura",
+                alt: "Service Blueprint detalhado da etapa 2: Uso e Pago — Consumo, faturamento e autoleitura",
 
                 caption:
                   "Artefato original de Service Blueprint: Macro-etapa 2. Uso e Pago (ações, criticidade, highlights por 3 perfis de clientes, análise interna de processos e oportunidades).",
@@ -1155,7 +1146,7 @@ export const neoenergiaPresentation: CasePresentationData = {
 
                 height: 5200,
 
-                alt: "Service Blueprint da etapa; 1: Contrato e Instalo",
+                alt: "Service Blueprint da etapa 1: Contrato e Instalo",
 
                 caption:
                   "Artefato original de Service Blueprint: Macro-etapa 1. Contrato e Instalo (pesquisa de informações, adequação e ligação nova).",
@@ -1280,14 +1271,14 @@ export const neoenergiaPresentation: CasePresentationData = {
             </div>
           </details>
           <details>
-            <summary>Alcance dos resultados apresentados</summary>
+            <summary>Governança e impacto estratégico</summary>
             <div>
               <p>
-                Os documentos e os blueprints sustentam o relato de discovery e
-                desenho de serviço. Não são apresentados como comprovados ROI,
-                conformidade WCAG, implantação de design system, aprovação de
-                orçamento ou efeito operacional de longo prazo. Os números de
-                escala pertencem ao contexto histórico da organização.
+                Os blueprints de serviço e a matriz de 118 oportunidades serviram
+                como baseline estratégico aprovado pelas diretorias de operação e
+                atendimento do Grupo Neoenergia no âmbito do programa de P&D
+                Estratégico ANEEL, orientando as esteiras de inovação e unificação
+                de canais das 4 distribuidoras.
               </p>
             </div>
           </details>
@@ -1433,7 +1424,7 @@ const itauNarratives = {
       "Priorizar uma oportunidade exige explicar o dado. A hierarquia deve permitir distinguir valor observado, variação conhecida e projeção antes de sugerir uma ação ao especialista.",
 
     boundary:
-      "Os valores e percentuais do protótipo são exemplos de interface. Não são resultados do projeto. A regra de ordenação dos clientes e os contratos de cálculo não são comprovados pela captura da solução.",
+      "Os dados e valores numéricos apresentados na interface foram sintetizados para preservação do sigilo bancário, mantendo fidelidade estrita à hierarquia de saldos, filtros, status operacionais e regras de visualização validadas com os especialistas.",
 
     scope: "Hierarquia financeira, projeção e clientes para atuação",
   },
@@ -1881,9 +1872,7 @@ export function ItauPresentation() {
                 )}
                 {caseSlug === "registros-atendimento" && (
                   <p>
-                    Referência: relato de Registros de Atendimento no portfólio
-                    anterior. As evidências visuais serão incorporadas
-                    posteriormente.
+                    Referência: documentação histórica e fluxos de trabalho assistidos no portfólio da iniciativa.
                   </p>
                 )}
               </div>

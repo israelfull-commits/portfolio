@@ -34,7 +34,7 @@ const projects = [
     title: "Conexão Digital e Service Blueprint",
     theme: "Utilities · Service design sistêmico",
     description:
-      "Service blueprint ponta a ponta conectando o trabalho técnico em campo ao atendimento digital em 5 distribuidoras de energia.",
+      "Service blueprint ponta a ponta conectando o trabalho técnico em campo ao atendimento digital em 4 distribuidoras de energia através de 5 blueprints de serviço.",
     decision: "Matriz de 118 oportunidades priorizadas e integração entre despacho de campo e autoatendimento do cliente.",
   },
 ]
