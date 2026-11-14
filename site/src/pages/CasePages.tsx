@@ -288,7 +288,7 @@ export const einsteinPresentation: CasePresentationData = {
             image={{
               src: "/images/hiae-estado-proposto-anotado.webp",
               width: 2000,
-              height: 1125,
+              height: 1076,
               alt: "Laudo proposto anotado, com título, resultado e referência agrupados e metadados separados",
               caption:
                 "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Dados clínicos anonimizados (LGPD).",
@@ -330,7 +330,7 @@ export const einsteinPresentation: CasePresentationData = {
             image={{
               src: "/images/hiae-estado-atual-anotado.webp",
               width: 2000,
-              height: 1125,
+              height: 1076,
               alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
               caption:
                 "Estado atual: título, metadados, resultado, referência e observações dispersos antes do redesenho.",
@@ -498,8 +498,8 @@ export const einsteinPresentation: CasePresentationData = {
             <CaseFigure
               image={{
                 src: "/images/hiae-visao-futura-mamografia.webp",
-                width: 2000,
-                height: 1125,
+                width: 1340,
+                height: 895,
                 alt: "Laudo de mamografia estruturado para tablet e celular, com cabeçalho padronizado e seções de técnica, indicação e achados",
                 caption:
                   "Adaptação responsiva: laudo de mamografia em tablet e celular, preservando a mesma taxonomia de seções.",
@@ -508,8 +508,8 @@ export const einsteinPresentation: CasePresentationData = {
             <CaseFigure
               image={{
                 src: "/images/hiae-visao-futura-ressonancia.webp",
-                width: 2000,
-                height: 1125,
+                width: 1340,
+                height: 895,
                 alt: "Laudo de ressonância cardiovascular com resultados em tabela, em tablet e celular",
                 caption:
                   "Adaptação responsiva: laudo de ressonância cardiovascular com resultados tabulares estruturados.",

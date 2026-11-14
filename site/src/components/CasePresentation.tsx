@@ -158,8 +158,8 @@ export function CaseFigure({ image }: { image: CaseImage }) {
             />
           )}
         </button>
-        <figcaption>
-          {image.caption}
+        <figcaption className="cp-figure-caption">
+          <p className="cp-figure-caption-text">{image.caption}</p>
           <button
             type="button"
             className="cp-lightbox-trigger"

@@ -13,9 +13,9 @@
   --cp-pine-dark: #0A231A;
   --cp-lime: #CEFF1A;
   --cp-lime-subtle: #CBF637;
-  --cp-text: #1A201C;
-  --cp-text-muted: #4A554E;
-  --cp-text-dim: #5E6561;
+  --cp-text: #111B15;
+  --cp-text-muted: #3B4740;
+  --cp-text-dim: #45524B;
 }
 
 .case-page-wrapper {
@@ -630,6 +630,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .cp-columns > div > h3:first-child {
@@ -639,6 +640,7 @@
 .cp-list {
   padding-left: 1.25rem;
   list-style: disc;
+  margin-bottom: 2rem;
 }
 
 .cp-list > li + li {
@@ -699,7 +701,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
-  margin-block: 2rem;
+  margin-block: 2.5rem;
 }
 
 @media (max-width: 768px) {
@@ -710,6 +712,9 @@
 }
 
 .cp-gallery .cp-figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid var(--cp-border);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -725,6 +730,36 @@
   box-shadow:
     0 1px 3px rgba(10, 54, 34, 0.04),
     0 12px 28px -4px rgba(10, 54, 34, 0.08);
+}
+
+.cp-gallery .cp-figure-btn {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(10, 54, 34, 0.06);
+  overflow: hidden;
+  padding: 0.75rem;
+  box-shadow: inset 0 1px 2px rgba(10, 54, 34, 0.02);
+}
+
+.cp-gallery .cp-figure-btn img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.cp-gallery figcaption {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-top: 1.25rem;
 }
 
 :is(details.cp-appendix, .cp-appendix details) {
@@ -745,6 +780,10 @@
   min-width: 0;
 }
 
+.cp-chapter-content > .cp-figure {
+  margin-block: 2.5rem;
+}
+
 .cp-figure img {
   display: block;
   width: 100%;
@@ -763,18 +802,24 @@
 .cp-figure figcaption {
   margin-top: 1.25rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--cp-muted);
 }
 
-.cp-figure figcaption > button {
+.cp-figure-caption-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cp-muted);
+}
+
+.cp-figure figcaption .cp-lightbox-trigger {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   width: fit-content;
-  min-height: 2.75rem;
-  padding: 0.375rem 0;
-  margin-top: 0.5rem;
+  min-height: 2.5rem;
+  margin-top: 0.75rem;
   font-weight: 600;
   color: var(--cp-pine);
   text-decoration: underline;
@@ -784,7 +829,12 @@
   cursor: pointer;
   padding: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.cp-figure figcaption .cp-lightbox-trigger:hover {
+  color: #051A10;
 }
 
 .cp-figure-btn {
