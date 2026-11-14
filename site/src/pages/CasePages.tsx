@@ -192,7 +192,7 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Clareza não é o mesmo que compreensão.",
 
   subtitle:
-    "Padronização visual e estrutural para exames laboratoriais e de imagem, facilitando a decisão dos médicos e trazendo clareza para o paciente no papel e no celular.",
+    "Pesquisa e arquitetura de informação para estruturar mais de 80 exames distintos em uma linguagem modular previsível, facilitando a tomada de decisão médica e reduzindo a ansiedade de pacientes.",
 
   role: "UX Lead",
 
@@ -230,10 +230,10 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p className="cp-lead">
-              Como organizar exames médicos complexos para que qualquer paciente entenda com facilidade e qualquer médico encontre o que precisa em poucos segundos?
+              O objetivo central é clareza, compreensão e facilidade para interpretar resultados: apoiar a tomada de decisão médica com agilidade e permitir que o paciente entenda sua própria saúde sem ansiedade.
             </p>
             <p>
-              Em hospitais e laboratórios, cada exame costuma ter um formato próprio. Informações importantes ficavam espalhadas: o paciente se sentia inseguro sem entender o que era normal, e o médico perdia tempo procurando referências e observações clínicas em folhas diferentes.
+              Em hospitais e laboratórios, cada exame costumava ter um formato diferente. Informações críticas ficavam dispersas: o paciente sentia insegurança ao não entender os valores de referência, e o médico perdia tempo buscando métodos e observações em partes separadas da folha.
             </p>
           </div>
           <CaseMetrics
