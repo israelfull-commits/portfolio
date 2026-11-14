@@ -11,9 +11,10 @@ import { ArrowIcon, Link, Pill } from "../design-system"
 
 import { PageMeta } from "./PageMeta"
 
-import { SiteFooter, SiteHeader } from "./SiteChrome"
+import { ContactSection, SiteFooter, SiteHeader } from "./SiteChrome"
 
 import "./case-presentation.css"
+import "../portfolio.css"
 
 export const caseChapters = [
   ["resumo", "Resumo executivo"],
@@ -73,6 +74,7 @@ export type CasePresentationData = {
   role: string;
   team: string;
   scope: string;
+  keyMetric?: string;
   kicker?: string;
   noIndex?: boolean;
   hero?: CaseImage;
@@ -180,24 +182,36 @@ export function CaseFigure({ image }: { image: CaseImage }) {
           setLightboxOpen(false)
         }}
       >
-        <div className="cp-lightbox-content">
+        <div
+          className={`cp-lightbox-content${actualSize ? " is-actual-size" : ""}`}
+        >
           <div className="cp-lightbox-header">
-            <p className="cp-lightbox-caption">{image.caption}</p>
+            <span className="cp-lightbox-caption">{image.caption}</span>
             <button
               type="button"
               className="cp-lightbox-close"
               onClick={closeLightbox}
-              aria-label="Fechar visualização ampliada"
+              aria-label="Fechar ampliação"
             >
-              ✕
+              Fechar ✕
             </button>
           </div>
-          <div
-            className={`cp-lightbox-media${
-              actualSize ? " cp-lightbox-media--actual" : ""
-            }`}
-          >
-            {lightboxOpen && (
+          <div className="cp-lightbox-viewport">
+            {image.previewCrop ? (
+              <svg
+                width={image.previewCrop.width}
+                height={image.previewCrop.height}
+                viewBox={`${image.previewCrop.x} ${image.previewCrop.y} ${image.previewCrop.width} ${image.previewCrop.height}`}
+                role="img"
+                aria-label={image.alt}
+              >
+                <image
+                  href={image.src}
+                  width={image.width}
+                  height={image.height}
+                />
+              </svg>
+            ) : (
               <img
                 src={image.src}
                 width={image.width}
@@ -270,7 +284,7 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
   }, [])
 
   return (
-    <>
+    <div className="case-page-wrapper">
       <PageMeta
         title={`${data.title} — Israel Rozar`}
         description={data.subtitle}
@@ -283,37 +297,52 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
       <main
         id="conteudo"
         className="case-presentation"
-        data-template="figma-YIHybVXPe0Hfmja1hAyzQZ-31-10884"
+        data-template="figma-YIHybVXPe0Hfmja1hAyzQZ-370-17047"
       >
-        <section className="cp-hero" id="topo" aria-labelledby="case-title">
+        <section
+          className="cp-hero"
+          id="topo"
+          aria-labelledby="case-title"
+          data-name="MasterCaseStudySection"
+        >
           <nav aria-label="Trilha de navegação" className="cp-breadcrumb">
             <Link href="/#trabalho">
               <ArrowIcon direction="left" /> Voltar aos cases
             </Link>
           </nav>
-          <div className="cp-kicker">
-            <Pill tone="accent">{data.kicker || "Design de produto"}</Pill>
-            <p>{data.context}</p>
+          <div className="cp-kicker" data-name="Case Header & Tag">
+            <span className="cp-tag-pill">
+              {data.kicker || "Design de produto"}
+            </span>
+            <p className="cp-context">{data.context}</p>
           </div>
-          <h1 id="case-title">{data.headline}</h1>
+          <h1 id="case-title" className="cp-title">{data.headline}</h1>
           <p className="cp-subtitle">{data.subtitle}</p>
-          <div className="cp-meta">
-            <div>
-              <span>Meu papel</span>
-              <strong>{data.role}</strong>
+
+          <div
+            className="cp-meta-grid"
+            data-name="Metadata Specs Grid (4 Cols)"
+          >
+            <div className="cp-meta-col">
+              <span className="cp-meta-label">MEU PAPEL</span>
+              <strong className="cp-meta-value">{data.role}</strong>
             </div>
-            <div>
-              <span>Equipe</span>
-              <strong>{data.team}</strong>
+            <div className="cp-meta-col">
+              <span className="cp-meta-label">EQUIPE</span>
+              <strong className="cp-meta-value">{data.team}</strong>
             </div>
-            <div>
-              <span>Escopo</span>
-              <strong>{data.scope}</strong>
+            <div className="cp-meta-col">
+              <span className="cp-meta-label">ESCOPO</span>
+              <strong className="cp-meta-value">{data.scope}</strong>
             </div>
-            <a href="#resumo">
-              Ler o case <ArrowIcon direction="down" />
-            </a>
+            <div className="cp-meta-col">
+              <span className="cp-meta-label">RESULTADO-CHAVE</span>
+              <strong className="cp-meta-value cp-meta-value--accent">
+                {data.keyMetric || "Alta criticidade"}
+              </strong>
+            </div>
           </div>
+
           {data.cover ? (
             <figure className="cp-concept-cover">
               <span className="cp-cover-eyebrow">
@@ -339,101 +368,152 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
             </figure>
           ) : (
             data.hero && (
-              <div className="cp-hero-visual">
+              <div
+                className="cp-hero-visual"
+                data-name="Master Interface Mockup"
+              >
                 <CaseFigure image={data.hero} />
               </div>
             )
           )}
         </section>
-        <div className="cp-body">
-          <aside className="cp-sidebar">
-            <nav aria-label="Neste case">
-              <strong>Neste case</strong>
-              <ol>
-                {caseChapters.map(([id, label], i) => {
-                  const isActive = activeChapter === id
 
-                  return (
-                    <li key={id}>
-                      <a
-                        href={`#${id}`}
-                        className={isActive ? "is-active" : undefined}
-                        aria-current={isActive ? "location" : undefined}
-                      >
-                        <span>{String(i + 1).padStart(2, "0")}</span>
-                        {label}
-                      </a>
-                    </li>
-                  )
-                })}
-              </ol>
-              <a className="cp-back" href="/#trabalho">
+        <div
+          className="cp-body"
+          data-name="Deep Dive Narrative: Sticky Sub-navigation + Content"
+        >
+          <aside
+            className="cp-sidebar"
+            data-name="Aside - Sticky Sidebar Case Index"
+          >
+            <div className="cp-sidebar-card">
+              <span className="cp-sidebar-header">NESTE CASE</span>
+              <nav aria-label="Neste case" className="cp-sidebar-nav">
+                <ol>
+                  {caseChapters.map(([id, label], i) => {
+                    const isActive = activeChapter === id
+
+                    return (
+                      <li key={id}>
+                        <a
+                          href={`#${id}`}
+                          className={isActive ? "is-active" : undefined}
+                          aria-current={isActive ? "location" : undefined}
+                        >
+                          <span className="cp-sidebar-num">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="cp-sidebar-text">{label}</span>
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ol>
+              </nav>
+              <Link className="cp-back" href="/#trabalho">
                 <ArrowIcon direction="left" /> Voltar aos cases
-              </a>
-            </nav>
+              </Link>
+            </div>
           </aside>
-          <article className="cp-article">
+
+          <article
+            className="cp-article"
+            data-name="Main Case Content Columns"
+          >
             {data.chapters.map((chapter, i) => (
               <section
                 className="cp-chapter"
                 id={caseChapters[i][0]}
                 key={caseChapters[i][0]}
                 aria-labelledby={`chapter-${i}`}
+                data-name={`Section - ${String(i + 1).padStart(2, "0")} ${caseChapters[i][1].toUpperCase()}`}
               >
-                <div className="cp-chapter-label">
-                  <span>{String(i + 1).padStart(2, "0")}</span>
-                  <p>{caseChapters[i][1]}</p>
+                <div className="cp-chapter-badge">
+                  <div className="cp-chapter-num-box">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <span className="cp-chapter-tag">
+                    {caseChapters[i][1]}
+                  </span>
                 </div>
-                <h2 id={`chapter-${i}`}>{chapter.title}</h2>
+                <h2 id={`chapter-${i}`} className="cp-chapter-title">
+                  {chapter.title}
+                </h2>
                 <div className="cp-chapter-content">{chapter.content}</div>
               </section>
             ))}
 
-            {(data.prevCase || data.nextCase) && (
-              <nav className="cp-case-nav" aria-label="Navegação entre cases">
-                {data.prevCase ? (
-                  <Link
-                    className="cp-case-nav-card cp-case-nav-card--prev"
-                    href={data.prevCase.href}
-                  >
-                    <span className="cp-case-nav-label">
-                      <ArrowIcon direction="left" /> Case anterior
-                    </span>
-                    <strong className="cp-case-nav-title">
-                      {data.prevCase.title}
-                    </strong>
-                    <span className="cp-case-nav-context">
-                      {data.prevCase.context}
-                    </span>
-                  </Link>
-                ) : (
-                  <div className="cp-case-nav-placeholder" aria-hidden="true" />
-                )}
+            <section
+              className="cp-explore-section"
+              data-name="Navegação / Outros projetos"
+            >
+              <div className="cp-explore-header">
+                <h3 className="cp-explore-title">
+                  Continue explorando os projetos
+                </h3>
+                <Link className="cp-explore-all" href="/#trabalho">
+                  Ver todos os projetos ↗
+                </Link>
+              </div>
 
-                {data.nextCase ? (
-                  <Link
-                    className="cp-case-nav-card cp-case-nav-card--next"
-                    href={data.nextCase.href}
-                  >
-                    <span className="cp-case-nav-label">
-                      Próximo case <ArrowIcon />
-                    </span>
-                    <strong className="cp-case-nav-title">
-                      {data.nextCase.title}
-                    </strong>
-                    <span className="cp-case-nav-context">
-                      {data.nextCase.context}
-                    </span>
-                  </Link>
-                ) : (
-                  <div className="cp-case-nav-placeholder" aria-hidden="true" />
-                )}
-              </nav>
-            )}
+              {(data.prevCase || data.nextCase) && (
+                <nav
+                  className="cp-case-nav"
+                  aria-label="Navegação entre cases"
+                >
+                  {data.prevCase ? (
+                    <Link
+                      className="cp-case-nav-card cp-case-nav-card--prev"
+                      href={data.prevCase.href}
+                    >
+                      <span className="cp-case-nav-label">
+                        <ArrowIcon direction="left" /> Case anterior
+                      </span>
+                      <strong className="cp-case-nav-title">
+                        {data.prevCase.title}
+                      </strong>
+                      <span className="cp-case-nav-context">
+                        {data.prevCase.context}
+                      </span>
+                    </Link>
+                  ) : (
+                    <div
+                      className="cp-case-nav-placeholder"
+                      aria-hidden="true"
+                    />
+                  )}
+
+                  {data.nextCase ? (
+                    <Link
+                      className="cp-case-nav-card cp-case-nav-card--next"
+                      href={data.nextCase.href}
+                    >
+                      <span className="cp-case-nav-label">
+                        Próximo case <ArrowIcon />
+                      </span>
+                      <strong className="cp-case-nav-title">
+                        {data.nextCase.title}
+                      </strong>
+                      <span className="cp-case-nav-context">
+                        {data.nextCase.context}
+                      </span>
+                    </Link>
+                  ) : (
+                    <div
+                      className="cp-case-nav-placeholder"
+                      aria-hidden="true"
+                    />
+                  )}
+                </nav>
+              )}
+            </section>
           </article>
         </div>
       </main>
+
+      <ContactSection />
+
       <SiteFooter />
-    </>
+    </div>
   )
 }

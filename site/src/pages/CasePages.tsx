@@ -149,8 +149,8 @@ function Sources({ project }: { project: string }) {
 
 const einsteinHero: CaseImage = {
   src: "/images/hiae-capa-editorial-1600.webp",
-  width: 1600,
-  height: 900,
+  width: 2560,
+  height: 1440,
   alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
   caption:
     "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",
@@ -199,24 +199,26 @@ export const einsteinPresentation: CasePresentationData = {
 
   scope: "Pesquisa, modelagem da informação e prototipagem",
 
+  keyMetric: "14 famílias de laudos padronizadas",
+
   kicker: "Saúde · UX Lead",
 
   hero: einsteinHero,
 
   nextCase: {
+    title: "Itaú Corretora · Hub de Liquidez",
+
+    href: "/cases/itau/hub-liquidez",
+
+    context: "Fintech · Itaú Unibanco · íon for Advisors",
+  },
+
+  prevCase: {
     title: "Neoenergia · Service design",
 
     href: "/cases/neoenergia-conexao-digital",
 
     context: "Utilities · P&D ANEEL · 34M de pessoas",
-  },
-
-  prevCase: {
-    title: "Claro · Ativação simplificada",
-
-    href: "/cases/claro-ativacao-simplificada",
-
-    context: "Telecom · UX corporativo",
   },
 
   chapters: [
@@ -251,48 +253,6 @@ export const einsteinPresentation: CasePresentationData = {
             Amostras de métodos diferentes não se somam. O questionário tem 121
             respondentes anônimos; em duas perguntas, 117 respondem.
           </p>
-        </>
-      ),
-    },
-
-    {
-      title: "Do documento ao dado.",
-
-      content: (
-        <>
-          <p>
-            A descoberta reuniu quatro entrevistas médicas, questionário
-            exploratório e análise documental. A análise cobriu mais de 80 exames
-            distintos e 14 categorias de laudos; recortes menores representam
-            subconjuntos do acervo.
-          </p>
-          <List
-            items={[
-              "Entrevistas com especialidades e contextos de atendimento distintos.",
-
-              "Análise de comportamentos e canais preferidos dos pacientes.",
-
-              "Inventário de conteúdos de áreas internas e fornecedores, além de benchmark de serviços de saúde.",
-            ]}
-          />
-          <CaseFigure
-            image={{
-              src: "/images/hiae-estado-atual-anotado.webp",
-              width: 2000,
-              height: 1125,
-              alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
-              caption:
-                "Estado atual: título, metadados, resultado, referência e observações aparecem em posições diferentes. Conteúdo fictício.",
-            }}
-          />
-          <CaseFigure image={einsteinImages[1]} />
-          <div className="cp-note">
-            <h3>Como evitar uma interpretação clínica isolada?</h3>
-            <p>
-              Paciente e médico precisam de relações claras entre os dados,
-              preservando referência, observações e contexto.
-            </p>
-          </div>
         </>
       ),
     },
@@ -348,10 +308,97 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      title: "Do documento ao dado.",
+
+      content: (
+        <>
+          <p>
+            A descoberta reuniu quatro entrevistas médicas, questionário
+            exploratório e análise documental. A análise cobriu mais de 80 exames
+            distintos e 14 categorias de laudos; recortes menores representam
+            subconjuntos do acervo.
+          </p>
+          <List
+            items={[
+              "Entrevistas com especialidades e contextos de atendimento distintos.",
+
+              "Análise de comportamentos e canais preferidos dos pacientes.",
+
+              "Inventário de conteúdos de áreas internas e fornecedores, além de benchmark de serviços de saúde.",
+            ]}
+          />
+          <CaseFigure
+            image={{
+              src: "/images/hiae-estado-atual-anotado.webp",
+              width: 2000,
+              height: 1125,
+              alt: "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
+              caption:
+                "Estado atual: título, metadados, resultado, referência e observações aparecem em posições diferentes. Conteúdo fictício.",
+            }}
+          />
+          <CaseFigure image={einsteinImages[1]} />
+          <div className="cp-note">
+            <h3>Como evitar uma interpretação clínica isolada?</h3>
+            <p>
+              Paciente e médico precisam de relações claras entre os dados,
+              preservando referência, observações e contexto.
+            </p>
+          </div>
+        </>
+      ),
+    },
+
+    {
       title: "Preservar relações entre resultado, referência e contexto.",
 
       content: (
         <>
+          <blockquote className="cp-quote">
+            <p>
+              Modular não é simplificar. É manter o contexto clínico no lugar
+              onde a pessoa o espera.
+            </p>
+          </blockquote>
+          <CaseFigure
+            image={{
+              src: "/images/hiae-componente-protrombina-crop.webp",
+              width: 1800,
+              height: 640,
+              alt: "Recorte macro de detalhe do protótipo documentado (v3) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
+              caption:
+                "Protótipo v3 reconstruído com dados demonstrativos. Não é a tela original nem orientação clínica.",
+            }}
+          />
+          <ol className="cp-callout-list">
+            <li className="cp-callout-item">
+              <span className="cp-callout-badge">1</span>
+              <div>
+                <strong>examTitle.</strong> Nome do exame com o material (tempo de protrombina, plasma).
+              </div>
+            </li>
+            <li className="cp-callout-item">
+              <span className="cp-callout-badge">2</span>
+              <div>
+                <strong>Uma linha por parâmetro.</strong> Atividade e Relação (RNI) em linhas próprias.
+              </div>
+            </li>
+            <li className="cp-callout-item">
+              <span className="cp-callout-badge">3</span>
+              <div>
+                <strong>Sinal redundante, sem dependência de cor.</strong> Ícone de verificação e cor de feedback junto ao valor.
+              </div>
+            </li>
+            <li className="cp-callout-item">
+              <span className="cp-callout-badge">4</span>
+              <div>
+                <strong>Resultado e referência abaixo do título, lado a lado.</strong> Mudança da v3.0; a unidade acompanha a referência.
+              </div>
+            </li>
+          </ol>
+          <p style={{ fontSize: "0.875rem", color: "var(--cp-muted)", marginBottom: "2rem", lineHeight: 1.5 }}>
+            Demais mudanças da v3.0: grid, espaçamento e largura do texto ajustados, cor do comentário alterada e metadados organizados em colunas, sem negrito.
+          </p>
           <ol className="cp-decisions">
             {[
               [
@@ -555,8 +602,8 @@ export const einsteinPresentation: CasePresentationData = {
 
 const claroHero: CaseImage = {
   src: "/images/claro-capa-editorial-1600.webp",
-  width: 1600,
-  height: 900,
+  width: 2400,
+  height: 1327,
   alt: "Visão editorial multicanal da Ativação Simplificada Claro: interfaces desktop e mobile com resumo financeiro integrado",
   caption:
     "Ecossistema multicanal: composição de interfaces desktop e mobile com carrinho de contratação em tempo real e detalhamento transparente de planos.",
@@ -628,24 +675,26 @@ export const claroPresentation: CasePresentationData = {
 
   scope: "Discovery, fluxos e interfaces desktop e mobile",
 
+  keyMetric: "Atendimento unificado multicanal",
+
   kicker: "Telecom · UX corporativo",
 
   hero: claroHero,
 
   nextCase: {
-    title: "Einstein · Laudos médicos",
-
-    href: "/cases/einstein-laudos",
-
-    context: "Saúde · HIAE × Foursys · 2022",
-  },
-
-  prevCase: {
     title: "Neoenergia · Service design",
 
     href: "/cases/neoenergia-conexao-digital",
 
     context: "Utilities · P&D ANEEL · 34M de pessoas",
+  },
+
+  prevCase: {
+    title: "Itaú Corretora · Hub de Liquidez",
+
+    href: "/cases/itau/hub-liquidez",
+
+    context: "Fintech · Itaú Unibanco · íon for Advisors",
   },
 
   chapters: [
@@ -904,6 +953,8 @@ export const neoenergiaPresentation: CasePresentationData = {
 
   scope: "Pesquisa, jornadas atuais, blueprints e visão futura de serviço",
 
+  keyMetric: "5 Blueprints de Serviço P&D ANEEL",
+
   kicker: "Energia · Service design",
 
   hero: {
@@ -920,19 +971,19 @@ export const neoenergiaPresentation: CasePresentationData = {
   },
 
   prevCase: {
-    title: "Einstein · Laudos médicos",
-
-    href: "/cases/einstein-laudos",
-
-    context: "Saúde · UX Lead",
-  },
-
-  nextCase: {
     title: "Claro · Ativação simplificada",
 
     href: "/cases/claro-ativacao-simplificada",
 
-    context: "Telecom · UX/UI",
+    context: "Telecom · Claro Brasil · 34M de clientes",
+  },
+
+  nextCase: {
+    title: "Einstein · Laudos médicos",
+
+    href: "/cases/einstein-laudos",
+
+    context: "Saúde · HIAE × Foursys · 2022",
   },
 
   chapters: [
@@ -1635,6 +1686,14 @@ export function ItauPresentation() {
     campanhas: "593-125976",
   }
 
+  const itauKeyMetrics: Record<string, string> = {
+    vencimentos: "Visão canônica de proventos e agenda",
+    "hub-liquidez": "Consolidação de composição de liquidez",
+    movimentacoes: "Transição Extrato EA para IFA",
+    campanhas: "Operação e parametrização em lote",
+    "registros-atendimento": "Resumos assistidos por IA com supervisão",
+  }
+
   const data: CasePresentationData = {
     title: `Itaú · ${project.title}`,
 
@@ -1649,6 +1708,8 @@ export function ItauPresentation() {
     team: "Design, Produto, Engenharia e áreas de negócio",
 
     scope: story.scope,
+
+    keyMetric: itauKeyMetrics[caseSlug] || "Alta criticidade",
 
     kicker: "Fintech · Itaú Unibanco",
 
@@ -1682,9 +1743,23 @@ export function ItauPresentation() {
         }
       : undefined,
 
-    prevCase: target(order[(index + order.length - 1) % order.length]),
+    prevCase:
+      caseSlug === "hub-liquidez"
+        ? {
+            title: "Einstein · Laudos médicos",
+            href: "/cases/einstein-laudos",
+            context: "Saúde · HIAE × Foursys · 2022",
+          }
+        : target(order[(index + order.length - 1) % order.length]),
 
-    nextCase: target(order[(index + 1) % order.length]),
+    nextCase:
+      caseSlug === "hub-liquidez"
+        ? {
+            title: "Claro · Ativação simplificada",
+            href: "/cases/claro-ativacao-simplificada",
+            context: "Telecom · Claro Brasil · 34M de clientes",
+          }
+        : target(order[(index + 1) % order.length]),
 
     chapters: [
       {

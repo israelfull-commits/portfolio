@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dig-next-49887630.figma.site/sitemap.xml
+Sitemap: https://israel-rozar-portfolio.irozar.chatgpt.site/sitemap.xml

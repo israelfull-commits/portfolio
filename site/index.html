@@ -6,27 +6,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Portfólio de Israel Rozar, Senior Product Designer especializado em discovery, UX/UI, design systems, acessibilidade e IA." />
+    content="Conheça a trajetória e os projetos de Israel Rozar, Senior Product Designer com atuação em discovery, serviços financeiros, saúde e design systems." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://dig-next-49887630.figma.site/" />
+  <link rel="canonical" href="https://israel-rozar-portfolio.irozar.chatgpt.site/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Israel Rozar — Senior Product Designer" />
   <meta property="og:description"
-    content="Product design para sistemas complexos, com experiência em fintech, saúde, acessibilidade e IA." />
-  <meta property="og:url" content="https://dig-next-49887630.figma.site/" />
-  <meta property="og:image" content="https://dig-next-49887630.figma.site/images/israel-rozar-social.jpg" />
+    content="Conheça a trajetória e os projetos de Israel Rozar, Senior Product Designer com atuação em discovery, serviços financeiros, saúde e design systems." />
+  <meta property="og:url" content="https://israel-rozar-portfolio.irozar.chatgpt.site/" />
+  <meta property="og:image" content="https://israel-rozar-portfolio.irozar.chatgpt.site/images/israel-rozar-social.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Israel Rozar — Senior Product Designer" />
   <meta name="twitter:description"
-    content="Product design para sistemas complexos, com experiência em fintech, saúde, acessibilidade e IA." />
-  <meta name="twitter:image" content="https://dig-next-49887630.figma.site/images/israel-rozar-social.jpg" />
-  <meta name="theme-color" content="#173e2d" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    content="Conheça a trajetória e os projetos de Israel Rozar, Senior Product Designer com atuação em discovery, serviços financeiros, saúde e design systems." />
+  <meta name="twitter:image" content="https://israel-rozar-portfolio.irozar.chatgpt.site/images/israel-rozar-social.jpg" />
+  <meta name="theme-color" content="#0A3622" />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-400.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-700.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>Israel Rozar — Senior Product Designer</title>
   <script type="application/ld+json">
@@ -35,7 +32,7 @@
         "@type": "Person",
         "name": "Israel Rozar",
         "jobTitle": "Senior Product Designer",
-        "url": "https://dig-next-49887630.figma.site/",
+        "url": "https://israel-rozar-portfolio.irozar.chatgpt.site/",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "São Paulo",
@@ -54,6 +51,19 @@
         ]
       }
     </script>
+  <script>
+    const pageUrl = new URL(location.pathname, location.origin).href;
+    document.querySelector('link[rel="canonical"]').href = pageUrl;
+    document.querySelector('meta[property="og:url"]').content = pageUrl;
+    for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) {
+      const meta = document.querySelector(selector);
+      meta.content = new URL(meta.content, location.origin).href;
+    }
+    const personSchema = document.querySelector('script[type="application/ld+json"]');
+    const person = JSON.parse(personSchema.textContent);
+    person.url = new URL('/', location.origin).href;
+    personSchema.textContent = JSON.stringify(person);
+  </script>
   <!-- figma:head-end -->
   <script type="module">
     if (location.hash.includes('figmacapture=')) {

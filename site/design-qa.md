@@ -1,90 +1,43 @@
-# QA visual e funcional — réplica Amity Cast
+# QA da implementação — 2026-11-13
 
-Data: 2026-11-01 (America/São_Paulo)  
-final result: passed
+Final result: passed para a home e os fluxos descritos abaixo, com desvios intencionais registrados. Não significa equivalência pixel a pixel nem auditoria completa de acessibilidade.
 
-Nenhum achado P0, P1 ou P2 permanece aberto.
+## Referências e evidências
 
-## Escopo e fonte de verdade
+- Fonte desktop: FigmaYIHybVXPe0Hfmja1hAyzQZ/370:16614; captura `qa/figma-home.png` (1280×4465).
+- Fonte mobile: mesmo arquivo/375:366; `qa/figma-mobile.png` (390×8642).
+- Implementação: `qa/home-desktop-final.png`, `qa/home-mobile-final.png`; localhost:8443, rota/, topo, menu fechado, tema claro.
+- Comparações conjuntas: `qa/compare-desktop-final.png`, `qa/compare-mobile-final.png`; recortes hero correspondentes. Fonte e implementação lado a lado, largura CSS1280/390, density1, sem escala adicional. Alturas variam porque o conteúdo e a foto tiveram ajustes autorizados.
+- Interação: `qa/mobile-menu.png`; case funcional: `qa/case-mobile.png`.
+- Browser plugin não disponível; CUA/node_repl falhou na inicialização. Foi utilizado Playwright CLI conforme fallback da skill frontend-testing-debugging, neste ambiente Windows portátil.
 
-A implementação em `site/` foi reconstruída a partir do código-fonte integral extraído do Figma Make, preservando componentes, conteúdo, tipografia, cores, espaçamento, imagens, rotas e regras responsivas. Os assets usados pela interface estão em `site/public/`; não há dependência dos bundles, CSS ou imagens hospedados pela publicação Figma.
+## Iterações
 
-Referências visuais:
+1. Bloqueada: tracking negativo mudava quebras dos títulos, cabeçalho deslocava a navegação e pseudo-elemento expandia as capturas. Fonte móvel exigia lead20/30, botões em largura total e retrato vertical maior. Ícones de expertise ainda ausentes.
+2. Corrigido: tracking zero, texto da hero alinhado ao início, navegação central, pseudo-elemento removido, lead20/30 e layout mobile alinhado à referência. Ícones originais exportados do Figma e integrados.
+3. Pós-correção: nova comparação conjunta desktop/mobile; sem diferençasP0/P1/P2 restantes na home. Variações menores de rasterização e alinhamento sãoP3. Foto substituída por versão tratada a pedido do usuário, mantendo o original.
 
-- Desktop original, 1440 × 9227 px: `C:\Users\Israel Rozar\Documents\ChatGPT\Portfolio\output\playwright\amity-source\home-desktop-1440.png`
-- Mobile original, viewport 390 × 844 px e página 390 × 13129 px: `C:\Users\Israel Rozar\Documents\ChatGPT\Portfolio\output\playwright\amity-source\home-mobile-390x844.png`
-- Menu móvel original aberto, 390 × 844 px: `C:\Users\Israel Rozar\Documents\ChatGPT\Portfolio\output\playwright\amity-source\mobile-menu-open-390x844.png`
+## Cinco superfícies
 
-Evidências da réplica:
+- Tipografia: Plus Jakarta Sans400/600/700 local; hero64/70 e36/44 mobile, seções40/48 e28/36, corpo16/24, lead20/30. Fallback sans-serif. Quebras e hierarquia conferidas visualmente.
+- Espaçamento/layout: container1152, margens64/32/24, seções64/48, grids24, raios16/24; cards com crescimento pelo conteúdo. Sem texto cortado ou overflow nas larguras testadas.
+- Cores/tokens: pine, lime, canvas e bordas da paleta aprovada; contraste de textos usa#4A554E, evitando o muted de menor contraste. Sem gradientes na home ou modo escuro automático.
+- Imagens: retrato do projeto com tratamento fotográfico via ferramenta nativa de imagem e variantes WebP. Ícones de expertise originais do Figma. Foto preserva proporção vertical. Assets de cases mantidos.
+- Conteúdo: estrutura aprovada preservada. Alterações intencionais: substituído trecho incompleto de impacto por nota de método;44 participantes sem afirmar população não verificada; Registros vincula ao relato reduzido disponível; UXfolio substitui GitHub sem URL confirmada; rodapé sem data fixa desatualizada.
 
-- Desktop, 1440 × 1000: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-desktop.png`
-- Mobile, 390 × 844: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-mobile.png`
-- Menu móvel aberto, 390 × 844: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-mobile-menu.png`
-- Mobile estreito, 320 × 900: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-320.png`
-- Tablet, 768 × 900: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-768.png`
-- Desktop, 1280 × 1000: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-1280.png`
-- Desktop amplo, 1536 × 1000: `C:\Users\Israel Rozar\AppData\Local\Temp\replica-1536.png`
+## Funcional
 
-## Ledger de comparação visual
+- TypeScript --noEmit: passou após reinstalar dependências corrompidas com npm ci.
+- Build Vite: passou.
+- Clique CTAhero/#trabalho e menu/#experiencia: passou.
+- Menu aberto, Escape e restauração de foco: passou.
+- Cinco rotas de projetos da home: títulos carregados, sem404 de aplicação.
+- PDF: HTTP200 e assinatura%PDF válida.
+- Larguras320,390,768,1280,1440: scrollWidth não excede viewport.
+- pageerror: nenhum; console final sem erros/avisos.
 
-| Área | Evidência da fonte | Evidência renderizada | Resultado |
-|---|---|---|---|
-| Header | Marca circular IR, navegação horizontal e CTA sublinhado | Mesmos elementos, dimensões e alinhamento | Passou |
-| Hero | Manrope em escala editorial, retrato com placa lima inclinada | Composição, quebra, imagem e legenda preservadas | Passou |
-| Barra de sinais | Quatro métricas com divisores | Grade e reflow 2 × 2 preservados | Passou |
-| Posicionamento | Título amplo, copy em duas colunas e quatro capacidades | Hierarquia, cards e ritmo vertical preservados | Passou |
-| Case Einstein | Card floresta + painel de evidências | Cores, proporção, métricas e CTA preservados | Passou |
-| Dossiês Itaú | Grade 2 × 2 com primeiro card em destaque | Conteúdo e estilos integralmente preservados | Passou |
-| Trajetória | Timeline tripartida e tags | Colunas desktop e empilhamento mobile preservados | Passou |
-| Contato | Painel floresta com CTA lima | Layout, tipografia e links preservados | Passou |
-| Mobile | Hero empilhado, retrato à direita, menu compacto | Sem overflow a 390 px; mesma ordem e escala | Passou |
+## Limites
 
-## Melhorias aplicadas sem redesign
+A home foi comparada com o Figma; os cases reais preexistentes foram verificados funcionalmente e em captura mobile, sem alegar comparação com o case exemplo Orbe. Não foram testados leitores de tela reais nem navegadores Safari/Firefox. Envio efetivo de e-mail não foi realizado. O conteúdo pode evoluir nos arquivos indicados no README.
 
-- `robots` alterado para indexação e canonical adicionado.
-- Metadados duplicados do shell Figma removidos; permanece uma descrição e um `og:title`.
-- Imagens sociais e JSON-LD consolidados.
-- Menu móvel convertido de `details/summary` para `button` com `aria-expanded` e `aria-controls`.
-- Ao abrir, o foco segue para “Sobre”; `Escape` fecha e devolve o foco ao botão.
-- Clique externo e seleção de link também fecham o menu.
-- Assets visuais, PDF e favicon armazenados localmente.
-
-## Checks automatizados
-
-| Check | Desktop 1440 | Mobile 390 |
-|---|---:|---:|
-| Página e título corretos | Passou | Passou |
-| Conteúdo significativo / H1 | Passou | Passou |
-| Overlay de erro | Ausente | Ausente |
-| Erros no console | 0 | 0 |
-| Overflow horizontal | 0 px | 0 px |
-| Controles sem nome | 0 | 0 |
-| Description única | 1 | 1 |
-| `og:title` único | 1 | 1 |
-| Screenshot full-page | Gerado | Gerado |
-| Interação de menu | N/A | Passou |
-
-### Matriz responsiva adicional
-
-| Viewport | H1 | Headings | Overflow | Console | Controles sem nome | Menu |
-|---:|---:|---:|---:|---:|---:|---|
-| 320 px | 1 | 20 | 0 px | 0 erros | 0 | Abre, foca “Sobre”, fecha com Escape e restaura foco |
-| 768 px | 1 | 20 | 0 px | 0 erros | 0 | Abre, foca “Sobre”, fecha com Escape e restaura foco |
-| 1280 px | 1 | 20 | 0 px | 0 erros | 0 | Navegação desktop corretamente exibida |
-| 1536 px | 1 | 20 | 0 px | 0 erros | 0 | Navegação desktop corretamente exibida |
-
-As quatro capturas full-page foram inspecionadas durante a validação. Nenhuma quebra, recorte, colisão, ausência de asset ou regressão de hierarquia exigiu alteração visual.
-
-## Histórico do fluxo testado
-
-1. Build de produção com `npm run build`: 47 módulos transformados, sem erros.
-2. Preview em `http://127.0.0.1:4174/`.
-3. Desktop: carregamento → H1 e 20 headings presentes → screenshot full-page → console limpo.
-4. Mobile: carregamento em 390 px → botão Menu → `aria-expanded=true` → foco em “Sobre”.
-5. Mobile: tecla `Escape` → `aria-expanded=false` → menu oculto e foco restaurado ao botão.
-6. Verificação de largura: `scrollWidth === innerWidth` em desktop e mobile.
-7. Segunda rodada responsiva em 320, 768, 1280 e 1536 px com os mesmos checks estruturais, captura full-page e interação do menu nos dois breakpoints aplicáveis.
-
-## Risco residual
-
-O CSS importa DM Sans e Manrope do Google Fonts, como na fonte original. Há fallback de sistema caso a fonte remota não esteja disponível. Não foram observadas diferenças de layout nas capturas validadas.
+Checklist operacional concluído: assets, tokens, composição, responsivo, navegação, links de case, PDF, metadados, typecheck, build e inspeção visual. Publicação deve usar o mesmo project_id.

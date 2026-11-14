@@ -128,7 +128,7 @@
       radial-gradient(ellipse 55rem 36rem at 10% 75%, rgba(217, 255, 99, 0.18) 0%, transparent 58%),
       radial-gradient(ellipse 60rem 40rem at 85% 95%, rgba(168, 207, 49, 0.12) 0%, transparent 60%),
       var(--paper);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: var(--text-base);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -330,7 +330,7 @@
   color: var(--on-forest);
   background: var(--forest);
   border-radius: 50%;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-normal);
 }
@@ -429,7 +429,7 @@ body {
 
 .display-xl {
   max-width: 70rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--display-xl);
   font-weight: 500;
   letter-spacing: var(--tracking-tight);
@@ -591,7 +591,7 @@ body {
 }
 
 .signal-bar strong {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-md);
   letter-spacing: var(--tracking-snug);
 }
@@ -617,7 +617,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--text-xs);
   font-weight: 600;
   letter-spacing: var(--tracking-caps);
@@ -669,7 +669,7 @@ body {
 
 .display-md {
   max-width: 60rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--display-lg);
   font-weight: 500;
   letter-spacing: var(--tracking-snug);
@@ -684,7 +684,7 @@ body {
 }
 
 .lead {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-md);
   letter-spacing: var(--tracking-snug);
   line-height: 1.35;
@@ -730,7 +730,7 @@ body {
 .capability-card h3 {
   min-height: 2.5em;
   margin-top: 1.25rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-sm);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
@@ -776,7 +776,7 @@ body {
 
 .case-summary h3 {
   max-width: 42rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-xl);
   font-weight: 500;
   letter-spacing: var(--tracking-snug);
@@ -855,7 +855,7 @@ body {
 }
 
 .evidence-grid strong {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--numeric);
   font-weight: 500;
   letter-spacing: var(--tracking-tight);
@@ -911,7 +911,7 @@ body {
 
 .roadmap-heading h3 {
   margin-top: 2rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-lg);
   font-weight: 500;
   letter-spacing: var(--tracking-snug);
@@ -1015,7 +1015,7 @@ body {
 }
 
 .roadmap-card-title h4 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-md);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
@@ -1095,7 +1095,7 @@ body {
 }
 
 .timeline-main h3 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-md);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
@@ -1165,7 +1165,7 @@ body {
 }
 
 .credentials strong {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--title-sm);
   font-weight: 600;
   letter-spacing: var(--tracking-normal);
@@ -1199,7 +1199,7 @@ body {
 
 .contact h2 {
   max-width: 50rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--display-lg);
   font-weight: 500;
   letter-spacing: var(--tracking-snug);
@@ -1314,7 +1314,7 @@ footer .icon--down {
 .not-found h1 {
   max-width: 48rem;
   margin-top: 1rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--display-xl);
   font-weight: 500;
   letter-spacing: var(--tracking-tight);
@@ -1597,3 +1597,22 @@ footer {
 .evidence-grid > div:first-child p {
   color: var(--on-lime);
 }
+/* Portfolio canonical palette: light mode is intentional. */
+:root{--ink:#1A201C;--ink-muted:#4A554E;--paper:#FCF9F2;--paper-deep:#F6F3EC;--surface:#FFFFFF;--line:#EDE9DE;--lime:#CEFF1A;--lime-deep:#BEF00E;--forest:#0A3622;--forest-light:#114B31;--forest-deep:#062215;--focus:#0A3622;--on-lime:#0A3622;--on-forest:#FCF9F2;--on-forest-muted:#E6F5EC;--header-bg:#FCF9F2;--content:72rem;color-scheme:light}
+body{background:#FCF9F2;font-family:'Plus Jakarta Sans',sans-serif;color:#1A201C}
+.site-header{max-width:none;width:100%;padding:16px max(24px,calc((100% - 1152px)/2));min-height:78px;background:#FCF9F2;border-bottom:1px solid #EDE9DE;backdrop-filter:none}
+.site-header .brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;gap:12px;letter-spacing:-.02em;font-weight:400}
+.site-header .brand-mark{width:36px;height:36px;background:#0A3622;color:#CEFF1A;border-radius:50%;font-size:12px}
+.site-header .desktop-nav{gap:32px;font-size:14px}.site-header .desktop-nav>a{font-size:14px;font-weight:500}.site-header .header-cta{background:#CEFF1A;color:#0A3622;border-radius:999px;padding:12px 20px;text-transform:uppercase;font-size:12px!important}
+.site-header .mobile-nav>button{background:#FCF9F2;color:#0A3622;border-color:#EDE9DE;min-height:44px}
+.site-header .mobile-nav nav{background:#FCF9F2;border:1px solid #EDE9DE;box-shadow:0 8px 24px #0a36221a}
+@media(max-width:1100px){.site-header{padding-inline:32px}.site-header .desktop-nav{gap:20px}}
+@media(max-width:700px){.site-header{padding-inline:24px;min-height:72px}.site-header .desktop-nav{display:none}.site-header .mobile-nav{display:block}}
+.site-header::before{content:none}
+.site-header .header-cta{border:none}
+
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/plus-jakarta-sans-400.ttf") format("truetype")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/plus-jakarta-sans-600.ttf") format("truetype")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/plus-jakarta-sans-700.ttf") format("truetype")}
+
+@media(min-width:1101px){.site-header .desktop-nav{width:calc(100% - 360px);margin-left:auto}.site-header .desktop-nav .header-cta{margin-left:auto}}

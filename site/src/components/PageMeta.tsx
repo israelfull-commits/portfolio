@@ -1,9 +1,5 @@
 import { useEffect } from "react"
 
-const PUBLIC_SITE_URL = "https://dig-next-49887630.figma.site"
-
-const SOCIAL_IMAGE = `${PUBLIC_SITE_URL}/images/israel-rozar-social.jpg`
-
 export function PageMeta({
   title,
 
@@ -12,12 +8,21 @@ export function PageMeta({
   noIndex = false,
 }: {
   title: string
- ; description: string
+  description: string
 
   noIndex?: boolean
 }) {
   useEffect(() => {
     document.title = title
+
+    document.documentElement.lang = "pt-BR"
+
+    const publicSiteUrl = window.location.origin
+
+    const socialImage = new URL(
+      "/images/israel-rozar-social.jpg",
+      publicSiteUrl,
+    ).href
 
     document
 
@@ -25,7 +30,7 @@ export function PageMeta({
 
       ?.setAttribute("content", noIndex ? "noindex, follow" : "index, follow")
 
-    const canonicalUrl = `${PUBLIC_SITE_URL}${window.location.pathname}`
+    const canonicalUrl = new URL(window.location.pathname, publicSiteUrl).href
 
     const metadata = [
       ['meta[name="description"]', description],
@@ -36,13 +41,13 @@ export function PageMeta({
 
       ['meta[property="og:url"]', canonicalUrl],
 
-      ['meta[property="og:image"]', SOCIAL_IMAGE],
+      ['meta[property="og:image"]', socialImage],
 
       ['meta[name="twitter:title"]', title],
 
       ['meta[name="twitter:description"]', description],
 
-      ['meta[name="twitter:image"]', SOCIAL_IMAGE],
+      ['meta[name="twitter:image"]', socialImage],
     ]
 
     metadata.forEach(([selector, content]) => {

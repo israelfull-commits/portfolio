@@ -1,702 +1,381 @@
-import { ArrowIcon, Link, Pill, SectionLabel, Text } from "../design-system"
+import { ArrowIcon, ChatIcon, DownloadIcon, MailIcon } from "../design-system"
 
 import { PageMeta } from "../components/PageMeta"
 
-import { SiteFooter, SiteHeader } from "../components/SiteChrome"
+import { ContactSection, SiteFooter, SiteHeader } from "../components/SiteChrome"
 
-const capabilities = [
+import "../portfolio.css"
+
+const projects = [
   {
-    index: "01",
-
-    title: "Discovery e estratégia",
-
+    slug: "hub-liquidez",
+    href: "/cases/itau/hub-liquidez",
+    client: "Itaú Unibanco · íon",
+    title: "Hub de Liquidez e Oportunidades",
+    theme: "Fintech · Discovery e visão sistêmica",
     description:
-      "Enquadramento de problemas, pesquisa, síntese, experimentação e priorização para reduzir incerteza antes da entrega.",
+      "Composição de recursos, projeção de saldos e priorização de clientes em uma plataforma densa para assessores de investimento.",
+    decision: "Separar saldo disponível, variação prevista e projeção com origem e janela de tempo explícitas.",
   },
-
   {
-    index: "02",
-
-    title: "UX/UI para produtos complexos",
-
+    slug: "claro-ativacao-simplificada",
+    href: "/cases/claro-ativacao-simplificada",
+    client: "Claro Brasil",
+    title: "Ativação Simplificada e Televendas",
+    theme: "Telecom · Redesenho de esteira e POS",
     description:
-      "Jornadas, arquitetura de informação e interfaces para operações de alta densidade e contextos regulados.",
+      "Redesenho da esteira de vendas e ativação de planos móveis e combos para equipes de atendimento e lojas próprias.",
+    decision: "Redução de etapas de checkout de 12 para 4 telas com validação em tempo real e regras omnichannel.",
   },
-
   {
-    index: "03",
-
-    title: "Design systems e acessibilidade",
-
+    slug: "neoenergia-conexao-digital",
+    href: "/cases/neoenergia-conexao-digital",
+    client: "Neoenergia · P&D ANEEL",
+    title: "Conexão Digital e Service Blueprint",
+    theme: "Utilities · Service design sistêmico",
     description:
-      "Governança, documentação e handoff com práticas de acessibilidade baseadas em WCAG e consistência em escala.",
+      "Service blueprint ponta a ponta conectando o trabalho técnico em campo ao atendimento digital em 5 distribuidoras de energia.",
+    decision: "Matriz de 118 oportunidades priorizadas e integração entre despacho de campo e autoatendimento do cliente.",
   },
+]
 
-  {
-    index: "04",
+const expertise = [
+  [
+    "Discovery",
+    "Discovery e estratégia",
+    "Enquadramento de problemas, pesquisa, síntese, experimentação e priorização para reduzir incerteza antes da entrega.",
+  ],
 
-    title: "IA responsável",
+  [
+    "UX e UI",
+    "UX/UI para produtos complexos",
+    "Jornadas, arquitetura da informação e interfaces para operações de alta densidade e contextos regulados.",
+  ],
 
-    description:
-      "Exploração de fluxos assistidos por IA com critérios de qualidade, rastreabilidade e supervisão humana.",
-  },
+  [
+    "Sistemas",
+    "Design systems e acessibilidade",
+    "Governança, documentação e handoff com práticas de acessibilidade baseadas em WCAG e consistência em escala.",
+  ],
+
+  [
+    "IA",
+    "Experimentação responsável com IA",
+    "Exploração de fluxos assistidos por IA com critérios de qualidade, rastreabilidade e supervisão humana.",
+  ],
 ]
 
 const experience = [
-  {
-    period: "2024 — 2026",
+  [
+    "Consultoria Independente",
+    "Senior UX Consultant · Projetos entre vínculos ou em paralelo",
+    "2022 – atual",
+  ],
 
-    company: "Itaú Unibanco",
+  [
+    "Itaú Unibanco",
+    "Senior Product Designer · Plataforma íon for Advisors",
+    "2024 – 2026",
+  ],
 
-    role: "Senior Product Designer",
+  [
+    "Foursys + Hospital Albert Einstein",
+    "UX Lead · Sistema de Laudos Clínicos Modulares",
+    "2022",
+  ],
 
-    description:
-      "Discovery e design de produto para a plataforma íon for Advisors e ferramentas operacionais de assessoria de investimentos.",
+  ["EY · R/GA", "Senior UX Consultant & Product Designer", "2020 – 2022"],
 
-    tags: ["Fintech", "B2B", "IA", "Design system"],
-  },
-
-  {
-    period: "2022 — atual",
-
-    company: "Consultoria independente",
-
-    role: "Senior UX Consultant",
-
-    description:
-      "Projetos independentes selecionados, realizados entre vínculos ou em paralelo, em experiência e evolução de produtos digitais.",
-
-    tags: ["Estratégia", "Discovery", "UX/UI"],
-  },
-
-  {
-    period: "2022",
-
-    company: "Foursys · Hospital Israelita Albert Einstein",
-
-    role: "UX Lead",
-
-    description:
-      "Liderança de uma squad multidisciplinar na redefinição da jornada de criação e leitura de laudos médicos.",
-
-    tags: ["Saúde", "Liderança", "Acessibilidade"],
-  },
-
-  {
-    period: "2020 — 2022",
-
-    company: "EY · R/GA",
-
-    role: "Senior UX Consultant / Designer",
-
-    description:
-      "Atuação sênior em consultoria e design de experiências digitais para organizações de grande porte.",
-
-    tags: ["Consultoria", "Produtos digitais"],
-  },
-
-  {
-    period: "2006 — 2019",
-
-    company: "Moot · Walmart · GFT · Principia e outras",
-
-    role: "UX/UI, direção de arte e design",
-
-    description:
-      "Base multidisciplinar construída entre produto, interface, comunicação e tecnologia.",
-
-    tags: ["UX/UI", "E-commerce", "Interface"],
-  },
+  [
+    "Moot · Walmart · GFT · Principia & outras",
+    "Experiências anteriores em UX/UI, direção de arte e design",
+    "2006 – 2019",
+  ],
 ]
 
-const additionalCases = [
-  {
-    slug: "vencimentos",
-
-    title: "Gestão de Vencimentos",
-
-    theme: "Operação financeira",
-
-    description:
-      "Consulta, filtros e estados de atuação para conectar eventos financeiros ao contexto do cliente.",
-
-    focus: "Hierarquia de informação, urgência e continuidade da atuação.",
-  },
-
-  {
-    slug: "hub-liquidez",
-
-    title: "Hub de Liquidez e Oportunidades",
-
-    theme: "Discovery e visão sistêmica",
-
-    description:
-      "Posição financeira, composição da liquidez e priorização de clientes em uma mesma lógica de consulta.",
-
-    focus: "Origem do dado, contexto e próxima ação explicável.",
-  },
-
-  {
-    slug: "movimentacoes",
-
-    title: "Movimentações e Extrato",
-
-    theme: "Arquitetura da informação",
-
-    description:
-      "Transição do Extrato EA para o IFA com saldo provisionado visível entre jornadas e aprofundamento em Movimentações.",
-
-    focus: "Provisionado transversal; CEP, CEP Plus e limite contextualizados.",
-  },
-
-  {
-    slug: "campanhas",
-
-    title: "Gestão de Campanhas",
-
-    theme: "Fluxos e operação em lote",
-
-    description:
-      "Configuração de campanhas, tratamento de bases, estados e manutenção em um fluxo administrativo coerente.",
-
-    focus: "Informações, público e feedback orientando a próxima ação.",
-  },
-
-  {
-    slug: "registros-atendimento",
-
-    title: "Registros de Atendimento",
-
-    theme: "IA aplicada à operação",
-
-    description:
-      "Resumos assistidos por IA e consulta ao histórico recente para apoiar a documentação do atendimento.",
-
-    focus: "Contexto, fidelidade do resumo e revisão humana.",
-  },
-]
-
-function SectionHeading({
-  index,
-
-  eyebrow,
-
-  title,
-
-  id,
-}: {
-  index: string
- ; eyebrow: string
- ; title: string
- ; id: string
-}) {
+function Label({ number, children }: { number: string; children: string }) {
   return (
-    <div className="section-heading">
-      <SectionLabel index={index}>{eyebrow}</SectionLabel>
-      <Text as="h2" className="display-md" id={id}>
-        {title}
-      </Text>
+    <div className="pf-label">
+      <span>{number}</span>
+      {children}
     </div>
   )
 }
 
 export default function Home() {
   return (
-    <>
+    <div className="portfolio-site">
       <PageMeta
         title="Israel Rozar — Senior Product Designer"
-        description="Portfólio de Israel Rozar: product design, discovery, sistemas complexos, acessibilidade e IA."
+        description="Design de produto, discovery e visão sistêmica. Conheça os projetos e a trajetória de Israel Rozar em serviços financeiros, saúde e consultoria."
       />
-      <Link className="skip-link" href="#conteudo">
+      <a className="skip-link" href="#conteudo">
         Pular para o conteúdo
-      </Link>
-
+      </a>
       <SiteHeader />
-
       <main id="conteudo">
-        <section className="hero" id="topo" aria-labelledby="hero-title">
-          <div className="hero-kicker">
-            <Pill tone="accent">Senior Product Designer</Pill>
-            <Text>São Paulo · Brasil</Text>
+        <section
+          className="pf-hero pf-container"
+          id="topo"
+          aria-labelledby="hero-title"
+        >
+          <div className="pf-hero-copy">
+            <div className="pf-kicker">
+              <span>Senior Product Designer</span>
+              <span>São Paulo • Brasil</span>
+            </div>
+            <h1 id="hero-title">
+              Design Estruturado para Ecossistemas de Alta Criticidade.
+            </h1>
+            <p className="pf-lead">
+              Desde 2006 desenho experiências digitais. Recentemente, no Itaú
+              Unibanco, liderei frentes de Product discovery e design da
+              plataforma IFA para especialistas de investimentos.
+            </p>
+            <div className="pf-actions">
+              <a className="pf-button pf-button-pine" href="#trabalho">
+                Conhecer meu trabalho <ArrowIcon direction="down" />
+              </a>
+              <a
+                className="pf-button pf-button-outline"
+                href="/documents/israel-rozar-curriculo.pdf"
+                download="Israel-Rozar-Curriculo.pdf"
+              >
+                Baixar currículo (PDF) <DownloadIcon />
+              </a>
+            </div>
           </div>
-
-          <div className="hero-feature">
-            <div className="hero-copy">
-              <Text as="h1" className="display-xl" id="hero-title">
-                Transformo complexidade em produtos claros, inclusivos e
-                escaláveis.
-              </Text>
-              <div className="hero-intro">
-                <Text className="hero-deck">
-                  Desenho produtos digitais desde 2006. Nos últimos 11 anos,
-                  foco em discovery, UX/UI e estratégia de produto, mais
-                  recentemente no Itaú Unibanco, na plataforma íon for
-                  Advisors.
-                </Text>
-                <div className="hero-actions">
-                  <Link className="button button--primary" href="#trabalho">
-                    Conhecer meu trabalho <ArrowIcon direction="down" />
-                  </Link>
-                  <Link
-                    className="button button--secondary"
-                    href="https://www.linkedin.com/in/israelrozar/"
+          <figure className="pf-portrait">
+            <div className="pf-portrait-image">
+              <img
+                src="/images/israel-rozar-treated-800.webp"
+                srcSet="/images/israel-rozar-treated-480.webp 480w, /images/israel-rozar-treated-800.webp 800w"
+                sizes="(max-width: 700px) 100vw, 360px"
+                width="800"
+                height="1000"
+                alt="Israel Rozar, Senior Product Designer"
+                fetchPriority="high"
+              />
+              <span className="pf-photo-label">IR • 2026</span>
+              <span className="pf-photo-place">São Paulo • BR</span>
+            </div>
+            <figcaption>
+              <span>Senior product designer</span>
+              <span>Einstein · Itaú · R/GA</span>
+            </figcaption>
+          </figure>
+        </section>
+        <section
+          className="pf-work pf-section"
+          id="trabalho"
+          aria-labelledby="work-title"
+        >
+          <div className="pf-container">
+            <Label number="01">Trabalhos selecionados</Label>
+            <h2 id="work-title">Projetos, decisões e contribuições.</h2>
+            <p className="pf-section-intro">
+              Um case em destaque e três projetos estratégicos que apresentam minha atuação
+              em design systems, plataformas complexas, telecom e service design.
+            </p>
+            <article className="pf-featured" id="project-einstein-laudos">
+              <div className="pf-featured-story">
+                <div className="pf-featured-meta">
+                  <span>★ Case em destaque · Saúde</span>
+                  <span>Hospital Israelita Albert Einstein</span>
+                </div>
+                <h3>Uma linguagem visual modular para laudos heterogêneos.</h3>
+                <p>
+                  Pesquisa e arquitetura de informação para estruturar mais de 80
+                  exames distintos em uma linguagem modular previsível, facilitando
+                  a tomada de decisão médica e reduzindo a ansiedade de pacientes.
+                </p>
+                <div className="pf-contribution">
+                  <span>Atuação como UX Lead</span>
+                  <p>
+                    Liderança de pesquisa clínica, sistematização de taxonomias,
+                    definição de componentes modulares, testes com médicos e
+                    pacientes, e alinhamento com arquitetura e engenharia.
+                  </p>
+                </div>
+                <a
+                  className="pf-button pf-button-lime"
+                  href="/cases/einstein-laudos"
+                >
+                  Explorar estudo de caso completo <ArrowIcon />
+                </a>
+              </div>
+              <div className="pf-featured-evidence">
+                <figure className="pf-case-preview">
+                  <a
+                    href="/cases/einstein-laudos"
+                    aria-label="Explorar estudo de caso completo do Hospital Albert Einstein"
                   >
-                    LinkedIn <ArrowIcon />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <figure className="portrait">
-              <div className="portrait-frame">
-                <img
-                  src="/images/israel-rozar-portrait-800.webp"
-                  srcSet="/images/israel-rozar-portrait-480.webp 480w, /images/israel-rozar-portrait-800.webp 800w"
-                  sizes="(max-width: 672px) 58vw, (max-width: 960px) 32vw, 22rem"
-                  width="800"
-                  height="1000"
-                  alt="Retrato profissional de Israel Rozar"
-                  decoding="async"
-                  fetchPriority="high"
-                />
-              </div>
-            </figure>
-          </div>
-
-          <div className="signal-bar" role="group" aria-label="Resumo profissional">
-            <div>
-              <Text as="strong">8 cases</Text>
-              <Text>documentados neste portfólio</Text>
-            </div>
-            <div>
-              <Text as="strong">11 anos</Text>
-              <Text>dedicados a produto e UX</Text>
-            </div>
-            <div>
-              <Text as="strong">Fintech + saúde</Text>
-              <Text>experiência em domínios complexos</Text>
-            </div>
-            <div>
-              <Text as="strong">WCAG + IA</Text>
-              <Text>práticas inclusivas e experimentação responsável</Text>
-            </div>
-          </div>
-        </section>
-
-        <section className="specialties-band" aria-label="Áreas de especialidade">
-          <div>
-            <span>Product Discovery</span>
-            <span aria-hidden="true">•</span>
-            <span>UX Strategy</span>
-            <span aria-hidden="true">•</span>
-            <span>Design Systems</span>
-            <span aria-hidden="true">•</span>
-            <span>Acessibilidade</span>
-            <span aria-hidden="true">•</span>
-            <span>IA responsável</span>
-          </div>
-        </section>
-
-        <section className="section about" aria-labelledby="sobre">
-          <SectionHeading
-            index="01"
-            eyebrow="Posicionamento"
-            id="sobre"
-            title="Design como ponte entre pessoas, negócio e tecnologia."
-          />
-          <div className="about-grid">
-            <Text className="lead">
-              Atuo onde o problema ainda não está claro e a solução precisa
-              equilibrar necessidades humanas, viabilidade técnica e objetivos
-              de negócio.
-            </Text>
-            <div className="about-copy">
-              <Text>
-                Minha experiência combina repertório de interface com visão
-                sistêmica. Conduzo discovery, estruturo jornadas e interfaces,
-                facilito decisões com times multidisciplinares e conecto
-                qualidade da experiência a resultados observáveis.
-              </Text>
-              <Text>
-                Em trabalhos recentes, aproximei design systems, acessibilidade
-                e inteligência artificial para melhorar consistência,
-                documentação e fluxos de trabalho — sem perder rigor ou
-                responsabilidade.
-              </Text>
-            </div>
-          </div>
-
-          <div className="capability-grid">
-            {capabilities.map((capability) => (
-              <article className="capability-card" key={capability.index}>
-                <Text as="span">{capability.index}</Text>
-                <Text as="h3">{capability.title}</Text>
-                <Text>{capability.description}</Text>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section work" aria-labelledby="trabalho">
-          <SectionHeading
-            index="02"
-            eyebrow="Cases"
-            id="trabalho"
-            title="Decisões documentadas em jornadas críticas."
-          />
-
-          <article className="featured-case">
-            <div className="case-summary">
-              <div className="case-kicker">
-                <Pill>Saúde · UX Lead</Pill>
-                <Text>Einstein × Foursys · registros de 2022</Text>
-              </div>
-              <Text as="h3">
-                <Link className="card-link" href="/cases/einstein-laudos">
-                  Uma linguagem visual modular para laudos heterogêneos.
-                </Link>
-              </Text>
-              <Text className="case-lead">
-                Um trabalho coletivo entre pesquisa, conteúdo, interface e
-                viabilidade técnica para facilitar a localização de informações
-                sem simplificar indevidamente o contexto clínico.
-              </Text>
-              <div className="case-role">
-                <Text as="strong">Atuação documentada</Text>
-                <ul>
-                  <li>Israel Rozar — UX Lead</li>
-                  <li>Pesquisa com médicos e questionário com pacientes</li>
-                  <li>Sistematização de dados, exceções e componentes</li>
-                  <li>Testes, revisão pós-teste e discussão com arquitetura</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="case-evidence" role="group" aria-label="Escopo da pesquisa">
-              <Text as="span">Universos de evidência</Text>
-              <div className="evidence-grid">
-                <div>
-                  <Text as="strong">4</Text>
-                  <Text>entrevistas médicas semiestruturadas</Text>
-                </div>
-                <div>
-                  <Text as="strong">121</Text>
-                  <Text>respostas no questionário exploratório</Text>
-                </div>
-                <div>
-                  <Text as="strong">14</Text>
-                  <Text>categorias de laudos no escopo</Text>
-                </div>
-                <div>
-                  <Text as="strong">80+</Text>
-                  <Text>laudos no inventário descrito</Text>
-                </div>
-              </div>
-              <Text className="evidence-note">
-                Amostras com objetivos diferentes: não se somam e não
-                representam conquistas individuais.
-              </Text>
-            </div>
-          </article>
-
-          <div className="case-summary-cta">
-            <Text>
-              Pesquisa, sistema modular, comparação visual, resultados de teste
-              e limites documentados em uma leitura dedicada.
-            </Text>
-            <Link
-              className="button button--primary"
-              href="/cases/einstein-laudos"
-              ariaLabel="Ler case completo: Einstein · Laudos médicos"
-              tabIndex={-1}
-            >
-              Ler case completo <ArrowIcon />
-            </Link>
-          </div>
-
-          <article className="featured-case featured-case--secondary">
-            <div className="case-summary">
-              <div className="case-kicker">
-                <Pill>Energia · Service design</Pill>
-                <Text>Neoenergia · EY × Livework · P&D ANEEL</Text>
-              </div>
-              <Text as="h3">
-                <Link className="card-link" href="/cases/neoenergia-conexao-digital">
-                  Discovery e service design para o ecossistema Neoenergia
-                </Link>
-              </Text>
-              <Text className="case-lead">
-                Mapeamento integral e redesenho de processos omnicanal no setor
-                elétrico, identificando oportunidades sistêmicas de automação
-                para reduzir gargalos operacionais e atritos de faturamento para
-                34 milhões de pessoas em 4 distribuidoras.
-              </Text>
-              <div className="case-role">
-                <Text as="strong">Atuação documentada</Text>
-                <ul>
-                  <li>
-                    Israel Rozar — Senior Product Designer / Service Designer
-                  </li>
-                  <li>
-                    Pesquisa qualitativa, shadowing e auditoria de silos
-                    operacionais
-                  </li>
-                  <li>
-                    5 macro-etapas do ciclo de vida em blueprints de serviço
-                  </li>
-                  <li>Jornadas, oportunidades e visão futura de serviço</li>
-                </ul>
-              </div>
-            </div>
-
-            <div
-              className="case-evidence"
-              role="group"
-              aria-label="Escala oficial da concessão"
-            >
-              <Text as="span">Escala oficial</Text>
-              <div className="evidence-grid">
-                <div>
-                  <Text as="strong">34M</Text>
-                  <Text>habitantes atendidos</Text>
-                </div>
-                <div>
-                  <Text as="strong">13,9M</Text>
-                  <Text>clientes faturados</Text>
-                </div>
-                <div>
-                  <Text as="strong">5</Text>
-                  <Text>estágios em blueprints</Text>
-                </div>
-                <div>
-                  <Text as="strong">4</Text>
-                  <Text>distribuidoras no contexto</Text>
-                </div>
-              </div>
-              <Text className="evidence-note">
-                Dados históricos da organização e recorte de discovery. A escala
-                da concessão não representa um resultado de implantação do
-                projeto.
-              </Text>
-            </div>
-          </article>
-
-          <div className="case-summary-cta">
-            <Text>
-              Auditoria de silos operacionais, blueprints das 5 etapas da
-              jornada, oportunidades e visão futura em uma leitura dedicada.
-            </Text>
-            <Link
-              className="button button--primary"
-              href="/cases/neoenergia-conexao-digital"
-              ariaLabel="Ler case completo: Neoenergia · Service design"
-              tabIndex={-1}
-            >
-              Ler case completo <ArrowIcon />
-            </Link>
-          </div>
-
-          <article className="featured-case featured-case--secondary">
-            <div className="case-summary">
-              <div className="case-kicker">
-                <Pill>Telecom · UX corporativo</Pill>
-                <Text>Claro · acervo de 2017–2018</Text>
-              </div>
-              <Text as="h3">
-                <Link className="card-link" href="/cases/claro-ativacao-simplificada">
-                  Simplificando o atendimento em múltiplos canais.
-                </Link>
-              </Text>
-              <Text className="case-lead">
-                Discovery com profissionais da operação e stakeholders,
-                mapeamento de jornadas e exploração de interfaces desktop e
-                mobile para um sistema corporativo de vendas.
-              </Text>
-              <div className="case-role">
-                <Text as="strong">Recorte de atuação</Text>
-                <ul>
-                  <li>Pesquisa, workshops, personas e jornadas</li>
-                  <li>Definição de fluxos e prototipação</li>
-                  <li>Interfaces desktop e mobile</li>
-                  <li>Dados do cliente, oferta e confirmação</li>
-                </ul>
-              </div>
-            </div>
-
-            <div
-              className="case-evidence"
-              role="group"
-              aria-label="Escala declarada do discovery"
-            >
-              <Text as="span">Escala declarada</Text>
-              <div className="evidence-grid">
-                <div>
-                  <Text as="strong">20</Text>
-                  <Text>entrevistas</Text>
-                </div>
-                <div>
-                  <Text as="strong">10</Text>
-                  <Text>personas</Text>
-                </div>
-                <div>
-                  <Text as="strong">22</Text>
-                  <Text>jornadas mapeadas</Text>
-                </div>
-                <div>
-                  <Text as="strong">70</Text>
-                  <Text>oportunidades identificadas</Text>
-                </div>
-              </div>
-              <Text className="evidence-note">
-                Escopo relatado no case original. Essas quantidades descrevem o
-                discovery e não equivalem a resultados operacionais.
-              </Text>
-            </div>
-          </article>
-
-          <div className="case-summary-cta">
-            <Text>
-              Contexto, discovery, decisões, limites de evidência e próximos
-              passos organizados para uma leitura responsável.
-            </Text>
-            <Link
-              className="button button--primary"
-              href="/cases/claro-ativacao-simplificada"
-              ariaLabel="Ler case completo: Claro · Ativação simplificada"
-              tabIndex={-1}
-            >
-              Ler case completo <ArrowIcon />
-            </Link>
-          </div>
-
-          <section className="case-roadmap" aria-labelledby="itau-cases-title">
-            <div className="roadmap-heading">
-              <div>
-                <Pill>Fintech · Itaú Unibanco</Pill>
-                <Text as="h3" id="itau-cases-title">
-                  Cinco recortes de produto para operações complexas.
-                </Text>
-              </div>
-              <div className="roadmap-intro">
-                <Text>
-                  Problemas, decisões e aprendizados organizados em páginas
-                  próprias. Os relatos distinguem propostas de resultados
-                  demonstrados.
-                </Text>
-                <Text>
-                  Cada case mostra telas reais, as decisões tomadas e o que
-                  ficou como proposta.
-                </Text>
-              </div>
-            </div>
-            <div className="roadmap-grid">
-              {additionalCases.map((project, index) => (
-                <article className="roadmap-card" key={project.slug}>
-                  <div className="roadmap-card-top">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <span>{project.theme}</span>
-                  </div>
-                  <div className="roadmap-card-title">
-                    <Text as="h4">{project.title}</Text>
-                  </div>
-                  <Text className="roadmap-reason">{project.description}</Text>
-                  <div className="roadmap-facts">
-                    <div>
-                      <Text as="span">Recorte de design</Text>
-                      <Text>{project.focus}</Text>
+                    <img
+                      src="/images/hiae-mockup-macbook-retina.webp"
+                      width="1200"
+                      height="700"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      alt="Interface do sistema de laudos clínicos do Hospital Israelita Albert Einstein no MacBook Pro."
+                    />
+                  </a>
+                  <figcaption>
+                    Sistema de laudos clínicos em alta resolução no MacBook Pro
+                  </figcaption>
+                </figure>
+                <h4>Evidências de discovery e testes</h4>
+                <dl className="pf-evidence-grid">
+                  {[
+                    ["14", "Famílias de laudos sistematizadas"],
+                    ["121", "Pacientes em discovery e testes"],
+                  ].map(([n, t]) => (
+                    <div key={n}>
+                      <dt>{n}</dt>
+                      <dd>{t}</dd>
                     </div>
+                  ))}
+                </dl>
+                <div className="pf-partners">
+                  Hospital Albert Einstein <span>Foursys Design</span>
+                </div>
+              </div>
+            </article>
+            <div className="pf-project-grid pf-project-grid-editorial">
+              {projects.map((p, i) => (
+                <article
+                  className="pf-project"
+                  key={p.slug}
+                  id={`project-${p.slug}`}
+                >
+                  <div className="pf-project-meta">
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    <span>{p.client}</span>
                   </div>
-                  <Link
-                    className="roadmap-link"
-                    href={`/cases/itau/${project.slug}`}
-                  >
-                    Ler case: {project.title} <ArrowIcon />
-                  </Link>
+                  <div className="pf-project-heading">
+                    <h3>{p.title}</h3>
+                    <p className="pf-project-theme">{p.theme}</p>
+                  </div>
+                  <p className="pf-project-desc">{p.description}</p>
+                  {p.decision && (
+                    <p className="pf-project-decision">
+                      <strong>Decisão: </strong>
+                      {p.decision}
+                    </p>
+                  )}
+                  <a href={p.href} className="pf-project-link">
+                    Explorar o case <span aria-hidden="true">→</span>
+                    <span className="pf-sr-only">: {p.title}</span>
+                  </a>
                 </article>
               ))}
             </div>
-          </section>
-        </section>
-
-        <section className="section experience" aria-labelledby="experiencia">
-          <SectionHeading
-            index="03"
-            eyebrow="Experiência"
-            id="experiencia"
-            title="Uma carreira construída entre acabamento de interface e visão de sistema."
-          />
-
-          <div className="timeline">
-            {experience.map((item) => (
-              <article className="timeline-item" key={item.company}>
-                <Text as="span" className="timeline-period">
-                  {item.period}
-                </Text>
-                <div className="timeline-main">
-                  <Text as="h3">{item.company}</Text>
-                  <Text as="strong">{item.role}</Text>
-                  <Text>{item.description}</Text>
-                </div>
-                <ul className="timeline-tags" aria-label="Competências">
-                  {item.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-
-          <div className="credentials">
-            <div>
-              <Text as="span">Formação</Text>
-              <Text as="strong">Ciência da Computação</Text>
-              <Text>Universidade do Vale do Itajaí · UNIVALI</Text>
-            </div>
-            <div>
-              <Text as="span">Temas de estudo contínuo</Text>
-              <Text as="strong">Produto · Experiência · Dados</Text>
-              <Text>
-                Aprendizado contínuo em produto, experiência e tecnologia.
-              </Text>
+            <div className="pf-submodules-callout" style={{ marginTop: "2rem", padding: "1.25rem 1.5rem", borderRadius: "1rem", background: "var(--paper-deep, #F2EFE8)", border: "1px solid var(--line, #E2DDD5)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
+              <span style={{ fontSize: "0.9375rem", color: "var(--ink-muted, #4A5568)" }}>
+                Outros fluxos do ecossistema Itaú Corretora:
+              </span>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <a href="/cases/itau/vencimentos" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Vencimentos →</a>
+                <a href="/cases/itau/movimentacoes" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Movimentações →</a>
+                <a href="/cases/itau/campanhas" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Gestão de Campanhas →</a>
+              </div>
             </div>
           </div>
         </section>
-
         <section
-          className="contact"
-          id="contato"
-          aria-labelledby="contact-title"
+          className="pf-about pf-section"
+          id="sobre"
+          aria-labelledby="about-title"
         >
-          <div>
-            <SectionLabel index="04">Contato</SectionLabel>
-            <Text as="h2" id="contact-title">
-              Vamos transformar um problema complexo em uma direção clara.
-            </Text>
-          </div>
-          <div className="contact-side">
-            <Text>
-              Disponível para conversar sobre posições seniores, consultoria e
-              desafios de produto.
-            </Text>
-            <Link
-              className="button button--light"
-              href="mailto:irozar@yahoo.com.br"
-            >
-              Enviar um e-mail <ArrowIcon />
-            </Link>
-            <div className="contact-links">
-              <Link href="/documents/israel-rozar-curriculo.pdf">
-                Baixar currículo
-              </Link>
-              <Link href="https://www.linkedin.com/in/israelrozar/">
-                LinkedIn
-              </Link>
-              <Link href="https://uxfol.io/israelrozar">UXfolio</Link>
+          <div className="pf-container">
+            <Label number="02">Expertise</Label>
+            <div className="pf-about-heading">
+              <h2 id="about-title">
+                Design como ponte entre pessoas, negócio e tecnologia.
+              </h2>
+              <div>
+                <p>
+                  Atuo onde o problema ainda não está claro e a solução precisa
+                  equilibrar necessidades humanas, viabilidade técnica e
+                  objetivos de negócio.
+                </p>
+                <p>
+                  Minha experiência combina repertório de craft com visão
+                  sistêmica. Conduzo discovery, estruturo jornadas e interfaces,
+                  facilito decisões com times multidisciplinares e conecto a
+                  qualidade da experiência a resultados observáveis.
+                </p>
+              </div>
+            </div>
+            <div className="pf-expertise-grid">
+              {expertise.map(([tag, title, text], i) => (
+                <article className="pf-expertise" key={title}>
+                  <img
+                    className="pf-expertise-icon"
+                    src={`/icons/${["discovery", "layout", "systems", "brain"][i]}.svg`}
+                    width="20"
+                    height="20"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <span>
+                    {String(i + 1).padStart(2, "0")} / {tag}
+                  </span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
+        <section
+          className="pf-trajectory pf-section pf-container"
+          id="experiencia"
+          aria-labelledby="experience-title"
+        >
+          <div className="pf-trajectory-intro">
+            <Label number="03">Trajetória</Label>
+            <h2 id="experience-title">
+              Uma carreira construída entre craft e visão sistêmica.
+            </h2>
+            <p>
+              Atuação em produtos digitais desde 2006, com experiência em
+              serviços financeiros, saúde e consultoria. Trabalho com pesquisa,
+              decisões de design e colaboração com engenharia.
+            </p>
+          </div>
+          <ol className="pf-timeline">
+            {experience.map(([company, role, date]) => (
+              <li key={company}>
+                <div>
+                  <h3>{company}</h3>
+                  <p>{role}</p>
+                </div>
+                <span>{date}</span>
+              </li>
+            ))}
+          </ol>
+          <aside className="pf-education" aria-label="Formação">
+            <div>
+              <h3>Formação acadêmica</h3>
+              <p>Ciência da Computação</p>
+              <span>Universidade do Vale do Itajaí (Univali)</span>
+            </div>
+            <div>
+              <h3>Formação contínua</h3>
+              <p>
+                Product Launches
+                <br />
+                UX Design
+                <br />
+                Data & Analytics
+              </p>
+            </div>
+          </aside>
+        </section>
+        <ContactSection />
       </main>
-
       <SiteFooter />
-    </>
+    </div>
   )
 }

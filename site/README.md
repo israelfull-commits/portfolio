@@ -1,30 +1,37 @@
-# Portfólio Israel Rozar — réplica fiel do Figma Make
+# Portfólio de Israel Rozar
 
-Projeto React/Vite reconstruído a partir do código-fonte e dos assets do Figma Make `wu8RFWqSsQKt4SgrBqgGEf`. A identidade visual e o comportamento responsivo foram preservados; a versão pública foi refinada para concentrar evidências verificáveis e reduzir riscos de confidencialidade, autoria e métricas sem fonte.
+Implementação React 19 + Vite da home aprovada no Figma (`370:16614`), com adaptação móvel baseada em `375:366`. Estudos de caso existentes foram preservados e conectados à home.
 
-## Executar
-
-```powershell
-npm install
-npm run dev -- --host 0.0.0.0 --port 4173 --strictPort
-```
-
-Abra `http://localhost:4173`.
-
-## Validar
+## Executar e validar
 
 ```powershell
+npm ci
+npm run dev -- --port 8443
+node node_modules/typescript/bin/tsc --noEmit
 npm run build
+npm run preview -- --port 8443
 ```
 
-O relatório de comparação visual e funcional está em `design-qa.md`.
+## Conteúdo e manutenção
 
-## Correções aplicadas sem redesign
+- Home, projetos, posicionamento, trajetória e contato: `src/pages/Home.tsx`.
+- Layout responsivo da home: `src/portfolio.css`.
+- Tokens compartilhados e cabeçalho: bloco final de `src/index.css`.
+- Menu acessível: `src/components/SiteChrome.tsx`.
+- Estudos de caso: `src/pages/CasePages.tsx` e `src/components/CasePresentation.tsx`.
+- Currículo: `public/documents/israel-rozar-curriculo.pdf`.
+- Retrato tratado: `public/images/israel-rozar-treated-800.webp`, variante480 para telas menores. Original mantido.
+- Plus Jakarta Sans400/600/700 hospedada localmente, licença OFL em `public/fonts/OFL.txt`.
+- Identidade da hospedagem: `.openai/hosting.json`. Reutilizar o project_id nas atualizações.
 
-- Metadados únicos, canonical, Open Graph, Twitter Card e JSON-LD.
-- Indexação habilitada no HTML, em `.figma/make/site.json` e em `robots.txt`.
-- Menu móvel com `button`, `aria-expanded`, `aria-controls`, foco inicial, fechamento por link, clique externo e `Escape`.
-- Assets visuais, currículo e favicon armazenados localmente.
-- Remoção da injeção duplicada de metadados do shell Figma.
+Paleta: canvas#FCF9F2, subtle#F6F3EC, texto#1A201C/#4A554E, pine#0A3622, lime#CEFF1A, borda#EDE9DE. Container1152px; margens desktop64px, tablet32px e mobile24px. Seções64px/48px; grids24px; cards16px; destaque/contato24px. Não introduzir modo escuro automático.
 
-Antes de publicar em outro domínio, atualize canonical, sitemap, `og:url`, JSON-LD e URLs absolutas das imagens sociais.
+A home inclui um case de destaque e quatro projetos do Itaú. Registros de Atendimento é apresentado como recorte, com limites documentados no estudo. As amostras de pesquisa do Einstein não devem ser somadas nem transformadas em resultados de negócio.
+
+Não há formulário nem coleta de dados. Contato abre o cliente de e-mail; LinkedIn e UXfolio apontam aos perfis fornecidos no projeto. Ao mudar o domínio, atualizar URLs absolutas de index.html, robots.txt e sitemap.xml. PageMeta usa o domínio atual para os metadados das rotas.
+
+## Verificação e Registro de Mudanças
+
+- Consulte `CHANGELOG.md` e `docs/LOG-AUDITORIAS-E-EVOLUCOES.md` para o histórico completo e rastreável de todas as auditorias, correções e evoluções aplicadas.
+- Execute `python scripts/update_changelog.py` para registrar novas alterações automaticamente no histórico.
+- Consulte `design-qa.md` para evidências e desvios intencionais. Capturas locais ficam em `qa/` e não são publicadas. Os assets distribuídos ficam em `public/`; build em `dist/`.

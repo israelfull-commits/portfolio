@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build outputs
+dist/
+*/dist/
+
+# Logs and temporary files
+*.log
+tmp/
+output/
+qa/
+.audit/
+.playwright-cli/
+.playwright-mcp/
+.vscode/
+
+# Build archives
+*.tar.gz
+
+# Experimental / secondary clones
+portfolio-verde/
+portfolio-*.png
+audit-*.png
+auditoria-*.png
+hero_*.png
+card-*.png
+cards-*.png
+cases-*.png
+como-trabalho.png
+comparacao-*.png
+contato-*.png
+einstein-*.png
+expertise-*.png
+guia-*.png
+hero-*.png
+improvements-*.png
+itau-*.png
+opcao-*.png
+paleta-*.png
+posicionamento-*.png
+project-*.png
+site-*.png
+trajetoria-*.png

@@ -1,0 +1,140 @@
+{
+  "title": "Einstein · Laudos médicos — Israel Rozar",
+  "heroHeadline": "Clareza não é o mesmo que compreensão.",
+  "heroSubtitle": "Uma linguagem visual modular para laudos em diferentes canais.",
+  "chaptersCount": 8,
+  "chapters": [
+    {
+      "index": 1,
+      "title": "Organizar resultados sem perder o contexto clínico.",
+      "paragraphsCount": 3,
+      "figures": [],
+      "metrics": [
+        "entrevistas semiestruturadas\n4 médicos\npesquisa exploratória com pacientes\nQuestionário\ncategorias de exames no escopo\n14"
+      ]
+    },
+    {
+      "index": 2,
+      "title": "Do documento ao dado.",
+      "paragraphsCount": 2,
+      "figures": [
+        {
+          "src": "/images/hiae-estado-atual-anotado.webp",
+          "width": 2000,
+          "height": 1125,
+          "alt": "Laudo atual anotado, com título e material, metadados, resultado, referência e observações em posições diferentes",
+          "caption": "Estado atual: título, metadados, resultado, referência e observações aparecem em posições diferentes. Conteúdo fictício.Ver ampliado"
+        },
+        {
+          "src": "/images/hiae-triangulacao-pesquisa-1200.webp",
+          "width": 1200,
+          "height": 701,
+          "alt": "Diagrama relacionando questionário, entrevistas médicas e levantamento documental",
+          "caption": "Triangulação de pesquisa: perspectivas de pacientes e médicos combinadas à análise dos documentos e das restrições do serviço.Ver ampliado"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "index": 3,
+      "title": "Uma hierarquia que funcione na tela e no papel.",
+      "paragraphsCount": 2,
+      "figures": [
+        {
+          "src": "/images/hiae-estado-proposto-anotado.webp",
+          "width": 2000,
+          "height": 1125,
+          "alt": "Laudo proposto anotado, com título, resultado e referência agrupados e metadados separados",
+          "caption": "Estado proposto: título, resultado e referência agrupados; observações e metadados separados. Conteúdo fictício.Ver ampliado"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "index": 4,
+      "title": "Preservar relações entre resultado, referência e contexto.",
+      "paragraphsCount": 4,
+      "figures": [
+        {
+          "src": "/images/hiae-ds-componentes-crop-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "alt": "Documentação dos componentes DataField e ExamTitle com tokens e anatomia modular",
+          "caption": "Documentação dos componentes estruturais: DataField e ExamTitle com tokens de espaçamento e regras de anatomia modular.Ver ampliado"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "index": 5,
+      "title": "Uma estrutura comum para conteúdos diferentes.",
+      "paragraphsCount": 1,
+      "figures": [
+        {
+          "src": "/images/hiae-laudo-original-recorte.webp",
+          "width": 1120,
+          "height": 640,
+          "alt": "Documento original — recorte de análise",
+          "caption": "Documento original — recorte de análise da composição textual densa.Ver ampliado"
+        },
+        {
+          "src": "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
+          "width": 1600,
+          "height": 1199,
+          "alt": "Reconstrução demonstrativa da estrutura proposta",
+          "caption": "Reconstrução demonstrativa da estrutura proposta. Conteúdo fictício.Ver ampliado"
+        },
+        {
+          "src": null,
+          "width": null,
+          "height": null,
+          "alt": null,
+          "caption": "Artefato original de proposta: template no Word para organizar informações do exame. Demonstra a estrutura de conteúdo; não comprova implantação.Ver ampliado"
+        },
+        {
+          "src": "/images/hiae-visao-futura-mamografia.webp",
+          "width": 2000,
+          "height": 1125,
+          "alt": "Laudo de mamografia estruturado para tablet e celular, com cabeçalho padronizado e seções de técnica, indicação e achados",
+          "caption": "Visão futura: mamografia em tablet e celular, com a mesma estrutura de seções. Conteúdo fictício.Ver ampliado"
+        },
+        {
+          "src": "/images/hiae-visao-futura-ressonancia.webp",
+          "width": 2000,
+          "height": 1125,
+          "alt": "Laudo de ressonância cardiovascular com resultados em tabela, em tablet e celular",
+          "caption": "Visão futura: ressonância cardiovascular, com resultados em tabela. Conteúdo fictício.Ver ampliado"
+        },
+        {
+          "src": "/images/hiae-multicanal-web-celular.webp",
+          "width": 2000,
+          "height": 1032,
+          "alt": "Mesmo exame exibido na web e no celular, com a mesma hierarquia de título, resultado e referência",
+          "caption": "Mesmo exame na web e no celular: a hierarquia se mantém entre canais. Dados fictícios.Ver ampliado"
+        }
+      ],
+      "metrics": []
+    },
+    {
+      "index": 6,
+      "title": "Clareza percebida e interpretação exigem avaliações distintas.",
+      "paragraphsCount": 2,
+      "figures": [],
+      "metrics": []
+    },
+    {
+      "index": 7,
+      "title": "Pesquisa, entregáveis e colaboração.",
+      "paragraphsCount": 3,
+      "figures": [],
+      "metrics": []
+    },
+    {
+      "index": 8,
+      "title": "Continue explorando os projetos",
+      "paragraphsCount": 0,
+      "figures": [],
+      "metrics": []
+    }
+  ]
+}

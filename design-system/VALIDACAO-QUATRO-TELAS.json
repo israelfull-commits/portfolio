@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-13",
+  "scope": "Frames desktop/mobile; valores da narrativa excluem interfaces de produto em mockups.",
+  "results": [
+    {
+      "id": "370:16614",
+      "name": "Portfólio / Home / Desktop · 1280",
+      "overflows": [],
+      "paletteExceptions": [],
+      "unboundNarrative": [],
+      "smallNarrative": [],
+      "evidenceTextCount": 0
+    },
+    {
+      "id": "370:17047",
+      "name": "Portfólio / Case / Desktop · 1280",
+      "overflows": [],
+      "paletteExceptions": [],
+      "unboundNarrative": [],
+      "smallNarrative": [],
+      "evidenceTextCount": 42
+    },
+    {
+      "id": "375:366",
+      "name": "Portfólio / Home / Mobile · 390",
+      "overflows": [],
+      "paletteExceptions": [],
+      "unboundNarrative": [],
+      "smallNarrative": [],
+      "evidenceTextCount": 0
+    },
+    {
+      "id": "375:892",
+      "name": "Portfólio / Case / Mobile · 390",
+      "overflows": [],
+      "paletteExceptions": [],
+      "unboundNarrative": [],
+      "smallNarrative": [],
+      "evidenceTextCount": 43
+    }
+  ],
+  "limitations": [
+    "Reações do protótipo relidas e persistidas; execução em modo apresentação não testada.",
+    "Destinos de cases documentais abrem frames desktop no Figma.",
+    "Registros de Atendimento permanece em preparação.",
+    "Conteúdo provisório e métricas não foram auditados como evidências factuais.",
+    "Miniatura geral Orbe não é evidência de detalhe legível; há detalhe ampliado externo."
+  ]
+}

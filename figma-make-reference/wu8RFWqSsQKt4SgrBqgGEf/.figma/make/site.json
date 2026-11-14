@@ -1,0 +1,10 @@
+{
+  "description": "Helps senior product designers build accessible, responsive portfolios with research-backed case study frameworks and a complete editorial template.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
