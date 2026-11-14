@@ -185,14 +185,14 @@ const einsteinImages: CaseImage[] = [
 ]
 
 export const einsteinPresentation: CasePresentationData = {
-  title: "Albert Einstein · Laudos de Medicina Diagnóstica",
+  title: "Albert Einstein · Consumo de Resultados",
 
   context: "Saúde · HIAE × Foursys · 2022",
 
-  headline: "Clareza não é o mesmo que compreensão.",
+  headline: "Uma linguagem visual modular para laudos heterogêneos.",
 
   subtitle:
-    "Pesquisa e arquitetura de informação para estruturar mais de 80 exames distintos em uma linguagem modular previsível, facilitando a tomada de decisão médica e a localização de informações pelo paciente para a consulta clínica.",
+    "Um trabalho coletivo entre pesquisa, conteúdo, interface e viabilidade técnica para facilitar a criação dos laudos e a localização de informações sem simplificar indevidamente o contexto clínico.",
 
   role: "UX Lead",
 
@@ -230,23 +230,23 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p className="cp-lead">
-              O objetivo central é clareza, compreensão e facilidade para interpretar resultados: apoiar a tomada de decisão médica com rapidez e permitir que o paciente localize o que importa para levar à consulta clínica.
+              Como facilitar a localização e a leitura do laudo sem induzir uma interpretação clínica isolada?
             </p>
             <p>
-              Em hospitais e laboratórios, cada exame costumava ter um formato diferente. Informações importantes ficavam dispersas: o paciente tinha dificuldade para encontrar seu resultado, e o médico perdia tempo buscando métodos e observações em partes separadas da folha.
+              Laudos de diferentes laboratórios e hospitais parceiros reuniam informações críticas em estruturas variáveis. O projeto desenhou uma linguagem modular previsível para mais de 80 tipos de exames, permitindo que médicos cruzem resultados, métodos e referências com agilidade, e que pacientes localizem seus dados com facilidade para levar à conversa médica.
             </p>
           </div>
           <CaseMetrics
             items={[
-              ["121", "pacientes responderam à pesquisa de hábitos de leitura"],
+              ["121", "pacientes responderam ao questionário de hábitos de leitura"],
 
               ["4", "médicos especialistas entrevistados em profundidade"],
 
-              ["14", "modelos padronizados cobrindo todo o acervo de exames"],
+              ["14", "entregáveis canônicos e famílias de laudos estruturadas"],
             ]}
           />
           <p>
-            Ouvimos 121 pacientes para mapear as maiores dúvidas ao abrir um laudo e entrevistamos 4 médicos para garantir total segurança clínica. Todos os dados apresentados foram anonimizados conforme a LGPD e o sigilo médico.
+            A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
           </p>
         </>
       ),
