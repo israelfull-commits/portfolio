@@ -40,7 +40,7 @@ const sourceLinks: Record<string, Array<[string, string]>> = {
 
   claro: [
     [
-      "Relato original — Ativação Simplificada",
+      "Documentação do Case — Ativação Simplificada",
 
       "https://uxfol.io/p/israelrozar/033c945f",
     ],

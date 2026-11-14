@@ -28,3 +28,4 @@ if (fs.existsSync(indexPath)) {
 } else {
   console.error("dist/index.html not found!")
 }
+
