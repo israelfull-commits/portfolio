@@ -1756,7 +1756,7 @@ export function ItauPresentation() {
               "Revisão do conteúdo",
             ],
 
-        note: "Síntese editorial do recorte apresentado. Não representa uma interface implementada nem substitui as evidências do projeto.",
+        note: "Síntese de arquitetura da informação e modelos de fluxo para conformidade com sigilo bancário e padrões do íon for Advisors.",
       }
       : undefined,
 

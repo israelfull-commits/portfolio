@@ -23,6 +23,8 @@ DEFENSIVE_PATTERNS = [
     r"limites\s+das\s+evidências",
     r"relato\s+original",
     r"amostras\s+não\s+se\s+somam",
+    r"não\s+representa\s+uma\s+interface",
+    r"não\s+substitui\s+as\s+evidências",
     r"posteriormente",
     r"temporário",
     r"rascunho",
