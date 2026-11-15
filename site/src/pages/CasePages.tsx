@@ -286,16 +286,28 @@ export const einsteinPresentation: CasePresentationData = {
               </ul>
             </div>
           </div>
-          <CaseFigure
-            image={{
-              src: "/images/hiae-estado-proposto-anotado.webp",
-              width: 2000,
-              height: 1076,
-              alt: "Laudo proposto anotado demonstrando resultado e valores normais agrupados, e dados administrativos no topo",
-              caption:
-                "Proposta aprovada: resultado do exame, unidade de medida e valores normais agrupados no mesmo bloco visual; informações administrativas separadas no topo. Dados anonimizados para proteção de privacidade.",
-            }}
-          />
+          <div className="cp-gallery">
+            <CaseFigure
+              image={{
+                src: "/images/hiae-estado-atual-anotado.webp",
+                width: 2000,
+                height: 1076,
+                alt: "Laudo anterior anotado mostrando dados espalhados e valores normais longe do resultado",
+                caption:
+                  "Antes: informações espalhadas pela página, resultado distante dos valores normais e dados administrativos misturados ao texto médico.",
+              }}
+            />
+            <CaseFigure
+              image={{
+                src: "/images/hiae-estado-proposto-anotado.webp",
+                width: 2000,
+                height: 1076,
+                alt: "Laudo proposto anotado demonstrando resultado e valores normais agrupados, e dados administrativos no topo",
+                caption:
+                  "Depois (Proposta aprovada): resultado, unidade e valores normais agrupados no mesmo bloco visual; dados administrativos organizados no topo.",
+              }}
+            />
+          </div>
           <div className="cp-note">
             <h3>Meu papel como UX Lead</h3>
             <p>
@@ -320,20 +332,9 @@ export const einsteinPresentation: CasePresentationData = {
 
               "Como o paciente lê: busca o próprio resultado e precisa localizar o que importa para levar à conversa médica, sem se perder em termos técnicos ou fazer interpretações clínicas isoladas.",
 
-              "Limitações dos sistemas: mapeamos o tamanho dos textos e tabelas para garantir que nenhuma palavra ou número ficasse cortado em qualquer impressora.",
+              "Limitações dos sistemas: mapeamos o tamanho dos textos e tabelas para garantir que nenhuma palavra ou número ficasse cortado em qualquer impressora dos laboratórios parceiros.",
             ]}
           />
-          <CaseFigure
-            image={{
-              src: "/images/hiae-estado-atual-anotado.webp",
-              width: 2000,
-              height: 1076,
-              alt: "Laudo anterior anotado mostrando dados espalhados e valores normais longe do resultado",
-              caption:
-                "Como era antes: informações espalhadas pela página, com o resultado distante dos valores normais e dados administrativos misturados ao texto médico.",
-            }}
-          />
-          <CaseFigure image={einsteinImages[1]} />
           <div className="cp-note">
             <h3>Evitando erros de leitura</h3>
             <p>
@@ -391,34 +392,6 @@ export const einsteinPresentation: CasePresentationData = {
               </div>
             </li>
           </ol>
-          <p style={{ fontSize: "0.875rem", color: "var(--cp-muted)", marginBottom: "2rem", lineHeight: 1.5 }}>
-            A evolução para a versão 3.0 refinou o espaçamento e a largura de leitura, removeu negritos excessivos que poluíam a página e organizou os dados de identificação em colunas discretas.
-          </p>
-          <ol className="cp-decisions">
-            {[
-              [
-                "Âncora de leitura imediata",
-                "Nome do exame, material, resultado e referência formam o primeiro ponto de contato visual.",
-              ],
-              [
-                "Componentes flexíveis (dataField e examTitle)",
-                "Em vez de desenhar uma tela para cada um dos 80+ exames, criamos blocos modulares que acomodam números simples, tabelas ou textos longos.",
-              ],
-              [
-                "Sinais claros e acessíveis",
-                "Texto, posição e símbolos trabalham juntos; a cor nunca comunica o status de um exame sozinha.",
-              ],
-              [
-                "Compatibilidade com os sistemas do hospital",
-                "Estrutura integrada ao Design System Zera 1.0, com cabeçalhos e rodapés que funcionam tanto nas impressoras dos laboratórios quanto nas telas modernas.",
-              ],
-            ].map(([title, copy]) => (
-              <li key={title}>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </li>
-            ))}
-          </ol>
           <CaseFigure
             image={{
               src: "/images/hiae-ds-componentes-crop-1600.webp",
@@ -441,36 +414,6 @@ export const einsteinPresentation: CasePresentationData = {
           <p>
             Um dos maiores desafios foi garantir que o mesmo padrão visual funcionasse tanto para laudos descritivos com muito texto (como mamografia e biópsias) quanto para tabelas densas cheias de números (como ressonâncias e hemogramas). A nova anatomia organiza a leitura para que o olhar encontre primeiro o resultado principal e, em seguida, os detalhes de técnica e observações.
           </p>
-          <div className="cp-gallery">
-            <CaseFigure
-              image={{
-                src: "/images/hiae-laudo-original-recorte.webp",
-                width: 1120,
-                height: 640,
-                alt: "Recorte do laudo original demonstrando texto denso e sem hierarquia visual",
-                caption:
-                  "Laudo original: texto corrido e denso, onde valores de referência e resultados se misturavam sem hierarquia visual clara.",
-              }}
-            />
-            <CaseFigure
-              image={{
-                src: "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
-                width: 1600,
-                height: 1199,
-                alt: "Estrutura modular de laudo proposta com áreas bem delimitadas",
-                caption:
-                  "Proposta modular: anatomia padronizada com áreas bem delimitadas para resultado, valores de referência e contexto clínico.",
-              }}
-            />
-          </div>
-          <CaseFigure
-            image={{
-              ...einsteinImages[0],
-              previewCrop: { x: 216, y: 188, width: 718, height: 931 },
-              caption:
-                "Adaptação para sistemas legados: estrutura compatível com geradores de texto hospitalares e pronta para impressão em preto e branco em folha A4.",
-            }}
-          />
           <div className="cp-gallery">
             <CaseFigure
               image={{
