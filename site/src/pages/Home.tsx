@@ -211,17 +211,17 @@ export default function Home() {
                     ariaLabel="Explorar estudo de caso completo do Hospital Albert Einstein"
                   >
                     <img
-                      src={assetUrl("/images/hiae-mockup-macbook-retina.webp")}
+                      src={assetUrl("/images/hiae-mockup-studio-pro.webp")}
                       width="1200"
-                      height="700"
+                      height="675"
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      alt="Interface do sistema de laudos clínicos do Hospital Israelita Albert Einstein no MacBook Pro."
+                      alt="Interface modular do sistema de laudos clínicos do Hospital Israelita Albert Einstein em alta resolução."
                     />
                   </Link>
                   <figcaption>
-                    Sistema de laudos clínicos em alta resolução no MacBook Pro
+                    Sistema de laudos clínicos: arquitetura modular e alta legibilidade diagnóstica
                   </figcaption>
                 </figure>
                 <h4>Evidências de discovery e testes</h4>
