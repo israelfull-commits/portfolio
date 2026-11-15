@@ -74,17 +74,12 @@ def check_stray_semicolons(autofix=False):
 
 def check_unwrapped_assets():
     errors = []
-    img_pattern = re.compile(r'<img[^>]+src=["\'](/(?:images|icons)/[^"\']+)["\']')
-    a_pattern = re.compile(r'<a[^>]+href=["\'](/(?:documents|cases)/[^"\']+)["\']')
+    asset_pattern = re.compile(r'<(?:img|a|Link)[^>]+(?:src|href)=["\'](/(?:documents|images|icons)/[^"\']+)["\']')
     
     for p in SITE_SRC.rglob("*.tsx"):
         text = p.read_text(encoding="utf-8")
-        for m in img_pattern.finditer(text):
-            errors.append(f"{p.name}: Tag <img> usando caminho absoluto estático sem assetUrl: '{m.group(1)}'")
-        if p.name == "Home.tsx":
-            for m in a_pattern.finditer(text):
-                if "/documents/" in m.group(1):
-                    errors.append(f"{p.name}: Link de documento sem assetUrl: '{m.group(1)}'")
+        for m in asset_pattern.finditer(text):
+            errors.append(f"{p.name}: Tag usando caminho estático sem assetUrl: '{m.group(1)}'")
     return errors
 
 def check_image_assets_exist():
@@ -161,6 +156,8 @@ def sync_portfolio_verde():
         return
     files_to_sync = [
         (ROOT / "site" / "src" / "pages" / "CasePages.tsx", PORTFOLIO_VERDE / "src" / "pages" / "CasePages.tsx"),
+        (ROOT / "site" / "src" / "pages" / "Home.tsx", PORTFOLIO_VERDE / "src" / "pages" / "Home.tsx"),
+        (ROOT / "site" / "src" / "components" / "SiteChrome.tsx", PORTFOLIO_VERDE / "src" / "components" / "SiteChrome.tsx"),
         (ROOT / "site" / "src" / "components" / "case-presentation.css", PORTFOLIO_VERDE / "src" / "components" / "case-presentation.css"),
         (ROOT / "site" / "src" / "components" / "CasePresentation.tsx", PORTFOLIO_VERDE / "src" / "components" / "CasePresentation.tsx"),
     ]

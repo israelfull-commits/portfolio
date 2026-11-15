@@ -65,7 +65,7 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
           </Link>
         ))}
         <Link
-          href="/documents/israel-rozar-curriculo.pdf"
+          href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
           download="Israel-Rozar-Curriculo.pdf"
         >
           Currículo
@@ -103,7 +103,7 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
             </Link>
           ))}
           <Link
-            href="/documents/israel-rozar-curriculo.pdf"
+            href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
             download="Israel-Rozar-Curriculo.pdf"
             onClick={closeMenu}
           >
