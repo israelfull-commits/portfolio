@@ -391,11 +391,11 @@ export const einsteinPresentation: CasePresentationData = {
               <CaseFigure
                 image={{
                   src: "/images/hiae-componente-protrombina-crop.webp",
-                  width: 1800,
-                  height: 640,
-                  alt: "Recorte detalhado do protótipo documentado (v3.0) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
+                  width: 1200,
+                  height: 720,
+                  alt: "Anatomia modular do componente de resultado clínico (v3.0): Tempo de Protrombina (RNI) com tipografia de alta escala (52px), ícone de conformidade e intervalo de referência alinhado lado a lado",
                   caption:
-                    "Protótipo final (v3.0): alinhamento do valor e intervalo normal com símbolos redundantes à cor para daltônicos.",
+                    "Protótipo final (v3.0): tipografia em alta escala (52px), ícones de conformidade redundantes à cor e intervalo de referência lado a lado para conformidade WCAG 2.2 AAA.",
                 }}
               />
             </div>
