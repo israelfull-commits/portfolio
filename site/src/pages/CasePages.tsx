@@ -228,13 +228,18 @@ export const einsteinPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-summary">
-            <p className="cp-lead">
-              Como facilitar a localização e a leitura do laudo sem induzir uma interpretação clínica isolada?
-            </p>
-            <p>
+          <div className="cp-lead-editorial">
+            <p className="cp-lead-text">
               Laudos de diferentes laboratórios e hospitais parceiros reuniam informações críticas em estruturas variáveis. O projeto desenhou uma linguagem modular previsível para mais de 80 tipos de exames, permitindo que médicos cruzem resultados, métodos e referências com agilidade, e que pacientes localizem seus dados com facilidade para levar à conversa médica.
             </p>
+            <div className="cp-tradeoff-box" style={{ margin: "0.5rem 0 0" }}>
+              <span className="cp-tradeoff-title" style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--cp-pine)", display: "block", marginBottom: "0.35rem" }}>
+                Pergunta Norteadora & Desafio Central
+              </span>
+              <p style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--cp-text)", margin: 0, lineHeight: 1.45 }}>
+                Como facilitar a localização e a leitura do laudo sem induzir uma interpretação clínica isolada?
+              </p>
+            </div>
           </div>
           <CaseMetrics
             items={[
@@ -245,7 +250,7 @@ export const einsteinPresentation: CasePresentationData = {
               ["14", "entregáveis canônicos e famílias de laudos estruturadas"],
             ]}
           />
-          <p>
+          <p style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--cp-text-muted)", lineHeight: 1.55 }}>
             A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
           </p>
         </>
@@ -257,24 +262,28 @@ export const einsteinPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-columns">
-            <div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Cenário e Restrições</span>
               <h3>O desafio prático</h3>
               <p>
                 O mesmo laudo precisava funcionar no aplicativo do celular, na tela do consultório e impresso em preto e branco nas impressoras dos hospitais parceiros. Não adiantava criar um visual bonito que travasse os sistemas mais antigos ou ficasse ilegível no papel comum.
               </p>
             </div>
-            <div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Diretrizes de Interface</span>
               <h3>As regras centrais do projeto</h3>
-              <List
-                items={[
-                  "Resultado e referência lado a lado: o valor do exame e o intervalo considerado normal aparecem sempre juntos, na mesma linha visual.",
-
-                  "Cabeçalho limpo: dados administrativos (como convênio, número da guia e carimbos) foram separados, deixando o foco total no resultado médico.",
-
-                  "Estrutura flexível: o modelo aceita desde exames de sangue curtos de uma linha até relatórios longos de ressonância com laudo descritivo.",
-                ]}
-              />
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Resultado e referência lado a lado:</strong> o valor do exame e o intervalo normal aparecem sempre juntos, na mesma linha visual.
+                </li>
+                <li>
+                  <strong>Cabeçalho limpo:</strong> dados administrativos separados no topo, deixando o foco total no resultado médico.
+                </li>
+                <li>
+                  <strong>Estrutura flexível:</strong> modelo modular que atende desde testes rápidos de uma linha até laudos descritivos extensos.
+                </li>
+              </ul>
             </div>
           </div>
           <CaseFigure
@@ -709,8 +718,9 @@ export const claroPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-columns">
-            <div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Contexto Operacional</span>
               <h3>O cenário</h3>
               <p>
                 A rotina comercial precisava conciliar necessidades de
@@ -718,7 +728,8 @@ export const claroPresentation: CasePresentationData = {
                 negócio de telecom, com grande volume de dados por transação.
               </p>
             </div>
-            <div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Pergunta de Pesquisa</span>
               <h3>O desafio</h3>
               <p>
                 Como apoiar a continuidade do atendimento e tornar os dados
@@ -999,8 +1010,9 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-columns">
-            <div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Ecossistema e Atores</span>
               <h3>Pessoas e contexto</h3>
               <p>
                 Consumidores precisam contratar, pagar, pedir suporte, alterar e
@@ -1009,8 +1021,9 @@ export const neoenergiaPresentation: CasePresentationData = {
                 atendimento.
               </p>
             </div>
-            <div>
-              <h3>Problema de design</h3>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Problema de Design</span>
+              <h3>O desafio de serviço</h3>
               <p>
                 Como compreender os atritos ao longo do serviço e estruturar uma
                 experiência futura que considere o atendimento digital, a
@@ -1731,13 +1744,15 @@ export function ItauPresentation() {
             <div className="cp-summary">
               <p>{story.summary}</p>
             </div>
-            <div className="cp-columns">
-              <div>
+            <div className="cp-cards-grid">
+              <div className="cp-feature-card">
+                <span className="cp-feature-tag">Público-Alvo</span>
                 <h3>Para quem</h3>
                 <p>{story.users}</p>
               </div>
-              <div>
-                <h3>Recorte de atuação em design</h3>
+              <div className="cp-feature-card">
+                <span className="cp-feature-tag">Escopo de Design</span>
+                <h3>Recorte de atuação</h3>
                 <p>{story.contribution}</p>
               </div>
             </div>
