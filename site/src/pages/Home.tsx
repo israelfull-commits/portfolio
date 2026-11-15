@@ -219,6 +219,9 @@ export default function Home() {
                       decoding="async"
                       alt="Interface modular do sistema de laudos clínicos do Hospital Israelita Albert Einstein em alta resolução."
                     />
+                    <span className="pf-preview-pill">
+                      Explorar estudo completo <ArrowIcon />
+                    </span>
                   </Link>
                   <figcaption>
                     Sistema de laudos clínicos: arquitetura modular e alta legibilidade diagnóstica
