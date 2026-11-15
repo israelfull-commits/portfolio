@@ -356,42 +356,50 @@ export const einsteinPresentation: CasePresentationData = {
               onde a pessoa o espera.
             </p>
           </blockquote>
-          <CaseFigure
-            image={{
-              src: "/images/hiae-componente-protrombina-crop.webp",
-              width: 1800,
-              height: 640,
-              alt: "Recorte detalhado do protótipo documentado (v3.0) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
-              caption:
-                "Anatomia do componente no protótipo final (v3.0): exame de Tempo de Protrombina (RNI) com cada parâmetro em sua linha, resultado e valor de referência lado a lado, e ícones que não dependem apenas da cor para indicar normalidade.",
-            }}
-          />
-          <ol className="cp-callout-list">
-            <li className="cp-callout-item">
-              <span className="cp-callout-badge">1</span>
-              <div>
-                <strong>examTitle:</strong> Nome do exame e material biológico no topo (ex.: Tempo de Protrombina em plasma).
-              </div>
-            </li>
-            <li className="cp-callout-item">
-              <span className="cp-callout-badge">2</span>
-              <div>
-                <strong>Uma linha por parâmetro:</strong> Cada teste clínico ganha sua própria linha horizontal, evitando que números se misturem.
-              </div>
-            </li>
-            <li className="cp-callout-item">
-              <span className="cp-callout-badge">3</span>
-              <div>
-                <strong>Acessibilidade visual:</strong> Ícones de verificação e alerta acompanham a cor, garantindo leitura segura para daltônicos e na impressão em preto e branco.
-              </div>
-            </li>
-            <li className="cp-callout-item">
-              <span className="cp-callout-badge">4</span>
-              <div>
-                <strong>Resultado e referência alinhados:</strong> O valor medido e o intervalo normal ficam lado a lado, com a unidade de medida sempre visível.
-              </div>
-            </li>
-          </ol>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Anatomia do Componente (v3.0)</span>
+              <h3>Tempo de Protrombina (RNI)</h3>
+              <ol className="cp-callout-list" style={{ margin: "0.5rem 0 0" }}>
+                <li className="cp-callout-item">
+                  <span className="cp-callout-badge">1</span>
+                  <div>
+                    <strong>examTitle:</strong> Nome do exame e material biológico no topo.
+                  </div>
+                </li>
+                <li className="cp-callout-item">
+                  <span className="cp-callout-badge">2</span>
+                  <div>
+                    <strong>Uma linha por parâmetro:</strong> Cada teste clínico com linha horizontal dedicada.
+                  </div>
+                </li>
+                <li className="cp-callout-item">
+                  <span className="cp-callout-badge">3</span>
+                  <div>
+                    <strong>Acessibilidade visual:</strong> Ícones de conformidade que não dependem apenas da cor.
+                  </div>
+                </li>
+                <li className="cp-callout-item">
+                  <span className="cp-callout-badge">4</span>
+                  <div>
+                    <strong>Resultado e referência:</strong> Valor medido e limites normais alinhados lado a lado.
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/hiae-componente-protrombina-crop.webp",
+                  width: 1800,
+                  height: 640,
+                  alt: "Recorte detalhado do protótipo documentado (v3.0) exibindo os campos de Tempo de Protrombina (RNI) e parâmetros de referência",
+                  caption:
+                    "Protótipo final (v3.0): alinhamento do valor e intervalo normal com símbolos redundantes à cor para daltônicos.",
+                }}
+              />
+            </div>
+          </div>
           <CaseFigure
             image={{
               src: "/images/hiae-ds-componentes-crop-1600.webp",
@@ -436,16 +444,27 @@ export const einsteinPresentation: CasePresentationData = {
               }}
             />
           </div>
-          <CaseFigure
-            image={{
-              src: "/images/hiae-multicanal-web-celular.webp",
-              width: 1466,
-              height: 900,
-              alt: "Mesmo exame exibido na web e no celular, com a mesma ordem mental de leitura",
-              caption:
-                "Consistência multicanal: o paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel.",
-            }}
-          />
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Experiência Multicanal</span>
+              <h3>Mesma ordem mental na Web e no Celular</h3>
+              <p>
+                O paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel. As regras de espaçamento e anatomia modular garantem que tabelas densas e laudos descritivos se adaptem sem quebra de linhas ou perda de legibilidade em qualquer dispositivo.
+              </p>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/hiae-multicanal-web-celular.webp",
+                  width: 1466,
+                  height: 900,
+                  alt: "Mesmo exame exibido na web e no celular, com a mesma ordem mental de leitura",
+                  caption:
+                    "Consistência multicanal: o paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel.",
+                }}
+              />
+            </div>
+          </div>
         </>
       ),
     },
