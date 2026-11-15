@@ -3,10 +3,8 @@ import { ArrowIcon, ChatIcon, DownloadIcon, Link, MailIcon, assetUrl } from "../
 import { PageMeta } from "../components/PageMeta"
 
 import { ContactSection, SiteFooter, SiteHeader } from "../components/SiteChrome"
-import { EinsteinTabletPreview } from "../components/EinsteinTabletPreview"
 
 import "../portfolio.css"
-import "../components/einstein-tablet.css"
 
 const projects = [
   {
@@ -207,7 +205,25 @@ export default function Home() {
                 </Link>
               </div>
               <div className="pf-featured-evidence">
-                <EinsteinTabletPreview />
+                <figure className="pf-case-preview">
+                  <Link
+                    href="/cases/einstein-laudos"
+                    ariaLabel="Explorar estudo de caso completo do Hospital Albert Einstein"
+                  >
+                    <img
+                      src={assetUrl("/images/hiae-mockup-studio-pro.webp")}
+                      width="1200"
+                      height="675"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      alt="Interface modular do sistema de laudos clínicos do Hospital Israelita Albert Einstein em alta resolução."
+                    />
+                  </Link>
+                  <figcaption>
+                    Sistema de laudos clínicos: arquitetura modular e alta legibilidade diagnóstica
+                  </figcaption>
+                </figure>
                 <h4>Evidências de discovery e testes</h4>
                 <dl className="pf-evidence-grid">
                   {[
