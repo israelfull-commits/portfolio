@@ -148,12 +148,12 @@ function Sources({ project }: { project: string }) {
 }
 
 const einsteinHero: CaseImage = {
-  src: "/images/hiae-capa-editorial-tight.webp",
-  width: 2000,
-  height: 947,
-  alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
+  src: "/images/hiae-multicanal-web-celular.webp",
+  width: 2400,
+  height: 1350,
+  alt: "Linguagem visual modular para laudos clínicos: consistência de leitura preservada entre o portal web, aplicativo móvel e impressão hospitalar",
   caption:
-    "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",
+    "Linguagem visual modular: consistência de leitura e previsibilidade mental preservadas entre web, tablet, celular e impressoras hospitalares.",
 }
 
 const einsteinImages: CaseImage[] = [
@@ -324,8 +324,40 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            Para construir esse padrão, analisamos mais de 80 exames reais de diversas especialidades — de análises laboratoriais a exames de imagem. Descobrimos que, apesar de parecerem muito diferentes, todos podiam ser agrupados em apenas 14 tipos de modelos previsíveis.
+            Para construir esse padrão, analisamos mais de 80 exames reais de diversas especialidades — de análises laboratoriais a exames de imagem complexos. Descobrimos que, apesar das diferenças de formato, todos os laudos convergem para três macroáreas funcionais previsíveis.
           </p>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Taxonomia de Dados Clínicos</span>
+              <h3>As 3 Macroáreas do Exame</h3>
+              <p>
+                A estruturação do exame em macroáreas delimitadas reduziu o tempo de localização dos dados por médicos em pronto-atendimento e evitou que pacientes fizessem interpretações isoladas de parâmetros técnicos:
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>1. Metodologia:</strong> reúne prescrição, material biológico e parâmetros do equipamento, garantindo validade jurídica e técnica.
+                </li>
+                <li>
+                  <strong>2. Resultado:</strong> núcleo objetivo do laudo com achados estruturados e intervalos de referência alinhados na mesma linha de leitura.
+                </li>
+                <li>
+                  <strong>3. Conclusão diagnóstica:</strong> síntese conclusiva e parecer interpretativo assinado pelo especialista médico.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/hiae-taxonomia-macroareas.webp",
+                  width: 1200,
+                  height: 750,
+                  alt: "Anatomia editorial e taxonomia de dados do exame: decomposição em três macroáreas (Metodologia, Resultado e Conclusão Diagnóstica)",
+                  caption:
+                    "Anatomia editorial: decomposição de 80+ exames em três macroáreas canônicas (Metodologia, Resultado e Conclusão Diagnóstica) para estruturação do Design System.",
+                }}
+              />
+            </div>
+          </div>
           <List
             items={[
               "Como o médico trabalha: em uma consulta rápida ou no pronto-socorro, ele precisa bater o olho e identificar em 3 segundos se algum número está fora do padrão.",
@@ -457,21 +489,21 @@ export const einsteinPresentation: CasePresentationData = {
           </div>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Experiência Multicanal</span>
-              <h3>Mesma ordem mental na Web e no Celular</h3>
+              <span className="cp-split-tag">Arquitetura Modular em Produção</span>
+              <h3>Estrutura Canônica no Prontuário Digital</h3>
               <p>
-                O paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel. As regras de espaçamento e anatomia modular garantem que tabelas densas e laudos descritivos se adaptem sem quebra de linhas ou perda de legibilidade em qualquer dispositivo.
+                O modelo unificado organiza a leitura para que o corpo clínico e o paciente visualizem primeiro o resultado principal e, em seguida, os parâmetros técnicos e observações diagnósticas, eliminando inconsistências entre diferentes hospitais da rede.
               </p>
             </div>
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/hiae-multicanal-web-celular.webp",
-                  width: 1466,
-                  height: 900,
-                  alt: "Mesmo exame exibido na web e no celular, com a mesma ordem mental de leitura",
+                  src: "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
+                  width: 1600,
+                  height: 1199,
+                  alt: "Estrutura modular canônica de laudo clínico (Ressonância Magnética) no padrão Albert Einstein",
                   caption:
-                    "Consistência multicanal: o paciente e o médico encontram a mesma hierarquia de leitura no portal web e no aplicativo móvel.",
+                    "Modelo canônico implementado: cabeçalho padronizado, colunas de valor e referência lado a lado e validação de autenticidade clínica.",
                 }}
               />
             </div>
