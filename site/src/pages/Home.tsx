@@ -211,17 +211,17 @@ export default function Home() {
                     ariaLabel="Explorar estudo de caso completo do Hospital Albert Einstein"
                   >
                     <img
-                      src={assetUrl("/images/hiae-mockup-studio-pro.webp")}
+                      src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")}
                       width="1200"
                       height="675"
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      alt="Interface modular do sistema de laudos clínicos do Hospital Israelita Albert Einstein em alta resolução."
+                      alt="Layout real da proposta de solução v3: estrutura modular canônica de laudo clínico do Hospital Albert Einstein."
                     />
                   </Link>
                   <figcaption>
-                    Sistema de laudos clínicos: arquitetura modular e alta legibilidade diagnóstica
+                    Estrutura modular de laudos clínicos (layout real da proposta de solução v3)
                   </figcaption>
                 </figure>
                 <h4>Evidências de discovery e testes</h4>
