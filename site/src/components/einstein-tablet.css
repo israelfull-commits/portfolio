@@ -1,4 +1,4 @@
-/* Einstein Interactive Tablet Anatomy Preview */
+/* Einstein Interactive Tablet Anatomy Preview - Progressive Reveal */
 
 .pf-tablet-showcase {
     position: relative;
@@ -6,7 +6,7 @@
     margin: 0 0 24px 0;
 }
 
-/* Tablet Device Frame */
+/* Tablet Device Frame (Static Container) */
 .pf-tablet-device {
     position: relative;
     display: block;
@@ -20,7 +20,13 @@
     color: inherit;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease;
+}
+
+.pf-tablet-device.is-complete {
+    border-color: rgba(216, 255, 87, 0.35);
+    box-shadow: 0 20px 48px -12px rgba(10, 54, 34, 0.32), 0 0 0 1px rgba(10, 54, 34, 0.4);
 }
 
 .pf-tablet-device:hover {
@@ -56,6 +62,7 @@
     color: #1A1A1A;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
     overflow: hidden;
+    min-height: 430px;
 }
 
 /* Screen Header */
@@ -142,28 +149,59 @@
     color: #4A5568;
 }
 
+/* Screen Canvas (holds static slots) */
+.pf-screen-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 /* Macro Blocks */
 .pf-macro-block {
     position: relative;
     border: 1px solid #E2E8F0;
     border-radius: 8px;
     padding: 8px 10px;
-    margin-bottom: 8px;
     background: #FFFFFF;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.pf-macro-block.is-active {
+.pf-slide-reveal {
+    animation: slideReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideReveal {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Block States */
+.pf-macro-block.is-focus {
     border-color: #0A3622;
     background: #F7FAF8;
-    box-shadow: 0 0 0 2px #0A3622, 0 8px 20px -4px rgba(10, 54, 34, 0.15);
+    box-shadow: 0 0 0 2px #0A3622, 0 8px 20px -4px rgba(10, 54, 34, 0.16);
     opacity: 1;
     transform: scale(1.01);
 }
 
-.pf-macro-block.is-dimmed {
-    opacity: 0.42;
-    filter: grayscale(0.15);
+.pf-macro-block.is-preserved {
+    border-color: #CBD5E1;
+    background: #FFFFFF;
+    opacity: 0.95;
+    box-shadow: none;
+}
+
+.pf-macro-block.is-unified {
+    border-color: #0A3622;
+    background: #FAFCFA;
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(10, 54, 34, 0.08);
 }
 
 .pf-macro-badge {
@@ -197,6 +235,63 @@
 .pf-macro-body strong {
     color: #0A3622;
 }
+
+/* Skeleton Placeholder Slots */
+.pf-macro-skeleton {
+    border: 1px dashed #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: #F8FAFC;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.pf-skeleton-2 {
+    min-height: 102px;
+}
+
+.pf-skeleton-3 {
+    min-height: 68px;
+}
+
+.pf-skeleton-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #94A3B8;
+    margin-bottom: 6px;
+}
+
+.pf-skeleton-pill {
+    display: inline-block;
+    padding: 1px 4px;
+    background: #E2E8F0;
+    color: #64748B;
+    border-radius: 3px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.pf-skeleton-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pf-sk-line {
+    height: 7px;
+    background: #E2E8F0;
+    border-radius: 4px;
+}
+
+.sk-w80 { width: 80%; }
+.sk-w60 { width: 60%; }
+.sk-w90 { width: 90%; }
 
 /* Results Table */
 .pf-results-table {
@@ -309,12 +404,17 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 10;
-    transition: transform 0.25s ease, background 0.2s ease;
+    transition: transform 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.pf-spotlight-pill.pill-complete {
+    background: #0A3622;
+    border-color: #D8FF57;
+    color: #FFFFFF;
 }
 
 .pf-tablet-device:hover .pf-spotlight-pill {
     transform: scale(1.04);
-    background: #0A3622;
 }
 
 .pf-pill-dot {
@@ -342,11 +442,11 @@
     transform: translate(2px, -2px);
 }
 
-/* Stepper Navigation */
+/* Stepper Navigation: 4 Steps */
 .pf-tablet-stepper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
     margin-top: 12px;
 }
 
@@ -355,8 +455,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 8px 10px;
+    gap: 5px;
+    padding: 7px 6px;
     background: #FFFFFF;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -377,15 +477,16 @@
 }
 
 .pf-step-num {
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 800;
     color: #0A3622;
 }
 
 .pf-step-name {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     color: var(--ink);
+    white-space: nowrap;
 }
 
 .pf-step-progress {
@@ -405,7 +506,7 @@
 
 /* Dynamic Caption */
 .pf-tablet-caption {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 18px;
     color: var(--ink-muted);
     margin-top: 10px;
@@ -422,12 +523,10 @@
     .pf-tablet-device,
     .pf-spotlight-pill,
     .pf-pill-dot,
-    .pf-step-progress {
+    .pf-step-progress,
+    .pf-slide-reveal {
         animation: none !important;
         transition: none !important;
         transform: none !important;
-    }
-    .pf-macro-block.is-dimmed {
-        opacity: 0.8 !important;
     }
 }
