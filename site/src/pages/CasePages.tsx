@@ -400,16 +400,27 @@ export const einsteinPresentation: CasePresentationData = {
               />
             </div>
           </div>
-          <CaseFigure
-            image={{
-              src: "/images/hiae-ds-componentes-crop-1600.webp",
-              width: 1600,
-              height: 900,
-              alt: "Documentação dos componentes DataField e ExamTitle com tokens e anatomia modular",
-              caption:
-                "Documentação no Design System Zera 1.0: especificações dos componentes dataField e examTitle com tokens de espaçamento e regras de anatomia modular para a engenharia.",
-            }}
-          />
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Design System Zera 1.0</span>
+              <h3>Tokens e Anatomia Modular</h3>
+              <p>
+                Mapeamento dos tokens de cor semântica, tipografia proporcional e espaçamento (grid base 8px) integrados aos componentes modulares <code>dataField</code> e <code>examTitle</code>. O contrato garante previsibilidade e alinhamento estrito entre o protótipo no Figma e a implementação nos sistemas laudadores legados.
+              </p>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/hiae-ds-tokens-clean-1280.webp",
+                  width: 1280,
+                  height: 800,
+                  alt: "Documentação no Design System Zera 1.0: especificações de tokens de cores, tipografia e espaçamento para componentes de laudo",
+                  caption:
+                    "Design System Zera 1.0: especificações dos componentes dataField e examTitle com tokens de espaçamento e regras de anatomia modular para a engenharia.",
+                }}
+              />
+            </div>
+          </div>
         </>
       ),
     },
