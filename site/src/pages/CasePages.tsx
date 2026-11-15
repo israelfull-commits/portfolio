@@ -761,17 +761,28 @@ export const claroPresentation: CasePresentationData = {
 
       content: (
         <>
-          <p>
-            O discovery reuniu benchmarking competitivo, 20 entrevistas com
-            profissionais e lideranças executivas, três dias de workshops
-            imersivos e a formulação de dez personas operacionais. Os materiais
-            selecionados demonstram o processo colaborativo e o mapeamento
-            detalhado da jornada de troca de chip.
-          </p>
-          <div className="cp-gallery">
-            {claroImages.slice(1, 3).map((image) => (
-              <CaseFigure key={image.src} image={image} />
-            ))}
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Discovery & Pesquisa Operacional</span>
+              <h3>Imersão em Lojas Físicas e Televendas</h3>
+              <p>
+                O discovery reuniu benchmarking competitivo, 20 entrevistas em profundidade com profissionais e lideranças executivas, três dias de workshops imersivos e a formulação de 10 personas operacionais. A proximidade com o balcão revelou que o atendente perdia até 40% do tempo alternando entre sistemas legados desconectados para consultar uma única linha.
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Ruptura de contexto:</strong> alternância constante entre sistemas desconectados durante o atendimento presencial ou telefônico.
+                </li>
+                <li>
+                  <strong>Insegurança tarifária:</strong> dificuldade operacional em calcular descontos, combos e regras de fidelização em tempo real.
+                </li>
+                <li>
+                  <strong>Carga cognitiva:</strong> necessidade de memorizar códigos promocionais e regras de negócio para evitar erros de contratação.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure image={claroImages[1]} />
+            </div>
           </div>
         </>
       ),
@@ -783,22 +794,33 @@ export const claroPresentation: CasePresentationData = {
 
       content: (
         <>
-          <p>
-            O acervo documenta a decomposição de 22 jornadas e propostas para
-            consultar clientes, configurar ofertas e confirmar operações. Ele
-            permite discutir arquitetura de informação e continuidade omnicanal
-            em escala.
-          </p>
-          <p>
-            A padronização das 22 jornadas eliminou redundâncias entre a consulta cadastral, a configuração do plano e a formalização do contrato. A interface unificada garantiu que tanto o atendente de loja física quanto o operador de televendas trabalhassem com a mesma clareza de regras e velocidade de confirmação.
-          </p>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Arquitetura da Informação & Fluxos</span>
+              <h3>Matriz Unificada de 22 Jornadas Comerciais</h3>
+              <p>
+                A padronização das 22 jornadas operacionais eliminou redundâncias entre a consulta cadastral, a configuração do plano e a formalização do contrato. Em vez de fluxos isolados para cada transação (troca de chip, ativação, upgrade de plano e portabilidade), estruturamos uma esteira unificada de atendimento:
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Esteira unificada:</strong> mesma ordem mental de leitura e decisão no balcão de loja e na mobilidade.
+                </li>
+                <li>
+                  <strong>Validação progressiva:</strong> checagem automática de elegibilidade cadastral e antifraude antes da oferta.
+                </li>
+                <li>
+                  <strong>Mitigação de atrito:</strong> redução de etapas intermediárias e visualização clara de pré-requisitos técnicos do chip.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure image={claroImages[2]} />
+            </div>
+          </div>
           <div className="cp-note">
             <h3>Aprendizado de design</h3>
             <p>
-              Uma interface de atendimento comercial precisa manter o contexto
-              do cliente e da oferta sempre visíveis. O design deve reduzir a
-              carga cognitiva do operador e, ao mesmo tempo, garantir
-              transparência absoluta para o consumidor final.
+              Uma interface de atendimento comercial precisa manter o contexto do cliente e da oferta sempre visíveis. O design reduz a carga cognitiva do operador e, ao mesmo tempo, assegura transparência de preços e condições para o consumidor final.
             </p>
           </div>
         </>
@@ -811,42 +833,29 @@ export const claroPresentation: CasePresentationData = {
 
       content: (
         <>
-          <CaseFigure
-            image={{
-              src: "/images/claro-busca-cliente.webp",
-              width: 775,
-              height: 486,
-              alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e botão de busca",
-              caption:
-                "Ponto de entrada da ativação: a busca por CPF inicia o atendimento com dados sintetizados para conformidade com a LGPD.",
-            }}
-          />
-          <ol className="cp-decisions">
-            {[
-              [
-                "Navegação progressiva por etapas",
-
-                "Grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.",
-              ],
-
-              [
-                "Preservação do contexto do cliente",
-
-                "Cabeçalho fixo com dados da linha, status cadastral e atalhos para jornadas frequentes apoiam a continuidade da conversa.",
-              ],
-
-              [
-                "Composição financeira em tempo real",
-
-                "O resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração do plano.",
-              ],
-            ].map(([title, text]) => (
-              <li key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Diretrizes de Interface & Usabilidade</span>
+              <h3>Resumo Financeiro Lateral & Contexto Fixo</h3>
+              <p>
+                Para mitigar erros de contratação e dar previsibilidade ao atendente, definimos três regras centrais de arquitetura de informação:
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>1. Navegação progressiva por etapas:</strong> grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.
+                </li>
+                <li>
+                  <strong>2. Preservação do contexto do cliente:</strong> cabeçalho fixo com dados da linha, status cadastral e atalhos rápidos apoiam a continuidade da conversa.
+                </li>
+                <li>
+                  <strong>3. Composição financeira em tempo real:</strong> o resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração da oferta.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure image={claroImages[0]} />
+            </div>
+          </div>
         </>
       ),
     },
@@ -856,16 +865,30 @@ export const claroPresentation: CasePresentationData = {
 
       content: (
         <>
-          <p>
-            As propostas apresentam ativação, detalhe da linha e confirmação,
-            com adaptações responsivas entre desktop e mobile. A sequência
-            evidencia consistência de padrões, legibilidade de dados e clareza
-            nos estados operacionais.
-          </p>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Consistência Multicanal</span>
+              <h3>Paridade entre Desktop e Aplicativo Móvel</h3>
+              <p>
+                O atendente de balcão utiliza a interface desktop com alta densidade de dados; o consultor externo e a operação ágil utilizam o aplicativo mobile. A hierarquia mental, a taxonomia de planos e as etapas de confirmação permanecem rigorosamente idênticas, eliminando divergências e reduzindo o tempo médio de atendimento (TMA).
+              </p>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure image={claroImages[3]} />
+            </div>
+          </div>
           <div className="cp-gallery">
-            {[claroImages[3], claroImages[4], claroImages[5]].map((image) => (
-              <CaseFigure key={image.src} image={image} />
-            ))}
+            <CaseFigure image={claroImages[4]} />
+            <CaseFigure
+              image={{
+                src: "/images/claro-busca-cliente.webp",
+                width: 775,
+                height: 486,
+                alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e validação cadastral",
+                caption:
+                  "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",
+              }}
+            />
           </div>
         </>
       ),
