@@ -1015,9 +1015,9 @@ export const neoenergiaPresentation: CasePresentationData = {
           </div>
           <CaseMetrics
             items={[
-              ["4", "distribuidoras no contexto do projeto"],
+              ["4", "distribuidoras integradas na mesma esteira"],
 
-              ["5 estágios", "ciclo de vida em blueprints"],
+              ["5 estágios", "ciclo de vida em blueprints To-Be"],
 
               ["118 ideias", "priorizadas na matriz de valor"],
             ]}
@@ -1038,35 +1038,37 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-cards-grid">
-            <div className="cp-feature-card">
-              <span className="cp-feature-tag">Ecossistema e Atores</span>
-              <h3>Pessoas e contexto</h3>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Ecossistema & Multicanalidade</span>
+              <h3>Mapeamento de 11 Canais de Atendimento</h3>
               <p>
-                Consumidores precisam contratar, pagar, pedir suporte, alterar e
-                encerrar serviços. Atendentes, áreas internas e equipes de campo
-                participam dessas jornadas e influenciam a continuidade do
-                atendimento.
+                O diagnóstico mapeou a jornada do consumidor através de 11 pontos de contato — desde o atendimento presencial em agências e postos credenciados até canais digitais (portal web, aplicativo móvel, SMS, WhatsApp e call center) e equipes de campo.
               </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Ruptura de continuidade:</strong> solicitações iniciadas nos canais digitais exigiam deslocamento físico até a agência para validação documental presencial.
+                </li>
+                <li>
+                  <strong>Silos operacionais:</strong> o atendente do call center não visualizava as ordens de serviço pendentes das equipes de campo, gerando reiterações e frustração.
+                </li>
+                <li>
+                  <strong>Assimetria de dados:</strong> ausência de transparência em faturamentos estimados e histórico de consumo, provocando alto volume de contestações.
+                </li>
+              </ul>
             </div>
-            <div className="cp-feature-card">
-              <span className="cp-feature-tag">Problema de Design</span>
-              <h3>O desafio de serviço</h3>
-              <p>
-                Como compreender os atritos ao longo do serviço e estruturar uma
-                experiência futura que considere o atendimento digital, a
-                operação interna e as dependências do mundo físico?
-              </p>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/neoenergia-canais-atendimento.webp",
+                  width: 1600,
+                  height: 900,
+                  alt: "Mapeamento dos 11 canais de atendimento e ecossistema de relacionamento Neoenergia",
+                  caption:
+                    "Ecossistema de canais: mapeamento dos 11 pontos de contato entre consumidores, concessionárias e equipes operacionais de campo.",
+                }}
+              />
             </div>
-          </div>
-          <div className="cp-note">
-            <h3>Recorte de atuação</h3>
-            <p>
-              Product Design e Service Design no contexto de Business
-              Transformation da EY: compreensão de jornadas, pesquisa
-              qualitativa e organização de problemas e oportunidades, em
-              colaboração com Livework e áreas da Neoenergia.
-            </p>
           </div>
         </>
       ),
@@ -1078,27 +1080,38 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <p>
-            A documentação de governança estrutura contextualização do negócio,
-            entendimento das jornadas atuais, pesquisa, desenho da jornada
-            futura e roadmap. Registros de campo e blueprints aproximam a
-            perspectiva do consumidor das atividades internas que sustentam o
-            serviço.
-          </p>
-          <List
-            items={[
-              "Contextualização do setor e do negócio para interpretar necessidades e restrições regulatórias.",
-
-              "Mapeamento de jornadas e processos atuais, com atenção às transições entre canais físicos e digitais.",
-
-              "Organização de dores e oportunidades para discutir uma visão futura com as diretorias envolvidas.",
-            ]}
-          />
-          <p>
-            A leitura de serviço evita reduzir o diagnóstico a telas: uma
-            informação pouco clara no canal digital pode depender de uma regra,
-            de um processo interno ou de uma atividade em campo.
-          </p>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Diagnóstico & Auditoria Operacional</span>
+              <h3>Linhas de Visibilidade e Silos de Backstage</h3>
+              <p>
+                A leitura de Service Design evita reduzir o diagnóstico a interfaces de tela: a insatisfação com a fatura raramente é um problema visual, decorrendo de regras de negócio obscuras, leituras por estimativa ou falta de sincronização entre o despacho técnico e o faturamento.
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Linha de interação:</strong> pontos de contato diretos onde o consumidor registra a solicitação ou autoleitura.
+                </li>
+                <li>
+                  <strong>Linha de visibilidade:</strong> fronteira que separa o que o cliente enxerga das validações internas de crédito e engenharia.
+                </li>
+                <li>
+                  <strong>Linha de suporte interno:</strong> integração de sistemas legados de despacho de equipes técnicas e baixa bancária.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/neoenergia-blueprint-crop-contrato-1600.webp",
+                  width: 1600,
+                  height: 900,
+                  alt: "Recorte editorial em alta resolução do Blueprint 1: Contrato e Instalação",
+                  caption:
+                    "Auditoria de backstage: detalhe em alta resolução do Blueprint conectando a experiência do cliente aos sistemas e equipes de campo.",
+                }}
+              />
+            </div>
+          </div>
         </>
       ),
     },
@@ -1109,75 +1122,63 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <p>
-            O mapa de jornada futura organiza o ciclo de vida em cinco
-            macroetapas estruturadas em pranchas detalhadas de Service
-            Blueprint:
-          </p>
-          <List
-            items={[
-              "1. Contrato e instalo: busca de informações, contratação, adequação e ligação nova.",
-
-              "2. Uso e pago: consumo, acompanhamento, autoleitura e faturamento.",
-
-              "3. Preciso de suporte: necessidade de ajuda, interrupção e resolução de problemas.",
-
-              "4. Mudo o contrato: alterações cadastrais, portabilidade ao Mercado Livre e geração solar.",
-
-              "5. Abandono: encerramento do vínculo, prevenção de inadimplência e desdobramentos.",
-            ]}
-          />
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Arquitetura de Serviços & Visão To-Be</span>
+              <h3>Ciclo de Vida Estruturado em 5 Macroetapas</h3>
+              <p>
+                Para superar a fragmentação entre as 4 distribuidoras, consolidamos a jornada completa do consumidor em 5 estágios canônicos com especificações de frontstage e backstage:
+              </p>
+              <ol className="cp-card-list" style={{ paddingLeft: "1.25rem", margin: 0 }}>
+                <li>
+                  <strong>1. Contrato e instalo:</strong> busca de requisitos, adequação técnica do padrão e ligação nova de energia.
+                </li>
+                <li>
+                  <strong>2. Uso e pago:</strong> consumo em kWh, autoleitura em áreas remotas, contestação e parcelamento de débitos.
+                </li>
+                <li>
+                  <strong>3. Preciso de suporte:</strong> comunicação de falta de energia, previsão de restabelecimento e emergências.
+                </li>
+                <li>
+                  <strong>4. Mudo o contrato:</strong> alteração de titularidade, mudança de carga e adesão à geração solar distribuída.
+                </li>
+                <li>
+                  <strong>5. Encerramento:</strong> desligamento definitivo, mitigação de inadimplência e quitação de débitos.
+                </li>
+              </ol>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/neoenergia-jornada-futuro-tobe.webp",
+                  width: 2000,
+                  height: 1072,
+                  alt: "Service Blueprint da Jornada do Futuro To-Be com esteira integrada omnicanal",
+                  caption:
+                    "Visão To-Be consolidada: blueprint de serviço integrado omnicanal alinhando as 4 distribuidoras aos padrões de qualidade ANEEL.",
+                }}
+              />
+            </div>
+          </div>
           <div className="cp-gallery">
             <CaseFigure
               image={{
-                src: "/images/neoenergia-blueprint-crop-contrato-1600.webp",
-                width: 1600,
-                height: 900,
-                alt: "Recorte editorial em alta resolução do Blueprint 1: Contrato e Instalação com jornada do cliente e pontos de contato da operação",
+                src: "/images/neoenergia-blueprint-1-contrato-instalo.webp",
+                width: 2000,
+                height: 3656,
+                alt: "Service Blueprint detalhado da etapa 1: Contrato e Instalo",
                 caption:
-                  "Recorte editorial do Blueprint 1 (Contrato e Instalação): visão de alta densidade da jornada do cliente, evidências físicas e pontos de contato da linha de frente.",
+                  "Prancha oficial do Blueprint 1 (Contrato e Instalo): mapeamento detalhado de frontstage, backstage e processos de ligação nova (clique para ampliar).",
               }}
             />
             <CaseFigure
               image={{
                 src: "/images/neoenergia-blueprint-2-uso-pago.webp",
-
                 width: 1414,
-
                 height: 4480,
-
-                alt: "Service Blueprint detalhado da etapa 2: Uso e Pago — Consumo, faturamento e autoleitura",
-
+                alt: "Service Blueprint detalhado da etapa 2: Uso e Pago",
                 caption:
-                  "Artefato original de Service Blueprint: Macro-etapa 2. Uso e Pago (ações, criticidade, highlights por 3 perfis de clientes, análise interna de processos e oportunidades).",
-              }}
-            />
-            <CaseFigure
-              image={{
-                src: "/images/neoenergia-blueprint-1-contrato-instalo.webp",
-
-                width: 2000,
-
-                height: 5200,
-
-                alt: "Service Blueprint da etapa 1: Contrato e Instalo",
-
-                caption:
-                  "Artefato original de Service Blueprint: Macro-etapa 1. Contrato e Instalo (pesquisa de informações, adequação e ligação nova).",
-              }}
-            />
-            <CaseFigure
-              image={{
-                src: "/images/neoenergia-jornada-futuro-tobe.webp",
-
-                width: 2000,
-
-                height: 1200,
-
-                alt: "Service Blueprint da Jornada do Futuro To-Be",
-
-                caption:
-                  "Artefato original da Jornada do Futuro (To-Be): blueprint de serviço integrado omnicanal e visão consolidada de ganhos.",
+                  "Prancha oficial do Blueprint 2 (Uso e Pago): diagnóstico aprofundado de consumo, autoleitura e faturamento (clique para ampliar).",
               }}
             />
           </div>
@@ -1190,32 +1191,40 @@ export const neoenergiaPresentation: CasePresentationData = {
         "Desburocratização de backoffice antes de redesenho de portal e Design System multi-tenant.",
 
       content: (
-        <ol className="cp-decisions">
-          {[
-            [
-              "Mapear antes de propor",
-
-              "A jornada atual organiza atores, etapas e dependências para que uma oportunidade de interface seja discutida no contexto do serviço.",
-            ],
-
-            [
-              "Conectar frente de atendimento e operação",
-
-              "Os blueprints aproximam ações do consumidor, canais e atividades internas. Essa relação permite discutir causas e responsabilidades nas transições.",
-            ],
-
-            [
-              "Organizar oportunidades por jornada",
-
-              "A visão futura reúne propostas ao longo do ciclo de vida, apoiando a discussão de prioridades e a construção de um roadmap.",
-            ],
-          ].map(([title, description]) => (
-            <li key={title}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </li>
-          ))}
-        </ol>
+        <>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Design System Multi-Tenant & Governança</span>
+              <h3>Padronização de Interfaces para 4 Distribuidoras</h3>
+              <p>
+                A estratégia de design unificou a experiência digital sem apagar a identidade regional de cada distribuidora. Em vez de quatro portais desenvolvidos do zero de forma isolada, estruturamos uma biblioteca modular com tokens de marca independentes:
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>1. Mapear antes de propor:</strong> a jornada de serviço orienta a interface para que as telas resolvam os atritos reais da operação física.
+                </li>
+                <li>
+                  <strong>2. Conectar atendimento e operação:</strong> componentes que refletem o status real dos sistemas de campo em tempo real.
+                </li>
+                <li>
+                  <strong>3. Governança multi-tenant:</strong> um único chassi de componentes alimentando Elektro, Coelba, Celpe e Cosern com temas dedicados.
+                </li>
+              </ul>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/neoenergia-entregaveis-ui-design-system.webp",
+                  width: 1600,
+                  height: 900,
+                  alt: "Entregáveis de interface, portal unificado e Design System multi-tenant para as 4 distribuidoras",
+                  caption:
+                    "Design System Multi-tenant: componentes modulares e esteira de autosserviço padronizada para as 4 distribuidoras do grupo.",
+                }}
+              />
+            </div>
+          </div>
+        </>
       ),
     },
 
@@ -1225,37 +1234,43 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <h3>Contribuições do trabalho de serviço</h3>
-          <List
-            items={[
-              "Organização de jornadas atuais e dependências do atendimento em 11 canais.",
-
-              "Blueprints e visão futura ao longo do ciclo de vida do consumidor.",
-
-              "Matriz de 118 ideias estruturadas para priorização executiva e discussão de roadmap.",
-            ]}
-          />
-          <CaseFigure
-            image={{
-              src: "/images/neoenergia-matriz-118-ideias.webp",
-
-              width: 2000,
-
-              height: 1195,
-
-              alt: "Matriz de Priorização com 118 Ideias de Inovação",
-
-              caption:
-                "Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
-            }}
-          />
-          <div className="cp-note">
-            <h3>Aprendizado central</h3>
-            <p>
-              Em serviços essenciais, a experiência digital depende do que
-              acontece depois do clique. Tornar visíveis as relações entre
-              consumidor, atendimento e operação é parte do trabalho de design.
-            </p>
+          <div className="cp-split">
+            <div className="cp-split-content">
+              <span className="cp-split-tag">Priorização & Roadmap Estratégico</span>
+              <h3>118 Ideias Estruturadas por Impacto e Esforço</h3>
+              <p>
+                As oportunidades mapeadas durante a pesquisa de campo e a auditoria de processos foram organizadas em uma matriz analítica, cruzando o valor percebido pelo consumidor com o esforço operacional de implementação:
+              </p>
+              <ul className="cp-card-list">
+                <li>
+                  <strong>Quick Wins (Ações Imediatas):</strong> correções de comunicação na fatura e desburocratização da autoleitura via aplicativo móvel.
+                </li>
+                <li>
+                  <strong>Programas Estruturantes:</strong> unificação do portal de serviços e integração direta dos sistemas de despacho de campo.
+                </li>
+                <li>
+                  <strong>Inovações de Longo Prazo:</strong> telemedição inteligente, canais conversacionais supervisionados e autoatendimento solar.
+                </li>
+              </ul>
+              <div className="cp-note" style={{ margin: "1rem 0 0" }}>
+                <h3 style={{ margin: "0 0 0.35rem" }}>Aprendizado central</h3>
+                <p style={{ margin: 0 }}>
+                  Em infraestrutura crítica, a experiência do cliente depende diretamente do que ocorre no backstage. Tornar visíveis as relações entre pessoas, sistemas e equipes de campo é a essência do Service Design.
+                </p>
+              </div>
+            </div>
+            <div className="cp-split-media">
+              <CaseFigure
+                image={{
+                  src: "/images/neoenergia-matriz-118-ideias.webp",
+                  width: 2000,
+                  height: 1195,
+                  alt: "Matriz de Priorização com 118 Ideias de Inovação",
+                  caption:
+                    "Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
+                }}
+              />
+            </div>
           </div>
         </>
       ),
