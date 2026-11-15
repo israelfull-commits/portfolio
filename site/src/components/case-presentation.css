@@ -1116,39 +1116,66 @@
 }
 
 .cp-lightbox-close {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.25rem;
+  padding: 0 0.875rem;
+  border-radius: 9999px;
   border: 1px solid var(--cp-border);
   background: var(--cp-surface);
   color: var(--cp-text);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
   flex-shrink: 0;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(10, 54, 34, 0.04);
   transition: all 0.15s ease;
 }
 
 .cp-lightbox-close:hover,
 .cp-lightbox-close:focus-visible {
   background: var(--cp-pine);
+  border-color: var(--cp-pine);
   color: #FCF9F2;
+  box-shadow: 0 2px 8px -1px rgba(10, 54, 34, 0.18);
 }
 
-.cp-lightbox-media {
+.cp-lightbox-close svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  flex-shrink: 0;
+}
+
+.cp-lightbox-viewport {
   padding: 1.5rem;
   display: grid;
   place-items: center;
   background: var(--cp-surface);
   overflow: auto;
+  min-height: 20rem;
+  max-height: calc(92vh - 8.5rem);
 }
 
-.cp-lightbox-media img {
+.cp-lightbox-viewport img {
   max-width: 100%;
-  max-height: calc(92vh - 12rem);
+  max-height: calc(85vh - 9rem);
   object-fit: contain;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+/* Modo em tamanho original */
+.cp-lightbox-content.is-actual-size .cp-lightbox-viewport img {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
 }
 
 .cp-lightbox-footer {
@@ -1174,16 +1201,25 @@
 }
 
 .cp-lightbox-size {
-  min-height: 2.75rem;
-  padding: 0.375rem 0;
-  padding: 0.35rem 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  min-height: 2rem;
   border: 1px solid var(--cp-border);
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   background: var(--cp-surface);
   color: var(--cp-pine);
   font: inherit;
+  font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cp-lightbox-size:hover {
+  background: rgba(10, 54, 34, 0.06);
+  border-color: var(--cp-pine);
 }
 
 /* ==========================================================================
