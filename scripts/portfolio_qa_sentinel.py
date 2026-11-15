@@ -156,6 +156,7 @@ def sync_portfolio_verde():
         return
     files_to_sync = [
         (ROOT / "site" / "src" / "pages" / "CasePages.tsx", PORTFOLIO_VERDE / "src" / "pages" / "CasePages.tsx"),
+        (ROOT / "site" / "src" / "pages" / "ItauPreparationCase.tsx", PORTFOLIO_VERDE / "src" / "pages" / "ItauPreparationCase.tsx"),
         (ROOT / "site" / "src" / "pages" / "Home.tsx", PORTFOLIO_VERDE / "src" / "pages" / "Home.tsx"),
         (ROOT / "site" / "src" / "components" / "SiteChrome.tsx", PORTFOLIO_VERDE / "src" / "components" / "SiteChrome.tsx"),
         (ROOT / "site" / "src" / "components" / "case-presentation.css", PORTFOLIO_VERDE / "src" / "components" / "case-presentation.css"),

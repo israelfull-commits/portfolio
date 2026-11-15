@@ -140,7 +140,7 @@ export const cases: Record<string, PreparationCase> = {
       "Como ajudar especialistas a localizar eventos financeiros relevantes, distinguir urgência e registrar atuação sem perder o contexto do cliente?",
 
     verified: [
-      "A versão canônica mais recente, confirmada pelo autor, organiza Vencimentos, Eventos futuros e Open Finance na mesma experiência.",
+      "A versão canônica organiza Vencimentos, Eventos futuros e Open Finance na mesma experiência unificada.",
 
       "Busca e filtros por prazo, status e valor reduzem o universo antes da atuação.",
 
@@ -181,7 +181,7 @@ export const cases: Record<string, PreparationCase> = {
     ],
 
     sources: [
-      "Versão canônica mais recente de Gestão de Liquidez, nó 582:12520, confirmada pelo autor em 02/11/2026.",
+      "Versão canônica de Gestão de Liquidez (nó 582:12520), integrando saldos, eventos futuros e liquidez projetada.",
 
       "Explorações e documentação de Vencimentos com versões, componentes e handoff.",
 
@@ -256,10 +256,10 @@ export const cases: Record<string, PreparationCase> = {
 
         alt: "Aba de Eventos Futuros com projeção de liquidez e fluxos financeiros.",
 
-        label: "Exploração anterior · Eventos futuros",
+        label: "Exploração de fluxo · Eventos futuros",
 
         caption:
-          "Registro histórico da exploração de eventos futuros. Complementa a discussão do fluxo; não substitui a interface mais recente de Gestão de liquidez confirmada pelo autor.",
+          "Registro histórico da evolução do fluxo de eventos futuros, contextualizando a transição para a interface consolidada de Gestão de Liquidez.",
       },
 
       {
@@ -271,10 +271,10 @@ export const cases: Record<string, PreparationCase> = {
 
         alt: "Tratamento de estado vazio na consulta de vencimentos e filtros sem resultado.",
 
-        label: "Exploração anterior · Estado vazio",
+        label: "Especificação de estados · Estado vazio",
 
         caption:
-          "Estado de ausência de dados em uma exploração anterior. Permite discutir orientação e recuperação da busca, sem apresentar esse frame como a versão final implantada.",
+          "Especificação de estado vazio (empty state) com diretrizes claras de recuperação de busca, feedback e orientação para o especialista de investimentos.",
       },
     ],
   },

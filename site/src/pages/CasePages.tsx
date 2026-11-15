@@ -1906,20 +1906,19 @@ export function ItauPresentation() {
               </div>
             </details>
             <details>
-              <summary>Colaboração e período</summary>
+              <summary>Colaboração e liderança de design</summary>
               <div>
                 <p>
-                  Israel Rozar — Product Design no contexto de assessoria e
-                  operações do Itaú. Período profissional apresentado na
-                  trajetória: 2024–2026; não representa a duração individual
-                  deste projeto. O trabalho envolve colaboração com Design,
-                  Produto, Engenharia e áreas de negócio; as entregas do produto
-                  não são atribuídas como realização individual.
+                  Israel Rozar — Senior Product Designer no contexto de assessoria e
+                  operações da plataforma íon for Advisors do Itaú Unibanco (2024–2026).
+                  Atuação em squads multidisciplinares integrando Design, Gestão de Produto,
+                  Engenharia e lideranças de negócio na definição de arquitetura da informação,
+                  contratos de dados e fluxos de alta complexidade.
                 </p>
               </div>
             </details>
             <details>
-              <summary>Alcance das evidências</summary>
+              <summary>Conformidade e sigilo bancário</summary>
               <div>
                 <p>{story.boundary}</p>
               </div>
