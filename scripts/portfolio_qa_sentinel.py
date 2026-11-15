@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 """
-Portfolio QA Sentinel — Automated Quality & Consistency Auditor
+Portfolio QA Sentinel — Automated Quality & Consistency Auditor & Autofix
 Verifies Senior Product Designer editorial standards, asset URL safety,
-SPA routing coverage, and cross-section metric consistency.
+SPA routing coverage, cross-section metric consistency, circular navigation,
+and physical asset existence. Includes --autofix and --sync flags.
 """
 
 import os
 import re
 import sys
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_SRC = ROOT / "site" / "src"
+SITE_PUBLIC = ROOT / "site" / "public"
+PORTFOLIO_VERDE = ROOT / "portfolio-verde"
 
 DEFENSIVE_PATTERNS = [
     r"conteúdo\s+fictício",
@@ -35,9 +39,9 @@ DEFENSIVE_PATTERNS = [
 ]
 
 STRAY_SEMICOLONS = [
-    r"etapa;\s*\d",
-    r"service\s*;\s*blueprint",
-    r"prancha;\s*\d",
+    (r"etapa;\s*(\d)", r"etapa \1"),
+    (r"service\s*;\s*blueprint", r"service blueprint"),
+    (r"prancha;\s*(\d)", r"prancha \1"),
 ]
 
 def check_defensive_phrasing():
@@ -50,14 +54,20 @@ def check_defensive_phrasing():
                 errors.append(f"{p.name}: Encontrada expressão defensiva proibida '{matches[0]}'")
     return errors
 
-def check_stray_semicolons():
+def check_stray_semicolons(autofix=False):
     errors = []
     for p in SITE_SRC.rglob("*.tsx"):
         text = p.read_text(encoding="utf-8")
-        for pat in STRAY_SEMICOLONS:
+        new_text = text
+        for pat, repl in STRAY_SEMICOLONS:
             matches = re.findall(pat, text, re.IGNORECASE)
             if matches:
                 errors.append(f"{p.name}: Encontrado ponto e vírgula indevido '{matches[0]}'")
+                if autofix:
+                    new_text = re.sub(pat, repl, new_text, flags=re.IGNORECASE)
+        if autofix and new_text != text:
+            p.write_text(new_text, encoding="utf-8")
+            print(f"   [AUTOFIX] Corrigida pontuação em {p.name}")
     return errors
 
 def check_unwrapped_assets():
@@ -67,14 +77,37 @@ def check_unwrapped_assets():
     
     for p in SITE_SRC.rglob("*.tsx"):
         text = p.read_text(encoding="utf-8")
-        # Check raw static img src without assetUrl
         for m in img_pattern.finditer(text):
             errors.append(f"{p.name}: Tag <img> usando caminho absoluto estático sem assetUrl: '{m.group(1)}'")
-        # Exclude standard internal anchor links that are handled by React Router Link
         if p.name == "Home.tsx":
             for m in a_pattern.finditer(text):
                 if "/documents/" in m.group(1):
                     errors.append(f"{p.name}: Link de documento sem assetUrl: '{m.group(1)}'")
+    return errors
+
+def check_image_assets_exist():
+    errors = []
+    src_pattern = re.compile(r'src:\s*["\'](/images/[^"\']+)["\']')
+    for p in SITE_SRC.rglob("*.tsx"):
+        text = p.read_text(encoding="utf-8")
+        for m in src_pattern.finditer(text):
+            rel_path = m.group(1).lstrip("/")
+            full_path = SITE_PUBLIC / rel_path
+            if not full_path.exists():
+                errors.append(f"{p.name}: Asset referenciado não existe no disco: {rel_path}")
+    return errors
+
+def check_circular_navigation():
+    errors = []
+    case_file = SITE_SRC / "pages" / "CasePages.tsx"
+    if not case_file.exists():
+        return ["CasePages.tsx não encontrado."]
+    text = case_file.read_text(encoding="utf-8")
+    
+    if 'href: "/cases/itau/hub-liquidez"' not in text:
+        errors.append("Navegação circular: Einstein deve apontar para Itaú.")
+    if 'href: "/cases/neoenergia-conexao-digital"' not in text:
+        errors.append("Navegação circular: Claro deve apontar para Neoenergia.")
     return errors
 
 def check_metric_consistency():
@@ -88,7 +121,6 @@ def check_metric_consistency():
     home_text = home_file.read_text(encoding="utf-8")
     case_text = case_file.read_text(encoding="utf-8")
     
-    # Check Neoenergia distributor count
     if "5 distribuidoras" in home_text:
         errors.append("Home.tsx: Referência inconsistente a '5 distribuidoras' (o projeto integrou 4 distribuidoras).")
         
@@ -121,16 +153,36 @@ def check_spa_routes():
             
     return errors
 
+def sync_portfolio_verde():
+    if not PORTFOLIO_VERDE.exists():
+        print("   [SYNC] portfolio-verde não encontrado.")
+        return
+    files_to_sync = [
+        (ROOT / "site" / "src" / "pages" / "CasePages.tsx", PORTFOLIO_VERDE / "src" / "pages" / "CasePages.tsx"),
+        (ROOT / "site" / "src" / "components" / "case-presentation.css", PORTFOLIO_VERDE / "src" / "components" / "case-presentation.css"),
+        (ROOT / "site" / "src" / "components" / "CasePresentation.tsx", PORTFOLIO_VERDE / "src" / "components" / "CasePresentation.tsx"),
+    ]
+    for src, dst in files_to_sync:
+        if src.exists():
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst)
+            print(f"   [SYNC] Espelhado 1:1: {src.name} -> {dst.relative_to(ROOT)}")
+
 def main():
-    print("=" * 65)
+    autofix = "--autofix" in sys.argv
+    sync_mode = "--sync" in sys.argv or autofix
+    
+    print("=" * 68)
     print("   PORTFOLIO QA SENTINEL — AUDITORIA AUTOMATIZADA DE QUALIDADE")
-    print("=" * 65)
+    print("=" * 68)
     
     checks = [
         ("Expressões Defensivas / Rascunhos", check_defensive_phrasing),
-        ("Sintaxe e Pontuação Tipográfica", check_stray_semicolons),
+        ("Sintaxe e Pontuação Tipográfica", lambda: check_stray_semicolons(autofix=autofix)),
         ("Resolução Dinâmica de Ativos (assetUrl)", check_unwrapped_assets),
+        ("Existência Física de Assets no Disco", check_image_assets_exist),
         ("Consistência de Métricas Cross-Case", check_metric_consistency),
+        ("Navegação Circular Entre Cases", check_circular_navigation),
         ("Estrutura e Rotas Estáticas SPA (GitHub Pages)", check_spa_routes),
     ]
     
@@ -145,16 +197,20 @@ def main():
         else:
             print(f"[PASS] {name}")
             
-    print("\n" + "-" * 65)
+    if sync_mode:
+        print("\n" + "-" * 68)
+        print("Sincronização Canônica de Repositórios (portfolio-verde):")
+        sync_portfolio_verde()
+        
+    print("\n" + "-" * 68)
     if total_errors == 0:
         print("✓ TODOS OS CRITÉRIOS DE QUALIDADE FORAM ATENDIDOS COM SUCESSO!")
-        print("-" * 65)
+        print("-" * 68)
         sys.exit(0)
     else:
         print(f"✖ FORAM ENCONTRADOS {total_errors} PONTOS DE ATENÇÃO/ERRO.")
-        print("-" * 65)
+        print("-" * 68)
         sys.exit(1)
 
 if __name__ == "__main__":
     main()
-
