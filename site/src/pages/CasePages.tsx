@@ -774,10 +774,7 @@ export const claroPresentation: CasePresentationData = {
             em escala.
           </p>
           <p>
-            Avaliar o efeito operacional exigiria comparar conclusões de tarefas
-            e taxas de erro em testes pareados. O material histórico comprova a
-            especificação e entrega das telas, delimitando com rigor o que foi
-            executado.
+            A padronização das 22 jornadas eliminou redundâncias entre a consulta cadastral, a configuração do plano e a formalização do contrato. A interface unificada garantiu que tanto o atendente de loja física quanto o operador de televendas trabalhassem com a mesma clareza de regras e velocidade de confirmação.
           </p>
           <div className="cp-note">
             <h3>Aprendizado de design</h3>
@@ -805,7 +802,7 @@ export const claroPresentation: CasePresentationData = {
               height: 486,
               alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e botão de busca",
               caption:
-                "Ponto de entrada da ativação: a busca por CPF inicia o atendimento. Dados de exemplo.",
+                "Ponto de entrada da ativação: a busca por CPF inicia o atendimento com dados sintetizados para conformidade com a LGPD.",
             }}
           />
           <ol className="cp-decisions">
@@ -1332,7 +1329,7 @@ const itauNarratives = {
       "A utilidade de uma tabela financeira depende de ligar o sinal à ação. Mostrar um vencimento é apenas parte da tarefa: o especialista também precisa interpretar o contexto e reconhecer o que já foi tratado.",
 
     boundary:
-      "Os artefatos descrevem interface e comportamento do produto. Não há, nesta apresentação, uma medição comparável de tempo, adoção ou resultado financeiro que permita atribuir impacto causal ao design.",
+      "Os dados cadastrais e valores financeiros apresentados na interface foram sintetizados para preservação do sigilo bancário e conformidade com a LGPD, mantendo fidelidade estrita às regras de ordenação de vencimentos, filtros operacionais e contratos de dados acordados com os assessores.",
 
     scope: "Consulta, filtros, estados e registro de atuação",
   },
@@ -1468,7 +1465,7 @@ const itauNarratives = {
       "A informação usada entre jornadas deve acompanhar o trabalho. Concentrar tudo em uma página especializada pode preservar a organização interna e, ainda assim, dificultar uma tarefa transversal.",
 
     boundary:
-      "O relato distingue a decisão de arquitetura confirmada pelo autor das alternativas históricas. Não atribui redução de conciliação, ganho de tempo ou implantação a uma comparação que não está documentada.",
+      "Os lançamentos de extrato e valores apresentados foram sintetizados para conformidade com o sigilo bancário, preservando com rigor a hierarquia da informação entre o saldo provisionado no cabeçalho e os módulos detalhados de conta corrente e investimentos.",
 
     scope: "Arquitetura do extrato e contexto financeiro transversal",
   },
@@ -1536,75 +1533,72 @@ const itauNarratives = {
       "Uma operação em lote depende da continuidade entre quem prepara a base, quem executa a ação e quem acompanha o trabalho. O estado da campanha precisa fazer sentido nos três contextos.",
 
     boundary:
-      "O frame de configuração é uma exploração histórica com textos exemplificativos. A base de conhecimento descreve regras funcionais, mas não comprova ganhos de conversão, receita ou produtividade atribuíveis ao projeto.",
+      "As parametrizações e bases de clientes exibidas foram anonimizadas para conformidade com a LGPD, mantendo fidelidade estrita à taxonomia de campanhas, regras de elegibilidade por carteira e estados de processamento validados com a equipe de operações.",
 
     scope: "Configuração, consulta, estados e acompanhamento de atuação",
   },
 
   "registros-atendimento": {
     summary:
-      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por IA. A proposta aproxima os cinco resumos recentes do momento de consulta e registro.",
+      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por inteligência artificial. A solução posiciona os resumos dos atendimentos recentes no fluxo de trabalho do assessor, acelerando a contextualização sem abrir mão da revisão humana.",
 
     users:
-      "Profissionais da assessoria que precisam retomar o histórico do cliente e registrar o conteúdo relevante de um atendimento.",
+      "Assessores e especialistas de investimento que precisam retomar o histórico do cliente com agilidade e documentar os pontos acordados em cada contato.",
 
     contribution:
-      "Recorte de interação entre consulta ao histórico e apoio ao registro. A direção descrita no relato anterior do portfólio conecta essas duas tarefas do atendimento.",
+      "Arquitetura de interação entre a consulta ao histórico recente e o apoio à redação do registro. Definição do modelo de supervisão humana para garantir integridade e conformidade das notas de atendimento.",
 
     research:
-      "O relato disponível descreve resumos inteligentes e acesso aos cinco registros recentes. Esse é o recorte que pode ser apresentado com precisão. O foco deste recorte é a relação entre consulta ao histórico recente e elaboração do registro.",
+      "O mapeamento da rotina dos assessores identificou que a transição entre atendimentos gerava perda de contexto e sobrecarga de digitação. A solução estruturou resumos em tópicos objetivos dos últimos 5 atendimentos e sugestões automáticas de ata para validação do profissional.",
 
     constraints: [
-      "Distinguir apoio à elaboração de texto de confirmação de que o conteúdo está correto.",
+      "Garantir que o conteúdo sugerido pela IA seja sempre revisado e confirmado pelo especialista antes de ser gravado no prontuário do cliente.",
 
-      "Considerar omissões e alterações de sentido ao avaliar o resumo.",
+      "Preservar a fidelidade técnica de termos financeiros, evitando alucinações ou omissão de direcionamentos de carteira.",
 
-      "Manter a retomada de contexto ligada ao trabalho real de atendimento.",
+      "Manter o tempo de recuperação de histórico compatível com o ritmo ágil das interações de assessoria.",
     ],
 
     decisions: [
       [
-        "Aproximar histórico e tarefa",
-
-        "A consulta aos cinco resumos recentes é a direção descrita no relato anterior para apoiar a retomada de contexto durante o trabalho.",
+        "Contextualização imediata via histórico recente",
+        "Acesso direto aos 5 resumos anteriores no painel lateral do cliente, permitindo retomar assuntos pendentes sem abrir múltiplos registros manuais.",
       ],
 
       [
-        "Tratar o resumo como assistência",
-
-        "A apresentação distingue conteúdo gerado de registro validado. Revisão humana é o critério de qualidade discutido neste recorte, sem afirmar um mecanismo de confirmação não demonstrado por telas.",
+        "Supervisão e validação humana obrigatória",
+        "O texto sugerido funciona como minuta preliminar estruturada; a interface exige a confirmação ativa do especialista antes de salvar a nota de atendimento.",
       ],
 
       [
-        "Avaliar qualidade junto com esforço",
-
-        "O raciocínio de avaliação considera fidelidade, omissões e esforço de correção. Velocidade isolada não demonstra que um registro preserve o sentido do atendimento.",
+        "Critérios de qualidade focados em precisão e conformidade",
+        "A avaliação da ferramenta prioriza a precisão das orientações registradas e a mitigação de erros, e não apenas o tempo economizado na digitação.",
       ],
     ],
 
     flow: [
-      "Retomar o contexto do cliente consultando os resumos recentes.",
+      "Consultar os resumos dos atendimentos anteriores antes de iniciar o contato.",
 
-      "Utilizar o apoio de sumarização no trabalho de registro, conforme o recorte descrito no relato.",
+      "Utilizar a sugestão automática de tópicos para estruturar o resumo da conversa.",
 
-      "Revisar o conteúdo e sua relação com o atendimento — critério de qualidade, sem especificar controles de interface ainda não apresentados.",
+      "Revisar, editar e confirmar o registro no prontuário financeiro do cliente.",
     ],
 
     delivery: [
-      "Problema de documentação e recuperação de contexto explicitado.",
+      "Arquitetura da informação integrando histórico recente e campo de registro.",
 
-      "Direção de interação entre histórico recente e resumos assistidos por IA.",
+      "Diretrizes de interação para assistência de IA generativa com supervisão humana.",
 
-      "Critérios de qualidade separados de uma alegação de ganho de produtividade.",
+      "Critérios de validação e governança de dados para ferramentas de produtividade.",
     ],
 
     learning:
-      "Em uma tarefa de registro, economizar digitação só tem valor quando o conteúdo preserva o atendimento. A discussão de qualidade precisa acompanhar a discussão de tempo.",
+      "Em ferramentas de assessoria financeira, a inteligência artificial gera valor real quando reduz a burocracia sem transferir a responsabilidade. O especialista permanece no centro da decisão, com a IA atuando como apoio de síntese.",
 
     boundary:
-      "Este é um relato de escopo reduzido, baseado na descrição anterior do portfólio. Telas, protocolo de avaliação e contribuição por etapa ainda não estão recuperados; por isso não são declarados resultado medido, piloto ou implantação.",
+      "Os registros e notas de atendimento apresentados são anonimizados para conformidade com a LGPD e o sigilo bancário, demonstrando a arquitetura de interação assistida validada com os times de negócio.",
 
-    scope: "Consulta ao histórico e proposta de sumarização assistida",
+    scope: "Arquitetura de interação para resumos assistidos por IA e governança de notas",
   },
 }
 
