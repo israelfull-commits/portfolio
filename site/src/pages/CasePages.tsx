@@ -148,9 +148,9 @@ function Sources({ project }: { project: string }) {
 }
 
 const einsteinHero: CaseImage = {
-  src: "/images/hiae-capa-editorial-1600.webp",
-  width: 2560,
-  height: 1440,
+  src: "/images/hiae-capa-editorial-tight.webp",
+  width: 2000,
+  height: 947,
   alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
   caption:
     "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",

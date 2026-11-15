@@ -47,7 +47,7 @@
    ========================================================================== */
 
 .cp-hero {
-  padding-block: clamp(2.5rem, 5vw, 4rem) var(--cp-chapter-gap);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem) clamp(1rem, 2vw, 1.5rem);
 }
 
 .cp-breadcrumb {
@@ -186,37 +186,43 @@
   }
 }
 
-/* Master Hero Visual (Mockup / Capa) */
+/* Master Hero Visual (Mockup / Capa) — Disciplined, Compact Height */
 .cp-hero-visual {
-  margin-top: 2.5rem;
-  padding: clamp(0.75rem, 2vw, 1.25rem);
+  margin-top: 1.5rem;
+  padding: clamp(0.5rem, 1.25vw, 0.875rem);
   border: 1px solid var(--cp-border);
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(206, 255, 26, 0.08) 0%, transparent 60%),
     linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 236, 0.95) 100%);
   box-shadow:
     0 1px 2px rgba(10, 54, 34, 0.03),
     0 4px 12px -2px rgba(10, 54, 34, 0.05),
-    0 16px 36px -6px rgba(10, 54, 34, 0.08),
-    0 32px 64px -12px rgba(10, 54, 34, 0.06);
+    0 16px 36px -6px rgba(10, 54, 34, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .cp-hero-visual .cp-figure-btn {
-  border-radius: 1rem;
+  border-radius: 0.875rem;
   overflow: hidden;
   border: 1px solid rgba(23, 32, 25, 0.09);
   background: var(--cp-surface);
+  max-height: clamp(280px, 36vh, 380px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cp-hero-visual .cp-figure :is(img, .cp-figure-crop) {
   width: 100%;
   max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  max-height: clamp(280px, 36vh, 380px);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  margin: 0 auto;
 }
 
 .cp-concept-cover {
