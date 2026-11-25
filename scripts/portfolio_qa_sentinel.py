@@ -46,6 +46,11 @@ DEFENSIVE_PATTERNS = [
     r"reimagin(?:ar|amos|ou|ado)",
     r"encant(?:ar|amento|ador)",
     r"experiência\s+mágica",
+    # Internal Figma Node IDs & Third-Person Audit Leaks
+    r"\bnó\s+\d+:\d+",
+    r"Figma\s+nó\s+\d+",
+    r"confirmad[ao]\s+pelo\s+autor",
+    r"fornecid[ao]\s+pelo\s+autor",
 ]
 
 STRAY_SEMICOLONS = [

@@ -181,7 +181,7 @@ export const cases: Record<string, PreparationCase> = {
     ],
 
     sources: [
-      "Versão canônica de Gestão de Liquidez (nó 582:12520), integrando saldos, eventos futuros e liquidez projetada.",
+      "Versão canônica de Gestão de Liquidez, integrando saldos, eventos futuros e liquidez projetada.",
 
       "Explorações e documentação de Vencimentos com versões, componentes e handoff.",
 
@@ -235,7 +235,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Interface canônica de Gestão de Vencimentos em alta resolução 16:9",
         label: "Interface canônica · Resolução 16:9",
         caption:
-          "Interface canônica (Figma nó 582:12520): consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação do assessor.",
+          "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação do assessor.",
       },
       {
         src: "/images/itau-vencimentos-canonico.png",
@@ -348,7 +348,7 @@ export const cases: Record<string, PreparationCase> = {
 
       "Integração conceitual com histórico, busca e filtros",
 
-      "Solução definida pelo autor: saldo provisionado persistente no header, com CEP, CEP Plus e limite em Movimentações",
+      "Solução adotada: saldo provisionado persistente no header, com CEP, CEP Plus e limite em Movimentações",
     ],
 
     missing: [
@@ -380,7 +380,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Discovery Extrato EA e proposta de arquitetura de informação no IFA",
         label: "Discovery e Arquitetura · Resolução 16:9",
         caption:
-          "Discovery e arquitetura de informação (Figma nó 1966:34105): integração do saldo provisionado no header fixo e contexto persistente de movimentações financeiras.",
+          "Discovery e arquitetura de informação: integração do saldo provisionado no header fixo e contexto persistente de movimentações financeiras.",
       },
       {
         src: "/images/itau-movimentacoes-discovery.webp",
@@ -466,7 +466,7 @@ export const cases: Record<string, PreparationCase> = {
     ],
 
     sources: [
-      "Interface da solução do Hub de Liquidez, arquivo Gestão de liquidez, nó 3:14068, fornecida pelo autor em 02/11/2026.",
+      "Interface consolidada do Hub de Liquidez integrando posição atual, projeção e clientes priorizados.",
 
       "Frames relacionados de lista, composição e próxima ação.",
 
@@ -516,7 +516,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Interface da solução Hub de Liquidez e Oportunidades com KPIs e fila prioritária em 16:9",
         label: "Interface da solução · Resolução 16:9",
         caption:
-          "Interface da solução (Figma nó 3:14068): visualização integrada conectando liquidez disponível, variação projetada e fila prioritária de clientes.",
+          "Interface da solução: visualização integrada conectando liquidez disponível, variação projetada e fila prioritária de clientes.",
       },
       {
         src: "/images/itau-hub-liquidez-solucao.png",

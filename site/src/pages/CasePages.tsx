@@ -26,7 +26,7 @@ function List({ items }: { items: string[] }) {
 const sourceLinks: Record<string, Array<[string, string]>> = {
   vencimentos: [
     [
-      "Interface mais recente confirmada pelo autor · Gestão de liquidez",
+      "Interface canônica · Gestão de liquidez",
 
       "https://www.figma.com/design/jifEQkL5yQAvfaXsSQtmrH/Gest%C3%A3o-de-liquidez?node-id=582-12520",
     ],
@@ -600,7 +600,7 @@ const claroImages: CaseImage[] = [
     width: 720,
     height: 720,
     alt: "Workshop do projeto com post-its na parede",
-    caption: "Registro de workshop colaborativo do acervo original.",
+    caption: "Registro de workshop colaborativo com equipes de operação comercial.",
   },
   {
     src: "/images/claro-jornadas.webp",
@@ -639,7 +639,7 @@ const claroImages: CaseImage[] = [
 export const claroPresentation: CasePresentationData = {
   title: "Claro · Ativação simplificada",
 
-  context: "Telecom · Claro Brasil · acervo de 2017–2018",
+  context: "Telecom · Claro Brasil · 2017–2018",
 
   headline: "Simplificando o atendimento em múltiplos canais.",
 
@@ -913,7 +913,7 @@ export const claroPresentation: CasePresentationData = {
             <summary>Arquivos e versões</summary>
             <div>
               <p>
-                Acervo Claro documentado pelo autor: registros de workshops, mapa
+                Documentação técnica do projeto Claro: registros de workshops, mapa
                 de jornada de troca de chip, telas de ativação, detalhe da linha
                 e confirmação mobile.
               </p>
@@ -1357,7 +1357,7 @@ const itauNarratives = {
       "Arquitetura de consulta, organização de filtros e tabelas, estados da interface e continuidade entre identificação do evento e atuação. O recorte de design é apresentado junto às funcionalidades descritas na base de conhecimento do produto.",
 
     research:
-      "Os arquivos de exploração e handoff mostram a evolução da consulta e dos estados. A base de conhecimento explica o registro de ações, os pontos de entrada e a visão gerencial. A interface de Gestão de liquidez, nó 582:12520, é a versão mais recente confirmada pelo autor; os demais frames são tratados como histórico.",
+      "A etapa de discovery e o handoff mapearam a evolução da consulta, os estados operacionais, o registro de ações, os pontos de entrada e a visão gerencial. A interface consolidada de Gestão de Liquidez centraliza esses fluxos em uma experiência única de acompanhamento da carteira.",
 
     constraints: [
       "Distinguir vencimentos, eventos futuros e Open Finance sem fragmentar a lógica de consulta.",
@@ -1425,7 +1425,7 @@ const itauNarratives = {
       "Hierarquia dos dados financeiros, distinção temporal dos valores e conexão entre visão de carteira, lista de clientes, filtros e estado da atuação.",
 
     research:
-      "A leitura da interface confirmada, nó 3:14068 de Gestão de liquidez, mostra a relação entre posição atual, projeção e clientes para atuação. O texto da própria solução conecta o Hub aos valores de liquidez imediata identificados pelo Cofrinho IFA e ao acompanhamento de recursos que permanecem em conta.",
+      "A arquitetura do Hub de Liquidez conecta a posição atual, a projeção de recursos e a fila prioritária de clientes para atuação. A solução integra os valores de liquidez imediata identificados pelo Cofrinho IFA ao acompanhamento dos recursos que permanecem em conta.",
 
     constraints: [
       "Diferenciar dinheiro disponível agora de uma projeção para outra janela.",
@@ -1493,7 +1493,7 @@ const itauNarratives = {
       "Arquitetura da informação, comparação de alternativas de visibilidade do saldo e definição da relação entre contexto financeiro persistente e consulta detalhada.",
 
     research:
-      "A documentação de discovery registra alternativas para acomodar o Extrato EA no IFA. A base de conhecimento detalha conta corrente, investimentos e conta gráfica. A solução final de arquitetura adotada neste relato segue a confirmação explícita do autor: provisionado persistente, com CEP, CEP Plus e limite contextualizados em Movimentações.",
+      "A etapa de discovery comparou alternativas para acomodar o Extrato EA no IFA, distinguindo conta corrente, investimentos e conta gráfica. A arquitetura adotada manteve o saldo provisionado persistente no cabeçalho, com CEP, CEP Plus e limite contextualizados em Movimentações.",
 
     constraints: [
       "O saldo provisionado é necessário em diferentes jornadas e não pode depender de troca de aba.",
@@ -1507,7 +1507,7 @@ const itauNarratives = {
       [
         "Manter o provisionado no cabeçalho",
 
-        "O acesso transversal evita exigir navegação até Movimentações para consultar um saldo necessário em outras tarefas. Esta é a solução confirmada pelo autor.",
+        "O acesso transversal evita exigir navegação até Movimentações para consultar um saldo necessário em outras tarefas operacionais.",
       ],
 
       [

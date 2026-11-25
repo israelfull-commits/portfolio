@@ -43,6 +43,11 @@ A auditoria comparativa entre as 5 versões históricas do portfólio (V1 Epist�
   * Claro: removidos *"15 telas → 3 etapas"*, *"40% das quedas"* e *"34M clientes"*; alinhado às evidências reais (**22 jornadas, 20 pessoas em imersão, 10 entrevistas, 70+ validações**).
 * **Recompilado e sincronizado:** `code.js` e `ui.html` atualizados em `figma-refine-plugin` e `gemini-figma-plugin`.
 
+### D. Limpeza de Metadados Internos de Auditoria e Nós do Figma (`CasePages.tsx`, `ItauPreparationCase.tsx`, `portfolio_qa_sentinel.py`)
+* **Removidos todos os IDs internos de nós do Figma visíveis ao leitor final:** `nó 3:14068`, `nó 582:12520`, `nó 1966:34105` (mantidos exclusivamente na documentação histórica em `docs/`).
+* **Removida meta-linguagem de auditoria em terceira pessoa:** expressões como *"confirmada pelo autor"*, *"fornecida pelo autor em 02/11/2026"*, *"os demais frames são tratados como histórico"* e *"acervo de 2017–2018"* foram reescritas em linguagem executiva direta para o leitor do portfólio.
+* **Proteção Permanente no Sentinela:** adicionados filtros regex em `scripts/portfolio_qa_sentinel.py` para bloquear futuros vazamentos de IDs de nó do Figma ou frases de auditoria interna na interface pública.
+
 ---
 
 ## 3. Validação Técnica (Gates de Aprovação)
@@ -51,3 +56,4 @@ A auditoria comparativa entre as 5 versões históricas do portfólio (V1 Epist�
 * `python scripts/portfolio_qa_sentinel.py`: 7/7 PASS.
 * `python scripts/test_color_accessibility.py`: 100% WCAG AA & WCAG AAA.
 * `python scripts/test_ux_a11y_comprehensive.py`: 0 falhas de acessibilidade, `alt`, alvos de toque ou hierarquia.
+
