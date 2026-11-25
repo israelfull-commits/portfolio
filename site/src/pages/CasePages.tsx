@@ -148,12 +148,12 @@ function Sources({ project }: { project: string }) {
 }
 
 const einsteinHero: CaseImage = {
-  src: "/images/hiae-multicanal-web-celular.webp",
-  width: 2400,
-  height: 1350,
-  alt: "Linguagem visual modular para laudos clínicos: consistência de leitura preservada entre o portal web, aplicativo móvel e impressão hospitalar",
+  src: "/images/hiae-capa-editorial-1600.webp",
+  width: 2560,
+  height: 1440,
+  alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
   caption:
-    "Linguagem visual modular: consistência de leitura e previsibilidade mental preservadas entre web, tablet, celular e impressoras hospitalares.",
+    "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",
 }
 
 const einsteinImages: CaseImage[] = [
@@ -586,8 +586,8 @@ export const einsteinPresentation: CasePresentationData = {
 
 const claroHero: CaseImage = {
   src: "/images/claro-capa-editorial-1600.webp",
-  width: 2400,
-  height: 1327,
+  width: 1600,
+  height: 900,
   alt: "Visão editorial multicanal da Ativação Simplificada Claro: interfaces desktop e mobile com resumo financeiro integrado",
   caption:
     "Ecossistema multicanal: composição de interfaces desktop e mobile com carrinho de contratação em tempo real e detalhamento transparente de planos.",

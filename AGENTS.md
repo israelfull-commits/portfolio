@@ -33,13 +33,30 @@ Este documento consolida os aprendizados, convenções arquiteturais e diretrize
 
 ---
 
-## 5. Protocolo de Redação Técnica Documental (Zero Jargão / Estrutura STAR)
-- **Tom Estritamente Técnico e Direto:** Proibição absoluta de linguagem publicitária, superlativos ou clichês de autoajuda corporativa.
-- **Lista de Exclusão Estrita (Negative Words):** É proibido utilizar: *"interface amigável"*, *"experiência fluida"*, *"mergulhar no problema"*, *"colocar o usuário no centro"*, *"design limpo/clean"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"incrível"*, *"inovador"*, *"divisor de águas"*.
-- **Substituição por Métricas e Padrões de Engenharia de Design:**
-  - Em vez de adjetivos vagos, descrever: **heurísticas de usabilidade (Nielsen)**, **tokens de Design System (espaçamento 8px, tipografia)**, **critérios de conformidade WCAG 2.1/2.2 AA/AAA**, **arquitetura da informação**, **contratos de dados** e **Product Discovery**.
+## 5. Protocolo de Redação Técnica Documental (Plain Language, Zero Jargão & Estrutura STAR)
+- **Tom Estritamente Factual, Direto e Simples:** Proibição absoluta de linguagem publicitária, superlativos ou clichês corporativos. O texto deve ser simples, acessível e claro para qualquer profissional ou stakeholder de negócio, explicando o projeto com naturalidade técnica, sem jargões herméticos ou pedantes.
+- **Fornecimento de Dados Brutos (Estrutura STAR):** Toda narrativa deve se ancorar exclusivamente em dados técnicos brutos estruturados (Situação, Tarefa, Ação Técnica e Resultado Concreto), sem suposições, floreios ou narrativas romanciadas.
+- **Geração Modular (Seção por Seção):** A redação deve ocorrer bloco a bloco (Visão Geral ➔ Discovery ➔ Decisões de UI/AI/Acessibilidade ➔ Escopo ➔ Métricas), garantindo densidade técnica e profundidade uniforme.
+- **Lista de Exclusão Estrita (Negative Prompting):** É proibido utilizar: *"interface amigável"*, *"experiência fluida"*, *"mergulhar no problema"*, *"colocar o usuário no centro"*, *"design limpo/clean"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"incrível"*, *"inovador"*, *"divisor de águas"*, *"encantar o usuário"*, *"experiência mágica"*, *"double diamond"*, *"mapa de empatia"*, *"reimaginar"*.
+- **Substituição por Engenharia de Design e Princípios Gestalt:**
+  - Em vez de adjetivos vagos, descrever: **heurísticas de usabilidade (Nielsen)**, **princípios Gestalt (região comum, proximidade)**, **tokens de Design System (espaçamento 8px, tipografia)**, **critérios de conformidade WCAG 2.2 AA/AAA**, **arquitetura da informação**, **contratos de dados** e **Product Discovery**.
 - **Vocabulário Técnico Canônico (Otimização para Lideranças & ATS):**
-  - *Human-Centered Design (HCD)*, *Product Discovery*, *Arquitetura da Informação*, *Design System Modular*, *Tokens de Espaçamento*, *Heurísticas de Usabilidade*, *WCAG 2.2 AAA*, *Taxonomia de Dados*, *Interoperabilidade Legada*, *Modelagem de Componentes*.
-- **Estruturação STAR por Seção:** Toda seção deve se basear exclusivamente em fatos e restrições verificáveis (Situação, Tarefa, Ação Técnica e Resultado Concreto), sem suposições ou floreios.
+  - *Human-Centered Design (HCD)*, *Product Discovery*, *Arquitetura da Informação*, *Design System Modular*, *Tokens Semânticos*, *Heurísticas de Usabilidade*, *WCAG 2.2 AAA*, *Taxonomia de Dados*, *Interoperabilidade Legada*, *Modelagem de Componentes*, *Custo Efetivo Total (CET)*.
+- **Mandato para o Plugin do Figma:** O gerador de telas do plugin deve seguir compulsoriamente estas regras em todos os textos de cases, capítulos, cards e callouts, garantindo redações de fácil compreensão, sem jargões vazios e com máximo rigor técnico.
+
+
+---
+
+## 6. Diretrizes Canônicas Senior UX (UX Companion 2026)
+Consolidação das regras de ouro de *Senior UX Portfolio Examples* e *20 UX Portfolio Mistakes*:
+- **Decisões como Unidade de Valor:** Todo case deve conter no mínimo 3 decisões técnicas documentadas (Gatilho ➔ Alternativas Consideradas ➔ Trade-off Aceito ➔ Restrição Operacional ➔ Validação). Métodos e processos não substituem decisões.
+- **Sinalização Sênior Acima da Dobra:** Cargo ("Senior Product Designer"), anos de experiência e domínios essenciais visíveis nos primeiros 5 segundos da Home e no topo de cada case.
+- **Disciplina de Escopo ("O Que Não Foi Construído"):** Explicitar o escopo deliberadamente cortado e as justificativas técnicas/negociais.
+- **Enfrentamento de Desacordo Construtivo:** Relatar com maturidade divergências com engenharia ou liderança de produto e como a resolução foi alcançada.
+- **Reflexão Crítica Obrigatória:** Todo case deve encerrar com "O que eu faria diferente hoje / Trade-offs residuais".
+- **Eliminação de Vícios de Portfólio:** Proibido culto a processos genéricos (Double Diamond sem contexto), mosaicos de post-its/personas, métricas fictícias sem baseline ou pronomes vagos ("nós fizemos" sem especificar autoria individual).
+- **Proporção Única de Evidência:** Hero e figuras de entrega sempre em proporção 16:9 singular em alta resolução (1152×648 ou 856×482), eliminando mosaicos de telas miniaturizadas.
+- **Documento Normativo Completo:** Consulte [SENIOR_UX_PORTFOLIO_CANON.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/SENIOR_UX_PORTFOLIO_CANON.md) para a especificação detalhada de cada pilar e bloco.
+
 
 

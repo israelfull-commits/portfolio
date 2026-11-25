@@ -28,7 +28,7 @@ DEFENSIVE_PATTERNS = [
     r"posteriormente",
     r"temporário",
     r"rascunho",
-    # Negative Words / Marketing Clichés
+    # Negative Words / Marketing Clichés (UX Companion 2026)
     r"interface\s+amigável",
     r"experiência\s+fluida",
     r"mergulhar\s+no\s+problema",
@@ -38,6 +38,11 @@ DEFENSIVE_PATTERNS = [
     r"sinergia",
     r"revolucionário|revolucionária",
     r"divisor\s+de\s+águas",
+    r"double\s+diamond",
+    r"mapa\s+de\s+empatia",
+    r"reimagin(?:ar|amos|ou|ado)",
+    r"encant(?:ar|amento|ador)",
+    r"experiência\s+mágica",
 ]
 
 STRAY_SEMICOLONS = [

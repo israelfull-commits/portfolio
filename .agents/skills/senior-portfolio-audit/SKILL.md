@@ -30,6 +30,23 @@ Esta skill fornece o protocolo e a automação necessários para auditar, evolui
 - **Geração de Rotas Estáticas:** Toda rota de case deve possuir seu próprio `index.html` gerado na pasta `site/dist/cases/...` para retornar **HTTP 200 OK** direto na navegação e evitar 404 em refreshes.
 - **Navegação Circular:** O rodapé de cada case deve alimentar a navegação do recrutador para o próximo case da esteira (**Einstein ➔ Itaú ➔ Claro ➔ Neoenergia ➔ Einstein**).
 
+### D. Diretrizes UX Companion 2026 (Senior Heuristics)
+- **Decisões como Unidade de Valor:** O case deve responder com clareza: quais foram as 3 decisões capitais tomadas pelo designer e quais alternativas foram rejeitadas?
+- **Reenquadramento de Problema (Reframing):** Demonstrar como o problema real difere da solicitação original do briefing.
+- **O que NÃO foi construído:** Identificar escopo descartado para proteger prazos, performance ou usabilidade.
+- **Evidência de Liderança e Desacordo Construtivo:** Relatar navegação de tensões com PM/Engenharia e rituais de facilitação.
+- **Métricas Ancoradas:** Resultados de negócio categorizados por Receita, Custo ou Risco (Conformidade).
+- **Reflexão Crítica:** Conclusão com aprendizados honestos e o que seria feito diferente hoje.
+- **Anti-Padrões Proibidos:** Zero "Double Diamond" genérico sem decisão, zero mosaicos de 8 métodos/personas roxas, zero "nós fizemos" vago, zero mosaico ilegível de 12 telas. Consulte [SENIOR_UX_PORTFOLIO_CANON.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/SENIOR_UX_PORTFOLIO_CANON.md).
+
+### E. Plain Language, Zero Jargão & Estrutura STAR Documental
+- **Linguagem Simples e Direta:** Proibição de jargões herméticos ou pedantes. Redija de forma factual e acessível para qualquer stakeholder.
+- **Estruturação por Dados Brutos (STAR):** Narrativa baseada exclusivamente em Situação, Tarefa, Ação e Resultado concreto, sem inferências inventadas.
+- **Negative Prompting Rigoroso:** Proibição de termos como *"interface amigável"*, *"mergulhar no problema"*, *"design clean"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"encantar"*, *"mágica"*.
+- **Substituição por Padrões Técnicos:** Heurísticas de Nielsen, princípios Gestalt, critérios WCAG 2.2 AAA e tokens de Design System.
+
+
+
 ---
 
 ## 2. Ferramenta de Auditoria Automatizada
