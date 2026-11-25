@@ -238,7 +238,7 @@ export const cases: Record<string, PreparationCase> = {
           "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação do assessor.",
       },
       {
-        src: "/images/itau-vencimentos-canonico.png",
+        src: "/images/itau-vencimentos-canonico.webp",
         width: 1360,
         height: 1069,
         alt: "Última versão da interface Próximos Vencimentos com abas, busca, filtros e tabela de clientes.",
@@ -248,7 +248,7 @@ export const cases: Record<string, PreparationCase> = {
       },
 
       {
-        src: "/images/itau-vencimentos-eventos.png",
+        src: "/images/itau-vencimentos-eventos.webp",
 
         width: 1360,
 
@@ -263,7 +263,7 @@ export const cases: Record<string, PreparationCase> = {
       },
 
       {
-        src: "/images/itau-vencimentos-empty.png",
+        src: "/images/itau-vencimentos-empty.webp",
 
         width: 1360,
 
@@ -519,7 +519,7 @@ export const cases: Record<string, PreparationCase> = {
           "Interface da solução: visualização integrada conectando liquidez disponível, variação projetada e fila prioritária de clientes.",
       },
       {
-        src: "/images/itau-hub-liquidez-solucao.png",
+        src: "/images/itau-hub-liquidez-solucao.webp",
         width: 1360,
         height: 1370,
         alt: "Interface do Hub de Liquidez e Oportunidades com posição atual, projeção e clientes priorizados.",
