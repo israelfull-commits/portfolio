@@ -53,8 +53,10 @@ export function assetUrl(path: string): string {
     return path
   }
   const base = import.meta.env.BASE_URL || "/"
-  const cleanPath = path.startsWith("/") ? path.slice(1) : path
   const cleanBase = base.endsWith("/") ? base : `${base}/`
+  // Keep resolved internal URLs stable when shared components resolve them again.
+  if (cleanBase !== "/" && path.startsWith(cleanBase)) return path
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path
   return `${cleanBase}${cleanPath}`
 }
 
