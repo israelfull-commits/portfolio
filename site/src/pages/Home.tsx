@@ -1,379 +1,142 @@
-import { ArrowIcon, ChatIcon, DownloadIcon, Link, MailIcon, assetUrl } from "../design-system"
-
+import { DownloadIcon, Link, assetUrl } from "../design-system"
 import { PageMeta } from "../components/PageMeta"
-
 import { ContactSection, SiteFooter, SiteHeader } from "../components/SiteChrome"
-
 import "../portfolio.css"
 
 const projects = [
   {
     slug: "hub-liquidez",
     href: "/cases/itau/hub-liquidez",
-    client: "Itaú Unibanco · íon",
+    client: "Itaú Unibanco",
     title: "Hub de Liquidez e Oportunidades",
-    theme: "Fintech · Discovery e visão sistêmica",
-    description:
-      "Composição de recursos, projeção de saldos e priorização de clientes em uma plataforma densa para assessores de investimento.",
-    decision: "Separar saldo disponível, variação prevista e projeção com origem e janela de tempo explícitas.",
+    role: "Senior Product Designer",
+    scope: "íon for Advisors · 4 módulos operacionais",
+    description: "Organização de saldos, projeções e oportunidades para assessores de investimentos.",
   },
   {
     slug: "claro-ativacao-simplificada",
     href: "/cases/claro-ativacao-simplificada",
     client: "Claro Brasil",
-    title: "Ativação Simplificada e Televendas",
-    theme: "Telecom · Redesenho de esteira e POS",
-    description:
-      "Redesenho da esteira de vendas e ativação de planos móveis e combos para equipes de atendimento e lojas próprias.",
-    decision: "Redução de etapas de checkout de 12 para 4 telas com validação em tempo real e regras omnichannel.",
+    title: "Ativação de planos e televendas",
+    role: "UX/UI Designer",
+    scope: "22 jornadas mapeadas · 70+ validações",
+    description: "Redesenho da jornada de venda e ativação de planos para equipes de atendimento e lojas.",
   },
   {
     slug: "neoenergia-conexao-digital",
     href: "/cases/neoenergia-conexao-digital",
-    client: "Neoenergia · P&D ANEEL",
-    title: "Conexão Digital e Service Blueprint",
-    theme: "Utilities · Service design sistêmico",
-    description:
-      "Service blueprint ponta a ponta conectando o trabalho técnico em campo ao atendimento digital em 4 distribuidoras de energia através de 5 blueprints de serviço.",
-    decision: "Matriz de 118 oportunidades priorizadas e integração entre despacho de campo e autoatendimento do cliente.",
+    client: "Neoenergia",
+    title: "Atendimento e operação de campo",
+    role: "Senior Product Designer · Service Design",
+    scope: "4 distribuidoras · 5 blueprints · 118 ideias",
+    description: "Mapeamento de jornadas e serviços para conectar o atendimento digital à operação em campo.",
   },
 ]
 
-const expertise = [
-  [
-    "Discovery",
-    "Discovery e estratégia",
-    "Enquadramento de problemas, pesquisa, síntese, experimentação e priorização para reduzir incerteza antes da entrega.",
-  ],
-
-  [
-    "UX e UI",
-    "UX/UI para produtos complexos",
-    "Jornadas, arquitetura da informação e interfaces para operações de alta densidade e contextos regulados.",
-  ],
-
-  [
-    "Sistemas",
-    "Design systems e acessibilidade",
-    "Governança, documentação e handoff com práticas de acessibilidade baseadas em WCAG e consistência em escala.",
-  ],
-
-  [
-    "IA",
-    "Experimentação responsável com IA",
-    "Exploração de fluxos assistidos por IA com critérios de qualidade, rastreabilidade e supervisão humana.",
-  ],
+const itauSubmodules = [
+  { label: "Gestão de Vencimentos", href: "/cases/itau/vencimentos" },
+  { label: "Movimentações", href: "/cases/itau/movimentacoes" },
+  { label: "Gestão de Campanhas", href: "/cases/itau/campanhas" },
 ]
 
-const experience = [
-  [
-    "Consultoria Independente",
-    "Senior UX Consultant · Projetos entre vínculos ou em paralelo",
-    "2022 – atual",
-  ],
-
-  [
-    "Itaú Unibanco",
-    "Senior Product Designer · Plataforma íon for Advisors",
-    "2024 – 2026",
-  ],
-
-  [
-    "Foursys + Hospital Albert Einstein",
-    "UX Lead · Sistema de Laudos Clínicos Modulares",
-    "2022",
-  ],
-
-  ["EY · R/GA", "Senior UX Consultant & Product Designer", "2020 – 2022"],
-
-  [
-    "Moot · Walmart · GFT · Principia & outras",
-    "Experiências anteriores em UX/UI, direção de arte e design",
-    "2006 – 2019",
-  ],
+const trajectory = [
+  { org: "Itaú Unibanco", role: "Senior Product Designer · Plataforma IFA", period: "2024 – 2026" },
+  { org: "Consultoria Independente", role: "Senior UX Consultant · Produtos Digitais", period: "2022 – atual" },
+  { org: "Foursys + Hospital Albert Einstein", role: "UX Lead · Padrão de Laudos Clínicos", period: "2022" },
+  { org: "EY · R/GA", role: "Senior UX Consultant & Product Designer", period: "2020 – 2022" },
+  { org: "Formação & Base", role: "Ciência da Computação (Univali) · Design Digital", period: "2006 – 2019" },
 ]
-
-function Label({ number, children }: { number: string; children: string }) {
-  return (
-    <div className="pf-label">
-      <span>{number}</span>
-      {children}
-    </div>
-  )
-}
 
 export default function Home() {
   return (
-    <div className="portfolio-site">
+    <div className="portfolio-site pf-home-compact">
       <PageMeta
         title="Israel Rozar — Senior Product Designer"
-        description="Design de produto, discovery e visão sistêmica. Conheça os projetos e a trajetória de Israel Rozar em serviços financeiros, saúde e consultoria."
+        description="Senior Product Designer com atuação desde 2006. Projetos de saúde, finanças, telecom e energia: conheça o contexto, as decisões e as entregas."
       />
-      <a className="skip-link" href="#conteudo">
-        Pular para o conteúdo
-      </a>
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <SiteHeader />
-      <main id="conteudo">
-        <section
-          className="pf-hero pf-container"
-          id="topo"
-          aria-labelledby="hero-title"
-        >
+      <main id="conteudo" tabIndex={-1}>
+        <section className="pf-hero pf-container" id="topo" aria-labelledby="hero-title">
           <div className="pf-hero-copy">
             <div className="pf-kicker">
               <span>Senior Product Designer</span>
-              <span>São Paulo • Brasil</span>
+              <span>São Paulo · Brasil</span>
             </div>
-            <h1 id="hero-title">
-              Design Estruturado para Ecossistemas de Alta Criticidade.
-            </h1>
-            <p className="pf-lead">
-              Desde 2006 desenho experiências digitais. Recentemente, no Itaú
-              Unibanco, liderei frentes de Product discovery e design da
-              plataforma IFA para especialistas de investimentos.
-            </p>
+            <h1 id="hero-title">Design de produtos para saúde, finanças e serviços essenciais.</h1>
+            <p className="pf-lead">Desde 2006, atuo em pesquisa e design de produtos digitais. No Itaú, liderei frentes de design para especialistas de investimentos.</p>
             <div className="pf-actions">
-              <a className="pf-button pf-button-pine" href="#trabalho">
-                Conhecer meu trabalho <ArrowIcon direction="down" />
-              </a>
-              <a
-                className="pf-button pf-button-outline"
-                href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
-                download="Israel-Rozar-Curriculo.pdf"
-              >
-                Baixar currículo (PDF) <DownloadIcon />
-              </a>
+              <a className="pf-button pf-button-pine" href="#trabalho">Ver projetos</a>
+              <a className="pf-button pf-button-outline" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Currículo (PDF) <DownloadIcon /></a>
             </div>
+            <a className="pf-home-email" href="mailto:irozar@yahoo.com.br">irozar@yahoo.com.br</a>
           </div>
           <figure className="pf-portrait">
             <div className="pf-portrait-image">
               <img
                 src={assetUrl("/images/israel-rozar-treated-800.webp")}
                 srcSet={`${assetUrl("/images/israel-rozar-treated-480.webp")} 480w, ${assetUrl("/images/israel-rozar-treated-800.webp")} 800w`}
-                sizes="(max-width: 700px) 100vw, 360px"
-                width="800"
-                height="1000"
-                alt="Israel Rozar, Senior Product Designer"
-                fetchPriority="high"
+                sizes="(max-width: 700px) 96px, 320px"
+                width="800" height="1000" alt="Israel Rozar, Senior Product Designer" fetchPriority="high"
               />
-              <span className="pf-photo-label">IR • 2026</span>
-              <span className="pf-photo-place">São Paulo • BR</span>
             </div>
-            <figcaption>
-              <span>Senior product designer</span>
-              <span>Einstein · Itaú · R/GA</span>
-            </figcaption>
+            <figcaption>Israel Rozar</figcaption>
           </figure>
         </section>
-        <section
-          className="pf-work pf-section"
-          id="trabalho"
-          aria-labelledby="work-title"
-        >
+        <section className="pf-work pf-section" id="trabalho" aria-labelledby="work-title">
           <div className="pf-container">
-            <Label number="01">Trabalhos selecionados</Label>
-            <h2 id="work-title">Projetos, decisões e contribuições.</h2>
-            <p className="pf-section-intro">
-              Um case em destaque e três projetos estratégicos que apresentam minha atuação
-              em design systems, plataformas complexas, telecom e service design.
-            </p>
+            <h2 id="work-title">Projetos selecionados</h2>
             <article className="pf-featured" id="project-einstein-laudos">
               <div className="pf-featured-story">
-                <div className="pf-featured-meta">
-                  <span>★ Case em destaque · Saúde</span>
-                  <span>Hospital Israelita Albert Einstein</span>
-                </div>
-                <h3>Uma linguagem visual modular para laudos heterogêneos.</h3>
-                <p>
-                  Pesquisa e arquitetura de informação para estruturar mais de 80
-                  exames distintos em uma linguagem modular previsível, facilitando
-                  a tomada de decisão médica e reduzindo a ansiedade de pacientes.
-                </p>
-                <div className="pf-contribution">
-                  <span>Atuação como UX Lead</span>
-                  <p>
-                    Liderança de pesquisa clínica, sistematização de taxonomias,
-                    definição de componentes modulares, testes com médicos e
-                    pacientes, e alinhamento com arquitetura e engenharia.
-                  </p>
-                </div>
-                <Link
-                  className="pf-button pf-button-lime"
-                  href="/cases/einstein-laudos"
-                >
-                  Explorar estudo de caso completo <ArrowIcon />
-                </Link>
+                <p className="pf-home-project-client">Hospital Albert Einstein · UX Lead</p>
+                <h3>Estrutura modular para laudos clínicos.</h3>
+                <p className="pf-home-scope">14 entregáveis · 121 pacientes · 4 médicos especialistas</p>
+                <p>Pesquisa e arquitetura da informação para organizar laudos de diferentes exames em uma estrutura comum.</p>
+                <Link className="pf-button pf-button-lime" href="/cases/einstein-laudos">Ver estudo de caso<span className="pf-sr-only">: Hospital Albert Einstein</span></Link>
               </div>
-              <div className="pf-featured-evidence">
-                <figure className="pf-case-preview">
-                  <Link
-                    href="/cases/einstein-laudos"
-                    ariaLabel="Explorar estudo de caso completo do Hospital Albert Einstein"
-                  >
-                    <img
-                      src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")}
-                      width="1200"
-                      height="675"
-                      loading="eager"
-                      fetchPriority="high"
-                      decoding="async"
-                      alt="Layout real da proposta de solução v3: estrutura modular canônica de laudo clínico do Hospital Albert Einstein."
-                    />
-                  </Link>
-                  <figcaption>
-                    Estrutura modular de laudos clínicos (layout real da proposta de solução v3)
-                  </figcaption>
-                </figure>
-                <h4>Evidências de discovery e testes</h4>
-                <dl className="pf-evidence-grid">
-                  {[
-                    ["14", "Famílias de laudos sistematizadas"],
-                    ["121", "Pacientes em discovery e testes"],
-                  ].map(([n, t]) => (
-                    <div key={n}>
-                      <dt>{n}</dt>
-                      <dd>{t}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <div className="pf-partners">
-                  Hospital Albert Einstein <span>Foursys Design</span>
-                </div>
-              </div>
+              <figure className="pf-case-preview">
+                <img src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")} width="1200" height="675" loading="lazy" decoding="async" alt="Proposta de laudo clínico com seções de exame, resultados e referências organizadas em uma estrutura modular." />
+              </figure>
             </article>
             <div className="pf-project-grid pf-project-grid-editorial">
-              {projects.map((p, i) => (
-                <article
-                  className="pf-project"
-                  key={p.slug}
-                  id={`project-${p.slug}`}
-                >
-                  <div className="pf-project-meta">
-                    <span>{String(i + 1).padStart(2, "0")}</span>
-                    <span>{p.client}</span>
-                  </div>
-                  <div className="pf-project-heading">
-                    <h3>{p.title}</h3>
-                    <p className="pf-project-theme">{p.theme}</p>
-                  </div>
-                  <p className="pf-project-desc">{p.description}</p>
-                  {p.decision && (
-                    <p className="pf-project-decision">
-                      <strong>Decisão: </strong>
-                      {p.decision}
-                    </p>
-                  )}
-                  <Link href={p.href} className="pf-project-link">
-                    Explorar o case <span aria-hidden="true">→</span>
-                    <span className="pf-sr-only">: {p.title}</span>
-                  </Link>
+              {projects.map(project => (
+                <article className="pf-project" id={`project-${project.slug}`} key={project.slug}>
+                  <p className="pf-home-project-client">{project.client}</p>
+                  <h3>{project.title}</h3>
+                  <p className="pf-home-project-role">{project.role}</p>
+                  <p className="pf-home-scope">{project.scope}</p>
+                  <p className="pf-project-desc">{project.description}</p>
+                  <Link className="pf-project-link" href={project.href}>Ver estudo de caso<span className="pf-sr-only">: {project.title}</span></Link>
                 </article>
               ))}
             </div>
-            <div className="pf-submodules-callout" style={{ marginTop: "2rem", padding: "1.25rem 1.5rem", borderRadius: "1rem", background: "var(--paper-deep, #F2EFE8)", border: "1px solid var(--line, #E2DDD5)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
-              <span style={{ fontSize: "0.9375rem", color: "var(--ink-muted, #4A5568)" }}>
-                Outros fluxos do ecossistema Itaú Corretora:
-              </span>
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/cases/itau/vencimentos" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Vencimentos →</Link>
-                <Link href="/cases/itau/movimentacoes" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Movimentações →</Link>
-                <Link href="/cases/itau/campanhas" style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--forest, #0A2E1D)", textDecoration: "underline" }}>Gestão de Campanhas →</Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          className="pf-about pf-section"
-          id="sobre"
-          aria-labelledby="about-title"
-        >
-          <div className="pf-container">
-            <Label number="02">Expertise</Label>
-            <div className="pf-about-heading">
-              <h2 id="about-title">
-                Design como ponte entre pessoas, negócio e tecnologia.
-              </h2>
-              <div>
-                <p>
-                  Atuo onde o problema ainda não está claro e a solução precisa
-                  equilibrar necessidades humanas, viabilidade técnica e
-                  objetivos de negócio.
-                </p>
-                <p>
-                  Minha experiência combina repertório de craft com visão
-                  sistêmica. Conduzo discovery, estruturo jornadas e interfaces,
-                  facilito decisões com times multidisciplinares e conecto a
-                  qualidade da experiência a resultados observáveis.
-                </p>
-              </div>
-            </div>
-            <div className="pf-expertise-grid">
-              {expertise.map(([tag, title, text], i) => (
-                <article className="pf-expertise" key={title}>
-                  <img
-                    className="pf-expertise-icon"
-                    src={assetUrl(`/icons/${["discovery", "layout", "systems", "brain"][i]}.svg`)}
-                    width="20"
-                    height="20"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <span>
-                    {String(i + 1).padStart(2, "0")} / {tag}
-                  </span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
+            <nav className="pf-home-submodules" aria-label="Outros módulos do ecossistema Itaú IFA">
+              <span className="pf-home-submodules-label">Outros recortes no Itaú (IFA):</span>
+              {itauSubmodules.map(item => (
+                <Link key={item.href} href={item.href}>{item.label}</Link>
               ))}
+            </nav>
+          </div>
+        </section>
+        <section className="pf-about pf-section" id="sobre" aria-labelledby="about-title">
+          <div className="pf-container pf-home-about">
+            <h2 id="about-title">Sobre minha atuação</h2>
+            <div>
+              <p id="experiencia">Experiência em saúde, serviços financeiros, telecom e energia. Trabalho com pesquisa, arquitetura da informação e design de interfaces em colaboração com Produto e Engenharia.</p>
+              <p>Exploro recursos de IA com revisão humana e foco em acessibilidade digital (WCAG 2.2).</p>
+              <ul className="pf-home-trajectory" aria-label="Trajetória profissional resumida">
+                {trajectory.map(item => (
+                  <li key={item.org}>
+                    <div><strong>{item.org}</strong> · {item.role}</div>
+                    <span>{item.period}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link className="pf-home-cv" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Ver trajetória completa no currículo (PDF)</Link>
             </div>
           </div>
         </section>
-        <section
-          className="pf-trajectory pf-section pf-container"
-          id="experiencia"
-          aria-labelledby="experience-title"
-        >
-          <div className="pf-trajectory-intro">
-            <Label number="03">Trajetória</Label>
-            <h2 id="experience-title">
-              Uma carreira construída entre craft e visão sistêmica.
-            </h2>
-            <p>
-              Atuação em produtos digitais desde 2006, com experiência em
-              serviços financeiros, saúde e consultoria. Trabalho com pesquisa,
-              decisões de design e colaboração com engenharia.
-            </p>
-          </div>
-          <ol className="pf-timeline">
-            {experience.map(([company, role, date]) => (
-              <li key={company}>
-                <div>
-                  <h3>{company}</h3>
-                  <p>{role}</p>
-                </div>
-                <span>{date}</span>
-              </li>
-            ))}
-          </ol>
-          <aside className="pf-education" aria-label="Formação">
-            <div>
-              <h3>Formação acadêmica</h3>
-              <p>Ciência da Computação</p>
-              <span>Universidade do Vale do Itajaí (Univali)</span>
-            </div>
-            <div>
-              <h3>Formação contínua</h3>
-              <p>
-                Product Launches
-                <br />
-                UX Design
-                <br />
-                Data & Analytics
-              </p>
-            </div>
-          </aside>
-        </section>
-        <ContactSection />
+        <ContactSection compact />
       </main>
       <SiteFooter />
     </div>

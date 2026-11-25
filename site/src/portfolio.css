@@ -1211,3 +1211,57 @@
         margin-bottom: 20px
     }
 }
+
+/* Compact home: overview first, depth inside the case studies. */
+.pf-home-compact .pf-hero{grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding-block:40px;align-items:center}
+.pf-home-compact .pf-kicker{margin-bottom:20px;gap:12px;flex-wrap:wrap;font-size:14px;line-height:20px}
+.pf-home-compact .pf-kicker>span:first-child{font-size:12px}
+.pf-home-compact .pf-hero h1{font-size:clamp(2.25rem,4vw,3.5rem);line-height:1.12;margin-bottom:20px;max-width:20ch}
+.pf-home-compact .pf-lead{font-size:18px;line-height:28px;max-width:60ch}
+.pf-home-compact .pf-actions{margin-top:20px;gap:12px}
+.pf-home-compact .pf-actions>a{width:auto;min-height:48px;justify-content:center}
+.pf-home-compact .pf-home-email{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;color:var(--forest);font-size:14px;text-underline-offset:4px}
+.pf-home-compact .pf-home-email:hover{text-decoration:underline}
+.pf-home-compact .pf-portrait{width:100%;max-width:300px;justify-self:end;padding:10px}
+.pf-home-compact .pf-portrait-image{height:290px}
+.pf-home-compact .pf-portrait figcaption{padding:10px 4px 0;font-size:14px;line-height:20px}
+.pf-home-compact .pf-section{padding-block:48px}
+.pf-home-compact h2{font-size:32px;line-height:40px}
+.pf-home-compact #work-title{margin-bottom:24px}
+.pf-home-compact .pf-featured{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;margin-bottom:24px}
+.pf-home-compact .pf-featured-story{padding:32px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;min-width:0}
+.pf-home-compact .pf-featured h3{font-size:28px;line-height:36px;margin:0;max-width:23ch}
+.pf-home-compact .pf-home-project-client{font-size:14px;line-height:20px;font-weight:600;margin:0}
+.pf-home-compact .pf-featured-story p{color:var(--on-forest-muted,var(--paper));font-size:16px;line-height:24px}
+.pf-home-compact .pf-featured-story .pf-home-project-client{color:var(--paper);font-size:14px}
+.pf-home-compact .pf-featured-story .pf-button{margin-top:4px;min-height:48px}
+.pf-home-compact .pf-case-preview{margin:0;padding:24px;display:flex;align-items:center;background:var(--surface,var(--paper));min-width:0}
+.pf-home-compact .pf-case-preview img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:12px;background:var(--paper-deep)}
+.pf-home-compact .pf-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pf-home-compact .pf-project{padding:24px;min-height:0;display:flex;flex-direction:column;align-items:flex-start;min-width:0;gap:12px}
+.pf-home-compact .pf-project h3{font-size:23px;line-height:31px;margin:0}
+.pf-home-compact .pf-project .pf-home-project-client{color:var(--forest)}
+.pf-home-compact .pf-home-project-role{font-size:14px;line-height:20px;color:var(--ink-muted);margin:0}
+.pf-home-compact .pf-project-desc{font-size:16px;line-height:24px;margin:0}
+.pf-home-compact .pf-project-link{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding-top:8px;font-size:14px;line-height:20px;color:var(--forest)}
+.pf-home-compact .pf-home-about{display:grid;grid-template-columns:1fr 1.5fr;gap:40px}
+.pf-home-compact .pf-home-about p+p{margin-top:12px}
+.pf-home-compact .pf-home-cv{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-size:14px;font-weight:600;color:var(--forest);text-decoration:underline;text-underline-offset:4px}
+.pf-home-compact .pf-home-scope{font-size:13px;line-height:20px;font-weight:600;color:var(--forest);margin:0}
+.pf-home-compact .pf-featured-story .pf-home-scope{color:var(--lime)}
+.pf-home-compact .pf-home-submodules{margin-top:20px;padding:14px 20px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:14px;line-height:20px}
+.pf-home-compact .pf-home-submodules-label{font-weight:600;color:var(--ink)}
+.pf-home-compact .pf-home-submodules a{display:inline-flex;align-items:center;min-height:36px;color:var(--forest);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.pf-home-compact .pf-home-submodules a:hover{color:var(--forest-deep)}
+.pf-home-compact .pf-home-trajectory{list-style:none;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:10px}
+.pf-home-compact .pf-home-trajectory li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:14px;line-height:20px;color:var(--ink)}
+.pf-home-compact .pf-home-trajectory strong{font-weight:600;color:var(--ink)}
+.pf-home-compact .pf-home-trajectory span{color:var(--ink-muted);white-space:nowrap;font-size:13px}
+.pf-home-compact .pf-contact-wrap{padding-block:40px}
+.pf-home-compact .pf-home-contact{padding:32px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.pf-home-compact .pf-home-contact h2{font-size:28px;line-height:36px;max-width:24ch;margin:0}
+.pf-home-compact .pf-home-contact p{margin-top:12px;color:var(--on-forest-muted,var(--paper))}
+.pf-home-compact .pf-home-contact-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0}
+.pf-home-compact .pf-home-contact-actions>a:not(.pf-button){display:inline-flex;align-items:center;min-height:44px;color:var(--paper);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1000px){.pf-home-compact .pf-hero{grid-template-columns:minmax(0,1fr) 240px;gap:28px}.pf-home-compact .pf-portrait-image{height:240px}.pf-home-compact .pf-featured-story{padding:24px}.pf-home-compact .pf-project-grid{gap:16px}.pf-home-compact .pf-project{padding:20px}.pf-home-compact .pf-home-contact{align-items:flex-start;flex-direction:column}.pf-home-compact .pf-home-contact-actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px 24px}}
+@media(max-width:700px){.pf-home-compact .pf-hero{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:28px 32px}.pf-home-compact .pf-kicker{display:flex;gap:8px;margin-bottom:16px}.pf-home-compact .pf-hero h1{font-size:34px;line-height:40px;max-width:none}.pf-home-compact .pf-lead{font-size:17px;line-height:26px}.pf-home-compact .pf-actions{gap:10px}.pf-home-compact .pf-portrait{max-width:none;display:flex;align-items:center;gap:16px;padding:10px;justify-self:stretch}.pf-home-compact .pf-portrait-image{width:80px;height:80px;flex-shrink:0}.pf-home-compact .pf-portrait figcaption{padding:0}.pf-home-compact .pf-section{padding-block:32px}.pf-home-compact h2{font-size:28px;line-height:36px}.pf-home-compact .pf-featured{grid-template-columns:minmax(0,1fr)}.pf-home-compact .pf-featured-story{padding:24px;gap:14px}.pf-home-compact .pf-featured h3{font-size:26px;line-height:34px}.pf-home-compact .pf-case-preview{padding:16px 24px 24px}.pf-home-compact .pf-project-grid{grid-template-columns:minmax(0,1fr)}.pf-home-compact .pf-project{padding:24px;gap:10px}.pf-home-compact .pf-home-about{grid-template-columns:minmax(0,1fr);gap:20px}.pf-home-compact .pf-home-trajectory li{flex-direction:column;gap:2px}.pf-home-compact .pf-contact-wrap{padding-block:24px 32px}.pf-home-compact .pf-home-contact{padding:28px 24px;gap:16px}.pf-home-compact .pf-home-contact h2{font-size:26px;line-height:34px}.pf-home-compact .pf-home-contact-actions{flex-direction:column;align-items:flex-start;max-width:100%}.pf-home-compact .pf-home-contact-actions .pf-button{max-width:100%;font-size:14px;padding-inline:18px}}

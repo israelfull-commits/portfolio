@@ -522,6 +522,22 @@ export const einsteinPresentation: CasePresentationData = {
               81,6% reconheceram o documento como um laudo médico; 77,8% concentraram a atenção no nome do exame, resultado e referência. Os indicadores de compreensão reforçam a importância da conversa com o médico. O laudo apresenta os dados para apoiar essa conversa e preservar o contexto clínico.
             </p>
           </div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Disciplina de Escopo</span>
+              <h3>O que ficou fora do recorte</h3>
+              <p>
+                Optamos por não incluir selos interpretativos automáticos isolados do texto clínico nem redesenhar o portal inteiro de exames. O foco na arquitetura modular do laudo garantiu compatibilidade com impressão em preto e branco e sistemas legados sem induzir autodiagnóstico.
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Reflexão Crítica</span>
+              <h3>O que eu faria diferente hoje</h3>
+              <p>
+                Integraria a engenharia de geração de PDF e representantes de mais especialidades médicas desde a primeira semana de descoberta, validando quebras de página em exames extensos antes de consolidar os primeiros componentes.
+              </p>
+            </div>
+          </div>
         </>
       ),
     },
@@ -866,6 +882,22 @@ export const claroPresentation: CasePresentationData = {
                   "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",
               }}
             />
+          </div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Disciplina de Escopo</span>
+              <h3>O que ficou fora do recorte</h3>
+              <p>
+                Não redesenhamos os sistemas legados de faturamento nem alteramos as regras de validação de crédito de backoffice. O recorte concentrou-se em unificar a camada de atendimento e vendas (desktop e mobile) para dar clareza ao resumo financeiro durante a oferta.
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Reflexão Crítica</span>
+              <h3>O que eu faria diferente hoje</h3>
+              <p>
+                Estruturaria desde o início um protocolo de telemetria comparativa entre lojas próprias e televendas, medindo o tempo por etapa de ativação antes e depois da implantação para quantificar o ganho operacional por canal.
+              </p>
+            </div>
           </div>
         </>
       ),
@@ -1246,6 +1278,22 @@ export const neoenergiaPresentation: CasePresentationData = {
                     "Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
                 }}
               />
+            </div>
+          </div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Disciplina de Escopo</span>
+              <h3>O que ficou fora do recorte</h3>
+              <p>
+                A etapa de P&D não incluiu o desenvolvimento em código do portal final nem a substituição imediata dos ERPs legados das 4 distribuidoras. Priorizamos o diagnóstico de backstage, os 5 Service Blueprints e a matriz de 118 ideias para atacar primeiro os gargalos que geravam retrabalho em campo.
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Reflexão Crítica</span>
+              <h3>O que eu faria diferente hoje</h3>
+              <p>
+                Incluiria protótipos navegáveis de alta fidelidade para dois fluxos críticos de campo já durante os workshops de priorização, acelerando o alinhamento entre as diretorias regionais sobre o esforço técnico da esteira multi-tenant.
+              </p>
             </div>
           </div>
         </>
@@ -1851,6 +1899,22 @@ export function ItauPresentation() {
             <div className="cp-note">
               <h3>Aprendizado de design</h3>
               <p>{story.learning}</p>
+            </div>
+            <div className="cp-cards-grid">
+              <div className="cp-feature-card">
+                <span className="cp-feature-tag">Disciplina de Escopo</span>
+                <h3>O que ficou fora do recorte</h3>
+                <p>
+                  Mantivemos fora da primeira camada visual configurações avançadas de baixa recorrência e automações sem revisão do especialista. Em operações financeiras densas, o trade-off foi priorizar visibilidade de contexto, filtros previsíveis e rastreabilidade da decisão humana.
+                </p>
+              </div>
+              <div className="cp-feature-card">
+                <span className="cp-feature-tag">Reflexão Crítica</span>
+                <h3>O que eu faria diferente hoje</h3>
+                <p>
+                  Ampliaria o acompanhamento longitudinal após o handoff com indicadores de uso por perfil de carteira, cruzando o tempo de consulta de dados com a taxa de registro de ações concluídas pelos assessores.
+                </p>
+              </div>
             </div>
           </>
         ),
