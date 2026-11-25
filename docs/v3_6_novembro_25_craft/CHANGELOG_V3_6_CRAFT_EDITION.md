@@ -68,3 +68,12 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 - **Itaú (`ItauPreparationCase.tsx`):**
   - Removida `itau-planejamento-iniciativas.webp` (mosaico ilegível repetido 3x em Movimentações, Hub de Liquidez e Campanhas).
   - Removidas duplicatas idênticas entre Hero e evidências em Vencimentos (`itau-vencimentos-canonico.webp`), Hub de Liquidez (`itau-hub-liquidez-capa-1600.webp`), Movimentações (`itau-movimentacoes-capa/discovery.webp` substituídos pelo recorte focado `itau-movimentacoes-telas-1800.webp`) e Campanhas (`itau-campanhas-capa/screenflow.webp`, mantendo `itau-campanhas-configuracao-historica.svg` vetorial).
+
+
+### 2026-11-25 (Diagramas Visuais de Fluxo de Jornada · Retina 2400×1350 + Proteção por Senha Padrão)
+- **Proteção por Senha Padrão (`CaseAccessGate.tsx` + `CasePresentation.tsx`):**
+  - Home (`/`) aberta; todos os cases atuais e futuros herdam proteção SHA-256 por padrão via `CasePresentation` (desbloqueio único por sessão em `sessionStorage`, zero senha em texto claro no código ou bundle).
+- **Diagramas de Fluxo de Jornada em 2× Retina (`2400×1350`, WCAG AAA > 12:1, `Plus Jakarta Sans`):**
+  - **Itaú (`itau-jornada-assessor-fluxo-2400.webp`):** Comparativo visual da jornada do assessor (*Estado Anterior Fragmentado* vs. *Esteira Integrada no Chassi IFA* com os 5 últimos eventos, síntese assistida por IA e gate obrigatório *Human-in-the-Loop*) + 3 barreiras de compliance.
+  - **Claro (`claro-fluxo-esteira-unificada-2400.webp`):** Arquitetura da Esteira Unificada de 22 Jornadas em 5 Etapas (CPF → Elegibilidade → Contexto da Linha → Oferta + Resumo Lateral → Confirmação) com camada persistente de contexto e paridade Desktop/Mobile.
+  - *Einstein* e *Neoenergia* mantidos sem diagramas sintéticos adicionais para evitar redundância com os entregáveis reais (taxonomia 3K e Service Blueprints oficiais).

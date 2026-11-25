@@ -780,6 +780,16 @@ export const claroPresentation: CasePresentationData = {
               <CaseFigure image={claroImages[1]} />
             </div>
           </div>
+          <CaseFigure
+            image={{
+              src: "/images/claro-fluxo-esteira-unificada-2400.webp",
+              width: 2400,
+              height: 1350,
+              alt: "Diagrama da esteira unificada de atendimento Claro Brasil em 5 etapas com camada persistente de contexto e paridade entre Desktop e Mobile",
+              caption:
+                "Esteira unificada em 5 etapas: da identificação por CPF à confirmação contratual, mantendo cabeçalho fixo do cliente e resumo financeiro persistente em Desktop e Mobile.",
+            }}
+          />
           <div className="cp-note">
             <h3>Aprendizado de design</h3>
             <p>

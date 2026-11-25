@@ -113,11 +113,20 @@ export const cases: Record<string, PreparationCase> = {
     ],
     visuals: [
       {
+        src: "/images/itau-jornada-assessor-fluxo-2400.webp",
+        width: 2400,
+        height: 1350,
+        alt: "Fluxo comparativo da jornada do assessor no IFA: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
+        label: "Fluxo da Jornada · Antes vs. Esteira Integrada com IA",
+        caption:
+          "Jornada ponta a ponta do especialista: eliminação da busca manual em abas com aproximação dos 5 últimos eventos, minuta preliminar assistida por IA e aprovação humana obrigatória (Human-in-the-Loop).",
+      },
+      {
         src: "/images/itau-registros-workflow-1600.webp",
         width: 1600,
         height: 900,
         alt: "Fluxo de arquitetura de serviço e governança de IA para Registros de Atendimento",
-        label: "Arquitetura e Governança · IA com Supervisão Humana",
+        label: "Arquitetura e Governança · Pilares de Conformidade",
         caption:
           "Modelo operacional para registros de atendimento: recuperação de contexto recente, geração de ata preliminar assistida por IA e salvaguarda obrigatória de supervisão humana antes da persistência bancária.",
       },
