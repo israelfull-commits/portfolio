@@ -10,6 +10,8 @@ import {
 import { ArrowIcon, Link, Pill, assetUrl } from "../design-system"
 
 import { PageMeta } from "./PageMeta"
+import { CaseReadingTime } from "./CaseReadingTime"
+import { useLocation } from "react-router"
 
 import { ContactSection, SiteFooter, SiteHeader } from "./SiteChrome"
 
@@ -218,6 +220,8 @@ export function CaseFigure({ image }: { image: CaseImage }) {
                 viewBox={`${image.previewCrop.x} ${image.previewCrop.y} ${image.previewCrop.width} ${image.previewCrop.height}`}
                 role="img"
                 aria-label={image.alt}
+                onClick={() => setActualSize((value) => !value)}
+                className="cp-lightbox-media"
               >
                 <image
                   href={assetUrl(image.src)}
@@ -231,6 +235,9 @@ export function CaseFigure({ image }: { image: CaseImage }) {
                 width={image.width}
                 height={image.height}
                 alt={image.alt}
+                onClick={() => setActualSize((value) => !value)}
+                title={actualSize ? "Clique para ajustar à tela" : "Clique para ampliar em tamanho original"}
+                className="cp-lightbox-media"
               />
             )}
           </div>
@@ -273,6 +280,7 @@ export function CaseMetrics({ items }: { items: Array<[string, string]> }) {
 }
 
 export function CasePresentation({ data }: { data: CasePresentationData }) {
+  const { pathname } = useLocation()
   const [activeChapter, setActiveChapter] = useState<string>(caseChapters[0][0])
 
   useEffect(() => {
@@ -297,8 +305,34 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
     return () => observer.disconnect()
   }, [])
 
+  const [readProgress, setReadProgress] = useState(0)
+
+  useEffect(() => {
+    let rafId = 0
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight
+      const ratio = scrollable > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100)) : 0
+      setReadProgress(ratio)
+    }
+    const onScroll = () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(updateProgress)
+    }
+    updateProgress()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId)
+      window.removeEventListener("scroll", onScroll)
+    }
+  }, [])
+
   return (
     <div className="case-page-wrapper">
+      <div
+        className="cp-reading-progress"
+        aria-hidden="true"
+        style={{ width: `${readProgress}%` }}
+      />
       <PageMeta
         title={`${data.title} — Israel Rozar`}
         description={data.subtitle}
@@ -310,6 +344,7 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
       <SiteHeader casePage />
       <main
         id="conteudo"
+        tabIndex={-1}
         className="case-presentation"
         data-template="figma-YIHybVXPe0Hfmja1hAyzQZ-370-17047"
       >
@@ -332,6 +367,7 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
           </div>
           <h1 id="case-title" className="cp-title">{data.headline}</h1>
           <p className="cp-subtitle">{data.subtitle}</p>
+          <div className="cp-reading-meta"><CaseReadingTime href={pathname.replace(/\/$/, "")} /></div>
 
           <div
             className="cp-meta-grid"

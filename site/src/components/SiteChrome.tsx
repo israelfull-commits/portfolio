@@ -4,10 +4,18 @@ import { useEffect, useRef, useState } from "react"
 
 export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   const menuRef = useRef<HTMLDivElement>(null)
 
   const buttonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   useEffect(() => {
     if (menuOpen)
@@ -49,7 +57,7 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
   ]
 
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <Link className="brand" href="/#topo">
         <span className="brand-mark" aria-hidden="true">
           IR

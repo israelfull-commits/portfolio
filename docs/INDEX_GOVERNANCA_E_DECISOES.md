@@ -17,8 +17,9 @@ flowchart LR
     V1["V1 (01 a 03/Nov)<br>Fundação Visual & Layout<br>• Tipografia Plus Jakarta Sans<br>• Paleta #FCF9F2 / #0A3622<br>• Estruturação inicial 4 cases"]
     V2["V2 (14 a 15/Nov)<br>Senior UX Canon 2026<br>• STAR Framework documental<br>• Zero termos defensivos<br>• Decisões como unidade de valor<br>• Rotas estáticas SPA"]
     V3["V3 (25/Nov)<br>Excelência & Conformidade<br>• Capa 16:9 2560x1440 px<br>• 100% WCAG AAA (216 cores)<br>• Remoção links NDA/GitHub/UXfolio<br>• Deploy estável 2 estágios"]
-    V35["V3.5 (25/Nov - VIGENTE)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Plugin Figma 100% factual<br>• Versionamento completo em docs/"]
-    V1 --> V2 --> V3 --> V35
+    V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
+    V36["V3.6 (25/Nov - VIGENTE)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
+    V1 --> V2 --> V3 --> V35 --> V36
 ```
 
 ---
@@ -72,10 +73,15 @@ Localização: `docs/v3_novembro_25_atual/`
 * `RELATORIO_CONSOLIDADO_V3_ATUAL.md`: Síntese técnica da versão V3, métricas, acessibilidade e governança.
 * `AUDITORIA-QUALIDADE-2026-11-25.md`: Relatório executivo de conformidade WCAG AAA, lightbox e semântica.
 
-### D. Versão 3.5: Híbrida Canônica — VIGENTE EM PRODUÇÃO (25 de Novembro de 2026)
+### D. Versão 3.5: Híbrida Canônica (25 de Novembro de 2026)
 Localização: `docs/v3_5_novembro_25_canonica/`
 * `DIAGNOSTICO-COMPARATIVO-TEXTOS-PORTFOLIO.md`: Análise comparativa profunda de todas as 5 versões históricas de copy (Git, chats, docs e Figma).
-* `CHANGELOG_V3_5_HIBRIDA_CANONICA.md`: Log detalhado das evoluções na Home (escopo nos cards, submódulos Itaú, trajetória visível), micro-blocos de Trade-offs & Reflexão Crítica nos 4 cases e limpeza factual do gerador Figma.
+* `CHANGELOG_V3_5_HIBRIDA_CANONICA.md`: Log detalhado das evoluções na Home (escopo nos cards, submódulos Itaú, trajetória visível), micro-blocos de Trade-offs & Reflexão Crítica nos 4 cases e remoção de IDs internos de Figma.
+* `PARECER_COMITE_ESPECIALISTAS_E_TABELA_DE_PARA_V3_5.md`: Tabela De-Para completa e parecer do comitê multiespecialista.
+
+### E. Versão 3.6: Craft Edition & Documentação Figma — VIGENTE EM PRODUÇÃO (25 de Novembro de 2026)
+Localização: `docs/v3_6_novembro_25_craft/`
+* `CHANGELOG_V3_6_CRAFT_EDITION.md`: Barra de progresso de leitura nos cases, header com profundidade no scroll, microinterações táteis nos cards, zoom direto clicando na imagem do Lightbox e prancha canônica de documentação V3.6 no plugin do Figma.
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: Sentinela de 7 portões que valida build, métricas, links e expressões proibidas.
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.

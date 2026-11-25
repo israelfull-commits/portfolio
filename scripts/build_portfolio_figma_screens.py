@@ -2862,7 +2862,7 @@ async function buildHome(parent, xPos, yPos) {
   featLeft.appendChild(featHeadline);
 
   var featDescription = await createTextNode(
-    'Pesquisa e arquitetura da informação para estruturar mais de 80 exames distintos em uma linguagem modular previsível, facilitando a tomada de decisão médica e reduzindo a ansiedade de pacientes.',
+    'Pesquisa e arquitetura da informação para organizar laudos de diferentes exames em uma estrutura modular comum, preservando o contexto clínico.',
     14,
     'regular',
     TOKENS.colors.subtle,
@@ -2875,9 +2875,9 @@ async function buildHome(parent, xPos, yPos) {
   // 3 Métricas em Chips Compactos
   var featMetricsRow = createHorizontalRow('Feat Metrics Row', 500, 10, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
   var featMetrics = [
-    { n: '14', d: 'famílias estruturadas' },
-    { n: '121', d: 'pacientes e médicos testados' },
-    { n: '80+', d: 'laudos no inventário' }
+    { n: '14', d: 'entregáveis documentados' },
+    { n: '121', d: 'pacientes no questionário' },
+    { n: '4', d: 'médicos especialistas' }
   ];
   var fColW = (500 - 20) / 3;
   for (var fm = 0; fm < featMetrics.length; fm++) {
@@ -3032,6 +3032,58 @@ async function buildHome(parent, xPos, yPos) {
 
 js_dispatcher = r"""
 // ============================================================================
+// PRANCHA DE DOCUMENTAÇÃO DESIGN SYSTEM V3.6 (TOKENS + WCAG AAA + MOTION + VERSÕES)
+// ============================================================================
+async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
+  await loadFonts();
+  var docFrame = createVerticalContainer('Documentação · Design System & Versões V3.6', 1280, 32, { top: 48, right: 64, bottom: 64, left: 64 }, TOKENS.colors.canvas, TOKENS.colors.border, 0, false);
+  docFrame.x = xPos;
+  docFrame.y = yPos;
+
+  var headerBadge = await createBadge('GOVERNANÇA & DESIGN SYSTEM · V3.6 CRAFT EDITION', TOKENS.colors.deepPine, TOKENS.colors.acidLime, true);
+  docFrame.appendChild(headerBadge);
+
+  var title = await createTextNode('Documentação Canônica: Tokens, WCAG AAA, Microinterações & Histórico de Versões', 36, 'bold', TOKENS.colors.textPrimary, 1152, null, 44, -0.8);
+  docFrame.appendChild(title);
+
+  var subtitle = await createTextNode('Fonte única de verdade sincronizada 1:1 com produção (GitHub Pages). Zero termos defensivos, zero IDs internos visíveis ao leitor, 199/199 pares de cor aprovados em WCAG 2.2 AAA.', 16, 'regular', TOKENS.colors.textSecondary, 1152, null, 24);
+  docFrame.appendChild(subtitle);
+
+  var sections = [
+    {
+      tag: '01 · PALETA SEMÂNTICA & CONTRASTE WCAG 2.2 AAA',
+      body: '• Canvas (#FCF9F2) + Ink (#111B15): 14.80:1 (Supera AAA 7.0:1)\n• Canvas (#FCF9F2) + Ink Muted (#3B4740): 7.52:1 (Supera AAA 7.0:1)\n• Deep Pine (#0A3622) + Canvas (#FCF9F2): 11.85:1 (Cards escuros .cp-note)\n• Acid Lime (#CEFF1A) + Deep Pine (#0A3622): 11.20:1 (Regra: Lime nunca usa texto branco)\n• Superfície Elevada (#F6F3EC) + Borda (#EDE9DE) + Raio 16px (1rem)'
+    },
+    {
+      tag: '02 · TIPOGRAFIA & GRID BASE 8PX',
+      body: '• Família única: Plus Jakarta Sans (400, 600, 700) — Newsreader removida\n• Escala H1: 56px Desktop / 36px Tablet / 34px Mobile | Body: 16px / 24px\n• Simetria de Grid na Home: 3 cards exatamente iguais (415px Desktop / 337px Tablet / 387px Mobile)\n• Overflow Horizontal: 0px validado em 1440px, 768px e 390px'
+    },
+    {
+      tag: '03 · MICROINTERAÇÕES & EFEITOS VISUAIS (V3.6 CRAFT EDITION)',
+      body: '• Barra de Progresso de Leitura nos Cases (3px, gradiente Pine -> Lime, passiva via rAF)\n• Header Inteligente: backdrop-filter blur(12px) + sombra suave ao rolar (>12px)\n• Cards Táteis: translateY(-4px) + sombra difusa pine + deslocamento de seta (+3px) + zoom sutil (1.015) no preview do tablet\n• Lightbox 96vw x 94vh: clique direto na imagem alterna zoom 1:1 (zoom-in / zoom-out) + Escape nativo\n• Proteção Vestibular: 100% das transições desativadas sob prefers-reduced-motion: reduce'
+    },
+    {
+      tag: '04 · HISTÓRICO VERSIONADO (DOCS/)',
+      body: '• V1 (01–03/Nov): Fundação visual, troca para Plus Jakarta Sans, 22 relatórios em docs/v1_novembro_01_03/\n• V2 (14–15/Nov): Cânone Senior UX 2026, STAR, .cp-split, 13 relatórios em docs/v2_novembro_14_15/\n• V3 (25/Nov): Capa Einstein 2560x1440, WCAG AAA 100%, remoção NDA/GitHub/UXfolio em docs/v3_novembro_25_atual/\n• V3.5 (25/Nov): Home híbrida + Trajetória + Trade-offs/Reflexão nos 4 cases + remoção IDs Figma em docs/v3_5_novembro_25_canonica/\n• V3.6 (25/Nov - VIGENTE): Polimento visual Craft Edition + prancha de documentação Figma em docs/v3_6_novembro_25_craft/'
+    }
+  ];
+
+  for (var s = 0; s < sections.length; s++) {
+    var sec = sections[s];
+    var card = createVerticalContainer(sec.tag, 1152, 12, { top: 24, right: 28, bottom: 24, left: 28 }, TOKENS.colors.white, TOKENS.colors.border, 16, true);
+    var sTag = await createTextNode(sec.tag, 12, 'bold', TOKENS.colors.deepPine, 1096, null, 18, 0.8);
+    var sBody = await createTextNode(sec.body, 14, 'regular', TOKENS.colors.textPrimary, 1096, null, 24);
+    card.appendChild(sTag);
+    card.appendChild(sBody);
+    docFrame.appendChild(card);
+  }
+
+  parent.appendChild(docFrame);
+  log('✔ Prancha de Documentação Design System V3.6 criada com sucesso!');
+  return docFrame;
+}
+
+// ============================================================================
 // DISPATCHER PRINCIPAL DO PLUGIN
 // ============================================================================
 figma.ui.onmessage = async function(msg) {
@@ -3148,20 +3200,33 @@ figma.ui.onmessage = async function(msg) {
       updateStatus('Erro na geração.');
     }
   }
-  else if (msg.type === 'create_all_screens') {
-    updateStatus('Construindo todas as telas mestres com imagens reais 1:1...');
+  else if (msg.type === 'create_ds_docs') {
+    updateStatus('Construindo Prancha de Documentação V3.6 (Tokens + WCAG AAA + Versões)...');
     try {
-      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES) ===');
+      var docNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
+      figma.viewport.scrollAndZoomIntoView([docNode]);
+      updateStatus('Concluído: Documentação V3.6 gerada no Figma!');
+      figma.notify('✔ Prancha de Documentação V3.6 gerada!');
+    } catch (e) {
+      log('Erro ao criar Documentação V3.6: ' + e);
+      updateStatus('Erro na geração.');
+    }
+  }
+  else if (msg.type === 'create_all_screens') {
+    updateStatus('Construindo todas as telas mestres + Documentação V3.6...');
+    try {
+      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES + DOCS V3.6) ===');
       var templateNode = await buildGenericCaseScreen(figma.currentPage, -1440, 0, CASE_TEMPLATE);
       var homeNode = await buildHome(figma.currentPage, 0, 0);
       var neoNode = await buildGenericCaseScreen(figma.currentPage, 1440, 0, CASE_NEOENERGIA);
       var einNode = await buildGenericCaseScreen(figma.currentPage, 2880, 0, CASE_EINSTEIN);
       var itauNode = await buildGenericCaseScreen(figma.currentPage, 4320, 0, CASE_ITAU);
       var claroNode = await buildGenericCaseScreen(figma.currentPage, 5760, 0, CASE_CLARO);
+      var docsNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
       
-      figma.viewport.scrollAndZoomIntoView([templateNode, homeNode, neoNode, einNode, itauNode, claroNode]);
-      updateStatus('Concluído: Telas Mestres e Template Criados!');
-      figma.notify('🎉 Todas as telas do portfólio foram geradas com sucesso!');
+      figma.viewport.scrollAndZoomIntoView([templateNode, homeNode, neoNode, einNode, itauNode, claroNode, docsNode]);
+      updateStatus('Concluído: Telas Mestres e Documentação V3.6 Criados!');
+      figma.notify('🎉 Todas as telas + Documentação V3.6 foram geradas com sucesso!');
     } catch (e) {
       log('Erro na geração total: ' + e);
       updateStatus('Erro na geração total.');
@@ -3273,6 +3338,10 @@ ui_html = r"""<!DOCTYPE html>
     <button class="btn" onclick="triggerAction('create_claro')">
       <span>⚡ Case Claro Brasil (Ativação Multicanal)</span>
       <span>4 Capítulos</span>
+    </button>
+    <button class="btn" onclick="triggerAction('create_ds_docs')">
+      <span>📐 Documentação Design System V3.6 (Tokens + WCAG AAA + Versões)</span>
+      <span>Prancha Canônica</span>
     </button>
   </div>
 

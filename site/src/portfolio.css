@@ -1265,3 +1265,43 @@
 .pf-home-compact .pf-home-contact-actions>a:not(.pf-button){display:inline-flex;align-items:center;min-height:44px;color:var(--paper);font-size:14px;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:1000px){.pf-home-compact .pf-hero{grid-template-columns:minmax(0,1fr) 240px;gap:28px}.pf-home-compact .pf-portrait-image{height:240px}.pf-home-compact .pf-featured-story{padding:24px}.pf-home-compact .pf-project-grid{gap:16px}.pf-home-compact .pf-project{padding:20px}.pf-home-compact .pf-home-contact{align-items:flex-start;flex-direction:column}.pf-home-compact .pf-home-contact-actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px 24px}}
 @media(max-width:700px){.pf-home-compact .pf-hero{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:28px 32px}.pf-home-compact .pf-kicker{display:flex;gap:8px;margin-bottom:16px}.pf-home-compact .pf-hero h1{font-size:34px;line-height:40px;max-width:none}.pf-home-compact .pf-lead{font-size:17px;line-height:26px}.pf-home-compact .pf-actions{gap:10px}.pf-home-compact .pf-portrait{max-width:none;display:flex;align-items:center;gap:16px;padding:10px;justify-self:stretch}.pf-home-compact .pf-portrait-image{width:80px;height:80px;flex-shrink:0}.pf-home-compact .pf-portrait figcaption{padding:0}.pf-home-compact .pf-section{padding-block:32px}.pf-home-compact h2{font-size:28px;line-height:36px}.pf-home-compact .pf-featured{grid-template-columns:minmax(0,1fr)}.pf-home-compact .pf-featured-story{padding:24px;gap:14px}.pf-home-compact .pf-featured h3{font-size:26px;line-height:34px}.pf-home-compact .pf-case-preview{padding:16px 24px 24px}.pf-home-compact .pf-project-grid{grid-template-columns:minmax(0,1fr)}.pf-home-compact .pf-project{padding:24px;gap:10px}.pf-home-compact .pf-home-about{grid-template-columns:minmax(0,1fr);gap:20px}.pf-home-compact .pf-home-trajectory li{flex-direction:column;gap:2px}.pf-home-compact .pf-contact-wrap{padding-block:24px 32px}.pf-home-compact .pf-home-contact{padding:28px 24px;gap:16px}.pf-home-compact .pf-home-contact h2{font-size:26px;line-height:34px}.pf-home-compact .pf-home-contact-actions{flex-direction:column;align-items:flex-start;max-width:100%}.pf-home-compact .pf-home-contact-actions .pf-button{max-width:100%;font-size:14px;padding-inline:18px}}
+/* Case metadata and editorial cards — shared with case headers. */
+.case-reading-time{display:inline-flex;align-items:center;gap:8px;font-size:14px;line-height:20px;white-space:nowrap;font-weight:400;color:var(--ink-muted)}
+.case-reading-time svg{flex:none;width:16px;height:16px}
+.cp-reading-meta{margin-top:20px}
+.pf-home-compact #work-title{margin-bottom:12px}
+.pf-home-compact .pf-work-intro{max-width:68ch;margin-bottom:28px;color:var(--ink-muted)}
+.pf-home-compact .pf-featured-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:8px}
+.pf-home-compact .pf-featured-actions .case-reading-time{color:var(--on-forest-muted)}
+.pf-home-compact .pf-featured-actions .pf-button{margin-top:0}
+.pf-home-compact .pf-project-grid{gap:24px}
+.pf-home-compact .pf-project{padding:28px;gap:12px;box-shadow:none;transition:border-color 180ms ease,box-shadow 180ms ease}
+.pf-home-compact .pf-project h3{font-size:24px;line-height:32px;text-wrap:balance}
+.pf-home-compact .pf-home-project-role{font-size:14px;line-height:20px}
+.pf-home-compact .pf-home-scope{font-size:14px;line-height:22px}
+.pf-home-compact .pf-project-desc{line-height:26px}
+.pf-home-compact .pf-project-footer{width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.pf-home-compact .pf-project-link{gap:8px;padding-block:10px;margin:0;min-height:44px;font-weight:600}
+.pf-home-compact .pf-project-link .icon{width:16px;height:16px}
+.pf-home-compact .pf-project-link:hover{text-decoration:underline;text-underline-offset:4px}
+.pf-home-compact .pf-project:focus-within{border-color:var(--forest)}
+@media(hover:hover){.pf-home-compact .pf-project:hover{border-color:#B9C5BC;box-shadow:0 8px 24px rgb(10 54 34 / .06)}}
+@media(min-width:1001px){.pf-home-compact .pf-project h3{min-height:64px}.pf-home-compact .pf-home-project-role{min-height:40px}}
+@media(max-width:1000px) and (min-width:701px){.pf-home-compact .pf-project-grid{grid-template-columns:1fr}.pf-home-compact .pf-project{padding:28px}.pf-home-compact .pf-project h3{max-width:28ch}}
+@media(max-width:700px){.pf-home-compact .pf-project{padding:24px;gap:12px}.pf-home-compact .pf-featured-actions{align-items:flex-start;flex-direction:column;gap:16px}.pf-home-compact .pf-work-intro{margin-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.pf-home-compact .pf-project{transition:none}}
+
+/* V3.6 Craft Edition — Tactile card hover, tablet zoom & arrow micro-shift */
+.pf-home-compact .pf-project { transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease; }
+.pf-home-compact .pf-project:hover { transform: translateY(-4px); border-color: rgba(10, 54, 34, 0.28); box-shadow: 0 12px 28px -10px rgba(10, 54, 34, 0.12), 0 2px 6px rgba(10, 54, 34, 0.05); }
+.pf-home-compact .pf-featured { transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-home-compact .pf-featured:hover { transform: translateY(-3px); box-shadow: 0 16px 36px -12px rgba(10, 54, 34, 0.14), 0 4px 10px rgba(10, 54, 34, 0.06); }
+.pf-home-compact .pf-case-preview img { transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-home-compact .pf-featured:hover .pf-case-preview img { transform: scale(1.015); }
+.pf-home-compact .pf-project-link svg, .pf-home-compact .pf-button svg { transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); }
+.pf-home-compact .pf-project:hover .pf-project-link svg, .pf-home-compact .pf-button:hover svg { transform: translateX(3px); }
+.pf-home-compact .pf-home-submodules a { padding: 4px 8px; border-radius: 6px; transition: background-color 160ms ease, color 160ms ease; }
+.pf-home-compact .pf-home-submodules a:hover { background: rgba(10, 54, 34, 0.06); }
+@media (prefers-reduced-motion: reduce) {
+  .pf-home-compact .pf-project, .pf-home-compact .pf-featured, .pf-home-compact .pf-case-preview img, .pf-home-compact .pf-project-link svg, .pf-home-compact .pf-button svg { transition: none !important; transform: none !important; }
+}

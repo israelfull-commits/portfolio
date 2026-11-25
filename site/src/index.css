@@ -61,7 +61,7 @@
   --accent-ink: var(--forest);
   --accent-ink-hover: var(--forest-light);
   --header-bg: rgb(244 242 233 / 0.88);
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* Superfícies */
   --glass-surface: #fffdf7;
@@ -78,37 +78,6 @@
   --motion-base: 240ms;
   --motion-slow: 400ms;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #eef0e6;
-    --ink-muted: #a7b3aa;
-    --paper: #0f1712;
-    --paper-deep: #17221b;
-    --surface: #141e18;
-    --line: #2b3a31;
-    --white: #ffffff;
-    --focus: #8fb0ff;
-    --on-focus: #0f1712;
-    --image-outline: rgb(255 255 255 / 0.08);
-    --image-surface: #1b2620;
-    --glass-surface: #141e18;
-    --glass-surface-elevated: #1b2620;
-    --glass-surface-deep: #17221b;
-    --glass-border: #2b3a31;
-    --accent-ink: var(--lime);
-    --accent-ink-hover: #ecffae;
-    --header-bg: rgb(15 23 18 / 0.86);
-    --elevation-1: 0 1px 2px rgb(0 0 0 / 0.4), 0 10px 28px rgb(0 0 0 / 0.35);
-    --elevation-2: 0 2px 6px rgb(0 0 0 / 0.45), 0 24px 56px rgb(0 0 0 / 0.5);
-  }
-
-  body {
-    background:
-      radial-gradient(ellipse 65rem 45rem at 88% 5%, rgb(217 255 99 / 0.06) 0%, transparent 60%),
-      var(--paper);
-  }
 }
 
 @layer base {
@@ -1599,20 +1568,30 @@ footer {
 }
 /* Portfolio canonical palette: light mode is intentional. */
 :root{--ink:#1A201C;--ink-muted:#4A554E;--paper:#FCF9F2;--paper-deep:#F6F3EC;--surface:#FFFFFF;--line:#EDE9DE;--lime:#CEFF1A;--lime-deep:#BEF00E;--forest:#0A3622;--forest-light:#114B31;--forest-deep:#062215;--focus:#0A3622;--on-lime:#0A3622;--on-forest:#FCF9F2;--on-forest-muted:#E6F5EC;--header-bg:#FCF9F2;--content:72rem;color-scheme:light}
-body{background:#FCF9F2;font-family:'Plus Jakarta Sans',sans-serif;color:#1A201C}
-.site-header{max-width:none;width:100%;padding:16px max(24px,calc((100% - 1152px)/2));min-height:78px;background:#FCF9F2;border-bottom:1px solid #EDE9DE;backdrop-filter:none}
+body{background:var(--paper);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink)}
+.site-header{max-width:none;width:100%;padding:16px max(24px,calc((100% - 1152px)/2));min-height:78px;background:var(--paper);border-bottom:1px solid var(--line);backdrop-filter:none}
 .site-header .brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;gap:12px;letter-spacing:-.02em;font-weight:400}
-.site-header .brand-mark{width:36px;height:36px;background:#0A3622;color:#CEFF1A;border-radius:50%;font-size:12px}
-.site-header .desktop-nav{gap:32px;font-size:14px}.site-header .desktop-nav>a{font-size:14px;font-weight:500}.site-header .header-cta{background:#CEFF1A;color:#0A3622;border-radius:999px;padding:12px 20px;text-transform:uppercase;font-size:12px!important}
-.site-header .mobile-nav>button{background:#FCF9F2;color:#0A3622;border-color:#EDE9DE;min-height:44px}
-.site-header .mobile-nav nav{background:#FCF9F2;border:1px solid #EDE9DE;box-shadow:0 8px 24px #0a36221a}
+.site-header .brand-mark{width:36px;height:36px;background:var(--forest);color:var(--lime);border-radius:50%;font-size:12px}
+.site-header .desktop-nav{gap:32px;font-size:14px}.site-header .desktop-nav>a{font-size:14px;font-weight:500}.site-header .header-cta{background:var(--lime);color:var(--on-lime);border-radius:999px;padding:12px 20px;text-transform:uppercase;font-size:12px!important}
+.site-header .mobile-nav>button{background:var(--paper);color:var(--forest);border-color:var(--line);min-height:44px}
+.site-header .mobile-nav nav{background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 24px #0a36221a}
 @media(max-width:1100px){.site-header{padding-inline:32px}.site-header .desktop-nav{gap:20px}}
 @media(max-width:700px){.site-header{padding-inline:24px;min-height:72px}.site-header .desktop-nav{display:none}.site-header .mobile-nav{display:block}}
 .site-header::before{content:none}
 .site-header .header-cta{border:none}
 
-@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/plus-jakarta-sans-400.ttf") format("truetype")}
-@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/plus-jakarta-sans-600.ttf") format("truetype")}
-@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/plus-jakarta-sans-700.ttf") format("truetype")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:400;font-display:swap;src:url("./assets/fonts/plus-jakarta-sans-400.ttf") format("truetype")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:600;font-display:swap;src:url("./assets/fonts/plus-jakarta-sans-600.ttf") format("truetype")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:700;font-display:swap;src:url("./assets/fonts/plus-jakarta-sans-700.ttf") format("truetype")}
 
 @media(min-width:1101px){.site-header .desktop-nav{width:calc(100% - 360px);margin-left:auto}.site-header .desktop-nav .header-cta{margin-left:auto}}
+
+/* Two-tone keyboard focus remains visible on paper, pine and lime surfaces. */
+:root { --focus-inner: var(--paper); --focus-outer: var(--forest); }
+:root :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid var(--focus-inner); outline-offset: 2px; box-shadow: 0 0 0 5px var(--focus-outer); }
+@media (forced-colors: active) { :root :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid Highlight; outline-offset: 3px; box-shadow: none; } }
+
+/* V3.6 Craft Edition — Header scrolled depth */
+.site-header { transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease; }
+.site-header.is-scrolled { background: rgba(252, 249, 242, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px -6px rgba(10, 54, 34, 0.08); border-bottom-color: rgba(10, 54, 34, 0.12); }
+@media (prefers-reduced-motion: reduce) { .site-header { transition: none; } }

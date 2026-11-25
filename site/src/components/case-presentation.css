@@ -4,14 +4,14 @@
 
 :root {
   --cp-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --cp-canvas: #FCF9F2;
-  --cp-surface: #F6F3EC;
+  --cp-canvas: var(--paper);
+  --cp-surface: var(--paper-deep);
   --cp-surface-subtle: #F7F5EC;
-  --cp-border: #EDE9DE;
+  --cp-border: var(--line);
   --cp-border-subtle: #DFDED4;
-  --cp-pine: #0A3622;
+  --cp-pine: var(--forest);
   --cp-pine-dark: #0A231A;
-  --cp-lime: #CEFF1A;
+  --cp-lime: var(--lime);
   --cp-lime-subtle: #CBF637;
   --cp-text: #111B15;
   --cp-text-muted: #3B4740;
@@ -1416,4 +1416,39 @@
   font-weight: 700;
   border: 1px solid rgba(10, 54, 34, 0.25);
   margin-top: 0.125rem;
+}
+
+/* Standalone project navigation uses a full touch target. */
+.cp-explore-all { display: inline-flex; align-items: center; min-height: 44px; }
+
+.cp-source-links a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* V3.6 Craft Edition — Reading progress bar & Lightbox direct zoom */
+.cp-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cp-pine) 0%, #1b6b45 75%, var(--cp-lime) 100%);
+  z-index: 60;
+  pointer-events: none;
+  transition: width 80ms linear;
+}
+.cp-lightbox-media {
+  cursor: zoom-in;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cp-lightbox-content.is-actual-size .cp-lightbox-media {
+  cursor: zoom-out;
+}
+@keyframes cp-lightbox-in {
+  from { opacity: 0; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+.cp-lightbox[open] .cp-lightbox-content {
+  animation: cp-lightbox-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-reading-progress, .cp-lightbox-media { transition: none !important; }
+  .cp-lightbox[open] .cp-lightbox-content { animation: none !important; }
 }
