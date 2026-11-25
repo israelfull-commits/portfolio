@@ -44,9 +44,8 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
   const navigation = [
     { label: "Cases", section: "trabalho" },
 
-    { label: "Expertise", section: "sobre" },
+    { label: "Sobre", section: "sobre" },
 
-    { label: "Trajetória", section: "experiencia" },
   ]
 
   return (
@@ -129,7 +128,21 @@ export function SiteFooter() {
   )
 }
 
-export function ContactSection() {
+export function ContactSection({ compact = false }: { compact?: boolean }) {
+  if (compact) return (
+    <section className="pf-contact-wrap pf-container" id="contato" aria-labelledby="contact-title">
+      <div className="pf-contact pf-home-contact">
+        <div>
+          <h2 id="contact-title">Oportunidades em Product Design</h2>
+          <p>Posições seniores e projetos de consultoria.</p>
+        </div>
+        <div className="pf-home-contact-actions">
+          <a className="pf-button pf-button-lime" href="mailto:irozar@yahoo.com.br">irozar@yahoo.com.br</a>
+          <a href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">LinkedIn<span className="pf-sr-only"> (abre em nova aba)</span></a>
+        </div>
+      </div>
+    </section>
+  )
   return (
     <section
       className="pf-contact-wrap pf-container"
@@ -172,16 +185,6 @@ export function ContactSection() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </a>
-            <span className="pf-contact-sep" aria-hidden="true">
-              •
-            </span>
-            <a
-              href="https://github.com/israelrozar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
             </a>
             <span className="pf-contact-sep" aria-hidden="true">
               •
