@@ -22,7 +22,7 @@ images_map = {
     'neo_matriz': 'site/public/images/neoenergia-matriz-118-ideias.webp',
     # Albert Einstein
     'hiae_capa': 'site/public/images/hiae-capa-editorial-1600.webp',
-    'hiae_taxonomia': 'site/public/images/hiae-taxonomia-macroareas.webp',
+    'hiae_taxonomia': 'site/public/images/hiae-taxonomia-laudo-2000.webp',
     'hiae_triangulacao': 'site/public/images/hiae-triangulacao-pesquisa-1200.webp',
     'hiae_tokens': 'site/public/images/hiae-ds-tokens-clean-1280.webp',
     'hiae_componentes': 'site/public/images/hiae-ds-componentes-crop-1600.webp',

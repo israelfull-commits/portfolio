@@ -326,12 +326,12 @@ export const einsteinPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/hiae-taxonomia-macroareas.webp",
-                  width: 1200,
-                  height: 750,
-                  alt: "Anatomia editorial e taxonomia de dados do exame: decomposição em três macroáreas (Metodologia, Resultado e Conclusão Diagnóstica)",
+                  src: "/images/hiae-taxonomia-laudo-2000.webp",
+                  width: 2000,
+                  height: 1097,
+                  alt: "Prancha real de taxonomia clínica do projeto Einstein: decomposição de laudo de enterotomografia nas três macroáreas (Metodologia, Resultado e Conclusão Diagnóstica)",
                   caption:
-                    "Anatomia editorial: decomposição de 80+ exames em três macroáreas canônicas (Metodologia, Resultado e Conclusão Diagnóstica) para estruturação do Design System.",
+                    "Taxonomia real do projeto: decomposição de exames em três macroáreas canônicas (Metodologia, Resultado e Conclusão Diagnóstica) com dados anonimizados sob LGPD.",
                 }}
               />
             </div>
@@ -401,11 +401,11 @@ export const einsteinPresentation: CasePresentationData = {
               <CaseFigure
                 image={{
                   src: "/images/hiae-componente-protrombina-crop.webp",
-                  width: 1200,
-                  height: 720,
-                  alt: "Anatomia modular do componente de resultado clínico (v3.0): Tempo de Protrombina (RNI) com tipografia de alta escala (52px), ícone de conformidade e intervalo de referência alinhado lado a lado",
+                  width: 1800,
+                  height: 640,
+                  alt: "Recorte real do protótipo v3 do projeto Einstein: componente Tempo de Protrombina (RNI) com examTitle, linha por parâmetro, ícone de conformidade redundante à cor e referência alinhada lado a lado",
                   caption:
-                    "Protótipo final (v3.0): tipografia em alta escala (52px), ícones de conformidade redundantes à cor e intervalo de referência lado a lado para conformidade WCAG 2.2 AAA.",
+                    "Protótipo real (v3): anatomia do componente Tempo de Protrombina (RNI) com título do exame, ícone de conformidade redundante à cor e intervalo de referência alinhado lado a lado.",
                 }}
               />
             </div>
