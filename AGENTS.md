@@ -60,3 +60,8 @@ Consolidação das regras de ouro de *Senior UX Portfolio Examples* e *20 UX Por
 
 
 
+
+
+## 7. Proteção de Acesso Padrão nos Cases (Modelo Híbrido)
+- **Home Aberta, Cases Protegidos por Padrão:** A Home (`/`) permanece aberta para conversão de recrutadores; todos os estudos de caso (atuais e futuros) que utilizam `CasePresentation` herdam automaticamente o componente `CaseAccessGate` (`site/src/components/CaseAccessGate.tsx`).
+- **Segurança no Código:** A senha **nunca** deve ser gravada em texto claro no código-fonte, em documentação pública ou no bundle (`dist/`). A validação ocorre exclusivamente por comparação de hash **SHA-256**, com desbloqueio persistido apenas em `sessionStorage` para navegação contínua durante a sessão.

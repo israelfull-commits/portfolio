@@ -11,6 +11,7 @@ import { ArrowIcon, Link, Pill, assetUrl } from "../design-system"
 
 import { PageMeta } from "./PageMeta"
 import { CaseReadingTime } from "./CaseReadingTime"
+import { CaseAccessGate } from "./CaseAccessGate"
 import { useLocation } from "react-router"
 
 import { ContactSection, SiteFooter, SiteHeader } from "./SiteChrome"
@@ -280,6 +281,14 @@ export function CaseMetrics({ items }: { items: Array<[string, string]> }) {
 }
 
 export function CasePresentation({ data }: { data: CasePresentationData }) {
+  return (
+    <CaseAccessGate caseName={data.title}>
+      <CasePresentationContent data={data} />
+    </CaseAccessGate>
+  )
+}
+
+function CasePresentationContent({ data }: { data: CasePresentationData }) {
   const { pathname } = useLocation()
   const [activeChapter, setActiveChapter] = useState<string>(caseChapters[0][0])
 

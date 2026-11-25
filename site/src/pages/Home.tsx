@@ -86,7 +86,7 @@ export default function Home() {
         <section className="pf-work pf-section" id="trabalho" aria-labelledby="work-title">
           <div className="pf-container">
             <h2 id="work-title">Projetos selecionados</h2>
-            <p className="pf-work-intro">Contexto, decisões de design e entregas em saúde, serviços financeiros, telecom e energia.</p>
+            <p className="pf-work-intro">Contexto, decisões de design e entregas em saúde, serviços financeiros, telecom e energia. Estudos de caso protegidos por senha.</p>
             <article className="pf-featured" id="project-einstein-laudos">
               <div className="pf-featured-story">
                 <p className="pf-home-project-client">Hospital Albert Einstein · UX Lead</p>

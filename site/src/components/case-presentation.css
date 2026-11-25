@@ -1452,3 +1452,176 @@
   .cp-reading-progress, .cp-lightbox-media { transition: none !important; }
   .cp-lightbox[open] .cp-lightbox-content { animation: none !important; }
 }
+
+
+/* ==========================================================================
+   Case Access Gate (Password-Protected Studies · WCAG AAA)
+   ========================================================================== */
+
+.cp-gate-main {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem;
+  background: linear-gradient(180deg, #faf8f5 0%, #f2efe7 100%);
+  background-color: #faf8f5;
+}
+
+.cp-gate-card {
+  width: 100%;
+  max-width: 34rem;
+  background-color: #ffffff;
+  border: 1px solid #d5ddd7;
+  border-radius: 1.25rem;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: 0 18px 44px -12px rgba(10, 54, 34, 0.1);
+}
+
+.cp-gate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0a3622;
+  background-color: #c4f042;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.cp-gate-lock {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cp-gate-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #0a3622;
+}
+
+.cp-gate-lead {
+  margin: 0 0 1.75rem;
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #2f463a;
+}
+
+.cp-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cp-gate-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0a3622;
+}
+
+.cp-gate-input-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.cp-gate-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #0a3622;
+  background-color: #faf8f5;
+  border: 1.5px solid #9ab0a2;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cp-gate-input:focus {
+  outline: none;
+  border-color: #0a3622;
+  box-shadow: 0 0 0 3px rgba(10, 54, 34, 0.16);
+}
+
+.cp-gate-toggle {
+  min-height: 48px;
+  padding: 0 0.95rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0a3622;
+  background-color: #eef3ef;
+  border: 1.5px solid #c3d1c7;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.cp-gate-toggle:hover {
+  background-color: #e1ebe4;
+}
+
+.cp-gate-error {
+  margin: 0.15rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #8a1c1c;
+  background-color: #fdf2f2;
+  border: 1px solid #f1c0c0;
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.cp-gate-submit {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 0.5rem;
+}
+
+.cp-gate-footer {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e4eae6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.cp-gate-request {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  padding: 0.4rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0a3622;
+  background-color: #f3f7f4;
+  border: 1px solid #c8d6cd;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.cp-gate-request:hover {
+  background-color: #e6efe9;
+}
+
+.cp-gate-back {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0a3622;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
