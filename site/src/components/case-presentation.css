@@ -209,7 +209,7 @@
   overflow: hidden;
   border: 1px solid rgba(23, 32, 25, 0.09);
   background: var(--cp-surface);
-  max-height: clamp(280px, 36vh, 380px);
+  max-height: clamp(340px, 58vh, 640px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,7 +218,7 @@
 .cp-hero-visual .cp-figure :is(img, .cp-figure-crop) {
   width: 100%;
   max-width: 100%;
-  max-height: clamp(280px, 36vh, 380px);
+  max-height: clamp(340px, 58vh, 640px);
   height: 100%;
   object-fit: contain;
   object-position: center;
