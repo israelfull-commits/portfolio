@@ -118,12 +118,12 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <nav className="pf-home-submodules" aria-label="Outros módulos do ecossistema Itaú IFA">
+            <div className="pf-home-submodules" aria-label="Outros módulos do ecossistema Itaú IFA">
               <span className="pf-home-submodules-label">Outros recortes no Itaú (IFA):</span>
               {itauSubmodules.map(item => (
-                <Link key={item.href} href={item.href}>{item.label}</Link>
+                <span key={item.href} className="pf-home-submodules-item">{item.label}</span>
               ))}
-            </nav>
+            </div>
           </div>
         </section>
         <section className="pf-about pf-section" id="sobre" aria-labelledby="about-title">
