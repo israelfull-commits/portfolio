@@ -115,3 +115,4 @@ async def run_visual_qa():
 
 if __name__ == "__main__":
     asyncio.run(run_visual_qa())
+
