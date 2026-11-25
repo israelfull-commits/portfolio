@@ -186,16 +186,6 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
             >
               LinkedIn
             </a>
-            <span className="pf-contact-sep" aria-hidden="true">
-              •
-            </span>
-            <a
-              href="https://uxfol.io/israelrozar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              UXfolio
-            </a>
           </div>
         </div>
       </div>

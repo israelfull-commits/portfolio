@@ -24,14 +24,6 @@ function List({ items }: { items: string[] }) {
 }
 
 const sourceLinks: Record<string, Array<[string, string]>> = {
-  claro: [
-    [
-      "Documentação do Case — Ativação Simplificada",
-
-      "https://uxfol.io/p/israelrozar/033c945f",
-    ],
-  ],
-
   vencimentos: [
     [
       "Interface mais recente confirmada pelo autor · Gestão de liquidez",
@@ -186,7 +178,7 @@ export const einsteinPresentation: CasePresentationData = {
 
   scope: "Pesquisa, modelagem da informação e prototipagem",
 
-  keyMetric: "14 famílias de laudos padronizadas",
+  keyMetric: "14 entregáveis documentados",
 
   kicker: "Saúde · UX Lead",
 
@@ -233,7 +225,7 @@ export const einsteinPresentation: CasePresentationData = {
 
               ["4", "médicos especialistas entrevistados em profundidade"],
 
-              ["14", "entregáveis canônicos e famílias de laudos estruturadas"],
+              ["14", "entregáveis documentados no inventário EN-1 a EN-14"],
             ]}
           />
           <p style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--cp-text-muted)", lineHeight: 1.55 }}>
@@ -317,7 +309,7 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-split-tag">Taxonomia de Dados Clínicos</span>
               <h3>As 3 Macroáreas do Exame</h3>
               <p>
-                A estruturação do exame em macroáreas delimitadas reduziu o tempo de localização dos dados por médicos em pronto-atendimento e evitou que pacientes fizessem interpretações isoladas de parâmetros técnicos:
+                O modelo organiza metodologia, resultados e contexto clínico em três macroáreas, para orientar a localização das informações e preservar o contexto de leitura:
               </p>
               <ul className="cp-card-list">
                 <li>
@@ -527,7 +519,7 @@ export const einsteinPresentation: CasePresentationData = {
           <div className="cp-note">
             <h3>Conclusão do teste</h3>
             <p>
-              A interface cumpre o seu papel ao eliminar o ruído visual e destacar o que é prioritário: mais de 80% das pessoas encontram as informações sem esforço. Ao mesmo tempo, o resultado reforça a premissa ética do projeto: o laudo deve apresentar os dados com clareza para que o paciente converse melhor com seu médico, e não induzir um autodiagnóstico isolado.
+              81,6% reconheceram o documento como um laudo médico; 77,8% concentraram a atenção no nome do exame, resultado e referência. Os indicadores de compreensão reforçam a importância da conversa com o médico. O laudo apresenta os dados para apoiar essa conversa e preservar o contexto clínico.
             </p>
           </div>
         </>
@@ -855,7 +847,7 @@ export const claroPresentation: CasePresentationData = {
               <span className="cp-split-tag">Consistência Multicanal</span>
               <h3>Paridade entre Desktop e Aplicativo Móvel</h3>
               <p>
-                O atendente de balcão utiliza a interface desktop com alta densidade de dados; o consultor externo e a operação ágil utilizam o aplicativo mobile. A hierarquia mental, a taxonomia de planos e as etapas de confirmação permanecem rigorosamente idênticas, eliminando divergências e reduzindo o tempo médio de atendimento (TMA).
+                O atendente de balcão utiliza a interface desktop com maior densidade de dados; o consultor externo utiliza o aplicativo mobile. A taxonomia de planos e as etapas de confirmação são preservadas entre desktop e mobile, apoiando a continuidade entre canais.
               </p>
             </div>
             <div className="cp-split-media">
@@ -895,9 +887,8 @@ export const claroPresentation: CasePresentationData = {
               </p>
               <p>
                 O documento de migração desktop identifica V.2 de 10/05/2018; o
-                PDF mobile foi atualizado em 11/06/2018.
+                PDF mobile foi atualizado em 11/06/2018, integrando o acervo técnico documentado da iniciativa.
               </p>
-              <Sources project="claro" />
             </div>
           </details>
           <details>
@@ -1438,7 +1429,7 @@ const itauNarratives = {
       "Priorizar uma oportunidade exige explicar o dado. A hierarquia deve permitir distinguir valor observado, variação conhecida e projeção antes de sugerir uma ação ao especialista.",
 
     boundary:
-      "Os dados e valores numéricos apresentados na interface foram sintetizados para preservação do sigilo bancário, mantendo fidelidade estrita à hierarquia de saldos, filtros, status operacionais e regras de visualização validadas com os especialistas.",
+      "Os dados e valores numéricos apresentados na interface foram sintetizados para preservação do sigilo bancário, mantendo a hierarquia de saldos, filtros, status operacionais e regras de visualização apresentadas no artefato.",
 
     scope: "Hierarquia financeira, projeção e clientes para atuação",
   },
