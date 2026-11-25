@@ -94,7 +94,7 @@ export const cases: Record<string, PreparationCase> = {
     ],
 
     missing: [
-      "Os registros visuais mantêm dados cadastrais fictícios para conformidade com a política de sigilo bancário.",
+      "Os registros visuais mantêm dados cadastrais sintetizados e anonimizados para conformidade com a política de sigilo bancário (LGPD).",
 
       "Ganhos operacionais são estimados pelo tempo de transcrição manual vs. síntese assistida e não por medição causal automatizada.",
 
@@ -643,10 +643,10 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/itau-campanhas-capa-1600.webp",
         width: 1600,
         height: 900,
-        alt: "Screenflow e arquitetura de estados da Gestão de Campanhas IFA em 16:9",
-        label: "Screenflow e Arquitetura · Resolução 16:9",
+        alt: "Visão canônica de Gestão de Campanhas IFA em alta resolução 16:9",
+        label: "Visão Canônica · Resolução 16:9",
         caption:
-          "Mapeamento de estados de processamento da base, filtros, tabela operacional e etapas de criação e manutenção de campanhas no IFA.",
+          "Visão canônica de Gestão de Campanhas: interface operacional para parametrização em lote, segmentação de carteiras e acompanhamento de engajamento do assessor.",
       },
       {
         src: "/images/itau-campanhas-configuracao-historica.svg",
@@ -655,7 +655,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Exploração de configuração de campanha com informações gerais, público e campos personalizados",
         label: "Exploração histórica · Configuração de campanha",
         caption:
-          "Artefato de exploração: informações gerais, público e campos personalizados na configuração da campanha. Textos e valores exemplificativos do protótipo; não é comprovação de uma versão implantada.",
+          "Artefato de exploração: informações gerais, público e campos personalizados na configuração da campanha com parametrização modular e dados sintetizados para conformidade com o sigilo bancário.",
       },
 
       {
@@ -670,7 +670,7 @@ export const cases: Record<string, PreparationCase> = {
         label: "Screenflow · Gestão de Campanhas",
 
         caption:
-          "Mapeamento de estados de processamento da base, filtros, tabela operacional e etapas de criação e manutenção de campanhas no IFA.",
+          "Mapeamento de screenflow e arquitetura de estados: ciclo completo de processamento de bases, regras de filtros dinâmicos e etapas guiadas de criação de campanhas no IFA.",
       },
 
       {

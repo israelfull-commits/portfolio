@@ -19,7 +19,10 @@ PORTFOLIO_VERDE = ROOT / "portfolio-verde"
 
 DEFENSIVE_PATTERNS = [
     r"conteúdo\s+fictício",
+    r"fictício|fictícia|fictícios|fictícias",
     r"não\s+comprova\s+implantação",
+    r"não\s+é\s+comprovação",
+    r"comprovação\s+de\s+uma\s+versão",
     r"limites\s+das\s+evidências",
     r"relato\s+original",
     r"amostras\s+não\s+se\s+somam",
