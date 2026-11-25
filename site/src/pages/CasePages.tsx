@@ -595,9 +595,9 @@ const claroHero: CaseImage = {
 
 const claroImages: CaseImage[] = [
   {
-    src: "/images/claro-ativacao-desktop.webp",
-    width: 775,
-    height: 486,
+    src: "/images/claro-ativacao-hero.webp",
+    width: 1440,
+    height: 680,
     alt: "Ativação desktop com resumo financeiro lateral",
     caption:
       "Ativação e resumo da oferta: composição financeira visível durante a escolha do produto.",
