@@ -136,6 +136,12 @@ export function SiteFooter() {
   )
 }
 
+function openProtectedEmail() {
+  const user = ["i", "r", "o", "z", "a", "r"].join("")
+  const domain = ["y", "a", "h", "o", "o", ".", "c", "o", "m", ".", "b", "r"].join("")
+  window.location.href = `mailto:${user}@${domain}`
+}
+
 export function ContactSection({ compact = false }: { compact?: boolean }) {
   if (compact) return (
     <section className="pf-contact-wrap pf-container" id="contato" aria-labelledby="contact-title">
@@ -145,7 +151,9 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
           <p>Posições seniores e projetos de consultoria.</p>
         </div>
         <div className="pf-home-contact-actions">
-          <a className="pf-button pf-button-lime" href="mailto:irozar@yahoo.com.br">irozar@yahoo.com.br</a>
+          <button type="button" className="pf-button pf-button-lime" onClick={openProtectedEmail}>
+            Enviar um e-mail <MailIcon />
+          </button>
           <a href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">LinkedIn<span className="pf-sr-only"> (abre em nova aba)</span></a>
         </div>
       </div>
@@ -171,12 +179,13 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
           produtos digitais.
         </p>
         <div className="pf-contact-bottom">
-          <a
+          <button
+            type="button"
             className="pf-button pf-button-lime"
-            href="mailto:irozar@yahoo.com.br"
+            onClick={openProtectedEmail}
           >
             Enviar um e-mail <MailIcon />
-          </a>
+          </button>
           <div className="pf-contact-links">
             <a
               href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
