@@ -24,20 +24,6 @@ function List({ items }: { items: string[] }) {
 }
 
 const sourceLinks: Record<string, Array<[string, string]>> = {
-  einstein: [
-    [
-      "Estudo de caso original — contexto, pesquisa e proposta",
-
-      "https://israelrozar.notion.site/8ac93175a91d48769a322972968e0d2a",
-    ],
-
-    [
-      "HIAE — Laudos · arquivo de trabalho",
-
-      "https://www.figma.com/design/mw8vC7rIuaKvF3FCG3Qi6c/HIAE---Laudos?node-id=1853-49239",
-    ],
-  ],
-
   claro: [
     [
       "Documentação do Case — Ativação Simplificada",
@@ -557,9 +543,8 @@ export const einsteinPresentation: CasePresentationData = {
             <summary>Contexto e documentação do projeto</summary>
             <div>
               <p>
-                Projeto desenvolvido em 2022 pelo time de design e produto em parceria com o Hospital Israelita Albert Einstein. As especificações de componentes, fluxos e registros de pesquisa estão documentados nas fontes oficiais do projeto.
+                Projeto desenvolvido em parceria institucional com o Hospital Israelita Albert Einstein. Em conformidade com as diretrizes de confidencialidade (NDA), governança hospitalar e sigilo médico, as especificações integrais de componentes, fluxos proprietários e arquivos de trabalho são de custódia restrita e documentação interna da instituição.
               </p>
-              <Sources project="einstein" />
             </div>
           </details>
           <details>
