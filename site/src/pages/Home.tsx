@@ -1,4 +1,5 @@
-import { DownloadIcon, Link, assetUrl } from "../design-system"
+import { ArrowIcon, DownloadIcon, Link, assetUrl } from "../design-system"
+import { CaseReadingTime } from "../components/CaseReadingTime"
 import { PageMeta } from "../components/PageMeta"
 import { ContactSection, SiteFooter, SiteHeader } from "../components/SiteChrome"
 import "../portfolio.css"
@@ -86,16 +87,20 @@ export default function Home() {
         <section className="pf-work pf-section" id="trabalho" aria-labelledby="work-title">
           <div className="pf-container">
             <h2 id="work-title">Projetos selecionados</h2>
+            <p className="pf-work-intro">Contexto, decisões de design e entregas em saúde, serviços financeiros, telecom e energia.</p>
             <article className="pf-featured" id="project-einstein-laudos">
               <div className="pf-featured-story">
                 <p className="pf-home-project-client">Hospital Albert Einstein · UX Lead</p>
                 <h3>Estrutura modular para laudos clínicos.</h3>
                 <p className="pf-home-scope">14 entregáveis · 121 pacientes · 4 médicos especialistas</p>
                 <p>Pesquisa e arquitetura da informação para organizar laudos de diferentes exames em uma estrutura comum.</p>
-                <Link className="pf-button pf-button-lime" href="/cases/einstein-laudos">Ver estudo de caso<span className="pf-sr-only">: Hospital Albert Einstein</span></Link>
+                <div className="pf-featured-actions">
+                  <Link className="pf-button pf-button-lime" href="/cases/einstein-laudos">Ver estudo de caso <ArrowIcon /><span className="pf-sr-only">: Hospital Albert Einstein</span></Link>
+                  <CaseReadingTime href="/cases/einstein-laudos" />
+                </div>
               </div>
               <figure className="pf-case-preview">
-                <img src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")} width="1200" height="675" loading="lazy" decoding="async" alt="Proposta de laudo clínico com seções de exame, resultados e referências organizadas em uma estrutura modular." />
+                <img src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")} width="1200" height="675" loading="eager" decoding="async" alt="Proposta de laudo clínico com seções de exame, resultados e referências organizadas em uma estrutura modular." />
               </figure>
             </article>
             <div className="pf-project-grid pf-project-grid-editorial">
@@ -106,7 +111,10 @@ export default function Home() {
                   <p className="pf-home-project-role">{project.role}</p>
                   <p className="pf-home-scope">{project.scope}</p>
                   <p className="pf-project-desc">{project.description}</p>
-                  <Link className="pf-project-link" href={project.href}>Ver estudo de caso<span className="pf-sr-only">: {project.title}</span></Link>
+                  <div className="pf-project-footer">
+                    <CaseReadingTime href={project.href} />
+                    <Link className="pf-project-link" href={project.href}>Ver case <ArrowIcon /><span className="pf-sr-only">: {project.title}</span></Link>
+                  </div>
                 </article>
               ))}
             </div>
