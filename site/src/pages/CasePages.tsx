@@ -210,11 +210,11 @@ export const einsteinPresentation: CasePresentationData = {
             <p className="cp-lead-text">
               Laudos de diferentes laboratórios e hospitais parceiros reuniam informações críticas em estruturas variáveis. O projeto desenhou uma linguagem modular previsível para mais de 80 tipos de exames, permitindo que médicos cruzem resultados, métodos e referências com agilidade, e que pacientes localizem seus dados com facilidade para levar à conversa médica.
             </p>
-            <div className="cp-tradeoff-box" style={{ margin: "0.5rem 0 0" }}>
-              <span className="cp-tradeoff-title" style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--cp-pine)", display: "block", marginBottom: "0.35rem" }}>
+            <div className="cp-tradeoff-box">
+              <span className="cp-tradeoff-eyebrow">
                 Pergunta Norteadora & Desafio Central
               </span>
-              <p style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--cp-text)", margin: 0, lineHeight: 1.45 }}>
+              <p className="cp-tradeoff-question">
                 Como facilitar a localização e a leitura do laudo sem induzir uma interpretação clínica isolada?
               </p>
             </div>
@@ -228,7 +228,7 @@ export const einsteinPresentation: CasePresentationData = {
               ["14", "entregáveis documentados no inventário EN-1 a EN-14"],
             ]}
           />
-          <p style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--cp-text-muted)", lineHeight: 1.55 }}>
+          <p className="cp-metrics-footnote">
             A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
           </p>
         </>
@@ -370,7 +370,7 @@ export const einsteinPresentation: CasePresentationData = {
             <div className="cp-split-content">
               <span className="cp-split-tag">Anatomia do Componente (v3.0)</span>
               <h3>Tempo de Protrombina (RNI)</h3>
-              <ol className="cp-callout-list" style={{ margin: "0.5rem 0 0" }}>
+              <ol className="cp-callout-list">
                 <li className="cp-callout-item">
                   <span className="cp-callout-badge">1</span>
                   <div>
@@ -1104,7 +1104,7 @@ export const neoenergiaPresentation: CasePresentationData = {
               <p>
                 Para superar a fragmentação entre as 4 distribuidoras, consolidamos a jornada completa do consumidor em 5 estágios canônicos com especificações de frontstage e backstage:
               </p>
-              <ol className="cp-card-list" style={{ paddingLeft: "1.25rem", margin: 0 }}>
+              <ol className="cp-card-list cp-card-list--numbered">
                 <li>
                   <strong>1. Contrato e instalo:</strong> busca de requisitos, adequação técnica do padrão e ligação nova de energia.
                 </li>
@@ -1205,12 +1205,6 @@ export const neoenergiaPresentation: CasePresentationData = {
                   <strong>Inovações de Longo Prazo:</strong> telemedição inteligente, canais conversacionais supervisionados e autoatendimento solar.
                 </li>
               </ul>
-              <div className="cp-note" style={{ margin: "1rem 0 0" }}>
-                <h3 style={{ margin: "0 0 0.35rem" }}>Aprendizado central</h3>
-                <p style={{ margin: 0 }}>
-                  Em infraestrutura crítica, a experiência do cliente depende diretamente do que ocorre no backstage. Tornar visíveis as relações entre pessoas, sistemas e equipes de campo é a essência do Service Design.
-                </p>
-              </div>
             </div>
             <div className="cp-split-media">
               <CaseFigure
@@ -1224,6 +1218,12 @@ export const neoenergiaPresentation: CasePresentationData = {
                 }}
               />
             </div>
+          </div>
+          <div className="cp-note">
+            <h3>Aprendizado central</h3>
+            <p>
+              Em infraestrutura crítica, a experiência do cliente depende diretamente do que ocorre no backstage. Tornar visíveis as relações entre pessoas, sistemas e equipes de campo é a essência do Service Design.
+            </p>
           </div>
           <div className="cp-cards-grid">
             <div className="cp-feature-card">

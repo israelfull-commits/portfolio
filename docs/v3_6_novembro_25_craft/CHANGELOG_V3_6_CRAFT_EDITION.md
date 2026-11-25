@@ -77,3 +77,14 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - **Itaú (`itau-jornada-assessor-fluxo-2400.webp`):** Comparativo visual da jornada do assessor (*Estado Anterior Fragmentado* vs. *Esteira Integrada no Chassi IFA* com os 5 últimos eventos, síntese assistida por IA e gate obrigatório *Human-in-the-Loop*) + 3 barreiras de compliance.
   - **Claro (`claro-fluxo-esteira-unificada-2400.webp`):** Arquitetura da Esteira Unificada de 22 Jornadas em 5 Etapas (CPF → Elegibilidade → Contexto da Linha → Oferta + Resumo Lateral → Confirmação) com camada persistente de contexto e paridade Desktop/Mobile.
   - *Einstein* e *Neoenergia* mantidos sem diagramas sintéticos adicionais para evitar redundância com os entregáveis reais (taxonomia 3K e Service Blueprints oficiais).
+
+
+### 2026-11-25 (Auditoria Profunda de Design System, Tipografia, Alinhamento & Quebras de Texto)
+- **Especificidade e Escala Tipográfica Unificada (`case-presentation.css`):**
+  - Corrigida especificidade destrutiva de `.cp-chapter-content p` / `h3` para filhos diretos (`> p` / `> h3`), blindando `.case-presentation .cp-figure-caption-text` (`14px` / `400` / `var(--cp-muted)` 100% idêntico no Hero, Capítulos, Splits e Galerias).
+  - Unificados todos os `h3` de cards, splits, notes e decisões para a mesma escala (`1.1875rem` / `19px`, `600`, `line-height: 1.32`, `text-wrap: balance`).
+  - Unificados tokens de cor de texto entre Home e Cases (`--cp-text: var(--ink, #1A201C)` e `--cp-text-muted: var(--muted, #4A554E)`) e tokens de border-radius (`--cp-radius-sm/md/lg/pill`).
+- **Alinhamento & Quebras de Texto (`case-presentation.css` + `CasePages.tsx`):**
+  - `.cp-split` atualizado para `align-items: start` (topo alinhado ao topo), proporção `minmax(0, 1.08fr) minmax(0, 1fr)` com `gap: 2.25rem`, `padding: 1.75rem` e `.cp-split-media { position: sticky; top: 5.5rem; }`.
+  - Aplicado `text-wrap: balance` em todos os títulos e rótulos de métricas (`.cp-metrics dt`), `text-wrap: pretty` em parágrafos e listas, e `font-variant-numeric: tabular-nums` em `.cp-metrics dd`.
+  - Removidos **100% dos estilos inline hardcoded** (`0` ocorrências em todos os cases), corrigida a dupla marcação (`• 1.`) na lista numerada da Neoenergia (`.cp-card-list--numbered`) e movido `.cp-note` para fora de `.cp-split-content` na Neoenergia.
