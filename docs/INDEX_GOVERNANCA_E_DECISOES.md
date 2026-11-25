@@ -1,0 +1,86 @@
+# Índice de Governança, Decisões e Versionamento Documental
+
+**Portfólio Senior Product Designer — Israel Rozar**  
+**Data de Consolidação:** 25 de Novembro de 2026  
+**Rastreabilidade de Conversas:**
+* **Ciclo Atual (V3 Vigente):** `b9eff66e-96f2-48ed-af7d-28e8cea0dfad`
+* **Ciclo Anterior (V1 e V2):** [ec9956e5-078d-4d87-9a8e-74481434c7dc](conversation://ec9956e5-078d-4d87-9a8e-74481434c7dc)
+
+---
+
+## 1. Visão Geral da Linha do Tempo e Evolução
+
+A evolução deste portfólio seguiu três ciclos bem definidos de maturidade, partindo da estruturação visual inicial até a consolidação canônica em produção:
+
+```mermaid
+flowchart LR
+    V1["V1 (01 a 03/Nov)<br>Fundação Visual & Layout<br>• Tipografia Plus Jakarta Sans<br>• Paleta #FCF9F2 / #0A3622<br>• Estruturação inicial 4 cases"]
+    V2["V2 (14 a 15/Nov)<br>Senior UX Canon 2026<br>• STAR Framework documental<br>• Zero termos defensivos<br>• Decisões como unidade de valor<br>• Rotas estáticas SPA"]
+    V3["V3 (25/Nov - VIGENTE)<br>Excelência & Produção 100%<br>• Capa 16:9 2560x1440 px<br>• 100% WCAG AAA (216 cores)<br>• Remoção links confidenciais (NDA)<br>• Remoção GitHub/UXfolio redundantes<br>• Deploy estável 2 estágios"]
+    V1 --> V2 --> V3
+```
+
+---
+
+## 2. Auditoria de Inconsistências Identificadas e Sanadas
+
+Durante a análise comparativa entre as conversas e os artefatos históricos de `ec9956e5-078d-4d87-9a8e-74481434c7dc` e o estado atual, foram identificadas e corrigidas as seguintes inconsistências:
+
+| Domínio | Estado nas Conversas Anteriores (V1/V2) | Resolução na Versão Vigente (V3 Atual) | Status |
+| :--- | :--- | :--- | :---: |
+| **Confidencialidade Hospitalar (Einstein)** | Disponibilizava links externos para Notion e arquivo de trabalho do Figma (`mw8vC7rIuaKvF3FCG3Qi6c`). | **Links 100% removidos.** Seção reestruturada para evidenciar custódia interna institucional sob acordo de confidencialidade (NDA) e sigilo médico. | **RESOLVIDO** |
+| **Canais de Contato Redundantes** | Exibia links para "GitHub" e "UXfolio" no rodapé de contato de todos os cases. | **Links de GitHub e UXfolio eliminados.** O card de contato agora foca exclusivamente em recrutadores de Product Design: $\text{Baixar currículo (PDF)} \bullet \text{LinkedIn}$. | **RESOLVIDO** |
+| **Asset Master do Hero (Einstein)** | Utilizava arquivo com artefatos de medição do Figma (`hiae-multicanal-web-celular.webp`, 179 KB), que gerava distorção no zoom. | Substituído pela capa canônica editorial de estúdio (**`hiae-capa-editorial-1600.webp`**, 2560 × 1440 px, proporção 16:9 de estúdio). | **RESOLVIDO** |
+| **Geometria e Scroll do Lightbox** | Modal limitado a 76rem com bug de corte na margem esquerda durante zoom 1:1 (devido a `place-items: center` no CSS Grid). | Modal expandido para `min(96vw, 96rem)` por `min(94vh, 60rem)` com centralização em bloco, permitindo scroll horizontal livre e contínuo. | **RESOLVIDO** |
+| **Redundância de Legenda (Itaú Campanhas)** | A Capa e o Screenflow compartilhavam a mesma legenda idêntica por resíduo de cópia (*"Mapeamento de estados..."*). | Textos diferenciados: Capa com síntese executiva de parametrização e Screenflow com foco na arquitetura de estados e regras de filtro. | **RESOLVIDO** |
+| **Enquadramento de Dados Regulados** | Presença residual de termos como *"dados fictícios"* ou *"não é comprovação de implantação"*. | Atualizado em 100% dos casos para **dados sintetizados e anonimizados para conformidade com a LGPD e sigilo bancário/médico**. | **RESOLVIDO** |
+| **Esteira de Deploy no GitHub Actions** | Job monolítico com corrida de concorrência (`deploy-pages` executava antes do upload do artefato). | Pipeline reestruturado em dois estágios explícitos (`build` ➔ `deploy` com `needs: build`), garantindo 100% de sucesso contínuo. | **RESOLVIDO** |
+
+---
+
+## 3. Estrutura e Organização dos Documentos Versionados
+
+Toda a documentação técnica, auditorias e históricos foram consolidados e organizados no diretório `docs/`:
+
+### A. Versão 1: Fundação Visual e Sincronização (01 a 03 de Novembro de 2026)
+Localização: `docs/v1_novembro_01_03/`
+* `AUDITORIA-DESIGN-TOTAL-E-PROFUNDA-2026-11-02.md`: Diagnóstico visual completo das páginas originais.
+* `AUDITORIA-COMPARATIVA-FIGMA-PAGINA30-E-CASES-EDITORIAIS-2026-11-02.md`: Comparativo entre o arquivo Make e a página 30 do Figma.
+* `AUDITORIA-ESPACAMENTOS-GRIDS-PORTFOLIO-2026-11-01.md`: Primeiras definições da grade de 8px e respiros verticais.
+* `AUDITORIA-RECRUTADORES-UX-UI-COPY-2026-11-02.md`: Auditoria focada no olhar de recrutadores e ATS.
+* `CHECKLIST-OPERACIONAL-AUDITORIA-UX-UI-2026-11-02.md`: Checklist de execução das primeiras correções.
+* `CORRECOES-ESTILOS-2026-11-02.md`: Registro de remoção da fonte Newsreader e unificação em Plus Jakarta Sans.
+* `DIRETRIZES-DIRECAO-ARTE-MOCKUPS-E-TRATAMENTO-IMAGENS-2026-11-02.md`: Normas iniciais para tratamento fotográfico.
+* `RELATORIO-SINTESE-DESCOBERTAS-NEOENERGIA-2026-11-02.md`: Mapeamento profundo do case de Service Design da Neoenergia.
+* `RELATORIO-SINCRONIZACAO-TOTAL-FIGMA-2026-11-02.md`: Primeira esteira de sincronização com o arquivo Figma.
+
+### B. Versão 2: Cânone Sênior e Estruturação STAR (14 a 15 de Novembro de 2026)
+Localização: `docs/v2_novembro_14_15/`
+* `SENIOR_UX_PORTFOLIO_CANON.md` *(mantido na raiz como guia normativo do agente)*: Consolidação do UX Companion 2026.
+* `AUDITORIA-DETALHADA-CASE-EINSTEIN-2026-11-14.md`: Varredura das evidências e macroáreas clínicas.
+* `AUDITORIA-REDUNDANCIAS-E-CONSOLIDACAO-OPCAO-C-2026-11-14.md`: Eliminação de blocos repetidos entre capítulos.
+* `CHECKLIST-AUDITORIA-GESTAO-E-CORRECOES-2026-11-14.md`: Validação de tokens e grids do chassi dos cases.
+* `COMPARATIVO-A-B-LAYOUT-CARDS-ITAU-2026-11-14.md`: Avaliação comparativa dos cards do ecossistema IFA.
+* `COMPARATIVO-MOCKUPS-CASE-DESTAQUE-2026-11-14.md`: Decisão sobre mockups de estúdio vs. wireframes.
+* `changelog-decisoes-design-einstein.md`: Histórico de evolução dos 7 capítulos do Einstein.
+* `salarynow_case_star_synthesis.md`: Estudo experimental de estruturação STAR para produtos financeiros.
+* `CHANGELOG.md`: Registro cronológico geral das entregas do meio de novembro.
+
+### C. Versão 3: Estado Vigente Canônico (25 de Novembro de 2026)
+Localização: `docs/v3_novembro_25_atual/`
+* `RELATORIO_CONSOLIDADO_V3_ATUAL.md`: Síntese técnica da versão em produção, métricas, acessibilidade e governança.
+* `AUDITORIA-QUALIDADE-2026-11-25.md`: Relatório executivo de conformidade WCAG AAA, lightbox e semântica.
+* **Scripts de Validação em Tempo Real (`scripts/`):**
+  * `portfolio_qa_sentinel.py`: Sentinela de 7 portões que valida build, métricas, links e expressões proibidas.
+  * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.
+  * `test_ux_a11y_comprehensive.py`: Validador de alvos de toque (target size), `alt` de imagens, nomes acessíveis e teclado.
+  * `deep_content_editorial_audit.py`: Validador de redundâncias de texto, inventário de imagens e legendas.
+
+---
+
+## 4. Fonte Canônica da Verdade
+
+* **Ambiente Canônico de Produção:** Diretório `site/` (código React / Vite / TypeScript).
+* **Ambiente de Publicação:** GitHub Pages através do workflow automatizado em `.github/workflows/deploy.yml`.
+* **Ambiente Espelho Local:** Diretório `portfolio-verde/` mantido em paridade estrita.
+* **Ambiente Figma Desktop:** Arquivo `Template-portfolio` (`YIHybVXPe0Hfmja1hAyzQZ`), sincronizado através do plugin local `figma-refine-plugin` alimentado pelo compilador `scripts/build_portfolio_figma_screens.py`.
