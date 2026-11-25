@@ -233,18 +233,9 @@ export const cases: Record<string, PreparationCase> = {
         width: 1600,
         height: 900,
         alt: "Interface canônica de Gestão de Vencimentos em alta resolução 16:9",
-        label: "Interface canônica · Resolução 16:9",
+        label: "Interface canônica · Próximos Vencimentos",
         caption:
           "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação do assessor.",
-      },
-      {
-        src: "/images/itau-vencimentos-canonico.webp",
-        width: 1360,
-        height: 1069,
-        alt: "Última versão da interface Próximos Vencimentos com abas, busca, filtros e tabela de clientes.",
-        label: "Interface canônica · Captura integral 1:1",
-        caption:
-          "A solução consolida Vencimentos, Eventos futuros e Open Finance; combina filtros operacionais com uma tabela densa e ações adequadas ao estado de cada registro.",
       },
 
       {
@@ -374,37 +365,13 @@ export const cases: Record<string, PreparationCase> = {
 
     visuals: [
       {
-        src: "/images/itau-movimentacoes-capa-1600.webp",
-        width: 1600,
-        height: 900,
-        alt: "Discovery Extrato EA e proposta de arquitetura de informação no IFA",
-        label: "Discovery e Arquitetura · Resolução 16:9",
+        src: "/images/itau-movimentacoes-telas-1800.webp",
+        width: 1800,
+        height: 333,
+        alt: "Três telas da proposta de Movimentações no IFA: header com liquidez e limites, histórico priorizado e detalhe contextual",
+        label: "Arquitetura de Interface · Fluxo em 3 telas",
         caption:
-          "Discovery e arquitetura de informação: integração do saldo provisionado no header fixo e contexto persistente de movimentações financeiras.",
-      },
-      {
-        src: "/images/itau-movimentacoes-discovery.webp",
-        width: 2400,
-        height: 1754,
-        alt: "Discovery Extrato EA e proposta de arquitetura de informação",
-        label: "Discovery e Arquitetura · Extrato EA no IFA",
-        caption:
-          "Exploração de alternativas de visibilidade para o saldo provisionado e limites, conectando o histórico de movimentações ao contexto financeiro persistente.",
-      },
-
-      {
-        src: "/images/itau-planejamento-iniciativas.webp",
-
-        width: 1600,
-
-        height: 794,
-
-        alt: "Planejamento e contexto de iniciativas no IFA",
-
-        label: "Planejamento e Contexto de Iniciativas",
-
-        caption:
-          "Enquadramento da transição do Extrato EA dentro do ecossistema de liquidez e esteira operacional dos assessores.",
+          "Proposta em três camadas: header fixo com saldo provisionado e limites, tabela de histórico priorizado e painel de detalhamento com rastreabilidade.",
       },
     ],
   },
@@ -510,37 +477,13 @@ export const cases: Record<string, PreparationCase> = {
 
     visuals: [
       {
-        src: "/images/itau-hub-liquidez-capa-1600.webp",
-        width: 1600,
-        height: 900,
-        alt: "Interface da solução Hub de Liquidez e Oportunidades com KPIs e fila prioritária em 16:9",
-        label: "Interface da solução · Resolução 16:9",
-        caption:
-          "Interface da solução: visualização integrada conectando liquidez disponível, variação projetada e fila prioritária de clientes.",
-      },
-      {
         src: "/images/itau-hub-liquidez-solucao.webp",
         width: 1360,
         height: 1370,
         alt: "Interface do Hub de Liquidez e Oportunidades com posição atual, projeção e clientes priorizados.",
-        label: "Interface da solução · Captura integral 1:1",
+        label: "Interface da solução · Hub de Liquidez e Oportunidades",
         caption:
-          "A visão conecta liquidez disponível e projetada à fila de clientes, mantendo origem, janela temporal, filtros e status da atuação visíveis.",
-      },
-
-      {
-        src: "/images/itau-planejamento-iniciativas.webp",
-
-        width: 1600,
-
-        height: 794,
-
-        alt: "Visão integrada de iniciativas e oportunidades na jornada do assessor",
-
-        label: "Visão Integrada de Iniciativas · IFA",
-
-        caption:
-          "Posicionamento do Hub de Liquidez dentro do roadmap e do ecossistema de ferramentas de assessoria de investimentos.",
+          "A visão conecta liquidez disponível e projetada à fila prioritária de clientes, mantendo origem, janela temporal, filtros e status da atuação visíveis.",
       },
     ],
   },
@@ -640,52 +583,13 @@ export const cases: Record<string, PreparationCase> = {
 
     visuals: [
       {
-        src: "/images/itau-campanhas-capa-1600.webp",
-        width: 1600,
-        height: 900,
-        alt: "Visão canônica de Gestão de Campanhas IFA em alta resolução 16:9",
-        label: "Visão Canônica · Resolução 16:9",
-        caption:
-          "Visão canônica de Gestão de Campanhas: interface operacional para parametrização em lote, segmentação de carteiras e acompanhamento de engajamento do assessor.",
-      },
-      {
         src: "/images/itau-campanhas-configuracao-historica.svg",
         width: 1133,
         height: 640,
         alt: "Exploração de configuração de campanha com informações gerais, público e campos personalizados",
-        label: "Exploração histórica · Configuração de campanha",
+        label: "Arquitetura de Interface · Configuração de campanha",
         caption:
-          "Artefato de exploração: informações gerais, público e campos personalizados na configuração da campanha com parametrização modular e dados sintetizados para conformidade com o sigilo bancário.",
-      },
-
-      {
-        src: "/images/itau-campanhas-screenflow.webp",
-
-        width: 1600,
-
-        height: 1591,
-
-        alt: "Screenflow da Gestão de Campanhas com visão geral, estados e criação",
-
-        label: "Screenflow · Gestão de Campanhas",
-
-        caption:
-          "Mapeamento de screenflow e arquitetura de estados: ciclo completo de processamento de bases, regras de filtros dinâmicos e etapas guiadas de criação de campanhas no IFA.",
-      },
-
-      {
-        src: "/images/itau-planejamento-iniciativas.webp",
-
-        width: 1600,
-
-        height: 794,
-
-        alt: "Planejamento de esteira de iniciativas operacionais e de engajamento",
-
-        label: "Iniciativas de Operação e Engajamento",
-
-        caption:
-          "Articulação da gestão de campanhas e ações em lote no fluxo de trabalho dos assessores de investimento.",
+          "Parametrização modular: informações gerais, segmentação de público e campos personalizados com dados sintetizados para conformidade com o sigilo bancário.",
       },
     ],
   },

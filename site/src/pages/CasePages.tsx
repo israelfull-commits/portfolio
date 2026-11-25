@@ -126,12 +126,12 @@ function Sources({ project }: { project: string }) {
 }
 
 const einsteinHero: CaseImage = {
-  src: "/images/hiae-capa-editorial-1600.webp",
-  width: 2560,
-  height: 1271,
-  alt: "Taxonomia do Design System e modelagem visual modular dos laudos do Hospital Israelita Albert Einstein",
+  src: "/images/hiae-multicanal-web-celular.webp",
+  width: 2000,
+  height: 1032,
+  alt: "Sistema multicanal de laudos do Hospital Israelita Albert Einstein: versões digitais para tablet e celular ao lado da versão impressa padronizada",
   caption:
-    "Taxonomia oficial do Design System: anatomia de campos, tokens tipográficos e componentes modulares para estruturação de laudos laboratoriais.",
+    "Sistema multicanal em produção: mesma arquitetura de informação e hierarquia clínica adaptada para tablet, celular e versão impressa A4.",
 }
 
 const einsteinImages: CaseImage[] = [
@@ -465,26 +465,11 @@ export const einsteinPresentation: CasePresentationData = {
               }}
             />
           </div>
-          <div className="cp-split">
-            <div className="cp-split-content">
-              <span className="cp-split-tag">Arquitetura Modular em Produção</span>
-              <h3>Estrutura Canônica no Prontuário Digital</h3>
-              <p>
-                O modelo unificado organiza a leitura para que o corpo clínico e o paciente visualizem primeiro o resultado principal e, em seguida, os parâmetros técnicos e observações diagnósticas, eliminando inconsistências entre diferentes hospitais da rede.
-              </p>
-            </div>
-            <div className="cp-split-media">
-              <CaseFigure
-                image={{
-                  src: "/images/hiae-laudo-proposta-demonstrativa-1600.webp",
-                  width: 1600,
-                  height: 1199,
-                  alt: "Estrutura modular canônica de laudo clínico (Ressonância Magnética) no padrão Albert Einstein",
-                  caption:
-                    "Modelo canônico implementado: cabeçalho padronizado, colunas de valor e referência lado a lado e validação de autenticidade clínica.",
-                }}
-              />
-            </div>
+          <div className="cp-note">
+            <h3>Estrutura Canônica no Prontuário Digital</h3>
+            <p>
+              O modelo unificado organiza a leitura para que o corpo clínico e o paciente visualizem primeiro o resultado principal e, em seguida, os parâmetros técnicos e observações diagnósticas, eliminando inconsistências entre diferentes unidades da rede.
+            </p>
           </div>
         </>
       ),
@@ -578,61 +563,46 @@ export const einsteinPresentation: CasePresentationData = {
 }
 
 const claroHero: CaseImage = {
-  src: "/images/claro-capa-editorial-1600.webp",
-  width: 1600,
-  height: 900,
-  alt: "Visão editorial multicanal da Ativação Simplificada Claro: interfaces desktop e mobile com resumo financeiro integrado",
+  src: "/images/claro-ativacao-hero.webp",
+  width: 1440,
+  height: 680,
+  alt: "Portal unificado de ativação Claro Brasil (NET, Claro e Embratel) em interface desktop",
   caption:
-    "Ecossistema multicanal: composição de interfaces desktop e mobile com carrinho de contratação em tempo real e detalhamento transparente de planos.",
+    "Portal unificado Claro Brasil: ponto único de entrada para operações comerciais de NET, Claro e Embratel em lojas físicas e canais remotos.",
 }
 
 const claroImages: CaseImage[] = [
   {
-    src: "/images/claro-ativacao-hero.webp",
-    width: 1440,
-    height: 680,
-    alt: "Ativação desktop com resumo financeiro lateral",
+    src: "/images/claro-busca-cliente.webp",
+    width: 1550,
+    height: 972,
+    alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e validação cadastral",
     caption:
-      "Ativação e resumo da oferta: composição financeira visível durante a escolha do produto.",
-  },
-  {
-    src: "/images/claro-workshop.webp",
-    width: 1440,
-    height: 1440,
-    alt: "Workshop do projeto com post-its na parede",
-    caption: "Registro de workshop colaborativo com equipes de operação comercial.",
+      "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",
   },
   {
     src: "/images/claro-jornadas.webp",
     width: 1440,
     height: 1440,
-    alt: "Mapa da jornada de troca de chip no Miro",
+    alt: "Mapa da jornada de troca de chip no Miro com user stories e validações",
     caption:
-      "Validações, etapas da troca de chip, resumo e oferta organizados na jornada.",
-  },
-  {
-    src: "/images/claro-multicanal.webp",
-    width: 1376,
-    height: 932,
-    alt: "Composição de interfaces desktop e mobile",
-    caption:
-      "Propostas históricas para desktop e mobile, com agrupamentos de oferta e serviços.",
+      "Decomposição operacional: validações, etapas da troca de chip, resumo financeiro e regras de oferta organizados na jornada.",
   },
   {
     src: "/images/claro-detalhe-linha.webp",
     width: 1550,
     height: 972,
-    alt: "Detalhe da linha com dados do cliente e grupos expansíveis",
+    alt: "Detalhe da linha com dados do cliente, cabeçalho fixo e grupos expansíveis",
     caption:
-      "Cliente, linha, plano e fatura agrupados, com acesso às jornadas relacionadas.",
+      "Preservação de contexto: dados do cliente, linha, plano e fatura agrupados em blocos expansíveis com acesso direto às jornadas relacionadas.",
   },
   {
-    src: "/images/claro-confirmacao-mobile.webp",
-    width: 280,
-    height: 606,
-    alt: "Confirmação mobile da troca de chip",
+    src: "/images/claro-multicanal.webp",
+    width: 1376,
+    height: 932,
+    alt: "Composição de interfaces desktop e mobile da ativação simplificada Claro",
     caption:
-      "Confirmação mobile reúne cliente, linha, chip e promoção. Exportação original de 280 px.",
+      "Paridade multicanal: mesma taxonomia de planos, resumo financeiro e etapas de confirmação entre o balcão desktop e o aplicativo mobile.",
   },
 ]
 
@@ -774,7 +744,7 @@ export const claroPresentation: CasePresentationData = {
               </ul>
             </div>
             <div className="cp-split-media">
-              <CaseFigure image={claroImages[1]} />
+              <CaseFigure image={claroImages[0]} />
             </div>
           </div>
         </>
@@ -807,7 +777,7 @@ export const claroPresentation: CasePresentationData = {
               </ul>
             </div>
             <div className="cp-split-media">
-              <CaseFigure image={claroImages[2]} />
+              <CaseFigure image={claroImages[1]} />
             </div>
           </div>
           <div className="cp-note">
@@ -846,7 +816,7 @@ export const claroPresentation: CasePresentationData = {
               </ul>
             </div>
             <div className="cp-split-media">
-              <CaseFigure image={claroImages[0]} />
+              <CaseFigure image={claroImages[2]} />
             </div>
           </div>
         </>
@@ -869,19 +839,6 @@ export const claroPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure image={claroImages[3]} />
             </div>
-          </div>
-          <div className="cp-gallery">
-            <CaseFigure image={claroImages[4]} />
-            <CaseFigure
-              image={{
-                src: "/images/claro-busca-cliente.webp",
-                width: 1550,
-                height: 972,
-                alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e validação cadastral",
-                caption:
-                  "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",
-              }}
-            />
           </div>
           <div className="cp-cards-grid">
             <div className="cp-feature-card">
@@ -1068,12 +1025,12 @@ export const neoenergiaPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/neoenergia-canais-atendimento.webp",
+                  src: "/images/neoenergia-grandes-numeros.webp",
                   width: 1600,
                   height: 900,
-                  alt: "Mapeamento dos 11 canais de atendimento e ecossistema de relacionamento Neoenergia",
+                  alt: "Escala nacional da Neoenergia: 4 distribuidoras (Coelba, Celpe, Cosern e Elektro), 18 estados, 34 milhões de habitantes e 13,9 milhões de clientes",
                   caption:
-                    "Ecossistema de canais: mapeamento dos 11 pontos de contato entre consumidores, concessionárias e equipes operacionais de campo.",
+                    "Escala da operação: 4 distribuidoras (Coelba, Celpe, Cosern e Elektro) atendendo 13,9 milhões de clientes em 18 estados brasileiros.",
                 }}
               />
             </div>
@@ -1158,37 +1115,15 @@ export const neoenergiaPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/neoenergia-jornada-futuro-tobe.webp",
-                  width: 2000,
-                  height: 1072,
-                  alt: "Service Blueprint da Jornada do Futuro To-Be com esteira integrada omnicanal",
+                  src: "/images/neoenergia-blueprint-crop-uso-pago-1600.webp",
+                  width: 1600,
+                  height: 900,
+                  alt: "Recorte em alta resolução do Service Blueprint 2 (Uso e Pago): storyboard, ações do consumidor e curva de criticidade",
                   caption:
-                    "Visão To-Be consolidada: blueprint de serviço integrado omnicanal alinhando as 4 distribuidoras aos padrões de qualidade ANEEL.",
+                    "Service Blueprint 2 (Uso e Pago): recorte em alta resolução conectando consumo, autoleitura, análise de cobrança e curva de criticidade.",
                 }}
               />
             </div>
-          </div>
-          <div className="cp-gallery">
-            <CaseFigure
-              image={{
-                src: "/images/neoenergia-blueprint-1-contrato-instalo.webp",
-                width: 2000,
-                height: 3656,
-                alt: "Service Blueprint detalhado da etapa 1: Contrato e Instalo",
-                caption:
-                  "Prancha oficial do Blueprint 1 (Contrato e Instalo): mapeamento detalhado de frontstage, backstage e processos de ligação nova (clique para ampliar).",
-              }}
-            />
-            <CaseFigure
-              image={{
-                src: "/images/neoenergia-blueprint-2-uso-pago.webp",
-                width: 1414,
-                height: 4480,
-                alt: "Service Blueprint detalhado da etapa 2: Uso e Pago",
-                caption:
-                  "Prancha oficial do Blueprint 2 (Uso e Pago): diagnóstico aprofundado de consumo, autoleitura e faturamento (clique para ampliar).",
-              }}
-            />
           </div>
         </>
       ),

@@ -52,3 +52,19 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 * **Enquadramento Full-Bleed do Hero (`case-presentation.css`, `hiae-capa-editorial-1600.webp`, `hiae-taxonomia-laudo-2000.webp`):**
   * Expandida a altura máxima do Master Hero de `clamp(280px, 36vh, 380px)` para **`clamp(340px, 58vh, 640px)`**, eliminando as faixas laterais vazias em todos os cases.
   * Recorte editorial fechado da capa Einstein (`2560×1271 px`) diretamente do master 3K com composição alfa em fundo branco puro (`#FFFFFF`), preenchendo ~95% da área útil com nitidez imediata na página.
+
+
+### 2026-11-25 (Auditoria Visual Completa — Zero Duplicatas, Zero Baixa Resolução, Zero WIP)
+- **Einstein (`CasePages.tsx`):**
+  - Substituído Hero duplicado (`hiae-capa-editorial-1600.webp`, idêntico à taxonomia) por `hiae-multicanal-web-celular.webp` (`2000×1032`, Versões Digitais Tablet + Mobile + Versão Impressa A4).
+  - Removida `hiae-laudo-proposta-demonstrativa-1600.webp` (duplicata da tela de Ressonância já apresentada em `hiae-visao-futura-ressonancia.webp`).
+- **Claro (`CasePages.tsx`):**
+  - Substituído Hero duplicado/com artefato (`claro-capa-editorial-1600.webp`) por `claro-ativacao-hero.webp` (`1440×680`), mantendo `claro-multicanal.webp` (`1376×932`) uma única vez na seção Multicanal.
+  - Removida `claro-confirmacao-mobile.webp` (`280×606 px`, baixa resolução) e `claro-workshop.webp` (foto de parede com post-its ilegíveis).
+- **Neoenergia (`CasePages.tsx`):**
+  - Substituída `neoenergia-canais-atendimento.webp` (carimbo vermelho "Work in progress" + placeholder `~ X SEMANAS`) por `neoenergia-grandes-numeros.webp` (`1600×900`, limpo e factual).
+  - Removida `neoenergia-jornada-futuro-tobe.webp` (marca d'água "WORK IN PROGRESS" e duplicata da matriz) e os verticais esmagados `blueprint-1` / `blueprint-2`.
+  - Gerado recorte fechado 16:9 `neoenergia-blueprint-crop-uso-pago-1600.webp` (`1600×900`) em paridade visual com `neoenergia-blueprint-crop-contrato-1600.webp`.
+- **Itaú (`ItauPreparationCase.tsx`):**
+  - Removida `itau-planejamento-iniciativas.webp` (mosaico ilegível repetido 3x em Movimentações, Hub de Liquidez e Campanhas).
+  - Removidas duplicatas idênticas entre Hero e evidências em Vencimentos (`itau-vencimentos-canonico.webp`), Hub de Liquidez (`itau-hub-liquidez-capa-1600.webp`), Movimentações (`itau-movimentacoes-capa/discovery.webp` substituídos pelo recorte focado `itau-movimentacoes-telas-1800.webp`) e Campanhas (`itau-campanhas-capa/screenflow.webp`, mantendo `itau-campanhas-configuracao-historica.svg` vetorial).
