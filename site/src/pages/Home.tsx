@@ -70,7 +70,6 @@ export default function Home() {
               <a className="pf-button pf-button-pine" href="#trabalho">Ver projetos</a>
               <a className="pf-button pf-button-outline" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Currículo (PDF) <DownloadIcon /></a>
             </div>
-            <a className="pf-home-email" href="mailto:irozar@yahoo.com.br">irozar@yahoo.com.br</a>
           </div>
           <figure className="pf-portrait">
             <div className="pf-portrait-image">
