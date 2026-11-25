@@ -151,9 +151,9 @@ const einsteinImages: CaseImage[] = [
   {
     src: "/images/hiae-triangulacao-pesquisa-1200.webp",
 
-    width: 1200,
+    width: 1800,
 
-    height: 701,
+    height: 1052,
 
     alt: "Diagrama relacionando questionário, entrevistas médicas e levantamento documental",
 
@@ -327,8 +327,8 @@ export const einsteinPresentation: CasePresentationData = {
               <CaseFigure
                 image={{
                   src: "/images/hiae-taxonomia-laudo-2000.webp",
-                  width: 2000,
-                  height: 1097,
+                  width: 2560,
+                  height: 1302,
                   alt: "Prancha real de taxonomia clínica do projeto Einstein: decomposição de laudo de enterotomografia nas três macroáreas (Metodologia, Resultado e Conclusão Diagnóstica)",
                   caption:
                     "Taxonomia real do projeto: decomposição de exames em três macroáreas canônicas (Metodologia, Resultado e Conclusão Diagnóstica) com dados anonimizados sob LGPD.",
@@ -401,8 +401,8 @@ export const einsteinPresentation: CasePresentationData = {
               <CaseFigure
                 image={{
                   src: "/images/hiae-componente-protrombina-crop.webp",
-                  width: 1800,
-                  height: 640,
+                  width: 2400,
+                  height: 880,
                   alt: "Recorte real do protótipo v3 do projeto Einstein: componente Tempo de Protrombina (RNI) com examTitle, linha por parâmetro, ícone de conformidade redundante à cor e referência alinhada lado a lado",
                   caption:
                     "Protótipo real (v3): anatomia do componente Tempo de Protrombina (RNI) com título do exame, ícone de conformidade redundante à cor e intervalo de referência alinhado lado a lado.",
@@ -422,8 +422,8 @@ export const einsteinPresentation: CasePresentationData = {
               <CaseFigure
                 image={{
                   src: "/images/hiae-ds-tokens-clean-1280.webp",
-                  width: 1280,
-                  height: 800,
+                  width: 2000,
+                  height: 1250,
                   alt: "Documentação no Design System Zera 1.0: especificações de tokens de cores, tipografia e espaçamento para componentes de laudo",
                   caption:
                     "Design System Zera 1.0: especificações dos componentes dataField e examTitle com tokens de espaçamento e regras de anatomia modular para a engenharia.",
@@ -447,8 +447,8 @@ export const einsteinPresentation: CasePresentationData = {
             <CaseFigure
               image={{
                 src: "/images/hiae-visao-futura-mamografia.webp",
-                width: 1340,
-                height: 895,
+                width: 2000,
+                height: 1336,
                 alt: "Laudo descritivo de mamografia estruturado para tablet e celular",
                 caption:
                   "Laudo descritivo (Mamografia): cabeçalho padronizado e seções estruturadas para técnica, indicação clínica e conclusão diagnóstica.",
@@ -457,8 +457,8 @@ export const einsteinPresentation: CasePresentationData = {
             <CaseFigure
               image={{
                 src: "/images/hiae-visao-futura-ressonancia.webp",
-                width: 1340,
-                height: 895,
+                width: 2000,
+                height: 1336,
                 alt: "Laudo tabular de ressonância cardiovascular com resultados em tabela no tablet e celular",
                 caption:
                   "Laudo tabular (Ressonância): resultados estruturados em colunas limpas, facilitando a comparação de medidas no celular e no tablet.",
@@ -597,15 +597,15 @@ const claroImages: CaseImage[] = [
   },
   {
     src: "/images/claro-workshop.webp",
-    width: 720,
-    height: 720,
+    width: 1440,
+    height: 1440,
     alt: "Workshop do projeto com post-its na parede",
     caption: "Registro de workshop colaborativo com equipes de operação comercial.",
   },
   {
     src: "/images/claro-jornadas.webp",
-    width: 720,
-    height: 720,
+    width: 1440,
+    height: 1440,
     alt: "Mapa da jornada de troca de chip no Miro",
     caption:
       "Validações, etapas da troca de chip, resumo e oferta organizados na jornada.",
@@ -620,8 +620,8 @@ const claroImages: CaseImage[] = [
   },
   {
     src: "/images/claro-detalhe-linha.webp",
-    width: 775,
-    height: 486,
+    width: 1550,
+    height: 972,
     alt: "Detalhe da linha com dados do cliente e grupos expansíveis",
     caption:
       "Cliente, linha, plano e fatura agrupados, com acesso às jornadas relacionadas.",
@@ -875,8 +875,8 @@ export const claroPresentation: CasePresentationData = {
             <CaseFigure
               image={{
                 src: "/images/claro-busca-cliente.webp",
-                width: 775,
-                height: 486,
+                width: 1550,
+                height: 972,
                 alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e validação cadastral",
                 caption:
                   "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",

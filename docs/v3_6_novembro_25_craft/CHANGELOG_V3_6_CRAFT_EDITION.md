@@ -45,3 +45,7 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 * **Substituição de Imagens Sintéticas por Evidências Reais do Figma (`CasePages.tsx`):**
   * **Tempo de Protrombina (RNI):** Removido o card sintético redesenhado (`76fe885`) e restaurado o recorte real do protótipo v3 do Figma (`1800×640 px`) com moldura pine e marcadores 1–4 alinhados à legenda.
   * **As 3 Macroáreas do Exame:** Substituído o diagrama sintético (`hiae-taxonomia-macroareas.webp`) pela prancha real de taxonomia clínica do Figma (`hiae-taxonomia-laudo-2000.webp`, `2000×1097 px`).
+* **Upgrade Ultra-HD Retina em 10 Imagens de Evidência:**
+  * `hiae-componente-protrombina-crop.webp`: re-renderizada em **2400×880 px** (2× Retina) com marcadores vetoriais anti-aliased (`1, 2, 3, 4` em Plus Jakarta Sans 700, zero serrilhado, zero sobreposição) sobre o recorte real v3 do Figma.
+  * `hiae-taxonomia-laudo-2000.webp`: re-exportada diretamente do master PNG 3K (`3098×1576`) para **2560×1302 px** (`WebP q=95`).
+  * Elevadas para **1440px–2000px** (Lanczos + micro-nitidez `UnsharpMask` + `WebP q=95`) todas as imagens abaixo de 1600px de Claro e Einstein (`claro-workshop`, `claro-jornadas`, `claro-detalhe-linha`, `claro-busca-cliente`, `hiae-ds-tokens-clean-1280`, `hiae-triangulacao-pesquisa-1200`, `hiae-visao-futura-mamografia`, `hiae-visao-futura-ressonancia`), com `width`/`height` sincronizados 1:1 em `CasePages.tsx`.
