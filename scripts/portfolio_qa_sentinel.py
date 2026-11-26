@@ -240,6 +240,8 @@ RUNTIME_AUDIT_JS = """() => {
   const res = {
     overflow: document.documentElement.scrollWidth - window.innerWidth,
     h1Count: document.querySelectorAll('h1').length,
+    desktopNavCount: document.querySelectorAll('header .desktop-nav a, header .desktop-nav button').length,
+    minBodyFontSize: 99,
     missingAlt: [],
     brokenImgs: [],
     duplicateVisibleImgs: [],
@@ -270,6 +272,10 @@ RUNTIME_AUDIT_JS = """() => {
   for (const el of document.querySelectorAll('main h1, main h2, main h3, main p')) {
     const cs = getComputedStyle(el);
     res.fonts.add(cs.fontFamily.split(',')[0].replace(/['"]/g, '').trim());
+  }
+  for (const el of document.querySelectorAll('.cp-chapter-content > p')) {
+    const fs = parseFloat(getComputedStyle(el).fontSize);
+    if (fs > 0 && fs < res.minBodyFontSize) res.minBodyFontSize = fs;
   }
   for (const el of document.querySelectorAll('.cp-figure-caption-text')) {
     res.captionSizes.add(getComputedStyle(el).fontSize);
@@ -377,7 +383,14 @@ def run_runtime_suite():
         stderr=subprocess.DEVNULL,
         shell=True,
     )
-    time.sleep(2.5)
+    time.sleep(1.0)
+    import socket
+    for _ in range(30):
+        try:
+            with socket.create_connection(("127.0.0.1", port), timeout=0.5):
+                break
+        except OSError:
+            time.sleep(0.5)
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(args=["--disable-gpu"])
@@ -429,6 +442,10 @@ def run_runtime_suite():
 
                 if rep["h1Count"] != 1:
                     typo_errors.append(f"{r}: Esperado exatamente 1 <h1>, encontrado {rep['h1Count']}.")
+                if rep["desktopNavCount"] > 6:
+                    typo_errors.append(f"{r}: Navegação principal excede 6 itens ({rep['desktopNavCount']}).")
+                if rep["minBodyFontSize"] < 15.5:
+                    typo_errors.append(f"{r}: Corpo de texto abaixo de 16px ({rep['minBodyFontSize']}px).")
                 non_jakarta = [f for f in rep["fonts"] if "Plus Jakarta Sans" not in f]
                 if non_jakarta:
                     typo_errors.append(f"{r}: Fonte divergente encontrada: {non_jakarta}")

@@ -88,3 +88,12 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - `.cp-split` atualizado para `align-items: start` (topo alinhado ao topo), proporção `minmax(0, 1.08fr) minmax(0, 1fr)` com `gap: 2.25rem`, `padding: 1.75rem` e `.cp-split-media { position: sticky; top: 5.5rem; }`.
   - Aplicado `text-wrap: balance` em todos os títulos e rótulos de métricas (`.cp-metrics dt`), `text-wrap: pretty` em parágrafos e listas, e `font-variant-numeric: tabular-nums` em `.cp-metrics dd`.
   - Removidos **100% dos estilos inline hardcoded** (`0` ocorrências em todos os cases), corrigida a dupla marcação (`• 1.`) na lista numerada da Neoenergia (`.cp-card-list--numbered`) e movido `.cp-note` para fora de `.cp-split-content` na Neoenergia.
+
+
+### 2026-11-26 (QA Sentinel v2 · 12 Gates + UX Portfolio Review Checklist 2026 + Biblioteca de 19 Variações)
+- **QA Sentinel v2 (`scripts/portfolio_qa_sentinel.py`):**
+  - Expandido de 7 para **12 gates automatizados** (9 estáticos + 3 runtime reais no Chromium): zero estilos inline, zero vazamento de senha/e-mail, unicidade/WebP/HD de imagens, Gestalt Outside-In, alinhamento top-to-top, responsividade `1440/768/390`, tipografia computada, contraste WCAG 2.2, limite de navegação (`<= 6` itens), corpo `>= 16px` e validação E2E do `CaseAccessGate`.
+- **Governança Permanente (`UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md` + `AGENTS.md` Seção 8):**
+  - Consolidado o framework operacional de 30 pontos (6 seções × 5 pontos) da UX Companion 2026 com scorecard inicial do portfólio em **`28/30`** (*Pronto para vagas Sênior/Staff*) e instituído como regra permanente de revisão.
+- **Biblioteca de Direção de Arte (`D:\mockups-portfolio-studio\`):**
+  - Arquivadas **28 referências visuais** (`ref-01` a `ref-28`, incluindo `Rabt`, `AeroLoad`, `Elegostra`, `FinChat`, `Nexus`, `Hornet`, `GridNest`) e geradas **19 variações em 2× Retina (`2400×1350`)** aplicadas sobre as telas reais dos 4 cases, com catálogo interativo (`catalogo-interativo.html`) e documentação (`CATALOGO_REFERENCIAS_E_VARIACOES.md`).

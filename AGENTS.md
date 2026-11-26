@@ -65,3 +65,12 @@ Consolidação das regras de ouro de *Senior UX Portfolio Examples* e *20 UX Por
 ## 7. Proteção de Acesso Padrão nos Cases (Modelo Híbrido)
 - **Home Aberta, Cases Protegidos por Padrão:** A Home (`/`) permanece aberta para conversão de recrutadores; todos os estudos de caso (atuais e futuros) que utilizam `CasePresentation` herdam automaticamente o componente `CaseAccessGate` (`site/src/components/CaseAccessGate.tsx`).
 - **Segurança no Código:** A senha **nunca** deve ser gravada em texto claro no código-fonte, em documentação pública ou no bundle (`dist/`). A validação ocorre exclusivamente por comparação de hash **SHA-256**, com desbloqueio persistido apenas em `sessionStorage` para navegação contínua durante a sessão.
+
+
+## 8. Gate Permanente de Efetividade — UX Portfolio Review Checklist (2026)
+- **Scorecard Obrigatório (`/30`):** Toda evolução relevante do portfólio (novo case, reformulação de Home ou atualização visual) deve ser avaliada nas 6 seções do [UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/docs/v3_6_novembro_25_craft/UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md) (*Homepage, Navigation, Case Studies, Presentation, Mobile, Credibility*), mantendo **meta mínima `>= 27/30`** (nível Sênior/Staff).
+- **Critérios Técnicos Automatizados no Sentinel (`portfolio_qa_sentinel.py` v2):**
+  - Navegação principal com no máximo **4–6 itens** claros e contato acessível em toda página.
+  - Corpo de texto legível (**`>= 16px`**), contraste mínimo **WCAG 2.2 AA/AAA**, espaço em branco *outside-in* (Gestalt) e `0px` overflow em `1440px / 768px / 390px`.
+  - **Screenshots reais acima de mockups decorativos:** qualquer acabamento de estúdio (luz, sombra, Bento Grid, perspectiva) deve preservar **100% dos pixels reais das telas do Figma**, sem distorcer textos.
+- **Documentação & Versionamento Contínuo:** Toda entrega deve atualizar automaticamente o changelog ativo em `docs/v3_6_novembro_25_craft/CHANGELOG_V3_6_CRAFT_EDITION.md` e o índice `docs/INDEX_GOVERNANCA_E_DECISOES.md`.

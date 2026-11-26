@@ -79,11 +79,12 @@ Localização: `docs/v3_5_novembro_25_canonica/`
 * `CHANGELOG_V3_5_HIBRIDA_CANONICA.md`: Log detalhado das evoluções na Home (escopo nos cards, submódulos Itaú, trajetória visível), micro-blocos de Trade-offs & Reflexão Crítica nos 4 cases e remoção de IDs internos de Figma.
 * `PARECER_COMITE_ESPECIALISTAS_E_TABELA_DE_PARA_V3_5.md`: Tabela De-Para completa e parecer do comitê multiespecialista.
 
-### E. Versão 3.6: Craft Edition & Documentação Figma — VIGENTE EM PRODUÇÃO (25 de Novembro de 2026)
+### E. Versão 3.6: Craft Edition, Segurança, QA v2 & UX Review Canon — VIGENTE EM PRODUÇÃO (25–26 de Novembro de 2026)
 Localização: `docs/v3_6_novembro_25_craft/`
-* `CHANGELOG_V3_6_CRAFT_EDITION.md`: Barra de progresso de leitura nos cases, header com profundidade no scroll, microinterações táteis nos cards, zoom direto clicando na imagem do Lightbox e prancha canônica de documentação V3.6 no plugin do Figma.
+* `CHANGELOG_V3_6_CRAFT_EDITION.md`: Histórico cronológico completo da V3.6 (Craft Edition, auditoria visual sem duplicatas, proteção por senha padrão `CaseAccessGate` com SHA-256, diagramas Retina `2400×1350`, padronização de Design System/tipografia/splits, QA Sentinel v2 e biblioteca de 19 variações + 28 referências em `D:\mockups-portfolio-studio\`).
+* `UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md`: Framework operacional permanente de 30 pontos (6 seções × 5 pontos, meta mínima `>= 27/30`) baseado no UX Companion 2026, com scorecard atual do portfólio (`28/30`).
 * **Scripts de Validação em Tempo Real (`scripts/`):**
-  * `portfolio_qa_sentinel.py`: Sentinela de 7 portões que valida build, métricas, links e expressões proibidas.
+  * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.
   * `test_ux_a11y_comprehensive.py`: Validador de alvos de toque (target size), `alt` de imagens, nomes acessíveis e teclado.
   * `deep_content_editorial_audit.py`: Validador de redundâncias de texto, inventário de imagens e legendas.
