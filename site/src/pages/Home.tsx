@@ -53,7 +53,7 @@ export default function Home() {
     <div className="portfolio-site pf-home-compact">
       <PageMeta
         title="Israel Rozar — Senior Product Designer"
-        description="Senior Product Designer com atuação desde 2006. Projetos de saúde, finanças, telecom e energia: conheça o contexto, as decisões e as entregas."
+        description="Senior Product Designer com mais de 15 anos de experiência. Projetos em saúde, finanças, telecom e energia: contexto, decisões e entregas."
       />
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <SiteHeader />
@@ -65,7 +65,7 @@ export default function Home() {
               <span>São Paulo · Brasil</span>
             </div>
             <h1 id="hero-title">Design de produtos para saúde, finanças e serviços essenciais.</h1>
-            <p className="pf-lead">Atuação desde 2006 conectando pesquisa, fluxos e sistemas de interface com Produto e Engenharia. Recentemente no Itaú Unibanco, à frente do íon for Advisors para especialistas de investimentos.</p>
+            <p className="pf-lead">Mais de 15 anos de experiência conectando pesquisa, fluxos e sistemas de interface com Produto e Engenharia. Recentemente no Itaú Unibanco, à frente do íon for Advisors para especialistas de investimentos.</p>
             <div className="pf-actions">
               <a className="pf-button pf-button-pine" href="#trabalho">Ver projetos</a>
               <a className="pf-button pf-button-outline" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Currículo (PDF) <DownloadIcon /></a>
@@ -146,7 +146,7 @@ export default function Home() {
               </p>
             </div>
             <div className="pf-home-about-body">
-              <p id="experiencia">Atuo desde 2006 no desenho de produtos digitais para saúde, finanças, telecom e energia. Meu trabalho conecta pesquisa com usuários, organização de fluxos complexos e sistemas de componentes em parceria direta com times de Produto e Engenharia.</p>
+              <p id="experiencia">Com mais de 15 anos de experiência em produtos digitais para saúde, finanças, telecom e energia, conecto pesquisa com usuários, organização de fluxos complexos e sistemas de componentes em parceria direta com times de Produto e Engenharia.</p>
               <p>Priorizo decisões documentadas, acessibilidade digital (WCAG 2.2) desde o início do projeto e uso prático de IA com revisão humana para acelerar descoberta, prototipagem e entrega técnica.</p>
               <ul className="pf-home-trajectory" aria-label="Trajetória profissional resumida">
                 {trajectory.map(item => (

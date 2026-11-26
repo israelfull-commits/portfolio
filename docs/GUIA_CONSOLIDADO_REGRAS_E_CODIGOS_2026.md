@@ -118,3 +118,4 @@
 - **Variação percentual:** informar valores de origem, `p.p.` e, se usar escore relativo (`novo/antigo − 1`), identificar explicitamente e preferir a forma conservadora em métricas "ruins".
 - **Atribuição de negócio:** separar efeito direto de UX (a montante) de efeito de negócio (a jusante) e nomear fatores externos.
 - **Amostras pequenas (ex.: 4–5 usuários):** relatar como sinal qualitativo, nunca como taxa percentual.
+
