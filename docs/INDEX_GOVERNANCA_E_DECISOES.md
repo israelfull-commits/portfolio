@@ -94,10 +94,11 @@ Localização: `docs/v3_6_novembro_25_craft/`
 
 ---
 
-## 4. Fonte Canônica da Verdade
+## 4. Fonte Canônica da Verdade e Sincronização Omnicanal
 
 * **Ambiente Canônico de Produção:** Diretório `site/` (código React / Vite / TypeScript).
-* **Ambiente de Publicação:** GitHub Pages através do workflow automatizado em `.github/workflows/deploy.yml`.
-* **Ambiente Espelho Local:** Diretório `portfolio-verde/` mantido em paridade estrita.
+* **Ambiente de Publicação:** GitHub Pages através do workflow automatizado em `.github/workflows/deploy.yml` (`https://israelfull-commits.github.io/portfolio/`).
+* **Ambiente Espelho Local:** Diretório `portfolio-verde/` mantido em paridade estrita 1:1.
+* **Ambiente Notion Portfolio Ops (Governança & Versionamento):** Hub `https://app.notion.com/p/4168db39b34f805884bad8f933e004dd` e subpágina V3.6 `https://app.notion.com/p/4248db39b34f81a6b708c51aefce7209` sincronizados automaticamente via MCP `notion_notion` (regra permanente na Seção 9 do `AGENTS.md`).
 * **Ambiente Figma Desktop:** Arquivo `Template-portfolio` (`YIHybVXPe0Hfmja1hAyzQZ`), sincronizado através do plugin local `figma-refine-plugin` alimentado pelo compilador `scripts/build_portfolio_figma_screens.py`.
 

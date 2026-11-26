@@ -74,3 +74,20 @@ Consolidação das regras de ouro de *Senior UX Portfolio Examples* e *20 UX Por
   - Corpo de texto legível (**`>= 16px`**), contraste mínimo **WCAG 2.2 AA/AAA**, espaço em branco *outside-in* (Gestalt) e `0px` overflow em `1440px / 768px / 390px`.
   - **Screenshots reais acima de mockups decorativos:** qualquer acabamento de estúdio (luz, sombra, Bento Grid, perspectiva) deve preservar **100% dos pixels reais das telas do Figma**, sem distorcer textos.
 - **Documentação & Versionamento Contínuo:** Toda entrega deve atualizar automaticamente o changelog ativo em `docs/v3_6_novembro_25_craft/CHANGELOG_V3_6_CRAFT_EDITION.md` e o índice `docs/INDEX_GOVERNANCA_E_DECISOES.md`.
+
+
+## 9. Sincronização Omnicanal Obrigatória (Git + Espelho Local + Notion Portfolio Ops)
+Toda evolução, correção, auditoria ou nova versão do portfólio e dos cases **DEVE** ser sincronizada automaticamente em **todos os 4 pontos de verdade** antes de concluir a entrega, garantindo paridade 1:1 de versões, links, scores e decisões:
+1. **Produção (`site/` → GitHub Pages `main`):** build com `0` erros (`npm --prefix site run build`), **12/12 PASS** no `python scripts/portfolio_qa_sentinel.py` e push para `origin/main`.
+2. **Espelho Local (`portfolio-verde/`):** manter 100% sincronizado com `site/` (permanecendo ignorado no `.gitignore` raiz).
+3. **Documentação Versionada no Repositório (`docs/`):** atualizar automaticamente `docs/v3_6_novembro_25_craft/CHANGELOG_V3_6_CRAFT_EDITION.md` e `docs/INDEX_GOVERNANCA_E_DECISOES.md`.
+4. **Notion Portfolio Ops (`notion_notion` MCP):** manter atualizados sem sobrescrever histórico anterior:
+   - **Hub Principal:** `https://app.notion.com/p/4168db39b34f805884bad8f933e004dd`
+   - **Subpágina Consolidada V3.6:** `https://app.notion.com/p/4248db39b34f81a6b708c51aefce7209`
+   - **Bases Relacionais:**
+     - `🗂️ Ativos`: `collection://adee0322-c2a3-4666-a54c-47f837bd6496` (status e URLs publicadas)
+     - `🔖 Versões`: `collection://e0c08f7f-825b-4340-9a67-54d165d4e05e` (nova linha semver + changelog + link)
+     - `🔍 Diagnósticos`: `collection://68a1754f-2dd7-4fd1-9e12-14f49a05bf68` (auditorias Sentinel v2 / UX Companion)
+     - `💡 Recomendações & Decisões`: `collection://6db1c32b-e538-4a31-8b88-c2964ed69c96` (ADRs e status de implementação)
+     - `⭐ Scorecard Geral`: `collection://1636d9a7-c819-41e6-85af-92d091999523` (reavaliação a cada versão Major/Minor)
+   - **Regra de Segurança no Notion:** nunca gravar senhas em texto claro em páginas ou propriedades do Notion; referenciar apenas a existência do gate SHA-256.

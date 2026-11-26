@@ -106,3 +106,10 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - `UX_CASE_STUDY_STRUCTURE_2026.md` (anatomia de 7 seções em `1.000–1.800` palavras, 5 arquétipos de case e checklist pré-envio).
 
 - Incorporado o **Template de 9 Blocos + Micro-Template de Decisão** (`ux-case-study-template`) em `UX_CASE_STUDY_STRUCTURE_2026.md` como modelo reutilizável para novos cases.
+
+
+### 2026-11-26 (Integração Notion Portfolio Ops + Regra Permanente de Sincronização Omnicanal)
+- **Notion Portfolio Ops (`4168db39b34f805884bad8f933e004dd`):**
+  - Criada subpágina consolidada V3.6 (`4248db39b34f81a6b708c51aefce7209`), atualizados os 5 `🗂️ Ativos` principais para `Publicado` com URLs oficiais do GitHub Pages, registrada a versão vigente `v3.6.0` em `🔖 Versões` (`4248db39b34f81e1a8f6e1f99640b0f3`), criado o registro consolidado em `🔍 Diagnósticos` (`4248db39b34f81cab3d9caec248cdcee`) e registrada a avaliação `v3.6.0` em `⭐ Scorecard Geral` (`4248db39b34f81d5b498f527aad04b63`).
+- **Governança Permanente (`AGENTS.md` Seção 9 + `senior-portfolio-audit/SKILL.md` + `INDEX_GOVERNANCA_E_DECISOES.md`):**
+  - Instituída a obrigatoriedade de sincronização omnicanal automática em toda entrega: `site/` (GitHub Pages) + `portfolio-verde/` + `docs/` + **Notion Portfolio Ops**.

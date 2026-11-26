@@ -66,11 +66,13 @@ O script verifica automaticamente:
 
 ---
 
-## 3. Checklist Pré-Publicação
+## 3. Checklist Pré-Publicação e Sincronização Omnicanal
 
-Antes de qualquer commit ou push para a branch `main`:
+Antes de concluir qualquer entrega, commit ou push para a branch `main`:
 1. `npm --prefix site run build` (garantir compilação com 0 erros).
-2. `python scripts/portfolio_qa_sentinel.py` (garantir status `PASS` em todos os critérios).
-3. Sincronizar arquivos para `portfolio-verde/` se aplicável.
-4. `git push origin main` (dispara deploy automatizado no GitHub Actions).
+2. `python scripts/portfolio_qa_sentinel.py` (garantir status **12/12 PASS** nos portões estáticos e runtime Chromium).
+3. Sincronizar arquivos 1:1 para `portfolio-verde/`.
+4. Atualizar `docs/v3_6_novembro_25_craft/CHANGELOG_V3_6_CRAFT_EDITION.md` e `docs/INDEX_GOVERNANCA_E_DECISOES.md`.
+5. `git push origin main` (dispara deploy automatizado no GitHub Actions).
+6. **Sincronizar automaticamente no Notion Portfolio Ops** (via MCP `notion_notion`, hub `4168db39b34f805884bad8f933e004dd`): atualizar `🗂️ Ativos`, registrar nova linha em `🔖 Versões`, atualizar a subpágina consolidada (`4248db39b34f81a6b708c51aefce7209`) e registrar `🔍 Diagnósticos` / `⭐ Scorecard Geral` quando aplicável — sempre sem senhas em texto claro.
 
