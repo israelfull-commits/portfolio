@@ -1,7 +1,7 @@
-import { ArrowIcon, DownloadIcon, Link, assetUrl } from "../design-system"
+import { ArrowIcon, DownloadIcon, Link, MailIcon, assetUrl } from "../design-system"
 import { CaseReadingTime } from "../components/CaseReadingTime"
 import { PageMeta } from "../components/PageMeta"
-import { ContactSection, SiteFooter, SiteHeader } from "../components/SiteChrome"
+import { ContactSection, SiteFooter, SiteHeader, openProtectedEmail } from "../components/SiteChrome"
 import "../portfolio.css"
 
 const projects = [
@@ -20,8 +20,8 @@ const projects = [
     client: "Claro Brasil",
     title: "Ativação de planos e televendas",
     role: "UX/UI Designer",
-    scope: "22 jornadas mapeadas · 70+ validações",
-    description: "Redesenho da jornada de venda e ativação de planos para equipes de atendimento e lojas.",
+    scope: "22 jornadas unificadas · 20 entrevistas · 70 oportunidades",
+    description: "Unificação da jornada de venda e ativação de planos para equipes de lojas físicas, televendas e campo.",
   },
   {
     slug: "neoenergia-conexao-digital",
@@ -65,7 +65,7 @@ export default function Home() {
               <span>São Paulo · Brasil</span>
             </div>
             <h1 id="hero-title">Design de produtos para saúde, finanças e serviços essenciais.</h1>
-            <p className="pf-lead">Desde 2006, atuo em pesquisa e design de produtos digitais. No Itaú, liderei frentes de design para especialistas de investimentos.</p>
+            <p className="pf-lead">Desde 2006, atuo com Product Discovery, Arquitetura da Informação e Design Systems em ambientes regulados. No Itaú Unibanco, liderei frentes de produto na plataforma íon for Advisors para especialistas de investimentos.</p>
             <div className="pf-actions">
               <a className="pf-button pf-button-pine" href="#trabalho">Ver projetos</a>
               <a className="pf-button pf-button-outline" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Currículo (PDF) <DownloadIcon /></a>
@@ -127,10 +127,27 @@ export default function Home() {
         </section>
         <section className="pf-about pf-section" id="sobre" aria-labelledby="about-title">
           <div className="pf-container pf-home-about">
-            <h2 id="about-title">Sobre minha atuação</h2>
-            <div>
-              <p id="experiencia">Experiência em saúde, serviços financeiros, telecom e energia. Trabalho com pesquisa, arquitetura da informação e design de interfaces em colaboração com Produto e Engenharia.</p>
-              <p>Exploro recursos de IA com revisão humana e foco em acessibilidade digital (WCAG 2.2).</p>
+            <div className="pf-home-about-intro">
+              <h2 id="about-title">Sobre minha atuação</h2>
+              <p className="pf-home-about-role">
+                <strong>Senior Product Designer</strong>
+                <span>São Paulo, BR · Remoto / Híbrido</span>
+              </p>
+              <div className="pf-home-about-links" aria-label="Links de prova social e contato">
+                <a className="pf-home-about-action" href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">
+                  LinkedIn <ArrowIcon /><span className="pf-sr-only"> (abre em nova aba)</span>
+                </a>
+                <a className="pf-home-about-action" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">
+                  Currículo (PDF) <DownloadIcon />
+                </a>
+                <button type="button" className="pf-home-about-action" onClick={openProtectedEmail}>
+                  Enviar e-mail <MailIcon />
+                </button>
+              </div>
+            </div>
+            <div className="pf-home-about-body">
+              <p id="experiencia">Sou Senior Product Designer com atuação desde 2006 em produtos digitais para ambientes regulados e operações complexas. Conduzo frentes de Human-Centered Design (HCD), Product Discovery, Arquitetura da Informação e componentes escaláveis em parceria contínua com Produto e Engenharia.</p>
+              <p>Documento decisões de interface, trade-offs técnicos e requisitos de acessibilidade digital (WCAG 2.2) desde a concepção, aplicando automação de processos e IA com revisão humana para acelerar descoberta, prototipagem e handoff.</p>
               <ul className="pf-home-trajectory" aria-label="Trajetória profissional resumida">
                 {trajectory.map(item => (
                   <li key={item.org}>
@@ -139,7 +156,6 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link className="pf-home-cv" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Ver trajetória completa no currículo (PDF)</Link>
             </div>
           </div>
         </section>

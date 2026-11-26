@@ -30,3 +30,4 @@ Antes de considerar qualquer prancha do Figma concluída, executar automaticamen
    - `provenancePresent === 100%` (instância do banner em cada artboard).
 2. **Inspeção visual real (`get_screenshot` + `read_file`):**
    - Baixar e abrir visualmente os prints de cada artboard alterado; corrigir qualquer anomalia óptica antes de reportar conclusão ao usuário.
+

@@ -18,8 +18,9 @@ flowchart LR
     V2["V2 (14 a 15/Nov)<br>Senior UX Canon 2026<br>• STAR Framework documental<br>• Zero termos defensivos<br>• Decisões como unidade de valor<br>• Rotas estáticas SPA"]
     V3["V3 (25/Nov)<br>Excelência & Conformidade<br>• Capa 16:9 2560x1440 px<br>• 100% WCAG AAA (216 cores)<br>• Remoção links NDA/GitHub/UXfolio<br>• Deploy estável 2 estágios"]
     V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
-    V36["V3.6 (25/Nov - VIGENTE)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
-    V1 --> V2 --> V3 --> V35 --> V36
+    V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
+    V39["V3.9 (26/Nov - VIGENTE)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)<br>• 14/14 Sentinel + Figma + Notion"]
+    V1 --> V2 --> V3 --> V35 --> V36 --> V39
 ```
 
 ---

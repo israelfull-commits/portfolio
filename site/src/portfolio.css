@@ -1303,6 +1303,23 @@
 .pf-home-compact .pf-home-submodules a { padding: 4px 8px; border-radius: 6px; transition: background-color 160ms ease, color 160ms ease; }
 .pf-home-compact .pf-home-submodules a:hover { background: rgba(10, 54, 34, 0.06); }
 .pf-home-compact .pf-home-submodules-item { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: var(--paper-deep); border: 1px solid var(--line); color: var(--ink-muted); font-size: 13px; font-weight: 500; }
+/* V3.9 Editorial & About Section Upgrade (strict 8px grid, clear title + social proof + contact) */
+.pf-home-compact .pf-home-about { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start; }
+.pf-home-compact .pf-home-about-intro { display: flex; flex-direction: column; gap: 16px; }
+.pf-home-compact .pf-home-about-role { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 16px; border-radius: 12px; background: var(--surface, #fff); border: 1px solid var(--line); }
+.pf-home-compact .pf-home-about-role strong { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--forest); }
+.pf-home-compact .pf-home-about-role span { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.pf-home-compact .pf-home-about-links { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 8px; }
+.pf-home-compact .pf-home-about-action { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 0; background: transparent; border: 0; font-family: inherit; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--forest); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.pf-home-compact .pf-home-about-action:hover { color: var(--forest-deep); }
+.pf-home-compact .pf-home-about-action svg { width: 16px; height: 16px; flex: none; }
+.pf-home-compact .pf-home-about-body p { max-width: 64ch; font-size: 16px; line-height: 26px; }
+.pf-home-compact .pf-home-about p + p { margin-top: 16px; }
+.pf-home-compact .pf-home-trajectory { margin: 24px 0 0; padding: 24px 0 0; gap: 16px; }
+@media (max-width: 700px) {
+  .pf-home-compact .pf-home-about { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .pf-home-compact .pf-home-about-links { flex-direction: row; flex-wrap: wrap; gap: 8px 24px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .pf-home-compact .pf-project, .pf-home-compact .pf-featured, .pf-home-compact .pf-case-preview img, .pf-home-compact .pf-project-link svg, .pf-home-compact .pf-button svg { transition: none !important; transform: none !important; }
 }

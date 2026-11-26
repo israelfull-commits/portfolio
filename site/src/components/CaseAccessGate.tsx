@@ -164,7 +164,7 @@ export function CaseAccessGate({
           </h1>
 
           <p className="cp-gate-lead">
-            Este estudo de caso contém decisões de produto e artefatos de projetos em domínios regulados. Digite a senha fornecida para liberar a leitura de todos os cases nesta sessão.
+            Este estudo de caso reúne decisões de arquitetura, fluxos e artefatos de projetos sob confidencialidade (NDA) em domínios regulados. Digite a senha fornecida para liberar a leitura de todos os cases nesta sessão.
           </p>
 
           <form className="cp-gate-form" onSubmit={handleSubmit} noValidate>

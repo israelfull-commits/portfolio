@@ -170,7 +170,7 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Uma linguagem visual modular para laudos heterogêneos.",
 
   subtitle:
-    "Um trabalho coletivo entre pesquisa, conteúdo, interface e viabilidade técnica para facilitar a criação dos laudos e a localização de informações sem simplificar indevidamente o contexto clínico.",
+    "Liderança de UX em pesquisa, Arquitetura da Informação e componentes escaláveis para estruturar mais de 80 tipos de laudos clínicos em tela e impressão monocromática, preservando o contexto diagnóstico.",
 
   role: "UX Lead",
 
@@ -249,7 +249,7 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Cenário e Restrições</span>
               <h3>O desafio prático</h3>
               <p>
-                O mesmo laudo precisava funcionar no aplicativo do celular, na tela do consultório e impresso em preto e branco nas impressoras dos hospitais parceiros. Não adiantava criar um visual bonito que travasse os sistemas mais antigos ou ficasse ilegível no papel comum.
+                O mesmo laudo precisava funcionar no aplicativo do celular, na tela do consultório e impresso em preto e branco nas impressoras dos hospitais parceiros. A especificação precisava operar dentro das limitações dos sistemas laudadores legados e manter legibilidade integral em impressão monocromática (contraste WCAG 2.2 AAA).
               </p>
             </div>
             <div className="cp-feature-card">
@@ -260,7 +260,7 @@ export const einsteinPresentation: CasePresentationData = {
                   <strong>Resultado e referência lado a lado:</strong> o valor do exame e o intervalo normal aparecem sempre juntos, na mesma linha visual.
                 </li>
                 <li>
-                  <strong>Cabeçalho limpo:</strong> dados administrativos separados no topo, deixando o foco total no resultado médico.
+                  <strong>Separação por região comum (Gestalt):</strong> metadados administrativos isolados no cabeçalho com borda estrutural, mantendo o bloco clínico livre de ruído.
                 </li>
                 <li>
                   <strong>Estrutura flexível:</strong> modelo modular que atende desde testes rápidos de uma linha até laudos descritivos extensos.
@@ -332,7 +332,7 @@ export const einsteinPresentation: CasePresentationData = {
           </div>
           <List
             items={[
-              "Como o médico trabalha: em uma consulta rápida ou no pronto-socorro, ele precisa bater o olho e identificar em 3 segundos se algum número está fora do padrão.",
+              "Fluxo de leitura médica: em consultas curtas e pronto-socorro, o profissional precisa localizar desvios de referência na primeira varredura visual, sem depender de interpretação por cor isolada.",
 
               "Como o paciente lê: busca o próprio resultado e precisa localizar o que importa para levar à conversa médica, sem se perder em termos técnicos ou fazer interpretações clínicas isoladas.",
 
@@ -342,7 +342,7 @@ export const einsteinPresentation: CasePresentationData = {
           <div className="cp-note">
             <h3>Evitando erros de leitura</h3>
             <p>
-              Em saúde, um alinhamento confuso pode induzir a um diagnóstico errado. O resultado, a unidade e o intervalo de referência devem formar um bloco único e inconfundível, fácil de ler até no fim de um plantão cansativo.
+              Em saúde, um alinhamento confuso pode induzir a um diagnóstico errado. Resultado, unidade e intervalo de referência formam uma única unidade visual por proximidade (Gestalt), mitigando erros de associação linha a linha em cenários clínicos de alta carga cognitiva.
             </p>
           </div>
         </>
@@ -469,7 +469,7 @@ export const einsteinPresentation: CasePresentationData = {
                 height: 1336,
                 alt: "Laudo tabular de ressonância cardiovascular com resultados em tabela no tablet e celular",
                 caption:
-                  "Laudo tabular (Ressonância): resultados estruturados em colunas limpas, facilitando a comparação de medidas no celular e no tablet.",
+                  "Laudo tabular (Ressonância): resultados organizados em grade tabular com alinhamento numérico fixo, reduzindo erros de comparação entre medidas no celular e no tablet.",
               }}
             />
           </div>
@@ -614,10 +614,10 @@ export const claroPresentation: CasePresentationData = {
 
   context: "Telecom · Claro Brasil · 2017–2018",
 
-  headline: "Simplificando o atendimento em múltiplos canais.",
+  headline: "22 jornadas comerciais unificadas em uma esteira desktop e mobile.",
 
   subtitle:
-    "Redesenho da experiência de vendas para profissionais da operação comercial.",
+    "Product Discovery, Arquitetura da Informação e interface padronizada para lojas físicas, televendas e consultores em campo (NET, Claro e Embratel).",
 
   role: "UX/UI Designer",
 
@@ -625,7 +625,7 @@ export const claroPresentation: CasePresentationData = {
 
   scope: "Discovery, fluxos e interfaces desktop e mobile",
 
-  keyMetric: "Atendimento unificado multicanal",
+  keyMetric: "22 jornadas unificadas · 70 oportunidades",
 
   kicker: "Telecom · UX corporativo",
 
@@ -723,7 +723,7 @@ export const claroPresentation: CasePresentationData = {
               <span className="cp-split-tag">Discovery & Pesquisa Operacional</span>
               <h3>Imersão em Lojas Físicas e Televendas</h3>
               <p>
-                O discovery reuniu benchmarking competitivo, 20 entrevistas em profundidade com profissionais e lideranças executivas, três dias de workshops imersivos e a formulação de 10 personas operacionais. A proximidade com o balcão revelou que o atendente perdia até 40% do tempo alternando entre sistemas legados desconectados para consultar uma única linha.
+                O discovery reuniu benchmarking competitivo, 20 entrevistas em profundidade com profissionais e lideranças executivas, três dias de workshops imersivos e a formulação de 10 personas operacionais. O shadowing em lojas físicas e televendas evidenciou que até 40% do tempo observado em atendimento era consumido na alternância manual entre sistemas legados desconectados para consultar uma única linha.
               </p>
               <ul className="cp-card-list">
                 <li>
@@ -801,7 +801,7 @@ export const claroPresentation: CasePresentationData = {
               </p>
               <ul className="cp-card-list">
                 <li>
-                  <strong>1. Navegação progressiva por etapas:</strong> grupos expansíveis e etapas numeradas orientam o operador em fluxos extensos sem poluição visual.
+                  <strong>1. Navegação progressiva por etapas:</strong> grupos expansíveis com revelação progressiva (progressive disclosure) e etapas numeradas aplicam a heurística de visibilidade do status do sistema (Nielsen) para reduzir carga cognitiva em fluxos extensos.
                 </li>
                 <li>
                   <strong>2. Preservação do contexto do cliente:</strong> cabeçalho fixo com dados da linha, status cadastral e atalhos rápidos apoiam a continuidade da conversa.
@@ -884,7 +884,7 @@ export const claroPresentation: CasePresentationData = {
             <summary>Colaboração e equipe</summary>
             <div>
               <p>
-                Israel Rozar — UX/UI Designer, em estreita colaboração com lideranças
+                Israel Rozar — UX/UI Designer, atuando junto a lideranças
                 de produto, engenharia de sistemas e operadores comerciais de loja
                 e televendas da Claro Brasil.
               </p>
@@ -943,7 +943,7 @@ export const neoenergiaPresentation: CasePresentationData = {
 
     href: "/cases/claro-ativacao-simplificada",
 
-    context: "Telecom · Claro Brasil · 34M de clientes",
+    context: "Telecom · Claro Brasil · 22 jornadas unificadas",
   },
 
   nextCase: {
@@ -965,9 +965,9 @@ export const neoenergiaPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p>
-              Iniciativa de discovery e transformação de serviços para conectar
-              canais de atendimento, processos internos e experiência do
-              consumidor de energia para o Grupo Neoenergia (Iberdrola Brasil),
+              Iniciativa de Product Discovery e Service Design (Human-Centered
+              Design) para conectar 11 canais de atendimento, backoffice e
+              equipes de campo do Grupo Neoenergia (Iberdrola Brasil),
               integrando 4 grandes distribuidoras — <strong>Elektro</strong>{" "}
               (SP/MS), <strong>Coelba</strong> (BA), <strong>Celpe</strong> (PE)
               e <strong>Cosern</strong> (RN).
@@ -1128,7 +1128,7 @@ export const neoenergiaPresentation: CasePresentationData = {
               <span className="cp-split-tag">Design System Multi-Tenant & Governança</span>
               <h3>Padronização de Interfaces para 4 Distribuidoras</h3>
               <p>
-                A estratégia de design unificou a experiência digital sem apagar a identidade regional de cada distribuidora. Em vez de quatro portais desenvolvidos do zero de forma isolada, estruturamos uma biblioteca modular com tokens de marca independentes:
+                Em vez de manter quatro portais independentes, estruturamos um Design System multi-tenant baseado em componentes escaláveis e tokens semânticos por distribuidora, garantindo consistência de arquitetura, contraste acessível (WCAG) e redução do custo de manutenção em código:
               </p>
               <ul className="cp-card-list">
                 <li>
@@ -1163,14 +1163,14 @@ export const neoenergiaPresentation: CasePresentationData = {
       id: "matriz-118",
       tag: "Matriz de 118 Ideias",
       title:
-        "Matriz de 118 ideias priorizadas e baseline para o plano diretor de inovação.",
+        "Matriz de 118 oportunidades priorizadas como baseline para o roadmap de evolução de serviços.",
 
       content: (
         <>
           <div className="cp-split">
             <div className="cp-split-content">
               <span className="cp-split-tag">Priorização & Roadmap Estratégico</span>
-              <h3>118 Ideias Estruturadas por Impacto e Esforço</h3>
+              <h3>118 Oportunidades Estruturadas por Impacto e Esforço</h3>
               <p>
                 As oportunidades mapeadas durante a pesquisa de campo e a auditoria de processos foram organizadas em uma matriz analítica, cruzando o valor percebido pelo consumidor com o esforço operacional de implementação:
               </p>
@@ -1182,7 +1182,7 @@ export const neoenergiaPresentation: CasePresentationData = {
                   <strong>Programas Estruturantes:</strong> unificação do portal de serviços e integração direta dos sistemas de despacho de campo.
                 </li>
                 <li>
-                  <strong>Inovações de Longo Prazo:</strong> telemedição inteligente, canais conversacionais supervisionados e autoatendimento solar.
+                  <strong>Iniciativas Estruturais de Longo Prazo:</strong> telemedição automatizada, canais conversacionais com supervisão humana e autoatendimento para geração solar distribuída.
                 </li>
               </ul>
             </div>
@@ -1192,9 +1192,9 @@ export const neoenergiaPresentation: CasePresentationData = {
                   src: "/images/neoenergia-matriz-118-ideias.webp",
                   width: 2000,
                   height: 1195,
-                  alt: "Matriz de Priorização com 118 Ideias de Inovação",
+                  alt: "Matriz de Priorização com 118 Oportunidades de Serviço (Impacto vs. Esforço)",
                   caption:
-                    "Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
+                    "Matriz de Priorização: 118 oportunidades estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
                 }}
               />
             </div>
@@ -1343,7 +1343,7 @@ const itauNarratives = {
 
   "hub-liquidez": {
     summary:
-      "Reunir posição atual, variação prevista e liquidez projetada em uma visão que ajude o especialista a decidir sobre quais clientes atuar, mantendo a origem e o horizonte dos valores compreensíveis.",
+      "Na plataforma íon for Advisors (IFA), especialistas precisavam cruzar múltiplas abas para conciliar saldo em conta, recursos de Open Finance e liquidez projetada antes de abordar clientes. O objetivo foi estruturar uma visão única capaz de separar disponibilidade imediata de projeção temporal sem perder a rastreabilidade da origem.",
 
     users:
       "Especialistas de investimentos que acompanham recursos disponíveis e oportunidades de atuação em suas carteiras.",
@@ -1600,7 +1600,7 @@ const itauNarratives = {
     ],
 
     learning:
-      "Em ferramentas de assessoria financeira, a inteligência artificial gera valor real quando reduz a burocracia sem transferir a responsabilidade. O especialista permanece no centro da decisão, com a IA atuando como apoio de síntese.",
+      "Em operações financeiras reguladas, a automação de processos por IA reduz o tempo de transcrição apenas quando mantém rastreabilidade auditável: o especialista valida, edita e aprova cada registro antes da persistência bancária (Human-in-the-Loop).",
 
     boundary:
       "Os registros e notas de atendimento apresentados são anonimizados para conformidade com a LGPD e o sigilo bancário, demonstrando a arquitetura de interação assistida validada com os times de negócio.",
@@ -1725,7 +1725,7 @@ export function ItauPresentation() {
         ? {
           title: "Claro · Ativação simplificada",
           href: "/cases/claro-ativacao-simplificada",
-          context: "Telecom · Claro Brasil · 34M de clientes",
+          context: "Telecom · Claro Brasil · 22 jornadas unificadas",
         }
         : target(order[(index + 1) % order.length]),
 

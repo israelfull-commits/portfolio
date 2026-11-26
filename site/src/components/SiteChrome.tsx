@@ -136,7 +136,7 @@ export function SiteFooter() {
   )
 }
 
-function openProtectedEmail() {
+export function openProtectedEmail() {
   const user = ["i", "r", "o", "z", "a", "r"].join("")
   const domain = ["y", "a", "h", "o", "o", ".", "c", "o", "m", ".", "b", "r"].join("")
   window.location.href = `mailto:${user}@${domain}`
@@ -147,8 +147,8 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
     <section className="pf-contact-wrap pf-container" id="contato" aria-labelledby="contact-title">
       <div className="pf-contact pf-home-contact">
         <div>
-          <h2 id="contact-title">Oportunidades em Product Design</h2>
-          <p>Posições seniores e projetos de consultoria.</p>
+          <h2 id="contact-title">Disponível para posições Senior/Staff e consultoria</h2>
+          <p>Product Discovery, Design Systems, acessibilidade (WCAG 2.2) e produtos digitais complexos.</p>
         </div>
         <div className="pf-home-contact-actions">
           <button type="button" className="pf-button pf-button-lime" onClick={openProtectedEmail}>

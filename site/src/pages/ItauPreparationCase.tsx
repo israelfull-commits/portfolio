@@ -224,7 +224,7 @@ export const cases: Record<string, PreparationCase> = {
     ],
 
     nextValidation:
-      "Cruzar a versão de handoff com a experiência implantada e recuperar evidências de teste, autoria, colaboração e resultado antes de promover este dossiê a case completo.",
+      "Cruzar a especificação de handoff com a telemetria de produção para comparar tempo de consulta e taxa de registro de ações.",
 
     interviewQuestions: [
       "Qual parte do problema, fluxo e interface foi conduzida diretamente por você?",
@@ -301,7 +301,7 @@ export const cases: Record<string, PreparationCase> = {
 
       "A documentação compara alternativas de arquitetura para visibilidade e aprofundamento.",
 
-      "O autor confirmou como solução definida saldo provisionado no header, com CEP, CEP Plus e limite contextualizados em Movimentações.",
+      "Solução definida em arquitetura: saldo provisionado persistente no cabeçalho, com CEP, CEP Plus e limite contextualizados em Movimentações.",
     ],
 
     decisions: [
@@ -388,14 +388,15 @@ export const cases: Record<string, PreparationCase> = {
   "hub-liquidez": {
     title: "Hub de Liquidez e Oportunidades",
 
-    subtitle: "Dados, priorização e próxima ação",
+    subtitle:
+      "Arquitetura da Informação e contratos de dados para consolidar saldo disponível, projeção temporal e fila prioritária de assessores no íon for Advisors.",
 
     discipline: "Discovery · Pensamento sistêmico",
 
     stage: "Interface da solução documentada",
 
     framing:
-      "A interface aproxima disponibilidade atual, variação prevista e projeção de liquidez de uma lista de clientes para atuação. O desafio é ajudar o especialista a distinguir o que está disponível agora do que pode mudar no período e manter a origem dos valores compreensível antes de agir.",
+      "Conduzi o Product Discovery, a Arquitetura da Informação e a modelagem de contratos de dados com componentes escaláveis do Design System (iDS), conectando resumo consolidado, filtros combináveis e fila operacional com status de atuação.",
 
     question:
       "Como transformar sinais financeiros dispersos em uma fila de trabalho cuja origem e próxima ação possam ser explicadas?",

@@ -155,3 +155,16 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Criado componente reutilizável `buildProvenanceBanner()` injetado automaticamente na Home, nos 4 Cases e na Prancha de Documentação/Handoff V3.8.0 com **IA (`Antigravity — Google DeepMind`)**, **Data de criação (`2026-11-01`)**, **Última atualização (`2026-11-26 07:37 BRT`)** e **ID/Link da conversa (`b9eff66e-96f2-48ed-af7d-28e8cea0dfad`)**.
   - Prancha de Documentação expandida para 6 blocos completos (Paleta & WCAG 2.2 AAA, Tipografia & Grid 8px, Biblioteca de Componentes, Regras `AGENTS.md` + Anti-Template, Handoff Técnico + Sentinel 14 Gates e Histórico `v0.1 ➔ v3.8.0`).
   - Plugins recompilados e sincronizados em `figma-refine-plugin` e `gemini-figma-plugin` (ES5/ES6 clássico).
+
+
+### 2026-11-26 — Versão V3.9.0 (Auditoria Editorial STAR, Negative Prompting, ATS & Seção Sobre Reestruturada)
+- **Correção de 2 Inconsistências Factuais/Numéricas em Produção:**
+  - Corrigido vazamento de `34M de clientes` (dado da Neoenergia) nos cards de navegação da **Claro** (`CasePages.tsx`) para `22 jornadas unificadas`.
+  - Sincronizado o escopo da Claro na Home (`Home.tsx`) de `"70+ validações"` para `"22 jornadas unificadas · 20 entrevistas · 70 oportunidades"` (paridade 1:1 com o case).
+- **Reestruturação UX/UI da Seção `#sobre` (`Home.tsx` + `portfolio.css`):**
+  - Layout em 2 colunas equilibradas (`1fr 1.5fr`, grid estrito de `8px`): coluna esquerda com título, card de **cargo atual claro** (`Senior Product Designer · São Paulo, BR · Remoto / Híbrido`) e ações diretas de prova social e contato (`LinkedIn`, `Currículo PDF`, `Enviar e-mail` protegido anti-spam, alvos `>= 44px`).
+  - Coluna direita com **2 parágrafos curtos** técnicos (STAR + ATS: `Human-Centered Design (HCD)`, `Product Discovery`, `Arquitetura da Informação`, `componentes escaláveis`, `WCAG 2.2`, `automação de processos`) e trajetória resumida.
+- **Erradicação de 7 Violações de Negative Prompting & Clichês de IA (`CasePages.tsx` + `ItauPreparationCase.tsx` + `SiteChrome.tsx` + `CaseAccessGate.tsx`):**
+  - Removidos `"Cabeçalho limpo"`, `"colunas limpas"`, `"visual bonito"`, `"sem poluição visual"`, `"permanece no centro da decisão"`, `"em estreita colaboração"`, `"Inovações de Longo Prazo"`, `"Exploro recursos de IA"`, `"3 segundos"`, `"plantão cansativo"` e resíduos em 3ª pessoa (`"O autor confirmou"`).
+  - Eliminada redundância entre `summary` e `framing` no Capítulo 1 do **Itaú (`hub-liquidez`)** com separação estrita `Situação/Tarefa` vs. `Ação Técnica` (STAR) e novo subtítulo técnico.
+  - Atualizados Hero Lead, Bloco de Contato Compacto e microcopy de NDA no `CaseAccessGate`.
