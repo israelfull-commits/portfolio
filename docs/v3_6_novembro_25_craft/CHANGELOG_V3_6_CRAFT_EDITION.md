@@ -97,3 +97,10 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Consolidado o framework operacional de 30 pontos (6 seções × 5 pontos) da UX Companion 2026 com scorecard inicial do portfólio em **`28/30`** (*Pronto para vagas Sênior/Staff*) e instituído como regra permanente de revisão.
 - **Biblioteca de Direção de Arte (`D:\mockups-portfolio-studio\`):**
   - Arquivadas **28 referências visuais** (`ref-01` a `ref-28`, incluindo `Rabt`, `AeroLoad`, `Elegostra`, `FinChat`, `Nexus`, `Hornet`, `GridNest`) e geradas **19 variações em 2× Retina (`2400×1350`)** aplicadas sobre as telas reais dos 4 cases, com catálogo interativo (`catalogo-interativo.html`) e documentação (`CATALOGO_REFERENCIAS_E_VARIACOES.md`).
+
+
+### 2026-11-26 (Consolidação da Trilogia Editorial UX Companion 2026)
+- Documentados e indexados no repositório os 3 guias complementares curados:
+  - `UX_AUDIT_FRAMEWORK_2026.md` (auditoria heurística + WCAG 2.2 + contraste em `:hover`/`:focus` + formato Top 3 por regra).
+  - `SENIOR_PORTFOLIO_SIGNALS_2026.md` (os 6 sinais de banca Senior/Lead/Principal e Gap Analysis real do portfólio).
+  - `UX_CASE_STUDY_STRUCTURE_2026.md` (anatomia de 7 seções em `1.000–1.800` palavras, 5 arquétipos de case e checklist pré-envio).

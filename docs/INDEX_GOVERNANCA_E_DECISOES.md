@@ -83,6 +83,9 @@ Localização: `docs/v3_5_novembro_25_canonica/`
 Localização: `docs/v3_6_novembro_25_craft/`
 * `CHANGELOG_V3_6_CRAFT_EDITION.md`: Histórico cronológico completo da V3.6 (Craft Edition, auditoria visual sem duplicatas, proteção por senha padrão `CaseAccessGate` com SHA-256, diagramas Retina `2400×1350`, padronização de Design System/tipografia/splits, QA Sentinel v2 e biblioteca de 19 variações + 28 referências em `D:\mockups-portfolio-studio\`).
 * `UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md`: Framework operacional permanente de 30 pontos (6 seções × 5 pontos, meta mínima `>= 27/30`) baseado no UX Companion 2026, com scorecard atual do portfólio (`28/30`).
+* `UX_AUDIT_FRAMEWORK_2026.md`: Síntese filtrada de UX Audit (Nielsen + WCAG 2.2 + Top 3 por severidade + contraste em `:hover`/`:focus`).
+* `SENIOR_PORTFOLIO_SIGNALS_2026.md`: Os 6 sinais avaliados em bancas de Senior/Lead/Principal (Framing, Influência sem Autoridade, Resultado Honesto, Escopo, Sistemas e Mentoria) com Gap Analysis do portfólio.
+* `UX_CASE_STUDY_STRUCTURE_2026.md`: Anatomia canônica de 7 seções (`1.000–1.800` palavras), 5 arquétipos de case e checklist pré-envio de 10 pontos.
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.
