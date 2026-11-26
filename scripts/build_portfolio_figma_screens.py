@@ -2702,7 +2702,7 @@ async function buildHome(parent, xPos, yPos) {
   heroLeft.appendChild(kickerFrame);
 
   var heroHeadline = await createTextNode(
-    'Design Estruturado para Ecossistemas de Alta Criticidade.',
+    'Design de produtos para saúde, finanças e serviços essenciais.',
     42,
     'bold',
     TOKENS.colors.textPrimary,
@@ -2714,7 +2714,7 @@ async function buildHome(parent, xPos, yPos) {
   heroLeft.appendChild(heroHeadline);
 
   var heroLead = await createTextNode(
-    'Desde 2006 desenhando experiências digitais. Mais de 15 anos focados em discovery, arquitetura da informação e design de produto para ecossistemas regulados em saúde, telecom e fintech.',
+    'Com mais de 15 anos de experiência, estruturo fluxos operacionais e sistemas de interface com Produto e Engenharia. No Itaú Unibanco, conduzi pesquisa e design no íon for Advisors para especialistas de investimentos e assessores.',
     16,
     'regular',
     TOKENS.colors.textSecondary,
@@ -2729,7 +2729,7 @@ async function buildHome(parent, xPos, yPos) {
   try { ctaRow.layoutWrap = 'WRAP'; } catch(e) {}
   
   var btnPrimary = figma.createFrame();
-  btnPrimary.name = 'Btn Conhecer meu trabalho';
+  btnPrimary.name = 'Btn Ver projetos';
   btnPrimary.layoutMode = 'HORIZONTAL';
   btnPrimary.primaryAxisSizingMode = 'AUTO';
   btnPrimary.counterAxisSizingMode = 'AUTO';
@@ -2743,12 +2743,12 @@ async function buildHome(parent, xPos, yPos) {
   btnPrimary.paddingBottom = 14;
   btnPrimary.cornerRadius = TOKENS.radius.pill;
   btnPrimary.fills = solidFill(TOKENS.colors.deepPine);
-  var btnTxt1 = await createTextNode('Conhecer meu trabalho ↓', 14, 'semibold', TOKENS.colors.canvas);
+  var btnTxt1 = await createTextNode('Ver projetos', 14, 'semibold', TOKENS.colors.canvas);
   btnPrimary.appendChild(btnTxt1);
   ctaRow.appendChild(btnPrimary);
 
   var btnSec = figma.createFrame();
-  btnSec.name = 'Btn Baixar Currículo';
+  btnSec.name = 'Btn Currículo (PDF)';
   btnSec.layoutMode = 'HORIZONTAL';
   btnSec.primaryAxisSizingMode = 'AUTO';
   btnSec.counterAxisSizingMode = 'AUTO';
@@ -2764,7 +2764,7 @@ async function buildHome(parent, xPos, yPos) {
   btnSec.fills = solidFill(TOKENS.colors.card);
   btnSec.strokes = [{ type: 'SOLID', color: TOKENS.colors.borderSubtle }];
   btnSec.strokeWeight = 1;
-  var btnTxt2 = await createTextNode('Baixar currículo (PDF) ↗', 14, 'semibold', TOKENS.colors.textPrimary);
+  var btnTxt2 = await createTextNode('Currículo (PDF)', 14, 'semibold', TOKENS.colors.textPrimary);
   btnSec.appendChild(btnTxt2);
   ctaRow.appendChild(btnSec);
 
@@ -2777,8 +2777,8 @@ async function buildHome(parent, xPos, yPos) {
   portraitCard.appendChild(portraitImg);
 
   var metaStrip = createHorizontalRow('Portrait Meta Strip', 368, 0, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
-  var pRole = await createTextNode('Senior Product Designer', 12, 'semibold', TOKENS.colors.textSecondary);
-  var pCorps = await createTextNode('EINSTEIN • ITAÚ • CLARO • NEO', 11, 'bold', TOKENS.colors.textMuted);
+  var pRole = await createTextNode('Israel Rozar', 12, 'semibold', TOKENS.colors.textPrimary);
+  var pCorps = await createTextNode('ITAÚ · EINSTEIN · R/GA · EY', 12, 'semibold', TOKENS.colors.textSecondary);
   metaStrip.appendChild(pRole);
   metaStrip.appendChild(pCorps);
   portraitCard.appendChild(metaStrip);
@@ -2789,10 +2789,10 @@ async function buildHome(parent, xPos, yPos) {
   // 3. Career Metrics Bar (4 Colunas com Alinhamento Uniforme)
   var metricsBar = createHorizontalRow('Career Metrics Bar', 1152, 20, { left: 28, right: 28, top: 20, bottom: 20 }, TOKENS.colors.subtle, TOKENS.colors.borderSubtle, 16, 'SPACE_BETWEEN', 'MIN');
   var cMetrics = [
-    { t: 'Background B2B & Corporativo', d: '15+ anos em design digital, focados em plataformas transacionais e ecossistemas complexos.' },
-    { t: 'Domínios Regulados', d: 'Expertise em mesas de investimento IFA/Itaú, saúde diagnóstica e concessões de energia.' },
-    { t: 'Governança de Design', d: 'Estruturação de Design Systems, tokens semânticos e handoff para ganho de escala em engenharia.' },
-    { t: 'Conformidade Técnica', d: 'Adequação rigorosa aos parâmetros de acessibilidade AA/AAA e automação de revisões.' }
+    { t: 'Atuação B2B e Corporativa', d: 'Mais de 15 anos em produtos digitais, com foco em plataformas transacionais e operações de dados.' },
+    { t: 'Domínios Regulados', d: 'Atuação em plataformas financeiras no Itaú (IFA), laudos clínicos no Einstein, telecom e energia.' },
+    { t: 'Sistemas de Interface', d: 'Estruturação de bibliotecas de componentes, tokens semânticos e handoff com Engenharia.' },
+    { t: 'Acessibilidade e IA', d: 'Critérios WCAG 2.2 AA/AAA desde a concepção e uso prático de IA com revisão humana.' }
   ];
   for (var cm = 0; cm < cMetrics.length; cm++) {
     var cmCol = createVerticalContainer('Metric: ' + cMetrics[cm].t, (1152 - 56 - 60) / 4, 6, null, null, null, null);
@@ -2807,10 +2807,10 @@ async function buildHome(parent, xPos, yPos) {
 
   // 4. Pill Ticker Strip
   var tickerStrip = createHorizontalRow('Pill Ticker Strip', 1152, 0, { left: 24, right: 24, top: 10, bottom: 10 }, TOKENS.colors.card, TOKENS.colors.borderSubtle, TOKENS.radius.pill, 'SPACE_BETWEEN', 'CENTER');
-  var tickerWords = ['ARQUITETURA DE INFORMAÇÃO', '•', 'TELEMETRIA QUANTITATIVA', '•', 'DESIGN TOKENS SEMÂNTICOS', '•', 'ENTREVISTAS EM PROFUNDIDADE', '•', 'CONFORMIDADE WCAG AAA'];
+  var tickerWords = ['ARQUITETURA DA INFORMAÇÃO', '•', 'PESQUISA COM USUÁRIOS', '•', 'TOKENS SEMÂNTICOS', '•', 'ENTREVISTAS EM PROFUNDIDADE', '•', 'WCAG 2.2 AA/AAA'];
   for (var tw = 0; tw < tickerWords.length; tw++) {
     var isBullet = (tickerWords[tw] === '•');
-    var tNode = await createTextNode(tickerWords[tw], isBullet ? 12 : 11, 'bold', isBullet ? TOKENS.colors.acidLime : TOKENS.colors.deepPine);
+    var tNode = await createTextNode(tickerWords[tw], 12, 'bold', isBullet ? TOKENS.colors.acidLime : TOKENS.colors.deepPine);
     tickerStrip.appendChild(tNode);
   }
   container.appendChild(tickerStrip);
