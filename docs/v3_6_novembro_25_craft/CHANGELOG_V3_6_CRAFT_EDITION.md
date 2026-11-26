@@ -151,3 +151,7 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - `.githooks/pre-push` ativado via `git config core.hooksPath .githooks` (bloqueia qualquer `git push` fora do padrão 14/14 PASS).
   - Scripts npm em `site/package.json`: `qa` (estático), `qa:full` (build + 14 gates) e `qa:sync` (build + 14 gates + espelho `portfolio-verde/`).
   - Gate automático no CI/CD (`.github/workflows/deploy.yml`) executando `portfolio_qa_sentinel.py --fast` antes do upload para GitHub Pages.
+- **Sincronização Figma Desktop V3.8.0 + Bloco de Proveniência (`build_portfolio_figma_screens.py`):**
+  - Criado componente reutilizável `buildProvenanceBanner()` injetado automaticamente na Home, nos 4 Cases e na Prancha de Documentação/Handoff V3.8.0 com **IA (`Antigravity — Google DeepMind`)**, **Data de criação (`2026-11-01`)**, **Última atualização (`2026-11-26 07:37 BRT`)** e **ID/Link da conversa (`b9eff66e-96f2-48ed-af7d-28e8cea0dfad`)**.
+  - Prancha de Documentação expandida para 6 blocos completos (Paleta & WCAG 2.2 AAA, Tipografia & Grid 8px, Biblioteca de Componentes, Regras `AGENTS.md` + Anti-Template, Handoff Técnico + Sentinel 14 Gates e Histórico `v0.1 ➔ v3.8.0`).
+  - Plugins recompilados e sincronizados em `figma-refine-plugin` e `gemini-figma-plugin` (ES5/ES6 clássico).

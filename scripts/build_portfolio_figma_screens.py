@@ -2183,6 +2183,8 @@ async function buildGenericCaseScreen(parent, xPos, yPos, caseData) {
   footer.appendChild(copy);
   footer.appendChild(topLink);
   container.appendChild(footer);
+  var provHome = await buildProvenanceBanner(1152);
+  container.appendChild(provHome);
 
   container.primaryAxisSizingMode = 'AUTO';
   container.clipsContent = false;
@@ -3020,6 +3022,8 @@ async function buildHome(parent, xPos, yPos) {
   footer.appendChild(copy);
   footer.appendChild(topLink);
   container.appendChild(footer);
+  var provHome = await buildProvenanceBanner(1152);
+  container.appendChild(provHome);
 
   container.primaryAxisSizingMode = 'AUTO';
   container.clipsContent = false;
@@ -3032,54 +3036,120 @@ async function buildHome(parent, xPos, yPos) {
 
 js_dispatcher = r"""
 // ============================================================================
-// PRANCHA DE DOCUMENTAÇÃO DESIGN SYSTEM V3.6 (TOKENS + WCAG AAA + MOTION + VERSÕES)
+// COMPONENTE DE PROVENIÊNCIA & RASTREABILIDADE (IA + DATAS + CONVERSA ID)
+// ============================================================================
+var PROVENANCE_META = {
+  aiPlatform: 'Antigravity (Google DeepMind)',
+  version: 'v3.8.0 (Produção GitHub Pages)',
+  createdAt: '2026-11-01',
+  updatedAt: '2026-11-26 07:37 BRT',
+  conversationId: 'b9eff66e-96f2-48ed-af7d-28e8cea0dfad',
+  conversationLink: 'conversation://b9eff66e-96f2-48ed-af7d-28e8cea0dfad',
+  liveUrl: 'https://israelfull-commits.github.io/portfolio/',
+  notionHub: 'https://app.notion.com/p/4168db39b34f805884bad8f933e004dd'
+};
+
+async function buildProvenanceBanner(width) {
+  var w = width || 1152;
+  var box = createVerticalContainer(
+    'Proveniência · Antigravity ' + PROVENANCE_META.version,
+    w,
+    8,
+    { top: 16, right: 24, bottom: 16, left: 24 },
+    TOKENS.colors.deepPine,
+    TOKENS.colors.acidLime,
+    12,
+    false
+  );
+  var line1 = await createTextNode(
+    'PROVENIÊNCIA & RASTREABILIDADE  ·  Criado/Atualizado no ' + PROVENANCE_META.aiPlatform + '  ·  ' + PROVENANCE_META.version,
+    11,
+    'bold',
+    TOKENS.colors.acidLime,
+    w - 48,
+    null,
+    16,
+    0.8
+  );
+  var line2 = await createTextNode(
+    'Data de criação: ' + PROVENANCE_META.createdAt +
+    '   |   Última atualização: ' + PROVENANCE_META.updatedAt +
+    '   |   Chat ID: ' + PROVENANCE_META.conversationId +
+    '\nLink da conversa: ' + PROVENANCE_META.conversationLink +
+    '   |   Produção: ' + PROVENANCE_META.liveUrl +
+    '   |   Notion Ops: ' + PROVENANCE_META.notionHub,
+    12,
+    'regular',
+    TOKENS.colors.canvas,
+    w - 48,
+    null,
+    18
+  );
+  box.appendChild(line1);
+  box.appendChild(line2);
+  return box;
+}
+
+// ============================================================================
+// PRANCHA DE DOCUMENTAÇÃO DESIGN SYSTEM, COMPONENTES, REGRAS & HANDOFF V3.8.0
 // ============================================================================
 async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
   await loadFonts();
-  var docFrame = createVerticalContainer('Documentação · Design System & Versões V3.6', 1280, 32, { top: 48, right: 64, bottom: 64, left: 64 }, TOKENS.colors.canvas, TOKENS.colors.border, 0, false);
+  var docFrame = createVerticalContainer('Documentação · Design System, Componentes & Handoff V3.8.0', 1280, 24, { top: 48, right: 64, bottom: 64, left: 64 }, TOKENS.colors.canvas, TOKENS.colors.border, 0, false);
   docFrame.x = xPos;
   docFrame.y = yPos;
 
-  var headerBadge = await createBadge('GOVERNANÇA & DESIGN SYSTEM · V3.6 CRAFT EDITION', TOKENS.colors.deepPine, TOKENS.colors.acidLime, true);
+  var headerBadge = await createBadge('GOVERNANÇA, DESIGN SYSTEM & HANDOFF · V3.8.0', TOKENS.colors.deepPine, TOKENS.colors.acidLime, true);
   docFrame.appendChild(headerBadge);
 
-  var title = await createTextNode('Documentação Canônica: Tokens, WCAG AAA, Microinterações & Histórico de Versões', 36, 'bold', TOKENS.colors.textPrimary, 1152, null, 44, -0.8);
+  var title = await createTextNode('Documentação Canônica V3.8.0: Design System, Componentes, Regras, Handoff & Versões', 36, 'bold', TOKENS.colors.textPrimary, 1152, null, 44, -0.8);
   docFrame.appendChild(title);
 
-  var subtitle = await createTextNode('Fonte única de verdade sincronizada 1:1 com produção (GitHub Pages). Zero termos defensivos, zero IDs internos visíveis ao leitor, 199/199 pares de cor aprovados em WCAG 2.2 AAA.', 16, 'regular', TOKENS.colors.textSecondary, 1152, null, 24);
+  var subtitle = await createTextNode('Fonte única sincronizada 1:1 com o código React/Vite em produção (GitHub Pages), espelho local (portfolio-verde/) e Notion Portfolio Ops. Score 99/100 · UX Companion 30/30 · Sentinel v2 14/14 PASS.', 16, 'regular', TOKENS.colors.textSecondary, 1152, null, 24);
   docFrame.appendChild(subtitle);
+
+  var topProv = await buildProvenanceBanner(1152);
+  docFrame.appendChild(topProv);
 
   var sections = [
     {
-      tag: '01 · PALETA SEMÂNTICA & CONTRASTE WCAG 2.2 AAA',
-      body: '• Canvas (#FCF9F2) + Ink (#111B15): 14.80:1 (Supera AAA 7.0:1)\n• Canvas (#FCF9F2) + Ink Muted (#3B4740): 7.52:1 (Supera AAA 7.0:1)\n• Deep Pine (#0A3622) + Canvas (#FCF9F2): 11.85:1 (Cards escuros .cp-note)\n• Acid Lime (#CEFF1A) + Deep Pine (#0A3622): 11.20:1 (Regra: Lime nunca usa texto branco)\n• Superfície Elevada (#F6F3EC) + Borda (#EDE9DE) + Raio 16px (1rem)'
+      tag: '01 · PALETA SEMÂNTICA UNIFICADA (HOME ↔ CASES) & WCAG 2.2 AAA',
+      body: '• Papel Canônico (--paper #F4F2E9) + Ink (--ink #111B15): contraste > 14:1 (AAA)\n• Superfície Elevada (--paper-deep #E9E6DA) + Borda (--line #D2D4CA) + Ink Muted (#3B4740): > 7.5:1 (AAA)\n• Forest Pine (--forest #173E2D / --forest-deep #10291E) + Texto Claro (#F4F2E9): > 11.5:1 (cards .cp-note)\n• Acid Lime (--lime #D9FF63) + Ink Escuro (#172019): > 11:1 (Regra: Lime nunca usa texto branco)\n• Focus Visible (--focus #174FDA): outline >= 2px (0.2rem) + scroll-padding-top 88px (WCAG 2.2 2.4.11 / 2.4.13)'
     },
     {
-      tag: '02 · TIPOGRAFIA & GRID BASE 8PX',
-      body: '• Família única: Plus Jakarta Sans (400, 600, 700) — Newsreader removida\n• Escala H1: 56px Desktop / 36px Tablet / 34px Mobile | Body: 16px / 24px\n• Simetria de Grid na Home: 3 cards exatamente iguais (415px Desktop / 337px Tablet / 387px Mobile)\n• Overflow Horizontal: 0px validado em 1440px, 768px e 390px'
+      tag: '02 · TIPOGRAFIA MONOTÔNICA & GRID ESTRITO BASE 8PX',
+      body: '• Família única: Plus Jakarta Sans (400, 600, 700) embutida localmente em site/src/assets/fonts/\n• Home (/): H1 56px -> H2 32px -> H3 24px -> Body 16px (100% monotônica, zero colisão H2/H3)\n• Cases: H1 56px -> H2 36px -> H3 19px -> Caption 14px -> Body 16px\n• Grid estrito 8px: .cp-chapter padding-bottom 72px | .cp-split padding 24px / gap 32px | .cp-note 24px 32px | .cp-cards-grid gap 24px\n• Responsividade: 0px overflow horizontal validado em 1440px, 768px e 390px'
     },
     {
-      tag: '03 · MICROINTERAÇÕES & EFEITOS VISUAIS (V3.6 CRAFT EDITION)',
-      body: '• Barra de Progresso de Leitura nos Cases (3px, gradiente Pine -> Lime, passiva via rAF)\n• Header Inteligente: backdrop-filter blur(12px) + sombra suave ao rolar (>12px)\n• Cards Táteis: translateY(-4px) + sombra difusa pine + deslocamento de seta (+3px) + zoom sutil (1.015) no preview do tablet\n• Lightbox 96vw x 94vh: clique direto na imagem alterna zoom 1:1 (zoom-in / zoom-out) + Escape nativo\n• Proteção Vestibular: 100% das transições desativadas sob prefers-reduced-motion: reduce'
+      tag: '03 · BIBLIOTECA DE COMPONENTES CANÔNICOS & ESTADOS',
+      body: '• SiteHeader: barra fixa com blur (.is-scrolled > 12px), <= 6 itens de navegação e contato anti-spam dinâmico\n• CaseAccessGate: proteção híbrida padrão nos cases (Home aberta), validação exclusiva por hash SHA-256 em sessionStorage, autoComplete="current-password" e paste liberado (WCAG 2.2 3.3.8)\n• Master Hero (.cp-hero-visual): 1120x630px edge-to-edge (16:9, aspectDiff = 0.0000, 0px letterboxing) com Combo Campeão 2400x1350 WebP\n• CaseFigure (.cp-figure): estilo único em todo o site (0px padding, fundo transparente, borda arredondada) + Lightbox 96vw x 94vh com zoom 1:1 no clique\n• CasePresentation: suporta id, tag e contagem própria de capítulos por case (eliminação total de template repetido)'
     },
     {
-      tag: '04 · HISTÓRICO VERSIONADO (DOCS/)',
-      body: '• V1 (01–03/Nov): Fundação visual, troca para Plus Jakarta Sans, 22 relatórios em docs/v1_novembro_01_03/\n• V2 (14–15/Nov): Cânone Senior UX 2026, STAR, .cp-split, 13 relatórios em docs/v2_novembro_14_15/\n• V3 (25/Nov): Capa Einstein 2560x1440, WCAG AAA 100%, remoção NDA/GitHub/UXfolio em docs/v3_novembro_25_atual/\n• V3.5 (25/Nov): Home híbrida + Trajetória + Trade-offs/Reflexão nos 4 cases + remoção IDs Figma em docs/v3_5_novembro_25_canonica/\n• V3.6 (25/Nov - VIGENTE): Polimento visual Craft Edition + prancha de documentação Figma em docs/v3_6_novembro_25_craft/'
+      tag: '04 · REGRAS PERMANENTES & BOAS PRÁTICAS (AGENTS.MD SEÇÕES 1–11)',
+      body: '• Anti-Template de Bootcamp: Einstein (6 caps) · Itaú Decision-Led (5 caps, decisões no cap. 2) · Claro Multicanal (5 caps) · Neoenergia Service Design (6 caps)\n• UX Companion 2026 (30/30) + NN/g: Hero 15s, Framing com tensão nomeada, 3 Decisões com trade-offs, Outcomes com atribuição honesta (Contínuas/Discretas/Binárias), Reflection concreta e Disciplina de Escopo\n• Postura Editorial: zero termos defensivos/clichês, dados sintetizados/anonimizados sob LGPD, sigilo médico e bancário\n• Proveniência Obrigatória: toda prancha Figma e doc canônico informa IA (Antigravity), data de criação, última atualização e ID/link da conversa'
+    },
+    {
+      tag: '05 · HANDOFF TÉCNICO, ROTAS SPA & AUTOMAÇÃO QA (14 GATES)',
+      body: '• Stack: React 19 + Vite 6 + TypeScript + React Router 7 | Ativos 100% via assetUrl() para subdiretório /portfolio/\n• Rotas SPA Estáticas: generate_spa_routes.js gera index.html dedicado para todas as 7 rotas + 404.html (HTTP 200 OK direto)\n• Script Único de Validação: scripts/portfolio_qa_sentinel.py (14/14 PASS: 9 estáticos + 5 Chromium runtime incluindo WCAG 2.2 2.4.11/2.4.13/2.5.8/3.3.8 e contraste :hover)\n• Automação em 3 Camadas: Hook .githooks/pre-push (bloqueio local 14/14) + npm run qa / qa:full / qa:sync + CI Gate em .github/workflows/deploy.yml\n• Higiene do Repositório: raiz com 3 arquivos canônicos e scripts/ com 2 motores oficiais (legados arquivados em D:\\arquivo-morto-portfolio\\)'
+    },
+    {
+      tag: '06 · HISTÓRICO COMPLETO DE VERSÕES (V0.1 ➔ V3.8.0)',
+      body: '• v0.1.0 (UXfolio · Score 52): baseline inicial sem controle de a11y ou trade-offs\n• v2.0.0 (Figma Make · Score 67): identidade visual inicial e 1º case estruturado\n• v3.0.0 (Figma Make · Score 73): autoria Itaú, porém excesso de recortes e sem imagens em 3 cases\n• v3.5.0 (GitHub Pages · Score 87): código React próprio, 4 cases âncora, rotas SPA 200 OK e remoção de IDs internos\n• v3.6.0 (Craft Edition · Score 95): deduplicação 100%, CaseAccessGate SHA-256, diagramas Retina, Sentinel v2 e sync Notion Ops\n• v3.7.0 (Design System Parity · Score 98): Combo Campeão 9 artes 2400x1350 edge-to-edge, grid 8px, tipografia Home/Cases, Sentinel 14 gates e higiene do repo\n• v3.8.0 (Anti-Template · Score 99 · VIGENTE): 4 arquiteturas narrativas sob medida, hook pre-push, CI gate e Proveniência Antigravity no Figma'
     }
   ];
 
   for (var s = 0; s < sections.length; s++) {
     var sec = sections[s];
-    var card = createVerticalContainer(sec.tag, 1152, 12, { top: 24, right: 28, bottom: 24, left: 28 }, TOKENS.colors.white, TOKENS.colors.border, 16, true);
-    var sTag = await createTextNode(sec.tag, 12, 'bold', TOKENS.colors.deepPine, 1096, null, 18, 0.8);
-    var sBody = await createTextNode(sec.body, 14, 'regular', TOKENS.colors.textPrimary, 1096, null, 24);
+    var card = createVerticalContainer(sec.tag, 1152, 12, { top: 24, right: 24, bottom: 24, left: 24 }, TOKENS.colors.white, TOKENS.colors.border, 16, true);
+    var sTag = await createTextNode(sec.tag, 12, 'bold', TOKENS.colors.deepPine, 1104, null, 18, 0.8);
+    var sBody = await createTextNode(sec.body, 14, 'regular', TOKENS.colors.textPrimary, 1104, null, 24);
     card.appendChild(sTag);
     card.appendChild(sBody);
     docFrame.appendChild(card);
   }
 
   parent.appendChild(docFrame);
-  log('✔ Prancha de Documentação Design System V3.6 criada com sucesso!');
+  log('✔ Prancha de Documentação, Componentes & Handoff V3.8.0 criada com sucesso!');
   return docFrame;
 }
 
@@ -3201,21 +3271,21 @@ figma.ui.onmessage = async function(msg) {
     }
   }
   else if (msg.type === 'create_ds_docs') {
-    updateStatus('Construindo Prancha de Documentação V3.6 (Tokens + WCAG AAA + Versões)...');
+    updateStatus('Construindo Prancha de Documentação, Componentes & Handoff V3.8.0...');
     try {
       var docNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
       figma.viewport.scrollAndZoomIntoView([docNode]);
-      updateStatus('Concluído: Documentação V3.6 gerada no Figma!');
-      figma.notify('✔ Prancha de Documentação V3.6 gerada!');
+      updateStatus('Concluído: Documentação & Handoff V3.8.0 gerada no Figma!');
+      figma.notify('✔ Prancha de Documentação & Handoff V3.8.0 gerada!');
     } catch (e) {
-      log('Erro ao criar Documentação V3.6: ' + e);
+      log('Erro ao criar Documentação V3.8.0: ' + e);
       updateStatus('Erro na geração.');
     }
   }
   else if (msg.type === 'create_all_screens') {
-    updateStatus('Construindo todas as telas mestres + Documentação V3.6...');
+    updateStatus('Construindo todas as telas mestres + Documentação & Handoff V3.8.0...');
     try {
-      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES + DOCS V3.6) ===');
+      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES + DOCS/HANDOFF V3.8.0) ===');
       var templateNode = await buildGenericCaseScreen(figma.currentPage, -1440, 0, CASE_TEMPLATE);
       var homeNode = await buildHome(figma.currentPage, 0, 0);
       var neoNode = await buildGenericCaseScreen(figma.currentPage, 1440, 0, CASE_NEOENERGIA);
@@ -3225,8 +3295,8 @@ figma.ui.onmessage = async function(msg) {
       var docsNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
       
       figma.viewport.scrollAndZoomIntoView([templateNode, homeNode, neoNode, einNode, itauNode, claroNode, docsNode]);
-      updateStatus('Concluído: Telas Mestres e Documentação V3.6 Criados!');
-      figma.notify('🎉 Todas as telas + Documentação V3.6 foram geradas com sucesso!');
+      updateStatus('Concluído: Telas Mestres e Documentação/Handoff V3.8.0 Criados!');
+      figma.notify('🎉 Todas as telas + Documentação/Handoff V3.8.0 foram geradas com Proveniência Antigravity!');
     } catch (e) {
       log('Erro na geração total: ' + e);
       updateStatus('Erro na geração total.');
@@ -3340,7 +3410,7 @@ ui_html = r"""<!DOCTYPE html>
       <span>4 Capítulos</span>
     </button>
     <button class="btn" onclick="triggerAction('create_ds_docs')">
-      <span>📐 Documentação Design System V3.6 (Tokens + WCAG AAA + Versões)</span>
+      <span>📐 Documentação Design System, Componentes & Handoff V3.8.0</span>
       <span>Prancha Canônica</span>
     </button>
   </div>
