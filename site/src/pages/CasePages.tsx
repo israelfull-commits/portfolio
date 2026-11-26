@@ -202,6 +202,8 @@ export const einsteinPresentation: CasePresentationData = {
 
   chapters: [
     {
+      id: "tese-clinica",
+      tag: "Tese Clínica",
       title: "Organizar resultados sem perder o contexto clínico.",
 
       content: (
@@ -236,6 +238,8 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      id: "tela-e-papel",
+      tag: "Tela & Papel (Antes/Depois)",
       title: "Uma hierarquia que funcione na tela e no papel.",
 
       content: (
@@ -285,6 +289,8 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      id: "taxonomia",
+      tag: "Taxonomia de Dados",
       title: "Do documento ao dado.",
 
       content: (
@@ -344,6 +350,8 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      id: "anatomia",
+      tag: "Anatomia do Componente",
       title: "Preservar relações entre resultado, referência e contexto.",
 
       content: (
@@ -424,6 +432,8 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      id: "escala",
+      tag: "Escala em 80+ Exames",
       title: "Uma estrutura única para qualquer tipo de exame.",
 
       content: (
@@ -474,6 +484,8 @@ export const einsteinPresentation: CasePresentationData = {
     },
 
     {
+      id: "validacao-escopo",
+      tag: "Compreensão, Escopo & NDA",
       title: "Clareza de leitura e diagnóstico clínico: papéis complementares.",
 
       content: (
@@ -521,40 +533,33 @@ export const einsteinPresentation: CasePresentationData = {
               </p>
             </div>
           </div>
+          <div className="cp-appendix">
+            <details open>
+              <summary>Contexto e documentação do projeto</summary>
+              <div>
+                <p>
+                  Projeto desenvolvido em parceria institucional com o Hospital Israelita Albert Einstein. Em conformidade com as diretrizes de confidencialidade (NDA), governança hospitalar e sigilo médico, as especificações integrais de componentes, fluxos proprietários e arquivos de trabalho são de custódia restrita e documentação interna da instituição.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Autoria e time multidisciplinar</summary>
+              <div>
+                <p>
+                  Israel Rozar — UX Lead. Atuação em pesquisa qualitativa e quantitativa, arquitetura da informação, estruturação dos componentes no Design System e alinhamento com equipes médicas e de tecnologia da Foursys e do Einstein.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Ética e conformidade na pesquisa</summary>
+              <div>
+                <p>
+                  A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de informações. A etapa quantitativa com 121 participantes foi combinada com entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia e hematologia), garantindo conformidade com as rotinas hospitalares e as normas sanitárias vigentes.
+                </p>
+              </div>
+            </details>
+          </div>
         </>
-      ),
-    },
-
-    {
-      title: "Pesquisa, entregáveis e colaboração.",
-
-      content: (
-        <div className="cp-appendix">
-          <details open>
-            <summary>Contexto e documentação do projeto</summary>
-            <div>
-              <p>
-                Projeto desenvolvido em parceria institucional com o Hospital Israelita Albert Einstein. Em conformidade com as diretrizes de confidencialidade (NDA), governança hospitalar e sigilo médico, as especificações integrais de componentes, fluxos proprietários e arquivos de trabalho são de custódia restrita e documentação interna da instituição.
-              </p>
-            </div>
-          </details>
-          <details>
-            <summary>Autoria e time multidisciplinar</summary>
-            <div>
-              <p>
-                Israel Rozar — UX Lead. Atuação em pesquisa qualitativa e quantitativa, arquitetura da informação, estruturação dos componentes no Design System e alinhamento com equipes médicas e de tecnologia da Foursys e do Einstein.
-              </p>
-            </div>
-          </details>
-          <details>
-            <summary>Ética e conformidade na pesquisa</summary>
-            <div>
-              <p>
-                A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de informações. A etapa quantitativa com 121 participantes foi combinada com entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia e hematologia), garantindo conformidade com as rotinas hospitalares e as normas sanitárias vigentes.
-              </p>
-            </div>
-          </details>
-        </div>
       ),
     },
   ],
@@ -644,6 +649,8 @@ export const claroPresentation: CasePresentationData = {
 
   chapters: [
     {
+      id: "operacao",
+      tag: "Operação Fragmentada",
       title:
         "Redesenho da operação comercial e redução de atrito na venda multicanal.",
 
@@ -671,19 +678,6 @@ export const claroPresentation: CasePresentationData = {
               ["70", "oportunidades de melhoria levantadas"],
             ]}
           />
-          <p>
-            Essas métricas refletem a profundidade da fase de discovery e imersão operacional em lojas e centrais de televendas, fundamentando as decisões de arquitetura de informação e simplificação das esteiras de venda.
-          </p>
-        </>
-      ),
-    },
-
-    {
-      title:
-        "Uma operação de alta densidade dividida entre balcão físico e mobilidade.",
-
-      content: (
-        <>
           <div className="cp-cards-grid">
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Contexto Operacional</span>
@@ -717,8 +711,10 @@ export const claroPresentation: CasePresentationData = {
     },
 
     {
+      id: "esteira",
+      tag: "22 Jornadas ➔ 5 Etapas",
       title:
-        "Compreender a rotina real dos atendentes antes de desenhar interfaces.",
+        "Decomposição de 22 jornadas de atendimento em uma esteira unificada.",
 
       content: (
         <>
@@ -745,16 +741,6 @@ export const claroPresentation: CasePresentationData = {
               <CaseFigure image={claroImages[0]} />
             </div>
           </div>
-        </>
-      ),
-    },
-
-    {
-      title:
-        "Decomposição de 22 jornadas de atendimento e aprendizados operacionais.",
-
-      content: (
-        <>
           <div className="cp-split">
             <div className="cp-split-content">
               <span className="cp-split-tag">Arquitetura da Informação & Fluxos</span>
@@ -799,6 +785,8 @@ export const claroPresentation: CasePresentationData = {
     },
 
     {
+      id: "contexto-fixo",
+      tag: "Contexto Fixo & Resumo Lateral",
       title:
         "Navegação progressiva, resumo financeiro visível e preservação do contexto do cliente.",
 
@@ -832,6 +820,8 @@ export const claroPresentation: CasePresentationData = {
     },
 
     {
+      id: "multicanal",
+      tag: "Paridade Desktop & Mobile",
       title: "Da jornada do chip às interfaces desktop e mobile padronizadas.",
 
       content: (
@@ -869,6 +859,8 @@ export const claroPresentation: CasePresentationData = {
     },
 
     {
+      id: "escopo-equipe",
+      tag: "Escopo, Reflexão & Equipe",
       title:
         "Governança do projeto, colaboração multidisciplinar e impacto.",
 
@@ -964,6 +956,8 @@ export const neoenergiaPresentation: CasePresentationData = {
 
   chapters: [
     {
+      id: "escala-nacional",
+      tag: "Escala Nacional (34M)",
       title:
         "Unificação da infraestrutura de atendimento para 34 milhões de pessoas.",
 
@@ -995,22 +989,6 @@ export const neoenergiaPresentation: CasePresentationData = {
               ["118 ideias", "priorizadas na matriz de valor"],
             ]}
           />
-          <p>
-            A documentação histórica audita 34 milhões de habitantes e 13,9
-            milhões de clientes nas áreas de concessão em 18 estados. Esses
-            dados contextualizam a escala real do ecossistema sob regulação da
-            ANEEL.
-          </p>
-        </>
-      ),
-    },
-
-    {
-      title:
-        "Cadeia de serviços fragmentada em um ecossistema de infraestrutura crítica.",
-
-      content: (
-        <>
           <div className="cp-split">
             <div className="cp-split-content">
               <span className="cp-split-tag">Ecossistema & Multicanalidade</span>
@@ -1048,6 +1026,8 @@ export const neoenergiaPresentation: CasePresentationData = {
     },
 
     {
+      id: "backstage",
+      tag: "Auditoria de Backstage",
       title:
         "Auditoria de backstage: quando a insatisfação com a fatura revela silos operacionais.",
 
@@ -1086,6 +1066,8 @@ export const neoenergiaPresentation: CasePresentationData = {
     },
 
     {
+      id: "blueprints",
+      tag: "5 Service Blueprints",
       title:
         "Os 5 estágios do ciclo de vida do cliente mapeados em Service Blueprints.",
 
@@ -1134,6 +1116,8 @@ export const neoenergiaPresentation: CasePresentationData = {
     },
 
     {
+      id: "multi-tenant",
+      tag: "Design System Multi-Tenant",
       title:
         "Desburocratização de backoffice antes de redesenho de portal e Design System multi-tenant.",
 
@@ -1176,6 +1160,8 @@ export const neoenergiaPresentation: CasePresentationData = {
     },
 
     {
+      id: "matriz-118",
+      tag: "Matriz de 118 Ideias",
       title:
         "Matriz de 118 ideias priorizadas e baseline para o plano diretor de inovação.",
 
@@ -1240,6 +1226,8 @@ export const neoenergiaPresentation: CasePresentationData = {
     },
 
     {
+      id: "governanca-aneel",
+      tag: "Governança P&D ANEEL",
       title:
         "Fontes oficiais de P&D ANEEL, governança executiva e equipe EY × Livework.",
 
@@ -1743,12 +1731,15 @@ export function ItauPresentation() {
 
     chapters: [
       {
-        title: "O projeto em perspectiva.",
+        id: "gargalo",
+        tag: "Gargalo Operacional",
+        title: project.question,
 
         content: (
           <>
             <div className="cp-summary">
               <p>{story.summary}</p>
+              <p>{project.framing}</p>
             </div>
             <div className="cp-cards-grid">
               <div className="cp-feature-card">
@@ -1762,53 +1753,36 @@ export function ItauPresentation() {
                 <p>{story.contribution}</p>
               </div>
             </div>
-          </>
-        ),
-      },
-
-      {
-        title: "Contexto, problema e objetivo.",
-
-        content: (
-          <>
-            <p>{project.framing}</p>
-            <div className="cp-note">
-              <h3>Pergunta de design</h3>
-              <p>{project.question}</p>
-            </div>
-          </>
-        ),
-      },
-
-      {
-        title: "Descoberta e critérios de decisão.",
-
-        content: (
-          <>
-            <p>{story.research}</p>
-            <h3>O que precisava permanecer compreensível</h3>
+            <h3>Restrições que moldaram a solução</h3>
             <List items={story.constraints} />
           </>
         ),
       },
 
       {
-        title: "Decisões e suas razões.",
+        id: "decisoes",
+        tag: "3 Decisões de Arquitetura",
+        title: `Decisões estruturais em ${project.title}.`,
 
         content: (
-          <ol className="cp-decisions">
-            {story.decisions.map(([title, description]) => (
-              <li key={title}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </li>
-            ))}
-          </ol>
+          <>
+            <p>{story.research}</p>
+            <ol className="cp-decisions">
+              {story.decisions.map(([title, description]) => (
+                <li key={title}>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </li>
+              ))}
+            </ol>
+          </>
         ),
       },
 
       {
-        title: "Como a solução organiza a jornada.",
+        id: "interface",
+        tag: "Fluxo & Interface Canônica",
+        title: `Como o assessor opera ${project.title} ponta a ponta.`,
 
         content: (
           <>
@@ -1831,7 +1805,9 @@ export function ItauPresentation() {
       },
 
       {
-        title: "Entregas e aprendizado.",
+        id: "salvaguardas",
+        tag: "Salvaguardas & Aprendizado",
+        title: "O que fica dentro, o que fica fora e o que evoluir.",
 
         content: (
           <>
@@ -1862,7 +1838,9 @@ export function ItauPresentation() {
       },
 
       {
-        title: "Fontes, colaboração e alcance.",
+        id: "conformidade",
+        tag: "Escopo & Conformidade",
+        title: "Governança, autoria e sigilo bancário (LGPD).",
 
         content: (
           <div className="cp-appendix">

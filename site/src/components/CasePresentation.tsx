@@ -65,6 +65,8 @@ export type CaseCover = {
 };
 
 export type CaseChapter = {
+  id?: string;
+  tag?: string;
   title: string;
   content: ReactNode;
 };
@@ -290,9 +292,17 @@ export function CasePresentation({ data }: { data: CasePresentationData }) {
 
 function CasePresentationContent({ data }: { data: CasePresentationData }) {
   const { pathname } = useLocation()
-  const [activeChapter, setActiveChapter] = useState<string>(caseChapters[0][0])
+  const resolvedChapters = data.chapters.map((chapter, i) => ({
+    ...chapter,
+    resolvedId: chapter.id || caseChapters[i]?.[0] || `capitulo-${i + 1}`,
+    resolvedTag: chapter.tag || caseChapters[i]?.[1] || `Seção ${i + 1}`,
+  }))
+  const [activeChapter, setActiveChapter] = useState<string>(
+    resolvedChapters[0]?.resolvedId || "resumo",
+  )
 
   useEffect(() => {
+    setActiveChapter(resolvedChapters[0]?.resolvedId || "resumo")
     const chapters = document.querySelectorAll<HTMLElement>(".cp-chapter")
 
     if (!chapters.length) return
@@ -312,7 +322,7 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
     chapters.forEach((c) => observer.observe(c))
 
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 
   const [readProgress, setReadProgress] = useState(0)
 
@@ -449,20 +459,20 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
               <span className="cp-sidebar-header">NESTE CASE</span>
               <nav aria-label="Neste case" className="cp-sidebar-nav">
                 <ol>
-                  {caseChapters.map(([id, label], i) => {
-                    const isActive = activeChapter === id
+                  {resolvedChapters.map((chapter, i) => {
+                    const isActive = activeChapter === chapter.resolvedId
 
                     return (
-                      <li key={id}>
+                      <li key={chapter.resolvedId}>
                         <a
-                          href={`#${id}`}
+                          href={`#${chapter.resolvedId}`}
                           className={isActive ? "is-active" : undefined}
                           aria-current={isActive ? "location" : undefined}
                         >
                           <span className="cp-sidebar-num">
                             {String(i + 1).padStart(2, "0")}
                           </span>
-                          <span className="cp-sidebar-text">{label}</span>
+                          <span className="cp-sidebar-text">{chapter.resolvedTag}</span>
                         </a>
                       </li>
                     )
@@ -479,20 +489,20 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
             className="cp-article"
             data-name="Main Case Content Columns"
           >
-            {data.chapters.map((chapter, i) => (
+            {resolvedChapters.map((chapter, i) => (
               <section
                 className="cp-chapter"
-                id={caseChapters[i][0]}
-                key={caseChapters[i][0]}
+                id={chapter.resolvedId}
+                key={chapter.resolvedId}
                 aria-labelledby={`chapter-${i}`}
-                data-name={`Section - ${String(i + 1).padStart(2, "0")} ${caseChapters[i][1].toUpperCase()}`}
+                data-name={`Section - ${String(i + 1).padStart(2, "0")} ${chapter.resolvedTag.toUpperCase()}`}
               >
                 <div className="cp-chapter-badge">
                   <div className="cp-chapter-num-box">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <span className="cp-chapter-tag">
-                    {caseChapters[i][1]}
+                    {chapter.resolvedTag}
                   </span>
                 </div>
                 <h2 id={`chapter-${i}`} className="cp-chapter-title">

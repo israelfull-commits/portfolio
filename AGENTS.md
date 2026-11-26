@@ -98,6 +98,7 @@ Toda evolução, correção, auditoria ou nova versão do portfólio e dos cases
 - **Escala Tipográfica Monotônica:** `h1 > h2 > h3 > body >= 16px` sem inversão nem sobreposição entre Home e Cases.
 - **Grid Estrito de 8px:** paddings, gaps e ritmos verticais de seção devem ser múltiplos exatos de `8px` (`16 / 24 / 32 / 48 / 64 / 80px`), proibindo valores quebrados como `86.4px`, `28px` ou `36px`.
 - **Unicidade de Componentes:** `.cp-figure` deve ter o mesmo tratamento visual em todos os contextos; nunca deixar 1 imagem órfã em grid de 2 colunas; Heroes `16:9` devem renderizar *edge-to-edge* (`aspectDiff = 0.0000`, zero faixas laterais).
+- **Anti-Template de Bootcamp (Narrativas Sob Medida):** todos os cases compartilham o mesmo Design System (tokens, tipografia, grid 8px), mas **nunca** podem repetir os mesmos rótulos de capítulo, a mesma ordem nem a mesma contagem mecânica de seções. Cada case define seus próprios `id` e `tag` em `CaseChapter` conforme a natureza do problema (Sistema Clínico, Decision-Led Fintech, Unificação Multicanal, Service Design).
 
 
 ## 11. Higiene de Repositório & Catálogo de Scripts Canônicos

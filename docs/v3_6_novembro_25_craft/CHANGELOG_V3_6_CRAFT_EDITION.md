@@ -136,3 +136,14 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Escala tipográfica monotônica na Home (`h1 56px ➔ h2 32px ➔ h3 24px ➔ body 16px`), grid estrito de `8px` nos Cases (`.cp-chapter 72px`, `.cp-split 24px / gap 32px`, `.cp-note 24px 32px`), `.cp-figure` único em todo o site, Heroes `1120×630` *edge-to-edge* e remoção da imagem órfã em meia coluna no Itaú.
 - **Sentinel v2 expandido para 14 Gates (`14/14 PASS`):** novos Gates 13 (`WCAG 2.2 2.4.11 Focus Not Obscured` + `3.3.8 Accessible Auth`) e 14 (contraste `:hover` + `2.4.13 :focus-visible`).
 - **Higiene Segura do Repositório:** raiz reduzida para 3 arquivos canônicos (`.gitignore`, `AGENTS.md`, `SENIOR_UX_PORTFOLIO_CANON.md`), `scripts/` reduzido para 2 motores canônicos (`portfolio_qa_sentinel.py` e `build_portfolio_figma_screens.py`), legados preservados em `D:\arquivo-morto-portfolio\`.
+
+
+### 2026-11-26 — Versão V3.8.0 (Anti-Template · 4 Arquiteturas Narrativas Sob Medida · Publicada em Produção)
+- **Eliminação Total de "Sinal de Bootcamp" (`CasePresentation.tsx` + `CasePages.tsx`):**
+  - `CaseChapter` agora aceita `id` e `tag` próprios por case, removendo a obrigatoriedade do template idêntico de 7 capítulos iguais.
+  - **Einstein (`6` caps):** `01 Tese Clínica` · `02 Tela & Papel (Antes/Depois)` · `03 Taxonomia de Dados` · `04 Anatomia do Componente` · `05 Escala em 80+ Exames` · `06 Compreensão, Escopo & NDA`.
+  - **Itaú IFA (`5` caps · Decision-Led):** `01 Gargalo Operacional` · `02 3 Decisões de Arquitetura` (promovidas para o cap. 2) · `03 Fluxo & Interface Canônica` · `04 Salvaguardas & Aprendizado` · `05 Escopo & Conformidade` (títulos específicos por módulo, zero *"O projeto em perspectiva"*).
+  - **Claro (`5` caps · Multicanal):** `01 Operação Fragmentada` · `02 22 Jornadas ➔ 5 Etapas` · `03 Contexto Fixo & Resumo Lateral` · `04 Paridade Desktop & Mobile` · `05 Escopo, Reflexão & Equipe`.
+  - **Neoenergia (`6` caps · Service Design):** `01 Escala Nacional (34M)` · `02 Auditoria de Backstage` · `03 5 Service Blueprints` · `04 Design System Multi-Tenant` · `05 Matriz de 118 Ideias` · `06 Governança P&D ANEEL`.
+- **Governança (`AGENTS.md` Seção 10):** regra permanente Anti-Template de Bootcamp adicionada.
+- **Validação:** build `0` erros (`4.12s`), **14/14 PASS** no Sentinel v2 e inspeção visual em Chromium (`1440×900`) nos 4 índices e capítulos.

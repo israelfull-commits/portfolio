@@ -79,7 +79,7 @@ Localização: `docs/v3_5_novembro_25_canonica/`
 * `CHANGELOG_V3_5_HIBRIDA_CANONICA.md`: Log detalhado das evoluções na Home (escopo nos cards, submódulos Itaú, trajetória visível), micro-blocos de Trade-offs & Reflexão Crítica nos 4 cases e remoção de IDs internos de Figma.
 * `PARECER_COMITE_ESPECIALISTAS_E_TABELA_DE_PARA_V3_5.md`: Tabela De-Para completa e parecer do comitê multiespecialista.
 
-### E. Versão 3.6 ➔ 3.7.0: Craft Edition, Combo Campeão, Design System Parity & Sentinel v2 (14 Gates) — VIGENTE EM PRODUÇÃO (25–26 de Novembro de 2026)
+### E. Versão 3.6 ➔ 3.8.0: Craft Edition, Design System Parity & Anti-Template (4 Arquiteturas Sob Medida) — VIGENTE EM PRODUÇÃO (25–26 de Novembro de 2026)
 Localização: `docs/v3_6_novembro_25_craft/`
 * `CHANGELOG_V3_6_CRAFT_EDITION.md`: Histórico cronológico completo da V3.6 (Craft Edition, auditoria visual sem duplicatas, proteção por senha padrão `CaseAccessGate` com SHA-256, diagramas Retina `2400×1350`, padronização de Design System/tipografia/splits, QA Sentinel v2 e biblioteca de 19 variações + 28 referências em `D:\mockups-portfolio-studio\`).
 * `UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md`: Framework operacional permanente de 30 pontos (6 seções × 5 pontos, meta mínima `>= 27/30`) baseado no UX Companion 2026, com scorecard atual do portfólio (`28/30`).
