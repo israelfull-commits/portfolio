@@ -407,7 +407,7 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
             <div className="cp-meta-col">
               <span className="cp-meta-label">RESULTADO-CHAVE</span>
               <strong className="cp-meta-value cp-meta-value--accent">
-                {data.keyMetric || "Alta criticidade"}
+                {data.keyMetric || "Operação financeira"}
               </strong>
             </div>
           </div>
@@ -511,73 +511,73 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
                 <div className="cp-chapter-content">{chapter.content}</div>
               </section>
             ))}
-
-            <section
-              className="cp-explore-section"
-              data-name="Navegação / Outros projetos"
-            >
-              <div className="cp-explore-header">
-                <h3 className="cp-explore-title">
-                  Continue explorando os projetos
-                </h3>
-                <Link className="cp-explore-all" href="/#trabalho">
-                  Ver todos os projetos ↗
-                </Link>
-              </div>
-
-              {(data.prevCase || data.nextCase) && (
-                <nav
-                  className="cp-case-nav"
-                  aria-label="Navegação entre cases"
-                >
-                  {data.prevCase ? (
-                    <Link
-                      className="cp-case-nav-card cp-case-nav-card--prev"
-                      href={data.prevCase.href}
-                    >
-                      <span className="cp-case-nav-label">
-                        <ArrowIcon direction="left" /> Case anterior
-                      </span>
-                      <strong className="cp-case-nav-title">
-                        {data.prevCase.title}
-                      </strong>
-                      <span className="cp-case-nav-context">
-                        {data.prevCase.context}
-                      </span>
-                    </Link>
-                  ) : (
-                    <div
-                      className="cp-case-nav-placeholder"
-                      aria-hidden="true"
-                    />
-                  )}
-
-                  {data.nextCase ? (
-                    <Link
-                      className="cp-case-nav-card cp-case-nav-card--next"
-                      href={data.nextCase.href}
-                    >
-                      <span className="cp-case-nav-label">
-                        Próximo case <ArrowIcon />
-                      </span>
-                      <strong className="cp-case-nav-title">
-                        {data.nextCase.title}
-                      </strong>
-                      <span className="cp-case-nav-context">
-                        {data.nextCase.context}
-                      </span>
-                    </Link>
-                  ) : (
-                    <div
-                      className="cp-case-nav-placeholder"
-                      aria-hidden="true"
-                    />
-                  )}
-                </nav>
-              )}
-            </section>
           </article>
         </div>
+
+        <section
+          className="cp-explore-section"
+          data-name="Navegação / Outros projetos"
+        >
+          <div className="cp-explore-header">
+            <h3 className="cp-explore-title">
+              Continue explorando os projetos
+            </h3>
+            <Link className="cp-explore-all" href="/#trabalho">
+              Ver todos os projetos ↗
+            </Link>
+          </div>
+
+          {(data.prevCase || data.nextCase) && (
+            <nav
+              className="cp-case-nav"
+              aria-label="Navegação entre cases"
+            >
+              {data.prevCase ? (
+                <Link
+                  className="cp-case-nav-card cp-case-nav-card--prev"
+                  href={data.prevCase.href}
+                >
+                  <span className="cp-case-nav-label">
+                    <ArrowIcon direction="left" /> Case anterior
+                  </span>
+                  <strong className="cp-case-nav-title">
+                    {data.prevCase.title}
+                  </strong>
+                  <span className="cp-case-nav-context">
+                    {data.prevCase.context}
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  className="cp-case-nav-placeholder"
+                  aria-hidden="true"
+                />
+              )}
+
+              {data.nextCase ? (
+                <Link
+                  className="cp-case-nav-card cp-case-nav-card--next"
+                  href={data.nextCase.href}
+                >
+                  <span className="cp-case-nav-label">
+                    Próximo case <ArrowIcon />
+                  </span>
+                  <strong className="cp-case-nav-title">
+                    {data.nextCase.title}
+                  </strong>
+                  <span className="cp-case-nav-context">
+                    {data.nextCase.context}
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  className="cp-case-nav-placeholder"
+                  aria-hidden="true"
+                />
+              )}
+            </nav>
+          )}
+        </section>
       </main>
 
       <ContactSection />

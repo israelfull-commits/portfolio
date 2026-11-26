@@ -20,7 +20,7 @@ flowchart LR
     V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
-    V310["V4.0.0 (26/Nov - VIGENTE)<br>Híbrida Definitiva (Craft V3 + Rigor V3.12)<br>• Timeline Editorial 24px + Card Formação<br>• Contato Full-Craft + Legenda Credenciais<br>• 90 Códigos + 3 Skills + 15/15 Sentinel"]
+    V310["V4.0.1 (26/Nov - VIGENTE)<br>Híbrida Definitiva + Paridade Visual Cases<br>• Home Craft V3 + Rigor V3.12 (ATS/WCAG 2.2)<br>• Cases: Header Opaco, Nav 1152px, Prosa 68ch<br>• 90 Códigos + 3 Skills + 15/15 Sentinel"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310
 ```
 

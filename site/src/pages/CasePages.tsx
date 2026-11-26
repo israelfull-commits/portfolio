@@ -185,7 +185,7 @@ export const einsteinPresentation: CasePresentationData = {
   hero: einsteinHero,
 
   nextCase: {
-    title: "Itaú Corretora · Hub de Liquidez",
+    title: "Itaú Unibanco · Hub de Liquidez",
 
     href: "/cases/itau/hub-liquidez",
 
@@ -193,11 +193,11 @@ export const einsteinPresentation: CasePresentationData = {
   },
 
   prevCase: {
-    title: "Neoenergia · Service design",
+    title: "Neoenergia · Service Design",
 
     href: "/cases/neoenergia-conexao-digital",
 
-    context: "Utilities · P&D ANEEL · 34M de pessoas",
+    context: "Energia · P&D ANEEL · 34M de pessoas",
   },
 
   chapters: [
@@ -632,15 +632,15 @@ export const claroPresentation: CasePresentationData = {
   hero: claroHero,
 
   nextCase: {
-    title: "Neoenergia · Service design",
+    title: "Neoenergia · Service Design",
 
     href: "/cases/neoenergia-conexao-digital",
 
-    context: "Utilities · P&D ANEEL · 34M de pessoas",
+    context: "Energia · P&D ANEEL · 34M de pessoas",
   },
 
   prevCase: {
-    title: "Itaú Corretora · Hub de Liquidez",
+    title: "Itaú Unibanco · Hub de Liquidez",
 
     href: "/cases/itau/hub-liquidez",
 

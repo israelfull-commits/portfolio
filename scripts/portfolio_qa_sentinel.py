@@ -582,6 +582,7 @@ def sync_portfolio_verde():
         return
     files_to_sync = [
         (ROOT / "site" / "index.html", PORTFOLIO_VERDE / "index.html"),
+        (SITE_SRC / "index.css", PORTFOLIO_VERDE / "src" / "index.css"),
         (SITE_SRC / "portfolio.css", PORTFOLIO_VERDE / "src" / "portfolio.css"),
         (SITE_SRC / "pages" / "CasePages.tsx", PORTFOLIO_VERDE / "src" / "pages" / "CasePages.tsx"),
         (SITE_SRC / "pages" / "ItauPreparationCase.tsx", PORTFOLIO_VERDE / "src" / "pages" / "ItauPreparationCase.tsx"),
