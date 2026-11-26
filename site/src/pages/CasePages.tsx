@@ -1677,7 +1677,7 @@ export function ItauPresentation() {
 
     scope: story.scope,
 
-    keyMetric: itauKeyMetrics[caseSlug] || "Alta criticidade",
+    keyMetric: itauKeyMetrics[caseSlug] || "Operação financeira",
 
     kicker: "Fintech · Itaú Unibanco",
 

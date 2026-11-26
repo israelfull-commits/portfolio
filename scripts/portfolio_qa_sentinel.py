@@ -533,7 +533,7 @@ def run_runtime_suite():
 
 
 def check_editorial_negative_prompting_and_ux_checklist():
-    """Gate 15: Negative Prompting estrito, Plain Language na Home e UX Companion 35-Point Hygiene."""
+    """Gate 15: Códigos TX-02/TX-03/TX-04 (Negative Prompting), Plain Language Home e TH-03/TH-05/TH-06."""
     errors = []
     banned_terms = [
         "interface amigável", "experiência fluida", "mergulhar no problema",
@@ -543,28 +543,36 @@ def check_editorial_negative_prompting_and_ux_checklist():
         "inovações", "divisor de águas", "encantar o usuário", "experiência mágica",
         "double diamond", "mapa de empatia", "reimaginar", "transformar",
         "transformação", "ajudo empresas a", "estreita colaboração", "o autor confirmou",
+        "desafiador", "rigorosa", "alta criticidade", "expertise",
+        "telemetria quantitativa", "fui responsável por",
     ]
     for f in (SITE_SRC / "pages").glob("*.tsx"):
         text = f.read_text(encoding="utf-8", errors="ignore")
         low = text.lower()
         for term in banned_terms:
             if term in low:
-                errors.append(f"Negative Prompting violado em {f.name}: termo proibido '{term}'.")
-    # Plain Language na Home (sem empilhamento de jargões de UX em inglês na 1ª dobra)
+                errors.append(f"[TX-03/TX-04] Termo proibido '{term}' em {f.name}.")
+    # Plain Language na Home (HP-02 sem empilhamento de jargões de UX em inglês na 1ª dobra)
     home_file = SITE_SRC / "pages" / "Home.tsx"
     if home_file.exists():
         home_low = home_file.read_text(encoding="utf-8", errors="ignore").lower()
         for jargon in ["product discovery", "design systems", "human-centered design", "hcd"]:
             if jargon in home_low:
-                errors.append(f"Plain Language violado em Home.tsx: jargão '{jargon}' deve ficar restrito aos cases.")
-    # Higiene técnica UX Companion t-5 (Open Graph & canonical apontando para produção real)
+                errors.append(f"[HP-02/TX-04] Plain Language violado em Home.tsx: jargão '{jargon}' deve ficar restrito aos cases.")
+    # Higiene técnica TH-05 (Open Graph & canonical apontando para produção real)
     idx_file = ROOT / "site" / "index.html"
     if idx_file.exists():
         idx = idx_file.read_text(encoding="utf-8", errors="ignore")
         if "chatgpt.site" in idx or "figma.site" in idx:
-            errors.append("UX Companion t-5: site/index.html ainda contém URL antiga (chatgpt.site/figma.site).")
+            errors.append("[TH-05] site/index.html ainda contém URL antiga (chatgpt.site/figma.site).")
         if 'og:image" content="https://israelfull-commits.github.io/portfolio/' not in idx:
-            errors.append("UX Companion t-5: og:image em site/index.html deve apontar para a URL real de produção.")
+            errors.append("[TH-05] og:image em site/index.html deve apontar para a URL real de produção.")
+    # Higiene técnica TH-03/TH-06 (nenhum caminho duplicado /portfolio/portfolio/ no bundle)
+    if (SITE_DIST / "assets").exists():
+        for jsf in (SITE_DIST / "assets").glob("*.js"):
+            js_txt = jsf.read_text(encoding="utf-8", errors="ignore")
+            if "/portfolio/portfolio/" in js_txt:
+                errors.append(f"[TH-03/TH-06] Caminho duplicado '/portfolio/portfolio/' encontrado em {jsf.name}.")
     return errors
 
 

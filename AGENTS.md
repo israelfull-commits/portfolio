@@ -119,3 +119,14 @@ Toda evolução, correção, auditoria ou nova versão do portfólio e dos cases
 - **Zero Duplicidade Documental:** documentos históricos vivem exclusivamente em `docs/v1_*`, `docs/v2_*`, `docs/v3_*`, `docs/v3_5_*` e `docs/v3_6_*` — nunca duplicados na raiz.
 - **Proveniência & Rastreabilidade Obrigatória (Figma + Docs):** toda prancha gerada no Figma (Home, Cases, Design System e Handoff via `use_figma` ou `scripts/build_portfolio_figma_screens.py`) e toda documentação canônica devem incluir explicitamente o bloco de Proveniência contendo: **IA/Plataforma** (`Antigravity — Google DeepMind`), **Data de criação**, **Última atualização** e **ID/Link da conversa** (`conversation://<conversation-id>`).
 - **Regras Anti-Regressão do Figma (`REGRAS_PERMANENTES_DESIGN_FIGMA_2026.md`):** sempre zerar `fills = []` em containers estruturais após `figma.createAutoLayout()` (zero fundos brancos fantasma), chamar `resize()` antes de `primaryAxisSizingMode = 'AUTO'`, equalizar alturas de cards irmãos em grids horizontais, reutilizar componentes nativos (`SiteHeader`, `Provenance Banner`) e validar visualmente via `get_screenshot` antes de concluir.
+
+
+## 12. Governança por Códigos Congelados, 3 Skills & Banca Calibrada (Guia Consolidado 2026)
+- **Fonte Única de Códigos:** [GUIA_CONSOLIDADO_REGRAS_E_CODIGOS_2026.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/docs/GUIA_CONSOLIDADO_REGRAS_E_CODIGOS_2026.md) (90 códigos oficiais: `HP-01..07`, `CS-01..15`, `TX-01..09`, `IA-01..04`, `AP-01..07`, `MB-01..06`, `TH-01..08`, `A-01..28`, `FG-01..06`).
+- **Ordem de Prioridade (quando regras competem):** `1. Pedido explícito de Israel (dados reais, sem linguagem publicitária)` ➔ `2. W3C WCAG 2.2 AA (A-)` ➔ `3. Estrutura do case (CS-) & Tom/IA (TX-/IA-)` ➔ `4. Home, Mobile, Apresentação, Técnica e Figma (HP-/MB-/AP-/TH-/FG-)` ➔ `5. Sugestões sem código`.
+- **Regra Anti-Divergência:** Toda auditoria só aponta falha citando um código congelado. Sugestões sem código ficam em seção separada e nunca reprovam nada. Critério de prontidão sênior: `0` falhas em `HP`, `CS`, `TX`, `IA` e `A`; até `2` falhas em `AP`/`MB`/`TH` com prazo (exceção ADR: `TH-01`).
+- **3 Skills Ativas (`.agents/skills/`):**
+  1. `portfolio-writing` (`TX-01..09`, `IA-01..04`, `CS-01..15`, SCQA + STAR, micro-template de decisão).
+  2. `portfolio-design-qa` (`AP-01..07`, `MB-01..06`, `TH-01..08`, `A-01..28`, `FG-01..06`, Sentinel v2).
+  3. `portfolio-banca` (revisão calibrada por 7 papéis com rubrica ponderada `/10` e âncoras `10` vs. `2`).
+- **Regra Factual Absoluta (`TX-09` / `IA-02`):** Nunca estimar ou inventar dados, métricas, status de lançamento ou aprovações; lacunas factuais viram perguntas diretas para Israel confirmar.
