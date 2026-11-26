@@ -39,7 +39,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Estudo de caso estruturado · IA generativa e supervisão humana",
 
     framing:
-      "Conduzi o desenho de interação e governança de IA no fluxo de especialistas e assessores, aproximando os 5 resumos recentes no painel lateral e exigindo revisão e confirmação humana obrigatória antes da gravação no prontuário bancário.",
+      "Conduzi o desenho de interação e a governança de IA no fluxo de especialistas e assessores. Aproximei os 5 resumos recentes no painel lateral e exigi revisão e confirmação humana obrigatória antes da gravação no prontuário bancário.",
 
     question:
       "Como reduzir o esforço de registro e facilitar a recuperação de contexto, mantendo fidelidade ao atendimento e controle humano sobre o conteúdo?",
@@ -116,19 +116,19 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/v07-itau-jornada-studio-frame.webp",
         width: 2400,
         height: 1350,
-        alt: "Fluxo comparativo da jornada de especialistas e assessores no IFA em moldura de estúdio: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
+        alt: "Diagrama ilustrativo comparando a jornada de especialistas e assessores no IFA: fluxo anterior em abas separadas versus fluxo integrado com os 5 últimos resumos, minuta assistida por IA e aprovação humana obrigatória.",
         label: "Fluxo da Jornada · Antes vs. Esteira Integrada com IA",
         caption:
-          "Jornada ponta a ponta de especialistas e assessores: eliminação da busca manual em abas com aproximação dos 5 últimos eventos, minuta preliminar assistida por IA e aprovação humana obrigatória (Human-in-the-Loop).",
+          "Diagrama de fluxo (ilustrativo, sem captura real por sigilo bancário): aproximei os 5 últimos resumos e a minuta preliminar do mesmo fluxo para evitar perda de contexto entre atendimentos, mantendo a aprovação humana obrigatória (Human-in-the-Loop) antes de gravar a nota.",
       },
       {
         src: "/images/itau-registros-workflow-1600.webp",
         width: 1600,
         height: 900,
-        alt: "Fluxo de arquitetura de serviço e governança de IA para Registros de Atendimento",
+        alt: "Diagrama ilustrativo dos pilares de governança de IA em Registros de Atendimento: recuperação dos 5 últimos resumos, geração de ata preliminar editável e validação humana obrigatória antes da persistência bancária.",
         label: "Arquitetura e Governança · Pilares de Conformidade",
         caption:
-          "Modelo operacional para registros de atendimento: recuperação de contexto recente, geração de ata preliminar assistida por IA e salvaguarda obrigatória de supervisão humana antes da persistência bancária.",
+          "Diagrama de arquitetura e governança (ilustrativo): a etapa de revisão humana precede a persistência bancária para mitigar omissões e preservar a fidelidade técnica dos registros de carteira.",
       },
     ],
   },
@@ -143,10 +143,10 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Exploração, estados e handoff documentados",
 
     framing:
-      "Conduzi a Arquitetura da Informação e a especificação de filtros combináveis, estados vazios e tabela densa no Design System (iDS), unificando Vencimentos, Eventos futuros e Open Finance em uma única lógica de consulta e atuação.",
+      "Conduzi a arquitetura da informação e a especificação de filtros combináveis, estados vazios e tabela densa no Design System (iDS). A estrutura unifica Vencimentos, Eventos futuros e Open Finance sob uma mesma lógica de consulta e atuação.",
 
     question:
-      "Como ajudar especialistas a localizar eventos financeiros relevantes, distinguir urgência e registrar atuação sem perder o contexto do cliente?",
+      "Como permitir que especialistas localizem eventos financeiros relevantes, distingam urgência e registrem atuação sem perder o contexto do cliente?",
 
     verified: [
       "A versão canônica organiza Vencimentos, Eventos futuros e Open Finance na mesma experiência unificada.",
@@ -241,10 +241,10 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/itau-vencimentos-capa-1600.webp",
         width: 1600,
         height: 900,
-        alt: "Interface canônica de Gestão de Vencimentos em alta resolução 16:9",
+        alt: "Interface canônica de Gestão de Vencimentos no IFA com abas de Vencimentos, Eventos futuros e Open Finance, filtros combináveis de prazo, status e valor, e tabela operacional de clientes.",
         label: "Interface canônica · Próximos Vencimentos",
         caption:
-          "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação de especialistas e assessores.",
+          "Abas separam Vencimentos, Eventos futuros e Open Finance mantendo a mesma estrutura de busca, filtros e tabela para que especialistas e assessores atuem sem reaprender a navegação.",
       },
 
       {
@@ -259,7 +259,7 @@ export const cases: Record<string, PreparationCase> = {
         label: "Exploração de fluxo · Eventos futuros",
 
         caption:
-          "Registro histórico da evolução do fluxo de eventos futuros, contextualizando a transição para a interface consolidada de Gestão de Liquidez.",
+          "A exploração de Eventos futuros motivou o reaproveitamento da mesma tabela e dos mesmos filtros de Vencimentos, evitando telas isoladas para eventos relacionados à liquidez.",
       },
 
       {
@@ -274,7 +274,7 @@ export const cases: Record<string, PreparationCase> = {
         label: "Especificação de estados · Estado vazio",
 
         caption:
-          "Especificação de estado vazio (empty state) com diretrizes claras de recuperação de busca, feedback e orientação para o especialista de investimentos.",
+          "O estado vazio foi especificado com orientação de recuperação de busca para evitar que um filtro sem retorno ou demora de carga pareçam falha silenciosa ao especialista.",
       },
     ],
   },
@@ -289,7 +289,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Discovery e prototipagem",
 
     framing:
-      "Conduzi o Product Discovery e a comparação de alternativas de arquitetura entre cabeçalho persistente e consulta detalhada, preservando o saldo provisionado transversalmente entre jornadas e contextualizando CEP, CEP Plus e limites em Movimentações.",
+      "Conduzi o Product Discovery e comparei alternativas de arquitetura entre cabeçalho persistente e consulta detalhada. A solução mantém o saldo provisionado visível entre jornadas e contextualiza CEP, CEP Plus e limite em Movimentações.",
 
     question:
       "Como manter o saldo provisionado disponível entre jornadas e permitir o aprofundamento das movimentações sem exigir troca de aba para consultar esse saldo?",
@@ -377,10 +377,10 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/itau-movimentacoes-telas-1800.webp",
         width: 1800,
         height: 333,
-        alt: "Três telas da proposta de Movimentações no IFA: header com liquidez e limites, histórico priorizado e detalhe contextual",
+        alt: "Três telas da proposta de Movimentações no IFA: cabeçalho persistente com saldo provisionado, módulo de Movimentações com limites de crédito e histórico filtrável, e painel de detalhamento da operação.",
         label: "Arquitetura de Interface · Fluxo em 3 telas",
         caption:
-          "Proposta em três camadas: header fixo com saldo provisionado e limites, tabela de histórico priorizado e painel de detalhamento com rastreabilidade.",
+          "Separei o saldo provisionado no cabeçalho fixo — para consulta entre jornadas sem troca de aba — mantendo limites de crédito (CEP, CEP Plus e limite), histórico e detalhamento contextualizados em Movimentações.",
       },
     ],
   },
@@ -396,7 +396,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Interface da solução documentada",
 
     framing:
-      "Conduzi o Product Discovery, a Arquitetura da Informação e a modelagem de contratos de dados com componentes escaláveis do Design System (iDS), conectando resumo consolidado, filtros combináveis e fila operacional com status de atuação.",
+      "Conduzi o Product Discovery, a arquitetura da informação e a modelagem de contratos de dados com componentes do Design System (iDS). A estrutura conecta resumo consolidado, filtros combináveis e fila operacional com status de atuação.",
 
     question:
       "Como organizar sinais financeiros dispersos em uma fila de trabalho cuja origem e próxima ação possam ser explicadas?",
@@ -493,7 +493,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Visão modular do ecossistema íon for Advisors (IFA): Hub de Liquidez, Próximos Vencimentos e filtros operacionais para especialistas de investimentos e assessores",
         label: "Ecossistema IFA · Hub de Liquidez e Oportunidades",
         caption:
-          "Arquitetura modular de liquidez no íon for Advisors: consolidação de saldo disponível, projeção temporal e fila prioritária de clientes com filtros combináveis.",
+          "Separei saldo disponível agora, variação prevista e liquidez projetada acima da fila de clientes para impedir que valores futuros sejam lidos como disponibilidade imediata antes da abordagem.",
       },
       {
         src: "/images/itau-hub-liquidez-solucao.webp",
@@ -502,7 +502,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Interface detalhada do Hub de Liquidez e Oportunidades com posição atual, projeção e clientes priorizados.",
         label: "Interface detalhada · Hub de Liquidez e Oportunidades",
         caption:
-          "A visão conecta liquidez disponível e projetada à fila prioritária de clientes, mantendo origem, janela temporal, filtros e status da atuação visíveis.",
+          "Origem (Itaú e Open Finance), janela temporal (fim do dia, 7 e 30 dias) e status de atuação ficam visíveis na mesma tela para que o especialista e o assessor filtrem e justifiquem a próxima ação sem cruzar abas.",
       },
     ],
   },
@@ -517,7 +517,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Fluxos documentados",
 
     framing:
-      "Conduzi a modelagem dos screenflows de criação, importação de base e manutenção em lote, especificando estados de carregamento, vazio, processamento e erro para conectar administradores de backoffice, especialistas e gestores.",
+      "Conduzi a modelagem dos fluxos de tela (screenflows) de criação, importação de base e manutenção em lote. Especifiquei estados de carregamento, vazio, processamento e erro para alinhar administradores de backoffice, especialistas e gestores.",
 
     question:
       "Como conectar configuração, processamento e manutenção sem ocultar estado, erro ou consequência das ações administrativas?",
@@ -608,7 +608,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Exploração de configuração de campanha com informações gerais, público e campos personalizados",
         label: "Arquitetura de Interface · Configuração de campanha",
         caption:
-          "Parametrização modular: informações gerais, segmentação de público e campos personalizados com dados sintetizados para conformidade com o sigilo bancário.",
+          "Separei informações gerais, segmentação de público e campos personalizados antes da ativação para evitar publicação de campanhas com base incompleta (dados sintetizados para sigilo bancário).",
       },
     ],
   },

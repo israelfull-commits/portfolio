@@ -9,6 +9,7 @@ const routes = [
   "cases/itau/vencimentos",
   "cases/itau/movimentacoes",
   "cases/itau/campanhas",
+  "cases/itau/registros-atendimento",
 ]
 
 const distDir = path.resolve("dist")

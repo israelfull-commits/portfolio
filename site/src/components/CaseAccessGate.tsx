@@ -137,7 +137,7 @@ export function CaseAccessGate({
         }
         setUnlocked(true)
       } else {
-        setError("Senha incorreta. Verifique o código informado ou solicite acesso por e-mail.")
+        setError("Senha incorreta. Verifique a senha informada ou solicite acesso por e-mail.")
       }
     } finally {
       setSubmitting(false)
@@ -146,8 +146,9 @@ export function CaseAccessGate({
 
   return (
     <div className="pf-page">
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <SiteHeader casePage />
-      <main className="cp-gate-main" id="conteudo">
+      <main className="cp-gate-main" id="conteudo" tabIndex={-1}>
         <section className="cp-gate-card" aria-labelledby="gate-title">
           <div className="cp-gate-badge">
             <span className="cp-gate-lock" aria-hidden="true">
@@ -164,7 +165,7 @@ export function CaseAccessGate({
           </h1>
 
           <p className="cp-gate-lead">
-            Este estudo de caso reúne decisões de arquitetura, fluxos e artefatos de projetos sob confidencialidade (NDA) em domínios regulados. Digite a senha fornecida para liberar a leitura de todos os cases nesta sessão.
+            Este estudo de caso reúne decisões de design, fluxos e entregas de projetos sob confidencialidade (NDA). Digite a senha fornecida para liberar a leitura de todos os estudos de caso nesta sessão.
           </p>
 
           <form className="cp-gate-form" onSubmit={handleSubmit} noValidate>
@@ -193,7 +194,7 @@ export function CaseAccessGate({
                 onClick={() => setShowPassword((prev) => !prev)}
                 aria-pressed={showPassword}
               >
-                {showPassword ? "Ocultar" : "Mostrar"}
+                {showPassword ? "Ocultar" : "Mostrar"}<span className="pf-sr-only"> senha</span>
               </button>
             </div>
 
@@ -221,7 +222,7 @@ export function CaseAccessGate({
               <MailIcon /> Solicitar senha por e-mail
             </button>
             <Link className="cp-gate-back" href="/#trabalho">
-              ← Voltar para a visão geral
+              ← Voltar aos projetos
             </Link>
           </div>
         </section>

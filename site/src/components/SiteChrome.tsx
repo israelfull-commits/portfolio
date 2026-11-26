@@ -75,7 +75,7 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
           href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
           download="Israel-Rozar-Curriculo.pdf"
         >
-          Currículo
+          Currículo<span className="pf-sr-only"> (PDF)</span>
         </Link>
         <Link className="header-cta" href={homeSection("contato")}>
           Entrar em contato <ArrowIcon />
@@ -114,10 +114,10 @@ export function SiteHeader({ casePage = false }: { casePage?: boolean }) {
             download="Israel-Rozar-Curriculo.pdf"
             onClick={closeMenu}
           >
-            Currículo
+            Currículo<span className="pf-sr-only"> (PDF)</span>
           </Link>
           <Link href={homeSection("contato")} onClick={closeMenu}>
-            Contato
+            Entrar em contato
           </Link>
         </nav>
       </div>
@@ -201,7 +201,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn
+              LinkedIn<span className="pf-sr-only"> (abre em nova aba)</span>
             </a>
           </div>
         </div>

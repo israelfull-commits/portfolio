@@ -14,12 +14,12 @@ export default function NotFound() {
         Pular para o conteúdo
       </Link>
       <SiteHeader casePage />
-      <main className="not-found" id="conteudo">
+      <main className="not-found" id="conteudo" tabIndex={-1}>
         <span id="topo" aria-hidden="true" />
         <Text as="span">Erro 404</Text>
         <Text as="h1">Esta página não existe.</Text>
         <Text>
-          O conteúdo pode ter mudado de endereço ou ainda estar em preparação.
+          O endereço pode ter mudado ou o link acessado não está mais disponível.
         </Text>
         <Link className="button button--primary" href="/">
           Voltar ao portfólio

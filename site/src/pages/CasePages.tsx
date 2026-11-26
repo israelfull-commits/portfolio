@@ -118,7 +118,10 @@ function Sources({ project }: { project: string }) {
     <ul className="cp-list">
       {(sourceLinks[project] || []).map(([label, href]) => (
         <li key={href}>
-          <a href={href}>{label}</a>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {label}
+            <span className="pf-sr-only"> (abre em nova aba)</span>
+          </a>
         </li>
       ))}
     </ul>
@@ -131,7 +134,7 @@ const einsteinHero: CaseImage = {
   height: 1350,
   alt: "Visão modular do sistema de laudos do Hospital Israelita Albert Einstein: arquitetura multicanal, componente canônico de Protrombina e tokens clínicos",
   caption:
-    "Sistema modular de laudos em produção: arquitetura multicanal, componente canônico de resultado + referência e tokens tipográficos aplicados em mais de 80 tipos de exames.",
+    "Proposta modular de laudos (v3) estruturada para preservar a mesma ordem de leitura em papel A4, web e mobile, sem depender de cor isolada — desenhada a partir de mais de 80 exames analisados.",
 }
 
 const einsteinImages: CaseImage[] = [
@@ -170,15 +173,16 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Uma linguagem visual modular para laudos heterogêneos.",
 
   subtitle:
-    "Liderança de UX em pesquisa, Arquitetura da Informação e componentes escaláveis para estruturar mais de 80 tipos de laudos clínicos em tela e impressão monocromática, preservando o contexto diagnóstico.",
+    "Como UX Lead no projeto Consumo de Resultados (HIAE × Foursys), conduzi pesquisa, arquitetura da informação e componentização para mais de 80 tipos de laudos em tela e papel P&B. Nos testes com protótipo, 81,6% reconheceram o documento e 77,8% focaram primeiro em exame, resultado e referência.",
 
   role: "UX Lead",
 
-  team: "Foursys × Hospital Israelita Albert Einstein",
+  team: "Design (Foursys) × Corpo clínico e Engenharia (Einstein)",
 
-  scope: "Pesquisa, modelagem da informação e prototipagem",
+  scope: "Pesquisa, arquitetura da informação e prototipagem",
 
-  keyMetric: "14 entregáveis documentados",
+  keyMetricLabel: "VALIDAÇÃO E ESCOPO",
+  keyMetric: "81,6% reconhecimento · 14 entregáveis",
 
   kicker: "Saúde · UX Lead",
 
@@ -210,7 +214,7 @@ export const einsteinPresentation: CasePresentationData = {
         <>
           <div className="cp-lead-editorial">
             <p className="cp-lead-text">
-              Laudos de diferentes laboratórios e hospitais parceiros reuniam informações críticas em estruturas variáveis. O projeto desenhou uma linguagem modular previsível para mais de 80 tipos de exames, permitindo que médicos cruzem resultados, métodos e referências com agilidade, e que pacientes localizem seus dados com facilidade para levar à conversa médica.
+              Laboratórios e hospitais parceiros emitiam exames em layouts distintos, dificultando a leitura clínica e a padronização dos sistemas laudadores. A tensão central era tornar o laudo fácil de localizar para o paciente sem induzir autodiagnóstico fora da consulta. Conduzi a definição de uma linguagem modular para mais de 80 tipos de exames, mantendo resultado, método e referência sempre na mesma ordem de leitura.
             </p>
             <div className="cp-tradeoff-box">
               <span className="cp-tradeoff-eyebrow">
@@ -231,7 +235,7 @@ export const einsteinPresentation: CasePresentationData = {
             ]}
           />
           <p className="cp-metrics-footnote">
-            A pesquisa quantitativa com 121 pacientes mapeou hábitos de leitura e compreensão de termos médicos, triangulada com entrevistas em profundidade com médicos especialistas para assegurar rigor clínico, conformidade com a LGPD e sigilo médico.
+            Insight central da descoberta: pacientes procuram localizar o próprio resultado para levar à consulta, mas erram a interpretação quando valores e referências ficam separados — achado triangulado entre 121 respostas anônimas (LGPD) e 4 entrevistas com médicos especialistas.
           </p>
         </>
       ),
@@ -249,7 +253,7 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Cenário e Restrições</span>
               <h3>O desafio prático</h3>
               <p>
-                O mesmo laudo precisava funcionar no aplicativo do celular, na tela do consultório e impresso em preto e branco nas impressoras dos hospitais parceiros. A especificação precisava operar dentro das limitações dos sistemas laudadores legados e manter legibilidade integral em impressão monocromática (contraste WCAG 2.2 AAA).
+                O mesmo laudo precisava manter leitura legível no aplicativo, na tela do consultório e em impressão preto e branco nos hospitais parceiros. A especificação foi desenhada para respeitar as restrições dos sistemas laudadores legados (incluindo templates em Microsoft Word) e alto contraste sem depender de cor.
               </p>
             </div>
             <div className="cp-feature-card">
@@ -275,14 +279,30 @@ export const einsteinPresentation: CasePresentationData = {
               height: 1350,
               alt: "Comparativo Antes vs. Depois do laudo Einstein: documento legado fragmentado à esquerda versus arquitetura modular com resultado e referência agrupados à direita",
               caption:
-                "Antes vs. Depois: transição do laudo legado com dados espalhados para a arquitetura modular aprovada, agrupando resultado, unidade e valor de referência no mesmo bloco visual.",
+                "Antes vs. Depois: aproximamos resultado, unidade e valor de referência no mesmo bloco visual para evitar erro de associação linha a linha entre colunas afastadas no documento legado.",
             }}
           />
           <div className="cp-note">
-            <h3>Meu papel como UX Lead, tensão técnica e mentoria</h3>
+            <h3>Meu papel como UX Lead e composição do trabalho</h3>
             <p>
-              Liderei a arquitetura de informação, os rituais de critique com o time de design da Foursys e o alinhamento direto entre o corpo clínico do Albert Einstein e a engenharia dos sistemas laudadores. O principal desacordo ocorreu quando parte do negócio pediu alertas visuais interpretativos por cor: em conjunto com os médicos entrevistados, defendemos e provamos que o laudo precisava funcionar em impressão preto e branco sem induzir autodiagnóstico isolado.
+              Conduzi ponta a ponta a pesquisa com médicos e pacientes, a arquitetura da informação, os rituais de critique com o time de design da Foursys e a prototipação da proposta v3. Contribuí com o corpo clínico do Einstein na revisão de terminologia e com a engenharia dos sistemas laudadores na definição de limites de tabela e impressão.
             </p>
+          </div>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Decisão 01 · Alertas por cor</span>
+              <h3>Como sinalizar desvios sem induzir autodiagnóstico?</h3>
+              <p>
+                <strong>Opções:</strong> (A) selos coloridos interpretativos (&ldquo;normal/alterado&rdquo;), pedido inicial de parte do negócio; (B) resultado e faixa de referência lado a lado com ícone redundante à cor. <strong>Decisão e trade-off:</strong> com apoio dos médicos entrevistados, descartei (A) e adotei (B), a custo de não oferecer uma leitura instantânea binária ao paciente. <strong>Evidência:</strong> restrição de impressão P&amp;B nos hospitais parceiros e 4 entrevistas médicas.
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Decisão 02 · Modelo único vs. templates por exame</span>
+              <h3>Padronizar por exame ou criar uma taxonomia comum?</h3>
+              <p>
+                <strong>Opções:</strong> (A) manter templates independentes por especialidade; (B) decompor mais de 80 exames em 3 macroáreas fixas com componentes modulares (<code>examTitle</code> e <code>dataField</code>). <strong>Decisão e trade-off:</strong> priorizei (B) para viabilizar manutenção nos sistemas legados, a custo de menor liberdade de diagrama específico em exames atípicos. <strong>Evidência:</strong> inventário de 80+ exames e restrições dos templates em Word.
+              </p>
+            </div>
           </div>
         </>
       ),
@@ -296,14 +316,14 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            Para construir esse padrão, analisamos mais de 80 exames reais de diversas especialidades — de análises laboratoriais a exames de imagem complexos. Descobrimos que, apesar das diferenças de formato, todos os laudos convergem para três macroáreas funcionais previsíveis.
+            Apesar de variarem entre tabelas laboratoriais e textos descritivos de imagem, todos os mais de 80 exames reais que auditei convergem para três macroáreas funcionais. Essa descoberta permitiu trocar layouts artesanais por uma estrutura única.
           </p>
           <div className="cp-split">
             <div className="cp-split-content">
               <span className="cp-split-tag">Taxonomia de Dados Clínicos</span>
               <h3>As 3 Macroáreas do Exame</h3>
               <p>
-                O modelo organiza metodologia, resultados e contexto clínico em três macroáreas, para orientar a localização das informações e preservar o contexto de leitura:
+                O modelo separa cada exame em três blocos fixos para manter previsível onde encontrar método, achados e parecer:
               </p>
               <ul className="cp-card-list">
                 <li>
@@ -313,7 +333,7 @@ export const einsteinPresentation: CasePresentationData = {
                   <strong>2. Resultado:</strong> núcleo objetivo do laudo com achados estruturados e intervalos de referência alinhados na mesma linha de leitura.
                 </li>
                 <li>
-                  <strong>3. Conclusão diagnóstica:</strong> síntese conclusiva e parecer interpretativo assinado pelo especialista médico.
+                  <strong>3. Conclusão diagnóstica:</strong> síntese interpretativa e parecer assinado pelo médico especialista.
                 </li>
               </ul>
             </div>
@@ -323,26 +343,26 @@ export const einsteinPresentation: CasePresentationData = {
                   src: "/images/hiae-taxonomia-laudo-2000.webp",
                   width: 2560,
                   height: 1302,
-                  alt: "Prancha real de taxonomia clínica do projeto Einstein: decomposição de laudo de enterotomografia nas três macroáreas (Metodologia, Resultado e Conclusão Diagnóstica)",
+                  alt: "Prancha real de taxonomia clínica do projeto Einstein: decomposição de laudo de enterotomografia nas três macroáreas (Metodologia, Resultado e Conclusão diagnóstica)",
                   caption:
-                    "Taxonomia real do projeto: decomposição de exames em três macroáreas canônicas (Metodologia, Resultado e Conclusão Diagnóstica) com dados anonimizados sob LGPD.",
+                    "Taxonomia em 3 macroáreas (Metodologia, Resultado e Conclusão diagnóstica): escolhida para reutilizar a mesma ordem de leitura em exames laboratoriais e de imagem, mesmo sob sistemas emissores distintos (dados anonimizados sob LGPD).",
                 }}
               />
             </div>
           </div>
           <List
             items={[
-              "Fluxo de leitura médica: em consultas curtas e pronto-socorro, o profissional precisa localizar desvios de referência na primeira varredura visual, sem depender de interpretação por cor isolada.",
+              "Leitura médica: em consultas curtas e pronto-socorro, o profissional precisa localizar desvios de referência na primeira varredura, sem depender de cor isolada.",
 
-              "Como o paciente lê: busca o próprio resultado e precisa localizar o que importa para levar à conversa médica, sem se perder em termos técnicos ou fazer interpretações clínicas isoladas.",
+              "Leitura do paciente: busca o próprio resultado para levar à consulta, sem se perder em termos técnicos nem fazer interpretações clínicas isoladas.",
 
-              "Limitações dos sistemas: mapeamos o tamanho dos textos e tabelas para garantir que nenhuma palavra ou número ficasse cortado em qualquer impressora dos laboratórios parceiros.",
+              "Limitações dos sistemas: mapeei larguras de texto e tabelas para reduzir cortes de palavras e números nas impressoras dos laboratórios parceiros.",
             ]}
           />
           <div className="cp-note">
-            <h3>Evitando erros de leitura</h3>
+            <h3>Por que agrupar resultado, unidade e referência</h3>
             <p>
-              Em saúde, um alinhamento confuso pode induzir a um diagnóstico errado. Resultado, unidade e intervalo de referência formam uma única unidade visual por proximidade (Gestalt), mitigando erros de associação linha a linha em cenários clínicos de alta carga cognitiva.
+              Quando o valor e a faixa de referência ficam em extremos opostos da página, o leitor pode associar o número à linha errada. Agrupar os três elementos por proximidade (Gestalt) reduz o esforço de rastreamento visual em exames extensos.
             </p>
           </div>
         </>
@@ -370,25 +390,25 @@ export const einsteinPresentation: CasePresentationData = {
                 <li className="cp-callout-item">
                   <span className="cp-callout-badge">1</span>
                   <div>
-                    <strong>examTitle:</strong> Nome do exame e material biológico no topo.
+                    <strong>examTitle:</strong> nome do exame e material biológico no topo.
                   </div>
                 </li>
                 <li className="cp-callout-item">
                   <span className="cp-callout-badge">2</span>
                   <div>
-                    <strong>Uma linha por parâmetro:</strong> Cada teste clínico com linha horizontal dedicada.
+                    <strong>Uma linha por parâmetro:</strong> cada teste clínico em linha horizontal dedicada.
                   </div>
                 </li>
                 <li className="cp-callout-item">
                   <span className="cp-callout-badge">3</span>
                   <div>
-                    <strong>Acessibilidade visual:</strong> Ícones de conformidade que não dependem apenas da cor.
+                    <strong>Acessibilidade visual:</strong> ícones de conformidade que não dependem apenas da cor.
                   </div>
                 </li>
                 <li className="cp-callout-item">
                   <span className="cp-callout-badge">4</span>
                   <div>
-                    <strong>Resultado e referência:</strong> Valor medido e limites normais alinhados lado a lado.
+                    <strong>Resultado e referência:</strong> valor medido e limites normais alinhados lado a lado.
                   </div>
                 </li>
               </ol>
@@ -401,7 +421,7 @@ export const einsteinPresentation: CasePresentationData = {
                   height: 880,
                   alt: "Recorte real do protótipo v3 do projeto Einstein: componente Tempo de Protrombina (RNI) com examTitle, linha por parâmetro, ícone de conformidade redundante à cor e referência alinhada lado a lado",
                   caption:
-                    "Protótipo real (v3): anatomia do componente Tempo de Protrombina (RNI) com título do exame, ícone de conformidade redundante à cor e intervalo de referência alinhado lado a lado.",
+                    "Protótipo v3 (Tempo de Protrombina / RNI): ícone redundante à cor e alinhamento fixo entre valor e referência mantêm a leitura compreensível em impressão P&B e para leitores com daltonismo.",
                 }}
               />
             </div>
@@ -411,7 +431,7 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-split-tag">Design System Zera 1.0</span>
               <h3>Tokens e Anatomia Modular</h3>
               <p>
-                Mapeamento dos tokens de cor semântica, tipografia proporcional e espaçamento (grid base 8px) integrados aos componentes modulares <code>dataField</code> e <code>examTitle</code>. O contrato garante previsibilidade e alinhamento estrito entre o protótipo no Figma e a implementação nos sistemas laudadores legados.
+                Especifiquei tokens de cor semântica, escala tipográfica e espaçamento em base 8px nos componentes <code>dataField</code> e <code>examTitle</code>. Essa documentação padroniza o handoff entre o Figma e as equipes de engenharia dos sistemas laudadores.
               </p>
             </div>
             <div className="cp-split-media">
@@ -422,7 +442,7 @@ export const einsteinPresentation: CasePresentationData = {
                   height: 1250,
                   alt: "Documentação no Design System Zera 1.0: especificações de tokens de cores, tipografia e espaçamento para componentes de laudo",
                   caption:
-                    "Design System Zera 1.0: especificações dos componentes dataField e examTitle com tokens de espaçamento e regras de anatomia modular para a engenharia.",
+                    "Design System Zera 1.0: tokens e regras dos componentes dataField e examTitle documentados para reduzir divergências de espaçamento e hierarquia entre diferentes fornecedores laudadores.",
                 }}
               />
             </div>
@@ -439,7 +459,7 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            Um dos maiores desafios foi garantir que o mesmo padrão visual funcionasse tanto para laudos descritivos com muito texto (como mamografia e biópsias) quanto para tabelas densas cheias de números (como ressonâncias e hemogramas). A nova anatomia organiza a leitura para que o olhar encontre primeiro o resultado principal e, em seguida, os detalhes de técnica e observações.
+            Estruturei a mesma anatomia modular para atender dois extremos do acervo: laudos descritivos longos (como mamografia e biópsias) e tabelas numéricas densas (como ressonâncias e hemogramas). Em ambos os formatos, o leitor encontra primeiro o resultado principal e, abaixo dele, técnica e observações.
           </p>
           <CaseFigure
             image={{
@@ -448,7 +468,7 @@ export const einsteinPresentation: CasePresentationData = {
               height: 1350,
               alt: "Paridade omnicanal do laudo Einstein em 3 suportes reais: folha A4 impressa de mamografia, portal web em MacBook e aplicativo mobile",
               caption:
-                "Paridade real em 3 canais: mesma hierarquia clínica preservada na versão impressa A4, no prontuário web e no aplicativo mobile do paciente.",
+                "Paridade em 3 suportes (A4, web e mobile): preservar a mesma ordem entre papel e digital evita que médico e paciente precisem reaprender onde fica cada dado ao trocar de canal.",
             }}
           />
           <div className="cp-gallery">
@@ -459,7 +479,7 @@ export const einsteinPresentation: CasePresentationData = {
                 height: 1336,
                 alt: "Laudo descritivo de mamografia estruturado para tablet e celular",
                 caption:
-                  "Laudo descritivo (Mamografia): cabeçalho padronizado e seções estruturadas para técnica, indicação clínica e conclusão diagnóstica.",
+                  "Laudo descritivo (Mamografia): seções separadas para técnica, indicação e conclusão evitam blocos corridos de texto que dificultam localizar o parecer em telas menores.",
               }}
             />
             <CaseFigure
@@ -469,14 +489,14 @@ export const einsteinPresentation: CasePresentationData = {
                 height: 1336,
                 alt: "Laudo tabular de ressonância cardiovascular com resultados em tabela no tablet e celular",
                 caption:
-                  "Laudo tabular (Ressonância): resultados organizados em grade tabular com alinhamento numérico fixo, reduzindo erros de comparação entre medidas no celular e no tablet.",
+                  "Laudo tabular (Ressonância): grade com alinhamento numérico fixo escolhida para facilitar a comparação entre medidas no celular e no tablet sem deslocamento de colunas.",
               }}
             />
           </div>
           <div className="cp-note">
-            <h3>Estrutura Canônica no Prontuário Digital</h3>
+            <h3>Por que manter um único padrão entre texto e tabela</h3>
             <p>
-              O modelo unificado organiza a leitura para que o corpo clínico e o paciente visualizem primeiro o resultado principal e, em seguida, os parâmetros técnicos e observações diagnósticas, eliminando inconsistências entre diferentes unidades da rede.
+              Reaproveitar o mesmo cabeçalho, hierarquia de títulos e separação de blocos entre exames laboratoriais e de imagem reduz o número de templates que a engenharia precisa manter nos sistemas emissores.
             </p>
           </div>
         </>
@@ -491,7 +511,7 @@ export const einsteinPresentation: CasePresentationData = {
       content: (
         <>
           <p>
-            Durante os testes de usabilidade com a nova interface, avaliamos como as pessoas interagiam com o documento em quatro etapas: desde o reconhecimento visual até a interpretação do conteúdo. Os resultados confirmaram que uma boa organização visual facilita a localização dos dados, mas não substitui a conversa com o médico.
+            Nos testes com o protótipo (entregáveis EN-7 e EN-14, sem linha de base comparativa do laudo legado), medimos quatro etapas: reconhecimento do documento, foco inicial, entendimento do objetivo do exame e interpretação autônoma. A hierarquia visual facilitou localizar os dados, mas confirmou que a interpretação clínica continua dependendo do médico.
           </p>
           <dl className="cp-metrics" style={{ "--metric-columns": 4 } as React.CSSProperties}>
             <div>
@@ -512,9 +532,9 @@ export const einsteinPresentation: CasePresentationData = {
             </div>
           </dl>
           <div className="cp-note">
-            <h3>Conclusão do teste</h3>
+            <h3>O que a diferença entre foco e interpretação orientou</h3>
             <p>
-              81,6% reconheceram o documento como um laudo médico; 77,8% concentraram a atenção no nome do exame, resultado e referência. Os indicadores de compreensão reforçam a importância da conversa com o médico. O laudo apresenta os dados para apoiar essa conversa e preservar o contexto clínico.
+              A distância entre foco visual (77,8%) e interpretação autônoma (56,2%) confirmou que clareza visual não equivale a compreensão clínica. Esse dado sustentou a decisão de manter o laudo descritivo e contextualizado para apoiar a consulta, sem rótulos automáticos de diagnóstico. Como não medimos linha de base do formato anterior nem acompanhamento pós-lançamento, os percentuais servem como validação do protótipo.
             </p>
           </div>
           <div className="cp-cards-grid">
@@ -522,14 +542,14 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Disciplina de Escopo</span>
               <h3>O que ficou fora do recorte</h3>
               <p>
-                Optamos por não incluir selos interpretativos automáticos isolados do texto clínico nem redesenhar o portal inteiro de exames. O foco na arquitetura modular do laudo garantiu compatibilidade com impressão em preto e branco e sistemas legados sem induzir autodiagnóstico.
+                Descartei incluir selos interpretativos automáticos isolados do texto clínico e redesenhar o portal inteiro de exames. Priorizei a arquitetura modular do laudo a custo de não oferecer uma leitura rápida de &ldquo;normal/alterado&rdquo;, preservando compatibilidade com impressão P&amp;B e sistemas legados.
               </p>
             </div>
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Reflexão Crítica</span>
-              <h3>O que eu faria diferente hoje</h3>
+              <h3>O que eu reverteria hoje</h3>
               <p>
-                Integraria a engenharia de geração de PDF e representantes de mais especialidades médicas desde a primeira semana de descoberta, validando quebras de página em exames extensos antes de consolidar os primeiros componentes.
+                Hoje eu reverteria a decisão de consolidar os primeiros componentes digitais antes de testar quebras de página na geração de PDF. Esse sequenciamento concentrou ajustes de impressão na fase final, quando os padrões visuais já estavam estruturados. Envolver a engenharia de emissão de PDF e mais especialidades desde a primeira semana reduziria retrabalho em exames extensos.
               </p>
             </div>
           </div>
@@ -538,7 +558,7 @@ export const einsteinPresentation: CasePresentationData = {
               <summary>Contexto e documentação do projeto</summary>
               <div>
                 <p>
-                  Projeto desenvolvido em parceria institucional com o Hospital Israelita Albert Einstein. Em conformidade com as diretrizes de confidencialidade (NDA), governança hospitalar e sigilo médico, as especificações integrais de componentes, fluxos proprietários e arquivos de trabalho são de custódia restrita e documentação interna da instituição.
+                  Projeto desenvolvido em 2022 em parceria entre Foursys e Hospital Israelita Albert Einstein, entregue como proposta modular (v3) e especificação de componentes no inventário EN-1 a EN-14 — o acompanhamento de implantação em produção ficou sob gestão interna da instituição. Por confidencialidade (NDA) e sigilo médico, arquivos integrais e fluxos proprietários permanecem restritos ao hospital.
                 </p>
               </div>
             </details>
@@ -546,7 +566,7 @@ export const einsteinPresentation: CasePresentationData = {
               <summary>Autoria e time multidisciplinar</summary>
               <div>
                 <p>
-                  Israel Rozar — UX Lead. Atuação em pesquisa qualitativa e quantitativa, arquitetura da informação, estruturação dos componentes no Design System e alinhamento com equipes médicas e de tecnologia da Foursys e do Einstein.
+                  Israel Rozar — UX Lead. Conduzi a pesquisa, a arquitetura da informação, os componentes de laudo e os rituais de critique com o time de design da Foursys; atuei em conjunto com médicos laudadores e engenharia do Einstein na validação clínica e técnica.
                 </p>
               </div>
             </details>
@@ -554,7 +574,7 @@ export const einsteinPresentation: CasePresentationData = {
               <summary>Ética e conformidade na pesquisa</summary>
               <div>
                 <p>
-                  A pesquisa com pacientes seguiu diretrizes de proteção de dados (LGPD) e anonimização de informações. A etapa quantitativa com 121 participantes foi combinada com entrevistas em profundidade com médicos laudadores de diferentes especialidades (cardiologia, radiologia e hematologia), garantindo conformidade com as rotinas hospitalares e as normas sanitárias vigentes.
+                  O questionário com pacientes seguiu a LGPD com respostas anonimizadas. Os relatos médicos vieram de 4 entrevistas semiestruturadas — tratados como sinal qualitativo, nunca como taxa percentual — combinados à análise documental de mais de 80 exames reais.
                 </p>
               </div>
             </details>
@@ -569,9 +589,9 @@ const claroHero: CaseImage = {
   src: "/images/v08-claro-multicanal-desktop-iphone.webp",
   width: 2400,
   height: 1350,
-  alt: "Ativação Simplificada Claro Brasil em Desktop e Mobile: detalhe da linha com cabeçalho fixo ao lado da experiência móvel padronizada",
+  alt: "Ativação simplificada Claro Brasil em desktop e mobile: tela de detalhe da linha com cabeçalho fixo ao lado do fluxo móvel com resumo de oferta",
   caption:
-    "Ativação Simplificada Claro Brasil: 22 jornadas comerciais (NET, Claro e Embratel) unificadas em uma única arquitetura Desktop e Mobile.",
+    "Unificamos 22 jornadas de NET, Claro e Embratel em uma única arquitetura desktop e mobile para evitar que o operador alternasse entre sistemas legados durante a venda.",
 }
 
 const claroImages: CaseImage[] = [
@@ -581,15 +601,15 @@ const claroImages: CaseImage[] = [
     height: 972,
     alt: "Tela de busca de cliente do sistema de ativação, com campo de CPF e validação cadastral",
     caption:
-      "Ponto de entrada da ativação: consulta de cliente por CPF com validação instantânea e dados sintetizados para conformidade com a LGPD.",
+      "Por que validar o CPF na entrada: antecipar checagens cadastrais e antifraude antes da oferta evita montar um combo inelegível e refazer o atendimento. Dados sintetizados para conformidade com a LGPD.",
   },
   {
     src: "/images/claro-jornadas.webp",
     width: 1440,
     height: 1440,
-    alt: "Mapa da jornada de troca de chip no Miro com user stories e validações",
+    alt: "Mapa da jornada de troca de chip no Miro com user stories, validações cadastrais e regras de oferta",
     caption:
-      "Decomposição operacional: validações, etapas da troca de chip, resumo financeiro e regras de oferta organizados na jornada.",
+      "Por que mapear a troca de chip antes das telas: expor dependências de validação, oferta e resumo financeiro revelou etapas duplicadas entre fluxos que podiam compartilhar a mesma esteira.",
   },
   {
     src: "/images/claro-detalhe-linha.webp",
@@ -597,15 +617,15 @@ const claroImages: CaseImage[] = [
     height: 972,
     alt: "Detalhe da linha com dados do cliente, cabeçalho fixo e grupos expansíveis",
     caption:
-      "Preservação de contexto: dados do cliente, linha, plano e fatura agrupados em blocos expansíveis com acesso direto às jornadas relacionadas.",
+      "Por que manter cabeçalho fixo e blocos expansíveis: o operador consulta linha, plano e fatura sem abandonar a venda em andamento nem perder os dados do cliente.",
   },
   {
     src: "/images/claro-multicanal.webp",
     width: 1376,
     height: 932,
-    alt: "Composição de interfaces desktop e mobile da ativação simplificada Claro",
+    alt: "Telas desktop e mobile da ativação simplificada Claro exibindo seleção de plano, resumo financeiro lateral e etapa de confirmação",
     caption:
-      "Paridade multicanal: mesma taxonomia de planos, resumo financeiro e etapas de confirmação entre o balcão desktop e o aplicativo mobile.",
+      "Por que preservar a mesma taxonomia entre desktop e mobile: manter nomes de planos, resumo financeiro e confirmação iguais reduz divergências de operação entre loja física e consultores em campo.",
   },
 ]
 
@@ -617,15 +637,16 @@ export const claroPresentation: CasePresentationData = {
   headline: "22 jornadas comerciais unificadas em uma esteira desktop e mobile.",
 
   subtitle:
-    "Product Discovery, Arquitetura da Informação e interface padronizada para lojas físicas, televendas e consultores em campo (NET, Claro e Embratel).",
+    "Na Claro Brasil (NET, Claro e Embratel), atuei como UX/UI Designer para eliminar a alternância entre sistemas legados em lojas físicas, televendas e campo. Unificamos 22 jornadas comerciais em uma esteira desktop e mobile de 5 etapas, com 70 oportunidades mapeadas e especificações V.2 entregues à engenharia.",
 
   role: "UX/UI Designer",
 
-  team: "Design, stakeholders e profissionais da operação",
+  team: "Design, Produto, Engenharia de sistemas e operação comercial (lojas e televendas)",
 
-  scope: "Discovery, fluxos e interfaces desktop e mobile",
+  scope: "Discovery, 22 jornadas, protótipos e especificação desktop e mobile",
 
-  keyMetric: "22 jornadas unificadas · 70 oportunidades",
+  keyMetricLabel: "ENTREGA PRINCIPAL",
+  keyMetric: "22 jornadas unificadas · 70 oportunidades (handoff V.2)",
 
   kicker: "Telecom · UX corporativo",
 
@@ -636,7 +657,7 @@ export const claroPresentation: CasePresentationData = {
 
     href: "/cases/neoenergia-conexao-digital",
 
-    context: "Energia · P&D ANEEL · 34M de pessoas",
+    context: "Energia · P&D ANEEL · 34M de habitantes",
   },
 
   prevCase: {
@@ -658,52 +679,56 @@ export const claroPresentation: CasePresentationData = {
         <>
           <div className="cp-summary">
             <p>
-              Organizar uma operação comercial complexa para que o atendente
-              consiga consultar o cliente, configurar planos e aparelhos e
-              acompanhar a jornada de ponta a ponta sem rupturas de contexto.
+              A Claro Brasil precisava vender e ativar planos de NET, Claro e
+              Embratel com menos retrabalho e menos erros de contratação em
+              lojas físicas, televendas e campo.
             </p>
             <p>
-              O projeto integrou discovery de campo em lojas físicas e canais
-              remotos, decomposição de jornadas críticas de telecom e propostas
-              estruturadas de interface para desktop e mobile, organizando
-              regras de negócio e resumo da composição financeira.
+              A tensão central era conciliar a velocidade exigida no balcão com
+              regras tarifárias, combos e validações cadastrais espalhadas em
+              sistemas legados desconectados.
             </p>
           </div>
           <CaseMetrics
             items={[
               ["20", "entrevistas em profundidade"],
 
-              ["22", "jornadas de atendimento mapeadas"],
+              ["22", "jornadas unificadas na esteira"],
 
-              ["70", "oportunidades de melhoria levantadas"],
+              ["70", "oportunidades priorizadas no discovery"],
             ]}
           />
           <div className="cp-cards-grid">
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Contexto Operacional</span>
-              <h3>O cenário</h3>
+              <h3>Objetivo de negócio</h3>
               <p>
-                A rotina comercial precisava conciliar necessidades de
-                atendentes de loja, consultores em trânsito e as regras de
-                negócio de telecom, com grande volume de dados por transação.
+                Reduzir a troca manual de telas durante a venda e dar clareza ao
+                valor final da oferta para operadores de loja, televendas e
+                consultores em campo.
               </p>
             </div>
             <div className="cp-feature-card">
-              <span className="cp-feature-tag">Pergunta de Pesquisa</span>
-              <h3>O desafio</h3>
+              <span className="cp-feature-tag">Enquadramento</span>
+              <h3>Pergunta central</h3>
               <p>
-                Como apoiar a continuidade do atendimento e tornar os dados
-                cadastrais, técnicos e financeiros compreensíveis em telas de
-                desktop e dispositivos móveis?
+                Como apoiar a continuidade do atendimento e tornar dados
+                cadastrais, técnicos e financeiros compreensíveis em desktop e
+                mobile?
               </p>
             </div>
           </div>
           <div className="cp-note">
-            <h3>Minha contribuição documentada</h3>
+            <h3>Meu papel × trabalho do time</h3>
             <p>
-              Atuação em UX/UI, da imersão inicial e síntese de pesquisa à
-              definição de fluxos de navegação, prototipação de alta fidelidade
-              e entrega visual para engenharia.
+              <strong>O que conduzi:</strong> síntese da pesquisa operacional,
+              arquitetura dos fluxos de navegação, protótipos de alta fidelidade
+              e especificações de interface (desktop V.2 e mobile) entregues à
+              engenharia.{" "}
+              <strong>Onde contribuí com o time:</strong> entrevistas em campo,
+              workshops de 3 dias e alinhamento de regras de oferta com
+              lideranças de produto, engenharia de sistemas e operadores de loja
+              e televendas.
             </p>
           </div>
         </>
@@ -712,28 +737,28 @@ export const claroPresentation: CasePresentationData = {
 
     {
       id: "esteira",
-      tag: "22 Jornadas ➔ 5 Etapas",
+      tag: "22 Jornadas em 5 Etapas",
       title:
-        "Decomposição de 22 jornadas de atendimento em uma esteira unificada.",
+        "Decomposição de 22 jornadas comerciais em uma esteira unificada.",
 
       content: (
         <>
           <div className="cp-split">
             <div className="cp-split-content">
               <span className="cp-split-tag">Discovery & Pesquisa Operacional</span>
-              <h3>Imersão em Lojas Físicas e Televendas</h3>
+              <h3>O principal gargalo estava na troca de sistemas, não na venda</h3>
               <p>
-                O discovery reuniu benchmarking competitivo, 20 entrevistas em profundidade com profissionais e lideranças executivas, três dias de workshops imersivos e a formulação de 10 personas operacionais. O shadowing em lojas físicas e televendas evidenciou que até 40% do tempo observado em atendimento era consumido na alternância manual entre sistemas legados desconectados para consultar uma única linha.
+                A observação em lojas físicas e televendas mostrou que parte relevante do atendimento era gasta alternando manualmente entre sistemas legados desconectados para consultar uma única linha. Chegamos a esse diagnóstico com benchmarking competitivo, 20 entrevistas em profundidade com operadores e lideranças, três dias de workshops e 10 perfis operacionais.
               </p>
               <ul className="cp-card-list">
                 <li>
-                  <strong>Ruptura de contexto:</strong> alternância constante entre sistemas desconectados durante o atendimento presencial ou telefônico.
+                  <strong>Ruptura de contexto:</strong> operadores trocavam de sistema várias vezes durante o mesmo atendimento presencial ou telefônico.
                 </li>
                 <li>
-                  <strong>Insegurança tarifária:</strong> dificuldade operacional em calcular descontos, combos e regras de fidelização em tempo real.
+                  <strong>Insegurança tarifária:</strong> calcular descontos, combos e fidelização dependia de conferência manual durante a negociação.
                 </li>
                 <li>
-                  <strong>Carga cognitiva:</strong> necessidade de memorizar códigos promocionais e regras de negócio para evitar erros de contratação.
+                  <strong>Carga cognitiva:</strong> operadores precisavam memorizar códigos promocionais e regras de negócio para evitar erros de contratação.
                 </li>
               </ul>
             </div>
@@ -743,22 +768,17 @@ export const claroPresentation: CasePresentationData = {
           </div>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Arquitetura da Informação & Fluxos</span>
-              <h3>Matriz Unificada de 22 Jornadas Comerciais</h3>
+              <span className="cp-split-tag">Decisão 1 · Arquitetura de Fluxos</span>
+              <h3>Unificar 22 jornadas em uma esteira de 5 etapas</h3>
               <p>
-                A padronização das 22 jornadas operacionais eliminou redundâncias entre a consulta cadastral, a configuração do plano e a formalização do contrato. Em vez de fluxos isolados para cada transação (troca de chip, ativação, upgrade de plano e portabilidade), estruturamos uma esteira unificada de atendimento:
+                <strong>Pergunta:</strong> manter fluxos separados por transação (troca de chip, ativação, upgrade, portabilidade) ou unificar a sequência?
               </p>
-              <ul className="cp-card-list">
-                <li>
-                  <strong>Esteira unificada:</strong> mesma ordem mental de leitura e decisão no balcão de loja e na mobilidade.
-                </li>
-                <li>
-                  <strong>Validação progressiva:</strong> checagem automática de elegibilidade cadastral e antifraude antes da oferta.
-                </li>
-                <li>
-                  <strong>Mitigação de atrito:</strong> redução de etapas intermediárias e visualização clara de pré-requisitos técnicos do chip.
-                </li>
-              </ul>
+              <p>
+                <strong>Opções e trade-offs:</strong> manter 22 fluxos isolados preservaria telas familiares, mas duplicava validações cadastrais e manutenção; unificar em 5 etapas exigia renegociar regras entre áreas de negócio e aceitar mais disciplina de sequência.
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> propus e consolidamos a esteira única de 5 etapas, aceitando o custo inicial de mapear exceções por transação para eliminar validações duplicadas. <strong>Evidência:</strong> mapeamento das 22 jornadas e das 70 oportunidades nos workshops com a operação.
+              </p>
             </div>
             <div className="cp-split-media">
               <CaseFigure image={claroImages[1]} />
@@ -769,15 +789,15 @@ export const claroPresentation: CasePresentationData = {
               src: "/images/v10-claro-jornada-editorial.webp",
               width: 2400,
               height: 1350,
-              alt: "Diagrama da esteira unificada de atendimento Claro Brasil em 5 etapas com camada persistente de contexto e paridade entre Desktop e Mobile",
+              alt: "Diagrama da esteira unificada de atendimento Claro Brasil em 5 etapas com camada persistente de contexto e paridade entre desktop e mobile",
               caption:
-                "Esteira unificada em 5 etapas: da identificação por CPF à confirmação contratual, mantendo cabeçalho fixo do cliente e resumo financeiro persistente em Desktop e Mobile.",
+                "Por que estruturar em 5 etapas com camada fixa: separar identificação, oferta e confirmação com cabeçalho e resumo persistentes impede perda de contexto e recálculo manual entre telas.",
             }}
           />
           <div className="cp-note">
-            <h3>Desacordo construtivo & decisão validada com a operação</h3>
+            <h3>Decisão 2 · Desacordo construtivo: tela única × etapas progressivas</h3>
             <p>
-              Lideranças comerciais inicialmente defenderam exibir todos os parâmetros de oferta em tela única para evitar cliques extras. Em sessões práticas com operadores de loja e televendas, demonstrei que a densidade sem hierarquia elevava erros de preenchimento — o acordo foi adotar etapas progressivas com resumo financeiro lateral sempre visível.
+              <strong>Pergunta:</strong> exibir todos os parâmetros de oferta em uma tela única ou dividir a contratação em etapas? Lideranças comerciais defenderam a tela única para reduzir cliques. Em sessões práticas com operadores de loja e televendas, demonstrei que a densidade sem hierarquia aumentava erros de preenchimento. <strong>Decisão e custo aceito:</strong> negociamos etapas progressivas com resumo financeiro lateral sempre visível, aceitando cliques adicionais de navegação em troca de menor risco de erro contratual; lideranças comerciais e operação aprovaram o formato.
             </p>
           </div>
         </>
@@ -797,19 +817,19 @@ export const claroPresentation: CasePresentationData = {
               <span className="cp-split-tag">Diretrizes de Interface & Usabilidade</span>
               <h3>Resumo Financeiro Lateral & Contexto Fixo</h3>
               <p>
-                Para mitigar erros de contratação e dar previsibilidade ao atendente, definimos três regras centrais de arquitetura de informação:
+                Para reduzir erros de contratação e dar previsibilidade ao operador, estruturei três regras de arquitetura de informação:
               </p>
-              <ul className="cp-card-list">
+              <ol className="cp-card-list cp-card-list--numbered">
                 <li>
-                  <strong>1. Navegação progressiva por etapas:</strong> grupos expansíveis com revelação progressiva (progressive disclosure) e etapas numeradas aplicam a heurística de visibilidade do status do sistema (Nielsen) para reduzir carga cognitiva em fluxos extensos.
+                  <strong>1. Navegação progressiva por etapas:</strong> blocos expansíveis e passos numerados mantêm visível o status da contratação (heurística de Nielsen) e diminuem a carga cognitiva.
                 </li>
                 <li>
-                  <strong>2. Preservação do contexto do cliente:</strong> cabeçalho fixo com dados da linha, status cadastral e atalhos rápidos apoiam a continuidade da conversa.
+                  <strong>2. Preservação do contexto do cliente:</strong> cabeçalho fixo com dados da linha, status cadastral e atalhos rápidos evita recarregar telas no meio da conversa.
                 </li>
                 <li>
-                  <strong>3. Composição financeira em tempo real:</strong> o resumo lateral aproxima produtos, descontos aplicados e valores finais durante toda a configuração da oferta.
+                  <strong>3. Composição financeira visível:</strong> o resumo lateral exibe produtos, descontos aplicados e valor final durante toda a montagem da oferta.
                 </li>
-              </ul>
+              </ol>
             </div>
             <div className="cp-split-media">
               <CaseFigure image={claroImages[2]} />
@@ -828,29 +848,38 @@ export const claroPresentation: CasePresentationData = {
         <>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Consistência Multicanal</span>
-              <h3>Paridade entre Desktop e Aplicativo Móvel</h3>
+              <span className="cp-split-tag">Decisão 3 · Consistência Multicanal</span>
+              <h3>Mesma taxonomia com densidade adaptada por dispositivo</h3>
               <p>
-                O atendente de balcão utiliza a interface desktop com maior densidade de dados; o consultor externo utiliza o aplicativo mobile. A taxonomia de planos e as etapas de confirmação são preservadas entre desktop e mobile, apoiando a continuidade entre canais.
+                <strong>Pergunta:</strong> replicar a tela densa do desktop no celular ou criar fluxos independentes para consultores em campo?
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> mantive a mesma taxonomia de planos, ordem de etapas e regras de confirmação entre desktop e mobile, mas adaptei a densidade visual para telas menores. Aceitamos mais rolagem e etapas compactas no mobile a custo de não exibir todos os blocos simultaneamente, garantindo continuidade operacional entre balcão e campo.
               </p>
             </div>
             <div className="cp-split-media">
               <CaseFigure image={claroImages[3]} />
             </div>
           </div>
+          <div className="cp-note">
+            <h3>Status da entrega e limite das medições</h3>
+            <p>
+              O escopo deste ciclo foi concluído com o mapeamento das 22 jornadas, 70 oportunidades priorizadas e entrega das especificações desktop (V.2, 10/05/2018) e mobile (11/06/2018) para engenharia. Não medimos indicadores quantitativos pós-implantação (como tempo médio de atendimento ou taxa de erro em produção) durante a minha permanência no projeto.
+            </p>
+          </div>
           <div className="cp-cards-grid">
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Disciplina de Escopo</span>
               <h3>O que ficou fora do recorte</h3>
               <p>
-                Não redesenhamos os sistemas legados de faturamento nem alteramos as regras de validação de crédito de backoffice. O recorte concentrou-se em unificar a camada de atendimento e vendas (desktop e mobile) para dar clareza ao resumo financeiro durante a oferta.
+                Descartamos redesenhar os sistemas legados de faturamento e alterar as regras de validação de crédito de backoffice. Concentramos o esforço na camada de vendas desktop e mobile para entregar consistência de oferta sem depender da troca imediata do legado.
               </p>
             </div>
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Reflexão Crítica</span>
-              <h3>O que eu faria diferente hoje</h3>
+              <h3>O que eu reverteria hoje</h3>
               <p>
-                Estruturaria desde o início um protocolo de telemetria comparativa entre lojas próprias e televendas, medindo o tempo por etapa de ativação antes e depois da implantação para quantificar o ganho operacional por canal.
+                Eu reverteria a decisão de encerrar a entrega V.2 sem acordar uma linha de base operacional antes da implantação. Na época, concentramos o esforço em fechar os fluxos das 22 jornadas e entregar as especificações desktop e mobile. Sem o tempo por etapa e a taxa de erro medidos antes em lojas e televendas, não foi possível provar o ganho quantitativo após a entrega. Hoje eu condicionaria o fechamento do discovery à definição desse protocolo com Produto e Operação.
               </p>
             </div>
           </div>
@@ -860,23 +889,23 @@ export const claroPresentation: CasePresentationData = {
 
     {
       id: "escopo-equipe",
-      tag: "Escopo, Reflexão & Equipe",
+      tag: "Acervo & Equipe",
       title:
-        "Governança do projeto, colaboração multidisciplinar e impacto.",
+        "Acervo documentado, versões entregues e colaboração multidisciplinar.",
 
       content: (
         <div className="cp-appendix">
           <details open>
-            <summary>Arquivos e versões</summary>
+            <summary>Arquivos e versões entregues</summary>
             <div>
               <p>
-                Documentação técnica do projeto Claro: registros de workshops, mapa
-                de jornada de troca de chip, telas de ativação, detalhe da linha
-                e confirmação mobile.
+                O acervo reúne registros de workshops, mapa da jornada de troca
+                de chip, telas de ativação, detalhe da linha e confirmação
+                mobile.
               </p>
               <p>
-                O documento de migração desktop identifica V.2 de 10/05/2018; o
-                PDF mobile foi atualizado em 11/06/2018, integrando o acervo técnico documentado da iniciativa.
+                A especificação de migração desktop registra V.2 em 10/05/2018;
+                a versão mobile foi atualizada em 11/06/2018.
               </p>
             </div>
           </details>
@@ -884,9 +913,10 @@ export const claroPresentation: CasePresentationData = {
             <summary>Colaboração e equipe</summary>
             <div>
               <p>
-                Israel Rozar — UX/UI Designer, atuando junto a lideranças
-                de produto, engenharia de sistemas e operadores comerciais de loja
-                e televendas da Claro Brasil.
+                Israel Rozar — UX/UI Designer. Conduzi a arquitetura de fluxos,
+                protótipos e especificação visual em parceria com lideranças de
+                produto, engenharia de sistemas e operadores de loja e
+                televendas da Claro Brasil.
               </p>
             </div>
           </details>
@@ -905,7 +935,7 @@ export function ClaroPresentation() {
 }
 
 export const neoenergiaPresentation: CasePresentationData = {
-  title: "Neoenergia · Service design",
+  title: "Neoenergia · Service Design",
 
   context: "Neoenergia · EY × Livework · P&D ANEEL · 2020",
 
@@ -913,17 +943,18 @@ export const neoenergiaPresentation: CasePresentationData = {
     "Conectar a jornada digital ao serviço que acontece no mundo físico.",
 
   subtitle:
-    "Discovery e service design para organizar problemas, jornadas e oportunidades no atendimento de distribuidoras de energia.",
+    "No P&D ANEEL da Neoenergia (EY × Livework), atuei como Senior Product Designer e Service Designer para reduzir rupturas entre canais digitais, atendimento e campo em 4 distribuidoras. Entregamos 5 Service Blueprints e 118 ideias priorizadas como baseline estratégico aprovado pelas diretorias (etapa de P&D, sem código final neste ciclo).",
 
-  role: "Senior Product Designer / Service Designer",
+  role: "Senior Product Designer · Service Design",
 
-  team: "EY Business Transformation × Livework e áreas da Neoenergia",
+  team: "EY Business Transformation × Livework e áreas de operação e atendimento da Neoenergia",
 
-  scope: "Pesquisa, jornadas atuais, blueprints e visão futura de serviço",
+  scope: "Diagnóstico de 11 canais, 5 Service Blueprints, fundação multi-tenant e 118 ideias",
 
-  keyMetric: "5 Blueprints de Serviço P&D ANEEL",
+  keyMetricLabel: "ENTREGA PRINCIPAL",
+  keyMetric: "4 distribuidoras · 5 Service Blueprints · 118 ideias (P&D ANEEL)",
 
-  kicker: "Energia · Service design",
+  kicker: "Energia · Service Design",
 
   hero: {
     src: "/images/v12-neoenergia-bento-service-design.webp",
@@ -932,10 +963,10 @@ export const neoenergiaPresentation: CasePresentationData = {
 
     height: 1350,
 
-    alt: "Visão executiva P&D ANEEL Neoenergia: Service Blueprint de Uso e Pago, escala das 4 distribuidoras e Matriz de 118 Ideias Priorizadas",
+    alt: "Visão executiva P&D ANEEL Neoenergia: recorte do Service Blueprint 2 (Uso e Pago), escala de 4 distribuidoras (18 estados, 34 milhões de habitantes e 13,9 milhões de clientes) e jornada futura com 118 ideias",
 
     caption:
-      "Projeto P&D Conexão Digital ANEEL: Service Design integrando 4 distribuidoras (34M de pessoas), 5 Service Blueprints e 118 oportunidades priorizadas.",
+      "Por que cruzar blueprint, escala nacional e priorização em uma visão única: mostrar que problemas de atendimento e fatura exigiam alinhar operação e backoffice nas 4 distribuidoras antes de redesenhar portais.",
   },
 
   prevCase: {
@@ -959,52 +990,71 @@ export const neoenergiaPresentation: CasePresentationData = {
       id: "escala-nacional",
       tag: "Escala Nacional (34M)",
       title:
-        "Unificação da infraestrutura de atendimento para 34 milhões de pessoas.",
+        "Unificação do atendimento para 34 milhões de habitantes e 13,9 milhões de clientes.",
 
       content: (
         <>
           <div className="cp-summary">
             <p>
-              Iniciativa de Product Discovery e Service Design (Human-Centered
-              Design) para conectar 11 canais de atendimento, backoffice e
-              equipes de campo do Grupo Neoenergia (Iberdrola Brasil),
-              integrando 4 grandes distribuidoras — <strong>Elektro</strong>{" "}
-              (SP/MS), <strong>Coelba</strong> (BA), <strong>Celpe</strong> (PE)
-              e <strong>Cosern</strong> (RN).
+              O Grupo Neoenergia (Iberdrola Brasil) precisava reduzir retrabalho
+              em campo, deslocamentos desnecessários a agências e contestações
+              de fatura nas 4 distribuidoras — <strong>Elektro</strong> (SP/MS),{" "}
+              <strong>Coelba</strong> (BA), <strong>Celpe</strong> (PE) e{" "}
+              <strong>Cosern</strong> (RN).
             </p>
             <p>
-              Desenvolvido no âmbito do programa de P&D Estratégico ANEEL, o
-              consórcio EY Business Transformation e Livework realizou
-              diagnóstico de campo, auditou os silos internos de backstage e
-              modelou os blueprints de serviço To-Be para mitigar atritos de
-              faturamento e operação.
+              A tensão central era unificar 11 canais de atendimento e processos
+              de operação em 18 estados sem apagar particularidades regionais
+              nem multiplicar quatro vezes o custo de tecnologia.
             </p>
           </div>
           <CaseMetrics
             items={[
               ["4", "distribuidoras integradas na mesma esteira"],
 
-              ["5 estágios", "ciclo de vida em blueprints To-Be"],
+              ["5", "Service Blueprints do ciclo de vida"],
 
-              ["118 ideias", "priorizadas na matriz de valor"],
+              ["118 ideias", "priorizadas para o roadmap de P&D"],
             ]}
           />
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Enquadramento</span>
+              <h3>Pergunta central</h3>
+              <p>
+                Como conectar o atendimento digital ao trabalho de backoffice e
+                equipes de campo nas 4 distribuidoras sem recriar quatro
+                operações independentes?
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Papel & Time</span>
+              <h3>Meu papel × consórcio EY × Livework</h3>
+              <p>
+                <strong>O que conduzi e co-construí:</strong> diagnóstico de
+                jornadas, estruturação de Service Blueprints e propostas de
+                interface multi-tenant pela equipe de Business Transformation da
+                EY. <strong>Com quem trabalhei:</strong> consultores da Livework
+                e áreas de operação, atendimento e negócio da Neoenergia.
+              </p>
+            </div>
+          </div>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Ecossistema & Multicanalidade</span>
-              <h3>Mapeamento de 11 Canais de Atendimento</h3>
+              <span className="cp-split-tag">Diagnóstico · 11 Canais</span>
+              <h3>Canais digitais falhavam quando desconectados da operação física</h3>
               <p>
-                O diagnóstico mapeou a jornada do consumidor através de 11 pontos de contato — desde o atendimento presencial em agências e postos credenciados até canais digitais (portal web, aplicativo móvel, SMS, WhatsApp e call center) e equipes de campo.
+                O diagnóstico de campo e a auditoria de processos nos 11 pontos de contato — de agências presenciais e postos credenciados a portal web, aplicativo, SMS, WhatsApp, call center e equipes de campo — revelaram três rupturas recorrentes:
               </p>
               <ul className="cp-card-list">
                 <li>
-                  <strong>Ruptura de continuidade:</strong> solicitações iniciadas nos canais digitais exigiam deslocamento físico até a agência para validação documental presencial.
+                  <strong>Ruptura de continuidade:</strong> solicitações iniciadas em canais digitais ainda exigiam ida à agência para validar documentos presencialmente.
                 </li>
                 <li>
-                  <strong>Silos operacionais:</strong> o atendente do call center não visualizava as ordens de serviço pendentes das equipes de campo, gerando reiterações e frustração.
+                  <strong>Silos operacionais:</strong> o call center não via ordens de serviço pendentes das equipes de campo, gerando ligações repetidas.
                 </li>
                 <li>
-                  <strong>Assimetria de dados:</strong> ausência de transparência em faturamentos estimados e histórico de consumo, provocando alto volume de contestações.
+                  <strong>Assimetria de dados:</strong> faturas estimadas e histórico pouco claros elevavam o volume de contestações no atendimento.
                 </li>
               </ul>
             </div>
@@ -1016,7 +1066,7 @@ export const neoenergiaPresentation: CasePresentationData = {
                   height: 900,
                   alt: "Escala nacional da Neoenergia: 4 distribuidoras (Coelba, Celpe, Cosern e Elektro), 18 estados, 34 milhões de habitantes e 13,9 milhões de clientes",
                   caption:
-                    "Escala da operação: 4 distribuidoras (Coelba, Celpe, Cosern e Elektro) atendendo 13,9 milhões de clientes em 18 estados brasileiros.",
+                    "Por que dimensionar a escala antes de propor interfaces: qualquer falha de processo se multiplica por 13,9 milhões de clientes e 4 operações regionais em 18 estados.",
                 }}
               />
             </div>
@@ -1037,17 +1087,17 @@ export const neoenergiaPresentation: CasePresentationData = {
             <span className="cp-feature-tag">Diagnóstico & Auditoria Operacional</span>
             <h3>Linhas de Visibilidade e Silos de Backstage</h3>
             <p>
-              A leitura de Service Design evita reduzir o diagnóstico a interfaces de tela: a insatisfação com a fatura raramente é um problema visual, decorrendo de regras de negócio obscuras, leituras por estimativa ou falta de sincronização entre o despacho técnico e o faturamento.
+              A auditoria mostrou que a insatisfação com a fatura raramente era um problema de tela. Ela vinha de leituras por estimativa, regras de cobrança pouco claras e falta de sincronização entre despacho técnico e faturamento.
             </p>
             <ul className="cp-card-list">
               <li>
-                <strong>Linha de interação:</strong> pontos de contato diretos onde o consumidor registra a solicitação ou autoleitura.
+                <strong>Linha de interação:</strong> pontos onde o cliente registra solicitações ou envia a autoleitura.
               </li>
               <li>
-                <strong>Linha de visibilidade:</strong> fronteira que separa o que o cliente enxerga das validações internas de crédito e engenharia.
+                <strong>Linha de visibilidade:</strong> fronteira entre o que o cliente acompanha e as validações internas de crédito e engenharia.
               </li>
               <li>
-                <strong>Linha de suporte interno:</strong> integração de sistemas legados de despacho de equipes técnicas e baixa bancária.
+                <strong>Linha de suporte interno:</strong> sistemas legados de despacho de campo e baixa bancária que sustentam o serviço.
               </li>
             </ul>
           </div>
@@ -1058,7 +1108,7 @@ export const neoenergiaPresentation: CasePresentationData = {
               height: 1350,
               alt: "Service Blueprints 1 e 2 da Neoenergia apresentados em prancha editorial conectando frontstage, backstage e sistemas de campo",
               caption:
-                "Auditoria de backstage: pranchas dos Service Blueprints conectando a experiência do consumidor aos sistemas legados e equipes de campo das 4 distribuidoras.",
+                "Por que mapear frontstage e backstage na mesma prancha: tornar visível onde falhas internas de sistemas legados e campo causavam retrabalho para o cliente nas 4 distribuidoras.",
             }}
           />
         </>
@@ -1094,7 +1144,7 @@ export const neoenergiaPresentation: CasePresentationData = {
                   <strong>4. Mudo o contrato:</strong> alteração de titularidade, mudança de carga e adesão à geração solar distribuída.
                 </li>
                 <li>
-                  <strong>5. Encerramento:</strong> desligamento definitivo, mitigação de inadimplência e quitação de débitos.
+                  <strong>5. Abandono:</strong> busca por fontes alternativas, encerramento definitivo do contrato, quitação de débitos e retorno.
                 </li>
               </ol>
             </div>
@@ -1106,7 +1156,7 @@ export const neoenergiaPresentation: CasePresentationData = {
                   height: 900,
                   alt: "Recorte em alta resolução do Service Blueprint 2 (Uso e Pago): storyboard, ações do consumidor e curva de criticidade",
                   caption:
-                    "Service Blueprint 2 (Uso e Pago): recorte em alta resolução conectando consumo, autoleitura, análise de cobrança e curva de criticidade.",
+                    "Por que destacar a curva de criticidade no estágio Uso e Pago: apontar exatamente onde a análise de cobrança e o pagamento elevam o atrito para direcionar as ações imediatas.",
                 }}
               />
             </div>
@@ -1125,22 +1175,25 @@ export const neoenergiaPresentation: CasePresentationData = {
         <>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Design System Multi-Tenant & Governança</span>
-              <h3>Padronização de Interfaces para 4 Distribuidoras</h3>
+              <span className="cp-split-tag">Decisão 1 & 2 · Backoffice & Fundação Multi-tenant</span>
+              <h3>Atacar gargalos de serviço e propor base multi-tenant</h3>
               <p>
-                Em vez de manter quatro portais independentes, estruturamos um Design System multi-tenant baseado em componentes escaláveis e tokens semânticos por distribuidora, garantindo consistência de arquitetura, contraste acessível (WCAG) e redução do custo de manutenção em código:
+                <strong>Decisão 1 (serviço antes da tela):</strong> diante da opção de redesenhar portais isoladamente ou auditar o backstage primeiro, priorizamos os 5 Service Blueprints antes da UI, aceitando adiar o código do portal final para não digitalizar processos quebrados.
               </p>
-              <ul className="cp-card-list">
+              <p>
+                <strong>Decisão 2 (base multi-tenant):</strong> para atender Elektro, Coelba, Celpe e Cosern sem manter quatro portais independentes, propusemos um Design System multi-tenant com componentes compartilhados e temas por marca — projetado para aplicar critérios de contraste (WCAG) e evitar manutenção em quadruplicidade quando levado a código.
+              </p>
+              <ol className="cp-card-list cp-card-list--numbered">
                 <li>
-                  <strong>1. Mapear antes de propor:</strong> a jornada de serviço orienta a interface para que as telas resolvam os atritos reais da operação física.
+                  <strong>1. Mapear antes de propor:</strong> os blueprints orientaram quais fluxos de autosserviço precisavam ser desburocratizados primeiro.
                 </li>
                 <li>
-                  <strong>2. Conectar atendimento e operação:</strong> componentes que refletem o status real dos sistemas de campo em tempo real.
+                  <strong>2. Conectar atendimento e operação:</strong> especificamos componentes pensados para exibir o status das ordens de serviço de campo.
                 </li>
                 <li>
-                  <strong>3. Governança multi-tenant:</strong> um único chassi de componentes alimentando Elektro, Coelba, Celpe e Cosern com temas dedicados.
+                  <strong>3. Governança multi-tenant:</strong> um único chassi de componentes com temas dedicados para as 4 distribuidoras.
                 </li>
-              </ul>
+              </ol>
             </div>
             <div className="cp-split-media">
               <CaseFigure
@@ -1148,9 +1201,9 @@ export const neoenergiaPresentation: CasePresentationData = {
                   src: "/images/neoenergia-entregaveis-ui-design-system.webp",
                   width: 1600,
                   height: 900,
-                  alt: "Entregáveis de interface, portal unificado e Design System multi-tenant para as 4 distribuidoras",
+                  alt: "Entregáveis de interface, portal unificado e fundação de Design System multi-tenant para as 4 distribuidoras",
                   caption:
-                    "Design System Multi-tenant: componentes modulares e esteira de autosserviço padronizada para as 4 distribuidoras do grupo.",
+                    "Por que estruturar um chassi multi-tenant no P&D: preservar a marca de cada distribuidora por tokens temáticos sem multiplicar quatro vezes a arquitetura de telas.",
                 }}
               />
             </div>
@@ -1161,28 +1214,31 @@ export const neoenergiaPresentation: CasePresentationData = {
 
     {
       id: "matriz-118",
-      tag: "Matriz de 118 Ideias",
+      tag: "118 Ideias Priorizadas",
       title:
-        "Matriz de 118 oportunidades priorizadas como baseline para o roadmap de evolução de serviços.",
+        "118 ideias distribuídas na jornada futura como baseline para o roadmap de serviços.",
 
       content: (
         <>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Priorização & Roadmap Estratégico</span>
-              <h3>118 Oportunidades Estruturadas por Impacto e Esforço</h3>
+              <span className="cp-split-tag">Decisão 3 · Priorização & Roadmap</span>
+              <h3>Sequenciamento das 118 ideias em três horizontes</h3>
               <p>
-                As oportunidades mapeadas durante a pesquisa de campo e a auditoria de processos foram organizadas em uma matriz analítica, cruzando o valor percebido pelo consumidor com o esforço operacional de implementação:
+                <strong>Pergunta:</strong> iniciar o roadmap por programas de longa maturação (como telemedição) ou entregar alívio imediato em fatura e autoleitura?
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> distribuímos as 118 ideias pelos 5 estágios da jornada futura e priorizamos ações de curto prazo antes de programas de infraestrutura. Aceitamos postergar iniciativas de maior investimento para atacar primeiro os pontos de maior criticidade no atendimento:
               </p>
               <ul className="cp-card-list">
                 <li>
-                  <strong>Quick Wins (Ações Imediatas):</strong> correções de comunicação na fatura e desburocratização da autoleitura via aplicativo móvel.
+                  <strong>Ações imediatas (Quick Wins):</strong> clareza de comunicação na fatura e simplificação da autoleitura no aplicativo móvel.
                 </li>
                 <li>
-                  <strong>Programas Estruturantes:</strong> unificação do portal de serviços e integração direta dos sistemas de despacho de campo.
+                  <strong>Programas estruturantes:</strong> unificação do portal de serviços e integração dos sistemas de despacho de campo.
                 </li>
                 <li>
-                  <strong>Iniciativas Estruturais de Longo Prazo:</strong> telemedição automatizada, canais conversacionais com supervisão humana e autoatendimento para geração solar distribuída.
+                  <strong>Horizonte de longo prazo:</strong> telemedição automatizada, canais conversacionais com supervisão humana e autoatendimento para geração solar distribuída.
                 </li>
               </ul>
             </div>
@@ -1192,17 +1248,17 @@ export const neoenergiaPresentation: CasePresentationData = {
                   src: "/images/neoenergia-matriz-118-ideias.webp",
                   width: 2000,
                   height: 1195,
-                  alt: "Matriz de Priorização com 118 Oportunidades de Serviço (Impacto vs. Esforço)",
+                  alt: "Mapa da Jornada futura do cliente Neoenergia com os 5 estágios (Contrato e instalo, Uso e pago, Preciso de suporte, Mudo o contrato e Abandono), ações, curva de criticidade e 118 ideias distribuídas por etapa",
                   caption:
-                    "Matriz de Priorização: 118 oportunidades estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.",
+                    "Por que ancorar as 118 ideias na curva de criticidade da jornada futura: impedir que iniciativas entrassem no roadmap desconectadas dos pontos reais de maior atrito operacional.",
                 }}
               />
             </div>
           </div>
           <div className="cp-note">
-            <h3>Desacordo estratégico & aprendizado central</h3>
+            <h3>Desacordo estratégico & resultado do P&D ANEEL</h3>
             <p>
-              Durante a priorização, diretorias regionais inicialmente pediram quatro portais independentes para preservar particularidades locais. Ao cruzar os 5 Service Blueprints com o custo de manutenção de backoffice, defendemos a arquitetura multi-tenant com tokens de marca — mantendo identidade regional sem multiplicar quatro vezes o débito técnico.
+              Diretorias regionais pediram inicialmente quatro portais independentes para preservar particularidades locais. Cruzando os 5 Service Blueprints com o esforço de manutenção de backoffice, defendemos a arquitetura multi-tenant com tokens de marca — aceitando maior esforço inicial de governança entre regionais a custo de menos liberdade visual local, mas sem multiplicar quatro vezes o débito técnico. Os 5 blueprints e as 118 ideias foram aprovados pelas diretorias de operação e atendimento como baseline do P&D Estratégico ANEEL; por se tratar de etapa de P&D, o portal final não foi implementado em código nem medido em produção neste ciclo.
             </p>
           </div>
           <div className="cp-cards-grid">
@@ -1210,14 +1266,14 @@ export const neoenergiaPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Disciplina de Escopo</span>
               <h3>O que ficou fora do recorte</h3>
               <p>
-                A etapa de P&D não incluiu o desenvolvimento em código do portal final nem a substituição imediata dos ERPs legados das 4 distribuidoras. Priorizamos o diagnóstico de backstage, os 5 Service Blueprints e a matriz de 118 ideias para atacar primeiro os gargalos que geravam retrabalho em campo.
+                Esta etapa de P&D não incluiu desenvolvimento em código do portal final nem substituição imediata dos ERPs legados das 4 distribuidoras. Priorizamos o diagnóstico de backstage, os 5 Service Blueprints e as 118 ideias para atacar primeiro os gargalos que geravam retrabalho em campo.
               </p>
             </div>
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Reflexão Crítica</span>
-              <h3>O que eu faria diferente hoje</h3>
+              <h3>O que eu reverteria hoje</h3>
               <p>
-                Incluiria protótipos navegáveis de alta fidelidade para dois fluxos críticos de campo já durante os workshops de priorização, acelerando o alinhamento entre as diretorias regionais sobre o esforço técnico da esteira multi-tenant.
+                Eu reverteria a decisão de conduzir os workshops de priorização apenas com pranchas estáticas de blueprints e listas de ideias. Sem protótipos navegáveis de dois fluxos críticos de campo durante a negociação, o debate sobre o esforço da esteira multi-tenant ficou abstrato demais para parte das diretorias regionais. Levar esses fluxos simulados desde a priorização teria reduzido a resistência à arquitetura unificada mais cedo.
               </p>
             </div>
           </div>
@@ -1251,14 +1307,14 @@ export const neoenergiaPresentation: CasePresentationData = {
             </div>
           </details>
           <details>
-            <summary>Governança e impacto estratégico</summary>
+            <summary>Governança e alcance do P&D ANEEL</summary>
             <div>
               <p>
-                Os blueprints de serviço e a matriz de 118 oportunidades serviram
-                como baseline estratégico aprovado pelas diretorias de operação e
-                atendimento do Grupo Neoenergia no âmbito do programa de P&D
-                Estratégico ANEEL, orientando as esteiras de inovação e unificação
-                de canais das 4 distribuidoras.
+                Os 5 Service Blueprints e as 118 ideias foram aprovados pelas
+                diretorias de operação e atendimento do Grupo Neoenergia no
+                programa de P&D Estratégico ANEEL. O material serviu como
+                baseline para orientar as esteiras de unificação de canais das 4
+                distribuidoras.
               </p>
             </div>
           </details>
@@ -1275,16 +1331,16 @@ export function NeoenergiaPresentation() {
 const itauNarratives = {
   vencimentos: {
     summary:
-      "Conectar a identificação de vencimentos à atuação do especialista. A experiência organiza eventos financeiros, contexto do cliente e registro de ações para apoiar o acompanhamento da carteira.",
+      "Especialistas precisavam localizar vencimentos, eventos futuros e sinais de Open Finance sem perder o contexto do cliente nem o histórico do que já havia sido tratado. A interface organiza esses eventos, os filtros operacionais e o registro de ações em uma única tabela de acompanhamento da carteira.",
 
     users:
       "Especialistas de investimentos, os assessores que os auxiliam no acompanhamento das carteiras e gestores que monitoram a atuação das equipes.",
 
     contribution:
-      "Arquitetura de consulta, organização de filtros e tabelas, estados da interface e continuidade entre identificação do evento e atuação. O recorte de design é apresentado junto às funcionalidades descritas na base de conhecimento do produto.",
+      "Conduzi a arquitetura de consulta, a definição de filtros combináveis, a estrutura da tabela densa e a especificação de estados vazios e de carregamento. Atuei com Produto e Engenharia para alinhar o handoff às regras descritas na base de conhecimento do produto.",
 
     research:
-      "A etapa de discovery e o handoff mapearam a evolução da consulta, os estados operacionais, o registro de ações, os pontos de entrada e a visão gerencial. A interface consolidada de Gestão de Liquidez centraliza esses fluxos em uma experiência única de acompanhamento da carteira.",
+      "Mostrar a data de um vencimento não bastava para a atuação: o especialista precisava reconhecer o contexto do cliente e saber o que já tinha sido tratado a partir de diferentes pontos de entrada (panorama, operações, cliente e acesso direto). Com base no discovery e na base de conhecimento do produto, centralizei esses fluxos na interface consolidada de Gestão de Liquidez.",
 
     constraints: [
       "Distinguir vencimentos, eventos futuros e Open Finance sem fragmentar a lógica de consulta.",
@@ -1296,21 +1352,21 @@ const itauNarratives = {
 
     decisions: [
       [
-        "Reutilizar a lógica de consulta",
+        "Reutilizar a lógica de consulta em abas",
 
-        "Abas distinguem contextos financeiros enquanto busca, filtros e tabela mantêm um padrão comum. Isso preserva as diferenças entre os eventos sem exigir reaprendizado de toda a navegação.",
+        "Entre criar telas separadas ou unificar tudo em uma lista mista, mantive Vencimentos, Eventos futuros e Open Finance em abas distintas com a mesma estrutura de busca, filtros e tabela. Aceitei exigir a troca de aba para preservar a diferença entre eventos sem forçar o usuário a reaprender a navegação.",
       ],
 
       [
-        "Tornar o recorte da lista explícito",
+        "Manter o recorte de filtros sempre explícito",
 
-        "Período, produto, carteira, status e identificação do cliente ajudam a delimitar a consulta. A leitura dos filtros precisa acompanhar a interpretação de totais e estados.",
+        "Em vez de ocultar critérios de período, produto, carteira, status e cliente em menus fechados, priorizei filtros visíveis e combináveis junto à tabela, a custo de maior densidade no topo da tela. Assim, a leitura de totais e estados acompanha diretamente o recorte ativo.",
       ],
 
       [
-        "Conectar consulta e atuação",
+        "Ligar consulta, registro de ação e estados de exceção",
 
-        "A base de conhecimento descreve registro de valor, comentários e informações de contato. O evento deve permanecer relacionado ao cliente durante a ação e no acompanhamento posterior.",
+        "Descartei tratar a tabela apenas como relatório de leitura e vinculei cada linha ao registro de valor, comentários e contato previstos na base de conhecimento, além de estados explícitos de carregamento e vazio. O custo foi ampliar a especificação de estados no handoff para evitar falhas silenciosas em consultas sem retorno.",
       ],
     ],
 
@@ -1339,6 +1395,12 @@ const itauNarratives = {
       "Os dados cadastrais e valores financeiros apresentados na interface foram sintetizados para preservação do sigilo bancário e conformidade com a LGPD, mantendo fidelidade estrita às regras de ordenação de vencimentos, filtros operacionais e contratos de dados acordados com especialistas e assessores.",
 
     scope: "Consulta, filtros, estados e registro de atuação",
+    flowTag: "Fluxo & Interface Canônica",
+    flowTitle: "Como especialistas, assessores e gestores operam Gestão de Vencimentos ponta a ponta.",
+    outOfScope:
+      "Mantive fora deste recorte a criação de telas isoladas por tipo de evento e ações em massa sem visualização do contexto do cliente. Priorizei uma lógica única de busca, filtros e tabela compartilhada entre Vencimentos, Eventos futuros e Open Finance, a custo de exigir abas explícitas para separar naturezas financeiras distintas.",
+    reflection:
+      "Hoje eu revisitaria a decisão de deixar o critério de urgência implícito apenas na combinação de ordenação por data e filtros manuais. Em carteiras extensas, depender só da combinação de filtros exige esforço extra do especialista e do assessor para separar o que vence no curto prazo do que ainda pode aguardar. Em uma nova iteração, testaria um agrupamento explícito de urgência junto aos estados de atuação antes do handoff.",
   },
 
   "hub-liquidez": {
@@ -1349,10 +1411,10 @@ const itauNarratives = {
       "Especialistas de investimentos e os assessores que os auxiliam a acompanhar recursos disponíveis e oportunidades de atuação nas carteiras.",
 
     contribution:
-      "Hierarquia dos dados financeiros, distinção temporal dos valores e conexão entre visão de carteira, lista de clientes, filtros e estado da atuação.",
+      "Conduzi a definição da hierarquia dos dados financeiros, a separação temporal dos valores e a conexão entre o resumo da carteira, os filtros operacionais e a fila de clientes. Alinhei os contratos de visualização e estados de atuação com Produto, Engenharia e áreas de negócio.",
 
     research:
-      "A arquitetura do Hub de Liquidez conecta a posição atual, a projeção de recursos e a fila prioritária de clientes para atuação. A solução integra os valores de liquidez imediata identificados pelo Cofrinho IFA ao acompanhamento dos recursos que permanecem em conta.",
+      "Misturar dinheiro já disponível em conta com projeções futuras dificultava justificar a abordagem ao cliente. A partir do discovery e da base funcional do produto, conectei posição atual (incluindo valores de liquidez imediata do Cofrinho IFA), projeção de recursos e fila prioritária de clientes em uma única leitura.",
 
     constraints: [
       "Diferenciar dinheiro disponível agora de uma projeção para outra janela.",
@@ -1366,19 +1428,19 @@ const itauNarratives = {
       [
         "Separar posição, variação e projeção",
 
-        "O resumo apresenta total disponível agora, variação prevista e liquidez projetada. A relação visual entre os três valores explicita que representam conceitos e momentos diferentes.",
+        "Descartei somar saldo atual e valores futuros em um único indicador totalizador e separei total disponível agora, variação prevista e liquidez projetada. Aceitei ocupar mais espaço no cabeçalho do resumo para evitar que recursos projetados fossem interpretados como disponibilidade imediata.",
       ],
 
       [
-        "Dar contexto à janela de tempo",
+        "Vincular a janela de tempo ao valor projetado",
 
-        "Fim do dia, 7 dias e 30 dias delimitam a projeção. A janela selecionada acompanha o título do valor projetado para reduzir interpretações fora do período.",
+        "Entre manter filtros de período isolados ou acoplados ao indicador, vinculei as janelas de fim do dia, 7 dias e 30 dias diretamente ao título do valor projetado. O custo foi limitar a comparação simultânea entre múltiplas janelas na mesma tela para reduzir leituras fora do período selecionado.",
       ],
 
       [
-        "Ligar o resumo à fila de trabalho",
+        "Conectar o resumo à fila operacional por origem",
 
-        "A tabela aproxima cliente, carteira, agência/conta, disponível agora, total projetado e status. Busca, origem e faixas de valor permitem delimitar o universo antes da ação.",
+        "Mantive a origem Itaú e Open Finance explícita nos filtros e na tabela junto a cliente, carteira, agência/conta, disponível agora, total projetado e status. Aceitei maior densidade de colunas para que o especialista e o assessor filtrem por origem e faixa de valor antes de iniciar o contato.",
       ],
     ],
 
@@ -1407,20 +1469,26 @@ const itauNarratives = {
       "Os dados e valores numéricos apresentados na interface foram sintetizados para preservação do sigilo bancário, mantendo a hierarquia de saldos, filtros, status operacionais e regras de visualização apresentadas no artefato.",
 
     scope: "Hierarquia financeira, projeção e clientes para atuação",
+    flowTag: "Fluxo & Interface Canônica",
+    flowTitle: "Como especialistas e assessores operam o Hub de Liquidez ponta a ponta.",
+    outOfScope:
+      "Deixei fora da primeira camada visual a exposição de fórmulas internas de reconciliação e regras automáticas de ranqueamento que dependiam de governança do domínio. Priorizei separar claramente saldo disponível agora, variação prevista e projeção por janela (fim do dia, 7 e 30 dias), a custo de não concentrar todas as variáveis de composição em uma única coluna.",
+    reflection:
+      "Hoje eu revisitaria a decisão de exibir a lista de clientes priorizados sem explicitar, na própria linha da tabela, o critério que levou aquele cliente ao topo da fila. O custo de ocultar essa regra foi aumentar a dependência de interpretação do especialista e do assessor antes do contato. Também definiria antes do handoff, junto a Produto e domínio, um protocolo para checar se os usuários distinguiam disponibilidade imediata de liquidez projetada sem erro.",
   },
 
   movimentacoes: {
     summary:
-      "Preservar a continuidade operacional na transição do Extrato EA para o IFA. A solução mantém o saldo provisionado visível no cabeçalho entre jornadas; Movimentações concentra a consulta detalhada e o contexto de CEP, CEP Plus e limite.",
+      "Na transição do Extrato EA para o IFA, concentrar todos os saldos em uma única aba obrigaria o profissional a sair da tarefa atual apenas para consultar o saldo provisionado. A arquitetura mantém o saldo provisionado visível no cabeçalho entre jornadas e concentra em Movimentações o extrato detalhado e os limites de crédito (CEP, CEP Plus e limite).",
 
     users:
       "Especialistas de investimentos e os assessores que os auxiliam a consultar lançamentos, compreender saldos e explicar movimentações dos clientes.",
 
     contribution:
-      "Arquitetura da informação, comparação de alternativas de visibilidade do saldo e definição da relação entre contexto financeiro persistente e consulta detalhada.",
+      "Conduzi o discovery de arquitetura da informação, comparei alternativas de posicionamento do saldo provisionado e defini a divisão entre informação persistente no cabeçalho e consulta detalhada em Movimentações, em alinhamento com Produto e Engenharia.",
 
     research:
-      "A etapa de discovery comparou alternativas para acomodar o Extrato EA no IFA, distinguindo conta corrente, investimentos e conta gráfica. A arquitetura adotada manteve o saldo provisionado persistente no cabeçalho, com CEP, CEP Plus e limite contextualizados em Movimentações.",
+      "O saldo provisionado é consultado durante diferentes tarefas da carteira e não podia exigir troca constante de aba, enquanto conta corrente, investimentos e conta gráfica exigiam regras próprias de leitura. No discovery, comparei seis alternativas de visibilidade até definir o provisionado persistente no cabeçalho e os limites contextualizados em Movimentações.",
 
     constraints: [
       "O saldo provisionado é necessário em diferentes jornadas e não pode depender de troca de aba.",
@@ -1432,21 +1500,21 @@ const itauNarratives = {
 
     decisions: [
       [
-        "Manter o provisionado no cabeçalho",
+        "Manter o saldo provisionado no cabeçalho",
 
-        "O acesso transversal evita exigir navegação até Movimentações para consultar um saldo necessário em outras tarefas operacionais.",
+        "Comparei manter o resumo completo apenas em Movimentações ou usar faixa complementar, bloco no histórico, painel acionável, sidebar e contingência, e decidi fixar o saldo provisionado no cabeçalho. Aceitei ocupar espaço permanente na navegação superior para eliminar trocas de aba em tarefas transversais.",
       ],
 
       [
-        "Contextualizar os limites em Movimentações",
+        "Contextualizar limites de crédito em Movimentações",
 
-        "CEP, CEP Plus e limite permanecem junto ao aprofundamento financeiro. A distinção preserva a função do cabeçalho sem transportar todo o extrato para a navegação global.",
+        "Descartei levar CEP, CEP Plus e limite para o cabeçalho global e mantive esses dados junto ao aprofundamento financeiro em Movimentações. O custo foi exigir um clique até o módulo para consultar limites, em troca de preservar o cabeçalho enxuto sem duplicar o extrato na navegação global.",
       ],
 
       [
         "Separar domínios com consulta consistente",
 
-        "A base de conhecimento distingue lançamentos de conta corrente, movimentos de investimentos e conta gráfica. Período, busca e ordenação apoiam a consulta, respeitando os dados específicos de cada domínio.",
+        "Em vez de misturar lançamentos heterogêneos em uma lista única, separei conta corrente, investimentos e conta gráfica seguindo a base de conhecimento do produto, mantendo o mesmo padrão de período, busca e ordenação. Aceitei a alternância entre domínios para preservar os campos específicos de cada operação.",
       ],
     ],
 
@@ -1472,23 +1540,29 @@ const itauNarratives = {
       "A informação usada entre jornadas deve acompanhar o trabalho. Concentrar tudo em uma página especializada pode preservar a organização interna e, ainda assim, dificultar uma tarefa transversal.",
 
     boundary:
-      "Os lançamentos de extrato e valores apresentados foram sintetizados para conformidade com o sigilo bancário, preservando com rigor a hierarquia da informação entre o saldo provisionado no cabeçalho e os módulos detalhados de conta corrente e investimentos.",
+      "Os lançamentos de extrato e valores apresentados foram sintetizados para conformidade com o sigilo bancário, preservando a hierarquia da informação entre o saldo provisionado no cabeçalho e os módulos detalhados de conta corrente e investimentos.",
 
     scope: "Arquitetura do extrato e contexto financeiro transversal",
+    flowTag: "Fluxo & Arquitetura de Consulta",
+    flowTitle: "Como especialistas e assessores consultam saldos e Movimentações ponta a ponta.",
+    outOfScope:
+      "Descartei transportar limites de crédito (CEP, CEP Plus e limite) ou um extrato resumido completo para o cabeçalho global, assim como soluções de painel lateral e faixa complementar. Aceitei exigir um clique adicional até Movimentações para aprofundar limites e lançamentos, em troca de manter o saldo provisionado visível entre jornadas sem sobrecarregar a navegação global.",
+    reflection:
+      "Hoje eu revisitaria a decisão de encerrar o recorte de arquitetura sem uma comparação lado a lado com tarefas equivalentes do Extrato EA. Mesmo com a separação clara entre saldo provisionado no cabeçalho e limites em Movimentações, o custo dessa lacuna foi não validar antecipadamente onde ocorriam mais trocas de contexto na rotina real. Eu incluiria essa checagem comparativa antes de congelar o comportamento de conta corrente, investimentos e conta gráfica.",
   },
 
   campanhas: {
     summary:
-      "Conectar configuração, execução comercial e acompanhamento gerencial. O sistema de campanhas permite direcionar ações a especialistas e clientes específicos, tornando público, vigência e situação da atuação parte da experiência.",
+      "Operações comerciais em lote falham quando configuração da base, execução pelos especialistas e acompanhamento gerencial perdem sincronia de estado. O sistema de campanhas estrutura público, vigência, processamento e registro de atuação em um fluxo contínuo entre esses três perfis.",
 
     users:
       "Administradores de backoffice que configuram campanhas; especialistas que atuam com os clientes; gestores que acompanham a execução das equipes.",
 
     contribution:
-      "Organização dos fluxos de configuração, consulta e manutenção, hierarquia dos dados e cobertura de estados. O relato também conecta esse recorte de interface aos três perfis descritos na base de conhecimento.",
+      "Conduzi a modelagem dos fluxos de configuração, consulta e manutenção, a hierarquia de dados da tabela e a especificação de estados de carregamento, vazio, processamento e erro. Alinhei esse recorte de interface às regras dos três perfis descritos na base de conhecimento do produto.",
 
     research:
-      "Os screenflows e a exploração de configuração explicam informações gerais, público, campos personalizados e estados de processamento. A base de conhecimento amplia o contexto: administração, execução pelo especialista e acompanhamento por hierarquia gerencial são partes do mesmo serviço.",
+      "Administração de backoffice, execução pelo especialista e acompanhamento por hierarquia gerencial dependem do mesmo estado da base: se o processamento falha ou a vigência muda, todos os perfis precisam reconhecer a consequência. Os fluxos de tela (screenflows) e a base de conhecimento guiaram a separação de informações gerais, público, campos personalizados e estados operacionais.",
 
     constraints: [
       "Combinar público, vigência e ativação para controlar a visibilidade da campanha.",
@@ -1500,21 +1574,21 @@ const itauNarratives = {
 
     decisions: [
       [
-        "Configurar antes de disponibilizar",
+        "Separar configuração e ativação da campanha",
 
-        "Nome, descrição, tipo, categoria, público e vigência definem o contexto da campanha. A ativação determina sua visibilidade para o público de especialistas.",
+        "Em vez de publicar a campanha imediatamente ao fim do cadastro, dividi o fluxo entre configuração (nome, descrição, tipo, categoria, público e vigência) e ativação explícita. Aceitei um passo adicional para o administrador de backoffice para impedir que campanhas incompletas ficassem visíveis aos especialistas.",
       ],
 
       [
-        "Explicitar estado e consequência",
+        "Explicitar estados de processamento antes da manutenção",
 
-        "Carregamento, vazio, processamento e erro orientam a leitura da base e as ações de manutenção. A experiência precisa tornar reconhecível quando uma campanha pode ser disponibilizada ou retirada.",
+        "Descartei ocultar falhas de importação atrás de mensagens genéricas e mapeei estados próprios de carregamento, vazio, processamento e erro na tabela de manutenção. O custo foi aumentar a quantidade de estados a especificar e manter para tornar claro quando uma campanha pode ser publicada, editada ou retirada do ar.",
       ],
 
       [
-        "Conectar atuação e acompanhamento",
+        "Conectar atuação registrada e visão gerencial sem confundir conversão",
 
-        "A documentação descreve evolução de Pendente para Em andamento e Atuado, com valor e comentários. Gestores acompanham atuações consolidadas conforme a hierarquia organizacional; atuação registrada não equivale automaticamente a conversão de vendas.",
+        "Mantive a evolução de Pendente para Em andamento e Atuado com valor e comentários, agregada por hierarquia gerencial conforme a documentação do produto. Evitei rotular atuação registrada como venda concluída, a custo de exigir cruzamento separado para apurar conversão comercial.",
       ],
     ],
 
@@ -1543,43 +1617,49 @@ const itauNarratives = {
       "As parametrizações e bases de clientes exibidas foram anonimizadas para conformidade com a LGPD, mantendo fidelidade estrita à taxonomia de campanhas, regras de elegibilidade por carteira e estados de processamento validados com a equipe de operações.",
 
     scope: "Configuração, consulta, estados e acompanhamento de atuação",
+    flowTag: "Fluxo & Parametrização em Lote",
+    flowTitle: "Como administradores, especialistas e gestores operam Gestão de Campanhas ponta a ponta.",
+    outOfScope:
+      "Mantive fora da etapa inicial de criação a ativação automática da campanha logo após o upload da base e o vínculo automático entre atuação registrada e conversão comercial. Aceitei adicionar uma etapa explícita de conferência de estado (processando, carregada, vazia ou erro) antes de disponibilizar a campanha, para evitar que bases incompletas chegassem aos especialistas.",
+    reflection:
+      "Hoje eu revisitaria a decisão de tratar as transições de erro, edição e exclusão apenas no nível de fluxos de tela sem fechar desde o início as regras de preservação de dados entre etapas. Em fluxos administrativos em lote, perder preenchimento após uma falha de processamento gera retrabalho direto para o administrador de backoffice. Eu anteciparia a especificação de recuperação de erro e retorno seguro após exclusão junto à engenharia.",
   },
 
   "registros-atendimento": {
     summary:
-      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por inteligência artificial. A solução posiciona os resumos dos atendimentos recentes no fluxo de trabalho de especialistas e assessores, acelerando a contextualização sem abrir mão da revisão humana.",
+      "Entre um contato e outro, especialistas e assessores perdiam tempo recuperando o histórico do cliente e digitando atas manualmente. A solução posiciona resumos dos últimos 5 atendimentos assistidos por IA no fluxo de trabalho e gera minutas preliminares sujeitas à revisão e confirmação humana obrigatória.",
 
     users:
       "Especialistas de investimentos e os assessores que os auxiliam a retomar o histórico do cliente e documentar os pontos acordados em cada contato.",
 
     contribution:
-      "Arquitetura de interação entre a consulta ao histórico recente e o apoio à redação do registro. Definição do modelo de supervisão humana para garantir integridade e conformidade das notas de atendimento.",
+      "Conduzi a arquitetura de interação entre a consulta ao histórico recente e o campo de registro assistido por IA. Defini o fluxo de supervisão humana obrigatória em conjunto com áreas de negócio para preservar a integridade e a conformidade das notas bancárias.",
 
     research:
-      "O mapeamento da rotina de especialistas e assessores identificou que a transição entre atendimentos gerava perda de contexto e sobrecarga de digitação. A solução estruturou resumos em tópicos objetivos dos últimos 5 atendimentos e sugestões automáticas de ata para validação do profissional.",
+      "Na rotina de especialistas e assessores, a transição entre atendimentos gerava perda de contexto e sobrecarga de digitação. A partir desse mapeamento, estruturei resumos em tópicos dos últimos 5 atendimentos e sugestões de ata preliminar para validação antes da gravação.",
 
     constraints: [
       "Garantir que o conteúdo sugerido pela IA seja sempre revisado e confirmado pelo especialista antes de ser gravado no prontuário do cliente.",
 
       "Preservar a fidelidade técnica de termos financeiros, evitando alucinações ou omissão de direcionamentos de carteira.",
 
-      "Manter o tempo de recuperação de histórico compatível com o ritmo ágil das interações de assessoria.",
+      "Manter a recuperação de histórico compatível com o intervalo curto entre atendimentos.",
     ],
 
     decisions: [
       [
-        "Contextualização imediata via histórico recente",
-        "Acesso direto aos 5 resumos anteriores no painel lateral do cliente, permitindo retomar assuntos pendentes sem abrir múltiplos registros manuais.",
+        "Limitar o painel lateral aos 5 resumos mais recentes",
+        "Entre exibir o histórico completo de notas brutas ou sintetizar apenas os contatos mais recentes, priorizei os 5 últimos resumos em tópicos no painel lateral do cliente. Aceitei exigir abertura do histórico completo para casos mais antigos em troca de retomada rápida de assuntos pendentes.",
       ],
 
       [
-        "Supervisão e validação humana obrigatória",
-        "O texto sugerido funciona como minuta preliminar estruturada; a interface exige a confirmação ativa do especialista antes de salvar a nota de atendimento.",
+        "Exigir validação humana antes da gravação (Human-in-the-Loop)",
+        "Descartei o salvamento automático de atas geradas por IA e defini o texto sugerido como minuta preliminar editável com confirmação ativa obrigatória do especialista. Aceitei um passo extra de revisão antes de salvar para evitar alucinações ou omissão de direcionamentos de carteira no prontuário bancário.",
       ],
 
       [
-        "Critérios de qualidade focados em precisão e conformidade",
-        "A avaliação da ferramenta prioriza a precisão das orientações registradas e a mitigação de erros, e não apenas o tempo economizado na digitação.",
+        "Priorizar precisão e conformidade acima de velocidade isolada",
+        "Em vez de avaliar o fluxo apenas pelo tempo economizado na digitação, defini critérios de qualidade focados em fidelidade técnica dos termos financeiros, ausência de omissões e esforço de correção. O custo foi tornar a validação mais exigente para proteger a rastreabilidade regulatória.",
       ],
     ],
 
@@ -1600,12 +1680,18 @@ const itauNarratives = {
     ],
 
     learning:
-      "Em operações financeiras reguladas, a automação de processos por IA reduz o tempo de transcrição apenas quando mantém rastreabilidade auditável: o especialista valida, edita e aprova cada registro antes da persistência bancária (Human-in-the-Loop).",
+      "Em operações financeiras reguladas, a assistência por IA só sustenta ganho operacional quando mantém rastreabilidade auditável: o especialista valida, edita e aprova cada registro antes da persistência bancária (Human-in-the-Loop).",
 
     boundary:
       "Os registros e notas de atendimento apresentados são anonimizados para conformidade com a LGPD e o sigilo bancário, demonstrando a arquitetura de interação assistida validada com os times de negócio.",
 
     scope: "Arquitetura de interação para resumos assistidos por IA e governança de notas",
+    flowTag: "Fluxo & Governança de IA",
+    flowTitle: "Como especialistas e assessores operam Registros de Atendimento com revisão humana.",
+    outOfScope:
+      "Deixei fora do fluxo qualquer gravação automática de resumos gerados por IA sem confirmação ativa do especialista e métricas baseadas apenas em velocidade de preenchimento. Aceitei incluir um passo obrigatório de revisão e edição manual antes de salvar a nota, para mitigar omissões e preservar a fidelidade de termos financeiros no prontuário.",
+    reflection:
+      "Hoje eu revisitaria a decisão de desenhar o fluxo assistido por IA sem definir, na mesma entrega, uma referência visual explícita do esforço de revisão frente ao registro original. Se corrigir uma minuta imprecisa consumir quase o mesmo esforço que redigir do zero, o recurso perde utilidade na rotina entre atendimentos. Eu acoplaria à arquitetura um critério estruturado para acompanhar edições frequentes, omissões e consultas ao histórico completo.",
   },
 }
 
@@ -1655,7 +1741,7 @@ export function ItauPresentation() {
   }
 
   const itauKeyMetrics: Record<string, string> = {
-    vencimentos: "Visão canônica de proventos e agenda",
+    vencimentos: "Consulta unificada de vencimentos e eventos",
     "hub-liquidez": "Consolidação de composição de liquidez",
     movimentacoes: "Transição Extrato EA para IFA",
     campanhas: "Operação e parametrização em lote",
@@ -1677,6 +1763,7 @@ export function ItauPresentation() {
 
     scope: story.scope,
 
+    keyMetricLabel: "ENTREGA PRINCIPAL",
     keyMetric: itauKeyMetrics[caseSlug] || "Operação financeira",
 
     kicker: "Fintech · Itaú Unibanco",
@@ -1781,8 +1868,8 @@ export function ItauPresentation() {
 
       {
         id: "interface",
-        tag: "Fluxo & Interface Canônica",
-        title: `Como especialistas e assessores operam ${project.title} ponta a ponta.`,
+        tag: story.flowTag,
+        title: story.flowTitle,
 
         content: (
           <>
@@ -1821,16 +1908,12 @@ export function ItauPresentation() {
               <div className="cp-feature-card">
                 <span className="cp-feature-tag">Disciplina de Escopo</span>
                 <h3>O que ficou fora do recorte</h3>
-                <p>
-                  Mantivemos fora da primeira camada visual configurações avançadas de baixa recorrência e automações sem revisão do especialista. Em operações financeiras densas, o trade-off foi priorizar visibilidade de contexto, filtros previsíveis e rastreabilidade da decisão humana.
-                </p>
+                <p>{story.outOfScope}</p>
               </div>
               <div className="cp-feature-card">
                 <span className="cp-feature-tag">Reflexão Crítica</span>
-                <h3>O que eu faria diferente hoje</h3>
-                <p>
-                  Ampliaria o acompanhamento longitudinal após o handoff com indicadores de uso por perfil de carteira, cruzando o tempo de consulta de dados com a taxa de registro de ações concluídas por especialistas e assessores.
-                </p>
+                <h3>O que eu revisitaria hoje</h3>
+                <p>{story.reflection}</p>
               </div>
             </div>
           </>
@@ -1852,8 +1935,11 @@ export function ItauPresentation() {
                   <p>
                     <a
                       href={`https://www.figma.com/design/aASd7epPB9NlC0xIY53eOC/IFA---PROTOTIPO-COMPLETO?node-id=${kbNodes[caseSlug]}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Base de conhecimento funcional do produto
+                      <span className="pf-sr-only"> (abre em nova aba)</span>
                     </a>
                   </p>
                 )}
@@ -1872,7 +1958,7 @@ export function ItauPresentation() {
                   operações da plataforma íon for Advisors do Itaú Unibanco (2024–2026).
                   Atuação em squads multidisciplinares integrando Design, Gestão de Produto,
                   Engenharia e lideranças de negócio na definição de arquitetura da informação,
-                  contratos de dados e fluxos de alta complexidade.
+                  contratos de dados e fluxos operacionais de investimentos.
                 </p>
               </div>
             </details>

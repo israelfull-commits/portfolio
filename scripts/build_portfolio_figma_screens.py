@@ -453,7 +453,7 @@ async function createHeaderBar(parentWidth) {
   nav.clipsContent = false;
   nav.fills = [];
 
-  var links = ['Sobre', 'Expertise', 'Cases', 'Trajetória'];
+  var links = ['Cases', 'Sobre', 'Currículo'];
   for (var l = 0; l < links.length; l++) {
     var lnk = await createTextNode(links[l], 14, 'regular', TOKENS.colors.textSecondary);
     nav.appendChild(lnk);
@@ -688,7 +688,7 @@ async function buildSalaryNowCh2RiskMatrix(width, height) {
   var c3Badge = await createBadge('APOIO SECUNDÁRIO', TOKENS.colors.subtle, TOKENS.colors.deepPine, false);
   var c3Name = await createTextNode('Portal RH (B2B)', 14, 'bold', TOKENS.colors.textPrimary);
   var c3Table = await createTextNode('• Risco de Valor: MÉDIO (desconhecido)\n• Risco de Usabilidade: ALTO (burocrático)\n• Risco de Viabilidade: BAIXO (web simples)\n• Risco de Negócio: MÉDIO (retenção B2B)', 11, 'regular', TOKENS.colors.textSecondary, pColW - 32, null, 16);
-  var c3Action = await createTextNode('➜ DECISÃO: Adicionar painel de saúde financeira agregada para transformar o RH em promotor.', 11, 'bold', TOKENS.colors.deepPine, pColW - 32, null, 16);
+  var c3Action = await createTextNode('➜ DECISÃO: Adicionar painel de saúde financeira agregada para engajar o RH como patrocinador.', 12, 'bold', TOKENS.colors.deepPine, pColW - 32, null, 16);
   c3.appendChild(c3Badge);
   c3.appendChild(c3Name);
   c3.appendChild(c3Table);
@@ -778,7 +778,7 @@ async function buildSalaryNowCh3GestaltSimulator(width, height) {
   frame.appendChild(gGrid);
 
   var gFooter = createHorizontalRow('Gestalt Footer', width - 64, 0, { left: 16, right: 16, top: 10, bottom: 10 }, TOKENS.colors.darkPine, TOKENS.colors.pineSurface, 8, 'SPACE_BETWEEN', 'CENTER');
-  var gfTxt = await createTextNode('Resultado Cognitivo: Transformação do sentimento de "endividamento perigoso" em "benefício transparente e sob controle".', 12, 'semibold', TOKENS.colors.acidLime);
+  var gfTxt = await createTextNode('Resultado Cognitivo: Mudança da percepção de "endividamento" para "benefício transparente e sob controle".', 12, 'semibold', TOKENS.colors.acidLime);
   gFooter.appendChild(gfTxt);
   frame.appendChild(gFooter);
 
@@ -1682,7 +1682,7 @@ async function buildHomeCardThumbItauVenc(width, height) {
 
   var top = createHorizontalRow('Venc Top', width - 40, 0, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
   var pill = await createBadge('ALERTA PROATIVO D-30', TOKENS.colors.subtle, TOKENS.colors.deepPine, false);
-  var stat = await createBadge('TEMPO: -60%', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
+  var stat = await createBadge('FILTROS COMBINÁVEIS', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
   top.appendChild(pill);
   top.appendChild(stat);
   frame.appendChild(top);
@@ -2306,7 +2306,7 @@ var CASE_NEOENERGIA = {
       title: 'Unificação da infraestrutura de atendimento para 34 milhões de pessoas.',
       imgKey: 'neo_num',
       caption: 'Escala do ecossistema: integração de Elektro (SP/MS), Coelba (BA), Celpe (PE) e Cosern (RN) em 18 estados.',
-      p: 'Iniciativa de discovery e transformação de serviços para conectar canais de atendimento, processos internos e experiência do consumidor de energia para o Grupo Neoenergia (Iberdrola Brasil), integrando 4 grandes distribuidoras sob regulação rígida da ANEEL.'
+      p: 'Iniciativa de discovery e Service Design para conectar 11 canais de atendimento, processos internos e operação de campo para o Grupo Neoenergia (Iberdrola Brasil), integrando 4 distribuidoras sob regulação da ANEEL.'
     },
     {
       num: '02',
@@ -2486,7 +2486,7 @@ var CASE_ITAU = {
       title: 'Hub de Liquidez: consolidando posição financeira e saldo projetado.',
       imgKey: 'itau_hub',
       caption: 'Hub de Liquidez: visão unificada de saldos em conta, resgates provisionados e oportunidades de reinvestimento.',
-      p: 'O Hub de Liquidez resolveu um gargalo crítico dos assessores: a necessidade de abrir 4 sistemas legados diferentes para calcular o saldo disponível real de um cliente corporativo ou investidor qualificado.'
+      p: 'O Hub de Liquidez consolidou a visão de especialistas de investimentos e assessores ao reunir saldo disponível agora, projeção temporal e fila prioritária de clientes em uma única interface.'
     },
     {
       num: '02',
@@ -2519,7 +2519,7 @@ var CASE_ITAU = {
       num: '05',
       tag: 'IA APLICADA & DOCUMENTAÇÃO',
       short: 'Registros de Atendimento com IA',
-      title: 'Resumos assistidos por inteligência artificial com supervisão humana rigorosa.',
+      title: 'Resumos assistidos por inteligência artificial com supervisão humana obrigatória.',
       imgKey: 'itau_registros',
       caption: 'Registros de Atendimento: transcrição e sumarização de reuniões com clientes, extraindo tarefas e notas de conformidade.',
       p: 'Implementamos fluxos assistidos por IA que geram minutas automáticas de reuniões, permitindo ao assessor revisar e validar em segundos as diretrizes acordadas com o investidor.'
@@ -2536,7 +2536,7 @@ var CASE_CLARO = {
   subtitle: 'Mapeamento de 22 jornadas de atendimento, 20 pessoas em imersão, 10 entrevistas e esteira unificada para equipes de vendas em lojas e televendas.',
   metadata: [
     { label: 'MEU PAPEL', val: 'UX/UI Designer' },
-    { label: 'EQUIPE', val: 'Equipe de Operações e Transformação Digital Claro' },
+    { label: 'EQUIPE', val: 'Design, Produto, Engenharia e operação comercial Claro' },
     { label: 'ESCOPO', val: 'Pesquisa, jornadas, prototipação e interfaces televendas/lojas' }
   ],
   heroImgKey: 'claro_capa',

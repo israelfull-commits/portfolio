@@ -29,7 +29,7 @@ export function PageMeta({
 
       .querySelector('meta[name="robots"]')
 
-      ?.setAttribute("content", noIndex ? "noindex, follow" : "index, follow")
+      ?.setAttribute("content", noIndex ? "noindex, follow" : "index, follow, max-image-preview:large")
 
     const canonicalUrl = new URL(window.location.pathname, publicSiteUrl).href
 

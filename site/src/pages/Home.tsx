@@ -45,7 +45,7 @@ const trajectory = [
   { org: "Consultoria Independente", role: "Senior UX Consultant · Produtos Digitais", period: "2022 – atual" },
   { org: "Foursys + Hospital Albert Einstein", role: "UX Lead · Padrão de Laudos Clínicos", period: "2022" },
   { org: "EY · R/GA", role: "Senior UX Consultant & Product Designer", period: "2020 – 2022" },
-  { org: "Moot · Walmart · GFT · Principia & outras", role: "Design de produtos digitais, UX/UI e direção de arte", period: "2006 – 2019" },
+  { org: "Moot · Walmart · GFT · Principia e outras", role: "Design de produtos digitais, UX/UI e direção de arte", period: "2006 – 2019" },
 ]
 
 export default function Home() {
@@ -89,15 +89,15 @@ export default function Home() {
         <section className="pf-work pf-section" id="trabalho" aria-labelledby="work-title">
           <div className="pf-container">
             <h2 id="work-title">Projetos selecionados</h2>
-            <p className="pf-work-intro">Contexto, decisões de design e entregas em saúde, serviços financeiros, telecom e energia. Estudos de caso protegidos por senha.</p>
+            <p className="pf-work-intro">Contexto, decisões de design e entregas em saúde, finanças, telecom e energia. Estudos de caso protegidos por senha.</p>
             <article className="pf-featured" id="project-einstein-laudos">
               <div className="pf-featured-story">
                 <p className="pf-home-project-client">Hospital Albert Einstein · UX Lead</p>
-                <h3>Estrutura modular para laudos clínicos.</h3>
+                <h3>Estrutura modular para laudos clínicos</h3>
                 <p className="pf-home-scope">14 entregáveis · 121 pacientes · 4 médicos especialistas</p>
                 <p>Pesquisa e arquitetura da informação para organizar laudos de diferentes exames em uma estrutura comum.</p>
                 <div className="pf-featured-actions">
-                  <Link className="pf-button pf-button-lime" href="/cases/einstein-laudos">Ver estudo de caso <ArrowIcon /><span className="pf-sr-only">: Hospital Albert Einstein</span></Link>
+                  <Link className="pf-button pf-button-lime" href="/cases/einstein-laudos">Ver estudo de caso <ArrowIcon /><span className="pf-sr-only">: Estrutura modular para laudos clínicos — Hospital Albert Einstein</span></Link>
                   <CaseReadingTime href="/cases/einstein-laudos" />
                 </div>
               </div>
@@ -115,13 +115,13 @@ export default function Home() {
                   <p className="pf-project-desc">{project.description}</p>
                   <div className="pf-project-footer">
                     <CaseReadingTime href={project.href} />
-                    <Link className="pf-project-link" href={project.href}>Ver case <ArrowIcon /><span className="pf-sr-only">: {project.title}</span></Link>
+                    <Link className="pf-project-link" href={project.href}>Ver estudo de caso <ArrowIcon /><span className="pf-sr-only">: {project.title} — {project.client}</span></Link>
                   </div>
                 </article>
               ))}
             </div>
-            <div className="pf-home-submodules" aria-label="Outros módulos do ecossistema Itaú IFA">
-              <span className="pf-home-submodules-label">Outros recortes no Itaú (IFA):</span>
+            <div className="pf-home-submodules" role="group" aria-labelledby="itau-submodules-label">
+              <span id="itau-submodules-label" className="pf-home-submodules-label">Outros módulos no Itaú · íon for Advisors (IFA):</span>
               {itauSubmodules.map(item => (
                 <span key={item.href} className="pf-home-submodules-item">{item.label}</span>
               ))}
@@ -136,9 +136,9 @@ export default function Home() {
                 <strong>Senior Product Designer</strong>
                 <span>São Paulo, Brasil · Remoto ou híbrido</span>
               </div>
-              <p id="experiencia">Com mais de 15 anos de experiência em produtos digitais para saúde, finanças, telecom e energia, conecto pesquisa com usuários, organização de fluxos complexos e sistemas de componentes em parceria direta com times de Produto e Engenharia.</p>
-              <p>Priorizo decisões documentadas, acessibilidade digital (WCAG 2.2) desde o início do projeto e uso prático de IA com revisão humana para acelerar descoberta, prototipagem e entrega técnica.</p>
-              <div className="pf-home-about-links" aria-label="Prova social e currículo">
+              <p id="experiencia">Atuo em produtos digitais para saúde, finanças, telecom e energia há mais de 15 anos. Conduzo pesquisa com usuários, organização de fluxos operacionais e sistemas de componentes com Produto e Engenharia.</p>
+              <p>Documento decisões de interface e critérios de acessibilidade (WCAG 2.2) desde a concepção. Uso IA como apoio em descoberta e prototipagem, mantendo decisões de produto, validação de evidências e revisão técnica sob julgamento humano.</p>
+              <div className="pf-home-about-links" role="group" aria-label="LinkedIn e currículo">
                 <a className="pf-button pf-button-outline pf-home-about-btn" href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">
                   LinkedIn <ArrowIcon /><span className="pf-sr-only"> (abre em nova aba)</span>
                 </a>
@@ -165,9 +165,9 @@ export default function Home() {
                 <span>Universidade do Vale do Itajaí (Univali)</span>
               </div>
               <div>
-                <span className="pf-education-label">Formação contínua</span>
+                <span className="pf-education-label">Estudos complementares</span>
                 <p><strong>Design Digital · UX Design · Dados e Análise</strong></p>
-                <span>Atualização contínua em produto, pesquisa e tecnologia</span>
+                <span>Frentes aplicadas em produto, pesquisa e análise de dados</span>
               </div>
             </aside>
           </div>

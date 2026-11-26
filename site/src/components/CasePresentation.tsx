@@ -80,6 +80,7 @@ export type CasePresentationData = {
   team: string;
   scope: string;
   keyMetric?: string;
+  keyMetricLabel?: string;
   kicker?: string;
   noIndex?: boolean;
   hero?: CaseImage;
@@ -405,7 +406,7 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
               <strong className="cp-meta-value">{data.scope}</strong>
             </div>
             <div className="cp-meta-col">
-              <span className="cp-meta-label">RESULTADO-CHAVE</span>
+              <span className="cp-meta-label">{data.keyMetricLabel || "RESULTADO-CHAVE"}</span>
               <strong className="cp-meta-value cp-meta-value--accent">
                 {data.keyMetric || "Operação financeira"}
               </strong>
