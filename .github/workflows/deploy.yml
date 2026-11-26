@@ -38,6 +38,11 @@ jobs:
         env:
           BASE_PATH: /portfolio/
 
+      - name: Run Portfolio QA Sentinel v2 (Static & SPA Gates)
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 scripts/portfolio_qa_sentinel.py --fast
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

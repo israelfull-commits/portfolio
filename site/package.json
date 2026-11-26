@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate_spa_routes.js",
     "preview": "vite preview",
-    "format": "oxfmt src"
+    "format": "oxfmt src",
+    "qa": "python ../scripts/portfolio_qa_sentinel.py --fast",
+    "qa:full": "npm run build && python ../scripts/portfolio_qa_sentinel.py",
+    "qa:sync": "npm run build && python ../scripts/portfolio_qa_sentinel.py --sync"
   },
   "dependencies": {
     "react": "^19.0.0",

@@ -11,12 +11,15 @@ description: >-
 
 ---
 
-## 1. Script Único de Validação (`portfolio_qa_sentinel.py`)
+## 1. Script Único de Validação & Automação (`portfolio_qa_sentinel.py`)
 
-Execute sempre o sentinela unificado (14 gates: 9 estáticos + 5 runtime em Chromium):
+O sentinela unificado (**14 gates**: 9 estáticos + 5 runtime em Chromium) roda automaticamente em **3 camadas**:
+- **Comando único local:** `npm --prefix site run qa:full` (build + 14 gates) ou `npm --prefix site run qa:sync` (build + 14 gates + espelho `portfolio-verde/`).
+- **Hook automático local (`.githooks/pre-push`):** bloqueia qualquer `git push` que falhe no build ou nos 14 gates do Sentinel v2 (ativado via `git config core.hooksPath .githooks`).
+- **Gate automático no CI/CD (`.github/workflows/deploy.yml`):** executa `portfolio_qa_sentinel.py --fast` antes do upload para o GitHub Pages, impedindo deploy quebrado.
 
 ```bash
-python scripts/portfolio_qa_sentinel.py
+npm --prefix site run qa:full
 ```
 
 Ele substitui integralmente scripts legados de auditoria (`audit_*`, `verify_*`, `test_*`), validando:

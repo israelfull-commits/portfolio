@@ -147,3 +147,7 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - **Neoenergia (`6` caps · Service Design):** `01 Escala Nacional (34M)` · `02 Auditoria de Backstage` · `03 5 Service Blueprints` · `04 Design System Multi-Tenant` · `05 Matriz de 118 Ideias` · `06 Governança P&D ANEEL`.
 - **Governança (`AGENTS.md` Seção 10):** regra permanente Anti-Template de Bootcamp adicionada.
 - **Validação:** build `0` erros (`4.12s`), **14/14 PASS** no Sentinel v2 e inspeção visual em Chromium (`1440×900`) nos 4 índices e capítulos.
+- **Automação Contínua do Script Único de Validação (3 camadas):**
+  - `.githooks/pre-push` ativado via `git config core.hooksPath .githooks` (bloqueia qualquer `git push` fora do padrão 14/14 PASS).
+  - Scripts npm em `site/package.json`: `qa` (estático), `qa:full` (build + 14 gates) e `qa:sync` (build + 14 gates + espelho `portfolio-verde/`).
+  - Gate automático no CI/CD (`.github/workflows/deploy.yml`) executando `portfolio_qa_sentinel.py --fast` antes do upload para GitHub Pages.

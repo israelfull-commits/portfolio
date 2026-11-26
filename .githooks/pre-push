@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+echo "========================================================================"
+echo "  PRE-PUSH GATE: Build + Portfolio QA Sentinel v2 (14 Gates)"
+echo "========================================================================"
+
+npm --prefix site run build
+python scripts/portfolio_qa_sentinel.py
+
+echo "✓ Pre-push gate aprovado (14/14 PASS). Prosseguindo com git push..."
