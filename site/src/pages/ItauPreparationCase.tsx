@@ -39,7 +39,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Estudo de caso estruturado · IA generativa e supervisão humana",
 
     framing:
-      "Documentar um atendimento e recuperar seu contexto são tarefas conectadas. O recorte explora como resumos assistidos por IA podem apoiar o registro e a consulta do histórico sem retirar do profissional a responsabilidade pela informação registrada.",
+      "Conduzi o desenho de interação e governança de IA no fluxo do assessor, aproximando os 5 resumos recentes no painel lateral e exigindo revisão e confirmação humana obrigatória antes da gravação no prontuário bancário.",
 
     question:
       "Como reduzir o esforço de registro e facilitar a recuperação de contexto, mantendo fidelidade ao atendimento e controle humano sobre o conteúdo?",
@@ -143,7 +143,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Exploração, estados e handoff documentados",
 
     framing:
-      "Especialistas precisam localizar eventos financeiros, avaliar prazo e valor e decidir sobre quais clientes atuar. A proposta reúne consulta, filtros e estados de atuação para apoiar essa leitura sem separar o evento do contexto do cliente.",
+      "Conduzi a Arquitetura da Informação e a especificação de filtros combináveis, estados vazios e tabela densa no Design System (iDS), unificando Vencimentos, Eventos futuros e Open Finance em uma única lógica de consulta e atuação.",
 
     question:
       "Como ajudar especialistas a localizar eventos financeiros relevantes, distinguir urgência e registrar atuação sem perder o contexto do cliente?",
@@ -289,7 +289,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Discovery e prototipagem",
 
     framing:
-      "A transição do Extrato EA para o IFA exigia preservar o contexto financeiro necessário à atuação. Como o saldo provisionado é usado em diferentes jornadas, a solução o mantém no header; Movimentações concentra o histórico, o aprofundamento e as informações de CEP, CEP Plus e limite.",
+      "Conduzi o Product Discovery e a comparação de alternativas de arquitetura entre cabeçalho persistente e consulta detalhada, preservando o saldo provisionado transversalmente entre jornadas e contextualizando CEP, CEP Plus e limites em Movimentações.",
 
     question:
       "Como manter o saldo provisionado disponível entre jornadas e permitir o aprofundamento das movimentações sem exigir troca de aba para consultar esse saldo?",
@@ -517,7 +517,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Fluxos documentados",
 
     framing:
-      "Gerir uma campanha envolve configurar informações e público, acompanhar o processamento da base e decidir quando publicar, editar ou retirar a campanha. O fluxo organiza essas etapas e explicita estados de processamento, vazio e erro para orientar a operação.",
+      "Conduzi a modelagem dos screenflows de criação, importação de base e manutenção em lote, especificando estados de carregamento, vazio, processamento e erro para conectar administradores de backoffice, especialistas e gestores.",
 
     question:
       "Como conectar configuração, processamento e manutenção sem ocultar estado, erro ou consequência das ações administrativas?",

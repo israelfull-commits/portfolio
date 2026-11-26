@@ -3040,9 +3040,9 @@ js_dispatcher = r"""
 // ============================================================================
 var PROVENANCE_META = {
   aiPlatform: 'Antigravity (Google DeepMind)',
-  version: 'v3.8.0 (Produção GitHub Pages)',
+  version: 'v3.10.2 (Produção GitHub Pages)',
   createdAt: '2026-11-01',
-  updatedAt: '2026-11-26 07:37 BRT',
+  updatedAt: '2026-11-26 10:45 BRT',
   conversationId: 'b9eff66e-96f2-48ed-af7d-28e8cea0dfad',
   conversationLink: 'conversation://b9eff66e-96f2-48ed-af7d-28e8cea0dfad',
   liveUrl: 'https://israelfull-commits.github.io/portfolio/',
@@ -3091,18 +3091,18 @@ async function buildProvenanceBanner(width) {
 }
 
 // ============================================================================
-// PRANCHA DE DOCUMENTAÇÃO DESIGN SYSTEM, COMPONENTES, REGRAS & HANDOFF V3.8.0
+// PRANCHA DE DOCUMENTAÇÃO DESIGN SYSTEM, COMPONENTES, REGRAS & HANDOFF V3.10.2
 // ============================================================================
 async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
   await loadFonts();
-  var docFrame = createVerticalContainer('Documentação · Design System, Componentes & Handoff V3.8.0', 1280, 24, { top: 48, right: 64, bottom: 64, left: 64 }, TOKENS.colors.canvas, TOKENS.colors.border, 0, false);
+  var docFrame = createVerticalContainer('Documentação · Design System, Componentes & Handoff V3.10.2', 1280, 24, { top: 48, right: 64, bottom: 64, left: 64 }, TOKENS.colors.canvas, TOKENS.colors.border, 0, false);
   docFrame.x = xPos;
   docFrame.y = yPos;
 
-  var headerBadge = await createBadge('GOVERNANÇA, DESIGN SYSTEM & HANDOFF · V3.8.0', TOKENS.colors.deepPine, TOKENS.colors.acidLime, true);
+  var headerBadge = await createBadge('GOVERNANÇA, DESIGN SYSTEM & HANDOFF · V3.10.2', TOKENS.colors.deepPine, TOKENS.colors.acidLime, true);
   docFrame.appendChild(headerBadge);
 
-  var title = await createTextNode('Documentação Canônica V3.8.0: Design System, Componentes, Regras, Handoff & Versões', 36, 'bold', TOKENS.colors.textPrimary, 1152, null, 44, -0.8);
+  var title = await createTextNode('Documentação Canônica V3.10.2: Design System, Componentes, Regras, Handoff & Versões', 36, 'bold', TOKENS.colors.textPrimary, 1152, null, 44, -0.8);
   docFrame.appendChild(title);
 
   var subtitle = await createTextNode('Fonte única sincronizada 1:1 com o código React/Vite em produção (GitHub Pages), espelho local (portfolio-verde/) e Notion Portfolio Ops. Score 99/100 · UX Companion 30/30 · Sentinel v2 14/14 PASS.', 16, 'regular', TOKENS.colors.textSecondary, 1152, null, 24);
@@ -3133,8 +3133,8 @@ async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
       body: '• Stack: React 19 + Vite 6 + TypeScript + React Router 7 | Ativos 100% via assetUrl() para subdiretório /portfolio/\n• Rotas SPA Estáticas: generate_spa_routes.js gera index.html dedicado para todas as 7 rotas + 404.html (HTTP 200 OK direto)\n• Script Único de Validação: scripts/portfolio_qa_sentinel.py (14/14 PASS: 9 estáticos + 5 Chromium runtime incluindo WCAG 2.2 2.4.11/2.4.13/2.5.8/3.3.8 e contraste :hover)\n• Automação em 3 Camadas: Hook .githooks/pre-push (bloqueio local 14/14) + npm run qa / qa:full / qa:sync + CI Gate em .github/workflows/deploy.yml\n• Higiene do Repositório: raiz com 3 arquivos canônicos e scripts/ com 2 motores oficiais (legados arquivados em D:\\arquivo-morto-portfolio\\)'
     },
     {
-      tag: '06 · HISTÓRICO COMPLETO DE VERSÕES (V0.1 ➔ V3.8.0)',
-      body: '• v0.1.0 (UXfolio · Score 52): baseline inicial sem controle de a11y ou trade-offs\n• v2.0.0 (Figma Make · Score 67): identidade visual inicial e 1º case estruturado\n• v3.0.0 (Figma Make · Score 73): autoria Itaú, porém excesso de recortes e sem imagens em 3 cases\n• v3.5.0 (GitHub Pages · Score 87): código React próprio, 4 cases âncora, rotas SPA 200 OK e remoção de IDs internos\n• v3.6.0 (Craft Edition · Score 95): deduplicação 100%, CaseAccessGate SHA-256, diagramas Retina, Sentinel v2 e sync Notion Ops\n• v3.7.0 (Design System Parity · Score 98): Combo Campeão 9 artes 2400x1350 edge-to-edge, grid 8px, tipografia Home/Cases, Sentinel 14 gates e higiene do repo\n• v3.8.0 (Anti-Template · Score 99 · VIGENTE): 4 arquiteturas narrativas sob medida, hook pre-push, CI gate e Proveniência Antigravity no Figma'
+      tag: '06 · HISTÓRICO COMPLETO DE VERSÕES (V0.1 ➔ V3.10.2)',
+      body: '• v0.1.0 (UXfolio · Score 52): baseline inicial sem controle de a11y ou trade-offs\n• v2.0.0 (Figma Make · Score 67): identidade visual inicial e 1º case estruturado\n• v3.0.0 (Figma Make · Score 73): autoria Itaú, porém excesso de recortes e sem imagens em 3 cases\n• v3.5.0 (GitHub Pages · Score 87): código React próprio, 4 cases âncora, rotas SPA 200 OK e remoção de IDs internos\n• v3.6.0 (Craft Edition · Score 95): deduplicação 100%, CaseAccessGate SHA-256, diagramas Retina, Sentinel v2 e sync Notion Ops\n• v3.7.0 (Design System Parity · Score 98): Combo Campeão 9 artes 2400x1350 edge-to-edge, grid 8px, tipografia Home/Cases, Sentinel 14 gates e higiene do repo\n• v3.8.0 (Anti-Template · Score 99): 4 arquiteturas narrativas sob medida, hook pre-push, CI gate e Proveniência Antigravity no Figma\n• v3.9.0 (Editorial STAR/ATS): erradicação de 7 clichês (Negative Prompting), correção factual Claro (34M/70+) e seção Sobre em 2 colunas\n• v3.10.0–v3.10.2 (Auditoria UX/UI 18 Viewports · VIGENTE): CTA pine no CaseAccessGate, 100% alvos >= 44px (WCAG 2.5.8), Plain Language em #sobre, kickers sem repetição, split-media 0% distorção no Tablet e paridade 100% Código + Figma + Plugin + Notion'
     }
   ];
 
@@ -3149,7 +3149,7 @@ async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
   }
 
   parent.appendChild(docFrame);
-  log('✔ Prancha de Documentação, Componentes & Handoff V3.8.0 criada com sucesso!');
+  log('✔ Prancha de Documentação, Componentes & Handoff V3.10.2 criada com sucesso!');
   return docFrame;
 }
 
@@ -3271,21 +3271,21 @@ figma.ui.onmessage = async function(msg) {
     }
   }
   else if (msg.type === 'create_ds_docs') {
-    updateStatus('Construindo Prancha de Documentação, Componentes & Handoff V3.8.0...');
+    updateStatus('Construindo Prancha de Documentação, Componentes & Handoff V3.10.2...');
     try {
       var docNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
       figma.viewport.scrollAndZoomIntoView([docNode]);
-      updateStatus('Concluído: Documentação & Handoff V3.8.0 gerada no Figma!');
-      figma.notify('✔ Prancha de Documentação & Handoff V3.8.0 gerada!');
+      updateStatus('Concluído: Documentação & Handoff V3.10.2 gerada no Figma!');
+      figma.notify('✔ Prancha de Documentação & Handoff V3.10.2 gerada!');
     } catch (e) {
-      log('Erro ao criar Documentação V3.8.0: ' + e);
+      log('Erro ao criar Documentação V3.10.2: ' + e);
       updateStatus('Erro na geração.');
     }
   }
   else if (msg.type === 'create_all_screens') {
-    updateStatus('Construindo todas as telas mestres + Documentação & Handoff V3.8.0...');
+    updateStatus('Construindo todas as telas mestres + Documentação & Handoff V3.10.2...');
     try {
-      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES + DOCS/HANDOFF V3.8.0) ===');
+      log('=== INICIANDO GERAÇÃO DE TODAS AS TELAS (TEMPLATE + HOME + 4 CASES + DOCS/HANDOFF V3.10.2) ===');
       var templateNode = await buildGenericCaseScreen(figma.currentPage, -1440, 0, CASE_TEMPLATE);
       var homeNode = await buildHome(figma.currentPage, 0, 0);
       var neoNode = await buildGenericCaseScreen(figma.currentPage, 1440, 0, CASE_NEOENERGIA);
@@ -3295,8 +3295,8 @@ figma.ui.onmessage = async function(msg) {
       var docsNode = await buildDesignSystemDocsFrame(figma.currentPage, 7200, 0);
       
       figma.viewport.scrollAndZoomIntoView([templateNode, homeNode, neoNode, einNode, itauNode, claroNode, docsNode]);
-      updateStatus('Concluído: Telas Mestres e Documentação/Handoff V3.8.0 Criados!');
-      figma.notify('🎉 Todas as telas + Documentação/Handoff V3.8.0 foram geradas com Proveniência Antigravity!');
+      updateStatus('Concluído: Telas Mestres e Documentação/Handoff V3.10.2 Criados!');
+      figma.notify('🎉 Todas as telas + Documentação/Handoff V3.10.2 foram geradas com Proveniência Antigravity!');
     } catch (e) {
       log('Erro na geração total: ' + e);
       updateStatus('Erro na geração total.');
@@ -3410,7 +3410,7 @@ ui_html = r"""<!DOCTYPE html>
       <span>4 Capítulos</span>
     </button>
     <button class="btn" onclick="triggerAction('create_ds_docs')">
-      <span>📐 Documentação Design System, Componentes & Handoff V3.8.0</span>
+      <span>📐 Documentação Design System, Componentes & Handoff V3.10.2</span>
       <span>Prancha Canônica</span>
     </button>
   </div>

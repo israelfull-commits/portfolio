@@ -750,7 +750,8 @@
 }
 
 .cp-split-media .cp-figure-btn img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: 420px;
   object-fit: contain;
