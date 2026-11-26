@@ -147,12 +147,12 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
     <section className="pf-contact-wrap pf-container" id="contato" aria-labelledby="contact-title">
       <div className="pf-contact pf-home-contact">
         <div>
-          <h2 id="contact-title">Disponível para posições Senior/Staff e consultoria</h2>
-          <p>Product Discovery, Design Systems, acessibilidade (WCAG 2.2) e produtos digitais complexos.</p>
+          <h2 id="contact-title">Oportunidades em Product Design</h2>
+          <p>Disponível para posições de Senior Product Designer e projetos de consultoria.</p>
         </div>
         <div className="pf-home-contact-actions">
           <button type="button" className="pf-button pf-button-lime" onClick={openProtectedEmail}>
-            Enviar um e-mail <MailIcon />
+            Enviar e-mail <MailIcon />
           </button>
           <a href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">LinkedIn<span className="pf-sr-only"> (abre em nova aba)</span></a>
         </div>

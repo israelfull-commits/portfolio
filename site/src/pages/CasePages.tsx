@@ -165,7 +165,7 @@ const einsteinImages: CaseImage[] = [
 export const einsteinPresentation: CasePresentationData = {
   title: "Albert Einstein · Consumo de Resultados",
 
-  context: "Saúde · HIAE × Foursys · 2022",
+  context: "HIAE × Foursys · 2022",
 
   headline: "Uma linguagem visual modular para laudos heterogêneos.",
 
@@ -612,7 +612,7 @@ const claroImages: CaseImage[] = [
 export const claroPresentation: CasePresentationData = {
   title: "Claro · Ativação simplificada",
 
-  context: "Telecom · Claro Brasil · 2017–2018",
+  context: "Claro Brasil · 2017–2018",
 
   headline: "22 jornadas comerciais unificadas em uma esteira desktop e mobile.",
 
@@ -951,7 +951,7 @@ export const neoenergiaPresentation: CasePresentationData = {
 
     href: "/cases/einstein-laudos",
 
-    context: "Saúde · HIAE × Foursys · 2022",
+    context: "HIAE × Foursys · 2022",
   },
 
   chapters: [
@@ -1665,7 +1665,7 @@ export function ItauPresentation() {
   const data: CasePresentationData = {
     title: `Itaú · ${project.title}`,
 
-    context: "Itaú Unibanco · íon for Advisors",
+    context: "íon for Advisors · 2024–2026",
 
     headline: project.title,
 
@@ -1716,7 +1716,7 @@ export function ItauPresentation() {
         ? {
           title: "Einstein · Laudos médicos",
           href: "/cases/einstein-laudos",
-          context: "Saúde · HIAE × Foursys · 2022",
+          context: "HIAE × Foursys · 2022",
         }
         : target(order[(index + order.length - 1) % order.length]),
 
