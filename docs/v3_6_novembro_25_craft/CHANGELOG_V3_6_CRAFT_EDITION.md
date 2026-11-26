@@ -263,3 +263,20 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 - **Case Einstein (`site/src/pages/CasePages.tsx`, `scripts/build_portfolio_figma_screens.py`, Figma `737:707`):** atualizado o status de lançamento após confirmação direta de Israel — registrado explicitamente no Hero, Capítulo 6 e Apêndice que a **proposta v3 (EN-1 a EN-14) foi implantada em produção**, e que Israel encerrou sua atuação no projeto após a implantação, mantendo transparência total quanto à ausência de dados de acompanhamento pós-lançamento (`CS-14` + `TX-06` + `TX-09`).
 - **Sincronização omnicanal:** build `0` erros, **15/15 PASS** no Sentinel v2, espelho `portfolio-verde/` 1:1, plugin Figma recompilado (`figma-refine-plugin` + `gemini-figma-plugin`), Figma `731:699` e Notion Portfolio Ops atualizados.
 - **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-26` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
+
+### 2026-11-26 — Versão V4.3.0 (Inspeção Visual Profunda & Loop Autônomo de Refinamento — Case Einstein · 3 Iterações · 11 Desvios Corrigidos)
+- **Auditoria Visual Multi-Viewport (`AUDITORIA_VISUAL_REFINAMENTO_EINSTEIN_V4_3_2026.md`):** executadas 3 iterações completas de captura e telemetria Chromium real (`1440×900`, `768×1024`, `390×844`, `320×720` e Lightbox; 21 capturas/iteração) no case Hospital Albert Einstein (`/cases/einstein-laudos`).
+- **Correções Estruturais no Motor de Cases (`site/src/components/case-presentation.css` — benefício em todos os 4 cases):**
+  - **`D01` (`MB-01` P0):** `.cp-cards-grid` agora colapsa para 1 coluna em `<= 720px` (largura útil de texto em `390px` sobe de `117px` ➔ `308px`; altura máxima de card cai de `1.320px` ➔ `603px`).
+  - **`D02` (`A-28` P0):** acordeões `<details><summary>` de `.cp-appendix` com `font-weight: 600`, `min-height: 48px`, indicador circular `+` / `−`, borda inferior no último item e `max-width: 42rem`.
+  - **`D04` (`AP-01`/`MB-02` P1):** corpo elevado de `15px` ➔ `16px` (`1rem`) em cards, splits, listas, notas, decisões e callouts (`.cp-metrics-footnote` `14px` ➔ `15px`).
+  - **`D05` (`AP-02` P1):** medida de prosa contida de `796–860px` (`68ch`) para `42rem` (`672px`), `44rem` no lead e `46rem` no subtítulo.
+  - **`D06` (`A-20`/`MB-06` P1):** `.cp-back` (`40px` ➔ `44px`) e `.cp-lightbox-close` (`36px` ➔ `44px`), zerando `smallTargets (<44px)` em todos os viewports.
+  - **`D07` (`MB-03` P1):** `.cp-subtitle` responsivo (`clamp(1rem, 1.6vw, 1.1875rem)`), trazendo o tempo de leitura (`8 min`) para a 1ª dobra no mobile.
+  - **`D08` + `D11` (Tablet `768px`):** resetado `.cp-split-media { position: static; }` em `<= 860px` e aplicada matriz `2×2` seletiva (`.cp-metrics:has(> div:nth-child(4))` em `641px–860px`), preservando `3×1` (`239px`) para 3 métricas sem órfão e `2×2` (`359px`) para 4 métricas.
+  - **`D09` + `D10` (Grid 8px & Craft):** `.cp-hero` top padding `36px` ➔ `32px`, `.cp-chapter-num-box` `11px` ➔ `12px` (`FG-06`), `.cp-note` mobile `24px`, remoção de regras CSS duplicadas e pílulas monoespaçadas semânticas para `code` inline.
+- **Refinamento Semântico & Escaneabilidade no Einstein (`site/src/pages/CasePages.tsx`):**
+  - **`D03` (`TH-08` P0):** lista *As 3 Macroáreas do Exame* convertida para `<ol className="cp-card-list cp-card-list--numbered">`, eliminando marcadores duplicados `• 1. / • 2. / • 3.`.
+  - **`D05` (`AP-02`):** cards de Decisão 01 e 02 segmentados em 4 parágrafos escaneáveis (`Opções`, `Trade-offs`, `Decisão e custo aceito`, `Evidência`); Decisão 03 e nota do Cap. 6 segmentados em 2 parágrafos.
+- **Validação & Sincronização:** build `0` erros, `0px` overflow (`1440/768/390/320`), `0` alvos `<44px`, **15/15 PASS** no Sentinel v2, espelho `portfolio-verde/` sincronizado 1:1 e Notion Portfolio Ops atualizado.
+- **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-26` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.

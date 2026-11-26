@@ -269,14 +269,32 @@ export const einsteinPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Decisão 01 · Alertas por cor</span>
               <h3>Como sinalizar desvios sem induzir autodiagnóstico?</h3>
               <p>
-                <strong>Opções:</strong> (A) selos coloridos interpretativos (&ldquo;normal/alterado&rdquo;), pedido inicial de parte do negócio; (B) valor e faixa de referência lado a lado com ícone redundante à cor. <strong>Trade-offs:</strong> (A) oferece varredura binária rápida, mas falha na impressão P&amp;B e induz autodiagnóstico; (B) exige leitura da faixa, mas preserva contexto clínico. <strong>Decisão e custo aceito:</strong> com apoio dos 4 médicos entrevistados, negociei o descarte de (A) e priorizei (B), a custo de abrir mão de um rótulo instantâneo para o paciente. <strong>Evidência:</strong> restrição de impressão P&amp;B e 4 entrevistas médicas.
+                <strong>Opções:</strong> (A) selos coloridos interpretativos (&ldquo;normal/alterado&rdquo;), pedido inicial de parte do negócio; (B) valor e faixa de referência lado a lado com ícone redundante à cor.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> (A) oferece varredura binária rápida, mas falha na impressão P&amp;B e induz autodiagnóstico; (B) exige leitura da faixa, mas preserva contexto clínico.
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> com apoio dos 4 médicos entrevistados, negociei o descarte de (A) e priorizei (B), a custo de abrir mão de um rótulo instantâneo para o paciente.
+              </p>
+              <p>
+                <strong>Evidência:</strong> restrição de impressão P&amp;B e 4 entrevistas médicas.
               </p>
             </div>
             <div className="cp-feature-card">
               <span className="cp-feature-tag">Decisão 02 · Modelo único vs. templates por exame</span>
               <h3>Padronizar por exame ou criar uma taxonomia comum?</h3>
               <p>
-                <strong>Opções:</strong> (A) manter templates independentes por especialidade; (B) decompor mais de 80 exames em 3 macroáreas fixas com os componentes <code>examTitle</code> e <code>dataField</code>. <strong>Trade-offs:</strong> (A) acomoda exceções sob medida, mas multiplica o custo de manutenção nos sistemas laudadores; (B) unifica a leitura, mas restringe diagramas exclusivos. <strong>Decisão e custo aceito:</strong> priorizei (B) para viabilizar escala nos sistemas legados, a custo de menor liberdade visual em exames atípicos. <strong>Evidência:</strong> inventário de 80+ exames e limites dos templates em Word.
+                <strong>Opções:</strong> (A) manter templates independentes por especialidade; (B) decompor mais de 80 exames em 3 macroáreas fixas com os componentes <code>examTitle</code> e <code>dataField</code>.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> (A) acomoda exceções sob medida, mas multiplica o custo de manutenção nos sistemas laudadores; (B) unifica a leitura, mas restringe diagramas exclusivos.
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> priorizei (B) para viabilizar escala nos sistemas legados, a custo de menor liberdade visual em exames atípicos.
+              </p>
+              <p>
+                <strong>Evidência:</strong> inventário de 80+ exames e limites dos templates em Word.
               </p>
             </div>
           </div>
@@ -301,7 +319,7 @@ export const einsteinPresentation: CasePresentationData = {
               <p>
                 O modelo separa cada exame em três blocos fixos para manter sempre na mesma ordem Metodologia, Resultado e Conclusão diagnóstica:
               </p>
-              <ul className="cp-card-list">
+              <ol className="cp-card-list cp-card-list--numbered">
                 <li>
                   <strong>1. Metodologia:</strong> reúne prescrição, material biológico e parâmetros do equipamento, garantindo validade jurídica e técnica.
                 </li>
@@ -311,7 +329,7 @@ export const einsteinPresentation: CasePresentationData = {
                 <li>
                   <strong>3. Conclusão diagnóstica:</strong> síntese interpretativa e parecer assinado pelo médico especialista.
                 </li>
-              </ul>
+              </ol>
             </div>
             <div className="cp-split-media">
               <CaseFigure
@@ -426,7 +444,10 @@ export const einsteinPresentation: CasePresentationData = {
           <div className="cp-note">
             <h3>Decisão 03 · Compatibilidade com sistemas laudadores vs. redesenho do portal</h3>
             <p>
-              <strong>Pergunta:</strong> redesenhar o portal inteiro de exames ou priorizar compatibilidade com os sistemas laudadores existentes? <strong>Opções:</strong> (A) novo portal web com layouts exclusivos para tela; (B) arquitetura modular com cabeçalho e rodapé comuns compatíveis com Microsoft Word e impressão P&amp;B. <strong>Trade-offs:</strong> (A) amplia recursos visuais no digital, mas quebra paridade com hospitais parceiros; (B) limita sofisticação visual, mas viabiliza adoção multicanal. <strong>Decisão e custo aceito:</strong> priorizei (B) com apoio da engenharia, a custo de adiar o redesenho completo do portal. <strong>Evidência:</strong> levantamento de sistemas de fornecedores e uso recorrente de templates em Word.
+              <strong>Pergunta:</strong> redesenhar o portal inteiro de exames ou priorizar compatibilidade com os sistemas laudadores existentes? <strong>Opções:</strong> (A) novo portal web com layouts exclusivos para tela; (B) arquitetura modular com cabeçalho e rodapé comuns compatíveis com Microsoft Word e impressão P&amp;B.
+            </p>
+            <p>
+              <strong>Trade-offs:</strong> (A) amplia recursos visuais no digital, mas quebra paridade com hospitais parceiros; (B) limita sofisticação visual, mas viabiliza adoção multicanal. <strong>Decisão e custo aceito:</strong> priorizei (B) com apoio da engenharia, a custo de adiar o redesenho completo do portal. <strong>Evidência:</strong> levantamento de sistemas de fornecedores e uso recorrente de templates em Word.
             </p>
           </div>
         </>
@@ -516,7 +537,10 @@ export const einsteinPresentation: CasePresentationData = {
           <div className="cp-note">
             <h3>O que a diferença entre foco e interpretação orientou</h3>
             <p>
-              A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento do laudo (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. Esse achado sustentou manter o laudo contextualizado para a consulta, sem selos automáticos de diagnóstico. A proposta v3 (EN-1 a EN-14) chegou a ser implantada em produção; como encerrei minha atuação no projeto após a implantação, não possuo linha de base do formato legado nem dados de acompanhamento pós-lançamento — e fatores externos como letramento em saúde também influenciam a compreensão. Para a etapa seguinte, recomendamos medir separadamente tempo de localização, associação valor-referência e erros críticos com revisão clínica e tecnologias assistivas.
+              A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento do laudo (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. Esse achado sustentou manter o laudo contextualizado para a consulta, sem selos automáticos de diagnóstico.
+            </p>
+            <p>
+              A proposta v3 (EN-1 a EN-14) chegou a ser implantada em produção; como encerrei minha atuação no projeto após a implantação, não possuo linha de base do formato legado nem dados de acompanhamento pós-lançamento — e fatores externos como letramento em saúde também influenciam a compreensão. Para a etapa seguinte, recomendamos medir separadamente tempo de localização, associação valor-referência e erros críticos com revisão clínica e tecnologias assistivas.
             </p>
           </div>
           <div className="cp-cards-grid">
