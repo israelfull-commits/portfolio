@@ -89,6 +89,7 @@ Localização: `docs/v3_6_novembro_25_craft/`
 * `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md`: Playbook completo de banca Sênior/Staff (Apresentação de Portfólio 30/45/60 min, Whiteboard Challenge 45 min e Take-Home 6h).
 * `SCORECARD_VERSOES_E_VARIACOES_2026.md`: Scorecard comparativo `v0.1 ➔ v3.6.0` (`52 ➔ 95/100`) e ranking ponderado das 19 variações de estúdio (`V01`–`V19`).
 * `AUDITORIA_GOVERNANCA_E_HIGIENE_REPO_2026.md`: Raio-X completo de regras, skills, scripts (`598 → 2` canônicos) e duplicatas exatas na raiz (`15 .md` + `110,6 MB` de temporários).
+* `REGRAS_PERMANENTES_DESIGN_FIGMA_2026.md`: Regras permanentes anti-regressão para criação e auditoria visual no Figma (zero ghost fills brancos, `resize()` antes de `AUTO`, equalização de altura em grids, componentes nativos e inspeção via `get_screenshot`).
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.
