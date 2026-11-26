@@ -1,13 +1,13 @@
-/** Estimated from rendered case chapters at 200 words/minute, reviewed 26/11/2026. */
+/** Estimated from rendered case chapters at 200 words/minute, reviewed 26/11/2026 (V4.2.0). */
 export const caseReadingMinutes: Record<string, number> = {
-  "/cases/einstein-laudos": 7,
-  "/cases/itau/hub-liquidez": 4,
-  "/cases/itau/vencimentos": 4,
-  "/cases/claro-ativacao-simplificada": 6,
-  "/cases/neoenergia-conexao-digital": 7,
-  "/cases/itau/movimentacoes": 4,
+  "/cases/einstein-laudos": 8,
+  "/cases/itau/hub-liquidez": 6,
+  "/cases/itau/vencimentos": 6,
+  "/cases/claro-ativacao-simplificada": 7,
+  "/cases/neoenergia-conexao-digital": 8,
+  "/cases/itau/movimentacoes": 6,
   "/cases/itau/campanhas": 5,
-  "/cases/itau/registros-atendimento": 4,
+  "/cases/itau/registros-atendimento": 6,
 }
 
 export function CaseReadingTime({ href }: { href: string }) {

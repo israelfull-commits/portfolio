@@ -1626,26 +1626,26 @@ async function buildHomeCardThumbItauHub(width, height) {
   frame.itemSpacing = 12;
 
   var top = createHorizontalRow('Hub Top', width - 40, 0, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
-  var pill = await createBadge('ITAÚ ÍON · HUB B2B', TOKENS.colors.darkPine, TOKENS.colors.acidLime, true);
-  var stat = await createBadge('R$ 42.4B SOB GESTÃO', TOKENS.colors.pineSurface, TOKENS.colors.canvas, true);
+  var pill = await createBadge('ITAÚ ÍON FOR ADVISORS · IFA', TOKENS.colors.darkPine, TOKENS.colors.acidLime, true);
+  var stat = await createBadge('DADOS SINTETIZADOS · LGPD', TOKENS.colors.pineSurface, TOKENS.colors.canvas, true);
   top.appendChild(pill);
   top.appendChild(stat);
   frame.appendChild(top);
 
-  var tNode = await createTextNode('Hub de Liquidez & Antecipação de Oportunidades', 16, 'bold', TOKENS.colors.canvas, width - 40, null, 22);
+  var tNode = await createTextNode('Hub de Liquidez e Oportunidades', 16, 'bold', TOKENS.colors.canvas, width - 40, null, 22);
   frame.appendChild(tNode);
 
   var statsRow = createHorizontalRow('Stats', width - 40, 10, null, null, null, null, 'SPACE_BETWEEN', 'MIN');
   var sW = (width - 40 - 20) / 3;
   var sData = [
-    { k: 'LIQUIDEZ D+0', v: 'R$ 8.2B' },
-    { k: 'VENCIMENTOS 30D', v: 'R$ 3.1B' },
-    { k: 'OPORTUNIDADES', v: '142 Ativas' }
+    { k: 'DISPONÍVEL AGORA', v: 'Itaú + Open Fin.' },
+    { k: 'JANELAS', v: 'Dia · 7d · 30d' },
+    { k: 'FILA OPERACIONAL', v: 'Status ativo' }
   ];
   for (var i = 0; i < sData.length; i++) {
     var sc = createVerticalContainer('S' + i, sW, 4, { left: 10, right: 10, top: 8, bottom: 8 }, TOKENS.colors.darkPine, TOKENS.colors.pineSurface, 8);
     var sk = await createTextNode(sData[i].k, 9, 'bold', TOKENS.colors.textMuted);
-    var sv = await createTextNode(sData[i].v, 14, 'bold', TOKENS.colors.acidLime);
+    var sv = await createTextNode(sData[i].v, 13, 'bold', TOKENS.colors.acidLime);
     sc.appendChild(sk);
     sc.appendChild(sv);
     statsRow.appendChild(sc);
@@ -1653,8 +1653,8 @@ async function buildHomeCardThumbItauHub(width, height) {
   frame.appendChild(statsRow);
 
   var assetRow = createHorizontalRow('Asset Preview', width - 40, 8, { left: 12, right: 12, top: 10, bottom: 10 }, TOKENS.colors.darkPine, TOKENS.colors.pineSurface, 8, 'SPACE_BETWEEN', 'CENTER');
-  var aLbl = await createTextNode('LCI Pós-Fixada 102% CDI · Vence em 4 dias', 11, 'medium', TOKENS.colors.canvas);
-  var aBtn = await createBadge('REINVESTIR ➔', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
+  var aLbl = await createTextNode('Posição atual · Variação prevista · Liquidez projetada', 11, 'medium', TOKENS.colors.canvas);
+  var aBtn = await createBadge('FILTRAR ➔', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
   assetRow.appendChild(aLbl);
   assetRow.appendChild(aBtn);
   frame.appendChild(assetRow);
@@ -1681,27 +1681,27 @@ async function buildHomeCardThumbItauVenc(width, height) {
   frame.itemSpacing = 12;
 
   var top = createHorizontalRow('Venc Top', width - 40, 0, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
-  var pill = await createBadge('ALERTA PROATIVO D-30', TOKENS.colors.subtle, TOKENS.colors.deepPine, false);
+  var pill = await createBadge('ABAS UNIFICADAS · IFA', TOKENS.colors.subtle, TOKENS.colors.deepPine, false);
   var stat = await createBadge('FILTROS COMBINÁVEIS', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
   top.appendChild(pill);
   top.appendChild(stat);
   frame.appendChild(top);
 
-  var tNode = await createTextNode('Painel Analítico de Vencimentos em Carteira', 16, 'bold', TOKENS.colors.canvas, width - 40, null, 22);
+  var tNode = await createTextNode('Consulta de Vencimentos, Eventos Futuros e Open Finance', 16, 'bold', TOKENS.colors.canvas, width - 40, null, 22);
   frame.appendChild(tNode);
 
   var calRow = createHorizontalRow('Cal Strip', width - 40, 8, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
-  var calDays = ['D-7', 'D-15', 'D-30 (ATIVO)', 'D-60'];
+  var calDays = ['Vencimentos', 'Eventos futuros', 'Open Finance'];
   for (var d = 0; d < calDays.length; d++) {
-    var isAct = (d === 2);
+    var isAct = (d === 0);
     var dChip = await createBadge(calDays[d], isAct ? TOKENS.colors.acidLime : TOKENS.colors.pineSurface, isAct ? TOKENS.colors.deepPine : TOKENS.colors.canvas, isAct);
     calRow.appendChild(dChip);
   }
   frame.appendChild(calRow);
 
   var alertCard = createHorizontalRow('Alert Card', width - 40, 8, { left: 12, right: 12, top: 10, bottom: 10 }, TOKENS.colors.deepPine, TOKENS.colors.pineSurface, 8, 'SPACE_BETWEEN', 'CENTER');
-  var alTxt = await createTextNode('CDB Pré 12.8% a.a. · Saldo: R$ 450.000', 11, 'medium', TOKENS.colors.canvas);
-  var alAction = await createBadge('RECOMENDAR ➔', TOKENS.colors.canvas, TOKENS.colors.deepPine, true);
+  var alTxt = await createTextNode('Busca, prazo, status e registro de atuação (dados sintetizados)', 11, 'medium', TOKENS.colors.canvas);
+  var alAction = await createBadge('ATUAR ➔', TOKENS.colors.canvas, TOKENS.colors.deepPine, true);
   alertCard.appendChild(alTxt);
   alertCard.appendChild(alAction);
   frame.appendChild(alertCard);
@@ -1784,17 +1784,17 @@ async function buildHomeCardThumbClaro(width, height) {
   frame.appendChild(tNode);
 
   var stepRow = createHorizontalRow('Steps', width - 40, 6, null, null, null, null, 'SPACE_BETWEEN', 'CENTER');
-  var steps = ['1. Plano', '2. eSIM', '3. Biometria', '4. Ativação ✔'];
+  var steps = ['1. CPF', '2. Linha', '3. Oferta', '4. Resumo', '5. Ativação'];
   for (var s = 0; s < steps.length; s++) {
-    var isLast = (s === 3);
+    var isLast = (s === 4);
     var sBadge = await createBadge(steps[s], isLast ? TOKENS.colors.acidLime : TOKENS.colors.deepPine, isLast ? TOKENS.colors.deepPine : TOKENS.colors.canvas, isLast);
     stepRow.appendChild(sBadge);
   }
   frame.appendChild(stepRow);
 
   var simStrip = createHorizontalRow('Plan Strip', width - 40, 8, { left: 12, right: 12, top: 10, bottom: 10 }, TOKENS.colors.deepPine, TOKENS.colors.darkPine, 8, 'SPACE_BETWEEN', 'CENTER');
-  var pTxt = await createTextNode('Claro Pós 50GB 5G + Redes Sociais Ilimitadas', 11, 'medium', TOKENS.colors.canvas);
-  var pBtn = await createBadge('SIMULAR ➔', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
+  var pTxt = await createTextNode('Claro Pós 4G · Combo Residencial + Móvel (dados sintetizados)', 11, 'medium', TOKENS.colors.canvas);
+  var pBtn = await createBadge('RESUMO ➔', TOKENS.colors.acidLime, TOKENS.colors.deepPine, true);
   simStrip.appendChild(pTxt);
   simStrip.appendChild(pBtn);
   frame.appendChild(simStrip);
@@ -2281,311 +2281,306 @@ var CASE_NEOENERGIA = {
   kickerTag: 'ENERGIA · SERVICE DESIGN',
   kickerCompany: 'Neoenergia · EY × Livework · P&D ANEEL · 2020',
   title: 'Conectar a jornada digital ao serviço que acontece no mundo físico.',
-  subtitle: 'Discovery e service design para organizar problemas, jornadas e oportunidades no atendimento de distribuidoras de energia.',
+  subtitle: 'No P&D ANEEL da Neoenergia (EY × Livework), conduzi frentes de Service Design pela EY para reduzir rupturas entre canais digitais, atendimento e campo nas 4 distribuidoras. Estruturamos 5 Service Blueprints e 118 ideias priorizadas como baseline estratégico (etapa de P&D, sem código final neste ciclo).',
   metadata: [
-    { label: 'MEU PAPEL', val: 'Senior Product Designer / Service Designer' },
+    { label: 'MEU PAPEL', val: 'Senior Product Designer · Service Design' },
     { label: 'EQUIPE', val: 'EY Business Transformation × Livework e áreas da Neoenergia' },
-    { label: 'ESCOPO', val: 'Pesquisa, jornadas atuais, blueprints e visão futura de serviço' }
+    { label: 'ESCOPO', val: 'Diagnóstico de 11 canais, 5 Service Blueprints, base multi-tenant e 118 ideias' },
+    { label: 'ENTREGA PRINCIPAL', val: '4 distribuidoras · 5 Service Blueprints · 118 ideias (P&D ANEEL)' }
   ],
   heroImgKey: 'neo_capa',
-  heroCaption: 'Projeto P&D Conexão Digital ANEEL: Experiência do Consumidor e Service Design para o Grupo Neoenergia (Iberdrola Brasil).',
+  heroCaption: 'Por que cruzar Service Blueprint, escala nacional e priorização: mostrar que falhas de atendimento e fatura exigiam alinhar operação e backoffice nas 4 distribuidoras antes de redesenhar portais.',
   metrics: [
+    { n: '4', d: 'distribuidoras mapeadas' },
+    { n: '5', d: 'Service Blueprints' },
+    { n: '118', d: 'ideias priorizadas' },
     { n: '34M', d: 'habitantes nas concessões' },
-    { n: '13,9M', d: 'clientes faturados' },
-    { n: '4', d: 'distribuidoras unificadas' },
-    { n: '5', d: 'blueprints de serviço' },
-    { n: '118', d: 'ideias na matriz de valor' }
+    { n: '13,9M', d: 'clientes em 18 estados' }
   ],
-  prevCaseTitle: 'Claro Brasil · Ativação simplificada',
-  nextCaseTitle: 'Albert Einstein · Laudos clínicos',
+  prevCaseTitle: 'Claro · Ativação simplificada',
+  nextCaseTitle: 'Albert Einstein · Consumo de Resultados',
   chapters: [
     {
       num: '01',
-      tag: 'CONTEXTO MACRO & ESCALA',
-      short: 'Unificação da infraestrutura',
-      title: 'Unificação da infraestrutura de atendimento para 34 milhões de pessoas.',
+      tag: 'ESCALA NACIONAL (34M)',
+      short: 'Escala e diagnóstico de 11 canais',
+      title: 'Unificação do atendimento para 34 milhões de habitantes e 13,9 milhões de clientes.',
       imgKey: 'neo_num',
-      caption: 'Escala do ecossistema: integração de Elektro (SP/MS), Coelba (BA), Celpe (PE) e Cosern (RN) em 18 estados.',
-      p: 'Iniciativa de discovery e Service Design para conectar 11 canais de atendimento, processos internos e operação de campo para o Grupo Neoenergia (Iberdrola Brasil), integrando 4 distribuidoras sob regulação da ANEEL.'
+      caption: 'Por que dimensionar a escala antes de propor interfaces: qualquer falha de processo se multiplica por 13,9 milhões de clientes e 4 operações regionais (Elektro, Coelba, Celpe e Cosern).',
+      p: 'Em 2020, entrevistas qualitativas, acompanhamento do atendimento e auditoria de processos mapearam 3 perfis de clientes em 11 pontos de contato — de agências presenciais a portal, aplicativo, SMS, WhatsApp, call center e equipes de campo. Conduzi pela EY roteiros de diagnóstico, estruturação dos 5 Service Blueprints e diretrizes de arquitetura multi-tenant.'
     },
     {
       num: '02',
-      tag: 'ECOSSISTEMA & MULTICANALIDADE',
-      short: 'Cadeia de serviços fragmentada',
-      title: 'Cadeia de serviços fragmentada em um ecossistema de infraestrutura crítica.',
-      imgKey: 'neo_canais',
-      caption: 'Ecossistema de canais: mapeamento dos 11 pontos de contato entre consumidores, concessionárias e equipes operacionais de campo.',
-      p: 'O diagnóstico mapeou a jornada do consumidor através de 11 pontos de contato — desde o atendimento presencial em agências e postos credenciados até canais digitais (portal web, aplicativo móvel, SMS, WhatsApp e call center) e equipes de campo.'
-    },
-    {
-      num: '03',
-      tag: 'DIAGNÓSTICO & AUDITORIA OPERACIONAL',
+      tag: 'AUDITORIA DE BACKSTAGE',
       short: 'Auditoria de backstage',
       title: 'Auditoria de backstage: quando a insatisfação com a fatura revela silos operacionais.',
       imgKey: 'neo_bp1',
-      caption: 'Auditoria de backstage: detalhe em alta resolução do Blueprint conectando a experiência do cliente aos sistemas e equipes de campo.',
-      p: 'A leitura de Service Design evita reduzir o diagnóstico a interfaces de tela: a insatisfação com a fatura raramente é um problema visual, decorrendo de regras de negócio obscuras, leituras por estimativa ou falta de sincronização entre o despacho técnico e o faturamento.'
+      caption: 'Por que mapear frontstage e backstage na mesma prancha: tornar visível onde falhas internas de sistemas legados e campo causavam retrabalho para o cliente nas 4 distribuidoras.',
+      p: 'A auditoria mostrou que a insatisfação com a fatura raramente era um problema de tela. Ela vinha de leituras por estimativa, regras de cobrança pouco claras e falta de sincronização entre despacho técnico e faturamento.'
+    },
+    {
+      num: '03',
+      tag: '5 SERVICE BLUEPRINTS',
+      short: 'Os 5 estágios do ciclo de vida',
+      title: 'Os 5 estágios do ciclo de vida do cliente mapeados em Service Blueprints.',
+      imgKey: 'neo_tobe',
+      caption: 'Por que destacar a curva de criticidade no estágio Uso e Pago: apontar onde análise de cobrança e pagamento elevam o atrito para direcionar ações imediatas.',
+      p: 'Para superar a fragmentação entre as 4 distribuidoras, consolidamos a jornada do cliente em 5 estágios com frontstage e backstage: 1. Contrato e instalo, 2. Uso e pago, 3. Preciso de suporte, 4. Mudo o contrato e 5. Abandono.'
     },
     {
       num: '04',
-      tag: 'DESBUROCRATIZAÇÃO & DESIGN SYSTEM',
-      short: 'Desburocratização de backoffice',
-      title: 'Desburocratização de backoffice antes de redesenho de portal e Design System multi-tenant.',
+      tag: 'SERVIÇO & BASE MULTI-TENANT',
+      short: 'Decisões de serviço e base multi-tenant',
+      title: 'Desburocratização de backoffice antes de redesenho de portal e base multi-tenant.',
       imgKey: 'neo_ds',
-      caption: 'Design System Multi-tenant: componentes modulares e esteira de autosserviço padronizada para as 4 distribuidoras do grupo.',
-      p: 'Antes de projetar qualquer tela, eliminamos barreiras burocráticas em serviços críticos (troca de titularidade, pedido de ligação nova e autoleitura), desenhando a fundação de um Design System Multi-tenant com temas dedicados para as 4 distribuidoras.'
+      caption: 'Por que sequenciar UI Roadmap, Style Guide e biblioteca de componentes na Etapa 6 (Sprints de Execução): garantir que os padrões visuais nascessem dos Service Blueprints validados nas Etapas 4 e 5.',
+      p: 'Decisão 1 (serviço antes da tela): priorizamos os 5 Service Blueprints antes da interface, aceitando adiar o código do portal final para não digitalizar processos quebrados (como três notas de serviço desintegradas na ligação nova). Decisão 2 (base multi-tenant): defendi componentes compartilhados com temas por marca para evitar quadruplicar a manutenção, aceitando maior governança entre regionais.'
     },
     {
       num: '05',
-      tag: 'ARQUITETURA DE SERVIÇOS TO-BE',
-      short: 'Os 5 estágios em blueprints',
-      title: 'Os 5 estágios do ciclo de vida do cliente mapeados em Service Blueprints.',
-      imgKey: 'neo_tobe',
-      caption: 'Jornada To-Be e blueprints de serviço: os 5 estágios do ciclo de vida estruturados com ações do cliente e processos de backstage.',
-      p: 'Para superar a fragmentação histórica entre as 4 distribuidoras, consolidamos a jornada completa do consumidor em 5 macroestágios com especificações detalhadas de frontstage, backstage e sistemas de apoio.'
+      tag: '118 IDEIAS PRIORIZADAS',
+      short: 'Priorização, desacordo e reflexão',
+      title: '118 ideias distribuídas na jornada futura como baseline para o roadmap de serviços.',
+      imgKey: 'neo_matriz',
+      caption: 'Por que ancorar as 118 ideias na curva de criticidade da jornada futura: impedir que iniciativas entrassem no roadmap desconectadas dos pontos reais de atrito operacional.',
+      p: 'Decisão 3 (priorização): sequenciamos ações imediatas em fatura e autoleitura antes de telemedição, aceitando postergar investimentos de longo prazo. Desacordo estratégico: diretorias regionais pediram 4 portais isolados; cruzando os blueprints com o esforço de backoffice, defendemos a base multi-tenant. Reflexão: eu reverteria conduzir os workshops só com pranchas estáticas sem protótipos navegáveis de dois fluxos críticos de campo.'
     },
     {
       num: '06',
-      tag: 'PRIORIZAÇÃO & ROADMAP ESTRATÉGICO',
-      short: 'Matriz de 118 ideias priorizadas',
-      title: 'Matriz de 118 ideias priorizadas e baseline para o plano diretor de inovação.',
-      imgKey: 'neo_matriz',
-      caption: 'Matriz de Priorização: 118 ideias estruturadas e classificadas por impacto no negócio versus valor percebido pelo consumidor.',
-      p: 'As oportunidades mapeadas durante a pesquisa de campo e a auditoria de processos foram organizadas em uma matriz analítica, cruzando o valor percebido pelo consumidor com o esforço operacional de implementação.'
-    },
-    {
-      num: '07',
-      tag: 'FONTES & GOVERNANÇA EXECUTIVA',
-      short: 'Fontes oficiais e equipe',
+      tag: 'GOVERNANÇA P&D ANEEL',
+      short: 'Governança e escopo do P&D',
       title: 'Fontes oficiais de P&D ANEEL, governança executiva e equipe EY × Livework.',
       imgKey: 'neo_capa',
-      caption: 'Governança executiva: entregáveis multidisciplinares aprovados pelas diretorias de operação do Grupo Neoenergia.',
-      p: 'Os blueprints de serviço e a matriz de 118 oportunidades serviram como baseline estratégico aprovado pelas diretorias de operação e atendimento do Grupo Neoenergia no âmbito do programa de P&D Estratégico ANEEL.'
+      caption: 'Governança executiva: 5 Service Blueprints e 118 ideias aprovados pelas diretorias de operação e atendimento no programa P&D Estratégico ANEEL (sem implementação em código neste ciclo).',
+      p: 'Resultado qualitativo (2020): os 5 Service Blueprints e as 118 ideias foram aprovados como baseline do P&D Estratégico ANEEL, criando linguagem compartilhada entre atendimento, backoffice e campo das 4 distribuidoras. Por ser etapa de P&D, não houve implementação em código nem linha de base medida em produção neste ciclo.'
     }
   ]
 };
 
 var CASE_EINSTEIN = {
   name: 'Case Albert Einstein',
-  frameName: 'Case · Albert Einstein — Linguagem Visual para Laudos Clínicos',
+  frameName: 'Case · Albert Einstein — Consumo de Resultados',
   kickerTag: 'SAÚDE · UX LEAD',
-  kickerCompany: 'Hospital Israelita Albert Einstein × Foursys · 2022',
-  title: 'Uma linguagem visual modular para laudos clínicos heterogêneos.',
-  subtitle: 'Sistematização de 14 famílias de laudos, matriz de componentes escalável e pesquisa com 121 participantes para visualização rápida de parâmetros críticos.',
+  kickerCompany: 'Hospital Israelita Albert Einstein (HIAE) × Foursys · 2022',
+  title: 'Uma linguagem visual modular para laudos heterogêneos.',
+  subtitle: 'Como UX Lead no Hospital Israelita Albert Einstein (HIAE × Foursys), liderei o projeto Consumo de Resultados. Conduzi pesquisa, arquitetura da informação e componentes para mais de 80 tipos de laudos em tela e impressão P&B. Nos testes de protótipo, 81,6% reconheceram o documento e 77,8% focaram primeiro em exame, resultado e referência.',
   metadata: [
-    { label: 'MEU PAPEL', val: 'UX Lead / Product Designer' },
-    { label: 'EQUIPE', val: 'Foursys Design × Equipe Médica e Engenharia Einstein' },
-    { label: 'ESCOPO', val: 'Pesquisa clínica, taxonomia, Design System e prototipagem' }
+    { label: 'MEU PAPEL', val: 'UX Lead' },
+    { label: 'EQUIPE', val: 'Design (Foursys) × Corpo clínico e Engenharia (Einstein)' },
+    { label: 'ESCOPO', val: 'Pesquisa, arquitetura da informação e prototipagem' },
+    { label: 'VALIDAÇÃO E ESCOPO', val: '81,6% reconhecimento · 14 entregáveis' }
   ],
   heroImgKey: 'hiae_capa',
-  heroCaption: 'Hospital Israelita Albert Einstein: padronização visual e arquitetura da informação para exames diagnósticos de alta complexidade.',
+  heroCaption: 'Proposta v3 estruturada sobre mais de 80 exames reais para manter a mesma ordem de leitura em papel A4, web e celular, sem depender de cor isolada. Dados clínicos anonimizados sob LGPD.',
   metrics: [
-    { n: '14', d: 'famílias de laudos' },
-    { n: '121', d: 'participantes em pesquisa' },
-    { n: '80+', d: 'laudos no inventário' },
-    { n: 'AA/AAA', d: 'conformidade WCAG' },
-    { n: '1:1', d: 'paridade com protótipo v3' }
+    { n: '121', d: 'pacientes no questionário' },
+    { n: '4', d: 'médicos especialistas entrevistados' },
+    { n: '14', d: 'entregáveis (EN-1 a EN-14)' },
+    { n: '81,6%', d: 'reconhecimento no protótipo' },
+    { n: '77,8%', d: 'foco em exame e referência' }
   ],
-  prevCaseTitle: 'Neoenergia · Service Design & P&D ANEEL',
-  nextCaseTitle: 'Itaú Unibanco · Plataforma Íon',
+  prevCaseTitle: 'Neoenergia · Service Design',
+  nextCaseTitle: 'Itaú Unibanco · Hub de Liquidez',
   chapters: [
     {
       num: '01',
-      tag: 'PROPOSTA DE SOLUÇÃO CANÔNICA',
-      short: 'Layout real da proposta v3',
-      title: 'A anatomia de um laudo clínico: clareza imediata sem simplificar dados vitais.',
-      imgKey: 'hiae_tablet',
-      caption: 'Layout Real da Proposta v3: visualização em tablet com cabeçalho clínico, parâmetros críticos e histórico evolutivo.',
-      p: 'A solução v3 estabelece uma hierarquia visual que prioriza o diagnóstico conclusivo, permitindo ao médico identificar anomalias em segundos enquanto mantém o paciente seguro e contextualizado sobre faixas de referência.'
+      tag: 'TESE CLÍNICA',
+      short: 'Tese clínica e descoberta',
+      title: 'Organizar resultados sem perder o contexto clínico.',
+      imgKey: 'hiae_triangulacao',
+      caption: 'Triangulação de 2022: 121 respostas anônimas (LGPD), 4 entrevistas médicas, inventário de 80+ exames e benchmark de serviços de saúde.',
+      p: 'Laboratórios e hospitais parceiros emitiam exames em layouts distintos, dificultando a leitura clínica e a padronização dos sistemas laudadores. Pergunta norteadora: como facilitar a localização e a leitura do laudo sem induzir uma interpretação clínica isolada? Pacientes buscam localizar o resultado para levar à consulta, enquanto médicos precisam cruzar valor, referência e método.'
     },
     {
       num: '02',
-      tag: 'TAXONOMIA & ANATOMIA CLÍNICA',
-      short: 'Taxonomia de macroáreas',
-      title: 'Estruturação taxonômica em 3 macroáreas para suportar exames heterogêneos.',
-      imgKey: 'hiae_taxonomia',
-      caption: 'Taxonomia modular: decomposição de 80+ exames nas três macroáreas clínicas (Metodologia, Resultado e Conclusão Diagnóstica).',
-      p: 'Para acomodar a diversidade entre um hemograma e uma ressonância magnética, estruturamos contratos de dados em 3 macroáreas canônicas: Metodologia, Resultado e Conclusão Diagnóstica.'
+      tag: 'TELA & PAPEL (ANTES/DEPOIS)',
+      short: 'Restrições e decisões clínicas',
+      title: 'Uma hierarquia que funcione na tela e no papel.',
+      imgKey: 'hiae_tablet',
+      caption: 'Antes vs. Depois: aproximei resultado, unidade e valor de referência no mesmo bloco visual para reduzir erro de associação entre colunas afastadas no documento legado.',
+      p: 'Decisão 01 (alertas por cor): entre selos interpretativos ("normal/alterado") pedidos por parte do negócio ou valor e referência lado a lado com ícone redundante, negociei com apoio dos 4 médicos descartar os selos, a custo de não oferecer leitura binária instantânea, preservando impressão P&B. Decisão 02 (taxonomia comum): priorizei decompor 80+ exames em 3 macroáreas com examTitle e dataField, a custo de menor liberdade visual em exames atípicos.'
     },
     {
       num: '03',
-      tag: 'PESQUISA & TRIANGULAÇÃO',
-      short: 'Triangulação com médicos e pacientes',
-      title: 'Pesquisa quantitativa e entrevistas em profundidade com corpo clínico.',
-      imgKey: 'hiae_triangulacao',
-      caption: 'Triangulação metodológica: cruzamento de percepções entre 4 entrevistas semiestruturadas com médicos e questionário com 121 pacientes.',
-      p: 'A pesquisa triangulou 4 entrevistas semiestruturadas com médicos laudadores e 121 respostas de pacientes. Nos testes com a proposta, 81,6% reconheceram o documento como laudo médico e 77,8% concentraram a atenção no exame, resultado e referência.'
+      tag: 'TAXONOMIA DE DADOS',
+      short: 'Taxonomia em 3 macroáreas',
+      title: 'Do documento ao dado.',
+      imgKey: 'hiae_taxonomia',
+      caption: 'Taxonomia em 3 macroáreas (Metodologia, Resultado e Conclusão diagnóstica): reutiliza a mesma ordem de leitura em exames laboratoriais e de imagem sob LGPD.',
+      p: 'Todos os mais de 80 exames reais auditados convergem para três macroáreas fixas: 1. Metodologia (prescrição, material biológico e equipamento), 2. Resultado (achados e intervalos de referência alinhados) e 3. Conclusão diagnóstica (parecer assinado pelo médico).'
     },
     {
       num: '04',
-      tag: 'DESIGN SYSTEM & TOKENS',
-      short: 'Tokens e tipografia médica',
-      title: 'Tokens semânticos de espaçamento 8px e tipografia calibrada para legibilidade rápida.',
+      tag: 'ANATOMIA DO COMPONENTE',
+      short: 'Anatomia v3 e Zera 1.0',
+      title: 'Preservar relações entre resultado, referência e contexto.',
       imgKey: 'hiae_tokens',
-      caption: 'Design Tokens: escala tipográfica e cores de alerta (estável, limítrofe, crítico) rigorosamente testadas contra WCAG AAA.',
-      p: 'Criamos tokens de cor dedicados aos estados clínicos, garantindo que indicadores de risco não dependam exclusivamente de cor (atendendo ao critério WCAG 1.4.1 de uso da cor).'
+      caption: 'Design System Zera 1.0 e Protrombina (v3): ícones redundantes à cor e tokens de espaçamento 8px em dataField e examTitle reduzem divergências entre sistemas laudadores.',
+      p: 'No componente Tempo de Protrombina (plasma), Atividade e Relação (RNI) ficam em linhas dedicadas com valor e referência lado a lado e ícone redundante à cor. Decisão 03 (compatibilidade): priorizei cabeçalho e rodapé comuns compatíveis com Microsoft Word e impressão P&B, a custo de adiar o redesenho completo do portal.'
     },
     {
       num: '05',
-      tag: 'MATRIZ DE COMPONENTES',
-      short: 'Componentes modulares de laudo',
-      title: 'Componentização escalável para suportar centenas de exames laboratoriais.',
-      imgKey: 'hiae_componentes',
-      caption: 'Matriz de Componentes: blocos reutilizáveis para tabelas analíticas, gráficos de dispersão e assinaturas digitais.',
-      p: 'A biblioteca modular permitiu aos times de engenharia montar qualquer família de laudo combinando apenas 6 componentes mestres pré-validados com o corpo clínico.'
+      tag: 'ESCALA EM 80+ EXAMES',
+      short: 'Escala multicanal (A4, web, celular)',
+      title: 'Uma estrutura única para qualquer tipo de exame.',
+      imgKey: 'hiae_visao_futura',
+      caption: 'Paridade em 3 canais (papel A4, web e celular) em laudos descritivos (mamografia) e tabulares (ressonância): mantém a mesma ordem sem reaprendizado ao trocar de suporte.',
+      p: 'Estruturei a mesma anatomia modular para laudos descritivos longos (mamografia e biópsias) e tabelas numéricas densas (ressonâncias e hemogramas). Reaproveitar cabeçalho, hierarquia e blocos reduz a quantidade de templates mantidos nos sistemas laudadores.'
     },
     {
       num: '06',
-      tag: 'VISÃO FUTURA & MULTIDISPOSIÇÃO',
-      short: 'Visão futura de exames por imagem',
-      title: 'Extensão do modelo para laudos de alta densidade e exames de imagem.',
-      imgKey: 'hiae_visao_futura',
-      caption: 'Visão Futura: aplicação do chassi modular em exames de ressonância magnética e tomografia computadorizada.',
-      p: 'O mesmo sistema modular foi estendido para acomodar laudos de imagem, incorporando visualizadores DICOM integrados e cortes anatômicos sem quebrar a coerência visual do hospital.'
-    },
-    {
-      num: '07',
-      tag: 'GOVERNANÇA & IMPACTO',
-      short: 'Governança clínica e síntese',
-      title: 'Entrega aprovada pela diretoria clínica e handoff técnico para engenharia.',
+      tag: 'COMPREENSÃO, ESCOPO & NDA',
+      short: 'Validação, escopo, reflexão e NDA',
+      title: 'Clareza de leitura e diagnóstico clínico: papéis complementares.',
       imgKey: 'hiae_capa',
-      caption: 'Handoff executivo: especificação técnica completa entregue para implantação no ecossistema digital do Einstein.',
-      p: 'O projeto estabeleceu o padrão oficial para a apresentação de resultados diagnósticos no portal e aplicativo do Einstein, servindo como referência de humanização de dados médicos na América Latina.'
+      caption: 'Testes do protótipo v3 (2022, EN-7 e EN-14): 81,6% reconhecimento, 77,8% foco visual, 58,8% objetivo e 56,2% interpretação autônoma — diferença de 21,6 p.p. entre foco e interpretação.',
+      p: 'A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. O escopo encerrou na entrega da especificação v3 (EN-1 a EN-14), sem linha de base do legado nem medição pós-lançamento; implantação sob gestão interna e arquivos restritos por NDA. Reflexão: eu reverteria consolidar os componentes digitais antes de testar quebras de página em PDF.'
     }
   ]
 };
 
 var CASE_ITAU = {
   name: 'Case Itaú Unibanco',
-  frameName: 'Case · Itaú Unibanco — Plataforma Íon for Advisors',
-  kickerTag: 'FINTECH · SENIOR PRODUCT DESIGNER',
+  frameName: 'Case · Itaú Unibanco — Plataforma íon for Advisors',
+  kickerTag: 'FINTECH · ITAÚ UNIBANCO',
   kickerCompany: 'Itaú Unibanco · Plataforma íon for Advisors · 2024–2026',
-  title: 'Cinco recortes de produto para mesas de investimento de alta complexidade.',
-  subtitle: 'Plataforma para especialistas de investimentos organizando saldos, projeções, vencimentos, movimentações e campanhas em alta densidade.',
+  title: 'Cinco recortes de produto na plataforma íon for Advisors (IFA).',
+  subtitle: 'Atuação como Senior Product Designer em cinco módulos para especialistas de investimentos e os assessores que os auxiliam: Hub de Liquidez, Vencimentos, Movimentações, Campanhas e Registros.',
   metadata: [
     { label: 'MEU PAPEL', val: 'Senior Product Designer' },
     { label: 'EQUIPE', val: 'Design, Produto, Engenharia e áreas de negócio' },
-    { label: 'ESCOPO', val: 'Hub de liquidez, vencimentos, movimentações, campanhas e registros' }
+    { label: 'ESCOPO', val: 'Hub de Liquidez, Vencimentos, Movimentações, Campanhas e Registros' },
+    { label: 'ENTREGA PRINCIPAL', val: '5 recortes documentados com dados sintetizados (LGPD)' }
   ],
-  heroImgKey: 'itau_vencimentos',
-  heroCaption: 'Itaú Unibanco íon for Advisors: suíte integrada para especialistas de investimentos com dados sintetizados para conformidade com o sigilo bancário.',
+  heroImgKey: 'itau_hub',
+  heroCaption: 'íon for Advisors (IFA): interface para especialistas de investimentos e assessores com dados sintetizados para conformidade com o sigilo bancário (LGPD).',
   metrics: [
     { n: '5', d: 'recortes de produto' },
-    { n: 'IFA', d: 'plataforma de assessoria' },
+    { n: 'IFA', d: 'plataforma íon for Advisors' },
     { n: 'LGPD', d: 'dados sintetizados' },
-    { n: '100%', d: 'paridade com Design System' },
-    { n: 'B2B', d: 'especialistas de investimentos' }
+    { n: 'iDS', d: 'componentes do Design System' },
+    { n: 'B2B', d: 'especialistas e assessores' }
   ],
-  prevCaseTitle: 'Albert Einstein · Laudos clínicos',
-  nextCaseTitle: 'Claro Brasil · Ativação simplificada',
+  prevCaseTitle: 'Albert Einstein · Consumo de Resultados',
+  nextCaseTitle: 'Claro · Ativação simplificada',
   chapters: [
     {
       num: '01',
-      tag: 'VISÃO SISTÊMICA & DISCOVERY',
-      short: 'Hub de Liquidez e Oportunidades',
-      title: 'Hub de Liquidez: consolidando posição financeira e saldo projetado.',
+      tag: 'HUB DE LIQUIDEZ E OPORTUNIDADES',
+      short: 'Hub de Liquidez',
+      title: 'Separar saldo disponível, variação prevista e liquidez projetada em uma única leitura.',
       imgKey: 'itau_hub',
-      caption: 'Hub de Liquidez: visão unificada de saldos em conta, resgates provisionados e oportunidades de reinvestimento.',
-      p: 'O Hub de Liquidez consolidou a visão de especialistas de investimentos e assessores ao reunir saldo disponível agora, projeção temporal e fila prioritária de clientes em uma única interface.'
+      caption: 'Hub de Liquidez: separa saldo disponível agora, variação prevista e projeção (fim do dia, 7 e 30 dias) para impedir leitura de valores futuros como disponibilidade imediata.',
+      p: 'Conduzi a hierarquia financeira e os contratos de visualização no Hub de Liquidez, conectando posição atual (Itaú e Open Finance), projeção por janela e fila operacional de clientes. Decisão-chave: descartei indicador totalizador único para separar disponibilidade imediata de projeção, a custo de maior espaço no cabeçalho. Sem métricas pós-produção publicadas neste recorte.'
     },
     {
       num: '02',
-      tag: 'OPERAÇÃO FINANCEIRA',
+      tag: 'GESTÃO DE VENCIMENTOS',
       short: 'Gestão de Vencimentos',
-      title: 'Gestão de Vencimentos: transformando eventos passivos em relacionamento proativo.',
+      title: 'Gestão de Vencimentos: consulta unificada de eventos financeiros e registro de atuação.',
       imgKey: 'itau_vencimentos',
-      caption: 'Gestão de Vencimentos: calendário inteligente alertando sobre vencimentos de títulos de renda fixa e fundos.',
-      p: 'Projetamos uma interface analítica que antecipa em até 30 dias os vencimentos de CDBs, LCIs e debêntures, sugerindo automaticamente produtos da mesma classe para reter o capital dentro da instituição.'
+      caption: 'Gestão de Vencimentos: abas separam Vencimentos, Eventos futuros e Open Finance mantendo a mesma busca, filtros e tabela para especialistas e assessores.',
+      p: 'Conduzi a arquitetura de consulta, filtros combináveis por prazo, status e valor, tabela densa e estados vazios. A estrutura liga identificação do evento ao registro de atuação sem perder o contexto do cliente. Entrega consolidada na interface canônica e especificação de estados para handoff.'
     },
     {
       num: '03',
-      tag: 'ARQUITETURA DA INFORMAÇÃO',
-      short: 'Movimentações e Extrato unificado',
-      title: 'Transição suave entre histórico transacional e saldo provisionado.',
+      tag: 'MOVIMENTAÇÕES (EXTRATO EA ➔ IFA)',
+      short: 'Movimentações e saldo provisionado',
+      title: 'Movimentações: saldo provisionado no cabeçalho e limites em contexto.',
       imgKey: 'itau_movimentacoes',
-      caption: 'Movimentações e Extrato: arquitetura clara separando lançamentos consolidados de liquidações pendentes.',
-      p: 'A arquitetura foi redesenhada para dar total previsibilidade ao fluxo de caixa, com filtros contextuais por classe de ativo e agrupamentos cronológicos inteligentes.'
+      caption: 'Movimentações: saldo provisionado fixo no cabeçalho entre jornadas; CEP, CEP Plus, limite e lançamentos contextualizados no módulo.',
+      p: 'No discovery da transição do Extrato EA para o IFA, comparei seis alternativas e defini o saldo provisionado persistente no cabeçalho. Conta corrente, investimentos, conta gráfica e limites permaneceram em Movimentações para não sobrecarregar a navegação global. Etapa de discovery e prototipagem, sem medição em produção neste recorte.'
     },
     {
       num: '04',
-      tag: 'OPERAÇÃO EM LOTE',
+      tag: 'GESTÃO DE CAMPANHAS',
       short: 'Gestão de Campanhas',
-      title: 'Configuração de campanhas e comunicação segmentada com investidores.',
+      title: 'Sincronizar configuração da base, execução comercial e visão gerencial por estados explícitos.',
       imgKey: 'itau_campanhas',
-      caption: 'Gestão de Campanhas: esteira administrativa permitindo ao assessor disparar propostas personalizadas para centenas de clientes.',
-      p: 'Estruturamos a parametrização em lote com estados explícitos de processamento da base, filtros dinâmicos por carteira e rastreabilidade operacional entre preparação, execução e acompanhamento.'
+      caption: 'Gestão de Campanhas: separa configuração da base, estados de processamento e ativação para alinhar administradores de backoffice, especialistas e gestores.',
+      p: 'Conduzi os fluxos de tela de criação, importação de base e manutenção em lote com estados explícitos de carregamento, vazio, processamento e erro. Separei configuração e ativação, aceitando um passo extra de conferência para evitar publicar bases incompletas.'
     },
     {
       num: '05',
-      tag: 'IA APLICADA & DOCUMENTAÇÃO',
+      tag: 'REGISTROS DE ATENDIMENTO · IA',
       short: 'Registros de Atendimento com IA',
-      title: 'Resumos assistidos por inteligência artificial com supervisão humana obrigatória.',
+      title: 'Aproximar os 5 últimos resumos e exigir confirmação humana antes de gravar notas assistidas por IA.',
       imgKey: 'itau_registros',
-      caption: 'Registros de Atendimento: transcrição e sumarização de reuniões com clientes, extraindo tarefas e notas de conformidade.',
-      p: 'Implementamos fluxos assistidos por IA que geram minutas automáticas de reuniões, permitindo ao assessor revisar e validar em segundos as diretrizes acordadas com o investidor.'
+      caption: 'Registros de Atendimento (diagrama ilustrativo): aproxima os 5 últimos resumos e exige confirmação humana obrigatória (Human-in-the-Loop) antes da gravação no prontuário.',
+      p: 'Conduzi a arquitetura de interação para aproximar os 5 últimos resumos e gerar minutas preliminares editáveis assistidas por IA. Descartei salvamento automático e defini revisão e confirmação humana obrigatória antes da gravação para preservar fidelidade técnica e conformidade bancária.'
     }
   ]
 };
 
 var CASE_CLARO = {
   name: 'Case Claro Brasil',
-  frameName: 'Case · Claro Brasil — Ativação Simplificada e Jornada Multicanal',
+  frameName: 'Case · Claro Brasil — Ativação Simplificada',
   kickerTag: 'TELECOM · UX CORPORATIVO',
-  kickerCompany: 'Claro Brasil · Operações Comerciais · 2017–2018',
-  title: 'Simplificando o atendimento comercial em múltiplos canais.',
-  subtitle: 'Mapeamento de 22 jornadas de atendimento, 20 pessoas em imersão, 10 entrevistas e esteira unificada para equipes de vendas em lojas e televendas.',
+  kickerCompany: 'Claro Brasil · 2017–2018',
+  title: '22 jornadas comerciais unificadas em uma esteira desktop e mobile.',
+  subtitle: 'Na Claro Brasil (NET, Claro e Embratel), conduzi o desenho de fluxos e interfaces como UX/UI Designer. Unificamos 22 jornadas comerciais em uma esteira desktop e mobile de 5 etapas, com 70 oportunidades priorizadas e especificações V.2 entregues à engenharia, sem medição pós-implantação neste ciclo.',
   metadata: [
     { label: 'MEU PAPEL', val: 'UX/UI Designer' },
-    { label: 'EQUIPE', val: 'Design, Produto, Engenharia e operação comercial Claro' },
-    { label: 'ESCOPO', val: 'Pesquisa, jornadas, prototipação e interfaces televendas/lojas' }
+    { label: 'EQUIPE', val: 'Design, Produto, Engenharia de sistemas e operação comercial' },
+    { label: 'ESCOPO', val: 'Discovery, 22 jornadas, protótipos e especificação desktop e mobile' },
+    { label: 'ENTREGA PRINCIPAL', val: '22 jornadas unificadas · 70 oportunidades (especificações V.2)' }
   ],
   heroImgKey: 'claro_capa',
-  heroCaption: 'Claro Brasil: redesenho integral do sistema de ativação de planos móveis e combos para televendas e balcão.',
+  heroCaption: 'Por que unificar desktop e mobile na mesma arquitetura: reunir 22 jornadas de NET, Claro e Embratel evita que o operador alterne entre sistemas legados durante a venda.',
   metrics: [
-    { n: '22', d: 'jornadas mapeadas' },
-    { n: '20', d: 'pessoas em imersão' },
-    { n: '10', d: 'entrevistas em profundidade' },
-    { n: '70+', d: 'validações e testes' },
-    { n: '2', d: 'canais unificados (web e mobile)' }
+    { n: '20', d: 'entrevistas em profundidade' },
+    { n: '22', d: 'jornadas unificadas na esteira' },
+    { n: '70', d: 'oportunidades priorizadas' },
+    { n: '5', d: 'etapas na esteira unificada' },
+    { n: '2', d: 'canais (desktop V.2 e mobile)' }
   ],
-  prevCaseTitle: 'Itaú Unibanco · Plataforma Íon',
-  nextCaseTitle: 'Neoenergia · Service Design & P&D ANEEL',
+  prevCaseTitle: 'Itaú Unibanco · Hub de Liquidez',
+  nextCaseTitle: 'Neoenergia · Service Design',
   chapters: [
     {
       num: '01',
-      tag: 'OPERAÇÃO COMERCIAL & ATIVAÇÃO',
-      short: 'Ativação Simplificada e checkout',
-      title: 'Redesenho da esteira de ativação para dar clareza financeira e continuidade entre canais.',
+      tag: 'OPERAÇÃO FRAGMENTADA',
+      short: 'Contexto e pesquisa operacional',
+      title: 'Redesenho da operação comercial e redução de atrito na venda multicanal.',
       imgKey: 'claro_ativacao',
-      caption: 'Ativação Simplificada: interface desktop para operadores com resumo financeiro visível e validação cadastral imediata.',
-      p: 'Unificamos a navegação progressiva com resumo da oferta sempre visível, preservando o contexto do cliente entre consulta por CPF, escolha do plano e confirmação.'
+      caption: 'Por que validar o CPF na entrada: antecipar checagens cadastrais e antifraude antes da oferta evita montar um combo inelegível. Dados sintetizados sob LGPD.',
+      p: 'Entre 2017 e 2018, benchmarking competitivo, 20 entrevistas em profundidade com operadores e lideranças, três dias de workshops e 10 perfis operacionais mostraram que o principal gargalo estava na troca manual de sistemas legados. Conduzi síntese, arquitetura de fluxos, protótipos e especificações desktop (V.2) e mobile.'
     },
     {
       num: '02',
-      tag: 'PESQUISA & JORNADAS',
-      short: 'Mapeamento de 22 jornadas',
-      title: 'Imersão em lojas físicas e centrais de televendas.',
+      tag: '22 JORNADAS EM 5 ETAPAS',
+      short: 'Decisões 1 e 2 (Esteira e desacordo)',
+      title: 'Decomposição de 22 jornadas comerciais em uma esteira unificada.',
       imgKey: 'claro_jornadas',
-      caption: 'Mapeamento de Jornadas: identificação de atritos desde a consulta do cliente até a confirmação da oferta.',
-      p: 'Conduzimos imersão com 20 profissionais e 10 entrevistas em profundidade, mapeando 22 jornadas para compreender gargalos reais entre sistemas legados e o atendimento comercial.'
+      caption: 'Por que mapear a troca de chip antes das telas: expor dependências de validação, oferta e resumo financeiro revelou etapas duplicadas entre fluxos.',
+      p: 'Decisão 1: propus consolidar 22 fluxos isolados em 5 etapas, aceitando mapear exceções por transação para eliminar validações duplicadas. Decisão 2 (desacordo construtivo): lideranças comerciais pediram tela única para reduzir cliques; demonstrei em sessões práticas com operadores que a densidade sem hierarquia aumentava erros. Negociei etapas progressivas com resumo financeiro lateral fixo.'
     },
     {
       num: '03',
-      tag: 'OMNICANALIDADE',
-      short: 'Multicanalidade web e lojas',
-      title: 'Conectando a jornada iniciada na web com o fechamento na loja física.',
-      imgKey: 'claro_multicanal',
-      caption: 'Multicanalidade: carrinho persistente permitindo ao cliente salvar a proposta online e retirar o chip no balcão.',
-      p: 'Eliminamos a perda de propostas criando um identificador único de carrinho, permitindo ao atendente da loja física resgatar instantaneamente os dados já preenchidos pelo consumidor.'
+      tag: 'CONTEXTO FIXO E RESUMO LATERAL',
+      short: 'Cabeçalho fixo e resumo financeiro',
+      title: 'Navegação progressiva, resumo financeiro visível e preservação do contexto do cliente.',
+      imgKey: 'claro_capa',
+      caption: 'Por que manter cabeçalho fixo e blocos expansíveis: o operador consulta linha, plano e fatura sem abandonar a venda nem perder os dados do cliente (LGPD).',
+      p: 'Estruturei três regras de arquitetura de informação: 1. Navegação progressiva por etapas numeradas, 2. Cabeçalho fixo preservando dados da linha e status cadastral, e 3. Resumo financeiro lateral exibindo produtos, descontos aplicados e valor final durante toda a montagem da oferta.'
     },
     {
       num: '04',
-      tag: 'CO-CRIAÇÃO & GOVERNANÇA',
-      short: 'Workshops e validação contínua',
-      title: 'Validação semanal com equipes de campo para garantir viabilidade operacional.',
-      imgKey: 'claro_workshop',
-      caption: 'Co-criação: testes de usabilidade com operadores de televendas reduzindo taxa de erros em digitação de contratos.',
-      p: 'Cada tela projetada foi testada diretamente nos postos de atendimento sob pressão de metas comerciais, assegurando que os novos atalhos acelerassem o fechamento de planos.'
+      tag: 'PARIDADE DESKTOP E MOBILE',
+      short: 'Decisão 3 (Consistência multicanal)',
+      title: 'Da jornada do chip às interfaces desktop e mobile padronizadas.',
+      imgKey: 'claro_multicanal',
+      caption: 'Por que preservar a mesma taxonomia entre desktop e mobile: manter nomes de planos, resumo financeiro lateral e confirmação iguais reduz divergências entre lojas físicas e campo.',
+      p: 'Decisão 3: entre replicar a tela densa do desktop no mobile ou criar fluxos independentes para o campo, mantive a mesma taxonomia, ordem de 5 etapas e confirmação adaptando a densidade visual. Aceitamos mais rolagem e blocos recolhidos no mobile para preservar continuidade operacional entre lojas físicas e campo.'
+    },
+    {
+      num: '05',
+      tag: 'ENTREGA, ESCOPO E REFLEXÃO',
+      short: 'Status V.2, escopo, reflexão e NDA',
+      title: 'Especificações entregues, escopo preservado e o que eu reverteria hoje.',
+      imgKey: 'claro_capa',
+      caption: 'Especificações desktop (V.2, 10/05/2018) e mobile (11/06/2018) entregues à engenharia; implantação sob gestão interna da Claro Brasil e arquivos sob NDA.',
+      p: 'O ciclo encerrou com 22 jornadas unificadas, 70 oportunidades e especificações desktop (V.2) e mobile entregues à engenharia, sem medição quantitativa pós-implantação neste ciclo. Fora do recorte: faturamento legado e regras de crédito de backoffice. Reflexão: eu reverteria encerrar a entrega V.2 sem acordar uma linha de base de tempo por etapa e taxa de erro antes da implantação.'
     }
   ]
 };
@@ -2930,38 +2925,38 @@ async function buildHome(parent, xPos, yPos) {
   var gridComplementary = [
     {
       num: '01',
-      client: 'FINTECH · ITAÚ UNIBANCO',
+      client: 'ITAÚ UNIBANCO',
       title: 'Hub de Liquidez e Oportunidades',
-      desc: 'Organização de saldos, projeções e oportunidades em alta densidade para especialistas de investimentos na plataforma IFA.',
-      tagVal: 'IFA · B2B',
-      tagDesc: 'plataforma de assessoria',
+      desc: 'Organização de saldos, projeções e oportunidades para especialistas de investimentos e assessores na plataforma íon for Advisors.',
+      tagVal: 'íon for Advisors',
+      tagDesc: '5 módulos documentados',
       thumbBuilder: buildHomeCardThumbItauHub
     },
     {
       num: '02',
-      client: 'FINTECH · ITAÚ UNIBANCO',
-      title: 'Gestão de Vencimentos em Carteira',
-      desc: 'Consolidação de vencimentos, eventos futuros e Open Finance com filtros operacionais para atuação do assessor.',
+      client: 'ITAÚ UNIBANCO',
+      title: 'Gestão de Vencimentos',
+      desc: 'Consolidação de vencimentos, eventos futuros e Open Finance com filtros operacionais para especialistas de investimentos e assessores.',
       tagVal: 'Visão Canônica',
-      tagDesc: 'proventos e agenda de carteira',
+      tagDesc: 'filtros, estados e atuação',
       thumbBuilder: buildHomeCardThumbItauVenc
     },
     {
       num: '03',
-      client: 'ENERGIA · SERVICE DESIGN',
-      title: 'Strategic Discovery e Service Design',
-      desc: 'Unificação da infraestrutura de atendimento para 34 milhões de pessoas em 4 distribuidoras do Grupo Neoenergia.',
-      tagVal: '34M Habitantes',
-      tagDesc: 'nas concessões de energia',
+      client: 'NEOENERGIA',
+      title: 'Atendimento e operação de campo',
+      desc: 'Mapeamento de jornadas e serviços para conectar o atendimento digital à operação em campo nas 4 distribuidoras.',
+      tagVal: '4 Distribuidoras',
+      tagDesc: '5 Service Blueprints · 118 ideias',
       thumbBuilder: buildHomeCardThumbNeoenergia
     },
     {
       num: '04',
-      client: 'TELECOM · CLARO BRASIL',
-      title: 'Ativação Simplificada e Jornada Multicanal',
-      desc: 'Mapeamento de 22 jornadas de atendimento, 20 entrevistas em profundidade e esteira unificada de checkout para televendas e lojas.',
+      client: 'CLARO BRASIL',
+      title: 'Ativação de planos e televendas',
+      desc: 'Unificação da jornada de venda e ativação de planos para equipes de lojas físicas, televendas e campo.',
       tagVal: '22 Jornadas',
-      tagDesc: 'mapeadas e simplificadas',
+      tagDesc: '20 entrevistas · 70 oportunidades',
       thumbBuilder: buildHomeCardThumbClaro
     }
   ];
@@ -3129,12 +3124,12 @@ async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
       body: '• Anti-Template de Bootcamp: Einstein (6 caps) · Itaú Decision-Led (5 caps, decisões no cap. 2) · Claro Multicanal (5 caps) · Neoenergia Service Design (6 caps)\n• UX Companion 2026 (30/30) + NN/g: Hero 15s, Framing com tensão nomeada, 3 Decisões com trade-offs, Outcomes com atribuição honesta (Contínuas/Discretas/Binárias), Reflection concreta e Disciplina de Escopo\n• Postura Editorial: zero termos defensivos/clichês, dados sintetizados/anonimizados sob LGPD, sigilo médico e bancário\n• Proveniência Obrigatória: toda prancha Figma e doc canônico informa IA (Antigravity), data de criação, última atualização e ID/link da conversa'
     },
     {
-      tag: '05 · HANDOFF TÉCNICO, ROTAS SPA & AUTOMAÇÃO QA (14 GATES)',
-      body: '• Stack: React 19 + Vite 6 + TypeScript + React Router 7 | Ativos 100% via assetUrl() para subdiretório /portfolio/\n• Rotas SPA Estáticas: generate_spa_routes.js gera index.html dedicado para todas as 7 rotas + 404.html (HTTP 200 OK direto)\n• Script Único de Validação: scripts/portfolio_qa_sentinel.py (14/14 PASS: 9 estáticos + 5 Chromium runtime incluindo WCAG 2.2 2.4.11/2.4.13/2.5.8/3.3.8 e contraste :hover)\n• Automação em 3 Camadas: Hook .githooks/pre-push (bloqueio local 14/14) + npm run qa / qa:full / qa:sync + CI Gate em .github/workflows/deploy.yml\n• Higiene do Repositório: raiz com 3 arquivos canônicos e scripts/ com 2 motores oficiais (legados arquivados em D:\\arquivo-morto-portfolio\\)'
+      tag: '05 · HANDOFF TÉCNICO, ROTAS SPA & AUTOMAÇÃO QA (15 GATES)',
+      body: '• Stack: React 19 + Vite 6 + TypeScript + React Router 7 | Ativos 100% via assetUrl() para subdiretório /portfolio/\n• Rotas SPA Estáticas: generate_spa_routes.js gera index.html com title/OG/canonical próprios para todas as 8 rotas + 404.html (HTTP 200 OK direto)\n• Script Único de Validação: scripts/portfolio_qa_sentinel.py (15/15 PASS: 10 estáticos + 5 Chromium runtime incluindo WCAG 2.2 2.4.11/2.4.13/2.5.8/3.3.8, contraste :hover e Gate 15 TX/TH)\n• Automação em 3 Camadas: Hook .githooks/pre-push (bloqueio local) + npm run qa / qa:full / qa:sync + CI Gate em .github/workflows/deploy.yml\n• Higiene do Repositório: raiz com arquivos canônicos e scripts/ com 2 motores oficiais (legados arquivados em D:\\arquivo-morto-portfolio\\)'
     },
     {
-      tag: '06 · HISTÓRICO COMPLETO DE VERSÕES (V0.1 ➔ V3.10.2)',
-      body: '• v0.1.0 (UXfolio · Score 52): baseline inicial sem controle de a11y ou trade-offs\n• v2.0.0 (Figma Make · Score 67): identidade visual inicial e 1º case estruturado\n• v3.0.0 (Figma Make · Score 73): autoria Itaú, porém excesso de recortes e sem imagens em 3 cases\n• v3.5.0 (GitHub Pages · Score 87): código React próprio, 4 cases âncora, rotas SPA 200 OK e remoção de IDs internos\n• v3.6.0 (Craft Edition · Score 95): deduplicação 100%, CaseAccessGate SHA-256, diagramas Retina, Sentinel v2 e sync Notion Ops\n• v3.7.0 (Design System Parity · Score 98): Combo Campeão 9 artes 2400x1350 edge-to-edge, grid 8px, tipografia Home/Cases, Sentinel 14 gates e higiene do repo\n• v3.8.0 (Anti-Template · Score 99): 4 arquiteturas narrativas sob medida, hook pre-push, CI gate e Proveniência Antigravity no Figma\n• v3.9.0 (Editorial STAR/ATS): erradicação de 7 clichês (Negative Prompting), correção factual Claro (34M/70+) e seção Sobre em 2 colunas\n• v3.10.0–v3.10.2 (Auditoria UX/UI 18 Viewports · VIGENTE): CTA pine no CaseAccessGate, 100% alvos >= 44px (WCAG 2.5.8), Plain Language em #sobre, kickers sem repetição, split-media 0% distorção no Tablet e paridade 100% Código + Figma + Plugin + Notion'
+      tag: '06 · HISTÓRICO COMPLETO DE VERSÕES (V0.1 ➔ V4.2.0)',
+      body: '• v0.1.0 (UXfolio · Score 52): baseline inicial sem controle de a11y ou trade-offs\n• v2.0.0–v3.0.0 (Figma Make · Score 67–73): identidade visual inicial e primeiros cases estruturados\n• v3.5.0–v3.8.0 (GitHub Pages · Score 87–99): código React próprio, 4 arquiteturas sob medida, CaseAccessGate SHA-256 e Sentinel v2\n• v3.9.0–v4.0.2 (Guia Consolidado 2026): 90 códigos congelados, 3 skills, Home Híbrida V4.0.0 e auditoria integral do Hero\n• v4.1.0–v4.1.1 (Auditoria Editorial & CTAs): saneamento integral de textos, remoção de botões duplicados em #sobre e padronização A-23\n• v4.2.0 (VIGENTE · Varredura Exaustiva dos Cases): 3 decisões no micro-template CS-06 em todos os cases, CS-01 de 4 frases, metaDescription + OG estático por rota, A-01 corrigido na Neoenergia, 21,6 p.p. no Einstein, 0 invenções no plugin Figma e paridade 1:1 omnicanal'
     }
   ];
 
@@ -3149,7 +3144,7 @@ async function buildDesignSystemDocsFrame(parent, xPos, yPos) {
   }
 
   parent.appendChild(docFrame);
-  log('✔ Prancha de Documentação, Componentes & Handoff V3.10.2 criada com sucesso!');
+  log('✔ Prancha de Documentação, Componentes & Handoff V4.2.0 criada com sucesso!');
   return docFrame;
 }
 

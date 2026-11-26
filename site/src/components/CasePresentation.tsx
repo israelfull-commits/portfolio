@@ -76,6 +76,7 @@ export type CasePresentationData = {
   context: string;
   headline: string;
   subtitle: string;
+  metaDescription?: string;
   role: string;
   team: string;
   scope: string;
@@ -169,6 +170,7 @@ export function CaseFigure({ image }: { image: CaseImage }) {
           <button
             type="button"
             className="cp-lightbox-trigger"
+            aria-label={`Ver ampliado: ${image.alt}`}
             onClick={openLightbox}
           >
             Ver ampliado <ArrowIcon />
@@ -355,7 +357,7 @@ function CasePresentationContent({ data }: { data: CasePresentationData }) {
       />
       <PageMeta
         title={`${data.title} — Israel Rozar`}
-        description={data.subtitle}
+        description={data.metaDescription || data.subtitle}
         noIndex={data.noIndex}
       />
       <Link className="skip-link" href="#conteudo">

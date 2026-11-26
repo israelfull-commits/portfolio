@@ -20,7 +20,7 @@ flowchart LR
     V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
-    V310["V4.1.1 (26/Nov - VIGENTE)<br>Auditoria Editorial Integral + CTAs Deduplicados<br>• Todos os textos (Home, Chrome, 4 Cases, Itaú 5x)<br>• #sobre limpo + CV em Header/Hero/Contato (A-23)<br>• 8 Rotas SPA + 15/15 Sentinel + Figma/Notion"]
+    V310["V4.2.0 (26/Nov - VIGENTE)<br>Varredura Exaustiva dos Cases (52 versões)<br>• CS-01..15 + TX-01..09 nos 4 cases e Itaú 5x<br>• OG/title estático nas 8 rotas + A-01 Neoenergia<br>• Plugin Figma + Tela 03..06 731:699 + 15/15 Sentinel"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310
 ```
 
@@ -94,6 +94,7 @@ Localização: `docs/v3_6_novembro_25_craft/`
 * `REGRAS_PERMANENTES_DESIGN_FIGMA_2026.md`: Regras permanentes anti-regressão para criação e auditoria visual no Figma (zero ghost fills brancos, `resize()` antes de `AUTO`, equalização de altura em grids, componentes nativos e inspeção via `get_screenshot`).
 * `AUDITORIA_COMPARATIVA_HERO_HOME_2026.md`: Varredura total das 12 versões/variações históricas da Hero da Home (Git, Figma, Plugin, Docs e Notion), scorecard calibrado pela Banca de 7 Papéis e especificação da versão campeã `V4.0.2` (`0` falhas nos 90 códigos).
 * `AUDITORIA_INTEGRAL_TEXTOS_PORTFOLIO_V4_1_2026.md`: Varredura integral de todos os textos restantes (Home fora do Hero, Global Chrome, Einstein, Claro, Neoenergia, 5 módulos Itaú IFA, Figma `731:699` e Plugin) com scores `V1 ➔ V4.1.0`, correções aplicadas e pendências factuais `TX-09`.
+* `AUDITORIA_EXAUSTIVA_VERSOES_CASES_V4_2_2026.md`: Mapeamento exaustivo de 52 versões históricas dos 4 cases (Git, Figma `Template-portfolio` + `0sQ9hoPAkVCtyyEsxOzy9j`, Plugin, Docs e Notion) com rubrica ponderada `/10` da banca, correções cirúrgicas `V4.2.0` e paridade omnicanal 1:1.
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.

@@ -5,12 +5,12 @@
       "identifier": "urn:air:israelrozar:portfolio:assistant",
       "displayName": "Israel Rozar Portfolio Agent",
       "type": "application/agent-card+json",
-      "url": "https://draw-lapis-96488079.figma.site/llms.txt",
-      "description": "Assistente e documentação do portfólio de Israel Rozar.",
+      "url": "https://israelfull-commits.github.io/portfolio/llms.txt",
+      "description": "Portfólio e documentação de estudos de caso de Israel Rozar, Senior Product Designer.",
       "representativeQueries": [
-        "Israel Rozar product designer",
-        "Senior UX designer portfolio",
-        "Design systems and accessibility"
+        "Israel Rozar Senior Product Designer",
+        "Senior Product Designer portfolio Brazil",
+        "Design Systems WCAG 2.2 Product Discovery"
       ]
     }
   ]
