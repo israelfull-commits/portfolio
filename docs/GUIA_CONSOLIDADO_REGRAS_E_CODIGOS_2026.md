@@ -62,7 +62,7 @@
 - `TX-05` Trade-off explícito (`a custo de…`, `aceitamos…`)
 - `TX-06` Honestidade de escopo (`não foi lançado`, `não medimos`)
 - `TX-07` Frases curtas (uma ideia por frase)
-- `TX-08` Termos consistentes (mesmo termo para o mesmo conceito no case inteiro)
+- `TX-08` Termos consistentes (mesmo termo para o mesmo conceito no case inteiro; **Glossário Itaú IFA:** *Especialista de investimentos* e *Assessor* são cargos distintos — o **Assessor auxilia os Especialistas** na operação e no acompanhamento das carteiras; nunca usar como sinônimos)
 - `TX-09` Sem dados inventados (somente fatos confirmados por Israel)
 
 ### IA · Transparência de IA (4 códigos)

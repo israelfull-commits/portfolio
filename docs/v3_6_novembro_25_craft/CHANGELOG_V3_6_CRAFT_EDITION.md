@@ -201,3 +201,6 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 
 ### 2026-11-26 — Versão V3.12.1 (Alinhamento ATS / Gupy / LinkedIn `HP-06`: "Mais de 15 anos de experiência")
 - **Home, Meta Tags & Figma (`Home.tsx`, `index.html`, Figma `Home 1440`):** padronizado `"Mais de 15 anos de experiência"` na 1ª dobra, seção `#sobre`, `meta description`/`og:description` e kicker do Figma para máxima compatibilidade com filtros ATS/Gupy/LinkedIn e paridade `HP-06` (mantendo o histórico exato `2006 – 2026` na lista estruturada de trajetória).
+
+### 2026-11-26 — Versão V3.12.2 (Precisão de Domínio Itaú IFA `TX-08` / `TX-09`: Especialistas × Assessores)
+- **Home & Cases Itaú (`Home.tsx`, `CasePages.tsx`, `ItauPreparationCase.tsx`):** corrigida a distinção de cargos no ecossistema íon for Advisors (IFA) — **Especialistas de investimentos** e **Assessores** (que auxiliam os especialistas no acompanhamento das carteiras) nunca mais usados como sinônimos; glossário registrado em `TX-08` de `GUIA_CONSOLIDADO_REGRAS_E_CODIGOS_2026.md`.

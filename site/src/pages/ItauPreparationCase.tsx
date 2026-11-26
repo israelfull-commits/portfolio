@@ -39,7 +39,7 @@ export const cases: Record<string, PreparationCase> = {
     stage: "Estudo de caso estruturado · IA generativa e supervisão humana",
 
     framing:
-      "Conduzi o desenho de interação e governança de IA no fluxo do assessor, aproximando os 5 resumos recentes no painel lateral e exigindo revisão e confirmação humana obrigatória antes da gravação no prontuário bancário.",
+      "Conduzi o desenho de interação e governança de IA no fluxo de especialistas e assessores, aproximando os 5 resumos recentes no painel lateral e exigindo revisão e confirmação humana obrigatória antes da gravação no prontuário bancário.",
 
     question:
       "Como reduzir o esforço de registro e facilitar a recuperação de contexto, mantendo fidelidade ao atendimento e controle humano sobre o conteúdo?",
@@ -47,7 +47,7 @@ export const cases: Record<string, PreparationCase> = {
     verified: [
       "Discovery e desenho de fluxo assistido por IA para geração de atas e sínteses de atendimento.",
 
-      "Aproximação dos cinco resumos recentes diretamente no momento de consulta e registro do assessor.",
+      "Aproximação dos cinco resumos recentes diretamente no momento de consulta e registro do especialista e do assessor.",
 
       "Delimitação de salvaguardas de conformidade: o texto gerado é uma sugestão editável, exigindo validação humana antes da persistência bancária.",
     ],
@@ -116,10 +116,10 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/v07-itau-jornada-studio-frame.webp",
         width: 2400,
         height: 1350,
-        alt: "Fluxo comparativo da jornada do assessor no IFA em moldura de estúdio: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
+        alt: "Fluxo comparativo da jornada de especialistas e assessores no IFA em moldura de estúdio: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
         label: "Fluxo da Jornada · Antes vs. Esteira Integrada com IA",
         caption:
-          "Jornada ponta a ponta do especialista: eliminação da busca manual em abas com aproximação dos 5 últimos eventos, minuta preliminar assistida por IA e aprovação humana obrigatória (Human-in-the-Loop).",
+          "Jornada ponta a ponta de especialistas e assessores: eliminação da busca manual em abas com aproximação dos 5 últimos eventos, minuta preliminar assistida por IA e aprovação humana obrigatória (Human-in-the-Loop).",
       },
       {
         src: "/images/itau-registros-workflow-1600.webp",
@@ -244,7 +244,7 @@ export const cases: Record<string, PreparationCase> = {
         alt: "Interface canônica de Gestão de Vencimentos em alta resolução 16:9",
         label: "Interface canônica · Próximos Vencimentos",
         caption:
-          "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação do assessor.",
+          "Interface canônica: consolidação de Vencimentos, Eventos futuros e Open Finance com filtros operacionais e tabela densa para atuação de especialistas e assessores.",
       },
 
       {
@@ -389,7 +389,7 @@ export const cases: Record<string, PreparationCase> = {
     title: "Hub de Liquidez e Oportunidades",
 
     subtitle:
-      "Arquitetura da Informação e contratos de dados para consolidar saldo disponível, projeção temporal e fila prioritária de assessores no íon for Advisors.",
+      "Arquitetura da Informação e contratos de dados para consolidar saldo disponível, projeção temporal e fila prioritária de especialistas e assessores no íon for Advisors.",
 
     discipline: "Discovery · Pensamento sistêmico",
 
@@ -490,7 +490,7 @@ export const cases: Record<string, PreparationCase> = {
         src: "/images/v16-itau-bento-fintech-elegostra-aeroload.webp",
         width: 2400,
         height: 1350,
-        alt: "Visão modular do ecossistema íon for Advisors (IFA): Hub de Liquidez, Próximos Vencimentos e filtros operacionais para assessores de investimentos",
+        alt: "Visão modular do ecossistema íon for Advisors (IFA): Hub de Liquidez, Próximos Vencimentos e filtros operacionais para especialistas de investimentos e assessores",
         label: "Ecossistema IFA · Hub de Liquidez e Oportunidades",
         caption:
           "Arquitetura modular de liquidez no íon for Advisors: consolidação de saldo disponível, projeção temporal e fila prioritária de clientes com filtros combináveis.",

@@ -1278,7 +1278,7 @@ const itauNarratives = {
       "Conectar a identificação de vencimentos à atuação do especialista. A experiência organiza eventos financeiros, contexto do cliente e registro de ações para apoiar o acompanhamento da carteira.",
 
     users:
-      "Especialistas de investimentos que acompanham clientes encarteirados e gestores que precisam compreender a atuação das equipes.",
+      "Especialistas de investimentos, os assessores que os auxiliam no acompanhamento das carteiras e gestores que monitoram a atuação das equipes.",
 
     contribution:
       "Arquitetura de consulta, organização de filtros e tabelas, estados da interface e continuidade entre identificação do evento e atuação. O recorte de design é apresentado junto às funcionalidades descritas na base de conhecimento do produto.",
@@ -1336,7 +1336,7 @@ const itauNarratives = {
       "A utilidade de uma tabela financeira depende de ligar o sinal à ação. Mostrar um vencimento é apenas parte da tarefa: o especialista também precisa interpretar o contexto e reconhecer o que já foi tratado.",
 
     boundary:
-      "Os dados cadastrais e valores financeiros apresentados na interface foram sintetizados para preservação do sigilo bancário e conformidade com a LGPD, mantendo fidelidade estrita às regras de ordenação de vencimentos, filtros operacionais e contratos de dados acordados com os assessores.",
+      "Os dados cadastrais e valores financeiros apresentados na interface foram sintetizados para preservação do sigilo bancário e conformidade com a LGPD, mantendo fidelidade estrita às regras de ordenação de vencimentos, filtros operacionais e contratos de dados acordados com especialistas e assessores.",
 
     scope: "Consulta, filtros, estados e registro de atuação",
   },
@@ -1346,7 +1346,7 @@ const itauNarratives = {
       "Na plataforma íon for Advisors (IFA), especialistas precisavam cruzar múltiplas abas para conciliar saldo em conta, recursos de Open Finance e liquidez projetada antes de abordar clientes. O objetivo foi estruturar uma visão única capaz de separar disponibilidade imediata de projeção temporal sem perder a rastreabilidade da origem.",
 
     users:
-      "Especialistas de investimentos que acompanham recursos disponíveis e oportunidades de atuação em suas carteiras.",
+      "Especialistas de investimentos e os assessores que os auxiliam a acompanhar recursos disponíveis e oportunidades de atuação nas carteiras.",
 
     contribution:
       "Hierarquia dos dados financeiros, distinção temporal dos valores e conexão entre visão de carteira, lista de clientes, filtros e estado da atuação.",
@@ -1414,7 +1414,7 @@ const itauNarratives = {
       "Preservar a continuidade operacional na transição do Extrato EA para o IFA. A solução mantém o saldo provisionado visível no cabeçalho entre jornadas; Movimentações concentra a consulta detalhada e o contexto de CEP, CEP Plus e limite.",
 
     users:
-      "Assessores e especialistas que precisam consultar lançamentos, compreender saldos e explicar movimentações de seus clientes.",
+      "Especialistas de investimentos e os assessores que os auxiliam a consultar lançamentos, compreender saldos e explicar movimentações dos clientes.",
 
     contribution:
       "Arquitetura da informação, comparação de alternativas de visibilidade do saldo e definição da relação entre contexto financeiro persistente e consulta detalhada.",
@@ -1547,16 +1547,16 @@ const itauNarratives = {
 
   "registros-atendimento": {
     summary:
-      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por inteligência artificial. A solução posiciona os resumos dos atendimentos recentes no fluxo de trabalho do assessor, acelerando a contextualização sem abrir mão da revisão humana.",
+      "Apoiar a documentação de atendimentos e a recuperação de contexto por meio de resumos assistidos por inteligência artificial. A solução posiciona os resumos dos atendimentos recentes no fluxo de trabalho de especialistas e assessores, acelerando a contextualização sem abrir mão da revisão humana.",
 
     users:
-      "Assessores e especialistas de investimento que precisam retomar o histórico do cliente com agilidade e documentar os pontos acordados em cada contato.",
+      "Especialistas de investimentos e os assessores que os auxiliam a retomar o histórico do cliente e documentar os pontos acordados em cada contato.",
 
     contribution:
       "Arquitetura de interação entre a consulta ao histórico recente e o apoio à redação do registro. Definição do modelo de supervisão humana para garantir integridade e conformidade das notas de atendimento.",
 
     research:
-      "O mapeamento da rotina dos assessores identificou que a transição entre atendimentos gerava perda de contexto e sobrecarga de digitação. A solução estruturou resumos em tópicos objetivos dos últimos 5 atendimentos e sugestões automáticas de ata para validação do profissional.",
+      "O mapeamento da rotina de especialistas e assessores identificou que a transição entre atendimentos gerava perda de contexto e sobrecarga de digitação. A solução estruturou resumos em tópicos objetivos dos últimos 5 atendimentos e sugestões automáticas de ata para validação do profissional.",
 
     constraints: [
       "Garantir que o conteúdo sugerido pela IA seja sempre revisado e confirmado pelo especialista antes de ser gravado no prontuário do cliente.",
@@ -1782,7 +1782,7 @@ export function ItauPresentation() {
       {
         id: "interface",
         tag: "Fluxo & Interface Canônica",
-        title: `Como o assessor opera ${project.title} ponta a ponta.`,
+        title: `Como especialistas e assessores operam ${project.title} ponta a ponta.`,
 
         content: (
           <>
@@ -1829,7 +1829,7 @@ export function ItauPresentation() {
                 <span className="cp-feature-tag">Reflexão Crítica</span>
                 <h3>O que eu faria diferente hoje</h3>
                 <p>
-                  Ampliaria o acompanhamento longitudinal após o handoff com indicadores de uso por perfil de carteira, cruzando o tempo de consulta de dados com a taxa de registro de ações concluídas pelos assessores.
+                  Ampliaria o acompanhamento longitudinal após o handoff com indicadores de uso por perfil de carteira, cruzando o tempo de consulta de dados com a taxa de registro de ações concluídas por especialistas e assessores.
                 </p>
               </div>
             </div>

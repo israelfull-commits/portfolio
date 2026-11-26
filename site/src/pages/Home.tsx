@@ -12,7 +12,7 @@ const projects = [
     title: "Hub de Liquidez e Oportunidades",
     role: "Senior Product Designer",
     scope: "íon for Advisors · 4 módulos operacionais",
-    description: "Organização de saldos, projeções e oportunidades para assessores de investimentos.",
+    description: "Organização de saldos, projeções e oportunidades para especialistas de investimentos e assessores.",
   },
   {
     slug: "claro-ativacao-simplificada",
