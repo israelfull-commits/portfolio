@@ -17,6 +17,8 @@
 - **52–60 min:** **Suas 2–3 perguntas estratégicas para a banca** (em nível Sênior/Lead, as perguntas feitas pesam tanto quanto a apresentação).
 
 > **Regra de ouro de tempo:** roteirize apenas **75% do tempo** de cada bloco para absorver interrupções e perguntas sem estourar o relógio.
+> **Papel Ativo da Audiência (*Story Triangle* — NN/g):** trate a apresentação como conversa ativa entre *história + narrador + banca*, convidando PM/Engenharia/Design a conectar o problema às suas próprias premissas em vez de fazer um monólogo unidirecional.
+> **Manutenção Contínua sem Atrito (NN/g):** realize uma autoavaliação anual fechada (`1h30–2h`, máx. `5 slides/projeto`) arquivando artefatos brutos (*fluxos, notas, decisões*) enquanto o contexto ainda está fresco.
 
 ### Estrutura de 8–12 Slides por Case (1 ponto por slide)
 1. **Capa:** Projeto, papel, time, período + 1 linha de resultado.
@@ -73,3 +75,4 @@
 6. **Hora 6:** Plano de teste/métrica + *"Com mais tempo"* + transparência de uso de tempo e ferramentas de IA + revisão final.
 
 - **Sinal Sênior/Lead no Take-Home:** reenquadrar o briefing quando fizer sentido, justificar o que ficou de fora, conectar à meta de negócio e antecipar objeções de Engenharia/Produto/Operação (*menos telas polidas, mais raciocínio claro*).
+

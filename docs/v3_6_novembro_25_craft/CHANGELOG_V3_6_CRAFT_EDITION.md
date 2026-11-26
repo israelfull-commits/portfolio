@@ -117,3 +117,5 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Incorporado protocolo `ux-case-study-before-and-after` (Seção 7 de `UX_CASE_STUDY_STRUCTURE_2026.md`).
   - Criado `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md` consolidando Apresentação de Portfólio (30/45/60 min), Whiteboard Challenge (45 min) e Take-Home Assignment (6h).
   - Criado `SCORECARD_VERSOES_E_VARIACOES_2026.md` com pontuação ponderada `v0.1 ➔ v3.6.0` e ranking das 19 variações `V01`–`V19`.
+- **Curadoria Zero-Duplicidade NN/g + W3C WCAG 2.2 (5 fontes primárias):**
+  - Incorporados apenas itens novos/superiores nos docs existentes (sem criar arquivos redundantes): `2.4.11/2.4.12 Focus Not Obscured` (`scroll-padding-top`) e `3.3.8 Accessible Authentication` (`CaseAccessGate`) em `UX_AUDIT_FRAMEWORK_2026.md`; taxonomia Contínuas/Discretas/Binárias + regra *Don't Overthink UX ROI* em `UX_CASE_STUDY_STRUCTURE_2026.md`; *Story Triangle* e *Autoavaliação Anual (1h30–2h)* em `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md`.

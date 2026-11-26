@@ -93,3 +93,7 @@ Referência operacional de reescrita para converter narração de processo em ev
 3. **Processo ➔ Produto:** metodologia fica implícita; o espaço nobre vai para a interface real entregue e o raciocínio por trás.
 
 > **Regra 80/20 de Reescrita:** Ajustar **Hero Summary + 3 Decisões Explícitas + Outcomes honestos com atribuição** resolve ~80% das falhas de cases fracos sem precisar reescrever do zero.
+
+### Taxonomia de Métricas UX & Regra de ROI (NN/g — *Quantifying UX Improvements*)
+- **3 tipos objetivos de métrica:** **Contínuas** (*tempo de tarefa — ex.: Itaú 150s → 27s, taxa de erro*), **Discretas** (*SUS, NPS, escores em escala*) e **Binárias** (*conversão/abandono, passa/falha*).
+- **Regra *"Don't Overthink UX ROI"*:** em produtos maduros, ganhos realistas e bem contextualizados superam promessas infladas; estimativas simples ligadas a KPI de negócio (*horas economizadas × volume operacional*) têm mais credibilidade executiva do que fórmulas financeiras artificiais.

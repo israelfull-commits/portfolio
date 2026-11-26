@@ -53,10 +53,12 @@
 
 ## 5. Espinha Dorsal: 10 Heurísticas de Nielsen & WCAG 2.2 Prioritários
 - **Nielsen (1–10):** (1) Visibilidade do status do sistema · (2) Correspondência com o mundo real · (3) Controle e liberdade do usuário · (4) Consistência e padrões · (5) Prevenção de erros · (6) Reconhecimento em vez de memorização · (7) Flexibilidade e eficiência · (8) Estética e design minimalista · (9) Ajudar a reconhecer, diagnosticar e recuperar erros · (10) Ajuda e documentação.
-- **Critérios WCAG 2.2 mais sub-verificados (alto diferencial sênior):**
-  - `2.4.13` **Focus Appearance** (contraste e área visível do indicador de foco)
-  - `2.5.8` **Target Size (Minimum)** (`>= 24×24 CSS px`)
-  - `2.5.7` **Dragging Movements** (toda ação por arraste precisa de alternativa de clique simples)
+- **Critérios WCAG 2.2 oficiais prioritários (W3C Quick Reference — alto diferencial sênior):**
+  - `2.4.11` / `2.4.12` **Focus Not Obscured (AA/AAA):** elemento focado via teclado nunca pode ficar oculto atrás do header fixo (`SiteHeader`) ou mídia sticky — aplicar `scroll-padding-top` global.
+  - `2.4.13` **Focus Appearance (AAA):** indicador de foco com perímetro mínimo `>= 2px` e contraste `>= 3:1`.
+  - `2.5.7` **Dragging Movements (AA):** toda ação por arraste (ex.: pan no Lightbox em zoom 1:1) precisa de alternativa de clique simples / teclado / scroll.
+  - `2.5.8` **Target Size (Minimum) (AA):** alvos de toque `>= 24×24 CSS px` (já validado no Sentinel v2).
+  - `3.3.8` **Accessible Authentication (AA):** aplicável diretamente ao `CaseAccessGate.tsx` — campo de senha deve sempre permitir `paste` e gerenciadores de senha, sem testes cognitivos/CAPTCHA.
 
 ---
 
