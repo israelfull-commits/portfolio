@@ -2363,7 +2363,7 @@ var CASE_EINSTEIN = {
   kickerTag: 'SAÚDE · UX LEAD',
   kickerCompany: 'Hospital Israelita Albert Einstein (HIAE) × Foursys · 2022',
   title: 'Uma linguagem visual modular para laudos heterogêneos.',
-  subtitle: 'Como UX Lead no Hospital Israelita Albert Einstein (HIAE × Foursys), liderei o projeto Consumo de Resultados. Conduzi pesquisa, arquitetura da informação e componentes para mais de 80 tipos de laudos em tela e impressão P&B. Nos testes de protótipo, 81,6% reconheceram o documento e 77,8% focaram primeiro em exame, resultado e referência.',
+  subtitle: 'Como UX Lead no Hospital Israelita Albert Einstein (HIAE × Foursys), liderei o projeto Consumo de Resultados. Conduzi pesquisa, arquitetura da informação e componentes para mais de 80 tipos de laudos em tela e impressão P&B. Nos testes de protótipo, 81,6% reconheceram o documento e 77,8% focaram nos dados; a proposta v3 foi implantada em produção (encerrei minha atuação após a implantação, sem dados pós-lançamento).',
   metadata: [
     { label: 'MEU PAPEL', val: 'UX Lead' },
     { label: 'EQUIPE', val: 'Design (Foursys) × Corpo clínico e Engenharia (Einstein)' },
@@ -2434,7 +2434,7 @@ var CASE_EINSTEIN = {
       title: 'Clareza de leitura e diagnóstico clínico: papéis complementares.',
       imgKey: 'hiae_capa',
       caption: 'Testes do protótipo v3 (2022, EN-7 e EN-14): 81,6% reconhecimento, 77,8% foco visual, 58,8% objetivo e 56,2% interpretação autônoma — diferença de 21,6 p.p. entre foco e interpretação.',
-      p: 'A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. O escopo encerrou na entrega da especificação v3 (EN-1 a EN-14), sem linha de base do legado nem medição pós-lançamento; implantação sob gestão interna e arquivos restritos por NDA. Reflexão: eu reverteria consolidar os componentes digitais antes de testar quebras de página em PDF.'
+      p: 'A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. A proposta v3 (EN-1 a EN-14) foi implantada em produção; como encerrei minha atuação após a implantação, não possuo linha de base do legado nem dados de acompanhamento pós-lançamento (arquivos restritos por NDA). Reflexão: eu reverteria consolidar os componentes digitais antes de testar quebras de página em PDF.'
     }
   ]
 };

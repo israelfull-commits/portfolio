@@ -146,7 +146,7 @@ export const einsteinPresentation: CasePresentationData = {
   headline: "Uma linguagem visual modular para laudos heterogêneos.",
 
   subtitle:
-    "Como UX Lead no Hospital Israelita Albert Einstein (HIAE × Foursys), liderei o projeto Consumo de Resultados. Laboratórios e hospitais parceiros emitiam exames em layouts distintos, dificultando a leitura clínica e a manutenção técnica. Conduzi pesquisa, arquitetura da informação e componentes para mais de 80 tipos de laudos em tela e impressão P&B. Nos testes de protótipo, 81,6% reconheceram o documento e 77,8% focaram primeiro em exame, resultado e referência.",
+    "Como UX Lead no Hospital Israelita Albert Einstein (HIAE × Foursys), liderei o projeto Consumo de Resultados. Laboratórios e hospitais parceiros emitiam exames em layouts distintos, dificultando a leitura clínica e a manutenção técnica. Conduzi pesquisa, arquitetura da informação e componentes para mais de 80 tipos de laudos em tela e impressão P&B. Nos testes de protótipo, 81,6% reconheceram o documento e 77,8% focaram nos dados; a proposta v3 entrou em produção, mas encerrei minha atuação após a implantação e não possuo dados de acompanhamento pós-lançamento.",
 
   metaDescription:
     "UX Lead no Einstein (2022): arquitetura modular para 80+ tipos de laudos em tela e impressão P&B. Nos testes, 81,6% reconheceram o laudo e 77,8% focaram nos dados.",
@@ -516,7 +516,7 @@ export const einsteinPresentation: CasePresentationData = {
           <div className="cp-note">
             <h3>O que a diferença entre foco e interpretação orientou</h3>
             <p>
-              A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento do laudo (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. Esse achado sustentou manter o laudo contextualizado para a consulta, sem selos automáticos de diagnóstico. O escopo da consultoria encerrou na entrega da especificação v3 (EN-1 a EN-14), sem linha de base do laudo legado nem medição pós-lançamento; fatores externos como letramento em saúde também influenciam a compreensão. Para a etapa seguinte, recomendamos medir separadamente tempo de localização, associação valor-referência e erros críticos com revisão clínica e tecnologias assistivas.
+              A diferença de 21,6 p.p. entre foco visual (77,8%) e interpretação autônoma (56,2%) — e de 25,4 p.p. desde o reconhecimento do laudo (81,6%) — confirmou que clareza percebida não equivale a compreensão clínica. Esse achado sustentou manter o laudo contextualizado para a consulta, sem selos automáticos de diagnóstico. A proposta v3 (EN-1 a EN-14) chegou a ser implantada em produção; como encerrei minha atuação no projeto após a implantação, não possuo linha de base do formato legado nem dados de acompanhamento pós-lançamento — e fatores externos como letramento em saúde também influenciam a compreensão. Para a etapa seguinte, recomendamos medir separadamente tempo de localização, associação valor-referência e erros críticos com revisão clínica e tecnologias assistivas.
             </p>
           </div>
           <div className="cp-cards-grid">
@@ -540,7 +540,7 @@ export const einsteinPresentation: CasePresentationData = {
               <summary>Contexto e documentação do projeto</summary>
               <div>
                 <p>
-                  Projeto desenvolvido em 2022 entre Foursys e Hospital Israelita Albert Einstein. Entregamos a proposta v3 e a especificação de componentes no inventário EN-1 a EN-14; a implantação em produção ficou sob gestão interna do hospital. Por confidencialidade (NDA) e sigilo médico, arquivos integrais e fluxos proprietários permanecem restritos à instituição.
+                  Projeto desenvolvido em 2022 entre Foursys e Hospital Israelita Albert Einstein. Entregamos a proposta v3 e a especificação de componentes no inventário EN-1 a EN-14, que foram implantados em produção; encerrei minha atuação no projeto após a implantação, sem acesso a dados de acompanhamento pós-lançamento. Por confidencialidade (NDA) e sigilo médico, arquivos integrais e fluxos proprietários permanecem restritos à instituição.
                 </p>
               </div>
             </details>

@@ -94,6 +94,7 @@
 ## 4. Pendências Factuais para Confirmação de Israel (`TX-09` — Sem Estimação)
 
 Todas as lacunas abaixo foram tratadas de forma conservadora e transparente na `V4.2.0` (sem inventar dados):
-1. **Einstein (`CS-08` / `CS-14`):** qual o denominador `n` exato dos testes `EN-7/EN-14` (`81,6% / 77,8% / 58,8% / 56,2%`)? A proposta v3 entrou em produção após a entrega da consultoria em 2022?
+1. **Einstein (`CS-08` / `CS-14`):** qual o denominador `n` exato dos testes `EN-7/EN-14` (`81,6% / 77,8% / 58,8% / 56,2%`)? *(Status de produção **confirmado por Israel em 26/11/2026 — V4.2.1**: a proposta v3 entrou em produção; Israel encerrou a atuação após a implantação e por isso não possui dados de acompanhamento pós-lançamento.)*
 2. **Itaú IFA (`CS-12` / `CS-14` / `CS-15` / `IA-01`):** em qual módulo deseja registrar um episódio nominal de desacordo construtivo + quem aprovou? Qual o status real de produção de cada um dos 5 módulos? Os 8 links diretos de Figma no Apêndice do Itaú e os 6 links de Drive/Slides/Figma na Neoenergia devem permanecer ou virar nota institucional sob NDA (como no Einstein)? Em `Home.tsx`, manter `"4 módulos operacionais"` ou atualizar para `"5 módulos operacionais"`?
 3. **Claro & Neoenergia (`TX-09` / `CS-14`):** confirmar se os episódios de desacordo (tela única × etapas progressivas na Claro; 4 portais × multi-tenant na Neoenergia) refletem 100% o ocorrido, e se a especificação V.2 da Claro chegou a produção após sua saída.
+
