@@ -104,3 +104,5 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - `UX_AUDIT_FRAMEWORK_2026.md` (auditoria heurística + WCAG 2.2 + contraste em `:hover`/`:focus` + formato Top 3 por regra).
   - `SENIOR_PORTFOLIO_SIGNALS_2026.md` (os 6 sinais de banca Senior/Lead/Principal e Gap Analysis real do portfólio).
   - `UX_CASE_STUDY_STRUCTURE_2026.md` (anatomia de 7 seções em `1.000–1.800` palavras, 5 arquétipos de case e checklist pré-envio).
+
+- Incorporado o **Template de 9 Blocos + Micro-Template de Decisão** (`ux-case-study-template`) em `UX_CASE_STUDY_STRUCTURE_2026.md` como modelo reutilizável para novos cases.

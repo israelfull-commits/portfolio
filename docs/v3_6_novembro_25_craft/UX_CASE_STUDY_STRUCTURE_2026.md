@@ -42,3 +42,33 @@ Um portfólio forte prova competências complementares entre seus cases:
 - [ ] Dados confidenciais protegidos/anonimizados e declarados no topo.
 - [ ] Leitura abaixo de 10 minutos; apresentável em 15–20 minutos em entrevista.
 - [ ] Transparência sobre uso e validação humana de IA quando aplicável.
+
+
+---
+
+## 4. Template Operacional de 9 Blocos & Micro-Template de Decisão (`ux-case-study-template`)
+
+> **Fonte complementar:** [UX Companion — UX Case Study Template (2026)](https://uxcompanion.co.uk/ux-case-study-template)  
+> **Padrão tipográfico e de escopo:** `1.200–1.800` palavras · `5–8 min` de leitura · `4–6` telas de alta qualidade (cada uma com **racional**, não descrição) · corpo `16–18px` · `line-height 1.5–1.75` · largura máxima `~65ch`.
+
+### Os 9 Blocos Canônicos para Novos Cases
+1. **01 — HERO SUMMARY:** Título + 1 parágrafo (3–4 frases: empresa, papel, problema em 1 linha, resultado em 1 linha) + **1 imagem Hero principal** (a tela mais forte, não um mosaico).
+2. **02 — CONTEXT:** O que o negócio buscava? O que atrapalhava? Qual a tensão central?
+3. **03 — YOUR ROLE:** O que você conduziu ponta a ponta? No que contribuiu? Quais outros papéis estavam na sala (PM, Engenharia, Pesquisa)?
+4. **04 — RESEARCH:** Abra com o **insight**, não com o método (*"Seis entrevistas revelaram um achado inesperado..."*); cite o método de passagem.
+5. **05 — PROBLEM FRAMING:** 1 frase afiada (*"Como podemos [objetivo específico] sem [trade-off]?"*).
+6. **06 — PROCESS AND DECISIONS:** 2–3 decisões reais seguindo o **Micro-Template de Decisão** abaixo.
+7. **07 — SOLUTION:** Design final anotado — **3 a 6 telas-chave**, cada uma com **racional de decisão** (por que ficou assim), nunca descrição óbvia do que se vê.
+8. **08 — OUTCOME:** Números com baseline/período/atribuição quando disponíveis, ou evidência qualitativa honesta (feedback de stakeholders, adoção pelo time, continuidade do trabalho).
+9. **09 — REFLECTION:** 1 ponto específico que faria diferente hoje (focado em processo/decisão, não em cosmética).
+
+### Micro-Template de Decisão (usar 2–3× por case)
+```markdown
+**A QUESTÃO:** A escolha concreta que precisava ser tomada.
+**AS OPÇÕES:** As 2 ou 3 alternativas reais consideradas (nunca "exploramos várias opções").
+**OS TRADE-OFFS:** O custo de cada opção (esforço de engenharia, atrito do usuário, consistência de DS, risco de negócio).
+**A DECISÃO:** O que foi escolhido, por quê (em linguagem simples) e qual custo foi aceito.
+**A EVIDÊNCIA (opcional):** Tela, resultado de teste, dado ou fala que sustentou a escolha.
+```
+
+> **Alerta de Senioridade:** Evite deixar todos os cases mecanicamente idênticos — use os 9 blocos como espinha dorsal, mas adapte a ênfase e o ritmo visual à natureza de cada projeto (Design System, Fluxo Multicanal, Service Blueprint ou NDA/IA).
