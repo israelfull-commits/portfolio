@@ -168,3 +168,11 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Removidos `"Cabeçalho limpo"`, `"colunas limpas"`, `"visual bonito"`, `"sem poluição visual"`, `"permanece no centro da decisão"`, `"em estreita colaboração"`, `"Inovações de Longo Prazo"`, `"Exploro recursos de IA"`, `"3 segundos"`, `"plantão cansativo"` e resíduos em 3ª pessoa (`"O autor confirmou"`).
   - Eliminada redundância entre `summary` e `framing` no Capítulo 1 do **Itaú (`hub-liquidez`)** com separação estrita `Situação/Tarefa` vs. `Ação Técnica` (STAR) e novo subtítulo técnico.
   - Atualizados Hero Lead, Bloco de Contato Compacto e microcopy de NDA no `CaseAccessGate`.
+
+
+### 2026-11-26 — Versão V3.10.0 (Auditoria UX/UI Profunda em 18 Viewports + Correção de 6 Defeitos Reais)
+- **P0 — Botão Submit do `CaseAccessGate` (`CaseAccessGate.tsx`):** corrigida classe inexistente `.pf-button-primary` para `.pf-button-pine`, restaurando o preenchimento verde-pinho `#0A3622` e contraste WCAG AAA (`13.8:1`) no CTA *"Acessar estudo de caso →"*.
+- **P1 — Conformidade Total WCAG 2.2 `2.5.8 Target Size` (`>= 44px`):** elevados alvos de toque abaixo de 44px em `.cp-gate-back` (`23px ➔ 44px`), `.cp-gate-request` (`40px ➔ 44px`), `.cp-appendix summary` (`26px ➔ 44px`), `.cp-appendix .cp-list a` (`21px ➔ 44px`), `.pf-contact-links a` (`36px ➔ 44px`), `.cp-breadcrumb a` (`40px ➔ 44px`), `.cp-lightbox-trigger` (`40px ➔ 44px`) e `.cp-lightbox-size` (`32px ➔ 44px`).
+- **P1 — Proporção Natural em `.cp-split-media` (`case-presentation.css`):** removido o `aspect-ratio: 16 / 10` forçado que comprimia `claro-jornadas.webp` (`1440×1440`, `aspect_diff = 0.65`) e `claro-multicanal.webp` (`aspect_diff = 0.12`), preservando a proporção real de cada evidência (`aspect-ratio: auto; max-height: 420px;`).
+- **P2 — Contraste Sólido no Badge `.pf-contact-label` (`portfolio.css`):** trocado `rgba(206, 255, 26, 0.16)` pelo tom sólido equivalente `#16472A` com texto `--lime` (`> 9.5:1` WCAG AAA, zero falsos positivos).
+- **P3 — Pintura Instantânea no Preview Mobile (`Home.tsx`):** aplicado `decoding="sync"` e `fetchPriority="high"` no preview do tablet Einstein na Home.

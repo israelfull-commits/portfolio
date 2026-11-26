@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
               </div>
               <figure className="pf-case-preview">
-                <img src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")} width="1200" height="675" loading="eager" decoding="async" alt="Proposta de laudo clínico com seções de exame, resultados e referências organizadas em uma estrutura modular." />
+                <img src={assetUrl("/images/hiae-proposta-v3-tablet-1600.webp")} width="1200" height="675" loading="eager" decoding="sync" fetchPriority="high" alt="Proposta de laudo clínico com seções de exame, resultados e referências organizadas em uma estrutura modular." />
               </figure>
             </article>
             <div className="pf-project-grid pf-project-grid-editorial">

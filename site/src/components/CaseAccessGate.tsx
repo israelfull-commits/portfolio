@@ -205,7 +205,7 @@ export function CaseAccessGate({
 
             <button
               type="submit"
-              className="pf-button pf-button-primary cp-gate-submit"
+              className="pf-button pf-button-pine cp-gate-submit"
               disabled={submitting}
             >
               {submitting ? "Verificando…" : "Acessar estudo de caso"} <ArrowIcon />

@@ -19,8 +19,9 @@ flowchart LR
     V3["V3 (25/Nov)<br>Excelência & Conformidade<br>• Capa 16:9 2560x1440 px<br>• 100% WCAG AAA (216 cores)<br>• Remoção links NDA/GitHub/UXfolio<br>• Deploy estável 2 estágios"]
     V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
-    V39["V3.9 (26/Nov - VIGENTE)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)<br>• 14/14 Sentinel + Figma + Notion"]
-    V1 --> V2 --> V3 --> V35 --> V36 --> V39
+    V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
+    V310["V3.10 (26/Nov - VIGENTE)<br>Auditoria UX/UI Total (18 Viewports)<br>• Botão CTA Pine no CaseAccessGate<br>• 100% Alvos >= 44px (WCAG 2.5.8)<br>• Split-Media proporção natural (0% corte)<br>• 14/14 Sentinel + Figma + Notion"]
+    V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310
 ```
 
 ---

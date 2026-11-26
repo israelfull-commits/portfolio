@@ -1320,6 +1320,9 @@
   .pf-home-compact .pf-home-about { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .pf-home-compact .pf-home-about-links { flex-direction: row; flex-wrap: wrap; gap: 8px 24px; }
 }
+/* V3.10 Deep UX/UI Audit Fixes — WCAG 2.2 Target Size (>=44px) & Solid Contact Badge Contrast */
+.pf-contact-label { background: #16472A; }
+.pf-contact-links a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (prefers-reduced-motion: reduce) {
   .pf-home-compact .pf-project, .pf-home-compact .pf-featured, .pf-home-compact .pf-case-preview img, .pf-home-compact .pf-project-link svg, .pf-home-compact .pf-button svg { transition: none !important; transform: none !important; }
 }
