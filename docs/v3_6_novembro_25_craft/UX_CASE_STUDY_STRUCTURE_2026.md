@@ -72,3 +72,24 @@ Um portfólio forte prova competências complementares entre seus cases:
 ```
 
 > **Alerta de Senioridade:** Evite deixar todos os cases mecanicamente idênticos — use os 9 blocos como espinha dorsal, mas adapte a ênfase e o ritmo visual à natureza de cada projeto (Design System, Fluxo Multicanal, Service Blueprint ou NDA/IA).
+
+---
+
+## 7. Protocolo Editorial Antes ➔ Depois (`ux-case-study-before-and-after`)
+
+Referência operacional de reescrita para converter narração de processo em evidência de decisão sênior:
+
+| Seção | Padrão Fraco (Evitar) | Padrão Forte (Aplicar) | Alavanca Editorial |
+| :--- | :--- | :--- | :--- |
+| **Hero Summary (15s)** | *"Trabalhei com um time multidisciplinar aplicando design thinking para um grande cliente."* | Empresa nomeada + verbo em 1ª pessoa (*"Liderei"*) + número do problema + resultado + janela temporal. | Ganha os próximos 8 minutos de leitura. |
+| **Problem Framing** | *"Usuários tinham dores na jornada e o time alinhou redesenhar o fluxo."* | Contexto de negócio + restrição histórica/regulatória + hipótese nomeada + **tensão nomeada** (ex.: Compliance/Engenharia) + prazo. | Ganha os próximos 25 minutos e comprova leitura de contexto real. |
+| **Decisions (Coração)** | *"Criamos wireframes, iteramos com stakeholders e fizemos UI moderna."* | **3 decisões numeradas** com escolha + alternativa descartada + trade-off aceito + evidência/validação. | Expõe julgamento sênior e prepara perguntas profundas de entrevista. |
+| **Outcomes** | *"Aumentou engajamento em 320%; stakeholders adoraram."* | Números contra *baseline* + **variáveis de confusão (*confounders*) nomeadas** + atribuição honesta do mérito do design. | Constrói credibilidade de banca Senior/Staff. |
+| **Reflection** | *"Foi um ótimo aprendizado; orgulho do que entregamos."* | **Um padrão concreto que você revisitaria** (ex.: envolver Compliance/Engenharia antes de otimizar demais o protótipo). | Um dos sinais mais fortes (e menos usados) de maturidade. |
+
+### As 3 Viradas de Narrativa (*Storytelling Shifts*)
+1. **Cronologia ➔ Causalidade:** organizar pelo que importou e por quê — cortar workshops/artefatos que não geraram uma decisão nomeada.
+2. **"Nós" ➔ "Eu" + papéis nomeados:** usar **Eu** para escolhas individuais e **o time / PM / Engenharia / Compliance** para entregas conjuntas.
+3. **Processo ➔ Produto:** metodologia fica implícita; o espaço nobre vai para a interface real entregue e o raciocínio por trás.
+
+> **Regra 80/20 de Reescrita:** Ajustar **Hero Summary + 3 Decisões Explícitas + Outcomes honestos com atribuição** resolve ~80% das falhas de cases fracos sem precisar reescrever do zero.

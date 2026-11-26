@@ -85,7 +85,9 @@ Localização: `docs/v3_6_novembro_25_craft/`
 * `UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md`: Framework operacional permanente de 30 pontos (6 seções × 5 pontos, meta mínima `>= 27/30`) baseado no UX Companion 2026, com scorecard atual do portfólio (`28/30`).
 * `UX_AUDIT_FRAMEWORK_2026.md`: Síntese filtrada de UX Audit (Nielsen + WCAG 2.2 + Top 3 por severidade + contraste em `:hover`/`:focus`).
 * `SENIOR_PORTFOLIO_SIGNALS_2026.md`: Os 6 sinais avaliados em bancas de Senior/Lead/Principal (Framing, Influência sem Autoridade, Resultado Honesto, Escopo, Sistemas e Mentoria) com Gap Analysis do portfólio.
-* `UX_CASE_STUDY_STRUCTURE_2026.md`: Anatomia canônica de 7 seções (`1.000–1.800` palavras), 5 arquétipos de case e checklist pré-envio de 10 pontos.
+* `UX_CASE_STUDY_STRUCTURE_2026.md`: Anatomia canônica de 7 seções (`1.000–1.800` palavras), 5 arquétipos de case, template de 9 blocos e protocolo editorial Antes ➔ Depois (`ux-case-study-before-and-after`).
+* `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md`: Playbook completo de banca Sênior/Staff (Apresentação de Portfólio 30/45/60 min, Whiteboard Challenge 45 min e Take-Home 6h).
+* `SCORECARD_VERSOES_E_VARIACOES_2026.md`: Scorecard comparativo `v0.1 ➔ v3.6.0` (`52 ➔ 95/100`) e ranking ponderado das 19 variações de estúdio (`V01`–`V19`).
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.

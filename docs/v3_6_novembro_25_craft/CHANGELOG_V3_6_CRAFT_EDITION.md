@@ -113,3 +113,7 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Criada subpágina consolidada V3.6 (`4248db39b34f81a6b708c51aefce7209`), atualizados os 5 `🗂️ Ativos` principais para `Publicado` com URLs oficiais do GitHub Pages, registrada a versão vigente `v3.6.0` em `🔖 Versões` (`4248db39b34f81e1a8f6e1f99640b0f3`), criado o registro consolidado em `🔍 Diagnósticos` (`4248db39b34f81cab3d9caec248cdcee`) e registrada a avaliação `v3.6.0` em `⭐ Scorecard Geral` (`4248db39b34f81d5b498f527aad04b63`).
 - **Governança Permanente (`AGENTS.md` Seção 9 + `senior-portfolio-audit/SKILL.md` + `INDEX_GOVERNANCA_E_DECISOES.md`):**
   - Instituída a obrigatoriedade de sincronização omnicanal automática em toda entrega: `site/` (GitHub Pages) + `portfolio-verde/` + `docs/` + **Notion Portfolio Ops**.
+- **Consolidação Final do Cluster UX Companion 2026 (Antes/Depois + Entrevistas Sênior/Staff):**
+  - Incorporado protocolo `ux-case-study-before-and-after` (Seção 7 de `UX_CASE_STUDY_STRUCTURE_2026.md`).
+  - Criado `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md` consolidando Apresentação de Portfólio (30/45/60 min), Whiteboard Challenge (45 min) e Take-Home Assignment (6h).
+  - Criado `SCORECARD_VERSOES_E_VARIACOES_2026.md` com pontuação ponderada `v0.1 ➔ v3.6.0` e ranking das 19 variações `V01`–`V19`.
