@@ -126,12 +126,12 @@ function Sources({ project }: { project: string }) {
 }
 
 const einsteinHero: CaseImage = {
-  src: "/images/hiae-multicanal-web-celular.webp",
-  width: 2000,
-  height: 1032,
-  alt: "Sistema multicanal de laudos do Hospital Israelita Albert Einstein: versões digitais para tablet e celular ao lado da versão impressa padronizada",
+  src: "/images/v17-einstein-bento-light-aeroload.webp",
+  width: 2400,
+  height: 1350,
+  alt: "Visão modular do sistema de laudos do Hospital Israelita Albert Einstein: arquitetura multicanal, componente canônico de Protrombina e tokens clínicos",
   caption:
-    "Sistema multicanal em produção: mesma arquitetura de informação e hierarquia clínica adaptada para tablet, celular e versão impressa A4.",
+    "Sistema modular de laudos em produção: arquitetura multicanal, componente canônico de resultado + referência e tokens tipográficos aplicados em mais de 80 tipos de exames.",
 }
 
 const einsteinImages: CaseImage[] = [
@@ -264,32 +264,20 @@ export const einsteinPresentation: CasePresentationData = {
               </ul>
             </div>
           </div>
-          <div className="cp-gallery">
-            <CaseFigure
-              image={{
-                src: "/images/hiae-estado-atual-anotado.webp",
-                width: 2000,
-                height: 1076,
-                alt: "Laudo anterior anotado mostrando dados espalhados e valores normais longe do resultado",
-                caption:
-                  "Antes: informações espalhadas pela página, resultado distante dos valores normais e dados administrativos misturados ao texto médico.",
-              }}
-            />
-            <CaseFigure
-              image={{
-                src: "/images/hiae-estado-proposto-anotado.webp",
-                width: 2000,
-                height: 1076,
-                alt: "Laudo proposto anotado demonstrando resultado e valores normais agrupados, e dados administrativos no topo",
-                caption:
-                  "Depois (Proposta aprovada): resultado, unidade e valores normais agrupados no mesmo bloco visual; dados administrativos organizados no topo.",
-              }}
-            />
-          </div>
+          <CaseFigure
+            image={{
+              src: "/images/v03-einstein-antes-depois-layers.webp",
+              width: 2400,
+              height: 1350,
+              alt: "Comparativo Antes vs. Depois do laudo Einstein: documento legado fragmentado à esquerda versus arquitetura modular com resultado e referência agrupados à direita",
+              caption:
+                "Antes vs. Depois: transição do laudo legado com dados espalhados para a arquitetura modular aprovada, agrupando resultado, unidade e valor de referência no mesmo bloco visual.",
+            }}
+          />
           <div className="cp-note">
-            <h3>Meu papel como UX Lead</h3>
+            <h3>Meu papel como UX Lead, tensão técnica e mentoria</h3>
             <p>
-              Liderei o alinhamento entre as equipes de design, tecnologia dos hospitais e o corpo clínico do Albert Einstein, garantindo que o novo padrão atendesse tanto aos médicos quanto à realidade prática dos sistemas parceiros.
+              Liderei a arquitetura de informação, os rituais de critique com o time de design da Foursys e o alinhamento direto entre o corpo clínico do Albert Einstein e a engenharia dos sistemas laudadores. O principal desacordo ocorreu quando parte do negócio pediu alertas visuais interpretativos por cor: em conjunto com os médicos entrevistados, defendemos e provamos que o laudo precisava funcionar em impressão preto e branco sem induzir autodiagnóstico isolado.
             </p>
           </div>
         </>
@@ -443,6 +431,16 @@ export const einsteinPresentation: CasePresentationData = {
           <p>
             Um dos maiores desafios foi garantir que o mesmo padrão visual funcionasse tanto para laudos descritivos com muito texto (como mamografia e biópsias) quanto para tabelas densas cheias de números (como ressonâncias e hemogramas). A nova anatomia organiza a leitura para que o olhar encontre primeiro o resultado principal e, em seguida, os detalhes de técnica e observações.
           </p>
+          <CaseFigure
+            image={{
+              src: "/images/v13-einstein-3-canais-mesa-concreto.webp",
+              width: 2400,
+              height: 1350,
+              alt: "Paridade omnicanal do laudo Einstein em 3 suportes reais: folha A4 impressa de mamografia, portal web em MacBook e aplicativo mobile",
+              caption:
+                "Paridade real em 3 canais: mesma hierarquia clínica preservada na versão impressa A4, no prontuário web e no aplicativo mobile do paciente.",
+            }}
+          />
           <div className="cp-gallery">
             <CaseFigure
               image={{
@@ -563,12 +561,12 @@ export const einsteinPresentation: CasePresentationData = {
 }
 
 const claroHero: CaseImage = {
-  src: "/images/claro-ativacao-hero.webp",
-  width: 1440,
-  height: 680,
-  alt: "Portal unificado de ativação Claro Brasil (NET, Claro e Embratel) em interface desktop",
+  src: "/images/v08-claro-multicanal-desktop-iphone.webp",
+  width: 2400,
+  height: 1350,
+  alt: "Ativação Simplificada Claro Brasil em Desktop e Mobile: detalhe da linha com cabeçalho fixo ao lado da experiência móvel padronizada",
   caption:
-    "Portal unificado Claro Brasil: ponto único de entrada para operações comerciais de NET, Claro e Embratel em lojas físicas e canais remotos.",
+    "Ativação Simplificada Claro Brasil: 22 jornadas comerciais (NET, Claro e Embratel) unificadas em uma única arquitetura Desktop e Mobile.",
 }
 
 const claroImages: CaseImage[] = [
@@ -782,7 +780,7 @@ export const claroPresentation: CasePresentationData = {
           </div>
           <CaseFigure
             image={{
-              src: "/images/claro-fluxo-esteira-unificada-2400.webp",
+              src: "/images/v10-claro-jornada-editorial.webp",
               width: 2400,
               height: 1350,
               alt: "Diagrama da esteira unificada de atendimento Claro Brasil em 5 etapas com camada persistente de contexto e paridade entre Desktop e Mobile",
@@ -791,9 +789,9 @@ export const claroPresentation: CasePresentationData = {
             }}
           />
           <div className="cp-note">
-            <h3>Aprendizado de design</h3>
+            <h3>Desacordo construtivo & decisão validada com a operação</h3>
             <p>
-              Uma interface de atendimento comercial precisa manter o contexto do cliente e da oferta sempre visíveis. O design reduz a carga cognitiva do operador e, ao mesmo tempo, assegura transparência de preços e condições para o consumidor final.
+              Lideranças comerciais inicialmente defenderam exibir todos os parâmetros de oferta em tela única para evitar cliques extras. Em sessões práticas com operadores de loja e televendas, demonstrei que a densidade sem hierarquia elevava erros de preenchimento — o acordo foi adotar etapas progressivas com resumo financeiro lateral sempre visível.
             </p>
           </div>
         </>
@@ -936,16 +934,16 @@ export const neoenergiaPresentation: CasePresentationData = {
   kicker: "Energia · Service design",
 
   hero: {
-    src: "/images/neoenergia-capa-conexao-digital.webp",
+    src: "/images/v12-neoenergia-bento-service-design.webp",
 
-    width: 1600,
+    width: 2400,
 
-    height: 900,
+    height: 1350,
 
-    alt: "Capa oficial do projeto P&D Conexão Digital Neoenergia com consórcio EY e Livework",
+    alt: "Visão executiva P&D ANEEL Neoenergia: Service Blueprint de Uso e Pago, escala das 4 distribuidoras e Matriz de 118 Ideias Priorizadas",
 
     caption:
-      "Projeto P&D Conexão Digital ANEEL: Experiência do Consumidor e Service Design para o Grupo Neoenergia (Iberdrola Brasil).",
+      "Projeto P&D Conexão Digital ANEEL: Service Design integrando 4 distribuidoras (34M de pessoas), 5 Service Blueprints e 118 oportunidades priorizadas.",
   },
 
   prevCase: {
@@ -1055,38 +1053,34 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
-          <div className="cp-split">
-            <div className="cp-split-content">
-              <span className="cp-split-tag">Diagnóstico & Auditoria Operacional</span>
-              <h3>Linhas de Visibilidade e Silos de Backstage</h3>
-              <p>
-                A leitura de Service Design evita reduzir o diagnóstico a interfaces de tela: a insatisfação com a fatura raramente é um problema visual, decorrendo de regras de negócio obscuras, leituras por estimativa ou falta de sincronização entre o despacho técnico e o faturamento.
-              </p>
-              <ul className="cp-card-list">
-                <li>
-                  <strong>Linha de interação:</strong> pontos de contato diretos onde o consumidor registra a solicitação ou autoleitura.
-                </li>
-                <li>
-                  <strong>Linha de visibilidade:</strong> fronteira que separa o que o cliente enxerga das validações internas de crédito e engenharia.
-                </li>
-                <li>
-                  <strong>Linha de suporte interno:</strong> integração de sistemas legados de despacho de equipes técnicas e baixa bancária.
-                </li>
-              </ul>
-            </div>
-            <div className="cp-split-media">
-              <CaseFigure
-                image={{
-                  src: "/images/neoenergia-blueprint-crop-contrato-1600.webp",
-                  width: 1600,
-                  height: 900,
-                  alt: "Recorte editorial em alta resolução do Blueprint 1: Contrato e Instalação",
-                  caption:
-                    "Auditoria de backstage: detalhe em alta resolução do Blueprint conectando a experiência do cliente aos sistemas e equipes de campo.",
-                }}
-              />
-            </div>
+          <div className="cp-feature-card">
+            <span className="cp-feature-tag">Diagnóstico & Auditoria Operacional</span>
+            <h3>Linhas de Visibilidade e Silos de Backstage</h3>
+            <p>
+              A leitura de Service Design evita reduzir o diagnóstico a interfaces de tela: a insatisfação com a fatura raramente é um problema visual, decorrendo de regras de negócio obscuras, leituras por estimativa ou falta de sincronização entre o despacho técnico e o faturamento.
+            </p>
+            <ul className="cp-card-list">
+              <li>
+                <strong>Linha de interação:</strong> pontos de contato diretos onde o consumidor registra a solicitação ou autoleitura.
+              </li>
+              <li>
+                <strong>Linha de visibilidade:</strong> fronteira que separa o que o cliente enxerga das validações internas de crédito e engenharia.
+              </li>
+              <li>
+                <strong>Linha de suporte interno:</strong> integração de sistemas legados de despacho de equipes técnicas e baixa bancária.
+              </li>
+            </ul>
           </div>
+          <CaseFigure
+            image={{
+              src: "/images/v11-neoenergia-blueprint-studio-desk.webp",
+              width: 2400,
+              height: 1350,
+              alt: "Service Blueprints 1 e 2 da Neoenergia apresentados em prancha editorial conectando frontstage, backstage e sistemas de campo",
+              caption:
+                "Auditoria de backstage: pranchas dos Service Blueprints conectando a experiência do consumidor aos sistemas legados e equipes de campo das 4 distribuidoras.",
+            }}
+          />
         </>
       ),
     },
@@ -1220,9 +1214,9 @@ export const neoenergiaPresentation: CasePresentationData = {
             </div>
           </div>
           <div className="cp-note">
-            <h3>Aprendizado central</h3>
+            <h3>Desacordo estratégico & aprendizado central</h3>
             <p>
-              Em infraestrutura crítica, a experiência do cliente depende diretamente do que ocorre no backstage. Tornar visíveis as relações entre pessoas, sistemas e equipes de campo é a essência do Service Design.
+              Durante a priorização, diretorias regionais inicialmente pediram quatro portais independentes para preservar particularidades locais. Ao cruzar os 5 Service Blueprints com o custo de manutenção de backoffice, defendemos a arquitetura multi-tenant com tokens de marca — mantendo identidade regional sem multiplicar quatro vezes o débito técnico.
             </p>
           </div>
           <div className="cp-cards-grid">
@@ -1823,13 +1817,15 @@ export function ItauPresentation() {
                 <li key={step}>{step}</li>
               ))}
             </ol>
-            {visuals.length > 1 && (
+            {visuals.length === 2 ? (
+              <CaseFigure image={visuals[1]} />
+            ) : visuals.length > 2 ? (
               <div className="cp-gallery">
                 {visuals.slice(1).map((image) => (
                   <CaseFigure key={image.src} image={image} />
                 ))}
               </div>
-            )}
+            ) : null}
           </>
         ),
       },

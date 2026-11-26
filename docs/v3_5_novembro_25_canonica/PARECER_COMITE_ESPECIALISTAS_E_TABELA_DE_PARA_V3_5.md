@@ -34,3 +34,4 @@
 * **Lead Copywriter & UX Writer:** Aprova 100%. Plain Language impecável, zero jargões vazios, zero termos defensivos, botões padronizados e zero vazamento de IDs internos.
 * **Principal UX Researcher & Dados:** Aprova 100%. Rigor metodológico exemplar: triangulação explícita, métricas estritamente ancoradas em evidências reais (sem números inflados ou inventados), e enquadramento ético LGPD/NDA.
 * **Lead de Acessibilidade Digital (WCAG 2.2 AAA):** Aprova 100%. 199/199 pares de cor em conformidade WCAG AAA, 1 `<h1>` por página, 0 saltos de título, 0 imagens sem `alt`, alvos de toque validados e navegação completa por teclado (`Escape`, `:focus-visible`, `prefers-reduced-motion`).
+

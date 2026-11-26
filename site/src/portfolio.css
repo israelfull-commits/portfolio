@@ -1230,7 +1230,7 @@
 .pf-home-compact #work-title{margin-bottom:24px}
 .pf-home-compact .pf-featured{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;margin-bottom:24px}
 .pf-home-compact .pf-featured-story{padding:32px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;min-width:0}
-.pf-home-compact .pf-featured h3{font-size:28px;line-height:36px;margin:0;max-width:23ch}
+.pf-home-compact .pf-featured h3{font-size:24px;line-height:32px;margin:0;max-width:24ch}
 .pf-home-compact .pf-home-project-client{font-size:14px;line-height:20px;font-weight:600;margin:0}
 .pf-home-compact .pf-featured-story p{color:var(--on-forest-muted,var(--paper));font-size:16px;line-height:24px}
 .pf-home-compact .pf-featured-story .pf-home-project-client{color:var(--paper);font-size:14px}
@@ -1259,7 +1259,7 @@
 .pf-home-compact .pf-home-trajectory span{color:var(--ink-muted);white-space:nowrap;font-size:13px}
 .pf-home-compact .pf-contact-wrap{padding-block:40px}
 .pf-home-compact .pf-home-contact{padding:32px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.pf-home-compact .pf-home-contact h2{font-size:28px;line-height:36px;max-width:24ch;margin:0}
+.pf-home-compact .pf-home-contact h2{font-size:32px;line-height:40px;max-width:24ch;margin:0}
 .pf-home-compact .pf-home-contact p{margin-top:12px;color:var(--on-forest-muted,var(--paper))}
 .pf-home-compact .pf-home-contact-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0}
 .pf-home-compact .pf-home-contact-actions>a:not(.pf-button){display:inline-flex;align-items:center;min-height:44px;color:var(--paper);font-size:14px;text-decoration:underline;text-underline-offset:4px}

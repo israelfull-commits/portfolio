@@ -119,3 +119,20 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Criado `SCORECARD_VERSOES_E_VARIACOES_2026.md` com pontuação ponderada `v0.1 ➔ v3.6.0` e ranking das 19 variações `V01`–`V19`.
 - **Curadoria Zero-Duplicidade NN/g + W3C WCAG 2.2 (5 fontes primárias):**
   - Incorporados apenas itens novos/superiores nos docs existentes (sem criar arquivos redundantes): `2.4.11/2.4.12 Focus Not Obscured` (`scroll-padding-top`) e `3.3.8 Accessible Authentication` (`CaseAccessGate`) em `UX_AUDIT_FRAMEWORK_2026.md`; taxonomia Contínuas/Discretas/Binárias + regra *Don't Overthink UX ROI* em `UX_CASE_STUDY_STRUCTURE_2026.md`; *Story Triangle* e *Autoavaliação Anual (1h30–2h)* em `UX_INTERVIEW_AND_CHALLENGE_PLAYBOOK_2026.md`.
+- **Auditoria de Governança, Regras, Skills & Higiene do Repositório:**
+  - `AGENTS.md` evoluído com **Seção 10** (*Paridade Estrita de Design System Home ↔ Cases*) e **Seção 11** (*Higiene de Repositório & Catálogo dos 2 Scripts Canônicos*).
+  - `.agents/skills/senior-portfolio-audit/SKILL.md` deduplicada (aponta para `AGENTS.md` como fonte única de regras e mantém o protocolo operacional de 14 gates + inspeção visual obrigatória).
+  - Criado `AUDITORIA_GOVERNANCA_E_HIGIENE_REPO_2026.md` mapeando 15 `.md` duplicados por SHA-256 na raiz, `110,6 MB` de prints/`.gz` soltos e 596 arquivos legados em `scripts/` para arquivamento seguro após consentimento.
+
+
+### 2026-11-26 — Versão V3.7.0 (Publicada em Produção · GitHub Pages)
+- **Combo Campeão de Estúdio (9 artes `2400×1350` 2× Retina WebP, `aspectDiff = 0.0000`):**
+  - **Einstein:** `V17` (Hero Bento Clínico), `V03` (Antes vs. Depois), `V13` (Paridade 3 Canais A4/Web/Mobile).
+  - **Itaú (`hub-liquidez` e `registros-atendimento`):** `V16` (Hero Fintech Bento) e `V07` (Jornada IA + Human-in-the-Loop).
+  - **Claro:** `V08` (Hero Multicanal Desktop + iPhone) e `V10` (Esteira Unificada em 5 Etapas).
+  - **Neoenergia:** `V12` (Hero Bento Executivo) e `V11` (Service Blueprints Studio Desk em largura cheia `860×484`).
+- **Copy Senior/Staff (Protocolo Antes ➔ Depois):** explicitados desacordos construtivos por papel (corpo clínico no Einstein, lideranças comerciais na Claro, diretorias regionais na Neoenergia) e mentoria/critique.
+- **Alinhamento Canônico do Design System (Home ↔ Cases):**
+  - Escala tipográfica monotônica na Home (`h1 56px ➔ h2 32px ➔ h3 24px ➔ body 16px`), grid estrito de `8px` nos Cases (`.cp-chapter 72px`, `.cp-split 24px / gap 32px`, `.cp-note 24px 32px`), `.cp-figure` único em todo o site, Heroes `1120×630` *edge-to-edge* e remoção da imagem órfã em meia coluna no Itaú.
+- **Sentinel v2 expandido para 14 Gates (`14/14 PASS`):** novos Gates 13 (`WCAG 2.2 2.4.11 Focus Not Obscured` + `3.3.8 Accessible Auth`) e 14 (contraste `:hover` + `2.4.13 :focus-visible`).
+- **Higiene Segura do Repositório:** raiz reduzida para 3 arquivos canônicos (`.gitignore`, `AGENTS.md`, `SENIOR_UX_PORTFOLIO_CANON.md`), `scripts/` reduzido para 2 motores canônicos (`portfolio_qa_sentinel.py` e `build_portfolio_figma_screens.py`), legados preservados em `D:\arquivo-morto-portfolio\`.

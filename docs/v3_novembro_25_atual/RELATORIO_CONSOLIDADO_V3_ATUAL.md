@@ -38,3 +38,4 @@ A Versão 3 representa o fechamento de ciclo do portfólio de Israel Rozar, cons
 ### E. Infraestrutura de Deploy Contínuo (CI/CD)
 * **Workflow Desacoplado:** `.github/workflows/deploy.yml` dividido em dois jobs (`build` ➔ `deploy` com dependência explícita `needs: build`), garantindo que o upload do artefato seja concluído antes da chamada da API de deploy do GitHub Pages.
 * **Geração Estática de Rotas SPA:** 7 diretórios de rotas com `index.html` estáticos e `404.html` gerados no pós-build para garantir resposta com **HTTP 200 OK** em qualquer navegação direta ou atualização de página.
+

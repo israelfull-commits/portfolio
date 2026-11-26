@@ -18,32 +18,12 @@ qa/
 
 # Build archives
 *.tar.gz
+*.gz
 
-# Experimental / secondary clones
+# Experimental / secondary clones & temporary screenshots (never commit root/scripts PNGs)
 portfolio-verde/
-live_*.png
-final_prod_*.png
-prod_*.png
-audit_*.png
-portfolio-*.png
-audit-*.png
-auditoria-*.png
-hero_*.png
-card-*.png
-cards-*.png
-cases-*.png
-como-trabalho.png
-comparacao-*.png
-contato-*.png
-einstein-*.png
-expertise-*.png
-guia-*.png
-hero-*.png
-improvements-*.png
-itau-*.png
-opcao-*.png
-paleta-*.png
-posicionamento-*.png
-project-*.png
-site-*.png
-trajetoria-*.png
+/*.png
+scripts/*.png
+scripts/*.mp4
+scripts/*.json
+scripts/*.txt

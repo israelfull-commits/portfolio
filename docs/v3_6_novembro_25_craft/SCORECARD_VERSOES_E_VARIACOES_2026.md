@@ -77,3 +77,4 @@
 - **Itaú:** `V16` (Hero) + `V07` (Jornada IA + Human-in-the-Loop)
 - **Claro:** `V08` (Hero Multicanal) + `V10` (Esteira Unificada)
 - **Neoenergia:** `V12` (Hero Bento Executivo) + `V11` (Blueprints em Mesa Editorial)
+

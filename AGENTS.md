@@ -91,3 +91,18 @@ Toda evolução, correção, auditoria ou nova versão do portfólio e dos cases
      - `💡 Recomendações & Decisões`: `collection://6db1c32b-e538-4a31-8b88-c2964ed69c96` (ADRs e status de implementação)
      - `⭐ Scorecard Geral`: `collection://1636d9a7-c819-41e6-85af-92d091999523` (reavaliação a cada versão Major/Minor)
    - **Regra de Segurança no Notion:** nunca gravar senhas em texto claro em páginas ou propriedades do Notion; referenciar apenas a existência do gate SHA-256.
+
+
+## 10. Paridade Estrita de Design System (Home ↔ Cases)
+- **Paleta Única Semântica:** Home (`index.css`) e Cases (`case-presentation.css`) devem consumir os **mesmos tokens canônicos** de papel, verde-pinho, lima e tinta (proibição de duas paletas paralelas no mesmo site).
+- **Escala Tipográfica Monotônica:** `h1 > h2 > h3 > body >= 16px` sem inversão nem sobreposição entre Home e Cases.
+- **Grid Estrito de 8px:** paddings, gaps e ritmos verticais de seção devem ser múltiplos exatos de `8px` (`16 / 24 / 32 / 48 / 64 / 80px`), proibindo valores quebrados como `86.4px`, `28px` ou `36px`.
+- **Unicidade de Componentes:** `.cp-figure` deve ter o mesmo tratamento visual em todos os contextos; nunca deixar 1 imagem órfã em grid de 2 colunas; Heroes `16:9` devem renderizar *edge-to-edge* (`aspectDiff = 0.0000`, zero faixas laterais).
+
+
+## 11. Higiene de Repositório & Catálogo de Scripts Canônicos
+- **Scripts Canônicos Ativos (apenas 2):**
+  1. `scripts/portfolio_qa_sentinel.py` — Sentinela unificado (14 gates estáticos + Chromium runtime + WCAG 2.2 + sync `portfolio-verde/`). Substitui todos os scripts `audit_*`, `verify_*` e `test_*` legados.
+  2. `scripts/build_portfolio_figma_screens.py` — Compilador oficial do plugin Figma Desktop.
+- **Proibição de Acúmulo na Raiz e em `scripts/`:** nunca salvar screenshots temporários (`.png`), arquivos `.gz`, dumps `.json` ou scripts descartáveis na raiz do repositório nem em `scripts/`. Todo artefato temporário de inspeção deve ficar no diretório de scratch da sessão (`<appDataDir>/brain/<conversation-id>/scratch/`) ou em `D:\mockups-portfolio-studio\`.
+- **Zero Duplicidade Documental:** documentos históricos vivem exclusivamente em `docs/v1_*`, `docs/v2_*`, `docs/v3_*`, `docs/v3_5_*` e `docs/v3_6_*` — nunca duplicados na raiz.

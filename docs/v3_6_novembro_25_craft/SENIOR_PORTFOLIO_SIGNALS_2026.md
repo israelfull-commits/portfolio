@@ -53,3 +53,4 @@
 - [ ] **Mentoria ou design critique** descrita por papel (não por nome).
 - [ ] **Confidencialidade protegida** e declarada explicitamente.
 - [ ] Cada case é apresentável em **15–20 minutos** em entrevista com margem para perguntas.
+

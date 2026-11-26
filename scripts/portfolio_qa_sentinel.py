@@ -367,13 +367,13 @@ def run_runtime_suite():
 
     if not SITE_DIST.exists():
         msg = "site/dist não encontrado; pulei runtime checks (execute npm run build)."
-        return [msg], [msg], [msg]
+        return [msg], [msg], [msg], [msg], [msg]
 
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
         msg = "Playwright não instalado; runtime checks indisponíveis."
-        return [msg], [msg], [msg]
+        return [msg], [msg], [msg], [msg], [msg]
 
     port = 4189
     srv = subprocess.Popen(
@@ -419,6 +419,7 @@ def run_runtime_suite():
             routes = [
                 "/",
                 "/cases/einstein-laudos",
+                "/cases/itau/hub-liquidez",
                 "/cases/itau/registros-atendimento",
                 "/cases/claro-ativacao-simplificada",
                 "/cases/neoenergia-conexao-digital",
@@ -474,6 +475,53 @@ def run_runtime_suite():
                     if ov > 0:
                         gestalt_errors.append(f"{r} ({vp_w}px): Overflow horizontal de {ov}px.")
 
+            # 4. Gate 13: WCAG 2.2 2.4.11 (Focus Not Obscured scroll-padding-top) & 3.3.8 (Accessible Auth)
+            wcag22_extra_errors = []
+            page.set_viewport_size({"width": 1440, "height": 900})
+            page.goto(f"http://localhost:{port}/", wait_until="networkidle")
+            scroll_pad = page.evaluate("() => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop || '0')")
+            header_h = page.evaluate("() => { const h = document.querySelector('header'); return h ? h.getBoundingClientRect().height : 0; }")
+            if scroll_pad < header_h:
+                wcag22_extra_errors.append(f"WCAG 2.2 2.4.11: scroll-padding-top ({scroll_pad}px) < altura do header ({header_h}px).")
+            gate_src = (SITE_SRC / "components" / "CaseAccessGate.tsx").read_text(encoding="utf-8")
+            if "onPaste" in gate_src or "preventDefault" in gate_src.split("handleSubmit")[0]:
+                wcag22_extra_errors.append("WCAG 2.2 3.3.8: CaseAccessGate não deve bloquear paste no campo de senha.")
+            if 'autoComplete="current-password"' not in gate_src:
+                wcag22_extra_errors.append("WCAG 2.2 3.3.8: CaseAccessGate deve declarar autoComplete='current-password'.")
+
+            # 5. Gate 14: Interactive :hover & :focus-visible contrast on primary CTAs & nav links
+            hover_focus_errors = []
+            for sel in [".pf-button-primary", ".pf-nav a", ".pf-home-card-cta"]:
+                loc = page.locator(sel).first
+                if loc.count() > 0 and loc.is_visible():
+                    loc.hover()
+                    time.sleep(0.08)
+                    hover_ratio = page.evaluate("""(el) => {
+                        const parse = (c) => {
+                            const m = (c||'').match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)(?:,\\s*([\\d.]+))?\\)/);
+                            return m ? [+m[1], +m[2], +m[3], m[4]===undefined?1:+m[4]] : null;
+                        };
+                        const lum = ([r,g,b]) => [r,g,b].map(v => { v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4); })
+                            .reduce((a,v,i) => a + v * [0.2126,0.7152,0.0722][i], 0);
+                        const fg = parse(getComputedStyle(el).color);
+                        let bg = null, cur = el;
+                        while (cur && cur !== document.documentElement) {
+                            const p = parse(getComputedStyle(cur).backgroundColor);
+                            if (p && p[3] > 0.1) { bg = p; break; }
+                            cur = cur.parentElement;
+                        }
+                        if (!bg) bg = [244, 242, 233, 1];
+                        if (!fg) return 21;
+                        const l1 = Math.max(lum(fg), lum(bg)), l2 = Math.min(lum(fg), lum(bg));
+                        return (l1 + 0.05) / (l2 + 0.05);
+                    }""", loc.element_handle())
+                    if hover_ratio < 4.5:
+                        hover_focus_errors.append(f"Contraste :hover insuficiente em {sel}: {hover_ratio:.2f}:1 < 4.5:1.")
+                    loc.focus()
+                    outline_w = page.evaluate("(el) => parseFloat(getComputedStyle(el).outlineWidth || '0')", loc.element_handle())
+                    if outline_w < 2.0:
+                        hover_focus_errors.append(f"WCAG 2.2 2.4.13: outline-width em foco de {sel} é {outline_w}px (< 2px).")
+
             if console_errors:
                 a11y_security_errors.append(f"Erros de runtime JS: {console_errors[:3]}")
 
@@ -481,7 +529,7 @@ def run_runtime_suite():
     finally:
         srv.terminate()
 
-    return gestalt_errors, typo_errors, a11y_security_errors
+    return gestalt_errors, typo_errors, a11y_security_errors, wcag22_extra_errors, hover_focus_errors
 
 
 def sync_portfolio_verde():
@@ -537,11 +585,13 @@ def main():
             print(f"[PASS] {name}")
 
     if not fast_mode:
-        gestalt_errs, typo_errs, a11y_errs = run_runtime_suite()
+        gestalt_errs, typo_errs, a11y_errs, wcag22_errs, hover_focus_errs = run_runtime_suite()
         runtime_checks = [
             ("10. Gestalt Outside-In, Splits & Responsividade (1440/768/390)", gestalt_errs),
             ("11. Tipografia & Hierarquia Computada (Chromium)", typo_errs),
             ("12. Acessibilidade WCAG 2.2, Imagens & CaseAccessGate (Chromium)", a11y_errs),
+            ("13. WCAG 2.2 2.4.11 Focus Not Obscured & 3.3.8 Accessible Auth", wcag22_errs),
+            ("14. Contraste em :hover & WCAG 2.2 2.4.13 :focus-visible (Chromium)", hover_focus_errs),
         ]
         for name, errs in runtime_checks:
             if errs:

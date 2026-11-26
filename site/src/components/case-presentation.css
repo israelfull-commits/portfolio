@@ -10,7 +10,7 @@
   --cp-border: var(--line);
   --cp-border-subtle: #DFDED4;
   --cp-pine: var(--forest);
-  --cp-pine-dark: #0A231A;
+  --cp-pine-dark: var(--forest-deep);
   --cp-lime: var(--lime);
   --cp-lime-subtle: #CBF637;
   --cp-text: var(--ink, #1A201C);
@@ -34,7 +34,7 @@
   --cp-muted: var(--cp-text-muted);
   --cp-ink: var(--cp-text);
   --cp-content-gap: clamp(1.5rem, 3vw, 2.5rem);
-  --cp-chapter-gap: clamp(4rem, 6vw, 5.5rem);
+  --cp-chapter-gap: 4.5rem;
   color: var(--cp-ink);
   font-family: var(--cp-font);
   width: 100%;
@@ -196,10 +196,10 @@
   padding: clamp(0.5rem, 1.25vw, 0.875rem);
   border: 1px solid var(--cp-border);
   border-radius: 1.25rem;
-  background-color: #F6F3EC;
+  background-color: var(--paper-deep);
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(206, 255, 26, 0.08) 0%, transparent 60%),
-    linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 236, 0.95) 100%);
+    linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(233, 230, 218, 0.95) 100%);
   box-shadow:
     0 1px 2px rgba(10, 54, 34, 0.03),
     0 4px 12px -2px rgba(10, 54, 34, 0.05),
@@ -213,7 +213,7 @@
   overflow: hidden;
   border: 1px solid rgba(23, 32, 25, 0.09);
   background: var(--cp-surface);
-  max-height: clamp(340px, 58vh, 640px);
+  max-height: 42rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,8 +222,8 @@
 .cp-hero-visual .cp-figure :is(img, .cp-figure-crop) {
   width: 100%;
   max-width: 100%;
-  max-height: clamp(340px, 58vh, 640px);
-  height: 100%;
+  max-height: 42rem;
+  height: auto;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -239,8 +239,8 @@
   justify-content: center;
   gap: 1.5rem;
   color: #FCF9F2;
-  background-color: #0A3622;
-  background: linear-gradient(140deg, #114B31, #0A3622 60%, #0A231A);
+  background-color: var(--forest);
+  background: linear-gradient(140deg, var(--forest-light), var(--forest) 60%, var(--forest-deep));
   border: 1px solid #114B31;
   border-radius: 1.5rem;
 }
@@ -453,7 +453,7 @@
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-family: var(--cp-font);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -669,13 +669,13 @@
 .cp-split {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
-  gap: 2.25rem;
+  gap: 2rem;
   align-items: start;
   margin-block: 2rem;
   background-color: var(--cp-surface);
   border: 1px solid var(--cp-border);
   border-radius: var(--cp-radius-lg);
-  padding: 1.75rem;
+  padding: 1.5rem;
 }
 
 .cp-split--reverse {
@@ -914,12 +914,12 @@
 }
 
 .cp-note {
-  padding: 1.75rem 2rem;
+  padding: 1.5rem 2rem;
   color: #FCF9F2;
   background:
     radial-gradient(ellipse 90% 70% at 95% 0%, rgba(72, 179, 131, 0.28) 0%, transparent 65%),
-    linear-gradient(145deg, #0A3622 0%, #0A231A 100%);
-  background-color: #0A3622;
+    linear-gradient(145deg, var(--forest) 0%, var(--forest-deep) 100%);
+  background-color: var(--forest);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 1rem;
 }
@@ -1005,14 +1005,11 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid var(--cp-border);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background-color: var(--cp-surface);
-  box-shadow:
-    0 1px 3px rgba(10, 54, 34, 0.03),
-    0 6px 16px -2px rgba(10, 54, 34, 0.04);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .cp-gallery .cp-figure:hover {
@@ -1498,7 +1495,7 @@
   height: 1.5rem;
   border-radius: 50%;
   background-color: #CBF637;
-  color: #0A3622;
+  color: var(--forest);
   font-size: 0.75rem;
   font-weight: 700;
   border: 1px solid rgba(10, 54, 34, 0.25);
@@ -1573,7 +1570,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #0a3622;
+  color: var(--forest);
   background-color: #c4f042;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
@@ -1591,7 +1588,7 @@
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.02em;
-  color: #0a3622;
+  color: var(--forest);
 }
 
 .cp-gate-lead {
@@ -1610,7 +1607,7 @@
 .cp-gate-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0a3622;
+  color: var(--forest);
 }
 
 .cp-gate-input-wrap {
@@ -1626,7 +1623,7 @@
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #0a3622;
+  color: var(--forest);
   background-color: #faf8f5;
   border: 1.5px solid #9ab0a2;
   border-radius: 0.75rem;
@@ -1635,7 +1632,7 @@
 
 .cp-gate-input:focus {
   outline: none;
-  border-color: #0a3622;
+  border-color: var(--forest);
   box-shadow: 0 0 0 3px rgba(10, 54, 34, 0.16);
 }
 
@@ -1645,7 +1642,7 @@
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #0a3622;
+  color: var(--forest);
   background-color: #eef3ef;
   border: 1.5px solid #c3d1c7;
   border-radius: 0.75rem;
@@ -1694,7 +1691,7 @@
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0a3622;
+  color: var(--forest);
   background-color: #f3f7f4;
   border: 1px solid #c8d6cd;
   border-radius: 0.6rem;
@@ -1708,7 +1705,7 @@
 .cp-gate-back {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0a3622;
+  color: var(--forest);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

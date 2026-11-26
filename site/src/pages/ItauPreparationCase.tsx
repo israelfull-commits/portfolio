@@ -113,10 +113,10 @@ export const cases: Record<string, PreparationCase> = {
     ],
     visuals: [
       {
-        src: "/images/itau-jornada-assessor-fluxo-2400.webp",
+        src: "/images/v07-itau-jornada-studio-frame.webp",
         width: 2400,
         height: 1350,
-        alt: "Fluxo comparativo da jornada do assessor no IFA: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
+        alt: "Fluxo comparativo da jornada do assessor no IFA em moldura de estúdio: estado anterior fragmentado versus esteira integrada com síntese por IA e gate de revisão humana obrigatória",
         label: "Fluxo da Jornada · Antes vs. Esteira Integrada com IA",
         caption:
           "Jornada ponta a ponta do especialista: eliminação da busca manual em abas com aproximação dos 5 últimos eventos, minuta preliminar assistida por IA e aprovação humana obrigatória (Human-in-the-Loop).",
@@ -486,11 +486,20 @@ export const cases: Record<string, PreparationCase> = {
 
     visuals: [
       {
+        src: "/images/v16-itau-bento-fintech-elegostra-aeroload.webp",
+        width: 2400,
+        height: 1350,
+        alt: "Visão modular do ecossistema íon for Advisors (IFA): Hub de Liquidez, Próximos Vencimentos e filtros operacionais para assessores de investimentos",
+        label: "Ecossistema IFA · Hub de Liquidez e Oportunidades",
+        caption:
+          "Arquitetura modular de liquidez no íon for Advisors: consolidação de saldo disponível, projeção temporal e fila prioritária de clientes com filtros combináveis.",
+      },
+      {
         src: "/images/itau-hub-liquidez-solucao.webp",
         width: 1360,
         height: 1370,
-        alt: "Interface do Hub de Liquidez e Oportunidades com posição atual, projeção e clientes priorizados.",
-        label: "Interface da solução · Hub de Liquidez e Oportunidades",
+        alt: "Interface detalhada do Hub de Liquidez e Oportunidades com posição atual, projeção e clientes priorizados.",
+        label: "Interface detalhada · Hub de Liquidez e Oportunidades",
         caption:
           "A visão conecta liquidez disponível e projetada à fila prioritária de clientes, mantendo origem, janela temporal, filtros e status da atuação visíveis.",
       },
