@@ -661,7 +661,7 @@
   line-height: 1.65;
   color: var(--cp-text);
   font-weight: 400;
-  max-width: 52rem;
+  max-width: 68ch;
   margin: 0;
 }
 
@@ -877,7 +877,7 @@
 }
 
 .cp-summary > p:only-child {
-  max-width: 52rem;
+  max-width: 68ch;
 }
 
 .cp-lead,

@@ -37,7 +37,8 @@ Este documento consolida os aprendizados, convenções arquiteturais e diretrize
 - **Tom Estritamente Factual, Direto e Simples:** Proibição absoluta de linguagem publicitária, superlativos ou clichês corporativos. O texto deve ser simples, acessível e claro para qualquer profissional ou stakeholder de negócio, explicando o projeto com naturalidade técnica, sem jargões herméticos ou pedantes.
 - **Fornecimento de Dados Brutos (Estrutura STAR):** Toda narrativa deve se ancorar exclusivamente em dados técnicos brutos estruturados (Situação, Tarefa, Ação Técnica e Resultado Concreto), sem suposições, floreios ou narrativas romanciadas.
 - **Geração Modular (Seção por Seção):** A redação deve ocorrer bloco a bloco (Visão Geral ➔ Discovery ➔ Decisões de UI/AI/Acessibilidade ➔ Escopo ➔ Métricas), garantindo densidade técnica e profundidade uniforme.
-- **Lista de Exclusão Estrita (Negative Prompting):** É proibido utilizar: *"interface amigável"*, *"experiência fluida"*, *"mergulhar no problema"*, *"colocar o usuário no centro"*, *"design limpo/clean"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"incrível"*, *"inovador"*, *"divisor de águas"*, *"encantar o usuário"*, *"experiência mágica"*, *"double diamond"*, *"mapa de empatia"*, *"reimaginar"*.
+- **Lista de Exclusão Estrita (Negative Prompting — validada em código no Gate 15 do Sentinel):** É proibido utilizar: *"interface amigável"*, *"experiência fluida"*, *"mergulhar no problema"*, *"colocar o usuário no centro"*, *"no centro da decisão"*, *"design limpo/clean"*, *"cabeçalho limpo"*, *"colunas limpas"*, *"visual bonito"*, *"sem poluição visual"*, *"disruptivo"*, *"sinergia"*, *"revolucionário"*, *"incrível"*, *"inovador"*, *"inovações"*, *"divisor de águas"*, *"encantar o usuário"*, *"experiência mágica"*, *"double diamond"*, *"mapa de empatia"*, *"reimaginar"*, *"transformar"*, *"transformação"*, *"ajudo empresas a"*, *"estreita colaboração"*.
+- **Painel Obrigatório de Personas Sintéticas:** Antes de propor ou aprovar qualquer copy, estrutura ou decisão de UI relevante, simular explicitamente o parecer de 3 personas sintéticas (**Recrutadora Sênior em triagem de 10s**, **Head of Design avaliando senioridade/decisão** e **UX Writer de Plain Language**) para eliminar opções inferiores e entregar a recomendação vencedora fundamentada.
 - **Substituição por Engenharia de Design e Princípios Gestalt:**
   - Em vez de adjetivos vagos, descrever: **heurísticas de usabilidade (Nielsen)**, **princípios Gestalt (região comum, proximidade)**, **tokens de Design System (espaçamento 8px, tipografia)**, **critérios de conformidade WCAG 2.2 AA/AAA**, **arquitetura da informação**, **contratos de dados** e **Product Discovery**.
 - **Vocabulário Técnico Canônico (Otimização para Lideranças & ATS):**
@@ -67,12 +68,21 @@ Consolidação das regras de ouro de *Senior UX Portfolio Examples* e *20 UX Por
 - **Segurança no Código:** A senha **nunca** deve ser gravada em texto claro no código-fonte, em documentação pública ou no bundle (`dist/`). A validação ocorre exclusivamente por comparação de hash **SHA-256**, com desbloqueio persistido apenas em `sessionStorage` para navegação contínua durante a sessão.
 
 
-## 8. Gate Permanente de Efetividade — UX Portfolio Review Checklist (2026)
-- **Scorecard Obrigatório (`/30`):** Toda evolução relevante do portfólio (novo case, reformulação de Home ou atualização visual) deve ser avaliada nas 6 seções do [UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/docs/v3_6_novembro_25_craft/UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md) (*Homepage, Navigation, Case Studies, Presentation, Mobile, Credibility*), mantendo **meta mínima `>= 27/30`** (nível Sênior/Staff).
+## 8. Gate Permanente de Efetividade & Pré-Publicação — UX Companion (2026)
+- **Dupla Governança Obrigatória (Efetividade + Completude):**
+  1. **Review Scorecard (`/30`):** avaliar nas 6 seções de [UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md](file:///c:/Users/Israel%20Rozar/Documents/ChatGPT/Portfolio/docs/v3_6_novembro_25_craft/UX_PORTFOLIO_REVIEW_CHECKLIST_2026.md) (*Homepage, Navigation, Case Studies, Presentation, Mobile, Credibility*), mantendo **meta mínima `>= 27/30`**.
+  2. **Pre-Publish Checklist 35 Pontos (`https://uxcompanion.co.uk/ux-portfolio-checklist`):** executar antes de toda release relevante nas 5 categorias (*Homepage 6, Case Studies 8, Presentation 7, Mobile 6, Technical Hygiene 8*), mantendo **meta `>= 95%` (`34/35`, considerando a exceção formal registrada em ADR para `t-1` domínio próprio em favor de `github.io`)**:
+     - **Prosa & Tipografia (`p-1`–`p-3`):** corpo `16–18px` (`line-height 1.5–1.75`), comprimento máximo de linha **`65–75ch`** em parágrafos corridos, 1 família tipográfica disciplinada.
+     - **Performance (`p-4`–`p-5`):** imagens comprimidas em WebP/AVIF no tamanho de exibição e **Hero LCP `< 2.5s`**.
+     - **Anotação com Racional (`cs-5`):** telas finais e legendas devem explicar o **porquê da decisão**, não apenas descrever o layout.
+     - **Higiene Técnica (`t-2`–`t-8`):** SSL válido, `0` links quebrados/404, `<title>` específico por rota, **Open Graph / `og:image` / `canonical` estáticos apontando para a URL real de produção (`https://israelfull-commits.github.io/portfolio/`)**, CV em PDF com nome legível, zero botões de edição expostos e revisão ortográfica completa.
+- **Regra de Camada de Linguagem (Home vs. Cases):**
+  - **Home (Hero, Cards, Sobre, Contato):** **100% Plain Language** — posicionamento de 1 linha compreensível em `< 10s` por RH e negócios, sem listas de termos em inglês ou siglas empilhadas.
+  - **Dentro dos Cases:** termos técnicos (`Product Discovery`, `Design System`, `WCAG 2.2`, `contratos de dados`) aplicados apenas quando explicam uma ação ou decisão concreta.
 - **Critérios Técnicos Automatizados no Sentinel (`portfolio_qa_sentinel.py` v2):**
   - Navegação principal com no máximo **4–6 itens** claros e contato acessível em toda página.
-  - Corpo de texto legível (**`>= 16px`**), contraste mínimo **WCAG 2.2 AA/AAA**, espaço em branco *outside-in* (Gestalt) e `0px` overflow em `1440px / 768px / 390px`.
-  - **Screenshots reais acima de mockups decorativos:** qualquer acabamento de estúdio (luz, sombra, Bento Grid, perspectiva) deve preservar **100% dos pixels reais das telas do Figma**, sem distorcer textos.
+  - Corpo de texto legível (**`>= 16px`**), contraste mínimo **WCAG 2.2 AA/AAA**, alvos táteis `>= 44px` (`WCAG 2.5.8`), espaço em branco *outside-in* (Gestalt) e `0px` overflow em `1440px / 768px / 390px`.
+  - **Screenshots reais acima de mockups decorativos:** qualquer acabamento de estúdio deve preservar **100% dos pixels reais das telas do Figma**, sem distorcer textos.
 - **Documentação & Versionamento Contínuo:** Toda entrega deve atualizar automaticamente o changelog ativo em `docs/v3_6_novembro_25_craft/CHANGELOG_V3_6_CRAFT_EDITION.md` e o índice `docs/INDEX_GOVERNANCA_E_DECISOES.md`.
 
 

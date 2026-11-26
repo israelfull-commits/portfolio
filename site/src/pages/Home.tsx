@@ -65,7 +65,7 @@ export default function Home() {
               <span>São Paulo · Brasil</span>
             </div>
             <h1 id="hero-title">Design de produtos para saúde, finanças e serviços essenciais.</h1>
-            <p className="pf-lead">Desde 2006, atuo com Product Discovery, Arquitetura da Informação e Design Systems em ambientes regulados. No Itaú Unibanco, liderei frentes de produto na plataforma íon for Advisors para especialistas de investimentos.</p>
+            <p className="pf-lead">Atuação desde 2006 conectando pesquisa, fluxos e sistemas de interface com Produto e Engenharia. Recentemente no Itaú Unibanco, à frente do íon for Advisors para especialistas de investimentos.</p>
             <div className="pf-actions">
               <a className="pf-button pf-button-pine" href="#trabalho">Ver projetos</a>
               <a className="pf-button pf-button-outline" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">Currículo (PDF) <DownloadIcon /></a>

@@ -532,14 +532,53 @@ def run_runtime_suite():
     return gestalt_errors, typo_errors, a11y_security_errors, wcag22_extra_errors, hover_focus_errors
 
 
+def check_editorial_negative_prompting_and_ux_checklist():
+    """Gate 15: Negative Prompting estrito, Plain Language na Home e UX Companion 35-Point Hygiene."""
+    errors = []
+    banned_terms = [
+        "interface amigável", "experiência fluida", "mergulhar no problema",
+        "colocar o usuário no centro", "no centro da decisão", "design limpo",
+        "cabeçalho limpo", "colunas limpas", "visual bonito", "sem poluição visual",
+        "disruptivo", "sinergia", "revolucionário", "incrível", "inovador",
+        "inovações", "divisor de águas", "encantar o usuário", "experiência mágica",
+        "double diamond", "mapa de empatia", "reimaginar", "transformar",
+        "transformação", "ajudo empresas a", "estreita colaboração", "o autor confirmou",
+    ]
+    for f in (SITE_SRC / "pages").glob("*.tsx"):
+        text = f.read_text(encoding="utf-8", errors="ignore")
+        low = text.lower()
+        for term in banned_terms:
+            if term in low:
+                errors.append(f"Negative Prompting violado em {f.name}: termo proibido '{term}'.")
+    # Plain Language na Home (sem empilhamento de jargões de UX em inglês na 1ª dobra)
+    home_file = SITE_SRC / "pages" / "Home.tsx"
+    if home_file.exists():
+        home_low = home_file.read_text(encoding="utf-8", errors="ignore").lower()
+        for jargon in ["product discovery", "design systems", "human-centered design", "hcd"]:
+            if jargon in home_low:
+                errors.append(f"Plain Language violado em Home.tsx: jargão '{jargon}' deve ficar restrito aos cases.")
+    # Higiene técnica UX Companion t-5 (Open Graph & canonical apontando para produção real)
+    idx_file = ROOT / "site" / "index.html"
+    if idx_file.exists():
+        idx = idx_file.read_text(encoding="utf-8", errors="ignore")
+        if "chatgpt.site" in idx or "figma.site" in idx:
+            errors.append("UX Companion t-5: site/index.html ainda contém URL antiga (chatgpt.site/figma.site).")
+        if 'og:image" content="https://israelfull-commits.github.io/portfolio/' not in idx:
+            errors.append("UX Companion t-5: og:image em site/index.html deve apontar para a URL real de produção.")
+    return errors
+
+
 def sync_portfolio_verde():
     if not PORTFOLIO_VERDE.exists():
         print("   [SYNC] portfolio-verde não encontrado.")
         return
     files_to_sync = [
+        (ROOT / "site" / "index.html", PORTFOLIO_VERDE / "index.html"),
+        (SITE_SRC / "portfolio.css", PORTFOLIO_VERDE / "src" / "portfolio.css"),
         (SITE_SRC / "pages" / "CasePages.tsx", PORTFOLIO_VERDE / "src" / "pages" / "CasePages.tsx"),
         (SITE_SRC / "pages" / "ItauPreparationCase.tsx", PORTFOLIO_VERDE / "src" / "pages" / "ItauPreparationCase.tsx"),
         (SITE_SRC / "pages" / "Home.tsx", PORTFOLIO_VERDE / "src" / "pages" / "Home.tsx"),
+        (SITE_SRC / "components" / "PageMeta.tsx", PORTFOLIO_VERDE / "src" / "components" / "PageMeta.tsx"),
         (SITE_SRC / "components" / "SiteChrome.tsx", PORTFOLIO_VERDE / "src" / "components" / "SiteChrome.tsx"),
         (SITE_SRC / "components" / "CaseAccessGate.tsx", PORTFOLIO_VERDE / "src" / "components" / "CaseAccessGate.tsx"),
         (SITE_SRC / "components" / "case-presentation.css", PORTFOLIO_VERDE / "src" / "components" / "case-presentation.css"),
@@ -571,6 +610,7 @@ def main():
         ("7. Estrutura e Rotas Estáticas SPA (GitHub Pages)", check_spa_routes),
         ("8. Zero Estilos Inline & Segurança (Email/Senha/Gate)", check_inline_styles_and_security_leaks),
         ("9. Unicidade, Formato WebP & Resolução HD de Imagens", check_case_image_quality_and_uniqueness),
+        ("15. Negative Prompting, Plain Language Home & UX Companion t-5", check_editorial_negative_prompting_and_ux_checklist),
     ]
 
     total_errors = 0

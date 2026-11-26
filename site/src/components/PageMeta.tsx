@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { assetUrl } from "../design-system"
 
 export function PageMeta({
   title,
@@ -20,7 +21,7 @@ export function PageMeta({
     const publicSiteUrl = window.location.origin
 
     const socialImage = new URL(
-      "/images/israel-rozar-social.jpg",
+      assetUrl("/images/israel-rozar-social.jpg"),
       publicSiteUrl,
     ).href
 

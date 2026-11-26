@@ -399,7 +399,7 @@ export const cases: Record<string, PreparationCase> = {
       "Conduzi o Product Discovery, a Arquitetura da Informação e a modelagem de contratos de dados com componentes escaláveis do Design System (iDS), conectando resumo consolidado, filtros combináveis e fila operacional com status de atuação.",
 
     question:
-      "Como transformar sinais financeiros dispersos em uma fila de trabalho cuja origem e próxima ação possam ser explicadas?",
+      "Como organizar sinais financeiros dispersos em uma fila de trabalho cuja origem e próxima ação possam ser explicadas?",
 
     verified: [
       "A interface separa total disponível agora, variação prevista e liquidez projetada para a janela selecionada.",
