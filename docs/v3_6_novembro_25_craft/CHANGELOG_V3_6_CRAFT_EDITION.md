@@ -204,3 +204,9 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 
 ### 2026-11-26 — Versão V3.12.2 (Precisão de Domínio Itaú IFA `TX-08` / `TX-09`: Especialistas × Assessores)
 - **Home & Cases Itaú (`Home.tsx`, `CasePages.tsx`, `ItauPreparationCase.tsx`):** corrigida a distinção de cargos no ecossistema íon for Advisors (IFA) — **Especialistas de investimentos** e **Assessores** (que auxiliam os especialistas no acompanhamento das carteiras) nunca mais usados como sinônimos; glossário registrado em `TX-08` de `GUIA_CONSOLIDADO_REGRAS_E_CODIGOS_2026.md`.
+
+### 2026-11-26 — Versão V4.0.0 (Híbrida Definitiva — Direção de Arte V3 Figma + Rigor Técnico, WCAG 2.2 & ATS da V3.12.2)
+- **Hero (`Home.tsx` + `portfolio.css`):** restaurada legenda de credenciais no retrato (`Israel Rozar · Itaú · Einstein · R/GA · EY`), mantendo texto Plain Language + ATS (`"Mais de 15 anos de experiência"`).
+- **Seção `#sobre` / Trajetória Editorial (`.pf-trajectory` + `.pf-timeline` + `.pf-education`):** restaurada a arquitetura editorial de 2 colunas da `V3 Figma Canônica` — coluna esquerda com cargo atual, 2 parágrafos curtos, pills `LinkedIn` + `Currículo (PDF)` e card dedicado de **Formação Acadêmica & Contínua** (`Ciência da Computação — Univali`); coluna direita com **Timeline Editorial em `24px`**, divisórias horizontais e pills de período (`2024 – 2026` ➔ `2006 – 2019`).
+- **Contato Full-Craft (`Home.tsx` + `SiteChrome.tsx`):** substituído `<ContactSection compact />` pelo `<ContactSection />` completo com badge sólido `Contato` (`#16472A` WCAG AAA), divisória horizontal, CTA lima `Enviar e-mail` à esquerda e `Baixar currículo (PDF) • LinkedIn` (`>= 44px`) na barra inferior.
+- **Validação:** build `0` erros, **15/15 PASS** no Sentinel v2, `0` erros em 18 viewports e inspeção visual óptica em Desktop (`1440px`) e Mobile (`390px`).

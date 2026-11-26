@@ -41,11 +41,11 @@ const itauSubmodules = [
 ]
 
 const trajectory = [
-  { org: "Itaú Unibanco", role: "Senior Product Designer · Plataforma IFA", period: "2024 – 2026" },
+  { org: "Itaú Unibanco", role: "Senior Product Designer · Plataforma IFA (íon for Advisors)", period: "2024 – 2026" },
   { org: "Consultoria Independente", role: "Senior UX Consultant · Produtos Digitais", period: "2022 – atual" },
   { org: "Foursys + Hospital Albert Einstein", role: "UX Lead · Padrão de Laudos Clínicos", period: "2022" },
   { org: "EY · R/GA", role: "Senior UX Consultant & Product Designer", period: "2020 – 2022" },
-  { org: "Formação & Base", role: "Ciência da Computação (Univali) · Design Digital", period: "2006 – 2019" },
+  { org: "Moot · Walmart · GFT · Principia & outras", role: "Design de produtos digitais, UX/UI e direção de arte", period: "2006 – 2019" },
 ]
 
 export default function Home() {
@@ -80,7 +80,10 @@ export default function Home() {
                 width="800" height="1000" alt="Israel Rozar, Senior Product Designer" fetchPriority="high"
               />
             </div>
-            <figcaption>Israel Rozar</figcaption>
+            <figcaption>
+              <span>Israel Rozar</span>
+              <span className="pf-portrait-brands">Itaú · Einstein · R/GA · EY</span>
+            </figcaption>
           </figure>
         </section>
         <section className="pf-work pf-section" id="trabalho" aria-labelledby="work-title">
@@ -126,14 +129,16 @@ export default function Home() {
           </div>
         </section>
         <section className="pf-about pf-section" id="sobre" aria-labelledby="about-title">
-          <div className="pf-container pf-home-about">
-            <div className="pf-home-about-intro">
+          <div className="pf-container pf-trajectory">
+            <div className="pf-trajectory-intro">
               <h2 id="about-title">Sobre minha atuação</h2>
               <div className="pf-home-about-role">
                 <strong>Senior Product Designer</strong>
                 <span>São Paulo, Brasil · Remoto ou híbrido</span>
               </div>
-              <div className="pf-home-about-links" aria-label="Prova social e contato">
+              <p id="experiencia">Com mais de 15 anos de experiência em produtos digitais para saúde, finanças, telecom e energia, conecto pesquisa com usuários, organização de fluxos complexos e sistemas de componentes em parceria direta com times de Produto e Engenharia.</p>
+              <p>Priorizo decisões documentadas, acessibilidade digital (WCAG 2.2) desde o início do projeto e uso prático de IA com revisão humana para acelerar descoberta, prototipagem e entrega técnica.</p>
+              <div className="pf-home-about-links" aria-label="Prova social e currículo">
                 <a className="pf-button pf-button-outline pf-home-about-btn" href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">
                   LinkedIn <ArrowIcon /><span className="pf-sr-only"> (abre em nova aba)</span>
                 </a>
@@ -141,25 +146,33 @@ export default function Home() {
                   Currículo (PDF) <DownloadIcon />
                 </a>
               </div>
-              <p className="pf-home-about-contact-note">
-                Para oportunidades ou consultoria, <a href="#contato">entre em contato por e-mail</a>.
-              </p>
             </div>
-            <div className="pf-home-about-body">
-              <p id="experiencia">Com mais de 15 anos de experiência em produtos digitais para saúde, finanças, telecom e energia, conecto pesquisa com usuários, organização de fluxos complexos e sistemas de componentes em parceria direta com times de Produto e Engenharia.</p>
-              <p>Priorizo decisões documentadas, acessibilidade digital (WCAG 2.2) desde o início do projeto e uso prático de IA com revisão humana para acelerar descoberta, prototipagem e entrega técnica.</p>
-              <ul className="pf-home-trajectory" aria-label="Trajetória profissional resumida">
-                {trajectory.map(item => (
-                  <li key={item.org}>
-                    <div><strong>{item.org}</strong> · {item.role}</div>
-                    <span>{item.period}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="pf-timeline" aria-label="Trajetória profissional">
+              {trajectory.map(item => (
+                <li key={item.org}>
+                  <div>
+                    <h3>{item.org}</h3>
+                    <p>{item.role}</p>
+                  </div>
+                  <span>{item.period}</span>
+                </li>
+              ))}
+            </ul>
+            <aside className="pf-education" aria-label="Formação acadêmica e contínua">
+              <div>
+                <span className="pf-education-label">Formação acadêmica</span>
+                <p><strong>Ciência da Computação</strong></p>
+                <span>Universidade do Vale do Itajaí (Univali)</span>
+              </div>
+              <div>
+                <span className="pf-education-label">Formação contínua</span>
+                <p><strong>Design Digital · UX Design · Dados e Análise</strong></p>
+                <span>Atualização contínua em produto, pesquisa e tecnologia</span>
+              </div>
+            </aside>
           </div>
         </section>
-        <ContactSection compact />
+        <ContactSection />
       </main>
       <SiteFooter />
     </div>

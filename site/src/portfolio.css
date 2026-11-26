@@ -1303,23 +1303,37 @@
 .pf-home-compact .pf-home-submodules a { padding: 4px 8px; border-radius: 6px; transition: background-color 160ms ease, color 160ms ease; }
 .pf-home-compact .pf-home-submodules a:hover { background: rgba(10, 54, 34, 0.06); }
 .pf-home-compact .pf-home-submodules-item { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: var(--paper-deep); border: 1px solid var(--line); color: var(--ink-muted); font-size: 13px; font-weight: 500; }
-/* V3.10.1 Craft Visual — About section editorial layout, unified canvas & Design System pills */
-.pf-home-compact .pf-about { background: var(--paper); border-top: 1px solid var(--line); }
-.pf-home-compact .pf-home-about { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start; }
-.pf-home-compact .pf-home-about-intro { display: flex; flex-direction: column; gap: 16px; }
-.pf-home-compact .pf-home-about-role { display: flex; flex-direction: column; gap: 4px; padding-top: 8px; }
+/* V4.0.0 Híbrida — Portrait credentials, Editorial 24px Trajectory + Education Card & Full-Craft Contact */
+.pf-home-compact .pf-portrait figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.pf-home-compact .pf-portrait-brands { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-muted); }
+.pf-home-compact .pf-about { background: var(--paper); border-top: 1px solid var(--line); padding-block: 64px; }
+.pf-home-compact .pf-trajectory { display: grid; grid-template-columns: minmax(0, 432px) minmax(0, 1fr); gap: 32px 64px; align-items: start; }
+.pf-home-compact .pf-trajectory-intro { display: flex; flex-direction: column; gap: 16px; }
+.pf-home-compact .pf-trajectory-intro p { margin: 0; max-width: 60ch; font-size: 16px; line-height: 26px; color: var(--ink-muted); }
+.pf-home-compact .pf-home-about-role { display: flex; flex-direction: column; gap: 4px; padding-top: 4px; }
 .pf-home-compact .pf-home-about-role strong { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--forest); }
 .pf-home-compact .pf-home-about-role span { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
 .pf-home-compact .pf-home-about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 .pf-home-compact .pf-home-about-btn { min-height: 44px; padding: 10px 18px; font-size: 14px; }
-.pf-home-compact .pf-home-about-contact-note { margin: 8px 0 0; font-size: 14px; line-height: 22px; color: var(--ink-muted); }
-.pf-home-compact .pf-home-about-contact-note a { display: inline-flex; align-items: center; min-height: 44px; color: var(--forest); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
-.pf-home-compact .pf-home-about-contact-note a:hover { color: var(--forest-deep); }
-.pf-home-compact .pf-home-about-body p { max-width: 64ch; font-size: 16px; line-height: 26px; }
-.pf-home-compact .pf-home-about p + p { margin-top: 16px; }
-.pf-home-compact .pf-home-trajectory { margin: 24px 0 0; padding: 24px 0 0; gap: 16px; }
+.pf-home-compact .pf-timeline h3 { font-size: 24px; line-height: 32px; font-weight: 600; color: var(--ink); margin: 0; }
+.pf-home-compact .pf-timeline p { font-size: 14px; line-height: 22px; color: var(--ink-muted); margin: 4px 0 0; }
+.pf-home-compact .pf-timeline li > span { font-size: 12px; line-height: 18px; font-weight: 600; color: var(--forest); background: var(--paper-deep); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
+.pf-home-compact .pf-education { background: var(--paper-deep); padding: 24px; border-radius: 16px; border: 1px solid var(--line); align-self: start; }
+.pf-home-compact .pf-education-label { display: block; font-size: 12px; line-height: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--forest); }
+.pf-home-compact .pf-education p { margin: 8px 0 4px; font-size: 15px; line-height: 22px; color: var(--ink); }
+.pf-home-compact .pf-education > div > span:last-child { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.pf-home-compact .pf-education > div + div { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
+.pf-home-compact .pf-contact-wrap { padding-block: 16px 64px; }
+.pf-home-compact .pf-contact h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.2; color: var(--paper); }
+@media (max-width: 1000px) {
+  .pf-home-compact .pf-trajectory { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .pf-home-compact .pf-timeline { grid-column: auto; grid-row: auto; }
+}
 @media (max-width: 700px) {
-  .pf-home-compact .pf-home-about { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .pf-home-compact .pf-about { padding-block: 48px; }
+  .pf-home-compact .pf-portrait figcaption { flex-direction: column; gap: 2px; }
+  .pf-home-compact .pf-timeline h3 { font-size: 20px; line-height: 28px; }
+  .pf-home-compact .pf-contact-wrap { padding-block: 8px 48px; }
 }
 /* V3.10 Deep UX/UI Audit Fixes — WCAG 2.2 Target Size (>=44px) & Solid Contact Badge Contrast */
 .pf-contact-label { background: #16472A; }

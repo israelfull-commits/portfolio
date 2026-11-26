@@ -175,8 +175,8 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
           Vamos conversar sobre oportunidades em Product Design.
         </h2>
         <p>
-          Disponível para posições seniores e projetos de consultoria em
-          produtos digitais.
+          Disponível para posições de Senior Product Designer e projetos de
+          consultoria em produtos digitais.
         </p>
         <div className="pf-contact-bottom">
           <button
@@ -184,7 +184,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
             className="pf-button pf-button-lime"
             onClick={openProtectedEmail}
           >
-            Enviar um e-mail <MailIcon />
+            Enviar e-mail <MailIcon />
           </button>
           <div className="pf-contact-links">
             <a
