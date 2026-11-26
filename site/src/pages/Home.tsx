@@ -138,14 +138,6 @@ export default function Home() {
               </div>
               <p id="experiencia">Atuo em produtos digitais para saúde, finanças, telecom e energia há mais de 15 anos. Conduzo pesquisa com usuários, organização de fluxos operacionais e sistemas de componentes com Produto e Engenharia.</p>
               <p>Documento decisões de interface e critérios de acessibilidade (WCAG 2.2) desde a concepção. Uso IA como apoio em descoberta e prototipagem, mantendo decisões de produto, validação de evidências e revisão técnica sob julgamento humano.</p>
-              <div className="pf-home-about-links" role="group" aria-label="LinkedIn e currículo">
-                <a className="pf-button pf-button-outline pf-home-about-btn" href="https://www.linkedin.com/in/israelrozar/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn <ArrowIcon /><span className="pf-sr-only"> (abre em nova aba)</span>
-                </a>
-                <a className="pf-button pf-button-outline pf-home-about-btn" href={assetUrl("/documents/israel-rozar-curriculo.pdf")} download="Israel-Rozar-Curriculo.pdf">
-                  Currículo (PDF) <DownloadIcon />
-                </a>
-              </div>
             </div>
             <ul className="pf-timeline" aria-label="Trajetória profissional">
               {trajectory.map(item => (

@@ -191,7 +191,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
               href={assetUrl("/documents/israel-rozar-curriculo.pdf")}
               download="Israel-Rozar-Curriculo.pdf"
             >
-              Baixar currículo (PDF)
+              Currículo (PDF)
             </a>
             <span className="pf-contact-sep" aria-hidden="true">
               •

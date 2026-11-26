@@ -240,3 +240,9 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
 - **Figma `731:699` & Plugin (`build_portfolio_figma_screens.py`):** `84` nós elevados de `11px → 12px` (`FG-06`), `"transformar"` corrigido em `737:829` (`TX-04`), cards/Sobre sincronizados em `736:703` e 8 violações limpas no gerador do plugin com recompilação em `figma-refine-plugin` e `gemini-figma-plugin`.
 - **Validação:** build `0` erros (8 rotas estáticas SPA `200 OK`), **15/15 PASS** no Sentinel v2, espelho `portfolio-verde/` sincronizado e inspeção visual óptica em Desktop (`1440px`) e Figma.
 - **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-26` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
+
+### 2026-11-26 — Versão V4.1.1 (Deduplicação de CTAs na Home · Paridade `A-23` / `HP-07` / `TH-06`)
+- **Seção `#sobre` (`site/src/pages/Home.tsx`):** removidos os dois botões redundantes (`LinkedIn` e `Currículo (PDF)`) que duplicavam o Header fixo, o Hero e o bloco `#contato` imediatamente abaixo — equilibrando a altura da coluna esquerda (`Bio + Formação`) com a Timeline editorial `24px` à direita e devolvendo protagonismo exclusivo ao fechamento em `#contato`.
+- **Contato (`site/src/components/SiteChrome.tsx`):** padronizado o rótulo de download de `Baixar currículo (PDF)` para **`Currículo (PDF)`** (`A-23` identificação consistente com o Hero), mantendo o CV acessível em 3 pontos estratégicos sem redundância adjacente (Header fixo `4` itens `HP-07` + Hero `Mobile 390px` `TH-06` + Contato).
+- **Figma Online (`731:699` · `Tela 01 · Home · Desktop 1440`):** removidos os links redundantes de `#sobre`, sincronizado o CTA final da Neoenergia (`Ver estudo de caso →`) e validado por screenshot.
+- **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-26` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.

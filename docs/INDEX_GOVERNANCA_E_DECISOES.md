@@ -20,7 +20,7 @@ flowchart LR
     V35["V3.5 (25/Nov)<br>Híbrida Canônica<br>• Home executiva + Trajetória + Itaú<br>• Trade-offs & Reflexão nos 4 cases<br>• Remoção IDs Figma"]
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
-    V310["V4.1.0 (26/Nov - VIGENTE)<br>Auditoria Editorial Integral + Paridade 1:1<br>• Todos os textos (Home, Chrome, 4 Cases, Itaú 5x)<br>• 0 falhas TX-09/A-12/A-15/CS-06/CS-09 + FG-06<br>• 8 Rotas SPA + 15/15 Sentinel + Figma/Notion"]
+    V310["V4.1.1 (26/Nov - VIGENTE)<br>Auditoria Editorial Integral + CTAs Deduplicados<br>• Todos os textos (Home, Chrome, 4 Cases, Itaú 5x)<br>• #sobre limpo + CV em Header/Hero/Contato (A-23)<br>• 8 Rotas SPA + 15/15 Sentinel + Figma/Notion"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310
 ```
 
