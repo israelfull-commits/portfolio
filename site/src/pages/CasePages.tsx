@@ -434,7 +434,7 @@ export const einsteinPresentation: CasePresentationData = {
                   src: "/images/hiae-ds-tokens-clean-1280.webp",
                   width: 2000,
                   height: 1250,
-                  alt: "Documentação no Design System Zera 1.0: especificações de tokens de cores, tipografia e espaçamento para componentes de laudo",
+                  alt: "Bento grid do Design System Zera 1.0: tokens de cor semântica (Primary, Success e Warning), tipografia Montserrat e Inter em base 8px e recortes reais dos componentes examTitle e dataField nos estados normal, acima e abaixo da referência",
                   caption:
                     "Design System Zera 1.0: tokens e regras dos componentes dataField e examTitle documentados para reduzir divergências de espaçamento e hierarquia entre diferentes sistemas laudadores.",
                 }}
