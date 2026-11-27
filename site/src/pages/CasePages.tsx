@@ -431,7 +431,7 @@ export const einsteinPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/hiae-ds-tokens-clean-1280.webp",
+                  src: "/images/hiae-ds-tokens-zera-bento-2000.webp",
                   width: 2000,
                   height: 1250,
                   alt: "Bento grid do Design System Zera 1.0: tokens de cor semântica (Primary, Success e Warning), tipografia Montserrat e Inter em base 8px e recortes reais dos componentes examTitle e dataField nos estados normal, acima e abaixo da referência",
