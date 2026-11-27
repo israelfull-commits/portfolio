@@ -301,3 +301,7 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - Ambas as imagens espelhadas em `site/public/images/`, `portfolio-verde/public/images/` e `D:\mockups-portfolio-studio\variacoes\`.
 - **Correção Global de Acessibilidade na Rota 404 (`site/src/index.css` · `A-23` / `TH-08`):** promovida `.pf-sr-only` para `index.css`, eliminando o vazamento visual de `Currículo(PDF)` no cabeçalho de `/404` onde `portfolio.css` não era carregado.
 - **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-27` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
+
+### 2026-11-27 — Versão V4.3.3 (Correção do Mockup Mobile na Prancha Multicanal Einstein `v13`)
+- **Prancha 3 Canais Einstein ([v13-einstein-3-canais-mesa-concreto.webp](../../site/public/images/v13-einstein-3-canais-mesa-concreto.webp), `2400×1350`):** reconstruída com tela mobile limpa de alta definição eliminando o duplo notch que cortava a marca *Albert Einstein Medicina Diagnóstica*, os cantos escuros residuais da captura anterior e o corte sobre `ANÁLISE:`. Aplicada área segura limpa para a Dynamic Island, logotipo completo extraído da tela oficial do Figma, tela do MacBook sem sombra residual na borda direita e respiro limpo acima do indicador inferior; espelhada em `site/public/images/`, `portfolio-verde/public/images/` e `D:\mockups-portfolio-studio\variacoes\`.
+- **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-27` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
