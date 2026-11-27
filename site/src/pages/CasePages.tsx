@@ -788,7 +788,10 @@ export const claroPresentation: CasePresentationData = {
                 <strong>Opções e trade-offs:</strong> manter 22 fluxos isolados preservaria telas conhecidas, mas duplicava validações cadastrais e manutenção. Unificar a operação em 5 etapas exigia renegociar regras entre áreas de negócio e adotar uma sequência padronizada.
               </p>
               <p>
-                <strong>Decisão e custo aceito:</strong> propus e consolidamos a esteira única de 5 etapas, aceitando o custo inicial de mapear exceções por transação para eliminar validações duplicadas. <strong>Evidência:</strong> mapeamento das 22 jornadas e das 70 oportunidades nos workshops com a operação.
+                <strong>Decisão e custo aceito:</strong> propus e consolidamos a esteira única de 5 etapas, aceitando o custo inicial de mapear exceções por transação para eliminar validações duplicadas.
+              </p>
+              <p>
+                <strong>Evidência:</strong> mapeamento das 22 jornadas e das 70 oportunidades nos workshops com a operação.
               </p>
             </div>
             <div className="cp-split-media">
@@ -877,7 +880,10 @@ export const claroPresentation: CasePresentationData = {
                 <strong>Opções e trade-offs:</strong> replicar o layout denso do desktop no mobile comprometeria a leitura e o toque em telas pequenas. Criar fluxos independentes para o campo facilitaria ajustes locais, mas duplicaria regras comerciais e treinamento entre canais.
               </p>
               <p>
-                <strong>Decisão e custo aceito:</strong> mantive a mesma taxonomia de planos, a ordem das 5 etapas e as regras de confirmação entre desktop e mobile, adaptando a densidade visual para telas menores. Aceitamos mais rolagem e blocos recolhidos no mobile — a custo de não exibir todos os grupos ao mesmo tempo — para preservar a continuidade entre lojas físicas e campo.
+                <strong>Decisão:</strong> mantive a mesma taxonomia de planos, a ordem das 5 etapas e as regras de confirmação entre desktop e mobile, adaptando a densidade visual para telas menores.
+              </p>
+              <p>
+                <strong>Custo aceito:</strong> aceitamos mais rolagem e blocos recolhidos no mobile — sem exibir todos os grupos ao mesmo tempo — para preservar a continuidade entre lojas físicas e campo.
               </p>
               <p>
                 <strong>Evidência:</strong> mapeamento das 22 jornadas compartilhadas e consolidação das especificações desktop (V.2) e mobile com produto e engenharia.
@@ -920,7 +926,10 @@ export const claroPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Reflexão Crítica</span>
               <h3>O que eu reverteria hoje</h3>
               <p>
-                Eu reverteria a decisão de encerrar a entrega V.2 sem definir uma linha de base operacional antes da implantação. Na época, concentramos o esforço em fechar os fluxos das 22 jornadas e entregar as especificações desktop e mobile. Sem o tempo por etapa e a taxa de erro medidos antes em lojas físicas e televendas, não foi possível provar o ganho quantitativo após a entrega. Hoje eu condicionaria o fechamento do discovery a esse protocolo com Produto e Operação.
+                Eu reverteria a decisão de encerrar a entrega V.2 sem definir uma linha de base operacional antes da implantação. Na época, concentramos o esforço em fechar os fluxos das 22 jornadas e entregar as especificações desktop e mobile.
+              </p>
+              <p>
+                Sem o tempo por etapa e a taxa de erro medidos antes em lojas físicas e televendas, não foi possível provar o ganho quantitativo após a entrega. Hoje eu condicionaria o fechamento do discovery a esse protocolo com Produto e Operação.
               </p>
             </div>
           </div>
@@ -1079,7 +1088,9 @@ export const neoenergiaPresentation: CasePresentationData = {
               <p>
                 <strong>O que conduzi pela EY:</strong> roteiros de diagnóstico
                 qualitativo, estruturação dos 5 Service Blueprints e diretrizes
-                de arquitetura de interface multi-tenant.{" "}
+                de arquitetura de interface multi-tenant.
+              </p>
+              <p>
                 <strong>Onde contribuí com o consórcio:</strong> facilitação dos
                 workshops de priorização das 118 ideias com a equipe da Livework
                 e lideranças de operação, atendimento e negócio da Neoenergia.
@@ -1220,16 +1231,38 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
+          <div className="cp-cards-grid">
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Decisão 1 · Serviço antes da tela</span>
+              <h3>Auditar o backstage antes de redesenhar portais</h3>
+              <p>
+                <strong>Pergunta e trade-offs:</strong> redesenhar portais isoladamente entregaria telas novas mais rápido, mas digitalizaria processos quebrados.
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> propus e priorizamos os 5 Service Blueprints antes da interface, aceitando adiar o código do portal final.
+              </p>
+              <p>
+                <strong>Evidência:</strong> auditoria de backstage apontando falhas como a geração de três notas de serviço desintegradas na ligação nova e leituras por estimativa na fatura.
+              </p>
+            </div>
+            <div className="cp-feature-card">
+              <span className="cp-feature-tag">Decisão 2 · Base Multi-tenant</span>
+              <h3>Fundação única com temas para as 4 distribuidoras</h3>
+              <p>
+                <strong>Pergunta e trade-offs:</strong> criar quatro portais independentes (Elektro, Coelba, Celpe e Cosern) daria autonomia visual local, mas quadruplicaria a manutenção técnica.
+              </p>
+              <p>
+                <strong>Decisão e custo aceito:</strong> defendi uma arquitetura multi-tenant com componentes comuns e temas por marca, aceitando maior governança inicial e menor liberdade visual local.
+              </p>
+              <p>
+                <strong>Evidência:</strong> sobreposição dos processos mapeados nos 5 Service Blueprints e plano de entregas de UI e Style Guide nas etapas seguintes do P&amp;D.
+              </p>
+            </div>
+          </div>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Decisões 1 e 2 · Backoffice & Base Multi-tenant</span>
-              <h3>Atacar gargalos de serviço e propor base multi-tenant</h3>
-              <p>
-                <strong>Decisão 1 · Serviço antes da tela:</strong> redesenhar portais isoladamente ou auditar o backstage antes da UI? Redesenhar direto entregaria telas novas mais rápido, mas digitalizaria processos quebrados. Propus e priorizamos os 5 Service Blueprints antes da interface, aceitando adiar o código do portal final. <strong>Evidência:</strong> auditoria de backstage apontando falhas como a geração de três notas de serviço desintegradas na ligação nova e leituras por estimativa na fatura.
-              </p>
-              <p>
-                <strong>Decisão 2 · Base multi-tenant:</strong> criar quatro portais independentes ou uma fundação compartilhada para Elektro, Coelba, Celpe e Cosern? Portais separados dariam autonomia visual local, mas quadruplicariam a manutenção técnica. Defendi uma arquitetura multi-tenant com componentes comuns e temas por marca, aceitando maior esforço inicial de governança entre regionais e menor liberdade visual local. <strong>Evidência:</strong> sobreposição dos processos mapeados nos 5 Service Blueprints e plano de entregas de UI e Style Guide nas etapas seguintes do P&amp;D.
-              </p>
+              <span className="cp-split-tag">Sequenciamento de Entregas · Etapas 4 a 6</span>
+              <h3>Como os blueprints orientaram o roadmap de UI e componentes</h3>
               <ol className="cp-card-list cp-card-list--numbered">
                 <li>
                   <strong>1. Mapear antes de propor:</strong> os Service Blueprints definiram quais fluxos de autosserviço precisavam ser simplificados primeiro.
@@ -1267,19 +1300,26 @@ export const neoenergiaPresentation: CasePresentationData = {
 
       content: (
         <>
+          <div className="cp-feature-card">
+            <span className="cp-feature-tag">Decisão 3 · Priorização & Roadmap</span>
+            <h3>Alívio imediato em fatura e autoleitura antes de infraestrutura longa</h3>
+            <p>
+              <strong>Pergunta:</strong> iniciar o roadmap por programas de longa maturação (como telemedição) ou entregar alívio imediato em fatura e autoleitura?
+            </p>
+            <p>
+              <strong>Opções e trade-offs:</strong> priorizar telemedição atacaria a causa estrutural da leitura, mas exigiria alto investimento e longo prazo sem alívio imediato ao atendimento. Priorizar comunicação e autosserviço reduzia atritos antes, mas postergava ganhos de infraestrutura.
+            </p>
+            <p>
+              <strong>Decisão e custo aceito:</strong> distribuímos as 118 ideias pelos 5 estágios da jornada futura e sequenciamos ações imediatas antes de programas de infraestrutura, aceitando adiar iniciativas de maior investimento para atacar primeiro os picos de atrito operacional.
+            </p>
+            <p>
+              <strong>Evidência:</strong> curva de criticidade dos 5 Service Blueprints e priorização das 118 ideias nos workshops com a Neoenergia.
+            </p>
+          </div>
           <div className="cp-split">
             <div className="cp-split-content">
-              <span className="cp-split-tag">Decisão 3 · Priorização & Roadmap</span>
-              <h3>Sequenciamento das 118 ideias em três horizontes</h3>
-              <p>
-                <strong>Pergunta:</strong> iniciar o roadmap por programas de longa maturação (como telemedição) ou entregar alívio imediato em fatura e autoleitura?
-              </p>
-              <p>
-                <strong>Opções e trade-offs:</strong> priorizar telemedição atacaria a causa estrutural da leitura, mas exigiria alto investimento e longo prazo sem alívio imediato ao atendimento. Priorizar comunicação e autosserviço reduzia atritos antes, mas postergava ganhos de infraestrutura.
-              </p>
-              <p>
-                <strong>Decisão e custo aceito:</strong> distribuímos as 118 ideias pelos 5 estágios da jornada futura e sequenciamos ações imediatas antes de programas de infraestrutura. Aceitamos adiar iniciativas de maior investimento para atacar primeiro os picos de atrito operacional. <strong>Evidência:</strong> curva de criticidade dos 5 Service Blueprints e priorização das 118 ideias nos workshops com a Neoenergia.
-              </p>
+              <span className="cp-split-tag">Três Horizontes do Roadmap</span>
+              <h3>Sequenciamento das 118 ideias pela curva de criticidade</h3>
               <ul className="cp-card-list">
                 <li>
                   <strong>Ações imediatas:</strong> clareza de comunicação na fatura e simplificação da autoleitura no aplicativo móvel.
@@ -1311,7 +1351,10 @@ export const neoenergiaPresentation: CasePresentationData = {
               Diretorias regionais pediram inicialmente quatro portais independentes para preservar particularidades locais. Cruzando os 5 Service Blueprints com o esforço de manutenção de backoffice, defendi a arquitetura multi-tenant com tokens por marca. Aceitamos maior governança entre regionais e menor liberdade visual local para evitar quadruplicar o débito técnico.
             </p>
             <p>
-              <strong>Resultado qualitativo (2020) e impacto no time:</strong> as diretorias de operação e atendimento aprovaram os 5 Service Blueprints e as 118 ideias como baseline do P&amp;D Estratégico ANEEL, criando uma linguagem compartilhada entre atendimento, backoffice e campo das 4 distribuidoras. Por ser uma etapa de P&amp;D, não houve implementação em código nem linha de base medida em produção neste ciclo; a execução subsequente dependia do roadmap de TI e orçamento das concessionárias.
+              <strong>Resultado qualitativo (2020) e impacto no time:</strong> as diretorias de operação e atendimento aprovaram os 5 Service Blueprints e as 118 ideias como baseline do P&amp;D Estratégico ANEEL, criando uma linguagem compartilhada entre atendimento, backoffice e campo das 4 distribuidoras.
+            </p>
+            <p>
+              <strong>Escopo de medição:</strong> por ser uma etapa de P&amp;D, não houve implementação em código nem linha de base medida em produção neste ciclo; a execução subsequente dependia do roadmap de TI e orçamento das concessionárias.
             </p>
           </div>
           <div className="cp-cards-grid">
@@ -1326,7 +1369,10 @@ export const neoenergiaPresentation: CasePresentationData = {
               <span className="cp-feature-tag">Reflexão Crítica</span>
               <h3>O que eu reverteria hoje</h3>
               <p>
-                Eu reverteria a decisão de conduzir os workshops de priorização apenas com pranchas estáticas de Service Blueprints e o mapa das 118 ideias. Sem protótipos navegáveis de dois fluxos críticos de campo durante a negociação, o debate sobre o esforço da arquitetura multi-tenant ficou abstrato para parte das diretorias regionais. Levar esses fluxos simulados desde a priorização teria reduzido a resistência à base unificada mais cedo.
+                Eu reverteria a decisão de conduzir os workshops de priorização apenas com pranchas estáticas de Service Blueprints e o mapa das 118 ideias.
+              </p>
+              <p>
+                Sem protótipos navegáveis de dois fluxos críticos de campo durante a negociação, o debate sobre o esforço da arquitetura multi-tenant ficou abstrato para parte das diretorias regionais. Levar esses fluxos simulados desde a priorização teria reduzido a resistência à base unificada mais cedo.
               </p>
             </div>
           </div>
@@ -1764,6 +1810,45 @@ const itauNarratives = {
   },
 }
 
+function renderLabeledParagraphs(text: string, labels: string[]) {
+  const escaped = labels.map((l) => l.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+  const regex = new RegExp(`(?=(?:${escaped.join("|")}):)`, "g")
+  const parts = text
+    .split(regex)
+    .map((p) => p.trim())
+    .filter(Boolean)
+
+  return parts.map((part) => {
+    const colonIdx = part.indexOf(":")
+    const label = colonIdx > 0 ? part.slice(0, colonIdx) : ""
+    const hasKnownLabel = labels.includes(label)
+    if (!hasKnownLabel) {
+      return <p key={part.slice(0, 32)}>{part}</p>
+    }
+    return (
+      <p key={label}>
+        <strong>{label}:</strong>
+        {part.slice(colonIdx + 1)}
+      </p>
+    )
+  })
+}
+
+function renderBalancedParagraphs(text: string) {
+  if (text.length <= 360) return <p>{text}</p>
+  const sentences = text.match(/[^.!?]+[.!?]+(?:\s|$)/g)
+  if (!sentences || sentences.length < 2) return <p>{text}</p>
+  const mid = Math.ceil(sentences.length / 2)
+  const first = sentences.slice(0, mid).join("").trim()
+  const second = sentences.slice(mid).join("").trim()
+  return (
+    <>
+      <p>{first}</p>
+      {second ? <p>{second}</p> : null}
+    </>
+  )
+}
+
 export function ItauPresentation() {
   const { caseSlug = "" } = useParams()
 
@@ -1908,7 +1993,10 @@ export function ItauPresentation() {
               <div className="cp-feature-card">
                 <span className="cp-feature-tag">Escopo de Design</span>
                 <h3>Meu papel × trabalho com o time</h3>
-                <p>{story.contribution}</p>
+                {renderLabeledParagraphs(story.contribution, [
+                  "O que conduzi",
+                  "Onde contribuí",
+                ])}
               </div>
             </div>
             <h3>Restrições que moldaram a solução</h3>
@@ -1924,12 +2012,17 @@ export function ItauPresentation() {
 
         content: (
           <>
-            <p>{story.research}</p>
+            {renderBalancedParagraphs(story.research)}
             <ol className="cp-decisions">
               {story.decisions.map(([title, description]) => (
                 <li key={title}>
                   <h3>{title}</h3>
-                  <p>{description}</p>
+                  {renderLabeledParagraphs(description, [
+                    "Pergunta",
+                    "Opções",
+                    "Decisão e trade-off",
+                    "Evidência",
+                  ])}
                 </li>
               ))}
             </ol>
@@ -1972,23 +2065,24 @@ export function ItauPresentation() {
             <h3>O que este recorte apresenta</h3>
             <List items={story.delivery} />
             <div className="cp-note">
-              <h3>Estágio da entrega e escopo de medição</h3>
-              <p>{story.measurementStatus}</p>
-            </div>
-            <div className="cp-note">
-              <h3>Aprendizado de design</h3>
-              <p>{story.learning}</p>
+              <h3>Estágio da entrega e aprendizado de design</h3>
+              <p>
+                <strong>Escopo de medição:</strong> {story.measurementStatus}
+              </p>
+              <p>
+                <strong>Aprendizado de design:</strong> {story.learning}
+              </p>
             </div>
             <div className="cp-cards-grid">
               <div className="cp-feature-card">
                 <span className="cp-feature-tag">Disciplina de Escopo</span>
                 <h3>O que ficou fora do recorte</h3>
-                <p>{story.outOfScope}</p>
+                {renderBalancedParagraphs(story.outOfScope)}
               </div>
               <div className="cp-feature-card">
                 <span className="cp-feature-tag">Reflexão Crítica</span>
                 <h3>O que eu reverteria hoje</h3>
-                <p>{story.reflection}</p>
+                {renderBalancedParagraphs(story.reflection)}
               </div>
             </div>
           </>

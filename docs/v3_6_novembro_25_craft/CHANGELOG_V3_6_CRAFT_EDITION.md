@@ -280,3 +280,15 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - **`D05` (`AP-02`):** cards de Decisão 01 e 02 segmentados em 4 parágrafos escaneáveis (`Opções`, `Trade-offs`, `Decisão e custo aceito`, `Evidência`); Decisão 03 e nota do Cap. 6 segmentados em 2 parágrafos.
 - **Validação & Sincronização:** build `0` erros, `0px` overflow (`1440/768/390/320`), `0` alvos `<44px`, **15/15 PASS** no Sentinel v2, espelho `portfolio-verde/` sincronizado 1:1 e Notion Portfolio Ops atualizado.
 - **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-26` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
+
+### 2026-11-27 — Versão V4.3.1 (Inspeção Visual Profunda & Loop Autônomo — Itaú IFA 5×, Claro & Neoenergia · 9 Desvios Corrigidos)
+- **Auditoria Visual Multi-Viewport (`AUDITORIA_VISUAL_REFINAMENTO_ITAU_CLARO_NEOENERGIA_V4_3_1_2026.md`):** executadas 2 iterações de captura e telemetria Chromium real (`1440×900`, `768×1024`, `390×844` e `320×720`) nos 7 roteiros restantes (**Itaú IFA** 5 módulos, **Claro** e **Neoenergia**).
+- **Correções P0/P1/P2 em `site/src/components/case-presentation.css` & `site/src/pages/CasePages.tsx`:**
+  - **`E01` (`A-20`/`MB-06` P0 — WCAG 2.5.8):** corrigidos os 3 links `Base de conhecimento funcional do produto` (`21px` ➔ `44px`) em Itaú `vencimentos`, `movimentacoes` e `campanhas` (`0` `smallTargets` em todas as 7 rotas).
+  - **`E02` (`A-05`/`AP-07` P0):** links de `.cp-appendix` (*Outros módulos desta plataforma* e *Referências do projeto*) agora exibem cor pine `#0A3622` (WCAG AAA `13.4:1`), `font-weight: 500`, sublinhado semântico e alvo tátil `>= 44px`.
+  - **`E03` (`AP-06` P1):** consolidados os 2 blocos escuros `.cp-note` consecutivos de `#salvaguardas` nos 5 módulos do Itaú em 1 bloco coeso (*Estágio da entrega e aprendizado de design*, `adjNotes: 5 → 0`).
+  - **`E04` + `E09` (`AP-02`/`CS-06` P1):** criados helpers `renderLabeledParagraphs` e `renderBalancedParagraphs` formatando todas as 15 decisões do Itaú em 4 blocos escaneáveis (`Pergunta`, `Opções`, `Decisão e trade-off`, `Evidência`) e quebrando os cards de papel, pesquisa e reflexão nos 5 módulos Itaú, Claro e Neoenergia (`denseP` de corpo `29 → 1`).
+  - **`E05` (`AP-06` P1):** reequilibrados os splits da Neoenergia Cap. 4 (`917/424px → 345/424px`, promovendo Decisões 1 e 2 para `.cp-cards-grid` 2 colunas) e Cap. 5 (`852/393px → 370/393px`, promovendo Decisão 3 para `.cp-feature-card` estruturado).
+  - **`E06` + `E07` + `E08` (`AP-06`/`AP-02`):** alinhamento horizontal de legendas na galeria de Itaú Vencimentos (`min-height: 22.5rem` em `>= 721px`), limite `max-width: 42rem` em `.cp-feature-card` + respiro antes de `.cp-card-list`, e `.cp-summary` unificado em `44rem`.
+- **Validação & Sincronização:** build `0` erros, `0px` overflow em 4 viewports nos 7 roteiros, `0` alvos `<44px`, **15/15 PASS** no Sentinel v2, espelho `portfolio-verde/` 1:1 e Notion Portfolio Ops atualizado.
+- **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-27` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.

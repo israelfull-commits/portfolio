@@ -21,7 +21,7 @@ flowchart LR
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
     V310["V4.2.1 (26/Nov)<br>Varredura 52 Versões + Produção Einstein<br>• CS-01..15 + TX-01..09 nos 4 cases<br>• OG/title estático 8 rotas + A-01<br>• Plugin Figma + 731:699 + produção v3"]
-    V430["V4.3.0 (26/Nov - VIGENTE)<br>Loop Visual Einstein (3 Iterações)<br>• 11 desvios corrigidos (MB-01/A-20/A-28)<br>• Cards 1-col mobile + acordeão +/-<br>• Corpo 16px + 42rem + 15/15 Sentinel"]
+    V430["V4.3.1 (27/Nov - VIGENTE)<br>Loop Visual 100% dos Cases (8 Rotas)<br>• Einstein (11 fixes) + Itaú 5x / Claro / Neoenergia (9 fixes)<br>• 0 alvos <44px (A-20) + links apêndice (A-05)<br>• 15 decisões Itaú + splits Neoenergia + 15/15 Sentinel"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310 --> V430
 ```
 
@@ -97,6 +97,7 @@ Localização: `docs/v3_6_novembro_25_craft/`
 * `AUDITORIA_INTEGRAL_TEXTOS_PORTFOLIO_V4_1_2026.md`: Varredura integral de todos os textos restantes (Home fora do Hero, Global Chrome, Einstein, Claro, Neoenergia, 5 módulos Itaú IFA, Figma `731:699` e Plugin) com scores `V1 ➔ V4.1.0`, correções aplicadas e pendências factuais `TX-09`.
 * `AUDITORIA_EXAUSTIVA_VERSOES_CASES_V4_2_2026.md`: Mapeamento exaustivo de 52 versões históricas dos 4 cases (Git, Figma `Template-portfolio` + `0sQ9hoPAkVCtyyEsxOzy9j`, Plugin, Docs e Notion) com rubrica ponderada `/10` da banca, correções cirúrgicas `V4.2.0` e paridade omnicanal 1:1.
 * `AUDITORIA_VISUAL_REFINAMENTO_EINSTEIN_V4_3_2026.md`: Inspeção visual profunda em Chromium (`1440 / 768 / 390 / 320px` + Lightbox) e loop autônomo de 3 iterações no case Hospital Albert Einstein (`11` desvios `D01`–`D11` corrigidos, `0` alvos `<44px`, `15/15 PASS` Sentinel v2, banca `9,76/10`).
+* `AUDITORIA_VISUAL_REFINAMENTO_ITAU_CLARO_NEOENERGIA_V4_3_1_2026.md`: Inspeção visual profunda em Chromium (`1440 / 768 / 390 / 320px`) e loop autônomo nos 7 roteiros restantes — Itaú IFA (5 módulos), Claro e Neoenergia (`9` desvios `E01`–`E09` corrigidos, 3 falhas WCAG 2.5.8 zeradas, `15/15 PASS` Sentinel v2, banca `9,62–9,68/10`).
 * **Scripts de Validação em Tempo Real (`scripts/`):**
   * `portfolio_qa_sentinel.py`: **Sentinela v2 de 12 portões** (9 estáticos + 3 runtime Chromium cobrindo Gestalt Outside-In, tipografia computada, corpo `>= 16px`, teto de navegação `<= 6` itens, contraste WCAG 2.2, unicidade/HD de imagens, responsividade `1440/768/390` e `CaseAccessGate`).
   * `test_color_accessibility.py`: Validador de contraste WCAG AAA para todos os 216 pares de cor computados.
