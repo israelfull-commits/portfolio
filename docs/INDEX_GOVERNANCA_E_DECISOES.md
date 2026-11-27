@@ -21,7 +21,7 @@ flowchart LR
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
     V310["V4.2.1 (26/Nov)<br>Varredura 52 Versões + Produção Einstein<br>• CS-01..15 + TX-01..09 nos 4 cases<br>• OG/title estático 8 rotas + A-01<br>• Plugin Figma + 731:699 + produção v3"]
-    V430["V4.3.1 (27/Nov - VIGENTE)<br>Loop Visual 100% dos Cases (8 Rotas)<br>• Einstein (11 fixes) + Itaú 5x / Claro / Neoenergia (9 fixes)<br>• 0 alvos <44px (A-20) + links apêndice (A-05)<br>• 15 decisões Itaú + splits Neoenergia + 15/15 Sentinel"]
+    V430["V4.3.2 (27/Nov - VIGENTE)<br>Loop Visual 100% + Live Prod + Bento Fix<br>• 8 rotas + Home + Gate + 404 auditados ao vivo<br>• Heroes Bento Einstein v17 & Itaú v16 sem vazio/TX-09<br>• .pf-sr-only global + 0 alvos <44px + 15/15 Sentinel"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310 --> V430
 ```
 
