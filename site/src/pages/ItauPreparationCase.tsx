@@ -32,7 +32,7 @@ export const cases: Record<string, ItauModuleSpec> = {
       "Como reduzir o esforço de registro e facilitar a recuperação de contexto, mantendo fidelidade ao atendimento e controle humano sobre o conteúdo?",
     visuals: [
       {
-        src: "/images/v07-itau-jornada-studio-frame.webp",
+        src: "/images/v07-itau-jornada-studio-v2.webp",
         width: 2400,
         height: 1350,
         alt: "Diagrama ilustrativo comparando a jornada de especialistas e assessores no IFA: fluxo anterior em abas separadas versus fluxo integrado com os 5 últimos resumos, minuta assistida por IA e aprovação humana obrigatória.",
@@ -41,9 +41,9 @@ export const cases: Record<string, ItauModuleSpec> = {
           "Diagrama de fluxo (ilustrativo, sem captura real por sigilo bancário): aproximei os 5 últimos resumos e a minuta preliminar para evitar perda de contexto entre atendimentos. A aprovação humana obrigatória (Human-in-the-Loop) precede a gravação no prontuário.",
       },
       {
-        src: "/images/itau-registros-workflow-1600.webp",
-        width: 1600,
-        height: 900,
+        src: "/images/itau-registros-workflow-v2.webp",
+        width: 2400,
+        height: 1350,
         alt: "Diagrama ilustrativo dos pilares de governança de IA em Registros de Atendimento: recuperação dos 5 últimos resumos, geração de ata preliminar editável e validação humana obrigatória antes da persistência bancária.",
         label: "Arquitetura e Governança · Pilares de Conformidade",
         caption:
@@ -67,7 +67,7 @@ export const cases: Record<string, ItauModuleSpec> = {
       "Como permitir que especialistas localizem eventos financeiros relevantes, distingam urgência e registrem atuação sem perder o contexto do cliente?",
     visuals: [
       {
-        src: "/images/itau-vencimentos-capa-1600.webp",
+        src: "/images/itau-vencimentos-capa-v2.webp",
         width: 1600,
         height: 900,
         alt: "Interface canônica de Gestão de Vencimentos no IFA com abas de Vencimentos, Eventos futuros e Open Finance, filtros combináveis de prazo, status e valor, e tabela operacional de clientes.",
@@ -76,10 +76,10 @@ export const cases: Record<string, ItauModuleSpec> = {
           "Abas separam Vencimentos, Eventos futuros e Open Finance mantendo a mesma estrutura de busca, filtros e tabela para que especialistas e assessores atuem sem reaprender a navegação.",
       },
       {
-        src: "/images/itau-vencimentos-eventos.webp",
+        src: "/images/itau-vencimentos-eventos-v2.webp",
         width: 1360,
         height: 1342,
-        alt: "Aba de Eventos Futuros com projeção de liquidez e fluxos financeiros.",
+        alt: "Aba de Eventos Futuros com projeção de liquidez, descrição sintética de eventos financeiros e tabela operacional.",
         label: "Exploração de fluxo · Eventos futuros",
         caption:
           "A exploração de Eventos futuros motivou o reaproveitamento da mesma tabela e dos mesmos filtros de Vencimentos, evitando telas isoladas para eventos relacionados à liquidez.",
@@ -111,11 +111,11 @@ export const cases: Record<string, ItauModuleSpec> = {
       "Como manter o saldo provisionado disponível entre jornadas e permitir o aprofundamento das movimentações sem exigir troca de aba para consultar esse saldo?",
     visuals: [
       {
-        src: "/images/itau-movimentacoes-telas-1800.webp",
-        width: 1800,
-        height: 333,
-        alt: "Três telas da proposta de Movimentações no IFA: cabeçalho persistente com saldo provisionado, módulo de Movimentações com limites de crédito e histórico filtrável, e painel de detalhamento da operação.",
-        label: "Arquitetura de Interface · Fluxo em 3 telas",
+        src: "/images/itau-movimentacoes-bento-2400.webp",
+        width: 2400,
+        height: 1350,
+        alt: "Arquitetura em 3 camadas de Movimentações no IFA com dados sintetizados: cabeçalho persistente com saldo provisionado, limites CEP e CEP Plus, histórico priorizado de lançamentos e painel lateral de detalhamento.",
+        label: "Arquitetura de Interface · Fluxo em 3 camadas",
         caption:
           "Separei o saldo provisionado no cabeçalho fixo para consulta entre jornadas sem troca de aba. Limites de crédito (CEP, CEP Plus e limite), histórico e detalhamento permanecem contextualizados em Movimentações.",
       },
@@ -172,9 +172,9 @@ export const cases: Record<string, ItauModuleSpec> = {
       "Como conectar configuração, processamento e manutenção sem ocultar estado, erro ou consequência das ações administrativas?",
     visuals: [
       {
-        src: "/images/itau-campanhas-configuracao-historica.svg",
-        width: 1133,
-        height: 640,
+        src: "/images/itau-campanhas-configuracao-v2.webp",
+        width: 1600,
+        height: 900,
         alt: "Tela de configuração de campanha no IFA com etapas de informações gerais, segmentação de público e campos personalizados.",
         label: "Arquitetura de Interface · Configuração de campanha",
         caption:

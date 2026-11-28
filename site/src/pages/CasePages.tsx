@@ -592,10 +592,10 @@ export const einsteinPresentation: CasePresentationData = {
 }
 
 const claroHero: CaseImage = {
-  src: "/images/v08-claro-multicanal-desktop-iphone.webp",
+  src: "/images/v08-claro-multicanal-desktop-iphone-v2.webp",
   width: 2400,
   height: 1350,
-  alt: "Ativação simplificada Claro Brasil em desktop e mobile: tela de detalhe da linha com cabeçalho fixo ao lado do fluxo mobile com resumo financeiro lateral",
+  alt: "Ativação simplificada Claro Brasil em desktop e mobile: tela de detalhe da linha com cabeçalho fixo ao lado da etapa de confirmação mobile",
   caption:
     "Por que unificar desktop e mobile na mesma arquitetura: reunir 22 jornadas de NET, Claro e Embratel evita que o operador alterne entre sistemas legados durante a venda.",
 }
@@ -626,10 +626,10 @@ const claroImages: CaseImage[] = [
       "Por que manter cabeçalho fixo e blocos expansíveis: o operador consulta linha, plano e fatura sem abandonar a venda nem perder os dados do cliente. Dados sintetizados para conformidade com a LGPD.",
   },
   {
-    src: "/images/claro-multicanal.webp",
-    width: 1376,
-    height: 932,
-    alt: "Telas desktop e mobile da ativação simplificada Claro exibindo seleção de plano, resumo financeiro lateral e etapa de confirmação",
+    src: "/images/claro-multicanal-bento-1600.webp",
+    width: 1600,
+    height: 900,
+    alt: "Telas desktop e mobile da ativação simplificada Claro exibindo seleção de oferta com resumo financeiro lateral e etapa de confirmação mobile",
     caption:
       "Por que preservar a mesma taxonomia entre desktop e mobile: manter nomes de planos, resumo financeiro lateral e confirmação iguais reduz divergências de operação entre lojas físicas e consultores em campo.",
   },
@@ -800,7 +800,7 @@ export const claroPresentation: CasePresentationData = {
           </div>
           <CaseFigure
             image={{
-              src: "/images/v10-claro-jornada-editorial.webp",
+              src: "/images/v10-claro-jornada-editorial-v2.webp",
               width: 2400,
               height: 1350,
               alt: "Diagrama da esteira unificada de atendimento Claro Brasil em 5 etapas com camada persistente de contexto e paridade entre desktop e mobile",
@@ -1012,13 +1012,13 @@ export const neoenergiaPresentation: CasePresentationData = {
   kicker: "Energia · Service Design",
 
   hero: {
-    src: "/images/v12-neoenergia-bento-service-design.webp",
+    src: "/images/v12-neoenergia-bento-service-design-v2.webp",
 
     width: 2400,
 
     height: 1350,
 
-    alt: "Visão executiva P&D ANEEL Neoenergia: recorte do Service Blueprint 2 (Uso e Pago), escala de 4 distribuidoras (18 estados, 34 milhões de habitantes e 13,9 milhões de clientes) e jornada futura com 118 ideias",
+    alt: "Visão executiva P&D ANEEL Neoenergia: recorte do Service Blueprint 2 (Uso e Pago, As-Is), escala de 4 distribuidoras (18 estados, 34 milhões de habitantes e 13,9 milhões de clientes) e jornada futura com 118 ideias em 5 estágios",
 
     caption:
       "Por que cruzar Service Blueprint, escala nacional e priorização em uma visão única: mostrar que falhas de atendimento e fatura exigiam alinhar operação e backoffice nas 4 distribuidoras antes de redesenhar portais.",
@@ -1278,7 +1278,7 @@ export const neoenergiaPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/neoenergia-entregaveis-ui-design-system.webp",
+                  src: "/images/neoenergia-entregaveis-ui-design-system-v2.webp",
                   width: 1600,
                   height: 900,
                   alt: "Slide Relação de Entregáveis do P&D Neoenergia estruturado em Etapa 4 (The Art of the Possible — jornadas To-Be e matriz de priorização), Etapa 5 (Roadmap e Change Management) e Etapa 6 (Sprints de Execução com UI Roadmap, Style Guide, UI Component library, protótipos e testes de usabilidade)",
@@ -1335,10 +1335,10 @@ export const neoenergiaPresentation: CasePresentationData = {
             <div className="cp-split-media">
               <CaseFigure
                 image={{
-                  src: "/images/neoenergia-matriz-118-ideias.webp",
-                  width: 2000,
-                  height: 1195,
-                  alt: "Mapa da Jornada futura do cliente Neoenergia com os 5 estágios (Contrato e instalo, Uso e pago, Preciso de suporte, Mudo o contrato e Abandono), ações, curva de criticidade e 118 ideias distribuídas por estágio",
+                  src: "/images/neoenergia-jornada-118-ideias-v2.webp",
+                  width: 2400,
+                  height: 1350,
+                  alt: "Mapa da Jornada futura do cliente Neoenergia com os 5 estágios (Contrato e instalo, Uso e pago, Preciso de suporte, Mudo o contrato e Abandono), curva de criticidade, 118 ideias distribuídas por estágio e os 3 horizontes do roadmap",
                   caption:
                     "Por que ancorar as 118 ideias na curva de criticidade da jornada futura: impedir que iniciativas entrassem no roadmap desconectadas dos pontos reais de maior atrito operacional.",
                 }}
