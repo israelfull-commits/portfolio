@@ -21,7 +21,7 @@ flowchart LR
     V36["V3.6 (25/Nov)<br>Craft Edition & Figma Docs<br>• Barra de progresso + Header blur<br>• Hover tátil + Lightbox zoom direto<br>• Prancha DS V3.6 no Plugin Figma"]
     V39["V3.9 (26/Nov)<br>Editorial STAR, ATS & Seção Sobre<br>• 4 arquiteturas anti-template (V3.8)<br>• 0 clichês IA / Negative Prompting<br>• Seção Sobre (cargo + LinkedIn + contato)"]
     V310["V4.2.1 (26/Nov)<br>Varredura 52 Versões + Produção Einstein<br>• CS-01..15 + TX-01..09 nos 4 cases<br>• OG/title estático 8 rotas + A-01<br>• Plugin Figma + 731:699 + produção v3"]
-    V430["V4.5.0 (27/Nov - VIGENTE)<br>Auditoria Visual Comparativa + 12 Ativos Cache-Busted<br>• Itaú 5× (zero PII, zero Lorem, I01–I06)<br>• Claro (zero métrica 40%, C01–C03) + Neoenergia (N01–N03)<br>• CV ATS 1-pág + LinkedIn + Entrevista + 15/15 Sentinel"]
+    V430["V4.6.0 (27/Nov - VIGENTE)<br>Paridade Omnicanal 100%, Higiene 15,6MB & SEO/OG<br>• 14 ativos cache-busted (Einstein/Itaú/Claro/Neo/Home/OG)<br>• robots/sitemap/llms.txt produção + 90 órfãos/WIP/PII removidos<br>• Plugin Figma ES5/ES6 + Notion Relacional + 15/15 Sentinel"]
     V1 --> V2 --> V3 --> V35 --> V36 --> V39 --> V310 --> V430
 ```
 

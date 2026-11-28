@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://israel-rozar-portfolio.irozar.chatgpt.site/sitemap.xml
+Sitemap: https://israelfull-commits.github.io/portfolio/sitemap.xml

@@ -6,9 +6,9 @@ plugin_dir = Path(r"C:\Users\Israel Rozar\figma-refine-plugin")
 
 images_map = {
     # Home
-    'home_portrait': 'site/public/images/israel-rozar-portrait-800.webp',
-    'hiae_tablet': 'site/public/images/hiae-proposta-v3-tablet-1600.webp',
-    'itau_hub_thumb': 'site/public/images/itau-hub-liquidez-capa-1600.webp',
+    'home_portrait': 'site/public/images/israel-rozar-treated-800.webp',
+    'hiae_tablet': 'site/public/images/hiae-proposta-v3-tablet-v2.webp',
+    'itau_hub_thumb': 'site/public/images/v16-itau-bento-fintech-elegostra-aeroload.webp',
     'itau_venc_thumb': 'site/public/images/itau-vencimentos-capa-v2.webp',
     'neo_capa_thumb': 'site/public/images/v12-neoenergia-bento-service-design-v2.webp',
     'claro_ativ_thumb': 'site/public/images/v08-claro-multicanal-desktop-iphone-v2.webp',
@@ -16,32 +16,32 @@ images_map = {
     'neo_capa': 'site/public/images/v12-neoenergia-bento-service-design-v2.webp',
     'neo_num': 'site/public/images/neoenergia-grandes-numeros.webp',
     'neo_canais': 'site/public/images/v11-neoenergia-blueprint-studio-desk.webp',
-    'neo_bp1': 'site/public/images/neoenergia-blueprint-1-contrato-instalo.webp',
+    'neo_bp1': 'site/public/images/neoenergia-blueprint-crop-uso-pago-1600.webp',
     'neo_ds': 'site/public/images/neoenergia-entregaveis-ui-design-system-v2.webp',
-    'neo_tobe': 'site/public/images/neoenergia-jornada-futuro-tobe.webp',
+    'neo_tobe': 'site/public/images/neoenergia-jornada-118-ideias-v2.webp',
     'neo_matriz': 'site/public/images/neoenergia-jornada-118-ideias-v2.webp',
     # Albert Einstein
-    'hiae_capa': 'site/public/images/hiae-capa-editorial-1600.webp',
+    'hiae_capa': 'site/public/images/v17-einstein-bento-light-aeroload.webp',
     'hiae_taxonomia': 'site/public/images/hiae-taxonomia-laudo-2000.webp',
     'hiae_triangulacao': 'site/public/images/hiae-triangulacao-pesquisa-1200.webp',
-    'hiae_tokens': 'site/public/images/hiae-ds-tokens-clean-1280.webp',
-    'hiae_componentes': 'site/public/images/hiae-ds-componentes-crop-1600.webp',
+    'hiae_tokens': 'site/public/images/hiae-ds-tokens-zera-bento-2000.webp',
+    'hiae_componentes': 'site/public/images/hiae-componente-protrombina-crop.webp',
     'hiae_visao_futura': 'site/public/images/hiae-visao-futura-ressonancia.webp',
     # Itaú Unibanco
-    'itau_hub': 'site/public/images/itau-hub-liquidez-capa-1600.webp',
+    'itau_hub': 'site/public/images/v16-itau-bento-fintech-elegostra-aeroload.webp',
     'itau_vencimentos': 'site/public/images/itau-vencimentos-capa-v2.webp',
     'itau_movimentacoes': 'site/public/images/itau-movimentacoes-bento-2400.webp',
     'itau_campanhas': 'site/public/images/itau-campanhas-configuracao-v2.webp',
     'itau_registros': 'site/public/images/itau-registros-workflow-v2.webp',
     # Claro Brasil
     'claro_capa': 'site/public/images/v08-claro-multicanal-desktop-iphone-v2.webp',
-    'claro_ativacao': 'site/public/images/claro-ativacao-hero.webp',
+    'claro_ativacao': 'site/public/images/v10-claro-jornada-editorial-v2.webp',
     'claro_jornadas': 'site/public/images/claro-jornadas.webp',
     'claro_multicanal': 'site/public/images/claro-multicanal-bento-1600.webp',
     'claro_busca': 'site/public/images/claro-busca-cliente.webp',
     'claro_detalhe': 'site/public/images/claro-detalhe-linha.webp',
-    'claro_confirmacao': 'site/public/images/claro-confirmacao-mobile.webp',
-    'claro_workshop': 'site/public/images/claro-workshop.webp'
+    'claro_confirmacao': 'site/public/images/claro-multicanal-bento-1600.webp',
+    'claro_workshop': 'site/public/images/claro-jornadas.webp'
 }
 
 b64_dict = {}

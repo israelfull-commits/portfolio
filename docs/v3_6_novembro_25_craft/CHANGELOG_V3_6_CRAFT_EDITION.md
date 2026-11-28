@@ -330,3 +330,18 @@ Implementados os 4 refinamentos funcionais de alto impacto (evitando intencional
   - **`N01`–`N03` [P1 `AP-06`/`TH-08`/`TX-09`]:** reconstruído o Master Hero (**`v12-neoenergia-bento-service-design-v2.webp`**) eliminando ~40% de vazio morto e corrigindo rótulos `As-Is` / `Jornada Futura (118 Ideias em 5 Estágios)`, corrigido o typo `"Protótpos"` → `"Protótipos"` (**`neoenergia-entregaveis-ui-design-system-v2.webp`**) e reestruturado o mapa das 118 ideias com panorama íntegro + 3 Horizontes legíveis (**`neoenergia-jornada-118-ideias-v2.webp`**).
 - **Governança & Sincronização:** `scripts/build_portfolio_figma_screens.py` atualizado para todos os novos ativos `v2`, espelho `portfolio-verde/` e `D:\mockups-portfolio-studio\variacoes\` sincronizados, build `0` erros em ambos os ambientes e **15/15 PASS** no Sentinel v2.
 - **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-27` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
+
+### 2026-11-27 — Versão V4.6.0 (Higiene Total de Produção, SEO/OG/llms.txt, Preview Home v2, Plugin Figma ES5/ES6 & Notion Ops Relacional)
+- **Preview da Home & Open Graph Social (`Home.tsx`, `index.html`, `hiae-proposta-v3-tablet-v2.webp`, `israel-rozar-social-v2.jpg`):**
+  - Reconstruído o tablet de destaque da Home (`hiae-proposta-v3-tablet-v2.webp`, `1600×900`, `55,7 KB`) eliminando o corte na linha `Volume diastólico final` pela moldura inferior.
+  - Recriado o card social Open Graph/LinkedIn/WhatsApp (`israel-rozar-social-v2.jpg`, `1200×630`, `91,6 KB`) com `Plus Jakarta Sans`, posicionamento V4.0.2 (*"Design de produtos para saúde, finanças e serviços essenciais."*) e selo `+15 anos · Itaú · Einstein · R/GA · EY`.
+- **Correção Crítica de SEO Técnico & Descoberta IA (`robots.txt`, `sitemap.xml`, `llms.txt` + espelho `portfolio-verde/`):**
+  - Substituído o domínio obsoleto (`israel-rozar-portfolio.irozar.chatgpt.site`) pela URL canônica de produção (`https://israelfull-commits.github.io/portfolio/`) em `robots.txt` e nas 9 entradas de `sitemap.xml` (`lastmod 2026-11-27`).
+  - Atualizado `llms.txt` com link direto do CV PDF ATS e status de produção do Einstein (`proposta v3 implantada em produção`, `CS-14`).
+- **Higiene Profunda de `site/public/` & `portfolio-verde/public/` (`AGENTS.md` §11):**
+  - Removidos os 2 arquivos HTML internos vazados (`_transfer-portfolio.html` e `_visual-variants.html`, `1,26 MB`) que eram copiados para a produção pública.
+  - Removidos **90 arquivos órfãos/duplicados PNG/WIP/legados com PII** (`14,32 MB` liberados, incluindo `itau-movimentacoes-discovery.png` com CPF/conta real e `test_macbook.webp`), restando exatamente **35 ativos verificados e referenciados** em `public/images/`.
+- **Plugin Figma Desktop & Notion Relacional (`AGENTS.md` §9):**
+  - Recompilado e sincronizado `code.js` (`32` entregas reais em Base64, sintaxe ES5/ES6 estrita: `spread=False`, `nullish=False`) em `figma-refine-plugin` e `gemini-figma-plugin`.
+  - Registrada a versão `V4.6.0` nas bases relacionais do Notion (`🔖 Versões`, `🔍 Diagnósticos`, `⭐ Scorecard Geral`) e na página consolidada V3.6 (`4248db39b34f81a6b708c51aefce7209`).
+- **Proveniência:** IA `Antigravity — Google DeepMind` · Atualização `2026-11-27` · Conversa `conversation://66417f41-f841-4d50-a701-e678302e3ec2`.
